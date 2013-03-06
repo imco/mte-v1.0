@@ -3,7 +3,8 @@ class home extends main{
 	public function index(){
 		set_time_limit(10000);
 		//$this->import_states();
-		$this->import_locales();
+		//$this->import_locales()
+		echo 'fuk u';
 	}
 
 	private function import_locales(){
