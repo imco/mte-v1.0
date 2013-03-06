@@ -37,4 +37,11 @@ class nivel extends table{
 		$this->table_name = "niveles";
 	}
 }
+class status extends table{
+	function info(){
+		$this->table_name = "statuses";
+
+	}
+
+}
 ?>
