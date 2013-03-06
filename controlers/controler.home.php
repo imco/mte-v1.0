@@ -129,6 +129,35 @@ class home extends main{
 		}
 
 	}
+	private function import_generic($object,$fields,$id_field,$name_field){
+		$handle = $this->open_file('escuelas.txt');
+		$object =  new $object();
+		$object->debug = true;
+		$objects = array();
+		if ($handle){
+			$i = 0;
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
+				$row = $this->clean_row($row);
+				if(!isset($objects[$row[$id_field]])){
+					$object->create($fields,array($row[$id_field],$row[12]));
+					$objects[$row[$id_field]] = 1;
+					//break;
+				}else{
+					$objects[$row[$id_field]]++;
+				}
+				if($i++ > 200) break;
+			}
+			foreach($objects as $key => $count){
+				$object = new $object($key);
+				$object->debug = true;
+				$object->update('cctt_count',array($count));
+			}
+			fclose($handle);
+		}else{
+			'open fail';
+		}
+
+	}
 	
 	private function open_file($file){
 		return fopen($_SERVER['DOCUMENT_ROOT']."/files/$file", "r");
