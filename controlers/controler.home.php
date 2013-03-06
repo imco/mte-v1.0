@@ -4,7 +4,8 @@ class home extends main{
 		set_time_limit(10000);
 		//$this->import_states();
 		//$this->import_locales()
-		echo 'fuk u';
+
+		$this->loop_tables();
 	}
 
 	private function import_locales(){
@@ -138,5 +139,23 @@ class home extends main{
 		return $row;
 	}
 	
+	private function loop_tables(){
+		$file_names = Array("niveles", "subniveles", "servicios", "modalidades", "controles", "subcontroles", "sostenimientos", "statuses");
+		$arrlength = count($file_names);
+		
+		foreach($file_names as $name)
+		{
+			$sql = "
+			CREATE TABLE IF NOT EXISTS $name (`id` int(20) NOT NULL,
+  `nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `cct_count` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+";
+			mysql_query($sql);
+		
+
+		}
+	}
 }
 ?>
