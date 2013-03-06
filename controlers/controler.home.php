@@ -5,7 +5,8 @@ class home extends main{
 		//$this->import_states();
 		//$this->import_locales()
 
-		$this->loop_tables();
+		//$this->loop_tables();
+		$this->import_generic("nivel",29,30);
 	}
 
 	private function import_locales(){
@@ -130,23 +131,29 @@ class home extends main{
 		}
 
 	}
-	private function import_generic($object,$fields,$id_field,$name_field){
+	private function import_generic($object,$id_field,$name_field){
 		$handle = $this->open_file('escuelas.txt');
 		$object =  new $object();
 		$object->debug = true;
 		$objects = array();
 		if ($handle){
-			$i = 0;
+			$noid = $i = 0;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
-				if(!isset($objects[$row[$id_field]])){
-					$object->create($fields,array($row[$id_field],$row[12]));
-					$objects[$row[$id_field]] = 1;
-					//break;
+				//var_dump($row);
+				if($row[$id_field] != ""){
+					if(!isset($objects[$row[$id_field]])){
+						$object->create("id,nombre",array($row[$id_field],$row[$name_field]));
+						$objects[$row[$id_field]] = 1;
+						//break;
+					}else{
+						$objects[$row[$id_field]]++;
+					}
+					//if($i++ > 20) break;
 				}else{
-					$objects[$row[$id_field]]++;
+					//echo "no id ";
+					$noid++;
 				}
-				if($i++ > 200) break;
 			}
 			foreach($objects as $key => $count){
 				$object = new $object($key);
