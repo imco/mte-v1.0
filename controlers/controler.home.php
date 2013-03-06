@@ -158,7 +158,7 @@ class home extends main{
 			foreach($objects as $key => $count){
 				$object = new $object($key);
 				$object->debug = true;
-				$object->update('cctt_count',array($count));
+				$object->update('cct_count',array($count));
 			}
 			fclose($handle);
 		}else{
