@@ -32,4 +32,9 @@ class escuela extends table{
 	}
 
 }
+class nivel extends table{
+	function info(){
+		$this->table_name = "niveles";
+	}
+}
 ?>
