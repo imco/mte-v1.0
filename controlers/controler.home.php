@@ -6,7 +6,7 @@ class home extends main{
 		//$this->import_locales()
 
 		//$this->loop_tables();
-		$this->import_generic("nivel",29,30);
+		$this->import_generic("status",43,44);
 	}
 
 	private function import_locales(){
@@ -149,7 +149,7 @@ class home extends main{
 					}else{
 						$objects[$row[$id_field]]++;
 					}
-					//if($i++ > 20) break;
+					if($i++ > 200) break;
 				}else{
 					//echo "no id ";
 					$noid++;
@@ -158,7 +158,7 @@ class home extends main{
 			foreach($objects as $key => $count){
 				$object = new $object($key);
 				$object->debug = true;
-				$object->update('cctt_count',array($count));
+				$object->update('cct_count',array($count));
 			}
 			fclose($handle);
 		}else{
@@ -176,11 +176,10 @@ class home extends main{
 	}
 	
 	private function loop_tables(){
-		$file_names = Array("niveles", "subniveles", "servicios", "modalidades", "controles", "subcontroles", "sostenimientos", "statuses");
+		$file_names = Array("turnos");
 		$arrlength = count($file_names);
 		
-		foreach($file_names as $name)
-		{
+		foreach($file_names as $name){
 			$sql = "
 			CREATE TABLE IF NOT EXISTS $name (`id` int(20) NOT NULL,
   `nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
