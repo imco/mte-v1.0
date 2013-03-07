@@ -5,7 +5,7 @@ class home extends main{
 		//$this->import_states();
 		//$this->import_locales()
 
-		$this->loop_tables();
+		//$this->loop_tables();
 		$this->import_generic("turno",20,21);
 	}
 
@@ -21,7 +21,7 @@ class home extends main{
 				if (!isset($states[$row[11]]) || !isset($states[$row[11]] [$row[9]]) || !isset($states[$row[11]][$row[9]][$row[7]]) ) {
 					$q = new county();
 					$q->debug = true;
-					$q->search_clause = "municipios.state_id = {$row[9]} AND municipios.entidad = {$row[11]}";
+					$q->search_clause = "municipios.municipio = {$row[9]} AND municipios.entidad = {$row[11]}";
 					$county = $q->read('id');
 					$localidad->create('municipio,nombre,entidad,localidad',array($county[0]->id,$row[8],$row[11],$row[7]));
 					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
