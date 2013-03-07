@@ -9,7 +9,7 @@ class state extends table{
 		$this->table_name = "entidades";
 	}
 }
-class county extends table{
+class municipio extends table{
 	function info(){
 		$this->table_name = "municipios";
 	}	
