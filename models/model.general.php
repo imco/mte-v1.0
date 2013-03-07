@@ -4,7 +4,7 @@ class cp extends table{
 		$this->table_name = "cps";
 	}
 }
-class state extends table{
+class entidad extends table{
 	function info(){
 		$this->table_name = "entidades";
 	}
@@ -20,11 +20,6 @@ class localidad extends table{
 		$this->table_name = "localidades";
 	}
 
-}
-class senator extends table{
-	function info(){
-		$this->table_name = "senadores";
-	}
 }
 class escuela extends table{
 	function info(){
