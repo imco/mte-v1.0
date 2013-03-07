@@ -5,8 +5,8 @@ class home extends main{
 		//$this->import_states();
 		//$this->import_locales()
 
-		//$this->loop_tables();
-		$this->import_generic("nivel",29,30);
+		$this->loop_tables();
+		$this->import_generic("turno",20,21);
 	}
 
 	private function import_locales(){
@@ -140,7 +140,8 @@ class home extends main{
 			$noid = $i = 0;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
-				//var_dump($row);
+				//var_dump()
+				//var_dump($row[$id_field]);
 				if($row[$id_field] != ""){
 					if(!isset($objects[$row[$id_field]])){
 						$object->create("id,nombre",array($row[$id_field],$row[$name_field]));
@@ -149,7 +150,7 @@ class home extends main{
 					}else{
 						$objects[$row[$id_field]]++;
 					}
-					//if($i++ > 20) break;
+				//if($i++ > 5) break;
 				}else{
 					//echo "no id ";
 					$noid++;
@@ -176,7 +177,8 @@ class home extends main{
 	}
 	
 	private function loop_tables(){
-		$file_names = Array("niveles", "subniveles", "servicios", "modalidades", "controles", "subcontroles", "sostenimientos", "statuses");
+		//$file_names = Array("niveles", "subniveles", "servicios", "modalidades", "controles", "subcontroles", "sostenimientos", "statuses");
+		$file_names = Array("turnos");
 		$arrlength = count($file_names);
 		
 		foreach($file_names as $name)
