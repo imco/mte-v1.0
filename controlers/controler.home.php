@@ -19,6 +19,7 @@ class home extends main{
 				$q->search_clause = "municipios.municipio = '{$row[9]}' AND municipios.entidad = '{$row[11]}' ";
 				$r = $q->read('id,nombre');
 				$municipio = $r[0];
+				
 				if($i++ == 20) break;
 			}
 			fclose($handle);
@@ -145,7 +146,8 @@ class home extends main{
 			$noid = $i = 0;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
-				//var_dump($row);
+				//var_dump()
+				//var_dump($row[$id_field]);
 				if($row[$id_field] != ""){
 					if(!isset($objects[$row[$id_field]])){
 						$object->create("id,nombre",array($row[$id_field],$row[$name_field]));
@@ -154,7 +156,7 @@ class home extends main{
 					}else{
 						$objects[$row[$id_field]]++;
 					}
-					if($i++ > 200) break;
+					//if($i++ > 5) break;
 				}else{
 					//echo "no id ";
 					$noid++;
