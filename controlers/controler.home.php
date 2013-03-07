@@ -4,9 +4,27 @@ class home extends main{
 		set_time_limit(10000);
 		//$this->import_states();
 		//$this->import_locales()
-
+		$this->import_schools();
 		//$this->loop_tables();
-		$this->import_generic("status",43,44);
+		//$this->import_generic("status",43,44);
+
+	}
+	private function import_schools(){
+		$handle = $this->open_file('escuelas.txt');
+		if ($handle){
+			$i = 0;
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
+				$row = $this->clean_row($row);
+				$q = new municipio();
+				$q->search_clause = "municipios.municipio = '{$row[9]}' AND municipios.entidad = '{$row[11]}' ";
+				$r = $q->read('id,nombre');
+				$municipio = $r[0];
+				if($i++ == 20) break;
+			}
+			fclose($handle);
+		}else{
+			'open fail';
+		}
 	}
 
 	private function import_locales(){
@@ -87,20 +105,7 @@ class home extends main{
 
 	}
 
-	private function import_schools(){
-		$handle = $this->open_file('escuelas.txt');
-		if ($handle){
-			$i = 0;
-			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
-				$row = $this->clean_row($row);
-				var_dump($row);
-				if($i++ == 200) break;
-			}
-			fclose($handle);
-		}else{
-			'open fail';
-		}
-	}
+	
 	private function import_states(){
 		$handle = $this->open_file('escuelas.txt');
 		$state =  new state();
