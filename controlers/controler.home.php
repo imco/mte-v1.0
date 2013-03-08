@@ -4,24 +4,53 @@ class home extends main{
 		set_time_limit(10000);
 		//$this->import_states();
 		//$this->import_locales()
-		$this->import_schools();
+		//$this->import_schools();
 		//$this->loop_tables();
-		//$this->import_generic("status",43,44);
+		$this->import_generic("tipo",27,28);
 
 	}
 	private function import_schools(){
 		$handle = $this->open_file('escuelas.txt');
 		if ($handle){
-			$i = 0;
+			$nocount = $i = 0;
+			$escuela = new escuela();
+			//$escuela->debug = true;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
+				//var_dump($row);
 				$q = new municipio();
 				$q->search_clause = "municipios.municipio = '{$row[9]}' AND municipios.entidad = '{$row[11]}' ";
 				$r = $q->read('id,nombre');
 				$municipio = $r[0];
-				
-				if($i++ == 20) break;
+				$q = new localidad();
+				$q->search_clause = "localidades.municipio = '{$municipio->id}' AND localidades.localidad = '{$row[7]}'";
+				$r = $q->read('id,nombre');
+				$localidad = $r[0];
+				$result = $escuela->create('cct,nombre,domicilio,entrecalle,ycalle,localidad,municipio,entidad,codigopostal,telefono,telextension,fax,faxextension,correoelectronico,paginaweb,turno,sector,cct_sector,altitud,longitud,latitud,tipo,nivel,subnivel,servicio,modalidad,control,subcontrol,sostenimiento,status',
+				array(
+					$row[0],$row[1],$row[2],$row[3],$row[4],
+					$localidad->id,
+					$municipio->id,
+					$row[11],
+					$row[13],$row[14],$row[15],$row[16],$row[17],$row[18],$row[19],$row[20],
+					$row[22],$row[23],$row[24],$row[25],$row[26],$row[27],
+					$row[29],
+					$row[31],
+					$row[33],
+					$row[35],
+					$row[37],
+					$row[39],
+					$row[41],
+					$row[43]
+				));
+				$i++;
+				if(!$result){
+					var_dump($i,$row);
+					break;
+				};
+				//if($i++ == 20) break;
 			}
+			//echo "empty $nocount <br/>";
 			fclose($handle);
 		}else{
 			'open fail';
@@ -156,17 +185,19 @@ class home extends main{
 					}else{
 						$objects[$row[$id_field]]++;
 					}
-					//if($i++ > 5) break;
+			
 				}else{
 					//echo "no id ";
 					$noid++;
 				}
+				//if($i++ == 20) break;
 			}
 			foreach($objects as $key => $count){
 				$object = new $object($key);
 				$object->debug = true;
 				$object->update('cct_count',array($count));
 			}
+			var_dump('noid',$noid);
 			fclose($handle);
 		}else{
 			'open fail';
