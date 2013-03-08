@@ -73,4 +73,9 @@ class turno extends table{
 		$this->table_name = "turnos";
 	}
 }
+class tipo extends table{
+	function info(){
+		$this->table_name = "tipos";
+	}
+}
 ?>
