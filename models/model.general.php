@@ -78,4 +78,9 @@ class tipo extends table{
 		$this->table_name = "tipos";
 	}
 }
+class colonia extends table{
+	function info(){
+		$this->table_name = "colonias";
+	}
+}
 ?>
