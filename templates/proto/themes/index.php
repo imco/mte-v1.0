@@ -17,10 +17,19 @@
 			<td>
 				<select>
 			 		<option value=''>Estado</option>
-					<?php foreach($this->niveles as $nivel) echo "<option value='{$nivel->id}'>{$nivel->nombre}</option>"; ?>
+					<?php foreach($this->entidades as $entidad) echo "<option value='{$entidad->id}'>{$entidad->nombre}</option>"; ?>
 			 	</select>
 
 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>
+ 				<select>
+			 		<option value=''>Municipio</option>
+					<?php foreach($this->municipios as $municipio) echo "<option value='{$municipio->id}'>{$municipio->nombre}</option>"; ?>
+			 	</select>
+ 			</td>
+
  		</tr>
  	
 	</table>
