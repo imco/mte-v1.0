@@ -7,11 +7,13 @@ class cp extends table{
 class entidad extends table{
 	function info(){
 		$this->table_name = "entidades";
+
 	}
 }
 class municipio extends table{
 	function info(){
 		$this->table_name = "municipios";
+		$this->objects['entidad'] = 'entidad';
 	}	
 
 }
