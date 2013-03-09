@@ -230,5 +230,53 @@ class home extends main{
 
 		}
 	}
+	private function import_colonias(){
+		$handle = $this->open_file('escuelas.txt');
+		$colonia = new colonia();
+		$colonia->debug = true;
+		$states = array();
+		if($handle){
+			$i = 0;
+			while(($row = fgetcsv($handle,0, "|")) !== FALSE) {
+				$row = $this->clean_row($row);
+				if ($row[5] != ""){
+					if (!isset($states[$row[11]]) || !isset($states[$row[11]] [$row[9]]) || !isset($states[$row[11]][$row[9]][$row[7]]) || !isset($states[$row[11]][$row[9]][$row[7]][$row[5]]) ) {
+						$q = new municipio();
+						$q->debug = true;
+						$q->search_clause = "municipios.municipio = {$row[9]} AND municipios.entidad = {$row[11]}";
+						$county = $q->read('id');
+						$q = new localidad();
+						$q->search_clause= "localidades.municipio = {$county[0]->id} AND localidades.localidad = {$row[7]}";
+						$localidad = $q->read("id");
+						$colonia->create('colonia,nombre,municipio,entidad,localidad',array($row[5],$row[6],$county[0]->id,$row[11],$localidad[0]->id));
+						$states[$row[11]][$row[9]][$row[7]][$row[5]]->id = $colonia->id;
+						$states[$row[11]][$row[9]][$row[7]][$row[5]]->count = 1;
+					}else{
+						$states[$row[11]][$row[9]][$row[7]][$row[5]]->count++;
+						//if($counties[$row[9]]->count == 200) break;
+					}
+					//if($i++ == 100) break;
+				}
+			}
+			//var_dump($states);
+			foreach($states as $state){
+					foreach($state as $county){
+						foreach($county as $localidad){
+							foreach($localidad as $colonia){
+								$count = $colonia->count;
+								$colonia = new colonia($colonia->id);
+								$colonia->debug = true;
+								$colonia->update('cct_count',array($count));
+							}
+						}
+					}
+				}
+				fclose($handle);
+			}else{
+				'open fail';
+			}
+
+	}
+
 }
 ?>
