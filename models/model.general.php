@@ -7,7 +7,8 @@ class cp extends table{
 class entidad extends table{
 	function info(){
 		$this->table_name = "entidades";
-
+		$this->has_many['municipios'] = 'municipio';
+		$this->has_many_keys['municipios'] = 'entidad';
 	}
 }
 class municipio extends table{
@@ -26,6 +27,7 @@ class localidad extends table{
 class escuela extends table{
 	function info(){
 		$this->table_name = "escuelas";
+		$this->key = 'cct';
 	}
 
 }
