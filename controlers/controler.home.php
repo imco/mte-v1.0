@@ -16,11 +16,5 @@ class home extends main{
 		$q->search_clause = '1';
 		$this->entidades = $q->read('id,nombre');
 	}
-	public function load_municipios(){
-		$q = new municipio();
-		$q->search_clause = '1';
-		$q->order_by = 'municipios.nombre';
-		$this->municipios = $q->read('id,nombre,entidad=>nombre,entidad=>id');
-	}
 }
 ?>
