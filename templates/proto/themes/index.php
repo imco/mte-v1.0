@@ -9,13 +9,13 @@
  	<table>
  		<tr>
  			<td>
- 				<select>
+ 				<select name=''>
 			 		<option value=''>Nivel de Escolaridad</option>
 					<?php foreach($this->niveles as $nivel) echo "<option value='{$nivel->id}'>{$nivel->nombre}</option>"; ?>
 			 	</select>
  			</td>
 			<td>
-				<select>
+				<select name=''>
 			 		<option value=''>Estado</option>
 					<?php foreach($this->entidades as $entidad) echo "<option value='{$entidad->id}'>{$entidad->nombre}</option>"; ?>
 			 	</select>
@@ -24,7 +24,7 @@
  		</tr>
  		<tr>
  			<td>
- 				<select>
+ 				<select name=''>
 			 		<option value=''>Municipio</option>
 					<?php foreach($this->municipios as $municipio) echo "<option value='{$municipio->id}'>{$municipio->nombre}</option>"; ?>
 			 	</select>
