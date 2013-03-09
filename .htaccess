@@ -1,16 +1,40 @@
+<files *.js.gz>
+  AddType "text/javascript" .gz
+  AddEncoding gzip .gz
+</files>
+<files *.css.gz>
+  AddType "text/css" .gz
+  AddEncoding gzip .gz
+</files>
+
+php_value upload_max_filesize 20M
+php_value post_max_size 20M
+php_value max_execution_time 200
+php_value max_input_time 200
+
+
 RewriteEngine On
 RewriteBase /
+RewriteRule ^([-_\w]+)/?$ ?controler=$1 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5  [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5&$6=$7 
+RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5&$6=$7&$8=$9
 
-RewriteRule ^([-_\w]+)/?$ ?language=$1 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?language=$1&controler=$2 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/p=(\d+)$ ?language=$1&controler=$2&p=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/m=([\w]+)$ ?language=$1&controler=$2&m=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/e=([\w]+)$ ?language=$1&controler=$2&e=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?language=$1&controler=$2&action=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?language=$1&controler=$2&action=$3&id=$4 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/([-_\w]+)/m=([\w]+)$ ?language=$1&controler=$2&action=$3&id=$4&m=$5 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/([-_\w]+)/e=([\w]+)$ ?language=$1&controler=$2&action=$3&id=$4&e=$5 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/([-_\w]+)/token=([\w]+)$ ?language=$1&controler=$2&action=$3&id=$4&token=$5 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/m=([\w]+)$ ?language=$1&controler=$2&action=$3&m=$4 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/e=([\w]+)$ ?language=$1&controler=$2&action=$3&e=$4 [L]
 
+RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&action=$2&$3=$4 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/?$ ?controler=$1&action=$2&$3=$4&$5=$6 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/?$ ?controler=$1&action=$2&$3=$4&$5=$6&$7=$8 [L]
+
+
+
+
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
+
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/m=([\w]+)$ ?controler=$1&action=$2&id=$3&m=$4 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/e=([\w]+)$ ?controler=$1&action=$2&id=$3&e=$4 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/p=(\d+)$ ?controler=$1&action=$2&p=$3 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/p=(\d+)$ ?controler=$1&action=$2&p=$3 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/m=([\w]+)$ ?controler=$1&action=$2&m=$3 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/e=([\w]+)$ ?controler=$1&action=$2&e=$3 [L]
