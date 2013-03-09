@@ -11,9 +11,5 @@ class home extends main{
 		//$q->debug = true;
 		$this->niveles = $q->read('id,nombre');
 	}
-	public function load_entidades(){
-
-	}
-
 }
 ?>
