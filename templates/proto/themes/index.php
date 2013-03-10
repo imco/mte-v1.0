@@ -22,7 +22,7 @@
 	?>
  </head>
  <body>
- <div id='header'></div>
+ <div id='header'><?php $this->include_template('header','global'); ?></div>
  <div id='content'>
  	<?php $this->include_template($this->template,$this->location);	?>
 	<?php $this->include_template('general_search','global'); ?>
