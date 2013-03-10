@@ -8,7 +8,7 @@ class git_config extends default_config{
 		
 		//Database
 		$this->db_host = '***REMOVED***';
-		$this->db_name = 'compara';
+		$this->db_name = 'comparatuescuela';
 		$this->db_user = 'root';
 		$this->db_pass = 'RtG/()rERtfkfGKLF';
 		
