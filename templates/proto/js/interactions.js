@@ -5,12 +5,14 @@ $(document).ready(function(){
   				term : request.term,
   				entidad : $("#state-input").val(),
   				municipio : $("#municipio-input").val(),
-  				localidad : $("#localidad-input").val()
+  				localidad : $("#localidad-input").val(),
+  				nivel : $("#nivel-input").val(),
+  				json : true
   			},response,'json');
   		},
-  		minLength: 4
+  		minLength: 3
 	});
-	$('#state-input').change(function(){
+	$('#state-input').change(function(e){
 		load_location_options(
 			$("#municipio-input"),
 			'load_municipios',
@@ -28,6 +30,7 @@ $(document).ready(function(){
 			$("#localidad-input").prop('disabled', true);
 			$("#localidad-input").html('<option value="">Localidad</option>');
 		}
+
 	});
 	$('#municipio-input').change(function(){
 		if($(this).val() != ""|| $("#state-input option:selected").val() != ""){
