@@ -1,8 +1,15 @@
 <?php
-class cp extends table{
+
+class escuela extends table{
 	function info(){
-		$this->table_name = "cps";
+		$this->table_name = "escuelas";
+		$this->key = 'cct';
+		$this->objects['localidad'] = 'localidad';
+		$this->objects['entidad'] = 'entidad';
+		$this->objects['municipio'] = 'municipio';
+		$this->objects['nivel'] = 'nivel';
 	}
+
 }
 class entidad extends table{
 	function info(){
@@ -24,16 +31,6 @@ class municipio extends table{
 class localidad extends table{
 	function info(){
 		$this->table_name = "localidades";
-		$this->objects['entidad'] = 'entidad';
-		$this->objects['municipio'] = 'municipio';
-	}
-
-}
-class escuela extends table{
-	function info(){
-		$this->table_name = "escuelas";
-		$this->key = 'cct';
-		$this->objects['localidad'] = 'localidad';
 		$this->objects['entidad'] = 'entidad';
 		$this->objects['municipio'] = 'municipio';
 	}
