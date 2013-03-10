@@ -9,6 +9,9 @@ class entidad extends table{
 		$this->table_name = "entidades";
 		$this->has_many['municipios'] = 'municipio';
 		$this->has_many_keys['municipios'] = 'entidad';
+
+		$this->has_many['localidades'] = 'localidad';
+		$this->has_many_keys['localidades'] = 'entidad';
 	}
 }
 class municipio extends table{
@@ -21,6 +24,8 @@ class municipio extends table{
 class localidad extends table{
 	function info(){
 		$this->table_name = "localidades";
+		$this->objects['entidad'] = 'entidad';
+		$this->objects['municipio'] = 'municipio';
 	}
 
 }
@@ -28,6 +33,9 @@ class escuela extends table{
 	function info(){
 		$this->table_name = "escuelas";
 		$this->key = 'cct';
+		$this->objects['localidad'] = 'localidad';
+		$this->objects['entidad'] = 'entidad';
+		$this->objects['municipio'] = 'municipio';
 	}
 
 }
