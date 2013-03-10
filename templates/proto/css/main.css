@@ -8,7 +8,7 @@ a{text-decoration:none;}
 #header{width:100%;background-color:#E6E6E6;margin-bottom:10px;height:120px;}
 #content{width:100%;background-color:#E6E6E6;padding:20px 0;}
 
-#content .home-form{display:block;background-color:#D4D4D4;color:#878787;text-shadow:1px 1px white;width:700px;margin:0 auto;padding:30px 45px;}
+#content .container{display:block;background-color:#D4D4D4;color:#878787;text-shadow:1px 1px white;width:700px;margin:0 auto;padding:30px 45px;}
 #content .home-form select,#content .home-form input[type='text']{width:280px;padding:3px 5px;background-color:#E6E6E6;border:none;margin:5px 6px;color:#878787;}
 #content .home-form input[type='text']{width:270px;color:#878787;}
 #content .home-form table{margin:0 auto;}
