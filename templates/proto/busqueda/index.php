@@ -8,7 +8,10 @@
 			<tr>
 				<td class='checkbox'><a href='#'></a></td>
 				<td class='score'></td>
-				<td class='school'>".$this->capitalize($escuela->nombre)." (".$this->capitalize($escuela->nivel->nombre).") | ".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</td>
+				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
+					$this->capitalize($escuela->nombre)." (".$this->capitalize($escuela->nivel->nombre).") | ".
+					$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre).
+				"</a></td>
 			</tr>
 			";
 		}
@@ -16,3 +19,4 @@
 	?>
 	</table>
 </div>
+<?php $this->include_template('general_search','global'); ?>
