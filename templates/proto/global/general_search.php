@@ -62,5 +62,5 @@
  		</tr>
 	</table>
 	<input type='submit' value='Buscar'/>
-	<input type='submit' value='Mapa' id='map-button'/>
+	<input type='submit' value='Mapa' id='map-button' class='on'/>
  </form>
