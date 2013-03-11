@@ -18,14 +18,6 @@ $(document).ready(function(){
 		$('#general-search').submit();
 
 	});
-	$('#localidad-input').change(function(e){
-		if($(this).val() != ''){
-			$('#map-button').addClass('on');
-		}else{
-			$('#map-button').removeClass('on');
-		}
-
-	})
 	$('#state-input').change(function(e){
 		load_location_options(
 			$("#municipio-input"),
