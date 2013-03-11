@@ -1,5 +1,4 @@
 <?php
-
 class escuela extends table{
 	function info(){
 		$this->table_name = "escuelas";
@@ -8,6 +7,14 @@ class escuela extends table{
 		$this->objects['entidad'] = 'entidad';
 		$this->objects['municipio'] = 'municipio';
 		$this->objects['nivel'] = 'nivel';
+		$this->objects['turno'] = 'turno';
+		$this->objects['tipo'] = 'tipo';
+		$this->objects['subnivel'] = 'subnivel';
+		$this->objects['servicio'] = 'servicio';
+		$this->objects['control'] = 'control';
+		$this->objects['subcontrol'] = 'subcontrol';
+		$this->objects['sostenimiento'] = 'sostenimiento';
+		$this->objects['status'] = 'status';
 	}
 
 }
