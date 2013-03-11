@@ -42,7 +42,7 @@ class main extends controler{
 		}
 		
 	}
-	public function get_escuelas(){		
+	public function get_escuelas($limit = false){		
 		$q = new escuela();
 		$q->search_clause = '1 ';
 		$q->search_clause .= $this->post('term') ? " AND escuelas.nombre LIKE '".$this->post('term')."%' " : '';
@@ -51,8 +51,8 @@ class main extends controler{
 		$q->search_clause .= $this->post('localidad') ? ' AND escuelas.localidad = "'.$this->post('localidad').'" ' : '';
 		$q->search_clause .= $this->post('nivel') === false || $this->post('nivel') === '' ? '' : ' AND escuelas.nivel = "'.$this->post('nivel').'" ';
 		$q->order_by = 'escuelas.nombre';
-		$q->limit = '0, 15';
-		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre');
+		$q->limit= $limit ? $limit : "0 ,15";
+		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,latitud,longitud');
 		if($this->post('json')){
 			$response = array();
 			if($this->escuelas){
