@@ -1,14 +1,31 @@
 <?php
-class cp extends table{
+class escuela extends table{
 	function info(){
-		$this->table_name = "cps";
+		$this->table_name = "escuelas";
+		$this->key = 'cct';
+		$this->objects['localidad'] = 'localidad';
+		$this->objects['entidad'] = 'entidad';
+		$this->objects['municipio'] = 'municipio';
+		$this->objects['nivel'] = 'nivel';
+		$this->objects['turno'] = 'turno';
+		$this->objects['tipo'] = 'tipo';
+		$this->objects['subnivel'] = 'subnivel';
+		$this->objects['servicio'] = 'servicio';
+		$this->objects['control'] = 'control';
+		$this->objects['subcontrol'] = 'subcontrol';
+		$this->objects['sostenimiento'] = 'sostenimiento';
+		$this->objects['status'] = 'status';
 	}
+
 }
 class entidad extends table{
 	function info(){
 		$this->table_name = "entidades";
 		$this->has_many['municipios'] = 'municipio';
 		$this->has_many_keys['municipios'] = 'entidad';
+
+		$this->has_many['localidades'] = 'localidad';
+		$this->has_many_keys['localidades'] = 'entidad';
 	}
 }
 class municipio extends table{
@@ -26,13 +43,7 @@ class localidad extends table{
 	}
 
 }
-class escuela extends table{
-	function info(){
-		$this->table_name = "escuelas";
-		$this->key = 'cct';
-	}
 
-}
 class nivel extends table{
 	function info(){
 		$this->table_name = "niveles";

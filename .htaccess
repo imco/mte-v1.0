@@ -15,26 +15,6 @@ php_value max_input_time 200
 
 RewriteEngine On
 RewriteBase /
-RewriteRule ^([-_\w]+)/?$ ?controler=$1 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5  [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5&$6=$7 
-RewriteRule ^([-_\w]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&$2=$3&$4=$5&$6=$7&$8=$9
-
-
-RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w\s]+)/?$ ?controler=$1&action=$2&$3=$4 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/?$ ?controler=$1&action=$2&$3=$4&$5=$6 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/([-_\w]+)=([-_\w]+)/?$ ?controler=$1&action=$2&$3=$4&$5=$6&$7=$8 [L]
-
-
-
-
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
-
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/m=([\w]+)$ ?controler=$1&action=$2&id=$3&m=$4 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\.\w]+)/e=([\w]+)$ ?controler=$1&action=$2&id=$3&e=$4 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/p=(\d+)$ ?controler=$1&action=$2&p=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/p=(\d+)$ ?controler=$1&action=$2&p=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/m=([\w]+)$ ?controler=$1&action=$2&m=$3 [L]
-RewriteRule ^([-_\w]+)/([-_\w]+)/e=([\w]+)$ ?controler=$1&action=$2&e=$3 [L]
+RewriteRule ^([-_\w]+)/?$ ?controler=$1 [QSA,L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [QSA,L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
