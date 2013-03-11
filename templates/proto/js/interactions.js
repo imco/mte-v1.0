@@ -12,6 +12,20 @@ $(document).ready(function(){
   		},
   		minLength: 3
 	});
+	$('#map-button').click(function(e){
+		e.preventDefault();
+		$('#general-search').attr('action','/mapa/');
+		$('#general-search').submit();
+
+	});
+	$('#localidad-input').change(function(e){
+		if($(this).val() != ''){
+			$('#map-button').addClass('on');
+		}else{
+			$('#map-button').removeClass('on');
+		}
+
+	})
 	$('#state-input').change(function(e){
 		load_location_options(
 			$("#municipio-input"),
@@ -55,5 +69,6 @@ function load_location_options(input,directive,options,name){
 			input.append('<option value="'+item.id+'">'+item.nombre+'</option>');
 		}
 		input.prop('disabled', false);
+		input.trigger('change');
 	},'json');
 }
