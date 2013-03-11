@@ -1,0 +1,1 @@
+<?php $this->include_template('general_search','global'); ?>
