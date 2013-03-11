@@ -1,4 +1,4 @@
-<form action='/busqueda' method='post' accept-charset='utf-8' class='home-form container' id='general-search'>
+<form action='/busqueda' method='get' accept-charset='utf-8' class='home-form container' id='general-search'>
  	<table>
  		<tr>
  			<td>
@@ -6,7 +6,7 @@
 			 		<option value=''>Nivel de Escolaridad</option>
 					<?php 
 					foreach($this->niveles as $nivel){
-						$selected = $this->post('nivel') == $nivel->id && $this->post('nivel') != '' ? "selected='selected'" : '';
+						$selected = $this->request('nivel') == $nivel->id && $this->request('nivel') != '' ? "selected='selected'" : '';
 						echo "<option $selected value='{$nivel->id}'>".$this->capitalize($nivel->nombre)."</option>"; 
 					}
 					?>
@@ -17,7 +17,7 @@
 			 		<option value=''>Estado</option>
 					<?php 
 					foreach($this->entidades as $entidad){
-						$selected = $this->post('entidad') == $entidad->id ? "selected='selected'" : '';
+						$selected = $this->request('entidad') == $entidad->id ? "selected='selected'" : '';
 						echo "<option $selected value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
 
 					} 
@@ -32,7 +32,7 @@
 			 		<option value=''>Municipio</option>
 					<?php 
 					foreach($this->municipios as $municipio){
-						$selected = $this->post('municipio') == $municipio->id ? "selected='selected'" : '';
+						$selected = $this->request('municipio') == $municipio->id ? "selected='selected'" : '';
 						echo "<option $selected value='{$municipio->id}'>".$this->capitalize($municipio->nombre).", ".$this->capitalize($municipio->entidad->nombre)."</option>";
 					} 
 					?>
@@ -45,7 +45,7 @@
 			 		<?php
 			 		if($this->localidades){
 			 			foreach($this->localidades as $localidad){
-							$selected = $this->post('localidad') == $localidad->id ? "selected='selected'" : '';
+							$selected = $this->request('localidad') == $localidad->id ? "selected='selected'" : '';
 							echo "<option $selected value='{$localidad->id}'>".$this->capitalize($localidad->nombre)."</option>";
 						} 
 			 		}
@@ -57,13 +57,13 @@
  			<td>
  			</td>
 			<td>
-				<input name='term' id='name-input' type='text' placeholder='Nombre' />
+				<input name='term' id='name-input' type='text' placeholder='Nombre' value='<?=$this->request('term');?>' />
 			</td>
  		</tr>
 	</table>
 	<p class='submits'>
 		<input type='submit' value='Buscar'/>
 		<input type='submit' value='Mapa' id='map-button' class='on'/>
-		
+
 	</p>
  </form>
