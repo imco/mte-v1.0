@@ -61,6 +61,9 @@
 			</td>
  		</tr>
 	</table>
-	<input type='submit' value='Buscar'/>
-	<input type='submit' value='Mapa' id='map-button' class='on'/>
+	<p class='submits'>
+		<input type='submit' value='Buscar'/>
+		<input type='submit' value='Mapa' id='map-button' class='on'/>
+		
+	</p>
  </form>
