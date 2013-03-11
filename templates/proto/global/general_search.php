@@ -1,4 +1,4 @@
-<form action='/busqueda' method='post' accept-charset='utf-8' class='home-form container'>
+<form action='/busqueda' method='post' accept-charset='utf-8' class='home-form container' id='general-search'>
  	<table>
  		<tr>
  			<td>
@@ -62,4 +62,5 @@
  		</tr>
 	</table>
 	<input type='submit' value='Buscar'/>
+	<input type='submit' value='Mapa' id='map-button'/>
  </form>
