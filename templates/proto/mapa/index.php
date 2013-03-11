@@ -5,3 +5,4 @@
 	</div>
 	<div id='mapa'></div>
 </div>
+<?php $this->include_template('general_search','global'); ?>
