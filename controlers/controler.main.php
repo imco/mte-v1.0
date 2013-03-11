@@ -8,10 +8,10 @@ class main extends controler{
 	public function load_municipios(){
 		$q = new municipio();
 		//$q->debug = true;
-		$q->search_clause = $this->post('entidad') ? 'municipios.entidad = "'.$this->post('entidad').'"' : '1';
+		$q->search_clause = $this->request('entidad') ? 'municipios.entidad = "'.$this->request('entidad').'"' : '1';
 		$q->order_by = 'municipios.nombre';
 		$this->municipios = $q->read('id,nombre,entidad=>nombre,entidad=>id');
-		if($this->post('json')){
+		if($this->request('json')){
 			$response = array();
 			foreach($this->municipios as $key => $municipio){
 				$response[$key]->id = $municipio->id;
@@ -22,14 +22,14 @@ class main extends controler{
 		
 	}
 	public function load_localidades(){
-		if($this->post('entidad') || $this->post('municipio')){
+		if($this->request('entidad') || $this->request('municipio')){
 			$q = new localidad();
-			$q->search_clause = $this->post('entidad') ? 'localidades.entidad = "'.$this->post('entidad').'"' : '1';
-			$q->search_clause = $this->post('municipio') ? 'localidades.municipio = "'.$this->post('municipio').'"' : $q->search_clause;
+			$q->search_clause = $this->request('entidad') ? 'localidades.entidad = "'.$this->request('entidad').'"' : '1';
+			$q->search_clause = $this->request('municipio') ? 'localidades.municipio = "'.$this->request('municipio').'"' : $q->search_clause;
 			$q->order_by = 'localidades.nombre';
 			//$q->debug = true;
 			$this->localidades = $q->read('id,nombre,entidad=>nombre,entidad=>id');
-			if($this->post('json')){
+			if($this->request('json')){
 				$response = array();
 				foreach($this->localidades as $key => $localidad){
 					$response[$key]->id = $localidad->id;
@@ -45,15 +45,15 @@ class main extends controler{
 	public function get_escuelas($limit = false){		
 		$q = new escuela();
 		$q->search_clause = '1 ';
-		$q->search_clause .= $this->post('term') ? " AND escuelas.nombre LIKE '".$this->post('term')."%' " : '';
-		$q->search_clause .= $this->post('entidad') ? ' AND escuelas.entidad = "'.$this->post('entidad').'" ' : '';
-		$q->search_clause .= $this->post('municipio') ? ' AND escuelas.municipio = "'.$this->post('municipio').'" ' : '';
-		$q->search_clause .= $this->post('localidad') ? ' AND escuelas.localidad = "'.$this->post('localidad').'" ' : '';
-		$q->search_clause .= $this->post('nivel') === false || $this->post('nivel') === '' ? '' : ' AND escuelas.nivel = "'.$this->post('nivel').'" ';
+		$q->search_clause .= $this->request('term') ? " AND escuelas.nombre LIKE '".$this->request('term')."%' " : '';
+		$q->search_clause .= $this->request('entidad') ? ' AND escuelas.entidad = "'.$this->request('entidad').'" ' : '';
+		$q->search_clause .= $this->request('municipio') ? ' AND escuelas.municipio = "'.$this->request('municipio').'" ' : '';
+		$q->search_clause .= $this->request('localidad') ? ' AND escuelas.localidad = "'.$this->request('localidad').'" ' : '';
+		$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? '' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		$q->order_by = 'escuelas.nombre';
 		$q->limit= $limit ? $limit : "0 ,15";
 		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,latitud,longitud');
-		if($this->post('json')){
+		if($this->request('json')){
 			$response = array();
 			if($this->escuelas){
 				foreach($this->escuelas as $key => $escuela){
