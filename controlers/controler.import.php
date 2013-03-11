@@ -1,12 +1,30 @@
 <?php
-class home extends main{
+class import extends main{
 	public function index(){
 		set_time_limit(10000);
 		//$this->import_states();
 		//$this->import_locales()
 		//$this->import_schools();
 		//$this->loop_tables();
-		$this->import_generic("tipo",27,28);
+		//$this->import_generic("tipo",27,28);
+		$this->get_latitudes();
+
+	}
+	private function get_latitudes(){
+		$q = new localidad();
+		$q->search_clause = "1";
+		$q->debug = true;
+		$q->limit = "0,3";
+		$localidades = $q->read('id,nombre');
+		foreach ($localidades as $localidad) {
+			$localidad->debug =  true;
+			$localidad->read("escuelas=>cct,escuelas=>latitud,escuelas=>longitud,escuelas=>nombre");
+			foreach($localidad->escuelas as $escuela){
+				echo $escuela->nombre." ".$escuela->latitud." ".$escuela->longitud."<br>";
+
+			}
+		}	
+
 
 	}
 	private function import_schools(){
