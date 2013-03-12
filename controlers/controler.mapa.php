@@ -9,7 +9,7 @@ class mapa extends main{
 		$this->process_escuelas();
 		$this->include_theme('index','index');
 	}
-	function process_escuelas(){
+	protected function process_escuelas(){
 		$this->escuelas_digest = false;
 		if($this->escuelas){
 			$escuelas = array();
