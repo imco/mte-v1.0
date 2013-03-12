@@ -15,7 +15,7 @@
 			"interactions.js",
 			"jquery-ui.js"
 		);
-		if($this->location == 'mapa'){
+		if($this->location == 'mapa' || $this->location == 'escuelas'){
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=false"></script>';
 			$js_scripts[] = 'map.js';
 		}
