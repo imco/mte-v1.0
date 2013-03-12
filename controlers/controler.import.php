@@ -7,8 +7,13 @@ class import extends main{
 		//$this->import_schools();
 		//$this->loop_tables();
 		//$this->import_generic("tipo",27,28);
-		$this->get_latitudes();
+		//$this->get_latitudes();
+		$this->enlaces();
 
+	}
+	private function enlaces(){
+		
+		
 	}
 	private function get_latitudes(){
 		$q = new localidad();
