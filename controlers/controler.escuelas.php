@@ -21,5 +21,6 @@ class escuelas extends main{
 	}
 
 
+
 }
 ?>
