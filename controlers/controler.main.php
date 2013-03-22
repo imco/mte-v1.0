@@ -60,11 +60,11 @@ class main extends controler{
 		$scales[12] = 4909;
 		$scales[13] = 2452;
 		$scales[14] = 1226;
-		$scales[15] = 613;
-		$scales[16] = 307;
-		$scales[17] = 153;
-		$scales[18] = 77;
-		$scales[19] = 38;
+		//$scales[15] = 613;
+		//$scales[16] = 307;
+		//$scales[17] = 153;
+		//$scales[18] = 77;
+		//$scales[19] = 38;
 		return $scales;
     }
 	public function load_municipios(){
@@ -115,7 +115,7 @@ class main extends controler{
 		}else{
 			$q->search_clause .= $this->request('localidad') ? ' AND escuelas.localidad = "'.$this->request('localidad').'" ' : '';
 		}
-		
+
 		if(isset($params->nivel) && $params->nivel){
 			$q->search_clause .= " AND escuelas.nivel = '{$params->nivel}' ";
 		}else{
