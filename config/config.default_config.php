@@ -3,7 +3,7 @@ class default_config{
 	public function __construct(){
 		//system configuration
 		$this->site_name =  'comparatuescuela.org';
-		$this->theme = 'proto';
+		$this->theme = 'mtev1';
 		$this->default_controler = 'home';
 		$this->default_action = 'index';
 	
