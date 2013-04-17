@@ -4,6 +4,7 @@ class main extends controler{
 		$this->config = $config;
 		$this->dbConnect();
 		$this->location = get_class($this);
+		$this->header_folder = 'home';
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
