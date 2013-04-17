@@ -8,8 +8,7 @@
 		<h2>CAMBIAR LA HISTORIA DEPENDE DE LO QUE HAGAMOS AHORA</h2>
 		<hr/>
 	</div>
-	<a href='' class='button'><span>Mandar Iniciativa</span></a>
+	<a href='' class='button-frame'><span class='button'>Mandar Iniciativa</span></a>
 	<div class='clear'></div>
 	<?php $this->include_template('general_search','global'); ?>
-
 </div>

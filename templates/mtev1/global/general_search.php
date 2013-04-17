@@ -1,7 +1,7 @@
-<form action='/busqueda' method='get' accept-charset='utf-8' class='home-form container' id='general-search'>
+<form action='/busqueda' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	<h3>BUSCAR ESCUELA</h3>
-	<input name='term' id='name-input' type='text' placeholder='Nombre' value='<?=$this->request('term');?>' />
-	<a href='/home/avanzada/'> </a>
+	<p class='button-frame'><input name='term' id='name-input' type='text' placeholder='Nombre de la Escuela' value='<?=$this->request('term');?>' /></p>
+	<p class='adv-search'><a href='/home/avanzada/' >+ BÚSQUEDA AVANZADA</a></p>
 	<fieldset name='busqueda-avanzada'>
 		<select name='nivel' id='nivel-input'>
 			<option value=''>Nivel de Escolaridad</option>
@@ -45,9 +45,9 @@
 			}
 			?>
 		</select>
+		
+		<p class='submits'>
+			<input type='submit' value='Buscar'/>
+		</p>
 	</fieldset>
-	<p class='submits'>
-		<input type='submit' value='Buscar'/>
-		<input type='submit' value='Mapa' id='map-button' class='on'/>
-	</p>
  </form>
