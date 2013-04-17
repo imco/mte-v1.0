@@ -30,7 +30,12 @@
 
  </head>
  <body>
- <div id='header'><?php $this->include_template('header','global'); ?></div>
+ <div id='header'>
+ 	<?php 
+ 	$this->include_template('header','global'); 
+ 	$this->include_template('header',$this->header_folder); 
+ 	?>
+ </div>
  <div id='content'>
  	<?php $this->include_template($this->template,$this->location);	?>
 </div>
