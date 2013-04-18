@@ -51,8 +51,7 @@
 					<?php $this->print_img_tag('portrait.png'); ?>
 					<h2>Nombre Voluntario</h2>
 					<p>Nombre profesión</p>
-					<p>Estado |municipio</p>
-					
+					<p>Estado |municipio</p>					
 				</div>
 			</div>
 		</div>
