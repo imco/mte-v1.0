@@ -1,5 +1,5 @@
 <div class='menu'><div class='container'>
-	<a href='/' class='logo'><?php $this->print_img_tag('logo.png'); ?></a>
+	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
 	<a href='/blog'>Blog Iniciativas</a>
 	<a href='/comparador'>Comparador</a>
 	<a href='/denuncia'>Denuncia</a>
