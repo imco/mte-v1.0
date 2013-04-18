@@ -1,6 +1,6 @@
 <div class='container home'>
 	<div class='column'>
-		<h1 class='cap'>1er Lugar Posición Nacional</h1>
+		<h1 class='cap'><?php $this->print_img_tag('home/posicion.png');?>1er Lugar Posición Nacional</h1>
 		<div class='gray-box'>
 			<h2>NOMBRE DE LA ESCUELA</h2>
 			<p>Datos generales.Nam justo dolor, porttitor eget iaculis vitae, congue porttitor nibh. Pellentesque sit amet mauris eget diam luctus bibendum. Nulla eget odio nunc </p>
@@ -33,6 +33,27 @@
 				<hr/>
 				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
 				<p><a href="/">Leer más</a></p>
+			</div>
+			<div class='white-box column'>
+				<?php $this->print_img_tag('schoolchildren.png');?>
+				<h2>Título Iniciativa o Tip</h2>
+				<hr/>
+				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
+				<p><a href="/">Leer más</a></p>
+			</div>
+			<div class='clear'></div>
+		</div>
+
+		<h1 class='cap blue'>Nuevos voluntarios</h1>
+		<div class='white-box voluntarios'>
+			<div class='reel'>
+				<div class='voluntario'>
+					<?php $this->print_img_tag('portrait.png'); ?>
+					<h2>Nombre Voluntario</h2>
+					<p>Nombre profesión</p>
+					<p>Estado |municipio</p>
+					
+				</div>
 			</div>
 		</div>
 	</div>
