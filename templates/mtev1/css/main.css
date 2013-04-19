@@ -96,5 +96,9 @@ a{text-decoration:none;}
 #content .tweets .tweet .user{font-size:13px;}
 
 #footer{background-image:url(../img/home/texture-footer.jpg);border-top:3px solid #5E5E5E;text-align:center;color:#898989;position:relative;}
-#footer a{color:#898989;}
-#footer .sole{background-color:#5C5C5C;font-size:11px;line-height:33px;position:absolute;bottom:0;width:100%;}
+#footer .img{margin:0 auto;width:228px;}
+#footer .img a{display:block;float:left;margin:16px 9px 0;}
+#footer .img a + a{margin:11px 6px 0;}
+#footer a{color:#898989;font-size:13px;margin:0 17px;}
+#footer .sole{background-color:#5C5C5C;font-size:10px;line-height:33px;position:absolute;bottom:0;width:100%;}
+#footer .sole a{font-size:10px;margin:0;}
