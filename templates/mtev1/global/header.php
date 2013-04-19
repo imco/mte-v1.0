@@ -1,4 +1,4 @@
-<div class='menu'><div class='container'>
+<div class='menu <?= $this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
 	<a href='/blog'>Blog Iniciativas</a>
 	<a href='/comparador'>Comparador</a>
