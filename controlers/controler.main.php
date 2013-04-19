@@ -123,7 +123,7 @@ class main extends controler{
 			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? '' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		}
 		$q->order_by = 'escuelas.nombre';
-		$q->limit= isset($params->limit) ? $params->limit : "0 ,15";
+		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
 		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,latitud,longitud');
 		if($this->request('json')){
 			$response = array();

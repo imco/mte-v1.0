@@ -22,6 +22,14 @@ a{text-decoration:none;}
 #header .menu a[href='/voluntarios']{background-image:url(../img/home/voluntarios.png);}
 #header .menu a[href='/webinars']{background-image:url(../img/home/webinars.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
+
+#header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
+#header .menu.comparador a[href='/comparador']{background-color:rgba(0,0,0,.12)}
+#header .menu.denuncia a[href='/denuncia']{background-color:rgba(0,0,0,.12)}
+#header .menu.volunatior a[href='/voluntarios']{background-color:rgba(0,0,0,.12)}
+#header .menu.webinars a[href='/webinars']{background-color:rgba(0,0,0,.12)}
+#header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
+
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
 #header .menu a.logo{width:auto;margin:8px 13px 0 9px;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
@@ -37,8 +45,8 @@ a{text-decoration:none;}
 #header .general-search input[type='text']{font-size:14px;font-family:Varela Round;background-color:#F1E1E1;border-radius:3px;padding:9px 11px;line-height:24px;border:none;margin:8px auto;width:199px;color:#858482;}
 #header .general-search fieldset[name='busqueda-avanzada']{display:none;}
 #header .general-search .adv-search{font-size:10px;padding:6px 0 9px;}
-#header .home .titles{margin:48px auto 18px;width:444px;}
-#header .home .general-search{margin:30px auto 20px;}
+#header .titles{margin:48px auto 18px;width:444px;}
+#header .general-search{margin:30px auto 20px;}
 
 #content{color:#474747;padding:0 0 229px;}
 #content .container{width:900px;margin:25px auto;}
@@ -104,7 +112,7 @@ a{text-decoration:none;}
 #footer .sole{background-color:#5C5C5C;font-size:10px;line-height:33px;position:absolute;bottom:0;width:100%;}
 #footer .sole a{font-size:10px;margin:0;}
 
-
+/*
 #header .home hr:first-child{position:absolute;top:136px;width:31.6%;left:0px;height:1px}
 #header .home img {position:absolute;left:31.6%;top:130px}
 #header .home img + hr{position:absolute;top:136px;width:35%;left:32.7%;height:1px}
@@ -118,3 +126,4 @@ a{text-decoration:none;}
 #header .home a + hr + img + hr + hr + img + hr + hr{position:absolute;top:395px;right:0px;width:27%;height:1px}
 #header .home a + hr + img + hr + hr + img + hr + hr + img{top:389px;left:71.8%}
 #header .home a + hr + img + hr + hr + img + hr + hr + img + hr {top:395px;left:60%;width:11.7%}
+*/
