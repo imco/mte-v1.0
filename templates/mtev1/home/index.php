@@ -85,10 +85,22 @@
 			@mejoratu escuela
 		</a>
 		<h2 class='twitcap'><?php $this->print_img_tag('home/twitter_logo.png') ?></h2>
-		<div class='gray-box'>
-			
-
+		<div class='gray-box tweets'>
+			<div class='tweet'>
+				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+			</div>
+			<hr/>
+			<div class='tweet'>
+				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+			</div>
+			<hr/>
+			<div class='tweet'>
+				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+			</div>
 		</div>
-
+		<div class='clear'></div>
 	</div>
 </div>
