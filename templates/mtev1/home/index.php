@@ -31,20 +31,20 @@
 				<?php $this->print_img_tag('schoolchildren.png');?>
 				<h2>Título Iniciativa o Tip</h2>
 				<hr/>
-				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
+				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sedconsectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
 				<p><a href="/">Leer más</a></p>
 			</div>
 			<div class='white-box column'>
 				<?php $this->print_img_tag('schoolchildren.png');?>
 				<h2>Título Iniciativa o Tip</h2>
 				<hr/>
-				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
+				<p>roin iaculis elementum fermentum. Aenean odio augue, hendrerit id consectetur quis, lacinia ac augue. Sed non mauris lectus, sedconsectetur quis, lacinia ac augue. Sed non mauris lectus, sed </p>
 				<p><a href="/">Leer más</a></p>
 			</div>
 			<div class='clear'></div>
 		</div>
 
-		<h1 class='cap blue'><?php $this->print_img_tag('home/nuevos_voluntarios.png')?>Nuevos voluntarios</h1>
+		<h1 class='cap blue voluntarios'><?php $this->print_img_tag('home/nuevos_voluntarios.png')?>Nuevos voluntarios</h1>
 		<div class='white-box voluntarios'>
 			<div class='reel'>
 				<div class='voluntario'>
@@ -73,7 +73,7 @@
 		<div class='gray-box'>
 			<h1>Titulo Iniciativa o Tip</h1>
 			<hr/>
-			<p>Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin dictum erat id risus lacinia aliquet. Sed vel dui dui, sed rutrum tellus. Suspendisse porta sollicitudin libero in laoreet. Integer mollis, nisl eu tempor dapibus, mi nibh adipiscing leo, a commodo augue leo vitae diam. Cras imperdiet ligula fringilla nisi mollis tempus. Vivamus non tellus risus, at sollicitudin arcu. Nam condimentum luctus sodales. Nunc molestie leo quis magna aliquam sed porttitor lorem commodo.</p>
+			<p>Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin dictum erat id risus lacinia aliquet. Sed vel dui dui, sed rutrum tellus. Suspendisse porta sollicitudin libero in laoreet. Integer mollis, nisl eu tempor dapibus, mi nibh adipiscing leo, a commodo augue leo vitae diam. Cras imperdiet ligula fringilla nisi mollis tempus. Vivamus non tellus risus, at sollicitudin arcu. Nam condimentum luctus sodales.</p>
 			<p><a href="">Leer Más</a></p>
 		</div>
 		<a href='' class='banner'><?php $this->print_img_tag('home/voluntario_banner.png');?> Quiero ser voluntario</a>
@@ -88,19 +88,19 @@
 		<div class='gray-box tweets'>
 			<div class='tweet'>
 				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
 			</div>
 			<hr/>
 			<div class='tweet'>
 				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
 			</div>
 			<hr/>
 			<div class='tweet'>
 				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
 			</div>
 		</div>
-		<div class='clear'></div>
 	</div>
+	<div class='clear'></div>
 </div>
