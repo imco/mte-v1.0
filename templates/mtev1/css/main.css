@@ -1,4 +1,5 @@
 @import url('reset.css');
+@import url('stickyFooter.css');
 
 body{font-family:Varela Round, Arial;background:#C7CBCC url(../img/home/texture.jpg);}
 a{text-decoration:none;}
@@ -79,3 +80,10 @@ a{text-decoration:none;}
 #content a.gray-box{display:block;padding:0;line-height:51px;font-size:14px;color:white;height:51px;}
 #content a.gray-box img{float:left;margin:0 20px 0 0;}
 #content .twitcap{background:#43B6F5;padding:10px 4px;}
+#content .tweets hr{height:2px;background:#767676;}
+#content .tweet{color:white;margin:10px 0;}
+#content .tweet img{float:left;border-radius:50%;width:50px;height:50px;color:white;margin:0 5px 0 0;}
+#content .tweet a{color:white;font-weight:bold;}
+#content .tweet .user{font-size:14px;}
+
+#footer{background-image:url(../img/home/texture-footer.jpg);border-top:3px solid #5E5E5E;}
