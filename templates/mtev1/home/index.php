@@ -44,7 +44,7 @@
 			<div class='clear'></div>
 		</div>
 
-		<h1 class='cap blue'>Nuevos voluntarios</h1>
+		<h1 class='cap blue'><?php $this->print_img_tag('home/nuevos_voluntarios.png')?>Nuevos voluntarios</h1>
 		<div class='white-box voluntarios'>
 			<div class='reel'>
 				<div class='voluntario'>
@@ -68,5 +68,27 @@
 				<div class='clear'></div>
 			</div>
 		</div>
+	</div>
+	<div class='column right'>
+		<div class='gray-box'>
+			<h1>Titulo Iniciativa o Tip</h1>
+			<hr/>
+			<p>Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin dictum erat id risus lacinia aliquet. Sed vel dui dui, sed rutrum tellus. Suspendisse porta sollicitudin libero in laoreet. Integer mollis, nisl eu tempor dapibus, mi nibh adipiscing leo, a commodo augue leo vitae diam. Cras imperdiet ligula fringilla nisi mollis tempus. Vivamus non tellus risus, at sollicitudin arcu. Nam condimentum luctus sodales. Nunc molestie leo quis magna aliquam sed porttitor lorem commodo.</p>
+			<p><a href="">Leer Más</a></p>
+		</div>
+		<a href='' class='banner'><?php $this->print_img_tag('home/voluntario_banner.png');?> Quiero ser voluntario</a>
+		<a href='' class='banner orange'><?php $this->print_img_tag('home/buacaresc_banner.png');?> Buscar Escuela</a>
+		<a href='' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?> Denuncia tu escuela</a>
+
+		<a href="" class='gray-box'>
+			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
+			@mejoratu escuela
+		</a>
+		<h2 class='twitcap'><?php $this->print_img_tag('home/twitter_logo.png') ?></h2>
+		<div class='gray-box'>
+			
+
+		</div>
+
 	</div>
 </div>
