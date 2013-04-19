@@ -9,7 +9,7 @@
 		$css_scripts = array(
 			"reset.css",
 			"main.css",
-			"jquery-ui.css" 
+			"jquery-ui.css"
 		);
 		
 		$js_scripts = array(
@@ -30,14 +30,15 @@
 
  </head>
  <body>
- <div id='header'>
- 	<?php 
- 	$this->include_template('header','global'); 
- 	$this->include_template('header',$this->header_folder); 
- 	?>
- </div>
- <div id='content'>
- 	<?php $this->include_template($this->template,$this->location);	?>
-</div>
+ 	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
+		<div id='header'>
+			<?php 
+			$this->include_template('header','global'); 
+			$this->include_template('header',$this->header_folder); 
+			?>
+		</div>
+		<div id='content'><?php $this->include_template($this->template,$this->location);	?></div>
+	</div></div></div>	
+	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
  </body>
  </html>
