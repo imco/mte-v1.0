@@ -8,11 +8,11 @@ html, body, #wrap {height: 100%;}
 
 body > #wrap {height: auto; min-height: 100%;}
 
-#main {padding-bottom: 162px;}  /* must be same height as the footer */
+#main {padding-bottom: 134px;}  /* must be same height as the footer */
 
 #footer {position: relative;
-	margin-top: -162px; /* negative value of footer height */
-	height: 162px;
+	margin-top: -134px; /* negative value of footer height */
+	height: 134px;
 	clear:both;} 
 
 /* CLEAR FIX*/
