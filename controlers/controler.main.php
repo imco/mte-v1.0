@@ -129,8 +129,10 @@ class main extends controler{
 			$response = array();
 			if($this->escuelas){
 				foreach($this->escuelas as $key => $escuela){
-					$response[$key]->label = $this->capitalize($escuela->nombre).' | '.$this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
+					$response[$key]->label = $this->capitalize($escuela->nombre)." (".$this->capitalize($escuela->nivel->nombre).") ";
+					$response[$key]->address = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
 					$response[$key]->value = $this->capitalize($escuela->nombre);
+					$response[$key]->cct = $escuela->cct;
 				}
 			}
 			echo json_encode($response);
