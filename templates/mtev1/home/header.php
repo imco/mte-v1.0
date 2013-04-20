@@ -26,3 +26,6 @@
 		<?php $this->print_img_tag('home/birrete_small.png');?>
 	</div>
 </div>
+<div class='decorations'>
+	<hr /><hr /><hr /><hr />
+</div>
