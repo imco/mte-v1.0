@@ -20,15 +20,9 @@
 		<div class='circle'></div>
 		<div class='circle'></div>
 		<hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />
-		<?php $this->print_img_tag('home/palomita');?>
-		<?php $this->print_img_tag('home/birrete_small');?>
-		<?php $this->print_img_tag('home/birrete_small');?>
-		<?php $this->print_img_tag('home/birrete_small');?>
+		<?php $this->print_img_tag('home/palomita.png');?>
+		<?php $this->print_img_tag('home/birrete_small.png');?>
+		<?php $this->print_img_tag('home/birrete_small.png');?>
+		<?php $this->print_img_tag('home/birrete_small.png');?>
 	</div>
-</div>
-<div class='decorations'>
-<hr />
-<hr />
-<hr />
-<hr />
 </div>
