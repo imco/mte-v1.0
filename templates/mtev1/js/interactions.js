@@ -10,8 +10,18 @@ $(document).ready(function(){
   				json : true
   			},response,'json');
   		},
-  		minLength: 3
-	});
+  		minLength: 3,
+		select: function( event, ui ) {
+			window.location = "/escuelas/index/"+ui.item.cct;
+			return false;
+		}
+		/*focus: function( event, ui ) {
+			//$( "#name-input" ).val(ui.item.label);
+			return false;
+		},*/
+	}).data( "ui-autocomplete" )._renderItem = function( ul, item ){
+      return $("<li>").append("<a>"+item.label+"<span>"+item.address+"</span></a>").appendTo(ul);
+    };
 	$('#map-button').click(function(e){
 		e.preventDefault();
 		$('#general-search').attr('action','/mapa/');
