@@ -12,7 +12,7 @@ a{text-decoration:none;}
 #header h1{text-align:center;font-size:39px;line-height:40px;}
 #header h2{text-align:center;font-size:13px;line-height:27px;}
 #header h3{text-align:center;font-size:14px;line-height:25px;}
-#header hr{display:block;border:none;height:2px;background:white;}
+#header hr{display:block;border:none;height:2px;background:white;width:440px}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;overflow:hidden;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 19px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
@@ -112,18 +112,26 @@ a{text-decoration:none;}
 #footer .sole{background-color:#5C5C5C;font-size:10px;line-height:33px;position:absolute;bottom:0;width:100%;}
 #footer .sole a{font-size:10px;margin:0;}
 
-/*
-#header .home hr:first-child{position:absolute;top:136px;width:31.6%;left:0px;height:1px}
-#header .home img {position:absolute;left:31.6%;top:130px}
-#header .home img + hr{position:absolute;top:136px;width:35%;left:32.7%;height:1px}
-#header .home .triangle1{position:absolute;top:137px;right:23.6%;border:54px solid rgba(255,255,255,.5);border-top-color:transparent;border-right-color:transparent}
-#header .home a + hr{position:absolute;top:326px;width:32.4%;right:0px;height:1px}
-#header .home a + hr + img{top:322px;left:66.9%}
-#header .home a + hr + img + hr{top:326px;width:34%}
-#header .home a + hr + img + hr + hr{position:absolute;top:395px;width:26%;left:0px;height:1px}
-#header .home a + hr + img + hr + hr + img{top:389px;left:26%}
-#header .home a + hr + img + hr + hr + img + hr{top:395px;left:27.2%;width:12%}
-#header .home a + hr + img + hr + hr + img + hr + hr{position:absolute;top:395px;right:0px;width:27%;height:1px}
-#header .home a + hr + img + hr + hr + img + hr + hr + img{top:389px;left:71.8%}
-#header .home a + hr + img + hr + hr + img + hr + hr + img + hr {top:395px;left:60%;width:11.7%}
-*/
+#header .home.container{position:relative}
+#header .home.container .decorations hr{position:absolute;height:1px;}
+#header .home.container .decorations img{position:absolute;}
+#header .home.container .decorations div + hr{top:-25px;width:228px;}
+#header .home.container .decorations div + hr + hr{top:-25px;width:434px;left:242px;}
+#header .home.container .decorations div + hr + hr + hr{top:165px;width:236px;right:0px;}
+#header .home.container .decorations div + hr + hr + hr + hr{top:165px;width:428px;left:241px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr{top:234px;width:156px;left:0px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr{top:234px;left:177px;width:148px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr{top:234px;width:146px;right:188px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr + hr {top:234px;width:164px;right:0px;}
+#header .home.container .decorations hr + img{top:160px;right:237px;}
+#header .home.container .decorations hr + img + img{top:-31px;left:227px;}
+#header .home.container .decorations hr + img + img + img{top:228px;left:159px;}
+#header .home.container .decorations hr + img + img + img + img{top:228px;right:170px;}
+
+#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-53px;right:111px;background-repeat:no-repeat;width:223px;height:123px;}
+#header .home.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:101px;top:69px;width:224px;height:100px;}
+#header .home.container .decorations .circle{position:absolute;border-radius:50%;width:4px;height:4px;background-color:white;}
+#header .home.container .decorations .triangle2 + div{top:-27px;right:240px;}
+#header .home.container .decorations .triangle2 + div + div{top:68px;right:112px;}
+#header .home.container .decorations .triangle2 + div + div + div{top:68px;left:109px;}
+#header .home.container .decorations .triangle2 + div + div + div + div{top:163px;left:238px;}
