@@ -128,10 +128,17 @@ a{text-decoration:none;}
 #header .home.container .decorations hr + img + img + img{top:228px;left:159px;}
 #header .home.container .decorations hr + img + img + img + img{top:228px;right:170px;}
 
-#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-53px;right:111px;background-repeat:no-repeat;width:223px;height:123px;}
+#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-42px;right:112px;background-repeat:no-repeat;background-position-y:-11px;width:223px;height:116px;}
 #header .home.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:101px;top:69px;width:224px;height:100px;}
 #header .home.container .decorations .circle{position:absolute;border-radius:50%;width:4px;height:4px;background-color:white;}
 #header .home.container .decorations .triangle2 + div{top:-27px;right:240px;}
 #header .home.container .decorations .triangle2 + div + div{top:68px;right:112px;}
 #header .home.container .decorations .triangle2 + div + div + div{top:68px;left:109px;}
 #header .home.container .decorations .triangle2 + div + div + div + div{top:163px;left:238px;}
+
+#header > .decorations hr{position:absolute;height:1px;}
+#header > .decorations hr:first-child{top:136px;width:50%;left:-460px;}
+#header > .decorations hr:first-child + hr{top:395px;width:50%;left:-460px;}
+#header > .decorations hr:first-child + hr + hr{top:326px;width:20%;right:0px;}
+#header > .decorations hr:first-child + hr + hr + hr{top:395px;width:20%;right:0px}
+
