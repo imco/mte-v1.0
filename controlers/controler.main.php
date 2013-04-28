@@ -45,7 +45,7 @@ class main extends controler{
 			$this->escuelas_digest = $response;
 		}
 	}
-	 private function get_scales(){
+	protected function get_scales(){
 		$scales[0] = 20088000;
 		$scales[1] = 10044000;
 		$scales[2] = 5022000;
