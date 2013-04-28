@@ -44,9 +44,11 @@ a{text-decoration:none;}
 #header .general-search{text-align:center;font-size:12px;}
 #header .general-search input[type='text']{font-size:14px;font-family:Varela Round;background-color:#F1E1E1;border-radius:3px;padding:9px 11px;line-height:24px;border:none;margin:8px auto;width:199px;color:#858482;}
 #header .general-search fieldset[name='busqueda-avanzada']{display:none;}
-#header .general-search .adv-search{font-size:10px;padding:6px 0 9px;}
+#header .general-search .adv-search{font-size:10px;}
 #header .titles{margin:48px auto 18px;width:444px;}
 #header .general-search{margin:30px auto 20px;}
+
+
 
 #content{color:#474747;padding:0 0 229px;}
 #content .container{width:900px;margin:25px auto;}
@@ -148,3 +150,37 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header > .decorations hr:first-child + hr{top:395px;width:50%;left:-460px;}
 #header > .decorations hr:first-child + hr + hr{top:326px;width:50%;left:50%;margin-left:460px;}
 #header > .decorations hr:first-child + hr + hr + hr{top:395px;width:50%;left:50%;margin-left:460px;}
+
+/* Perfil */
+#header .perfil{height:166px;}
+
+#content .perfil{background-color:rgba(255,255,255,.5);margin:46px auto;}
+#content .perfil .head{background-image:url(../img/home/texture_blue.png);height:108px;color:white;}
+#content .perfil .head h1.main-name{float:left;line-height:110px;font-size:30px;margin-left:7px;width:490px;overflow:hidden;height:110px;}
+#content .perfil .ranking{float:left;color:white;font-size:12px;background-color:rgba(255,255,255,.5);height:82px;padding:13px 15px;width:84px;background-image:url(../img/perfil/posicion.png);background-repeat:no-repeat;background-position:17px 27px}
+#content .perfil .ranking h1{margin-left:37px;font-size:26px;line-height:47px;}
+#content .perfil .ranking p{line-height:14px;}
+#content .perfil .nivel{text-align:center;float:left;padding:18px 9px 0;height:89px;}
+#content .perfil .nivel .bubble{width:68px;height:68px;background-color:white;border-radius:50%;background-position:center center;background-repeat:no-repeat;}
+#content .perfil .nivel.reprobado .bubble{background-image:url(../img/perfil/reprobado_big.png);}
+#content .perfil .nivel.elemental .bubble{background-image:url(../img/perfil/elemental_big.png);}
+#content .perfil .nivel.excelente .bubble{background-image:url(../img/perfil/excelente_big.png);}
+#content .perfil .nivel.bien .bubble{background-image:url(../img/perfil/bien_big.png);}
+#content .perfil .semaforo{color:#A8A8A8;float:right;background-color:white;text-align:center;width:181px;height:84px;padding:12px 11px;}
+#content .perfil .semaforo h2{font-size:17px;line-height:23px;}
+#content .perfil .semaforo h3.nivel{color:#A8A8A8;display:block;float:left;background-position:center top;background-repeat:no-repeat;font-size:8px;text-align:center;width:44px;padding:38px 0 0 ;line-height:10px;margin-top:6px;}
+#content .perfil .semaforo h3.nivel.reprobado{background-image:url(../img/perfil/semaforo_reprobado.png);}
+#content .perfil .semaforo h3.nivel.elemental{background-image:url(../img/perfil/semaforo_elemental.png);}
+#content .perfil .semaforo h3.nivel.bien{background-image:url(../img/perfil/semaforo_bien.png);}
+#content .perfil .semaforo h3.nivel.excelente{background-image:url(../img/perfil/semaforo_excelente.png);}
+#content .perfil .info{float:left;width:387px;height:253px;color:white;background:#329DD1;padding:16px 17px;margin:16px 0 0 22px;}
+#content .perfil .info h1{line-height:22px;}
+#content .perfil .info h2{line-height:29px;}
+#content .perfil .info hr{background:white;width:371px;height:3px;margin-bottom:6px;}
+#content .perfil .info p{font-size:14px;line-height:21px;}
+#content .perfil .info .icon{background-repeat:no-repeat;padding-left:36px;min-height:29px;}
+#content .perfil .info .icon.dom{background-image:url(../img/perfil/direccion.png);background-position:0 5px;}
+#content .perfil .info .icon.fon{background-image:url(../img/perfil/telefono.png);background-position:8px 0;}
+#content .perfil .info .icon.email{background-image:url(../img/perfil/correo.png);background-position:4px 5px;}
+#content .perfil .info .website{margin-top:7px;}
+#content .perfil .map{width:420px;height:285px;float:left;margin:16px 0 0 10px;}
