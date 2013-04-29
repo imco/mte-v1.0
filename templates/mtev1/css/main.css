@@ -183,4 +183,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .info .icon.fon{background-image:url(../img/perfil/telefono.png);background-position:8px 0;}
 #content .perfil .info .icon.email{background-image:url(../img/perfil/correo.png);background-position:4px 5px;}
 #content .perfil .info .website{margin-top:7px;}
-#content .perfil .map{width:420px;height:285px;float:left;margin:16px 0 0 10px;}
+#content .perfil .map{width:423px;height:285px;float:left;margin:16px 0 0 11px;}
+#content .perfil .tabs{margin:0px 22px;clear:both;}
+#content .perfil .tabs li{float:left;display:block;margin:6px 9px 0 0;}
+#content .perfil .tabs li:nth-child(4){margin:7px 0;}
+#content .perfil .tabs li a{display:block;width:207px;height:66px;font-size:18px;text-align:center;color:#494949;background:white;line-height:66px;}
+#content .perfil .tabs li a.on{color:white;background:#329DD1;}
+#content .perfil .tab{margin:0 22px 8px;color:#8D8D8D;padding:11px 20px;width:817px;height:252px;overflow:auto;background:white;clear:both;}
+#content .perfil .tab .comment{width:395px;height:80px;float:left;background:#F4F4F4;margin:0 14px 14px 0;}
+#content .perfil .tab .comment:nth-child(even){margin:0 0 14px 0;}
+#content .perfil .tab .comment h2{font-size:14px;color:#626262;}
+#content .perfil .tab .comment p{margin:2px 5px;}
+#content .perfil .tab .comment .rating{display:block;float:right;width:80px;height:80px;color:white;background:#329DD1;line-height:80px;font-size:14px;text-align:center;margin:0;}
