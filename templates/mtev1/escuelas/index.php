@@ -47,10 +47,32 @@
 	<div id='mapa' class='map'></div>
 	
 	<ul class='tabs'>
-		<li><a href='#' >Comentarios | Reviews</a></li>
-		<li><a href='#' >Mas Info</a></li>
+		<li><a href='#' class='on'>Comentarios</a></li>
+		<li><a href='#' >Denuncia</a></li>
 		<li><a href='#' >Analisis</a></li>
 		<li><a href='#' >Consejos Escolares</a></li>
 	</ul>
-	<div class='clear'></div>
+	<div class='tab'>
+		<div class='comment'>
+			<p class='rating'>6.8%</p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%</p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%</p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%</p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+
+	</div>	
 </div>
