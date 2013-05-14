@@ -9,7 +9,7 @@ class import extends main{
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(12,4);
+		$this->average_enlaces(13,3);
 
 	}
 	private function average_enlaces($nivel,$grados){
@@ -34,8 +34,8 @@ class import extends main{
 				//$escuela->debug = true;
 				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
 			}
-			echo $i.' records updated';
 		}
+		echo $i.' records updated';
 	}
 	private function count_enlaces($nivel){
 		$this->start_measure_time();
