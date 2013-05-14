@@ -16,11 +16,13 @@ class import extends main{
 		$this->start_measure_time();
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
+		$i = 0;
 		while($row = mysql_fetch_assoc($result)){
 			$q = new enlace();
 			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
 			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
 			if(count($enlaces) == $grados){
+				$i++;
 				$sum_spa = $sum_mat = $sum_geo = 0;
 				$escuela = new escuela($row['cct']);
 				foreach($enlaces as $enlace){
@@ -29,9 +31,10 @@ class import extends main{
 					$sum_geo += $enlace->puntaje_geografia;
 				}
 				$prom_gen = ($sum_spa+$sum_mat)/($grados*2);
-				$escuela->debug = true;
+				//$escuela->debug = true;
 				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
 			}
+			echo $i.' records updated';
 		}
 	}
 	private function count_enlaces($nivel){
