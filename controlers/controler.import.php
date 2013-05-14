@@ -1,19 +1,54 @@
 <?php
 class import extends main{
 	public function index(){
-		set_time_limit(10000);
+		set_time_limit(100000);
 		//$this->import_states();
 		//$this->import_locales()
 		//$this->import_schools();
 		//$this->loop_tables();
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
-		$this->enlaces();
+		//$this->count_enlaces(31);
+		$this->average_enlaces(12,4);
 
 	}
-	private function enlaces(){
-		
-		
+	private function average_enlaces($nivel,$grados){
+		$this->start_measure_time();
+		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		$result = mysql_query($sql);
+		while($row = mysql_fetch_assoc($result)){
+			$q = new enlace();
+			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
+			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
+			if(count($enlaces) == $grados){
+				$sum_spa = $sum_mat = $sum_geo = 0;
+				$escuela = new escuela($row['cct']);
+				foreach($enlaces as $enlace){
+					$sum_spa += $enlace->puntaje_espaniol;
+					$sum_mat += $enlace->puntaje_matematicas;
+					$sum_geo += $enlace->puntaje_geografia;
+				}
+				$prom_gen = ($sum_spa+$sum_mat)/($grados*2);
+				$escuela->debug = true;
+				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
+			}
+		}
+	}
+	private function count_enlaces($nivel){
+		$this->start_measure_time();
+		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		$result = mysql_query($sql);
+		$i = 0;
+		$totals = array(0,0,0,0,0);
+		while($row = mysql_fetch_assoc($result)){
+			$q = new enlace();
+			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
+			//$q->debug = true;
+			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas');
+			$totals[count($enlaces)]++;
+			//if($i++ == 15) break;
+		}
+		var_dump($totals);
 	}
 	private function get_latitudes(){
 		$q = new localidad();
@@ -242,15 +277,14 @@ class import extends main{
 		
 		foreach($file_names as $name){
 			$sql = "
-			CREATE TABLE IF NOT EXISTS $name (`id` int(20) NOT NULL,
-  `nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `cct_count` int(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-";
+				CREATE TABLE IF NOT EXISTS $name (
+					`id` int(20) NOT NULL,
+					`nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+					`cct_count` int(20) NOT NULL,
+					PRIMARY KEY (`id`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+			";
 			mysql_query($sql);
-		
-
 		}
 	}
 	private function import_colonias(){
