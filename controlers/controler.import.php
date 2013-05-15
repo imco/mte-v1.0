@@ -9,9 +9,10 @@ class import extends main{
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(21,1);
+		//$this->average_enlaces(21,1);
 
 	}
+	
 	private function average_enlaces($nivel,$grados){
 		$this->start_measure_time();
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";

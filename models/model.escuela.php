@@ -15,6 +15,9 @@ class escuela extends table{
 		$this->objects['subcontrol'] = 'subcontrol';
 		$this->objects['sostenimiento'] = 'sostenimiento';
 		$this->objects['status'] = 'status';
+
+		$this->has_many['enlaces'] = 'enlace';
+		$this->has_many_keys['enlaces'] = 'cct';
 	}
 	
 	function rank($nivel,$entidad = false,$municipio = false){
