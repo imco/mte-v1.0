@@ -15,7 +15,8 @@ class default_config{
 		$this->lang = "en";
 		$this->dev_mode = false;
 		
-		
+		//MTE
+		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente','No Enlace');
 	}
 }
 ?>
