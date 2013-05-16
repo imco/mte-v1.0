@@ -1,14 +1,15 @@
 <?php
 class import extends main{
 	public function index(){
-		set_time_limit(10000);
+		set_time_limit(100000);
 		//$this->import_states();
 		//$this->import_locales()
 		//$this->import_schools();
 		//$this->loop_tables();
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
-		$this->enlaces();
+// 		$this->enlaces();
+		$this->import_no_confiables();
 
 	}
 	private function enlaces(){
@@ -299,6 +300,31 @@ class import extends main{
 				'open fail';
 			}
 
+	}
+	private function import_no_confiables(){
+		$handle = $this->open_file('escuelasNoConfiables.csv');
+		if($handle){
+			$i = 0;
+			while(($row = fgetcsv($handle,0, ";")) !== FALSE) {
+				$cct = $row[2];
+				$poco_conbiable = $row[74];
+				$total_evaluado = $row[79];
+				$escuela = new escuela($cct);
+				$escuela->read('cct,poco_confiables,total_evaluados');
+				if($escuela){
+					if(isset($escuela->poco_confiables) && isset($escuela->total_evaluados)){
+						$_poco_confiables_ =  ($escuela->poco_confiables + $poco_conbiable);
+						$_total_evaluados_ = ($escuela->total_evaluados + $total_evaluado);
+						$escuela->update('poco_confiables,total_evaluados',array($_poco_confiables_,$_total_evaluados_));
+					}else{
+						echo $cct.'<br />';
+					}
+				}
+				$i++;
+			}
+			echo '<br /><br />';
+			echo "i: $i";
+		}
 	}
 
 }
