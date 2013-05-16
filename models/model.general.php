@@ -23,7 +23,13 @@ class localidad extends table{
 	}
 
 }
+class enlace extends table{
+	function info(){
+		$this->table_name = 'enlaces';
+		$this->objects['escuelas'] = 'cct';
+	}
 
+}
 class nivel extends table{
 	function info(){
 		$this->table_name = "niveles";
