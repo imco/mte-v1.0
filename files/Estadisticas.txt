@@ -1,0 +1,51 @@
+Primarias 12
+0 = 18562
+1 = 0
+2 = 0
+3 = 0
+4 = 83181
+8 = 4
+
+Reprobado 0 - 400
+Elemental 400 - 480 
+Bien 480 - 590
+Excelente 590 - 900
+
+
+
+Secundarias 13
+0 = 5026
+1 = 0
+2 = 0
+3 = 28342
+4 = 2
+6 = 1896
+9 = 1
+
+
+Reprobado 0 - 400
+Elemental 400 - 467 
+Bien 467 - 575
+Excelente 575 - 900
+
+
+Bachillerato 22
+0 = 2980
+1 = 9827
+2 = 1104
+3 = 23
+4 = 0
+
+
+Reprobado 0 - 349
+Elemental 349 - 416 
+Bien 416 - 497
+Excelente 497 - 900
+
+
+Tecnicas 21
+0 = 796
+1 = 173
+2 = 192
+3 = 0
+4 = 0
