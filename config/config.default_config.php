@@ -16,10 +16,7 @@ class default_config{
 		$this->dev_mode = false;
 		
 		//MTE
-		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente');
-		$this->semaforo_rangos[12] = array(400,480,590,900);
-		$this->semaforo_rangos[13] = array(400,467,575,900);
-		$this->semaforo_rangos[22] = array(349,416,497,900);
+		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente','No Enlace');
 	}
 }
 ?>
