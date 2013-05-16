@@ -4,7 +4,7 @@
 			<h1>46</h1>
 			<p>Posición <br/>Nivel Nacional</p>
 		</div>
-		<div class='nivel elemental'><div class='bubble'></div>Elemental</div>
+		<div class='nivel <?=$this->config->semaforos[$this->escuela->semaforo]?>'><div class='bubble'></div><?=$this->config->semaforos[$this->escuela->semaforo]?></div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
 			<h2>Semáforo Educativo</h2>
