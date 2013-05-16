@@ -20,6 +20,7 @@ class main extends controler{
 					if($escuela->longitud < $minlong) $minlong = $escuela->longitud;
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
+				$escuela->get_semaforo();
 				$escuelas[$key]->cct = $escuela->cct;
 				$escuelas[$key]->latitud = $escuela->latitud;
 				$escuelas[$key]->longitud = $escuela->longitud;
@@ -27,6 +28,7 @@ class main extends controler{
 				$escuelas[$key]->localidad = $this->capitalize($escuela->localidad->nombre);
 				$escuelas[$key]->entidad = $this->capitalize($escuela->entidad->nombre);
 				$escuelas[$key]->nivel = $this->capitalize($escuela->nivel->nombre);
+				$escuelas[$key]->semaforo = $escuela->semaforo;
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
 			$height = $this->distance($maxlat,$minlong,$minlat,$minlong);
@@ -124,7 +126,8 @@ class main extends controler{
 		}
 		$q->order_by = 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
-		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,latitud,longitud');
+		//$q->debug = true;
+		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general');
 		if($this->request('json')){
 			$response = array();
 			if($this->escuelas){
