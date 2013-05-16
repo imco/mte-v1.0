@@ -15,8 +15,23 @@ class escuela extends table{
 		$this->objects['subcontrol'] = 'subcontrol';
 		$this->objects['sostenimiento'] = 'sostenimiento';
 		$this->objects['status'] = 'status';
+
+		$this->has_many['enlaces'] = 'enlace';
+		$this->has_many_keys['enlaces'] = 'cct';
+
+		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente','No Enlace');
+		$this->semaforo_rangos[12] = array(400,480,590,900);
+		$this->semaforo_rangos[13] = array(400,467,575,900);
+		$this->semaforo_rangos[22] = array(349,416,497,900);
+
 	}
-	
+	function get_semaforo(){
+		$this->semaforo = 0;
+		if(isset($this->semaforo_rangos[$this->nivel->id]))
+			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])	$this->semaforo++;
+		else
+			$this->semaforo = 4;
+	}
 	function rank($nivel,$entidad = false,$municipio = false){
 		$entidad_clause = $entidad ? " AND entidad LIKE '$entidad'" : '';
 		$sql = "SET @rownum = 0, @rank = 0, @prev_val = NULL; ";
