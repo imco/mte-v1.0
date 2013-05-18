@@ -47,29 +47,45 @@
 	<div id='mapa' class='map'></div>
 	
 	<ul class='tabs'>
-		<li><a href='#' class='on'>Comentarios</a></li>
-		<li><a href='#' >Denuncia</a></li>
-		<li><a href='#' >Analisis</a></li>
-		<li><a href='#' >Consejos Escolares</a></li>
+		<li><a href='#' class='on long'>Comentarios con Calificacion</a></li>
+		<li><a href='#' >Reportes Ciudadanos</a></li>
+		<li><a href='#' >Más Informacion</a></li>
+		<li><a href='#' >Resultados Educativos</a></li>
+		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
 	</ul>
 	<div class='tab'>
 		<div class='comment'>
-			<p class='rating'>6.8%</p>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
 			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
 		</div>
 		<div class='comment'>
-			<p class='rating'>6.8%</p>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
 			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
 		</div>
 		<div class='comment'>
-			<p class='rating'>6.8%</p>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
 			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
 		</div>
 		<div class='comment'>
-			<p class='rating'>6.8%</p>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
+			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+		</div>
+		<div class='comment'>
+			<p class='rating'>6.8%<span class='likes'>145</span></p>
 			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
 		</div>
