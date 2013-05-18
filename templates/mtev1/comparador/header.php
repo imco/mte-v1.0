@@ -1,6 +1,3 @@
-<div class='container'>
-<?php $this->include_template('social-links','global');  ?>
-</div>
 <div class='comparador container'>
 	<div class='titles'>
 		<h1>MEJORA TU ESCUELA</h1>
