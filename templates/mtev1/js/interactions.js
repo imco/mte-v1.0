@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	
+	$('.jscrollpane').jScrollPane();
+	$('.custom-select').customSelect();
+
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
   			$.post("/main/get_escuelas/",{
