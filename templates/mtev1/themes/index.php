@@ -15,7 +15,7 @@
 			"jquery-ui.js",
 			'jquery.mousewheel.js',
 			'jquery.jscrollpane.min.js',
-			'jquery.customSelect.min',
+			'jquery.customSelect.min.js',
 			"interactions.js"
 		);
 		if($this->location == 'mapa' || $this->location == 'escuelas'){
