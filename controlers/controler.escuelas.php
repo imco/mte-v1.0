@@ -2,12 +2,14 @@
 class escuelas extends main{
 	public function index(){
 		$this->escuela_info();
-		$params->limit = '0,1000';
+		$params->limit = '0,20';
 		$params->localidad = $this->escuela->localidad->id;
 		$params->nivel = $this->escuela->nivel->id;
+		$params->cct = $this->escuela->cct;
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->escuelas_digest->zoom += 2;
+		$this->escuelas_digest->escuelas[] = $this->escuela;
 		$this->escuelas_digest->centerlat = $this->escuela->latitud;
 		$this->escuelas_digest->centerlong = $this->escuela->longitud;
 		$this->header_folder = 'escuelas';
@@ -26,6 +28,9 @@ class escuelas extends main{
 			enlaces=>id
 		");
 		$this->escuela->get_semaforo();
+	}
+	public function calificar(){
+		
 	}
 }
 ?>

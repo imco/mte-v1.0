@@ -1,8 +1,27 @@
-$(document).ready(function(){
-	
+$(document).ready(function(){	
 	$('.jscrollpane').jScrollPane();
 	$('.custom-select').customSelect();
 
+	$('#rank-bar').mousemove(function(e){
+		set_rank_bar(e.pageX - $(this).offset().left);
+	});
+	$('#rank-bar').click(function(e){
+		var rank = set_rank_bar(e.pageX - $(this).offset().left);
+		$('#rank-value').val(rank);
+	});
+	$('#rank-bar').mouseout(function(e){
+		var x = e.pageX - $(this).offset().left;
+		var y = e.pageY - $(this).offset().top;
+		if((y >= 10 || y < 0) || (x < 0 || x > 336)){
+			var val = $('#rank-value').val();
+			if(val != ''){
+				set_rank_bar(Math.round(val/100*336));
+			}else{
+				$('#rank-bar .bar').hide();
+				$('#rank-label').hide();
+			}
+		}
+	});
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
   			$.post("/main/get_escuelas/",{
@@ -77,4 +96,11 @@ function load_location_options(input,directive,options,name){
 		input.prop('disabled', false);
 		input.trigger('change');
 	},'json');
+}
+function set_rank_bar(x){
+	var rank = Math.round(x/336 * 100);
+	var offset = x - 12;
+	$('#rank-bar .bar').css('width',x+'px').show();
+	$('#rank-label').html(rank+'%').css('left',offset+'px').show();
+	return rank;
 }
