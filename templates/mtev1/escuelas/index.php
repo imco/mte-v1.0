@@ -93,24 +93,31 @@
 		</div>
 	</div>	
 	<div class='gray-box'>
-		<form method='post' action='' accept-charstet='utf-8'>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8'>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
 			<div class='column'>
-				<p><input type='text' placeholder='Tu nombre' name='nombre' /></p>
-				<p><select class='custom-select' name='ocupacion' >
-					<option value=''>Ocupación</option>
-					<option value=''>Ocupación 1</option>
-					<option value=''>Ocupación 1</option>
-					<option value=''>Ocupación 1</option>
-					<option value=''>Ocupación 1</option>
-				</select></p>
-				<p><textarea placeholder='Comentario' name='comentario'></textarea></p>
+				<p>
+					<input type='text' placeholder='Tu nombre' name='nombre' />
+					<select class='custom-select' name='ocupacion' >
+						<option value=''>Ocupación</option>
+						<option value=''>Ocupación 1</option>
+						<option value=''>Ocupación 1</option>
+						<option value=''>Ocupación 1</option>
+						<option value=''>Ocupación 1</option>
+					</select>
+					<textarea placeholder='Comentario' name='comentario'></textarea>
+				</p>
 			</div>
 			<div class='column'>
-				<p><input type='text' placeholder='Correo eléctronico' name='email' /></p>
-				<p class='rating'>
+				<p>
+					<input type='text' placeholder='Correo eléctronico' name='email' />
+				</p>
+				<p class='rater'>
 					Califica esta escuela
-					<span class='ranker'></span>
+					<span class='ranker' id='rank-bar'><span class='bar'></span></span>
+					<span class='label' id='rank-label'>6.8%</span>
+					<input type='hidden' id='rank-value' name='calificacion' value='' />
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
 				</p>
 			</div>
 			<div class='clear'></div>
