@@ -1,17 +1,18 @@
 <?php
 class import extends main{
 	public function index(){
-		set_time_limit(100000);
+		set_time_limit(10000000);
 		//$this->import_states();
 		//$this->import_locales()
-		//$this->import_schools();
+// 		$this->import_schools();
 		//$this->loop_tables();
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
 // 		$this->enlaces();
-		$this->import_no_confiables();
+// 		$this->import_no_confiables();
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
+		$this->update_schools();
 
 	}
 	
@@ -73,15 +74,57 @@ class import extends main{
 
 
 	}
-	private function import_schools(){
-		$handle = $this->open_file('escuelas.txt');
+	private function character($s){
+		$len = strlen($s);
+		$s2 = array();
+		$e = false;
+		for($i = 0;$i < $len;$i++){
+			if(ord($s[$i])==165){
+				$s2[$i] = 'Ñ';
+				$e = true;
+			}else{
+				$s2[$i] = $s[$i];
+			}
+		}
+		$s3 = implode('',$s2);
+		$info->s = $s3;
+		$info->e = $e;
+		return $info;
+	}
+	private function update_schools(){
+		header('Content-Type: text/html;charset=ISO-8859-1');
+		$handle = $this->open_file('escuelas.csv');
+		if ($handle){
+			$nocount = $i = 0;
+			/*
+				$row[1] = nombre
+				$row[2] = domicilio
+				$row[3] = entrecalle
+				$row[4] = ycalle
+			*/
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE){
+				$row = $this->clean_row($row);
+				$nombre = $this->character($row[1]);//nombre
+				$domicilio = $this->character($row[2]);//domicilio
+				$entrecalle = $this->character($row[3]);//entrecalle
+				$ycalle = $this->character($row[4]);//ycalle
+				if($nombre->e || $domicilio->e || $entrecalle->e || $ycalle->e){
+					echo $row[0].'<br />';
+					$escuela = new escuela($row[0]);
+					$escuela->debug = false;
+					$escuela->update('nombre,domicilio,entrecalle,ycalle',array($nombre->s,$domicilio->s,$entrecalle->s,$ycalle->s));
+				}
+			}
+		}
+	}
+	private function import_schools(){ 
+		$handle = $this->open_file('escuelas.csv');
 		if ($handle){
 			$nocount = $i = 0;
 			$escuela = new escuela();
 			//$escuela->debug = true;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
-				//var_dump($row);
 				$q = new municipio();
 				$q->search_clause = "municipios.municipio = '{$row[9]}' AND municipios.entidad = '{$row[11]}' ";
 				$r = $q->read('id,nombre');
@@ -120,7 +163,6 @@ class import extends main{
 			'open fail';
 		}
 	}
-
 	private function import_locales(){
 		$handle = $this->open_file('escuelas.txt');
 		$localidad =  new localidad();
@@ -356,15 +398,16 @@ class import extends main{
 						$_total_evaluados_ = ($escuela->total_evaluados + $total_evaluado);
 						$escuela->update('poco_confiables,total_evaluados',array($_poco_confiables_,$_total_evaluados_));
 					}else{
-						echo $cct.'<br />';
+						echo $cct.' isset<br />';
 					}
+				}else{
+					echo $cct.' else<br />';
 				}
 				$i++;
+				
 			}
-			echo '<br /><br />';
-			echo "i: $i";
+			echo $i.'<br />';
 		}
 	}
-
 }
 ?>
