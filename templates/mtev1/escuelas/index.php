@@ -45,50 +45,76 @@
 
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
-	
+	<div class='clear'></div>
 	<ul class='tabs'>
-		<li><a href='#' class='on long'>Comentarios con Calificacion</a></li>
-		<li><a href='#' >Reportes Ciudadanos</a></li>
-		<li><a href='#' >Más Informacion</a></li>
-		<li><a href='#' >Resultados Educativos</a></li>
 		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
+		<li><a href='#' >Resultados Educativos</a></li>
+		<li><a href='#' >Más Informacion</a></li>
+		<li><a href='#' >Reportes Ciudadanos</a></li>
+		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
 	</ul>
-	<div class='tab'>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
+	<div class='tab-container'>
+		<div class='tab jscrollpane'>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
+			<div class='comment'>
+				<p class='rating'>6.8%<span class='likes'>145</span></p>
+				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
+			</div>
 		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-
 	</div>	
+	<div class='gray-box'>
+		<form method='post' action='' accept-charstet='utf-8'>
+			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
+			<div class='column'>
+				<p><input type='text' placeholder='Tu nombre' name='nombre' /></p>
+				<p><select class='custom-select' name='ocupacion' >
+					<option value=''>Ocupación</option>
+					<option value=''>Ocupación 1</option>
+					<option value=''>Ocupación 1</option>
+					<option value=''>Ocupación 1</option>
+					<option value=''>Ocupación 1</option>
+				</select></p>
+				<p><textarea placeholder='Comentario' name='comentario'></textarea></p>
+			</div>
+			<div class='column'>
+				<p><input type='text' placeholder='Correo eléctronico' name='email' /></p>
+				<p class='rating'>
+					Califica esta escuela
+					<span class='ranker'></span>
+				</p>
+			</div>
+			<div class='clear'></div>
+			<p><input type='submit' value='Califica tu escuela' /></p>
+		</form>
+	</div>
 </div>
