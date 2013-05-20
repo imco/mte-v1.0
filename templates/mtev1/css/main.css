@@ -7,6 +7,8 @@ a{text-decoration:none;}
 .container{width:920px;margin:0 auto;}
 .hidden{display:none;}
 .clear{clear:both;}
+.jscrollpane{overflow:auto;}
+
 
 #header{width:100%;margin-bottom:10px;background:url(../img/home/img_fondo.jpg) center top #E9EEF4;color:white;box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;position:relative;overflow:hidden;}
 #header h1{text-align:center;font-size:41px;line-height:77px;}
@@ -51,8 +53,6 @@ a{text-decoration:none;}
 #header .general-search .button-frame{float:left;margin:18px 27px 0 260px;width:271px;height:64px;}
 #header .general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #header .general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;}
-
-
 
 
 #content{color:#474747;padding:0 0 229px;}
@@ -157,9 +157,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header > .decorations hr:first-child + hr + hr + hr{top:393px;width:50%;left:50%;margin-left:460px;}
 
 /* Perfil */
-#header .perfil{height:166px;}
+#header .perfil{height:169px;}
+#header .perfil .general-search .button-frame{margin:30px 25px 0 258px;}
+#header .perfil .general-search .adv-search{margin:15px 0 0 3px}
 
-#content .perfil{background-color:rgba(255,255,255,.5);margin:46px auto;}
+#content .perfil{background-color:rgba(255,255,255,.5);margin:44px auto;}
 #content .perfil .head{background-image:url(../img/home/texture_blue.png);height:108px;color:white;}
 #content .perfil .head h1.main-name{float:left;line-height:110px;font-size:30px;margin-left:7px;width:490px;overflow:hidden;height:110px;}
 #content .perfil .ranking{float:left;color:white;font-size:12px;background-color:rgba(255,255,255,.5);height:82px;padding:13px 15px;width:84px;background-image:url(../img/perfil/posicion.png);background-repeat:no-repeat;background-position:17px 27px}
@@ -190,14 +192,27 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .info .website{margin-top:7px;}
 #content .perfil .map{width:423px;height:285px;float:left;margin:16px 0 0 11px;}
 #content .perfil .tabs{margin:0px 22px;clear:both;}
-#content .perfil .tabs li{float:left;display:block;margin:20px 13px 0;}
-#content .perfil .tabs li a{display:block;width:140px;font-size:12px;text-align:center;color:#494949;background:#CBCBCB;height:32px;border-radius:5px 5px 0 0;line-height:32px;}
-#content .perfil .tabs li a.long{line-height:14px}
-#content .perfil .tabs li a.on{background:white;}
-#content .perfil .tab{margin:0 22px 8px;color:#8D8D8D;padding:11px 20px;width:817px;height:252px;overflow:auto;background:white;clear:both;}
-#content .perfil .tab .comment{width:395px;height:80px;float:left;background:#F4F4F4;margin:0 10px 14px 0;}
+#content .perfil .tabs li{float:right;display:block;margin:18px 0 0 -19px;background-image:url(../img/perfil/tabs.png);height:38px;width:187px;}
+#content .perfil .tabs li:nth-child(0){margin:18px 0 0 0;}
+#content .perfil .tabs li.on{background-position:-192px 0;}
+#content .perfil .tabs li a{display:block;width:140px;font-size:12px;text-align:center;color:#494949;height:32px;line-height:32px;padding:5px 10px 0 25px;}
+#content .perfil .tabs li a.long{line-height:14px;height:28px;padding:10px 27px 0;width:133px;}
+#content .perfil .tab-container{margin:0 22px 30px;color:#8D8D8D;padding:35px 19px;width:817px;height:252px;overflow:auto;background:white;clear:both;}
+#content .perfil .tab{color:#8D8D8D;width:825px;height:252px;overflow:auto;background:white;clear:both;}
+#content .perfil .tab .comment{width:370px;height:80px;float:left;background:#EAEAEA;margin:0 10px 14px 0;padding:9px;}
 #content .perfil .tab .comment:nth-child(even){margin:0 0 14px 0;}
-#content .perfil .tab .comment h2{font-size:14px;color:#626262;}
-#content .perfil .tab .comment p{margin:2px 5px;}
-#content .perfil .tab .comment .rating{display:block;float:right;width:80px;height:80px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;}
+#content .perfil .tab .comment h2{font-size:13px;color:#626262;line-height:18px;margin:0 0 0 5px;}
+#content .perfil .tab .comment p{margin:0 5px;line-height:13px;}
+#content .perfil .tab .comment .rating{display:block;float:right;width:80px;height:80px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-7px;left:9px;}
 #content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:40px;position:absolute;width:56px;bottom:0;left:0;text-align:left;padding:0 12px;line-height:40px;}
+
+#content .gray-box{background-color:rgba(0,0,0,.2);margin:25px 22px;}
+#content .gray-box p{color:#717171;line-height:22px;}
+
+#content .gray-box .column{float:left;width:368px;}
+#content input[type='text'],#content textarea{background:white;border:none;width:343px;padding:3px 8px;font-family:Varela Round;margin:0 20px 20px 0;font-size:12px;coolor:#666666;}
+#content input[type='submit']{color:white;background:#329DD1;font-size:18px;width:360px;text-align:center;height:45px;border:none;font-family:Varela Round;margin:0 auto;display:block;}
+
+#content .customSelect {background-color: white;padding:5px 7px;margin:0 20px 20px 0;width:350px;background:url(../img/home/customselect.png) no-repeat center right;}
+#content .customSelect.changed{background-color: #f0dea4;}
+#content .customSelectInner {}
