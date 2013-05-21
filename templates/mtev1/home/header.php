@@ -4,7 +4,7 @@
 	</div>
 	<a href='' class='button-frame'><span class='button'>Compara tu escuela</span></a>
 	<div class='clear'></div>
-	<?php $this->include_template('general_search','global'); ?>
+	<?php $this->include_template('simple_search','global'); ?>
 
 	<div class='decorations'>
 		<div class='triangle1'></div>

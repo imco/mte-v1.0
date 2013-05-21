@@ -1,15 +1,15 @@
 <div class='perfil container'>
 	<div class='head'>
 		<div class='ranking'>
-			<h1>46</h1>
-			<p>Posición <br/>Nivel Nacional</p>
+			<h1><?=$this->escuela->rank_entidad?></h1>
+			<p>Posición <br/>Nivel Estatal</p>
 		</div>
-		<div class='nivel <?=$this->config->semaforos[$this->escuela->semaforo]?>'><div class='bubble'></div><?=$this->config->semaforos[$this->escuela->semaforo]?></div>
+		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'><div class='bubble'></div><?=$this->config->semaforos[$this->escuela->semaforo]?></div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
 			<h2>Semáforo Educativo</h2>
 			<h3 class='nivel reprobado'>Reprobado</h3>
-			<h3 class='nivel elemental'>Elemental</h3>
+			<h3 class='nivel elemental'>De Panzaso</h3>
 			<h3 class='nivel bien'>Bien</h3>
 			<h3 class='nivel excelente'>Excelente</h3>
 		</div>
