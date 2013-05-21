@@ -55,68 +55,49 @@
 	</ul>
 	<div class='tab-container'>
 		<div class='tab jscrollpane'>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
-			<div class='comment'>
-				<p class='rating'>6.8%<span class='likes'>145</span></p>
-				<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet</p>
-			</div>
+			<a name='calificaciones'></a>
+			<?php
+			if($this->escuela->calificaciones){
+				foreach($this->escuela->calificaciones as $calificacion){
+					echo <<<EOD
+					<div class='comment'>
+						<p class='rating'>{$calificacion->calificacion}%<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+						<h2>{$calificacion->nombre}</h2>
+						<p>{$calificacion->comentario}</p>
+					</div>
+EOD;
+				}
+			}else{
+
+			}
+			?>
 		</div>
 	</div>	
 	<div class='gray-box'>
-		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8'>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='validate-form'>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
 			<div class='column'>
 				<p>
-					<input type='text' placeholder='Tu nombre' name='nombre' />
+					<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
 					<select class='custom-select' name='ocupacion' >
 						<option value=''>Ocupación</option>
-						<option value=''>Ocupación 1</option>
-						<option value=''>Ocupación 1</option>
-						<option value=''>Ocupación 1</option>
-						<option value=''>Ocupación 1</option>
+						<option value='ocupacion 1'>Ocupación 1</option>
+						<option value='ocupacion 2'>Ocupación 2</option>
+						<option value='ocupacion 3'>Ocupación 3</option>
+						<option value='ocupacion 4'>Ocupación 4</option>
 					</select>
-					<textarea placeholder='Comentario' name='comentario'></textarea>
+					<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
 				</p>
 			</div>
 			<div class='column'>
 				<p>
-					<input type='text' placeholder='Correo eléctronico' name='email' />
+					<input type='text' class='required email' placeholder='Correo eléctronico' id='email' name='email' />
 				</p>
 				<p class='rater'>
 					Califica esta escuela
 					<span class='ranker' id='rank-bar'><span class='bar'></span></span>
 					<span class='label' id='rank-label'>6.8%</span>
-					<input type='hidden' id='rank-value' name='calificacion' value='' />
+					<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
 				</p>
 			</div>
@@ -124,4 +105,10 @@
 			<p><input type='submit' value='Califica tu escuela' /></p>
 		</form>
 	</div>
+	<div class='gray-box'>
+		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='validate-form reporte-form'>
+			<h2>Tu reporte será completamente anónimo</h2>
+			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
+		</form>
+	</div>	
 </div>
