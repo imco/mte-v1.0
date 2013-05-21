@@ -25,12 +25,41 @@ class escuelas extends main{
 			turno=>nombre,latitud,longitud,tipo=>nombre,
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
 			control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
-			enlaces=>id
+			enlaces=>id,
+			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre
 		");
 		$this->escuela->get_semaforo();
 	}
 	public function calificar(){
-		
+		$comment = strip_tags($this->post('comentario'));
+		$calificacion = new calificacion();
+		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
+			$this->post('nombre'),
+			$this->post('email'),
+			$this->post('cct'),
+			$comment,
+			$this->post('ocupacion'),
+			$this->post('calificacion'),
+			$_SERVER['HTTP_USER_AGENT']
+		)); 
+		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct') : "/escuelas/index/".$this->post('cct')."/e=ce";
+		header("location: $location");
+	}
+	public function like_calificacion(){
+		$calif = new calificacion($this->get('id'));
+		//$calif->debug = true;
+		$calif->read('id,cct=>cct,likes=>id,likes=>ip');
+
+		$calif->update('likes',array(count($calif->likes)+1));
+		$like = new calificacion_like();
+		//$like->debug = true;
+		$like->create('calificacion,ip,user_agent',array(
+			$calif->id,
+			$_SERVER['REMOTE_ADDR'],
+			$_SERVER['HTTP_USER_AGENT']
+		));
+
+		header('location: /escuelas/index/'.$calif->cct->cct.'#calificaciones');
 	}
 }
 ?>
