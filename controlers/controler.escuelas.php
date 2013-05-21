@@ -25,7 +25,7 @@ class escuelas extends main{
 			turno=>nombre,latitud,longitud,tipo=>nombre,
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
 			control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
-			enlaces=>id,
+			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre
 		");
 		$this->escuela->get_semaforo();
