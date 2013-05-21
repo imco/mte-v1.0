@@ -1,6 +1,6 @@
 <form action='/busqueda' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	<p class='button-frame'><input name='term' id='name-input' type='text' placeholder='Búscar Escuela' value='<?=$this->request('term');?>' /></p>
-	<p class='adv-search'><a href='/home/avanzada/' >Búsqueda Avanzada</a></p>
+	<p class='adv-search'><a href='/compara/' >Búsqueda Avanzada</a></p>
 	<fieldset name='busqueda-avanzada'>
 		<select name='nivel' id='nivel-input'>
 			<option value=''>Nivel de Escolaridad</option>
