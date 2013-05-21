@@ -45,50 +45,98 @@
 
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
-	
+	<div class='clear'></div>
 	<ul class='tabs'>
-		<li><a href='#' class='on long'>Comentarios con Calificacion</a></li>
-		<li><a href='#' >Reportes Ciudadanos</a></li>
-		<li><a href='#' >Más Informacion</a></li>
-		<li><a href='#' >Resultados Educativos</a></li>
 		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
+		<li><a href='#' >Resultados Educativos</a></li>
+		<li><a href='#' >Más Informacion</a></li>
+		<li><a href='#' >Reportes Ciudadanos</a></li>
+		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
 	</ul>
-	<div class='tab'>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
-		<div class='comment'>
-			<p class='rating'>6.8%<span class='likes'>145</span></p>
-			<h2>This is Photoshop's Version of Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim felis, auctor eget condimentum vel, mollis vel nisl. Phasellus aliquet tempor</p>
-		</div>
+	<div class='tab-container'>
+		<div class='tab jscrollpane'>
+			<a name='calificaciones'></a>
+			<?php
+			if($this->escuela->calificaciones){
+				foreach($this->escuela->calificaciones as $calificacion){
+					echo <<<EOD
+					<div class='comment'>
+						<p class='rating'>{$calificacion->calificacion}%<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+						<h2>{$calificacion->nombre}</h2>
+						<p>{$calificacion->comentario}</p>
+					</div>
+EOD;
+				}
+			}else{
 
+			}
+			?>
+		</div>
+	</div>	
+	<div class='gray-box'>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
+			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
+			<div class='column'>
+				<p>
+					<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
+					<select class='custom-select' name='ocupacion' >
+						<option value=''>Ocupación</option>
+						<option value='ocupacion 1'>Ocupación 1</option>
+						<option value='ocupacion 2'>Ocupación 2</option>
+						<option value='ocupacion 3'>Ocupación 3</option>
+						<option value='ocupacion 4'>Ocupación 4</option>
+					</select>
+					<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
+				</p>
+			</div>
+			<div class='column'>
+				<p>
+					<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
+				</p>
+				<p class='rater'>
+					Califica esta escuela
+					<span class='ranker' id='rank-bar'><span class='bar'></span></span>
+					<span class='label' id='rank-label'>6.8%</span>
+					<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
+				</p>
+			</div>
+			<div class='clear'></div>
+			<p><input type='submit' value='Califica tu escuela' /></p>
+		</form>
+	</div>
+	<div class='gray-box reportar'>
+		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='reporte-form'>
+			<h2>Tu reporte será completamente anónimo</h2>
+			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
+			<fieldset>
+				<p class='column'><input type='text' placeholder='Tu nombre' name='nombre_input' class='required' /></p>
+				<p class='column'><input type='text' class='required email' placeholder='Correo eléctronico' name='email_input' /></p>
+				<p><textarea name='denuncia' class='required' placeholder='Denuncia'></textarea></p>
+				<p class='column'><select class='custom-select' name='ocupacion' >
+					<option value=''>Ocupación</option>
+					<option value='ocupacion 1'>Ocupación 1</option>
+					<option value='ocupacion 2'>Ocupación 2</option>
+					<option value='ocupacion 3'>Ocupación 3</option>
+					<option value='ocupacion 4'>Ocupación 4</option>
+				</select></p>
+				<p class='column'><select class='custom-select' name='categoria' >
+					<option value=''>Categoría de tu Reporte</option>
+					<option value='ocupacion 1'>Ocupación 1</option>
+					<option value='ocupacion 2'>Ocupación 2</option>
+					<option value='ocupacion 3'>Ocupación 3</option>
+					<option value='ocupacion 4'>Ocupación 4</option>
+				</select></p>
+				<div class='clear'></div>
+				<p class='strong'>
+					<input type='checkbox' name='publicar' /> Quiero que mi reporte se publique en el perfil de la escuela
+				</p>
+				<p>
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
+					<input type='submit' value='Enviar' />
+				</p>
+			</fieldset>
+			<div class='clear'></div>
+		</form>
 	</div>	
 </div>
