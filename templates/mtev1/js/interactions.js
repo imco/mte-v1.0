@@ -1,6 +1,7 @@
 $(document).ready(function(){	
 	$('.jscrollpane').jScrollPane();
 	$('.custom-select').customSelect();
+	$('.validate-form').validate();
 
 	$('#rank-bar').mousemove(function(e){
 		set_rank_bar(e.pageX - $(this).offset().left);
