@@ -52,5 +52,34 @@ class escuela extends table{
 				SET t1.rank_entidad=t2.rank;";
 		return mysql_query($sql);		
 	}
+	function get_chart($materia){
+		$grados = array();
+		$enlaces = array();
+		$puntaje_name = 'puntaje_'.$materia;
+		if(isset($this->enlaces) && $this->enlaces){
+			$variable = array();
+			foreach($this->enlaces as $enlace){
+				$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;
+				$grados[$enlace->grado] = $enlace->grado;
+			}
+			$grados = array_values($grados);
+			sort($grados);
+			$keys = array_flip($grados);
+			array_unshift($grados,'Año');
+			$variable[] = $grados;
+			foreach($enlaces as $anio => $grados){				
+				$row = array_fill(0,count($keys),0);
+				foreach($grados as $key => $puntaje){
+					//var_dump($keys[$key]);
+					$row[$keys[$key]] = intval($puntaje);
+				}
+				array_unshift($row,strval($anio));
+				$variable[] = $row;
+			}
+		}else{
+			$variable = false;
+		}
+		return $variable;
+	}
 }
 ?>
