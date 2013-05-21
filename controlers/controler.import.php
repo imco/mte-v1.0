@@ -168,6 +168,7 @@ class import extends main{
 	private function update_locales(){
 		$handle = $this->open_file('escuelas.csv');
 		$localidad =  new localidad();
+		$localidad2 =  new localidad();
 		$localidad->debug = true;
 		$states = array();
 		if($handle){
@@ -195,13 +196,15 @@ class import extends main{
 					foreach($county as $localidad){
 						$info = $this->character($localidad->nombre);
 						if($info->e){
-							echo $localidad->nombre.'<br />';
-						}else{
+							$localidad2->search_clause = "localidad = '{$localidad->localidad}'
+								AND entidad = {$localidad->entidad}
+								AND municipio = '{$localidad->municipio}'
+								AND cct_count = '{$localidad->count}'"; 
+							$localidad2s = $localidad2->read('id,nombre');
+							echo $localidad2s[0]->id.'<br />';
+							$localidad3 = new localidad($localidad2s[0]->id);
+							$localidad3->update('nombre',$localidad->nombre);
 						}
-// 						$count = $localidad->count;
-// 						$localidad = new localidad($localidad->id);
-// 						$localidad->debug = true;
-// 						$localidad->update('cct_count',array($count));
 					}
 				}
 			}	
