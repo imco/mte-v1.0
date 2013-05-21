@@ -91,7 +91,7 @@ EOD;
 			</div>
 			<div class='column'>
 				<p>
-					<input type='text' class='required email' placeholder='Correo eléctronico' id='email' name='email' />
+					<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
 				</p>
 				<p class='rater'>
 					Califica esta escuela
@@ -105,10 +105,38 @@ EOD;
 			<p><input type='submit' value='Califica tu escuela' /></p>
 		</form>
 	</div>
-	<div class='gray-box'>
+	<div class='gray-box reportar'>
 		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='validate-form reporte-form'>
 			<h2>Tu reporte será completamente anónimo</h2>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
+			<fieldset>
+				<p class='column'><input type='text' placeholder='Tu nombre' name='nombre' class='required' /></p>
+				<p class='column'><input type='text' class='required email' placeholder='Correo eléctronico' name='email' /></p>
+				<p><textarea name='denuncia' placeholder='Denuncia'></textarea></p>
+				<p class='column'><select class='custom-select' name='ocupacion' >
+					<option value=''>Ocupación</option>
+					<option value='ocupacion 1'>Ocupación 1</option>
+					<option value='ocupacion 2'>Ocupación 2</option>
+					<option value='ocupacion 3'>Ocupación 3</option>
+					<option value='ocupacion 4'>Ocupación 4</option>
+				</select></p>
+				<p class='column'><select class='custom-select' name='ocupacion' >
+					<option value=''>Categoría de tu Reporte</option>
+					<option value='ocupacion 1'>Ocupación 1</option>
+					<option value='ocupacion 2'>Ocupación 2</option>
+					<option value='ocupacion 3'>Ocupación 3</option>
+					<option value='ocupacion 4'>Ocupación 4</option>
+				</select></p>
+				<div class='clear'></div>
+				<p class='strong'>
+					<input type='checkbox' name='publicar' /> Quiero que mi reporte se publique en el perfil de la escuela
+				</p>
+				<p>
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
+					<input type='submit' value='Enviar' />
+				</p>
+			</fieldset>
+			<div class='clear'></div>
 		</form>
 	</div>	
 </div>
