@@ -204,13 +204,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .info .website{margin-top:7px;}
 #content .perfil .map{width:423px;height:285px;float:left;margin:16px 0 0 11px;}
 #content .perfil .tabs{margin:0px 22px;clear:both;}
-#content .perfil .tabs li{float:right;display:block;margin:18px 0 0 -16px;background-image:url(../img/perfil/tabs.png);height:38px;width:184px;background-position:-186px 0;}
+#content .perfil .tabs li{float:right;display:block;margin:18px 0 0 -16px;background-image:url(../img/perfil/tabs.png);height:38px;width:184px;background-position:-186px 0;z-index:0;position:relative;}
 #content .perfil .tabs li:nth-child(0){margin:18px 0 0 0;}
-#content .perfil .tabs li.on{background-position:0 0;}
+#content .perfil .tabs li.on{background-position:0 0;z-index:1;}
 #content .perfil .tabs li a{display:block;width:135px;font-size:12px;text-align:center;color:#494949;height:32px;line-height:32px;padding:5px 10px 0 25px;}
 #content .perfil .tabs li a.long{line-height:14px;height:28px;padding:10px 27px 0;width:133px;}
 #content .perfil .tab-container{margin:0 22px;color:#8D8D8D;padding:35px 19px 14px;width:817px;height:252px;overflow:auto;background:white;clear:both;background:#F5F5F5;}
-#content .perfil .tab{color:#8D8D8D;width:816px;height:252px;overflow:auto;clear:both;}
+#content .perfil .tab{color:#8D8D8D;width:816px;height:252px;overflow:auto;clear:both;display:none;}
+#content .perfil .tab.on{display:block}
 #content .perfil .tab .comment{width:374px;height:60px;float:left;background:#EAEAEA;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
 #content .perfil .tab .comment:nth-child(even){margin:0 9px 6px 0}
 #content .perfil .tab .comment h2{font-size:13px;color:#626262;line-height:18px;margin:0 0 0 5px;}
