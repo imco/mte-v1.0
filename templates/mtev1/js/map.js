@@ -12,7 +12,6 @@ function initialize_map(){
 }
 function add_marker(escuela,map){
 	var position = new google.maps.LatLng(escuela.latitud,escuela.longitud);
-	console.log(escuela);
 	var marker = new google.maps.Marker({
 		position: position,
 		map: map,

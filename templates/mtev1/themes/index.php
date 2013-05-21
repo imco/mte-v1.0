@@ -7,12 +7,17 @@
 		$css_scripts = array(
 			"reset.css",
 			"main.css",
-			"jquery-ui.css"
+			"jquery-ui.css",
+			"jquery.jscrollpane.css"
 		);
 		$js_scripts = array(
 			"jquery.js",
-			"interactions.js",
-			"jquery-ui.js"
+			"jquery-ui.js",
+			'jquery.mousewheel.js',
+			'jquery.jscrollpane.min.js',
+			'jquery.customSelect.min.js',
+			'jquery.validate.min.js',
+			"interactions.js"
 		);
 		if($this->location == 'mapa' || $this->location == 'escuelas'){
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=true"></script>';
