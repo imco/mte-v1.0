@@ -86,4 +86,20 @@ class colonia extends table{
 		$this->table_name = "colonias";
 	}
 }
+class calificacion extends table{
+	function info(){
+		$this->table_name = 'calificaciones';
+		$this->objects['cct'] = 'escuela';
+
+		$this->has_many['likes'] = 'calificacion_like';
+		$this->has_many_keys['likes'] = 'calificacion';
+	}
+}
+class calificacion_like extends table{
+	function info(){
+		$this->table_name = 'calificacion_likes';
+		$this->objects['calificacion'] = 'calificacion';
+
+	}
+}
 ?>
