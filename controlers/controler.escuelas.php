@@ -19,7 +19,7 @@ class escuelas extends main{
 		$this->escuela = new escuela($this->get('id'));
 		//$this->escuela->debug = true;
 		$this->escuela->read("
-			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,
+			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,
 			entidad=>nombre,municipio=>nombre,localidad=>nombre,localidad=>id,
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
 			turno=>nombre,latitud,longitud,tipo=>nombre,
@@ -47,18 +47,14 @@ class escuelas extends main{
 	}
 	public function like_calificacion(){
 		$calif = new calificacion($this->get('id'));
-		//$calif->debug = true;
 		$calif->read('id,cct=>cct,likes=>id,likes=>ip');
-
 		$calif->update('likes',array(count($calif->likes)+1));
 		$like = new calificacion_like();
-		//$like->debug = true;
 		$like->create('calificacion,ip,user_agent',array(
 			$calif->id,
 			$_SERVER['REMOTE_ADDR'],
 			$_SERVER['HTTP_USER_AGENT']
 		));
-
 		header('location: /escuelas/index/'.$calif->cct->cct.'#calificaciones');
 	}
 }
