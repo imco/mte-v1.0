@@ -16,6 +16,7 @@
 			'jquery.mousewheel.js',
 			'jquery.jscrollpane.min.js',
 			'jquery.customSelect.min.js',
+			'jquery.validate.min.js',
 			"interactions.js"
 		);
 		if($this->location == 'mapa' || $this->location == 'escuelas'){
