@@ -29,6 +29,8 @@ class escuelas extends main{
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre
 		");
 		$this->escuela->get_semaforo();
+		$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
+		$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 	}
 	public function calificar(){
 		$comment = strip_tags($this->post('comentario'));

@@ -83,12 +83,17 @@ EOD;
 			}
 			?>
 		</div>
+		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'>
+			<?php 
+			if($this->escuela->line_chart_espaniol ){
+				echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
+				echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
+			}else{
 
-		<div class='tab jscrollpane'>
-			
-		</div>
-		<div class='tab jscrollpane'>
-			<?php foreach($this->escuela->enlaces as $enlace) var_dump($enlace->nivel);?>
+			} 
+			?>
 		</div>
 		<div class='tab jscrollpane'>
 			

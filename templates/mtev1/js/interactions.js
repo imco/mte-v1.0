@@ -10,7 +10,8 @@ $(document).ready(function(){
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
 		$('#content .perfil .tab-container .tab.on').removeClass('on');
-		$('#content .perfil .tab-container .tab').eq(index).addClass('on');
+		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
+		if($(this).html() == 'Resultados Educativos' ) drawCharts();
 	})
 	$('#rank-bar').mousemove(function(e){
 		set_rank_bar(e.pageX - $(this).offset().left);
