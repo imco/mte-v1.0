@@ -74,7 +74,7 @@ EOD;
 		</div>
 	</div>	
 	<div class='gray-box'>
-		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='validate-form'>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
 			<div class='column'>
 				<p>
@@ -106,13 +106,13 @@ EOD;
 		</form>
 	</div>
 	<div class='gray-box reportar'>
-		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='validate-form reporte-form'>
+		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='reporte-form'>
 			<h2>Tu reporte será completamente anónimo</h2>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
 			<fieldset>
-				<p class='column'><input type='text' placeholder='Tu nombre' name='nombre' class='required' /></p>
-				<p class='column'><input type='text' class='required email' placeholder='Correo eléctronico' name='email' /></p>
-				<p><textarea name='denuncia' placeholder='Denuncia'></textarea></p>
+				<p class='column'><input type='text' placeholder='Tu nombre' name='nombre_input' class='required' /></p>
+				<p class='column'><input type='text' class='required email' placeholder='Correo eléctronico' name='email_input' /></p>
+				<p><textarea name='denuncia' class='required' placeholder='Denuncia'></textarea></p>
 				<p class='column'><select class='custom-select' name='ocupacion' >
 					<option value=''>Ocupación</option>
 					<option value='ocupacion 1'>Ocupación 1</option>
@@ -120,7 +120,7 @@ EOD;
 					<option value='ocupacion 3'>Ocupación 3</option>
 					<option value='ocupacion 4'>Ocupación 4</option>
 				</select></p>
-				<p class='column'><select class='custom-select' name='ocupacion' >
+				<p class='column'><select class='custom-select' name='categoria' >
 					<option value=''>Categoría de tu Reporte</option>
 					<option value='ocupacion 1'>Ocupación 1</option>
 					<option value='ocupacion 2'>Ocupación 2</option>
