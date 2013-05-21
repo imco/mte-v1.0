@@ -65,7 +65,7 @@
 		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
 	</ul>
 	<div class='tab-container'>
-		<div class='tab jscrollpane'>
+		<div class='tab jscrollpane on'>
 			<a name='calificaciones'></a>
 			<?php
 			if($this->escuela->calificaciones){
@@ -82,6 +82,16 @@ EOD;
 
 			}
 			?>
+		</div>
+
+		<div class='tab jscrollpane'>
+			
+		</div>
+		<div class='tab jscrollpane'>
+			<?php foreach($this->escuela->enlaces as $enlace) var_dump($enlace->nivel);?>
+		</div>
+		<div class='tab jscrollpane'>
+			
 		</div>
 	</div>	
 	<div class='gray-box'>
