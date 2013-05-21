@@ -88,7 +88,9 @@ EOD;
 		<div class='tab jscrollpane'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
+				echo "<h2>Resultados ENLACE español</h2>";
 				echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
+				echo "<h2>Resultados ENLACE matematicas</h2>";
 				echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
 			}else{
 
