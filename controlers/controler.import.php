@@ -12,7 +12,9 @@ class import extends main{
 // 		$this->import_no_confiables();
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
-		$this->update_schools();
+// 		$this->update_schools();
+// 		$this->update_counties();
+// 		$this->update_locales();
 
 	}
 	
@@ -163,6 +165,51 @@ class import extends main{
 			'open fail';
 		}
 	}
+	private function update_locales(){
+		$handle = $this->open_file('escuelas.csv');
+		$localidad =  new localidad();
+		$localidad->debug = true;
+		$states = array();
+		if($handle){
+			$i = 0;
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
+				$row = $this->clean_row($row);
+				if (!isset($states[$row[11]]) || !isset($states[$row[11]] [$row[9]]) || !isset($states[$row[11]][$row[9]][$row[7]]) ) {
+					$q = new municipio();
+					$q->debug = false;
+					$q->search_clause = "municipios.municipio = {$row[9]} AND municipios.entidad = {$row[11]}";
+					$county = $q->read('id');
+// 					$localidad->create('municipio,nombre,entidad,localidad',array($county[0]->id,$row[8],$row[11],$row[7]));
+					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
+					$states[$row[11]][$row[9]][$row[7]]->localidad = $row[7];
+					$states[$row[11]][$row[9]][$row[7]]->entidad = $row[11];
+					$states[$row[11]][$row[9]][$row[7]]->municipio = $county[0]->id;
+					$states[$row[11]][$row[9]][$row[7]]->count = 1;
+					$states[$row[11]][$row[9]][$row[7]]->nombre = $row[8];
+				}else{
+					$states[$row[11]][$row[9]][$row[7]]->count++;
+				}
+			}
+			foreach($states as $state){	
+				foreach($state as $county){
+					foreach($county as $localidad){
+						$info = $this->character($localidad->nombre);
+						if($info->e){
+							echo $localidad->nombre.'<br />';
+						}else{
+						}
+// 						$count = $localidad->count;
+// 						$localidad = new localidad($localidad->id);
+// 						$localidad->debug = true;
+// 						$localidad->update('cct_count',array($count));
+					}
+				}
+			}	
+			fclose($handle);
+		}else{
+			'open fail';
+		}
+	}
 	private function import_locales(){
 		$handle = $this->open_file('escuelas.txt');
 		$localidad =  new localidad();
@@ -204,9 +251,51 @@ class import extends main{
 		}
 
 	}
-
+	private function update_counties(){
+		$handle = $this->open_file('escuelas.csv');
+		$county =  new municipio();
+		$county2 =  new municipio();
+		$county->debug = true;
+		$states = array();
+		if ($handle){
+			$i = 0;
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
+				$row = $this->clean_row($row);
+				if(!isset($states[$row[11]]) || !isset($states[$row[11]][$row[9]])){
+					$states[$row[11]][$row[9]]->municipio = $row[9];
+					$states[$row[11]][$row[9]]->entidad = $row[11];
+					$states[$row[11]][$row[9]]->nombre = $row[10];
+					$states[$row[11]][$row[9]]->count = 1;
+				}else{
+					$states[$row[11]][$row[9]]->count++;
+				}
+			}
+			foreach($states as $state){
+				foreach($state as $county){
+					$info = $this->character($county->nombre);
+					if($info->e){
+						$county2->debug = true;
+						$county2->search_clause = "municipio = '{$county->municipio}' 
+								AND entidad = '{$county->entidad}' 
+								AND cct_count = '{$county->count}'";
+						$county2s = $county2->read('id,nombre');
+						echo $county2s[0]->nombre.' ';
+						echo $county->municipio.' / '.$county->entidad.' / '.$county->nombre.' / '.$county->count.'<br />';
+						echo '<br />';
+						if(isset($county2s[0]->id)){
+// 							$county3 = new municipio($county2s[0]->id);
+// 							$county3->update('nombre',array($info->s));
+						}
+					}
+				}
+			}
+			fclose($handle);
+		}else{
+			'open fail';
+		}
+	}
 	private function import_counties(){
-		$handle = $this->open_file('escuelas.txt');
+		$handle = $this->open_file('escuelas.csv');
 		$county =  new county();
 		$county->debug = true;
 		$states = array();
@@ -218,6 +307,7 @@ class import extends main{
 					$county->create('state_id,nombre,entidad',array($row[9],$row[10],$row[11]));
 					$states[$row[11]][$row[9]]->id = $county->id;
 					$states[$row[11]][$row[9]]->count = 1;
+					$states[$row[11]][$row[9]]->nombre = $row[10];
 					//break;
 				}else{
 					$states[$row[11]][$row[9]]->count++;
