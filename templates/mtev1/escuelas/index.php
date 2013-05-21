@@ -1,10 +1,21 @@
 <div class='perfil container'>
 	<div class='head'>
+		<?php $rank = isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
 		<div class='ranking'>
-			<h1><?=$this->escuela->rank_entidad?></h1>
+			<h1><?=$rank?></h1>
 			<p>Posición <br/>Nivel Estatal</p>
 		</div>
-		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'><div class='bubble'></div><?=$this->config->semaforos[$this->escuela->semaforo]?></div>
+		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'>
+			<div class='bubble'></div>
+			<span class='text'><?=$this->config->semaforos[$this->escuela->semaforo]?></span>
+			<?php if($this->escuela->semaforo == 4) { ?>
+				<div class='pop-up-triangle shadow'></div>
+				<div class='pop-up'>
+					<p>Escuela que <strong>no administra la prueba ENLACE</strong> a sus alumnos.</p>
+				</div>
+				<div class='pop-up-triangle'></div>
+			<? } ?>
+		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
 			<h2>Semáforo Educativo</h2>
