@@ -193,21 +193,21 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .info .website{margin-top:7px;}
 #content .perfil .map{width:423px;height:285px;float:left;margin:16px 0 0 11px;}
 #content .perfil .tabs{margin:0px 22px;clear:both;}
-#content .perfil .tabs li{float:right;display:block;margin:18px 0 0 -19px;background-image:url(../img/perfil/tabs.png);height:38px;width:187px;}
+#content .perfil .tabs li{float:right;display:block;margin:18px 0 0 -16px;background-image:url(../img/perfil/tabs.png);height:38px;width:184px;background-position:-186px 0;}
 #content .perfil .tabs li:nth-child(0){margin:18px 0 0 0;}
-#content .perfil .tabs li.on{background-position:-192px 0;}
-#content .perfil .tabs li a{display:block;width:140px;font-size:12px;text-align:center;color:#494949;height:32px;line-height:32px;padding:5px 10px 0 25px;}
+#content .perfil .tabs li.on{background-position:0 0;}
+#content .perfil .tabs li a{display:block;width:135px;font-size:12px;text-align:center;color:#494949;height:32px;line-height:32px;padding:5px 10px 0 25px;}
 #content .perfil .tabs li a.long{line-height:14px;height:28px;padding:10px 27px 0;width:133px;}
 #content .perfil .tab-container{margin:0 22px;color:#8D8D8D;padding:35px 19px 14px;width:817px;height:252px;overflow:auto;background:white;clear:both;background:#F5F5F5;}
 #content .perfil .tab{color:#8D8D8D;width:816px;height:252px;overflow:auto;clear:both;}
-#content .perfil .tab .comment{width:370px;height:60px;float:left;background:#EAEAEA;margin:0 16px 6px 0;padding:9px;}
-#content .perfil .tab .comment:nth-child(even){margin:0 0 6px 0;}
+#content .perfil .tab .comment{width:374px;height:60px;float:left;background:#EAEAEA;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
+#content .perfil .tab .comment:nth-child(even){margin:0 9px 6px 0}
 #content .perfil .tab .comment h2{font-size:13px;color:#626262;line-height:18px;margin:0 0 0 5px;}
 #content .perfil .tab .comment p{margin:0 5px;line-height:13px;}
-#content .perfil .tab .comment .rating{display:block;float:right;width:78px;height:78px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:13px;}
-#content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:43px;position:absolute;width:54px;bottom:0;left:0;text-align:left;padding:0 12px;line-height:45px;}
-
-#content .perfil .gray-box{background-color:rgba(0,0,0,.2);margin:11px 22px;padding:4px 60px 22px;}
+#content .perfil .tab .comment .rating{display:block;float:right;width:82px;height:78px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:13px;}
+#content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:43px;position:absolute;width:46px;bottom:0;left:0;text-align:left;padding:0 16px;line-height:45px;z-index:0;}
+#content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:relative;}
+#content .perfil .gray-box{background-color:rgba(0,0,0,.2);margin:11px 22px 17px;padding:4px 60px 7px;}
 #content .perfil .gray-box p{color:#717171;line-height:23px;}
 #content .perfil .gray-box .column{float:left;width:368px;height:109px;}
 
@@ -218,7 +218,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content select option{border:none;}
 #content select option{border:none;padding:2px 7px;color:#686868;}
 #content .customSelect {padding:5px 7px;width:347px;background:white url(../img/home/customselect.png) no-repeat center right;margin:0 20px 5px 0;line-height:18px;color:#686868;}
-
+#content label.error{display:none!important;}
+#content textarea.error,#content input.error{background-color:#ee8888;}
 #content .perfil .rater{background-color:#E4E4E4;color:#686868;display:block;padding:15px 14px 21px;width:333px;position:relative;}
 #content .perfil .rater .ranker{width:338px;border-radius:18px;height:10px;box-shadow:inset 1px 1px 2px #000,1px 1px 0 white;background-color:#61646B;position:relative;display:block;overflow:hidden;margin:-1px 0 0;}
 #content .perfil .rater .ranker .bar{position:absolute;width:200px;box-shadow:inset 1px 1px 2px #000;display:block;height:10px;border-radius:0 5px 5px 0;background-color:#48A7D5;background-image:linear-gradient(top,#65B4DB 50%,#2F91C0);background-image:-moz-linear-gradient(top,#65B4DB 50%,#2F91C0);background-image:-webkit-linear-gradient(top,#65B4DB 50%,#2F91C0);background-image:-o-linear-gradient(top,#65B4DB 50%,#2F91C0);background-image:-ms-linear-gradient(top,#65B4DB 50%,#2F91C0);display:none;}
