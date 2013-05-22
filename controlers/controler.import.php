@@ -9,7 +9,7 @@ class import extends main{
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
 // 		$this->enlaces();
-		$this->import_no_confiables();
+//		$this->import_no_confiables();
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
 // 		$this->update_schools();
