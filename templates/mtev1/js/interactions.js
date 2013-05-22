@@ -4,6 +4,15 @@ $(document).ready(function(){
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 
+	$('#content .perfil .tabs li a').click(function(e){
+		e.preventDefault();
+		var index = 4 - $(this).parent().index();
+		$('#content .perfil .tabs li.on').removeClass('on');
+		$(this).parent().addClass('on');
+		$('#content .perfil .tab-container .tab.on').removeClass('on');
+		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
+		if($(this).html() == 'Resultados Educativos' ) drawCharts();
+	})
 	$('#rank-bar').mousemove(function(e){
 		set_rank_bar(e.pageX - $(this).offset().left);
 	});
