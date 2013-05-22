@@ -98,6 +98,7 @@ $(document).ready(function(){
 });
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
+	input.next().addClass('customSelectDisabled');
 	$.post('/main/'+directive,options,function(data){
 		input.html('<option value="">'+name+'</option>');
 		for(x in data){
@@ -105,6 +106,7 @@ function load_location_options(input,directive,options,name){
 			input.append('<option value="'+item.id+'">'+item.nombre+'</option>');
 		}
 		input.prop('disabled', false);
+		input.next().removeClass('customSelectDisabled');
 		input.trigger('change');
 	},'json');
 }
