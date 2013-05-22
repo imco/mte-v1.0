@@ -8,7 +8,6 @@ a{text-decoration:none;}
 .hidden{display:none;}
 .clear{clear:both;}
 .jscrollpane{overflow:auto;}
-::-webkit-input-placeholder { color: white; }
 
 #header{width:100%;margin-bottom:10px;background:url(../img/home/img_fondo.jpg) center top #E9EEF4;color:white;box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;position:relative;overflow:hidden;}
 #header h1{text-align:center;font-size:41px;line-height:77px;}
@@ -37,7 +36,7 @@ a{text-decoration:none;}
 #header .menu form{display:block;float:left;padding:59px 11px 0;background-image:url(../img/home/buscar.png);background-position:center 29px;background-repeat:no-repeat;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:5px 11px 3px;color:white;text-shadow:1px 1px #999;font-size:17px;line-height:17px;font-family:Varela Round;width:110px;}
 #header .menu input[placeholder]{color:white!important;}
-#header .menu input::-webkit-input-placeholder{color:white!important;}
+#header .menu ::-webkit-input-placeholder{color:white!important;}
 #header .menu .social{position:absolute;right:-51px;top:62px;}
 #header .menu .social a{float:left;display: block;width:23px;height:23px;background:url(../img/home/face.png);margin:0 2px;padding:0;background-position:-25px 0}
 #header .menu .social a:hover{background-position:0 0}
@@ -49,9 +48,7 @@ a{text-decoration:none;}
 #header .button:after{content:'';display:block;background-color:#24AB5F;height:1px;box-shadow:0 1px 2px #0BA14A;width:18px;top:20px;right:8px;position:absolute;}
 #header .general-search{text-align:center;font-size:12px;margin:30px auto 20px;}
 #header .general-search input[type='text']{font-size:14px;font-family:Varela Round;background-color:rgba(255,255,255,.68);border-radius:3px;padding:9px 11px;line-height:29px;border:none;margin:9px auto;width:227px;color:#858482;height:29px;}
-#header .general-search fieldset[name='busqueda-avanzada']{clear:both;}
 #header .general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:36px;height:38px;position:absolute;right:15px;top:13px;display:block;}
-#header .general-search .customSelect {padding:5px 7px;width:347px;background:white url(../img/compara/dropdown.png) no-repeat center right;margin:0 20px 5px 0;line-height:18px;color:#686868;}
 #header .general-search .button-frame{float:left;margin:18px 27px 0 260px;width:271px;height:64px;}
 #header .general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #header .general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background:#00AFF0 url(../img/home/busquedavanzada.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;}
@@ -249,3 +246,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .gray-box.reportar .strong{text-align:center;font-size:14px;line-height:33px;}
 #content .perfil .chart-box{height:542px;}
 #content .perfil .chart{width:797px;height:247px;position:relative;}
+
+/* Compara */
+#header .compara .titles{margin:11px auto 0;width:582px}
+#header .compara h1{font-size:53px;line-height:68px;}
+#header .compara h2{font-size:36px;line-height:39px;}
+#header .compara h3{background:url(../img/compara/buscar.jpg) no-repeat center 0px;padding:28px 0 1px;font-size:19px;}
+#header .compara hr{width:578px;margin:0 auto;}
+#header .compara .button-frame{margin:10px auto 0;float:none;}
+#header .compara .busqueda-avanzada{margin:0 auto;clear:both;width:520px;}
+#header .compara .busqueda-avanzada .button-frame{float:left;margin:14px 9px 20px;width:240px;height:57px;} 
+#header .compara .general-search{margin:11px auto 20px;}
+#header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;}
