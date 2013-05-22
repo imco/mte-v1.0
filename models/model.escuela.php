@@ -22,7 +22,7 @@ class escuela extends table{
 		$this->has_many['calificaciones'] = 'calificacion';
 		$this->has_many_keys['calificaciones'] = 'cct';
 
-		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente','No Enlace');
+		$this->semaforos = array('Reprobado','De Panzaso','Bien','Excelente','Sin Enlace');
 		$this->semaforo_rangos[12] = array(400,480,590,900);
 		$this->semaforo_rangos[13] = array(400,467,575,900);
 		$this->semaforo_rangos[22] = array(349,416,497,900);
@@ -30,7 +30,7 @@ class escuela extends table{
 	}
 	function get_semaforo(){
 		$this->semaforo = 0;
-		if(isset($this->semaforo_rangos[$this->nivel->id]))
+		if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0)
 			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])	$this->semaforo++;
 		else
 			$this->semaforo = 4;
@@ -51,6 +51,35 @@ class escuela extends table{
 				ON t1.cct=t2.cct
 				SET t1.rank_entidad=t2.rank;";
 		return mysql_query($sql);		
+	}
+	function get_chart($materia){
+		$grados = array();
+		$enlaces = array();
+		$puntaje_name = 'puntaje_'.$materia;
+		if(isset($this->enlaces) && $this->enlaces){
+			$variable = array();
+			foreach($this->enlaces as $enlace){
+				$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;
+				$grados[$enlace->grado] = $enlace->grado;
+			}
+			$grados = array_values($grados);
+			sort($grados);
+			$keys = array_flip($grados);
+			array_unshift($grados,'Año');
+			$variable[] = $grados;
+			foreach($enlaces as $anio => $grados){				
+				$row = array_fill(0,count($keys),0);
+				foreach($grados as $key => $puntaje){
+					//var_dump($keys[$key]);
+					$row[$keys[$key]] = intval($puntaje);
+				}
+				array_unshift($row,strval($anio));
+				$variable[] = $row;
+			}
+		}else{
+			$variable = false;
+		}
+		return $variable;
 	}
 }
 ?>
