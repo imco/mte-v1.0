@@ -1,15 +1,26 @@
 <div class='perfil container'>
 	<div class='head'>
+		<?php $rank = isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
 		<div class='ranking'>
-			<h1>46</h1>
-			<p>Posición <br/>Nivel Nacional</p>
+			<h1><?=$rank?></h1>
+			<p>Posición <br/>Nivel Estatal</p>
 		</div>
-		<div class='nivel <?=$this->config->semaforos[$this->escuela->semaforo]?>'><div class='bubble'></div><?=$this->config->semaforos[$this->escuela->semaforo]?></div>
+		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'>
+			<div class='bubble'></div>
+			<span class='text'><?=$this->config->semaforos[$this->escuela->semaforo]?></span>
+			<?php if($this->escuela->semaforo == 4) { ?>
+				<div class='pop-up-triangle shadow'></div>
+				<div class='pop-up'>
+					<p>Escuela que <strong>no administra la prueba ENLACE</strong> a sus alumnos.</p>
+				</div>
+				<div class='pop-up-triangle'></div>
+			<? } ?>
+		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
 			<h2>Semáforo Educativo</h2>
 			<h3 class='nivel reprobado'>Reprobado</h3>
-			<h3 class='nivel elemental'>Elemental</h3>
+			<h3 class='nivel elemental'>De Panzaso</h3>
 			<h3 class='nivel bien'>Bien</h3>
 			<h3 class='nivel excelente'>Excelente</h3>
 		</div>
@@ -54,7 +65,7 @@
 		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
 	</ul>
 	<div class='tab-container'>
-		<div class='tab jscrollpane'>
+		<div class='tab jscrollpane on'>
 			<a name='calificaciones'></a>
 			<?php
 			if($this->escuela->calificaciones){
@@ -71,6 +82,23 @@ EOD;
 
 			}
 			?>
+		</div>
+		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'>
+			<?php 
+			if($this->escuela->line_chart_espaniol ){
+				echo "<h2>Resultados ENLACE español</h2>";
+				echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
+				echo "<h2>Resultados ENLACE matematicas</h2>";
+				echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
+			}else{
+
+			} 
+			?>
+		</div>
+		<div class='tab jscrollpane'>
+			
 		</div>
 	</div>	
 	<div class='gray-box'>
