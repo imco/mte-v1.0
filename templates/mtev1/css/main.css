@@ -258,3 +258,5 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara .busqueda-avanzada .button-frame{float:left;margin:14px 9px 20px;width:240px;height:57px;} 
 #header .compara .general-search{margin:11px auto 20px;}
 #header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;}
+#header .compara .general-search .customSelect .customSelectInner{width:178px!important;height:18px;overflow:hidden;}
+#header .compara .general-search .customSelect.customSelectDisabled{opacity:.3;}
