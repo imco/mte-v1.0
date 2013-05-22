@@ -85,7 +85,7 @@ EOD;
 		</div>
 		<div class='tab jscrollpane'></div>
 		<div class='tab jscrollpane'></div>
-		<div class='tab jscrollpane'>
+		<div class='tab jscrollpane'><div class=' chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
 				echo "<h2>Resultados ENLACE español</h2>";
@@ -96,7 +96,7 @@ EOD;
 
 			} 
 			?>
-		</div>
+		</div></div>
 		<div class='tab jscrollpane'>
 			
 		</div>
