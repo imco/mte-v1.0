@@ -16,7 +16,7 @@ class default_config{
 		$this->dev_mode = false;
 		
 		//MTE
-		$this->semaforos = array('Reprobado','Elemental','Bien','Excelente','No Enlace');
+		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No Enlace');
 	}
 }
 ?>

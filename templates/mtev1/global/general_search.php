@@ -1,5 +1,8 @@
 <form action='/busqueda' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
-	<p class='button-frame'><input name='term' id='name-input' type='text' placeholder='Nombre de la Escuela' value='<?=$this->request('term');?>' /></p>
+	<p class='button-frame'>
+		<input name='term' id='name-input' type='text' placeholder='Nombre de la Escuela' value='<?=$this->request('term');?>' />
+		<input type='submit' class='integrated' value='' />
+	</p>
 	<p class='adv-search'><a href='/compara/' >Búsqueda Avanzada</a></p>
 	<fieldset name='busqueda-avanzada'>
 		<select name='nivel' id='nivel-input'>
@@ -11,7 +14,7 @@
 			}
 			?>
 		</select>
-		<select name='entidad' id='state-input'>
+		<select name='entidad' id='state-input' class='custom-select'>
 			<option value=''>Estado</option>
 			<?php 
 			foreach($this->entidades as $entidad){
