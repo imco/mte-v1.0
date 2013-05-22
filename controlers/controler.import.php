@@ -13,8 +13,8 @@ class import extends main{
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
 // 		$this->update_schools();
-		$this->update_counties();
-// 		$this->update_locales();
+// 		$this->update_counties();
+		$this->update_locales();
 
 	}
 	
@@ -181,7 +181,7 @@ class import extends main{
 					$q->search_clause = "municipios.municipio = {$row[9]} AND municipios.entidad = {$row[11]}";
 					$county = $q->read('id');
 // 					$localidad->create('municipio,nombre,entidad,localidad',array($county[0]->id,$row[8],$row[11],$row[7]));
-					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
+// 					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
 					$states[$row[11]][$row[9]][$row[7]]->localidad = $row[7];
 					$states[$row[11]][$row[9]][$row[7]]->entidad = $row[11];
 					$states[$row[11]][$row[9]][$row[7]]->municipio = $county[0]->id;
