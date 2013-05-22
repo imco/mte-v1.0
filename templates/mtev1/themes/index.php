@@ -19,6 +19,10 @@
 			'jquery.validate.min.js',
 			"interactions.js"
 		);
+		if($this->location == 'escuelas'){
+			$js_scripts[] = 'school-charts.js';
+			echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
+		}
 		if($this->location == 'mapa' || $this->location == 'escuelas'){
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=true"></script>';
 			$js_scripts[] = 'map.js';
