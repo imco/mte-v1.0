@@ -9,7 +9,7 @@ class import extends main{
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
 // 		$this->enlaces();
-// 		$this->import_no_confiables();
+		$this->import_no_confiables();
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
 // 		$this->update_schools();
@@ -181,7 +181,7 @@ class import extends main{
 					$q->search_clause = "municipios.municipio = {$row[9]} AND municipios.entidad = {$row[11]}";
 					$county = $q->read('id');
 // 					$localidad->create('municipio,nombre,entidad,localidad',array($county[0]->id,$row[8],$row[11],$row[7]));
-					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
+// 					$states[$row[11]][$row[9]][$row[7]]->id = $localidad->id;
 					$states[$row[11]][$row[9]][$row[7]]->localidad = $row[7];
 					$states[$row[11]][$row[9]][$row[7]]->entidad = $row[11];
 					$states[$row[11]][$row[9]][$row[7]]->municipio = $county[0]->id;
@@ -201,9 +201,12 @@ class import extends main{
 								AND municipio = '{$localidad->municipio}'
 								AND cct_count = '{$localidad->count}'"; 
 							$localidad2s = $localidad2->read('id,nombre');
-							echo $localidad2s[0]->id.'<br />';
-							$localidad3 = new localidad($localidad2s[0]->id);
-							$localidad3->update('nombre',$localidad->nombre);
+							echo $localidad2s[0]->id.' / '.$localidad->nombre.' / '.$info->s.'<br />';
+							if(isset($localidad2s[0]->id)){
+								$localidad3 = new localidad($localidad2s[0]->id);
+								$localidad3->debug = false;
+								$localidad3->update('nombre',array($info->s));
+							}
 						}
 					}
 				}
@@ -286,8 +289,8 @@ class import extends main{
 						echo $county->municipio.' / '.$county->entidad.' / '.$county->nombre.' / '.$county->count.'<br />';
 						echo '<br />';
 						if(isset($county2s[0]->id)){
-// 							$county3 = new municipio($county2s[0]->id);
-// 							$county3->update('nombre',array($info->s));
+							$county3 = new municipio($county2s[0]->id);
+							$county3->update('nombre',array($info->s));
 						}
 					}
 				}
