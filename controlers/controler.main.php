@@ -176,7 +176,7 @@ class main extends controler{
     }
     protected function get_location(){
     	$ip = $_SERVER['REMOTE_ADDR'];
-    	$ip = '187.153.71.141';
+    	//$ip = '187.153.71.141';
 		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
 		$result = explode(';',$file);
 		$entidad = $result[5];
