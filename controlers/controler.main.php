@@ -131,8 +131,15 @@ class main extends controler{
 		}
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
+		
+		if($params->pagination){
+			$this->pagination = new pagination('escuela',$params->pagination,$q->search_clause);
+			$q->limit = $this->pagination->limit;
+		}
+
 		//$q->debug = true;
 		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,rank_entidad,rank_nacional,control=>id,control=>nombre');
+
 		if($this->request('json')){
 			$response = array();
 			if($this->escuelas){
