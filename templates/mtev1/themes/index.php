@@ -32,6 +32,7 @@
 		$cssmin->tag('css');
 		$jsmin->tag('js');
 	?>
+	<title><?=$this->page_title;?></title>
  </head>
  <body>
  	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
