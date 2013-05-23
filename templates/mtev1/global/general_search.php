@@ -52,8 +52,11 @@
 				?>
 			</select>
 		</p>
-		<p class='submits'>
-			<input type='submit' value='Buscar'/>
+		<p class='submit button-frame'>
+			<input type='submit' value='Buscar' class='button'/>
+			<span class='before'></span>
+			<span class='before after'></span>
 		</p>
+		<p class='adv-search mapa'><a href='/compara/' >Ver en <span>mapa</span></a></p>
 	</fieldset>
  </form>
