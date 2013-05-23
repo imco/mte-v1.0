@@ -6,7 +6,8 @@ class compara extends main{
 		$this->load_municipios();
 		$this->load_localidades();
 		$this->load_compara_cookie();
-		if(!$this->get('search')) $this->get_location();
+		//if(!$this->get('search')) $this->get_location();
+		$this->user_location = false;
 		if(!$this->request('search')) $params->entidad = $this->user_location ? $this->user_location : 9 ;
 		$params->pagination = 6;		
 		$params->order_by = 'escuelas.promedio_general DESC';		
