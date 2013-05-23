@@ -4,6 +4,11 @@ $(document).ready(function(){
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 
+	$('.compara-escuela').on('click',function(e){
+		e.preventDefault();
+		var tr = $(this).parent().parent().toggleClass('on');
+	});
+
 	$('#content .perfil .tabs li a').click(function(e){
 		e.preventDefault();
 		var index = 4 - $(this).parent().index();
@@ -67,6 +72,7 @@ $(document).ready(function(){
 			"Municipio"
 		);
 	});
+
 	$('#municipio-input').change(function(){
 		if($(this).val() != "" || ($("#state-input option:selected").val() != "" && $("#state-input option:selected").val() != 7 && $("#state-input option:selected").val() != 20 && $("#state-input option:selected").val() != 30)){
 			load_location_options(
