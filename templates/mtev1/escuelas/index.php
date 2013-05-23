@@ -12,9 +12,16 @@
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
 					<p>Escuela que <strong>no administra la prueba ENLACE</strong> a sus alumnos.</p>
+
 				</div>
 				<div class='pop-up-triangle'></div>
-			<? } ?>
+			<? }else if($this->escuela->semaforo == 5){?>
+				<div class='pop-up-triangle shadow'></div>
+				<div class='pop-up'>
+					<p>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables."</strong></p>
+				</div>
+				<div class='pop-up-triangle'></div>
+			<?php }?>
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
