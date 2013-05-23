@@ -248,15 +248,22 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .chart{width:797px;height:247px;position:relative;}
 
 /* Compara */
-#header .compara .titles{margin:11px auto 0;width:582px}
-#header .compara h1{font-size:53px;line-height:68px;}
-#header .compara h2{font-size:36px;line-height:39px;}
-#header .compara h3{background:url(../img/compara/buscar.jpg) no-repeat center 0px;padding:28px 0 1px;font-size:19px;}
+#header .compara .titles{margin:6px auto 0;width:582px}
+#header .compara h1{font-size:53px;line-height:63px;padding:5px 0 0;}
+#header .compara h2{font-size:18px;line-height:31px;}
+#header .compara h3{background:url(../img/compara/lupa.png) no-repeat center 0px;padding:32px 0 1px;font-size:19px;}
 #header .compara hr{width:578px;margin:0 auto;}
 #header .compara .button-frame{margin:10px auto 0;float:none;}
 #header .compara .busqueda-avanzada{margin:0 auto;clear:both;width:520px;}
 #header .compara .busqueda-avanzada .button-frame{float:left;margin:14px 9px 20px;width:240px;height:57px;} 
-#header .compara .general-search{margin:11px auto 20px;}
-#header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;}
+#header .compara .general-search{margin:19px auto 0;}
+#header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;font-size:13px;}
 #header .compara .general-search .customSelect .customSelectInner{width:178px!important;height:18px;overflow:hidden;}
 #header .compara .general-search .customSelect.customSelectDisabled{opacity:.3;}
+#header .compara .general-search select option{background-color:#F1F1F1;border:none;background-image:-moz-linear-gradient(top,#F8F8F8,#e9e9e9);color:#888888;padding:6px 18px;font-family:Varela Round;}
+#header .compara .general-search select option:hover,#header .compara .general-search select option[selected]{background-color:#01A7E5;background-image:-moz-linear-gradient(top,#00AAE8,#009FD9);}
+#header .compara .submit.button-frame{margin:-1px 25px 0 49px;height:72px;width:302px;}
+#header .compara .submit.button-frame input{box-shadow: -1px -1px 2px #333333 inset, 1px 1px 2px white inset;display:block;border:none;color:white;font-family:Varela Round;background-color:#00AFF0;width:284px;height:53px;font-size:21px;margin:10px 9px;}
+#header .compara .adv-search.mapa{margin:-9px 0 12px}
+#header .compara .adv-search.mapa a{background-image:url(../img/compara/vermapa.png);background-position:center 12px;padding-top:38px;height:49px;}
+#header .compara .adv-search.mapa span{font-size:19px;display:block;line-height:17px;}
