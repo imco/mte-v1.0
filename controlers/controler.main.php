@@ -130,6 +130,17 @@ class main extends controler{
 		}else{
 			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "21" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		}
+
+		if(isset($params->ccts) && $params->ccts){
+			if(count($params->ccts)){
+				$q->search_clause = '';
+				foreach($params->ccts as $i => $cct){
+					$or = $i == 0 ? '(' : ' OR ';
+					$q->search_clause .= "$or escuelas.cct = '$cct'";
+				}
+				$q->search_clause .= " )";
+			}
+		}
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
 		
@@ -139,7 +150,8 @@ class main extends controler{
 		}
 
 		//$q->debug = true;
-		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,rank_entidad,rank_nacional,control=>id,control=>nombre');
+		//var_dump($q->search_clause);
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre');
 
 		if($this->request('json')){
 			$response = array();
@@ -205,6 +217,7 @@ class main extends controler{
     	$this->compara_cookie = false;
     	if($this->cookie('escuelas')){
     		$this->compara_cookie = explode('-',$this->cookie('escuelas'));
+    		$this->compara_cookie = count($this->compara_cookie) ? $this->compara_cookie : false;
     	}
     }
 }
