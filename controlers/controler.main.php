@@ -110,6 +110,7 @@ class main extends controler{
 	public function get_escuelas($params = false){		
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
+		
 		$q->search_clause .= $this->request('term') ? " AND escuelas.nombre LIKE '".$this->request('term')."%' " : '';
 		if(isset($params->entidad) && $params->entidad){
 			$q->search_clause .= " AND escuelas.entidad = '{$params->entidad}' ";
@@ -131,7 +132,7 @@ class main extends controler{
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
 		//$q->debug = true;
-		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,control=>nombre,latitud,longitud,promedio_general,rank_entidad,rank_nacional');
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,rank_entidad,rank_nacional,control=>id,control=>nombre');
 		if($this->request('json')){
 			$response = array();
 			if($this->escuelas){
