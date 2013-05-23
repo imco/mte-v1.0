@@ -334,3 +334,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar table td.school{font-size:14px;color:#087B3A;border-left:3px solid #0ca14d;padding:0 6px;text-align:center;}
 #content .comparar table td.school a{padding:21px 0px 20px;font-size:15px;}
 #content .comparar table td.rank span{background-image:url(../img/comparador/calificacion.png);width:45px;height:45px;line-height:45px;font-size:14px;}
+
+#content .comparar .compara-tab-container .tab{display:none;}
+#content .comparar .compara-tab-container .tab.on{display:block;}
