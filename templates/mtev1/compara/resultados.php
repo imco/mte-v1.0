@@ -13,8 +13,9 @@
 	<?php
 	if($this->escuelas){
 		foreach($this->escuelas as $escuela){
+			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			echo "
-			<tr>
+			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
@@ -38,7 +39,10 @@
 	$token = $this->get('search') ? '&' : '?';
 	$this->pagination->echo_paginate($_SERVER["REQUEST_URI"].$token,'p',5,false,$labels); 
 	?></div>
-	<a class="button-frame" href="/compara/escuelas/">
+	<?php
+	$sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : '';
+	?>
+	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
 		<span class="button">Compara</span>
 	</a>
 </div>
