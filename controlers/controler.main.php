@@ -131,8 +131,8 @@ class main extends controler{
 		}
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
-		$q->debug = false;
-		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general');
+		//$q->debug = true;
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,rank_entidad,rank_nacional,control=>id,control=>nombre');
 		if($this->request('json')){
 			$response = array();
 			if($this->escuelas){
@@ -177,7 +177,7 @@ class main extends controler{
     }
     protected function get_location(){
     	$ip = $_SERVER['REMOTE_ADDR'];
-    	$ip = '187.153.71.141';
+    	//$ip = '187.153.71.141';
 		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
 		$result = explode(';',$file);
 		$entidad = $result[5];
