@@ -22,18 +22,27 @@ class escuela extends table{
 		$this->has_many['calificaciones'] = 'calificacion';
 		$this->has_many_keys['calificaciones'] = 'cct';
 
-		$this->semaforos = array('Reprobado','De Panzazo','Bien','Excelente','Sin Enlace');
+		$this->semaforos = array('Reprobado','De Panzazo','Bien','Excelente','Sin Enlace','Poco confiable');
 		$this->semaforo_rangos[12] = array(400,480,590,900);
 		$this->semaforo_rangos[13] = array(400,467,575,900);
 		$this->semaforo_rangos[22] = array(349,416,497,900);
+		$this->semaforo_poco_confiable = 10;
 
 	}
 	function get_semaforo(){
+		//14DPR3178G example
 		$this->semaforo = 0;
-		if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0)
-			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])	$this->semaforo++;
-		else
+		$porcentaje_poco_confiable = ($this->poco_confiables * 100) / $this->total_evaluados;
+		if($porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
+// 		if(0){
+			$this->semaforo = 5;
+		}else if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0){
+			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])$this->semaforo++;
+		}else{
 			$this->semaforo = 4;
+		}
+// 		echo $this->semaforo;
+// 		exit();
 	}
 	function rank($nivel,$entidad = false,$municipio = false){
 		$entidad_clause = $entidad ? " AND entidad LIKE '$entidad'" : '';
