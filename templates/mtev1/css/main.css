@@ -297,3 +297,20 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;}
 #content .resultados .button:before{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;left:8px;position:absolute;}
 #content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
+
+/*Comparador*/
+#content .comparar{margin:11px auto;}
+#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;text-shadow:1px 1px 4px #666;width:178.4px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
+#content .comparar .compara-tabs a:nth-child(5){margin:0;}
+#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;margin:0;}
+#content .comparar .compara-tabs a span{display:block;}
+#content .comparar .compara-tabs a.general span{width:65px;height:44px;background-position:0 -46px;margin:4px auto 15px;background-image:url(../img/comparador/general.png);}
+#content .comparar .compara-tabs a.general.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.posicion-nacional span{width:49px;height:50px;background-position:0 -52px;margin:0 auto 13px;background-image:url(../img/comparador/posicion-nacional.png);}
+#content .comparar .compara-tabs a.posicion-nacional.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.resultados-por-anio span{width:42px;height:47px;background-position:0 -49px;margin:0 auto 16px;background-image:url(../img/comparador/resultados-por-anio.png);}
+#content .comparar .compara-tabs a.resultados-por-anio.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.desempeno-de-alumnos span{width:53px;height:46px;background-position:0 -48px;margin:0 auto 17px;background-image:url(../img/comparador/desempeno-de-alumnos.png);}
+#content .comparar .compara-tabs a.desempeno-de-alumnos.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.mapa span{width:39px;height:47px;background-position:0 -49px;margin:0 auto 17px;background-image:url(../img/comparador/mapa.png);}
+#content .comparar .compara-tabs a.mapa.on span{background-position:0 0;}

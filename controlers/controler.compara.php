@@ -15,7 +15,8 @@ class compara extends main{
 		$this->include_theme('index','resultados');
 	}
 	public function escuelas(){
-		var_dump($this->get('id'));
+		$this->header_folder ='escuelas';
+		$this->include_theme('index','index');
 	}
 }
 ?>
