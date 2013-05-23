@@ -1,4 +1,4 @@
-<form action='/busqueda' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
+<form action='/compara' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	<p class='button-frame'>
 		<input name='term' id='name-input' type='text' placeholder='Nombre de la Escuela' value='<?=$this->request('term');?>' />
 		<input type='submit' class='integrated' value='' />
@@ -54,6 +54,7 @@
 		</p>
 		<p class='submit button-frame'>
 			<input type='submit' value='Buscar' class='button'/>
+			<input type='hidden' value='true' name='search' />
 			<span class='before'></span>
 			<span class='before after'></span>
 		</p>
