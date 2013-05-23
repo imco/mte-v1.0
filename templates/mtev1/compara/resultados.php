@@ -20,8 +20,8 @@
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</span>".
 				"</a></td>
-				<td class='nivel'>{$escuela->nivel->nombre}</td>
-				<td class='control'>{$escuela->control->nombre}</td>
+				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
+				<td class='control'>".$this->capitalize($escuela->control->nombre)."</td>
 				<td class='rank'><span>{$escuela->rank_entidad}</span></td>
 			</tr>
 			";
@@ -29,4 +29,5 @@
 	}	
 	?>
 	</table>
+	<?php $this->pagination->echo_paginate($_SERVER["REQUEST_URI"].'&#resultados','p',5); ?>
 </div>
