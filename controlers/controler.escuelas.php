@@ -19,7 +19,7 @@ class escuelas extends main{
 		$this->escuela = new escuela($this->get('id'));
 		//$this->escuela->debug = true;
 		$this->escuela->read("
-			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,
+			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,
 			entidad=>nombre,municipio=>nombre,localidad=>nombre,localidad=>id,
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
 			turno=>nombre,latitud,longitud,tipo=>nombre,
