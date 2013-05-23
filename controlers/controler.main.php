@@ -130,7 +130,7 @@ class main extends controler{
 		}
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
-		$q->debug = true;
+		//$q->debug = true;
 		$this->escuelas = $q->read('cct,nombre,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general');
 		if($this->request('json')){
 			$response = array();
