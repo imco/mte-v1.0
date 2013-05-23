@@ -9,10 +9,12 @@
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Ranking Estatal</th>
+			<th class='rank'>Semaforo Educativo</th>
 		</tr>
 	<?php
 	if($this->escuelas){
 		foreach($this->escuelas as $escuela){
+			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			echo "
 			<tr $on>
@@ -24,6 +26,7 @@
 				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
 				<td class='control'>".$this->capitalize($escuela->control->nombre)."</td>
 				<td class='rank'><span>{$escuela->rank_entidad}</span></td>
+				<td class='semaforo sem{$escuela->semaforo}'><span></span></td>
 			</tr>
 			";
 		}
