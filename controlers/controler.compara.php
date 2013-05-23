@@ -7,7 +7,7 @@ class compara extends main{
 		$this->load_localidades();
 		$this->get_location();
 		$this->header_folder = 'compara';
-		$params->limit = '0,10';
+		$params->limit = '0,6';
 		if(!$this->request('search')) $params->entidad = $this->user_location ? $this->user_location : 9 ;
 		$params->order_by = 'escuelas.promedio_general DESC';
 		$this->get_escuelas($params);
