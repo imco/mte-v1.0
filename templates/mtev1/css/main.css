@@ -276,9 +276,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:16px 5px;vertical-align:middle;font-size:13px;}
 #content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:24px;padding:0 10px;}
 #content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 13px 9px;width:70px;padding:4px 315px 0 51px;color:white;line-height:15px;}
-#content .resultados table td{color:white;font-size:14px;text-align:center;vertical-align:center;background-color:rgba(0,0,0,.2);}
+#content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:center;background-color:rgba(0,0,0,.2);}
 #content .resultados table td.school{background-color:rgba(26,164,86,.2);text-align:left;}
-#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;}
+#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;font-size:14px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:rgba(26,164,86,.2);}
 #content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;top:7px;left:9px;}
