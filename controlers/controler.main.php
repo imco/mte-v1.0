@@ -201,5 +201,11 @@ class main extends controler{
 			$this->user_location = false;
 		}
     }
+    protected function load_compara_cookie(){
+    	$this->compara_cookie = false;
+    	if($this->cookie('escuelas')){
+    		$this->compara_cookie = explode('-',$this->cookie('escuelas'));
+    	}
+    }
 }
 ?>
