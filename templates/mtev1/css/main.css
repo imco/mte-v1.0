@@ -54,7 +54,7 @@ a{text-decoration:none;}
 #header .general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background:#00AFF0 url(../img/home/busquedavanzada.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;}
 
 
-#content{color:#474747;padding:0 0 229px;}
+#content{color:#474747;padding:0 0 8px;}
 #content .container{width:900px;margin:25px auto;}
 #content a{color:#EC018E;}
 #content p{line-height:16px;}
