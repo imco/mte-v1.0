@@ -269,14 +269,22 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara .adv-search.mapa a{background-image:url(../img/compara/vermapa.png);background-position:center 12px;padding-top:38px;height:49px;}
 #header .compara .adv-search.mapa span{font-size:19px;display:block;line-height:17px;}
 
-#content .resultados table{border-top:2px solid #1AA456;border-spacing:2px;border-collapse:separate}
-#content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;vertical-align:center;width:138px;padding:0;border-spacing:2px 5px;padding:0 10px;}
-#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:43px;}
-#content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 2px center;width:70px;padding:0 310px 0 50px;color:white;}
-#content .resultados table td{color:white;font-size:14px;text-align:center;vertical-align:center;background-color:rgba(0,0,0,.3);}
+#content .resultados{margin:10px auto;}
+#content .resultados h1{color:#5D5D5D;font-size:18px;line-height:36px}
+#content .resultados hr{background-color:#0BA14A;margin:0 2px;height:4px;background-image:none;}
+#content .resultados table{border-spacing:2px;border-collapse:separate;margin-top:-2px;}
+#content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:16px 5px;vertical-align:middle;font-size:13px;}
+#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:24px;padding:0 10px;}
+#content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 13px 9px;width:70px;padding:4px 315px 0 51px;color:white;line-height:15px;}
+#content .resultados table td{color:white;font-size:14px;text-align:center;vertical-align:center;background-color:rgba(0,0,0,.2);}
 #content .resultados table td.school{background-color:rgba(26,164,86,.2);text-align:left;}
-#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 10px;}
+#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:rgba(26,164,86,.2);}
-#content .resultados table td.checkbox a{display:block;border:3px solid #23A358;width:20px;height:20px;border-radius:5px;position:relative;top:10px;left:13px;}
-#content .resultados table td.rank span{display:block;background-image:url(../img/compara/posicion.png);width:33px;height:32px;text-align:center;line-height:32px;margin:0 auto;}
+#content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;top:7px;left:9px;}
+#content .resultados table td.rank span{display:block;background-image:url(../img/compara/posicion.png);width:33px;height:32px;text-align:center;line-height:32px;margin:0 auto;font-size:12px;}
+#content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
+#content .resultados table tr.on .school a{color:white;}
+#content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
+#content .resultados table tr.on .checkbox a{border:2px solid white;position:relative;}
+#content .resultados table tr.on .checkbox a:before{content:'';position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;background-color:white;}
