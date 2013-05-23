@@ -44,7 +44,7 @@ class escuelas extends main{
 			$this->post('calificacion'),
 			$_SERVER['HTTP_USER_AGENT']
 		)); 
-		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct') : "/escuelas/index/".$this->post('cct')."/e=ce";
+		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
 		header("location: $location");
 	}
 	public function like_calificacion(){
