@@ -15,7 +15,7 @@
 		foreach($this->escuelas as $escuela){
 			echo "
 			<tr>
-				<td class='checkbox'><a class='compara-escuela' href='#'></a></td>
+				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</span>".
@@ -39,6 +39,6 @@
 	$this->pagination->echo_paginate($_SERVER["REQUEST_URI"].$token,'p',5,false,$labels); 
 	?></div>
 	<a class="button-frame" href="/compara/escuelas/">
-		<span class="button">Comparar</span>
+		<span class="button">Compara</span>
 	</a>
 </div>
