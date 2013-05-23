@@ -9,7 +9,7 @@
 		<div class='shadow'></div>
 	</div>
 	<div class='compara-tab-container'>
-		<div class='tab'>
+		<div class='tab on'>
 			<?php 
 			$this->current_rank->name = 'Estatal';
 			$this->current_rank->slug = 'rank_entidad';
@@ -23,7 +23,7 @@
 			$this->include_template('compare-table','compara');
 			?>
 		</div>
-		<div class='tab on'>
+		<div class='tab'>
 			<table>
 				<tr>
 					<th class='school'>Escuelas comparadas</th>
@@ -45,11 +45,9 @@
 					}
 					echo "<tr>";
 					echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
-					//$escuela->debug = true;
 					$escuela->read('enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>anio,enlaces=>id');
 					if($escuela->enlaces){
 						foreach($escuela->enlaces as $enlace){
-							//var_dump($enlace->anio);
 							$scores[$enlace->anio]->sum += $enlace->puntaje_espaniol + $enlace->puntaje_matematicas;
 							$scores[$enlace->anio]->count++;
 						}
