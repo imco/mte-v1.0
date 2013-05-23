@@ -67,6 +67,7 @@ $(document).ready(function(){
 			"Municipio"
 		);
 	});
+	
 	$('#municipio-input').change(function(){
 		if($(this).val() != "" || ($("#state-input option:selected").val() != "" && $("#state-input option:selected").val() != 7 && $("#state-input option:selected").val() != 20 && $("#state-input option:selected").val() != 30)){
 			load_location_options(
