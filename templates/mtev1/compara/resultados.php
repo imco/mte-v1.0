@@ -1,11 +1,11 @@
 <a name='resultados'></a>
 <div class='resultados container'>
-	<h1>Escuelas Similares</h1>
+	<h1>Resultados</h1>
 	<hr/>
 	<table>
 		<tr>
 			<th class='checkbox'></th>
-			<th class='school'>Escuelas Similares</th>
+			<th class='school'>Escuelas</th>
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Ranking Estatal</th>
@@ -29,5 +29,13 @@
 	}	
 	?>
 	</table>
-	<?php $this->pagination->echo_paginate($_SERVER["REQUEST_URI"].'&#resultados','p',5); ?>
+	<div class='pagination'><?php 
+	$labels->prev_page = "<< primeras";
+	$labels->prev = "<<";
+	$labels->next_page = "últimas >>";
+	$labels->next = ">>";
+	$labels->hash = '#resultados';
+	$token = $this->get('search') ? '&' : '?';
+	$this->pagination->echo_paginate($_SERVER["REQUEST_URI"].$token,'p',5,false,$labels); 
+	?></div>
 </div>
