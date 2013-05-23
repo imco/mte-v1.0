@@ -288,8 +288,12 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr.on .checkbox a{border:2px solid white;position:relative;}
 #content .resultados table tr.on .checkbox a:before{content:'';position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;background-color:white;}
-#content .resultados .pagination{text-align:center;margin:16px auto;}
+#content .resultados .pagination{text-align:center;margin:16px auto 19px;}
 #content .resultados .pagination a{color:black;text-shadow:1px 1px white;background-color:#DFDFDF;padding:6px 9px;font-size:12px;border-radius:3px;margin:0 1px;}
 #content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
 #content .resultados .pagination a.on{background-color:#0BA14A;color:white;text-shadow:none;}
 #content .resultados .pagination a.on:hover{padding:6px 9px;border:none;}
+#content .resultados .button-frame{display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
+#content .resultados .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;}
+#content .resultados .button:before{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;left:8px;position:absolute;}
+#content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}

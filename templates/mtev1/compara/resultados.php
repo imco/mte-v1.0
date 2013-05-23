@@ -38,4 +38,7 @@
 	$token = $this->get('search') ? '&' : '?';
 	$this->pagination->echo_paginate($_SERVER["REQUEST_URI"].$token,'p',5,false,$labels); 
 	?></div>
+	<a class="button-frame" href="/compara/escuelas/">
+		<span class="button">Comparar</span>
+	</a>
 </div>
