@@ -132,7 +132,7 @@ class main extends controler{
 		$q->order_by = isset($params->order_by) ? $params->order_by : 'escuelas.nombre';
 		$q->limit= isset($params->limit) ? $params->limit : "0 ,10";
 		
-		if($params->pagination){
+		if(isset($params->pagination)){
 			$this->pagination = new pagination('escuela',$params->pagination,$q->search_clause);
 			$q->limit = $this->pagination->limit;
 		}
