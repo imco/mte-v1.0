@@ -288,3 +288,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr.on .checkbox a{border:2px solid white;position:relative;}
 #content .resultados table tr.on .checkbox a:before{content:'';position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;background-color:white;}
+#content .resultados .pagination{text-align:center;margin:16px auto;}
+#content .resultados .pagination a{color:black;text-shadow:1px 1px white;background-color:#DFDFDF;padding:6px 9px;font-size:12px;border-radius:3px;margin:0 1px;}
+#content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
+#content .resultados .pagination a.on{background-color:#0BA14A;color:white;text-shadow:none;}
+#content .resultados .pagination a.on:hover{padding:6px 9px;border:none;}
