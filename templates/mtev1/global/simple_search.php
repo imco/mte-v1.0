@@ -2,6 +2,7 @@
 	<p class='button-frame'>
 		<input name='term' id='name-input' type='text' placeholder='Búscar Escuela' value='<?=$this->request('term');?>' />
 		<input type='submit' class='integrated' value='' />
+		<input type='hidden' name='search' value='true' />
 	</p>
 	<p class='adv-search'><a href='/compara/' >Búsqueda Avanzada</a></p>
  </form>
