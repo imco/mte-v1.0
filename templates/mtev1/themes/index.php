@@ -17,6 +17,7 @@
 			'jquery.jscrollpane.min.js',
 			'jquery.customSelect.min.js',
 			'jquery.validate.min.js',
+			'jquery.cookie.js',
 			"interactions.js"
 		);
 		if($this->location == 'escuelas'){
