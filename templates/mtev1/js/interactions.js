@@ -5,6 +5,15 @@ $(document).ready(function(){
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 
+	$('.compara-tabs a').click(function(e){
+		e.preventDefault();
+		var index = $(this).index();
+		$('.compara-tabs a.on').removeClass('on');
+		$(this).addClass('on');
+		$('.compara-tab-container .tab.on').removeClass('on');
+		$('.compara-tab-container .tab').eq(index).addClass('on');
+	})
+
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		var tr = $(this).parent().parent().toggleClass('on');
