@@ -115,7 +115,7 @@ function toggle_escuela(cct){
 	if(typeof($.cookie('escuelas')) == 'undefined'){		
 		$.cookie('escuelas',[cct]);
 	}else{
-		var escuelas = $.cookie('escuelas').split(';');
+		var escuelas = $.cookie('escuelas').split('-');
 		var index = escuelas.indexOf(cct);
 		if(index != -1){
 			escuelas.splice(index,1);
@@ -123,6 +123,7 @@ function toggle_escuela(cct){
 			escuelas.push(cct);
 		}
 		escuelas.sort();
-		$.cookie('escuelas',escuelas.join(';'));
+		$.cookie('escuelas',escuelas.join('-'));
+		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
 	}
 }
