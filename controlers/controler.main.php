@@ -5,6 +5,7 @@ class main extends controler{
 		$this->dbConnect();
 		$this->location = get_class($this);
 		$this->header_folder = 'home';
+		$this->page_title = 'Mejora tu Escuela';
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
