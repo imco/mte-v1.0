@@ -111,7 +111,11 @@ class main extends controler{
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
 		$q->search_clause .= $this->request('term') ? " AND escuelas.nombre LIKE '".$this->request('term')."%' " : '';
-		$q->search_clause .= $this->request('entidad') ? ' AND escuelas.entidad = "'.$this->request('entidad').'" ' : '';
+		if(isset($params->entidad) && $params->entidad){
+			$q->search_clause .= " AND escuelas.entidad = '{$params->entidad}' ";
+		}else{
+			$q->search_clause .= $this->request('entidad') ? ' AND escuelas.entidad = "'.$this->request('entidad').'" ' : '';
+		}
 		$q->search_clause .= $this->request('municipio') ? ' AND escuelas.municipio = "'.$this->request('municipio').'" ' : '';
 		if(isset($params->localidad) && $params->localidad){
 			$q->search_clause .= " AND escuelas.localidad = '{$params->localidad}' ";
@@ -169,6 +173,24 @@ class main extends controler{
         $c = 2 * asin(sqrt($a));
         $distance = $radiusOfEarth * $c;
         return $distance;
+    }
+    protected function get_location(){
+    	$ip = $_SERVER['REMOTE_ADDR'];
+    	$ip = '187.153.71.141';
+		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
+		$result = explode(';',$file);
+		$entidad = $result[5];
+		if($entidad != '-'){
+			$q = new entidad();
+			$q->search_clause = "entidades.nombre LIKE '$entidad%'";
+			$entidad = $q->read('id,nombre');
+			if($entidad && count($entidad) == 1) 
+				$this->user_location = $entidad[0]->id;
+			else
+				$this->user_location = false;
+		}else{
+			$this->user_location = false;
+		}
     }
 }
 ?>
