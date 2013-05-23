@@ -49,10 +49,6 @@ $(document).ready(function(){
 			window.location = "/escuelas/index/"+ui.item.cct;
 			return false;
 		}
-		/*focus: function( event, ui ) {
-			//$( "#name-input" ).val(ui.item.label);
-			return false;
-		},*/
 	}).data( "ui-autocomplete" )._renderItem = function( ul, item ){
       return $("<li>").append("<a>"+item.label+"<span>"+item.address+"</span></a>").appendTo(ul);
     };
@@ -63,27 +59,16 @@ $(document).ready(function(){
 
 	});
 	$('#state-input').change(function(e){
+		$("#localidad-input").prop('disabled', true).next().addClass('customSelectDisabled');
 		load_location_options(
 			$("#municipio-input"),
 			'load_municipios',
 			{entidad:$(this).val(),json:true},
 			"Municipio"
 		);
-		if($(this).val() != ''){
-			load_location_options(
-				$("#localidad-input"),
-				'load_localidades',
-				{entidad:$(this).val(),json:true},
-				"Localidad"
-			);
-		}else{
-			$("#localidad-input").prop('disabled', true);
-			$("#localidad-input").html('<option value="">Localidad</option>');
-		}
-
 	});
 	$('#municipio-input').change(function(){
-		if($(this).val() != ""|| $("#state-input option:selected").val() != ""){
+		if($(this).val() != "" || ($("#state-input option:selected").val() != "" && $("#state-input option:selected").val() != 7 && $("#state-input option:selected").val() != 20 && $("#state-input option:selected").val() != 30)){
 			load_location_options(
 				$("#localidad-input"),
 				'load_localidades',
@@ -91,7 +76,7 @@ $(document).ready(function(){
 				"Localidad"
 			);
 		}else{
-			$("#localidad-input").prop('disabled', true);
+			$("#localidad-input").prop('disabled', true).next().addClass('customSelectDisabled');
 			$("#localidad-input").html('<option value="">Localidad</option>');
 		}
 	});
