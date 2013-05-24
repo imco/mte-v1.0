@@ -9,7 +9,7 @@
 		<div class='shadow'></div>
 	</div>
 	<div class='compara-tab-container'>
-		<div class='tab'>
+		<div class='tab on'>
 			<?php 
 			$this->current_rank->name = 'Estatal';
 			$this->current_rank->slug = 'rank_entidad';
@@ -23,46 +23,7 @@
 			$this->include_template('compare-table','compara');
 			?>
 		</div>
-		<div class='tab on'>
-			<table>
-				<tr>
-					<th class='school'>Escuelas comparadas</th>
-					<th class='calificacion'>2006</th>
-					<th class='calificacion'>2007</th>
-					<th class='calificacion'>2008</th>
-					<th class='calificacion'>2009</th>
-					<th class='calificacion'>2010</th>
-					<th class='calificacion'>2011</th>
-					<th class='calificacion'>2012</th>
-					<th class='semaforos'>Semaforo Educativo</th>
-				</tr>
-				<?php 
-				foreach($this->escuelas as $escuela){
-					$scores = array();
-					for($i = 2006;$i<2013;$i++){
-						$scores[$i]->sum = 0;
-						$scores[$i]->count = 0;
-					}
-					echo "<tr>";
-					echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
-					//$escuela->debug = true;
-					$escuela->read('enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>anio,enlaces=>id');
-					if($escuela->enlaces){
-						foreach($escuela->enlaces as $enlace){
-							//var_dump($enlace->anio);
-							$scores[$enlace->anio]->sum += $enlace->puntaje_espaniol + $enlace->puntaje_matematicas;
-							$scores[$enlace->anio]->count++;
-						}
-					}
-					foreach($scores as $year => $score){
-						$avg = $score->count ? round($score->sum/($score->count*2)) : '--';
-						echo "<td class='rank'>$avg</td>";
-					}					
-					echo "<td class='semaforo sem{$escuela->semaforo}'><span></span></td>";
-					echo "</tr>";
-				}
-				?>
-			</table>
-		</tab>
+		<div class='tab'><?php $this->include_template('por-anios-table','compara');?></div>
+		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div >
 	</div>
 </div>
