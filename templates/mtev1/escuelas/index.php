@@ -85,9 +85,9 @@
 					</div>
 EOD;
 				}
-			}else{
-
-			}
+			}else{?>
+				<div class='buble-sin-comentario'>Sé el primero en escribir un comentario</div>
+			<?php }
 			?>
 		</div>
 		<div class='tab jscrollpane'></div>
