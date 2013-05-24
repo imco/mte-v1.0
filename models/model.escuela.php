@@ -30,7 +30,6 @@ class escuela extends table{
 
 	}
 	function get_semaforo(){
-		//14DPR3178G example
 		$this->semaforo = 0;
 		$porcentaje_poco_confiable = $this->poco_confiables > 0 && $this->total_evaluados > 0?($this->poco_confiables * 100) / $this->total_evaluados:0;
 		if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
