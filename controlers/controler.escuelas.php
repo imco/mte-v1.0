@@ -5,7 +5,7 @@ class escuelas extends main{
 			$params->limit = '0,6';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;		
-			
+
 			$params->order_by = 'escuelas.promedio_general DESC';
 
 			$this->load_compara_cookie();
@@ -26,6 +26,7 @@ class escuelas extends main{
 			$this->header_folder = 'escuelas';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
+			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
 			$this->include_theme('index','index');
 		}else{
 			header('HTTP/1.0 404 Not Found');
