@@ -228,6 +228,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .gray-box .column{float:left;width:368px;height:109px;}
 #content .perfil .buble-sin-comentario{background:url(../img/perfil/bublesincoments.png);width:209px;height:236px;margin:0px auto;bottom:-3px;position:relative}
 #content .perfil .buble-sin-comentario p{background:url(../img/perfil/lapiz.png) center 28px no-repeat;margin:0px auto;font-size:22px;line-height:24px;padding-top:91px;text-align:center;width:146px}
+#content .perfil .mas-info .left{width:500px;float:left}
+#content .perfil .mas-info h2{color:#329DD1}
+#content .perfil .mas-info h3{color:#717171}
+#content .perfil .mas-info .comment-info{width:374px;height:60px;float:left;background:#EAEAEA;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
+#content .perfil .mas-info .comment-info .rating{display:block;float:left;width:82px;height:78px;color:white;background:#135798;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:-9px}
+#content .perfil .mas-info .comment-info h2{font-size:17px}
+#content .perfil .mas-info .comment-info h3{font-size:13px}
 
 #content input[type='text'],#content textarea{background:white;border:none;width:337px;padding:6px 12px;font-family:Varela Round;margin:0 20px 5px 0;font-size:12px;color:#686868;line-height:17px;}
 #content textarea{height:23px}
