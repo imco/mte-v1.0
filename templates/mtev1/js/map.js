@@ -2,6 +2,12 @@ var markers = [];
 var infoboxes = [];
 $().ready(function(){
 	initialize_map();
+	$('#compare-map-tab').click(function(e){
+		if($('#map-initialized').val() == 'false'){
+			initialize_map();
+			$('#map-initialized').val('true');
+		}
+	});
 });
 
 function initialize_map(){
