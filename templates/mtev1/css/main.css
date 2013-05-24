@@ -54,7 +54,7 @@ a{text-decoration:none;}
 #header .general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background:#00AFF0 url(../img/home/busquedavanzada.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;}
 
 
-#content{color:#474747;padding:0 0 229px;}
+#content{color:#474747;padding:0 0 8px;}
 #content .container{width:900px;margin:25px auto;}
 #content a{color:#EC018E;}
 #content p{line-height:16px;}
@@ -274,18 +274,67 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados h1{color:#5D5D5D;font-size:18px;line-height:36px}
 #content .resultados hr{background-color:#0BA14A;margin:0 2px;height:4px;background-image:none;}
 #content .resultados table{border-spacing:2px;border-collapse:separate;margin-top:-2px;}
-#content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:16px 5px;vertical-align:middle;font-size:13px;}
-#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:24px;padding:0 10px;}
+#content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:12px 5px;vertical-align:middle;font-size:13px;}
+#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:42px;padding:0 4px;}
 #content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 13px 9px;width:70px;padding:4px 315px 0 51px;color:white;line-height:15px;}
-#content .resultados table td{color:white;font-size:14px;text-align:center;vertical-align:center;background-color:rgba(0,0,0,.2);}
+#content .resultados table th.rank{width:74px;line-height:16px;}
+#content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.2);}
 #content .resultados table td.school{background-color:rgba(26,164,86,.2);text-align:left;}
-#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;}
+#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;font-size:14px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:rgba(26,164,86,.2);}
-#content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;top:7px;left:9px;}
+#content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;margin:0 auto;}
 #content .resultados table td.rank span{display:block;background-image:url(../img/compara/posicion.png);width:33px;height:32px;text-align:center;line-height:32px;margin:0 auto;font-size:12px;}
+
+#content .resultados table td.semaforo span{display:block;width:34px;height:34px;margin:0 auto;}
+#content .resultados table td.semaforo.sem0 span{background-image:url(../img/perfil/reprobado.png);}
+#content .resultados table td.semaforo.sem1 span{background-image:url(../img/perfil/depanzazo.png);}
+#content .resultados table td.semaforo.sem2 span{background-image:url(../img/perfil/bien.png);}
+#content .resultados table td.semaforo.sem3 span{background-image:url(../img/perfil/excelente.png);}
+#content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
+#content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr.on .school a{color:white;}
 #content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr.on .checkbox a{border:2px solid white;position:relative;}
 #content .resultados table tr.on .checkbox a:before{content:'';position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;background-color:white;}
+#content .resultados .pagination{text-align:center;margin:16px auto 19px;}
+#content .resultados .pagination a{color:black;text-shadow:1px 1px white;background-color:#DFDFDF;padding:6px 9px;font-size:12px;border-radius:3px;margin:0 1px;}
+#content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
+#content .resultados .pagination a.on{background-color:#0BA14A;color:white;text-shadow:none;}
+#content .resultados .pagination a.on:hover{padding:6px 9px;border:none;}
+#content .resultados .button-frame{display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
+#content .resultados .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;}
+#content .resultados .button:before{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;left:8px;position:absolute;}
+#content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
+
+/*Comparador*/
+#content .comparar{margin:11px auto;width:898px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar .compara-tabs{position:relative;}
+#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:178px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
+#content .comparar .compara-tabs a:nth-child(5){margin:0;}
+#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
+#content .comparar .compara-tabs a span{display:block;}
+#content .comparar .compara-tabs a.general span{width:65px;height:44px;background-position:0 -46px;margin:4px auto 15px;background-image:url(../img/comparador/general.png);}
+#content .comparar .compara-tabs a.general.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.posicion-nacional span{width:49px;height:50px;background-position:0 -52px;margin:0 auto 13px;background-image:url(../img/comparador/posicion-nacional.png);}
+#content .comparar .compara-tabs a.posicion-nacional.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.resultados-por-anio span{width:42px;height:47px;background-position:0 -49px;margin:0 auto 16px;background-image:url(../img/comparador/resultados-por-anio.png);}
+#content .comparar .compara-tabs a.resultados-por-anio.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.desempeno-de-alumnos span{width:53px;height:46px;background-position:0 -48px;margin:0 auto 17px;background-image:url(../img/comparador/desempeno-de-alumnos.png);}
+#content .comparar .compara-tabs a.desempeno-de-alumnos.on span{background-position:0 0;}
+#content .comparar .compara-tabs a.mapa span{width:39px;height:47px;background-position:0 -49px;margin:0 auto 17px;background-image:url(../img/comparador/mapa.png);}
+#content .comparar .compara-tabs a.mapa.on span{background-position:0 0;}
+#content .comparar .compara-tabs .shadow{position:absolute;bottom:0;left:0;width:890px;height:40px;background-image:url(../img/comparador/sombra_comparador.png);}
+#content .comparar table{margin:11px 9px;border-spacing:1px;}
+#content .comparar table th{line-height:16px;padding:10px 3px;width:130px;border-top:3px solid #0CA14D;}
+#content .comparar table th.school{text-align:left;padding:19px 35px 0 79px;background:#7e7e7e url(../img/comparador/escuelas.png) no-repeat 29px 11px;border-top:none;}
+#content .comparar table th.calificacion{width:86px;}
+#content .comparar table th.rank{width:90px;}
+#content .comparar table th.semaforos{width:118px;}
+#content .comparar table td.school{font-size:14px;color:#087B3A;border-left:3px solid #0ca14d;padding:0 6px;text-align:center;}
+#content .comparar table td.school a{padding:21px 0px 20px;font-size:15px;}
+#content .comparar table td.rank span{background-image:url(../img/comparador/calificacion.png);width:45px;height:45px;line-height:45px;font-size:14px;}
+
+#content .comparar .compara-tab-container .tab{display:none;}
+#content .comparar .compara-tab-container .tab.on{display:block;}

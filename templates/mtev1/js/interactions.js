@@ -1,12 +1,24 @@
 $(document).ready(function(){	
+	$.cookie.defaults.path = '/';
 	$('.jscrollpane').jScrollPane();
 	$('.custom-select').customSelect();
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 
+	$('.compara-tabs a').click(function(e){
+		e.preventDefault();
+		var index = $(this).index();
+		$('.compara-tabs a.on').removeClass('on');
+		$(this).addClass('on');
+		$('.compara-tab-container .tab.on').removeClass('on');
+		$('.compara-tab-container .tab').eq(index).addClass('on');
+	})
+
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		var tr = $(this).parent().parent().toggleClass('on');
+		var cct = $(this).attr('href');
+		toggle_escuela(cct);
 	});
 
 	$('#content .perfil .tabs li a').click(function(e){
@@ -107,4 +119,20 @@ function set_rank_bar(x){
 	$('#rank-bar .bar').css('width',x+'px').show();
 	$('#rank-label').html(rank+'%').css('left',offset+'px').show();
 	return rank;
+}
+function toggle_escuela(cct){
+	if(typeof($.cookie('escuelas')) == 'undefined'){		
+		$.cookie('escuelas',[cct]);
+	}else{
+		var escuelas = $.cookie('escuelas').split('-');
+		var index = escuelas.indexOf(cct);
+		if(index != -1){
+			escuelas.splice(index,1);
+		}else{
+			escuelas.push(cct);
+		}
+		escuelas.sort();
+		$.cookie('escuelas',escuelas.join('-'));
+		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
+	}
 }
