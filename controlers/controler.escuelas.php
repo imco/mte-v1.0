@@ -2,7 +2,7 @@
 class escuelas extends main{
 	public function index(){
 		if($this->escuela_info()){
-			$params->limit = '0,6';
+			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;		
 

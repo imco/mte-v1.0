@@ -27,8 +27,8 @@ a{text-decoration:none;}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
 #header .menu.reportes_ciudadanos a[href='/reportes-ciudadanos']{background-color:rgba(0,0,0,.12)}
-#header .menu.volunatior a[href='/voluntarios']{background-color:rgba(0,0,0,.12)}
-#header .menu.webinars a[href='/webinars']{background-color:rgba(0,0,0,.12)}
+#header .menu.datos_abiertos a[href='/datos-abiertos']{background-color:rgba(0,0,0,.12)}
+#header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
 #header .menu a.logo{width:auto;margin:26px 14px 0 26px;padding:0;}
@@ -442,3 +442,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .reportes .button.share{color:#474747;line-height:49px;width:121px;font-size:13px;}
 #content .reportes .button.vote{line-height:53px;margin:2px 0 0 0;font-size:14px;padding:0 13px 0 42px;line-height:53px;position:relative;}
 #content .reportes .button.vote span{display:block;position:absolute;width:26px;height:22px;background-image:url(../img/reportes/like.png);top:14px;left:13px;}
+
+/*Datos Abiertos*/
+#header .datos-abiertos h1 span{display:block;float:left;width:31px;height:25px;background-image:url(../img/datos/datos.png);margin:14px 10px 0 29px;}
+#content .datos-abiertos hr{background-image:url(../img/home/texture_orange.png);}
+#content .datos-abiertos .reporte{height:190px;}
+#content .datos-abiertos .reporte .top{padding-bottom:22px;}
+#content .datos-abiertos .reporte .button{height:57px;line-height:57px;}
+#content .datos-abiertos .reporte .button.descargar{width:167px;margin:2px 0 0 0;}
