@@ -1,6 +1,6 @@
 <a name='resultados'></a>
 <div class='resultados container'>
-	<h1>Resultados</h1>
+	<h1><?=$this->resultados_title;?></h1>
 	<hr/>
 	<table>
 		<tr>
