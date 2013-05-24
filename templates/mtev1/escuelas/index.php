@@ -60,9 +60,11 @@
 				<p>Pagina Web: </p>
 			</div> -->
 	</div>
-
+	
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
+	<?php $this->include_template('map-infobox','global'); ?>
+
 	<div class='clear'></div>
 	<ul class='tabs'>
 		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
