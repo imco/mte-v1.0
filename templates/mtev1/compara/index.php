@@ -9,7 +9,7 @@
 		<div class='shadow'></div>
 	</div>
 	<div class='compara-tab-container'>
-		<div class='tab on'>
+		<div class='tab'>
 			<?php 
 			$this->current_rank->name = 'Estatal';
 			$this->current_rank->slug = 'rank_entidad';
@@ -24,6 +24,17 @@
 			?>
 		</div>
 		<div class='tab'><?php $this->include_template('por-anios-table','compara');?></div>
-		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div >
+		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div>
+		<div class='tab on'>
+			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
+			<div id='mapa' class='map'></div>
+			<div id='sample-infobox' class='map-box hidden'>
+				<a href='' >Nombre de la Escuela</a>
+				<p>Dirección, sm, calle</p>
+				<div class='semaforo'></div>
+				<div class='rank'>46</div>
+				<div class='pos'>Posición Nivel Nacional</div>
+			</div>
+		</div>
 	</div>
 </div>
