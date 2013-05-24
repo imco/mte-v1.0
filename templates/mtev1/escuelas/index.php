@@ -100,7 +100,28 @@ EOD;
 				<p>Comentario</p>
 			</div>
 		</div>
-		<div class='tab jscrollpane'></div>
+			<!-- 		 Mas información-->
+		<div class='tab jscrollpane'>
+			<div class='mas-info'>
+				<div class='left'>
+					<h2>This is Photoshop's version of Lorem</h2>
+					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+					tis sem nibh id elit.</p>
+					<div class='comment-info'>
+						<p class='rating'>10<a href='#'></a></p>
+						<h2>This is Photoshop's version of Lorem</h2>
+						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+						tis sem nibh id elit.</p>
+					</div>
+				</div>
+				<div class='right'>
+				</div>
+			</div>
+		</div>
 		<div class='tab jscrollpane'><div class=' chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
