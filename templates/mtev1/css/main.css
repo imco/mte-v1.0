@@ -173,7 +173,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .nivel.De-panzazo .bubble{background-image:url(../img/perfil/depanzazo.png);}
 #content .perfil .nivel.Excelente .bubble{background-image:url(../img/perfil/excelente.png);}
 #content .perfil .nivel.Bien .bubble{background-image:url(../img/perfil/bien.png);}
-#content .perfil .nivel.Poco-confiable .bubble{background-image:url(../img/perfil/rojo.png);}
+#content .perfil .nivel.Poco-confiable .bubble{background-image:url(../img/perfil/rojo.png);width:52px;height:46px;}
+#content .perfil .nivel.Poco-confiable .text{display:none;}
 #content .perfil .nivel.No-Enlace{padding:33px 0 0 15px;}
 #content .perfil .nivel.No-Enlace .bubble{background-image:url(../img/perfil/negro.png);width:52px;height:46px;}
 #content .perfil .nivel.No-Enlace .text{display:none;}
@@ -181,6 +182,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .head:hover .pop-up{display:block;}
 #content .perfil .head:hover .pop-up-triangle{display:block;}
 #content .perfil .nivel .pop-up p{color:#9F9F9F;text-align:center;padding:55px 20px 0;background-image:url(../img/perfil/negro_s.png);background-repeat:no-repeat;background-position:center 28px;line-height:14px;}
+#content .perfil .nivel .pop-up p.Poco-confiable{background-image:url(../img/perfil/rojo_s.png);position:relative;z-index:1}
 #content .perfil .nivel .pop-up p strong{color:black;}
 #content .perfil .nivel .pop-up-triangle{position:absolute;bottom:67px;left:41px;width:42px;height:36px;background-color:#DEDEDE;display:none;}
 #content .perfil .nivel .pop-up-triangle.shadow{box-shadow:2px 2px 5px #555;}
@@ -219,10 +221,21 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .tab .comment .rating{display:block;float:right;width:82px;height:78px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:13px;}
 #content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:43px;position:absolute;width:46px;bottom:0;left:0;text-align:left;padding:0 16px;line-height:45px;z-index:0;}
 #content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:relative;}
+#content .perfil .tab .comment.reporte .rating{background:#135798;font-weight:bold;padding-top:5px;height:73px}
+#content .perfil .tab .comment.reporte .rating a{margin:-3px auto 0px}
 #content .perfil .gray-box{background-color:rgba(0,0,0,.2);margin:11px 22px 17px;padding:4px 60px 7px;}
 #content .perfil .gray-box p{color:#717171;line-height:23px;}
 #content .perfil .gray-box .column{float:left;width:368px;height:109px;}
-
+#content .perfil .buble-sin-comentario{background:url(../img/perfil/bublesincoments.png);width:209px;height:236px;margin:0px auto;bottom:-3px;position:relative}
+#content .perfil .buble-sin-comentario p{background:url(../img/perfil/lapiz.png) center 28px no-repeat;margin:0px auto;font-size:22px;line-height:24px;padding-top:91px;text-align:center;width:146px}
+#content .perfil .mas-info .left{width:392px;float:left;margin-left:14px}
+#content .perfil .mas-info h2{color:#329DD1}
+#content .perfil .mas-info h3{color:#717171}
+#content .perfil .mas-info p{line-height:13px}
+#content .perfil .mas-info .comment-info{width:374px;height:74px;float:left;margin:10px 12px 6px 0;padding:0px 9px;overflow:hidden;}
+#content .perfil .mas-info .comment-info .rating{display:block;padding-top:9px;float:left;width:53px;height:78px;color:white;background:#A1A1A1;font-size:14px;font-weight:bold;text-align:center;margin:0px 4px 0px 0px;position:relative;line-height:36px;left:-9px}
+#content .perfil .mas-info .comment-info h2{font-size:15px;line-height:20px}
+#content .perfil .mas-info .comment-info h3{font-size:13px}
 
 #content input[type='text'],#content textarea{background:white;border:none;width:337px;padding:6px 12px;font-family:Varela Round;margin:0 20px 5px 0;font-size:12px;color:#686868;line-height:17px;}
 #content textarea{height:23px}
@@ -308,11 +321,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
 
 /*Comparador*/
-#content .comparar{margin:11px auto;width:896px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar{margin:11px auto;width:898px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
 #content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:178px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}
-#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;margin:0;}
+#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
 #content .comparar .compara-tabs a span{display:block;}
 #content .comparar .compara-tabs a.general span{width:65px;height:44px;background-position:0 -46px;margin:4px auto 15px;background-image:url(../img/comparador/general.png);}
 #content .comparar .compara-tabs a.general.on span{background-position:0 0;}
