@@ -351,13 +351,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar .compara-tab-container .tab{display:none;}
 #content .comparar .compara-tab-container .tab.on{display:block;position:relative;}
 #content .comparar .map{width:898px;height:510px;position:relative;}
-.infoBox{width:236px;height:125px;color:white;background:#5D5D5D url(../img/comparador/posicion_mapa.png) no-repeat 47px 77px;}
-.infoBox:before{content:'';display:block;position:absolute;left:50%;bottom:-12px;width: 0;height:0;border-left:13px solid transparent;border-right: 13px solid transparent;border-top: 13px solid #5d5d5d;margin-left:-15px;}
+.infoBox{width:236px;color:white;background:#5D5D5D;position:relative;}
+.infoBox:before{content:'';display:block;position:absolute;left:50%;bottom:-12px;width: 0;height:0;border-left:13px solid transparent;border-right: 13px solid transparent;border-top: 13px solid #5d5d5d;margin-left:-13px;}
 .infoBox a{padding:11px 13px;color:white!important;background-color:#0BA14A;font-size:13px!important;line-height:19px!important;display:block;}
 .infoBox p{padding:2px 12px;}
-.infoBox .semaforo{width:26px;height:26px;background-color:white;border-radius:50%;margin:9px 10px;float:left;}
-.infoBox .rank{font-size:21px;margin:5px 2px 0 22px;float:left;}
-.infoBox .pos{float:left;font-size:9px;width:70px;margin:13px 0 0 1px;line-height:12px;}
+.infoBox .semafo{width:26px!important;height:26px;background-color:white;border-radius:50%;margin:9px 10px;float:left;}
+.infoBox .rank{font-size:21px;margin:5px 2px 0 5px;float:left;}
+.infoBox .cup{background-image: url(../img/comparador/posicion_mapa.png);width:17px;height:17px;margin:14px 0 0;float:left;}
+.infoBox .pos{float:left;font-size:9px;width:70px;margin:12px 0 0 1px;line-height:11px;}
+
+
 
 /*Home Nuevo*/
 #content .container.home .gray-box.wrap{padding:0}
