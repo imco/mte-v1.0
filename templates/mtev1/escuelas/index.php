@@ -90,7 +90,9 @@ EOD;
 			}
 			?>
 		</div>
-		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'>
+			<a name="reportes_ciudadanos"></a>
+		</div>
 		<div class='tab jscrollpane'></div>
 		<div class='tab jscrollpane'><div class=' chart-box'>
 			<?php 
@@ -157,10 +159,10 @@ EOD;
 				</select></p>
 				<p class='column'><select class='custom-select' name='categoria' >
 					<option value=''>Categoría de tu Reporte</option>
-					<option value='ocupacion 1'>Ocupación 1</option>
-					<option value='ocupacion 2'>Ocupación 2</option>
-					<option value='ocupacion 3'>Ocupación 3</option>
-					<option value='ocupacion 4'>Ocupación 4</option>
+					<option value='ocupacion 1'>Categoría 1</option>
+					<option value='ocupacion 2'>Categoría 2</option>
+					<option value='ocupacion 3'>Categoría 3</option>
+					<option value='ocupacion 4'>Categoría 4</option>
 				</select></p>
 				<div class='clear'></div>
 				<p class='strong'>
