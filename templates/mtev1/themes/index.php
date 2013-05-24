@@ -17,6 +17,7 @@
 			'jquery.jscrollpane.min.js',
 			'jquery.customSelect.min.js',
 			'jquery.validate.min.js',
+			'jquery.cookie.js',
 			"interactions.js"
 		);
 		if($this->location == 'escuelas'){
@@ -32,6 +33,7 @@
 		$cssmin->tag('css');
 		$jsmin->tag('js');
 	?>
+	<title><?=$this->page_title;?></title>
  </head>
  <body>
  	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
