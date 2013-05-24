@@ -233,7 +233,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .mas-info h3{color:#717171}
 #content .perfil .mas-info p{line-height:13px}
 #content .perfil .mas-info .comment-info{width:374px;height:74px;float:left;margin:10px 12px 6px 0;padding:0px 9px;overflow:hidden;}
-#content .perfil .mas-info .comment-info .rating{display:block;float:left;width:53px;height:78px;color:white;background:#A1A1A1;font-size:14px;font-weight:bold;text-align:center;margin:0px 4px 0px 0px;position:relative;line-height:36px;left:-9px}
+#content .perfil .mas-info .comment-info .rating{display:block;padding-top:9px;float:left;width:53px;height:78px;color:white;background:#A1A1A1;font-size:14px;font-weight:bold;text-align:center;margin:0px 4px 0px 0px;position:relative;line-height:36px;left:-9px}
 #content .perfil .mas-info .comment-info h2{font-size:15px;line-height:20px}
 #content .perfil .mas-info .comment-info h3{font-size:13px}
 
