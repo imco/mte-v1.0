@@ -14,6 +14,7 @@ class compara extends main{
 		$params->pagination = 6;		
 		$params->order_by = 'escuelas.promedio_general DESC';		
 		$this->get_escuelas($params);
+		$this->process_escuelas();
 		$this->header_folder = 'compara';		
 		$this->include_theme('index','resultados');
 	}

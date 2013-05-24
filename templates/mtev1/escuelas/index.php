@@ -20,8 +20,8 @@
 				<div class='pop-up'>
 					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
 				</div>
-			<?php }?>
-			<div class='pop-up-triangle'></div>
+				<div class='pop-up-triangle'></div>
+			<?php }?>			
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
@@ -207,3 +207,5 @@ EOD;
 		</form>
 	</div>	
 </div>
+
+<?php $this->include_template('resultados','compara')?>
