@@ -339,7 +339,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar .compara-tabs a.desempeno-de-alumnos.on span{background-position:0 0;}
 #content .comparar .compara-tabs a.mapa span{width:39px;height:47px;background-position:0 -49px;margin:0 auto 17px;background-image:url(../img/comparador/mapa.png);}
 #content .comparar .compara-tabs a.mapa.on span{background-position:0 0;}
-#content .comparar .compara-tabs .shadow{position:absolute;bottom:0;left:0;width:890px;height:40px;background-image:url(../img/comparador/sombra_comparador.jpg);}
+#content .comparar .compara-tabs .shadow{position:absolute;bottom:0;left:0;width:890px;height:40px;background-image:url(../img/comparador/sombra_comparador.png);}
 #content .comparar table{margin:11px 9px;border-spacing:1px;}
 #content .comparar table th{line-height:16px;padding:10px 3px;width:130px;border-top:3px solid #0CA14D;}
 #content .comparar table th.school{text-align:left;padding:19px 35px 0 79px;background:#7e7e7e url(../img/comparador/escuelas.png) no-repeat 29px 11px;border-top:none;}
@@ -356,10 +356,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 .infoBox:before{content:'';display:block;position:absolute;left:50%;bottom:-12px;width: 0;height:0;border-left:13px solid transparent;border-right: 13px solid transparent;border-top: 13px solid #5d5d5d;margin-left:-13px;}
 .infoBox a{padding:11px 13px;color:white!important;background-color:#0BA14A;font-size:13px!important;line-height:19px!important;display:block;}
 .infoBox p{padding:2px 12px;}
-.infoBox .semafo{width:26px!important;height:26px;background-color:white;border-radius:50%;margin:9px 10px;float:left;}
 .infoBox .rank{font-size:21px;margin:5px 2px 0 5px;float:left;}
 .infoBox .cup{background-image: url(../img/comparador/posicion_mapa.png);width:17px;height:17px;margin:14px 0 0;float:left;}
 .infoBox .pos{float:left;font-size:9px;width:70px;margin:12px 0 0 1px;line-height:11px;}
+.infoBox .semafo{width:26px!important;height:26px;background-color:white;border-radius:50%;margin:9px 10px;float:left;background-repeat:no-repeat;background-position:center;}
+.infoBox .semafo.sem0{background-image:url(../img/compara/reprobado_map.png);}
+.infoBox .semafo.sem1{background-image:url(../img/compara/panzazo_map.png);}
+.infoBox .semafo.sem2{background-image:url(../img/compara/bien_map.png);}
+.infoBox .semafo.sem3{background-image:url(../img/compara/excelente.png);}
+.infoBox .semafo.sem4{background-image:url(../img/compara/negro_s.png);}
+.infoBox .semafo.sem5{background-image:url(../img/compara/rojo_s.png);}
 
 /*Mapa*/
 #content .search-map{width:906px;position:relative;margin:0 auto 10px;}
