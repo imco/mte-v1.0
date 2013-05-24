@@ -86,7 +86,10 @@
 EOD;
 				}
 			}else{?>
-				<div class='buble-sin-comentario'>Sé el primero en escribir un comentario</div>
+				<div class='buble-sin-comentario'>
+					<div class='lapiz'></div>
+					<p>Sé el primero en escribir un comentario</p>
+				</div>
 			<?php }
 			?>
 		</div>
