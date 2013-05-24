@@ -4,7 +4,7 @@
 	<a href='/reportes-ciudadanos'>Reportes Ciudadanos</a>
 	<a href='/datos-abiertos'>Datos Abiertos</a>
 	<a href='/ayuda'>Ayuda</a>
-	<form method='get' action='/buscar/' accept-charset='utf-8' ><input type='text' placeholder='Buscar' /></form>
+	<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' /></form>
 	<div class='social'>
 		<a href='http://facebook.com' class='fb'></a>
 		<a href='http://twitter.com' class='twitter'></a>
