@@ -30,9 +30,10 @@ class main extends controler{
 				$escuelas[$escuela->cct]->localidad = $this->capitalize($escuela->localidad->nombre);
 				$escuelas[$escuela->cct]->entidad = $this->capitalize($escuela->entidad->nombre);
 				$escuelas[$escuela->cct]->nivel = $this->capitalize($escuela->nivel->nombre);
+				$escuelas[$escuela->cct]->control = $this->capitalize($escuela->control->nombre);
 				$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
 				$escuelas[$escuela->cct]->rank = $escuela->rank_entidad;
-				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->domicilio).', '.$this->capitalize($escuela->localidad->nombre);
+				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
 			$height = $this->distance($maxlat,$minlong,$minlat,$minlong);
