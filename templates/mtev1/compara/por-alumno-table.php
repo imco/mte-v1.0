@@ -4,7 +4,7 @@
 		<th colspan='4' >Español</th>
 		<th colspan='4' >Matematicas</th>
 		<th rowspan='2' class='calificacion'>Alumnos que tomaron la prueba</th>
-		<th rowspan='2' class='calificacion'>Muestras no confiables</th>
+		<th rowspan='2' class='calificacion'>Muestras poco confiables</th>
 	</tr>
 	<tr>
 		
