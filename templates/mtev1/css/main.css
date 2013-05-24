@@ -308,11 +308,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
 
 /*Comparador*/
-#content .comparar{margin:11px auto;width:896px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar{margin:11px auto;width:898px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
 #content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:178px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}
-#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;margin:0;}
+#content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
 #content .comparar .compara-tabs a span{display:block;}
 #content .comparar .compara-tabs a.general span{width:65px;height:44px;background-position:0 -46px;margin:4px auto 15px;background-image:url(../img/comparador/general.png);}
 #content .comparar .compara-tabs a.general.on span{background-position:0 0;}
