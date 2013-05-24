@@ -51,11 +51,11 @@
 			if($year == 2012){
 				foreach($score->esp as $esp){
 					$pct = $score->alumnos ? round($esp/$score->alumnos*100) : '--';
-					echo "<td class='rank'>$pct</td>";
+					echo "<td class='rank'>$esp</td>";
 				}
 				foreach($score->mat as $esp){
 					$pct = $score->alumnos ? round($esp/$score->alumnos*100) : '--';
-					echo "<td class='rank'>$pct</td>";
+					echo "<td class='rank'>$esp</td>";
 				}
 				$total = $score->alumnos;
 			}
