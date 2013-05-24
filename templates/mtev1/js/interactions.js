@@ -5,6 +5,12 @@ $(document).ready(function(){
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 
+	$('#ver-en-mapa').click(function(e){
+		e.preventDefault();
+		$('#general-search').attr('action',$(this).attr('href'));
+		$('#general-search').submit();
+	});
+
 	$('.compara-tabs a').click(function(e){
 		e.preventDefault();
 		var index = $(this).index();
