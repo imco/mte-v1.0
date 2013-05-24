@@ -6,6 +6,7 @@ class main extends controler{
 		$this->location = get_class($this);
 		$this->header_folder = 'home';
 		$this->page_title = 'Mejora tu Escuela';
+		$this->draw_map = false;
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
@@ -22,14 +23,17 @@ class main extends controler{
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
 				$escuela->get_semaforo();
-				$escuelas[$key]->cct = $escuela->cct;
-				$escuelas[$key]->latitud = $escuela->latitud;
-				$escuelas[$key]->longitud = $escuela->longitud;
-				$escuelas[$key]->nombre = $this->capitalize($escuela->nivel->nombre).' '.$this->capitalize($escuela->nombre);
-				$escuelas[$key]->localidad = $this->capitalize($escuela->localidad->nombre);
-				$escuelas[$key]->entidad = $this->capitalize($escuela->entidad->nombre);
-				$escuelas[$key]->nivel = $this->capitalize($escuela->nivel->nombre);
-				$escuelas[$key]->semaforo = $escuela->semaforo;
+				$escuelas[$escuela->cct]->cct = $escuela->cct;
+				$escuelas[$escuela->cct]->latitud = $escuela->latitud;
+				$escuelas[$escuela->cct]->longitud = $escuela->longitud;
+				$escuelas[$escuela->cct]->nombre = $this->capitalize($escuela->nombre);
+				$escuelas[$escuela->cct]->localidad = $this->capitalize($escuela->localidad->nombre);
+				$escuelas[$escuela->cct]->entidad = $this->capitalize($escuela->entidad->nombre);
+				$escuelas[$escuela->cct]->nivel = $this->capitalize($escuela->nivel->nombre);
+				$escuelas[$escuela->cct]->control = $this->capitalize($escuela->control->nombre);
+				$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
+				$escuelas[$escuela->cct]->rank = $escuela->rank_entidad;
+				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
 			$height = $this->distance($maxlat,$minlong,$minlat,$minlong);
@@ -151,7 +155,7 @@ class main extends controler{
 
 		//$q->debug = true;
 		//var_dump($q->search_clause);
-		$this->escuelas = $q->read('cct,nombre,poco_confiables,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre');
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,domicilio,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre');
 
 		if($this->request('json')){
 			$response = array();
