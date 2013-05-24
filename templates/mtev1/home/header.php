@@ -2,7 +2,7 @@
 	<div class='titles'>
 		<h1>MEJORA TU ESCUELA</h1><hr/>
 	</div>
-	<a href='' class='button-frame'><span class='button'>Compara tu escuela</span></a>
+	<a href='/compara/' class='button-frame'><span class='button'>Compara tu escuela</span></a>
 	<div class='clear'></div>
 	<?php $this->include_template('simple_search','global'); ?>
 
