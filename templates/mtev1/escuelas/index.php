@@ -18,7 +18,7 @@
 			<? }else if($this->escuela->semaforo == 5){?>
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
-					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables."</strong></p>
+					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
 				</div>
 			<?php }?>
 			<div class='pop-up-triangle'></div>
