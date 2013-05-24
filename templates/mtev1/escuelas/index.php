@@ -18,10 +18,10 @@
 			<? }else if($this->escuela->semaforo == 5){?>
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
-					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
+					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)</strong></p>
 				</div>
-			<?php }?>
-			<div class='pop-up-triangle'></div>
+				<div class='pop-up-triangle'></div>
+			<?php }?>			
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
@@ -60,9 +60,11 @@
 				<p>Pagina Web: </p>
 			</div> -->
 	</div>
-
+	<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
+	<?php $this->include_template('map-infobox','global'); ?>
+
 	<div class='clear'></div>
 	<ul class='tabs'>
 		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
@@ -85,16 +87,44 @@
 					</div>
 EOD;
 				}
-			}else{
-
-			}
+			}else{?>
+				<div class='buble-sin-comentario'>
+					<p>Sé el primero en escribir un comentario</p>
+				</div>
+			<?php }
 			?>
 		</div>
 		<div class='tab jscrollpane'>
-			<a name="reportes_ciudadanos"></a>
+			<!-- 	html y css terminado	 -->
+			<div class='comment reporte'> 
+				<p class='rating'>10<a href='#'></a></p>
+				<h2>Nombre</h2>
+				<p>Comentario</p>
+			</div>
 		</div>
-		<div class='tab jscrollpane'></div>
-		<div class='tab jscrollpane'><div class=' chart-box'>
+			<!-- 		 Mas información-->
+		<div class='tab jscrollpane'>
+			<div class='mas-info'>
+				<div class='left'>
+					<h2>This is Photoshop's version of Lorem</h2>
+					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+					tis sem nibh id elit.</p>
+					<div class='comment-info'>
+						<p class='rating'>10<a href='#'></a></p>
+						<h2>This is Photoshop's version of Lorem</h2>
+						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+						tis sem nibh id elit.</p>
+					</div>
+				</div>
+				<div class='right'>
+				</div>
+			</div>
+		</div>
+		<div class='tab jscrollpane charts'><div class='chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
 				echo "<h2>Resultados ENLACE español</h2>";
@@ -177,3 +207,5 @@ EOD;
 		</form>
 	</div>	
 </div>
+
+<?php $this->include_template('resultados','compara')?>
