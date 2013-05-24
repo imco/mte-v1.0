@@ -31,7 +31,7 @@ class compara extends main{
 			$params->entidad = $this->user_location ? $this->user_location : 9 ;
 		}
 		$params->pagination = 100;		
-		$params->order_by = 'escuelas.promedio_general DESC';		
+		$params->order_by = 'escuelas.nombre ASC';		
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->escuelas_digest->zoom += 1;
