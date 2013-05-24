@@ -87,13 +87,19 @@ EOD;
 				}
 			}else{?>
 				<div class='buble-sin-comentario'>
-					<div class='lapiz'></div>
 					<p>Sé el primero en escribir un comentario</p>
 				</div>
 			<?php }
 			?>
 		</div>
-		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'>
+			<!-- 	html y css terminado	 -->
+			<div class='comment reporte'> 
+				<p class='rating'>10<a href='#'></a></p>
+				<h2>Nombre</h2>
+				<p>Comentario</p>
+			</div>
+		</div>
 		<div class='tab jscrollpane'></div>
 		<div class='tab jscrollpane'><div class=' chart-box'>
 			<?php 
