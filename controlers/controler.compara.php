@@ -16,6 +16,7 @@ class compara extends main{
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->header_folder = 'compara';		
+		$this->resultados_title = 'Resultados';
 		$this->include_theme('index','resultados');
 	}
 	public function escuelas(){
@@ -28,6 +29,7 @@ class compara extends main{
 			$this->get_escuelas($params);		
 			$this->process_escuelas();
 		}
+		$this->resultados_title = 'Resultados';
 		$this->include_theme('index','index');
 	}
 }
