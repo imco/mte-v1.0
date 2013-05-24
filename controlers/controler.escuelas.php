@@ -13,6 +13,7 @@ class escuelas extends main{
 		$this->escuelas_digest->centerlat = $this->escuela->latitud;
 		$this->escuelas_digest->centerlong = $this->escuela->longitud;
 		$this->header_folder = 'escuelas';
+		$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
 		$this->include_theme('index','index');
 	}
 	public function escuela_info(){
