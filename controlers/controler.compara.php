@@ -19,10 +19,14 @@ class compara extends main{
 	}
 	public function escuelas(){
 		$this->header_folder ='escuelas';
+		$this->draw_map = true;
 		$this->load_compara_cookie();
 		$params->ccts = explode('-',$this->get('id'));
 		$params->order_by = 'escuelas.promedio_general DESC';
-		if(count($params->ccts)) $this->get_escuelas($params);		
+		if(count($params->ccts)){
+			$this->get_escuelas($params);		
+			$this->process_escuelas();
+		}
 		$this->include_theme('index','index');
 	}
 }
