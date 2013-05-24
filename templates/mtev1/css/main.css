@@ -373,6 +373,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .search-map .resultados .head .schools{background-image:url(../img/compara/escuelas.png);padding:15px 67px 15px 58px;position:relative;width:68px;background-position:14px 8px}
 #content .search-map .resultados .head .schools:after{content:'';display:block;position:absolute;left:30px;bottom:-12px;width: 0;height:0;border-left:13px solid transparent;border-right: 13px solid transparent;border-top: 13px solid #7e7e7e;margin-left:-13px;}
 #content .search-map .resultados .list{height:372px;overflow:auto;clear:both;margin-top:3px;}
+#content .search-map .resultados .list table{width:239px;}
 #content .search-map .resultados .list td.checkbox{width:41px;}
 #content .search-map .resultados .button-frame{width:210px;margin:11px auto 9px;}
 #content .search-map .resultados .button-frame .button{font-size:22px;line-height:36px;margin:8px 9px 6px;}
