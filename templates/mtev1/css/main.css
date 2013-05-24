@@ -173,7 +173,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .nivel.De-panzazo .bubble{background-image:url(../img/perfil/depanzazo.png);}
 #content .perfil .nivel.Excelente .bubble{background-image:url(../img/perfil/excelente.png);}
 #content .perfil .nivel.Bien .bubble{background-image:url(../img/perfil/bien.png);}
-#content .perfil .nivel.Poco-confiable .bubble{background-image:url(../img/perfil/rojo.png);}
+#content .perfil .nivel.Poco-confiable .bubble{background-image:url(../img/perfil/rojo.png);width:52px;height:46px;}
 #content .perfil .nivel.No-Enlace{padding:33px 0 0 15px;}
 #content .perfil .nivel.No-Enlace .bubble{background-image:url(../img/perfil/negro.png);width:52px;height:46px;}
 #content .perfil .nivel.No-Enlace .text{display:none;}
@@ -181,6 +181,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .head:hover .pop-up{display:block;}
 #content .perfil .head:hover .pop-up-triangle{display:block;}
 #content .perfil .nivel .pop-up p{color:#9F9F9F;text-align:center;padding:55px 20px 0;background-image:url(../img/perfil/negro_s.png);background-repeat:no-repeat;background-position:center 28px;line-height:14px;}
+#content .perfil .nivel .pop-up p.Poco-confiable{background-image:url(../img/perfil/rojo_s.png);}
 #content .perfil .nivel .pop-up p strong{color:black;}
 #content .perfil .nivel .pop-up-triangle{position:absolute;bottom:67px;left:41px;width:42px;height:36px;background-color:#DEDEDE;display:none;}
 #content .perfil .nivel .pop-up-triangle.shadow{box-shadow:2px 2px 5px #555;}
