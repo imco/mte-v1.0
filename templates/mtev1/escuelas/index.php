@@ -60,7 +60,7 @@
 				<p>Pagina Web: </p>
 			</div> -->
 	</div>
-	
+	<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
 	<?php $this->include_template('map-infobox','global'); ?>
