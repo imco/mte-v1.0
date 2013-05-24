@@ -39,8 +39,13 @@
 	$labels->next_page = "últimas >>";
 	$labels->next = ">>";
 	$labels->hash = '#resultados';
-	$token = $this->get('search') ? '&' : '?';
-	$this->pagination->echo_paginate($_SERVER["REQUEST_URI"].$token,'p',5,false,$labels); 
+	$get = $_GET;
+	if(isset($get['action'])) unset($get['action']);
+	if(isset($get['p'])) unset($get['p']);
+	unset($get['controler']);
+	$query = http_build_query($get);
+	$query .= $query != '' ? '&' : '';
+	$this->pagination->echo_paginate('/compara/?'.$query,'p',5,false,$labels); 
 	?></div>
 	<?php
 	$sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : '';
