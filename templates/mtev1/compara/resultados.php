@@ -12,7 +12,7 @@
 			<th class='rank'>Semaforo Educativo</th>
 		</tr>
 	<?php
-	if($this->escuelas){
+	if(isset($this->escuelas_digest->escuelas)){
 		foreach($this->escuelas_digest->escuelas as $escuela){
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			echo "

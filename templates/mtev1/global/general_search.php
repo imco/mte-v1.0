@@ -58,6 +58,6 @@
 			<span class='before'></span>
 			<span class='before after'></span>
 		</p>
-		<p class='adv-search mapa'><a href='/compara/' >Ver en <span>mapa</span></a></p>
+		<p class='adv-search mapa'><a id='ver-en-mapa' href='/compara/mapa/#resultados' >Ver en <span>mapa</span></a></p>
 	</fieldset>
  </form>
