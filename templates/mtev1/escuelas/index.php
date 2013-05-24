@@ -18,7 +18,7 @@
 			<? }else if($this->escuela->semaforo == 5){?>
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
-					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
+					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)</strong></p>
 				</div>
 				<div class='pop-up-triangle'></div>
 			<?php }?>			
@@ -124,7 +124,7 @@ EOD;
 				</div>
 			</div>
 		</div>
-		<div class='tab jscrollpane'><div class=' chart-box'>
+		<div class='tab jscrollpane charts'><div class='chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
 				echo "<h2>Resultados ENLACE español</h2>";
