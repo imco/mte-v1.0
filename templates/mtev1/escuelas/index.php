@@ -18,10 +18,10 @@
 			<? }else if($this->escuela->semaforo == 5){?>
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
-					<p>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables."</strong></p>
+					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
 				</div>
-				<div class='pop-up-triangle'></div>
 			<?php }?>
+			<div class='pop-up-triangle'></div>
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
@@ -85,13 +85,43 @@
 					</div>
 EOD;
 				}
-			}else{
-
-			}
+			}else{?>
+				<div class='buble-sin-comentario'>
+					<p>Sé el primero en escribir un comentario</p>
+				</div>
+			<?php }
 			?>
 		</div>
-		<div class='tab jscrollpane'></div>
-		<div class='tab jscrollpane'></div>
+		<div class='tab jscrollpane'>
+			<!-- 	html y css terminado	 -->
+			<div class='comment reporte'> 
+				<p class='rating'>10<a href='#'></a></p>
+				<h2>Nombre</h2>
+				<p>Comentario</p>
+			</div>
+		</div>
+			<!-- 		 Mas información-->
+		<div class='tab jscrollpane'>
+			<div class='mas-info'>
+				<div class='left'>
+					<h2>This is Photoshop's version of Lorem</h2>
+					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+					tis sem nibh id elit.</p>
+					<div class='comment-info'>
+						<p class='rating'>10<a href='#'></a></p>
+						<h2>This is Photoshop's version of Lorem</h2>
+						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
+						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
+						tis sem nibh id elit.</p>
+					</div>
+				</div>
+				<div class='right'>
+				</div>
+			</div>
+		</div>
 		<div class='tab jscrollpane'><div class=' chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
