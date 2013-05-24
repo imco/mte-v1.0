@@ -27,7 +27,8 @@ class escuelas extends main{
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
 			control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre
+			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,
+			reportes_ciudadanos=>reporte_ciudadano,reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,
 		");
 		$this->escuela->get_semaforo();
 		$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
@@ -59,6 +60,24 @@ class escuelas extends main{
 			$_SERVER['HTTP_USER_AGENT']
 		));
 		header('location: /escuelas/index/'.$calif->cct->cct.'#calificaciones');
+	}
+	public function reportar(){
+		$denuncia = strip_tags($this->post('denuncia'));
+		$reporte_ciudadano = new reporte_ciudadano();
+		$reporte_ciudadano->create('nombre_input,email_input,denuncia,ocupacion,categoria,publicar,cct,user_agent',array(
+			$this->post('nombre_input'),
+			$this->post('email_input'),
+			$denuncia,
+			$this->post('ocupacion'),
+			$this->post('categoria'),
+			$this->post('publicar'),
+			$this->post('cct'),
+			$_SERVER['HTTP_USER_AGENT']
+		));
+		$location = $reportes_ciudadanos->id ? "/escuelas/index/".$this->post('cct')."#reportes_ciudadanoses" : "/escuelas/index/".$this->post('cct')."/e=ce#reportes_ciudadanoses"; 
+	}
+	public function like_reportar(){
+		pass;
 	}
 }
 ?>
