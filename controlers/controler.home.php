@@ -5,11 +5,21 @@ class home extends main{
 		$this->load_entidades();
 		$this->load_municipios();
 		$this->load_localidades();
-		$this->load_escuelas();	
+		$this->load_escuelas();
 		$this->include_theme('index','index');
 	}
 	public function load_escuelas(){
-		
+		$niveles = array(12,13,22);
+		$params->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.promedio_general DESC';
+		$params->nivel = $niveles[rand(0,2)];
+		$params->rank_nacional = rand(1,100);
+		$params->control = 1;
+		$params->limit = '0,1';
+		$this->get_escuelas($params);
+		$this->publica = $this->escuelas[0];
+		$params->control = 2;
+		$this->get_escuelas($params);
+		$this->privada = $this->escuelas[0];
 	}
 
 }
