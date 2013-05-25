@@ -12,8 +12,7 @@ class reportes_ciudadanos extends main{
 		$q = new reporte_ciudadano();
 		$q->search_clause = '1';
 		$q->order_by = 'reportes_ciudadanos.likes DESC';
-		$q->debug = true;
-		$this->reportes = $q->read('cct=>cct,cct=>nombre,cct=>entidad=>id,nombre_input,ocupacion,denuncia,likes,publicar');
+		$this->reportes = $q->read('cct=>cct,cct=>nombre,cct=>entidad=>id,nombre_input,ocupacion,denuncia,likes,publicar,id');
 	}
 }
 ?>
