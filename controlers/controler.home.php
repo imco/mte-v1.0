@@ -5,8 +5,12 @@ class home extends main{
 		$this->load_entidades();
 		$this->load_municipios();
 		$this->load_localidades();
-		
+		$this->load_escuelas();	
 		$this->include_theme('index','index');
 	}
+	public function load_escuelas(){
+		
+	}
+
 }
 ?>
