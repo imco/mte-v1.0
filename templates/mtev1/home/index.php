@@ -1,5 +1,5 @@
 <?php
-$niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
+$niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 ?>
 <div class='container home'>
 	<div class='column'>
@@ -20,31 +20,22 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Leer más</a></h3>
 			</div>
 		</div>
-		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores escuelas Quintana Roo
+		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores escuelas en <?=$this->capitalize($this->user_location->nombre)?>
 			<span><a href='#'>+Ver más</a></span>
 		</h1>
 		<div class='gray-box'>
 			<ol class='mejores'>
-				<li>
-					Nombre de la Escuela 
-					<span class="location"> | Estado y Municipio | Dirección </span>
-				</li>
-				<li>
-					Nombre de la Escuela 
-					<span class="location"> | Estado y Municipio | Dirección </span>
-				</li>
-				<li>
-					Nombre de la Escuela 
-					<span class="location"> | Estado y Municipio | Dirección </span>
-				</li>
-				<li>
-					Nombre de la Escuela 
-					<span class="location"> | Estado y Municipio | Dirección </span>
-				</li>
-				<li>
-					Nombre de la Escuela 
-					<span class="location"> | Estado y Municipio | Dirección </span>
-				</li>
+				<?php
+				foreach($this->escuelas_digest->escuelas as $escuela){
+					echo "
+						<li>
+							<a href='/escuelas/index/{$escuela->cct}'>{$escuela->nombre}</a>
+							<span class='location'> | {$escuela->localidad}, {$escuela->entidad} | {$escuela->control} </span>
+						</li>
+					";
+				}
+
+				?>
 			</ol>
 		</div>
 		<div class='notas'>
@@ -92,8 +83,8 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 				<input type='submit' value='Suscribirme' />
 			</form>
 		</div>
-		<a href='' class='banner orange'><?php $this->print_img_tag('home/comparador.png');?> Compara tu Escuela</a>
-		<a href='' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?>Reportes ciudadanos</a>
+		<a href='/compara/' class='banner orange'><?php $this->print_img_tag('home/comparador.png');?> Compara tu Escuela</a>
+		<a href='/reportes-ciudadanos/' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?>Reportes ciudadanos</a>
 
 		<a href="" class='gray-box'>
 			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
