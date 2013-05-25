@@ -142,7 +142,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .home.container .decorations hr + img + img + img{top:234px;left:159px;}
 #header .home.container .decorations hr + img + img + img + img{top:228px;right:170px;}
 
-#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-36px;right:114px;background-repeat:no-repeat;background-position-y:-11px;width:223px;height:116px;}
+#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-36px;right:114px;background-repeat:no-repeat;background-position:-1px -11px;width:223px;height:116px;}
 #header .home.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:99px;top:77px;width:224px;height:100px;}
 #header .home.container .decorations .circle{position:absolute;border-radius:50%;width:4px;height:4px;background-color:white;}
 #header .home.container .decorations .triangle2 + div{top:-19px;right:240px;}
@@ -422,7 +422,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/circulo2.png);}
 #content .container.home .circle a:nth-child(4n + 3){background-image:url(../img/home/circulo3.png);}
 #content .container.home .circle a:nth-child(4n + 4){background-image:url(../img/home/circulo4.png);margin-left:-19px;}
-#content .container.home .circle a:hover{background-position-y:-177px;}
+#content .container.home .circle a:hover{background-position:center -177px;}
 #content .container.home .circle a:hover:before{content:"";margin:43px 51px;display:block;height:100px;width:88px;background-position:center 0;background-repeat:no-repeat;background-image:url(../img/home/footer_vineta.png)}
 #content .container.home .circle a:hover:after{text-align:center;font-size:16px;display:block;width:107px;position:absolute;color:white;;line-height:19px;top:81px}
 #content .container.home .circle a:nth-child(4n + 1):hover:before{background-image:url(../img/home/buscar_footer.png);margin:43px 51px;}
@@ -465,3 +465,32 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .datos-abiertos .reporte .top{padding-bottom:22px;height:106px;}
 #content .datos-abiertos .reporte .button{height:57px;line-height:57px;}
 #content .datos-abiertos .reporte .button.descargar{width:167px;margin:2px 0 0 0;}
+
+/*decorations compara*/
+#header .compara.container{position:relative}
+#header .compara.container .decorations hr{position:absolute;height:1px;}
+#header .compara.container .decorations img{position:absolute;}
+#header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:188px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;}
+#header .compara.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:1px;top:337px;width:290px;height:127px;background-size:303px;}
+#header .compara.container .decorations .circle{position:absolute;border-radius:50%;width:6px;height:6px;background-color:white;}
+#header .compara.container .decorations .circle:nth-child(4n+1){top:213px;right:172px;}
+#header .compara.container .decorations .circle:nth-child(4n+2){top:334px;right:8px;}
+#header .compara.container .decorations .circle:nth-child(4n+3){top:334px;left:9px;}
+#header .compara.container .decorations .circle:nth-child(4n+4){top:456px;left:177px;}
+#header .compara.container .decorations img[src$="palomita.png"]{bottom:70px;right:110px;}
+#header .compara.container .decorations img[src$="birrete_small.png"]{top:209px;left:172px;}
+#header .compara.container .decorations img[src$="footer_vineta.png"]{top:332px;left:443px;}
+#header .compara.container .decorations hr:nth-child(10n+1){top:216px;width:169px;}
+#header .compara.container .decorations hr:nth-child(10n+2){top:216px;width:133px;left:190px;}
+#header .compara.container .decorations hr:nth-child(10n+3){top:216px;width:145px;right:178px;}
+#header .compara.container .decorations hr:nth-child(10n+4){top:338px;width:421px;right:13px;}
+#header .compara.container .decorations hr:nth-child(10n+5){top:338px;width:426px;left:13px;}
+#header .compara.container .decorations hr:nth-child(10n+6){top:460px;width:68px;left:179px;}
+#header .compara.container .decorations hr:nth-child(10n+7){bottom:74px;width:107px;right:0;}
+#header .compara.container .decorations hr:nth-child(10n+8){bottom:74px;width:107px;right:0;}
+#header .compara.container .decorations hr:nth-child(10n+9){bottom:74px;width:119px;right:123px;}
+#header .compara.container .decorations hr:nth-child(10n+9){bottom:74px;width:119px;right:123px;}
+#header .compara.container .decorations hr:nth-child(10n+10){bottom:74px;width:28px;right:340px;}
+#header > .decorations.compara hr:first-child{top:335px;}
+#header > .decorations.compara hr + hr{display:none;}
+#header > .decorations.compara hr + hr + hr {display:block;top:579px;}
