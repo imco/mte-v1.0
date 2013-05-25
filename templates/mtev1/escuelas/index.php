@@ -96,11 +96,27 @@ EOD;
 		</div>
 		<div class='tab jscrollpane'>
 			<!-- 	html y css terminado	 -->
+			<a name='reportes_ciudadanos'></a>
+			<?php
+			if($this->escuela->reportes_ciudadanos){
+				foreach ($this->escuela->reportes_ciudadanos as $reporte_ciudadano){
+					if(isset($reporte_ciudadano->publicar))
+					echo <<<EOD
+					<div class='comment reporte'>
+						<p class='rating'><span class='likes'>{$reporte_ciudadano->likes}</span><a href='/escuelas/like_reportar/{$reporte_ciudadano->id}/'></a></p>
+						<h2>{$reporte_ciudadano->nombre_input}</h2>
+						<p>{$reporte_ciudadano->denuncia}</p>
+					</div>
+EOD;
+				}
+			}else{?>
 			<div class='comment reporte'> 
 				<p class='rating'>10<a href='#'></a></p>
 				<h2>Nombre</h2>
 				<p>Comentario</p>
 			</div>
+			<?php }
+			?>
 		</div>
 			<!-- 		 Mas información-->
 		<div class='tab jscrollpane'>

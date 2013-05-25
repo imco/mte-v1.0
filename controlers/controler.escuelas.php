@@ -44,7 +44,7 @@ class escuelas extends main{
 			control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,
-			reportes_ciudadanos=>reporte_ciudadano,reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,
+			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 		");
 		if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
@@ -95,10 +95,20 @@ class escuelas extends main{
 			$this->post('cct'),
 			$_SERVER['HTTP_USER_AGENT']
 		));
-		$location = $reportes_ciudadanos->id ? "/escuelas/index/".$this->post('cct')."#reportes_ciudadanoses" : "/escuelas/index/".$this->post('cct')."/e=ce#reportes_ciudadanoses"; 
+		$location = $reporte_ciudadano->id ? "/escuelas/index/".$this->post('cct')."#reportes_ciudadanos" : "/escuelas/index/".$this->post('cct')."/e=ce#reportes_ciudadanos"; 
+		header("location: $location");
 	}
 	public function like_reportar(){
-		pass;
+		$reporte = new reporte_ciudadano($this->get('id'));
+		$reporte->read('id,cct=>cct,likes=>id,likes=>ip');
+		$reporte->update('likes',array(count($reporte->likes)+1));
+		$like = new reporte_ciudadano_like();
+		$like->create('denuncia,ip,user_agent',array(
+			$reporte->id,
+			$_SERVER['REMOTE_ADDR'],
+			$_SERVER['HTTP_USER_AGENT']
+		));
+		header('location: /escuelas/index/'.$reporte->cct->cct.'#reportes_ciudadanos');
 	}
 }
 ?>
