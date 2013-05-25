@@ -6,7 +6,7 @@ class escuelas extends main{
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;		
 
-			$params->order_by = 'escuelas.rank_entidad ASC NULLS LAST';
+			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 
 			$this->load_compara_cookie();
 			$this->get_escuelas($params);
