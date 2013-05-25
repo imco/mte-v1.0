@@ -394,6 +394,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box.wrap{padding:0}
 #content .container.home .gray-box .two-column{display:inline-block;vertical-align:top;padding:15px 24px 22px;margin-right:-9px;width:245px;}
 #content .container.home .column h1.cap.subtitle{position:relative;}
+#content .container.home .column h1.cap.subtitle.blue{padding:0 142px 0 27px;}
 #content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white}
 #content .container.home .column h1.cap.subtitle span a{padding-left:14px;color:white;}
 #content .container.home .column h1.cap.subtitle.blue span a{padding-left:36px}
@@ -405,6 +406,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box .two-column.left{border-right:1px solid white;width:250px}
 #content .container.home .gray-box ol.mejores{list-style-type:decimal;margin:-10px 0}
 #content .container.home .gray-box ol.mejores li{color:white;font-size:14px;margin-left:19px;line-height:19px;}
+#content .container.home .gray-box ol.mejores li a{color:white;}
 #content .container.home .gray-box ol.mejores li span.location{color:#959595;font-size:12px;}
 #content .container.home .notas{margin-top:-6px;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282}
