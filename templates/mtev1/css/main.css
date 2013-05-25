@@ -229,12 +229,12 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .gray-box .column{float:left;width:368px;height:109px;}
 #content .perfil .buble-sin-comentario{background:url(../img/perfil/bublesincoments.png);width:209px;height:236px;margin:0px auto;bottom:-3px;position:relative}
 #content .perfil .buble-sin-comentario p{background:url(../img/perfil/lapiz.png) center 28px no-repeat;margin:0px auto;font-size:22px;line-height:24px;padding-top:91px;text-align:center;width:146px}
-#content .perfil .mas-info .left{width:370px;float:left;margin-left:14px;padding-right:14px;border-right:1px #329DD1 dotted}
+#content .perfil .mas-info .left{width:370px;float:left;margin-left:14px;padding-right:14px;border-right:2px #329DD1 dotted}
 #content .perfil .mas-info .right{width:370px;float:left;padding-left:14px;}
 #content .perfil .mas-info h2{color:#329DD1}
 #content .perfil .mas-info h3{color:#717171}
-#content .perfil .mas-info p{line-height:13px}
-#content .perfil .mas-info .comment-info{width:374px;height:74px;float:left;margin:10px 12px 6px 0;padding:0px 9px;overflow:hidden;}
+#content .perfil .mas-info p{line-height:13px;margin-bottom:10px}
+#content .perfil .mas-info .comment-info{width:374px;height:74px;float:left;margin:0px 12px 13px 0;padding:0px 9px;overflow:hidden;}
 #content .perfil .mas-info .comment-info .rating{display:block;padding-top:9px;float:left;width:53px;height:78px;color:white;background:#A1A1A1;font-size:14px;font-weight:bold;text-align:center;margin:0px 4px 0px 0px;position:relative;line-height:36px;left:-9px}
 #content .perfil .mas-info .comment-info h2{font-size:15px;line-height:20px}
 #content .perfil .mas-info .comment-info h3{font-size:13px}
