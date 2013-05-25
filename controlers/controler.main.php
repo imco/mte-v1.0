@@ -135,6 +135,16 @@ class main extends controler{
 			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "21" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		}
 
+		if(isset($params->control) && $params->control){
+			$q->search_clause .= " AND escuelas.control = '{$params->control}' ";
+		}else{
+			$q->search_clause .= $this->request('control') === false || $this->request('control') === '' ? ' AND escuelas.control = "'.$this->request('control').'" ' : '';
+		}
+
+		if(isset($params->rank_nacional)){
+			$q->search_clause .= ' AND rank_nacional >= '.$params->rank_nacional;
+		}
+
 		if(isset($params->ccts) && $params->ccts){
 			if(count($params->ccts)){
 				$q->search_clause = '';
@@ -200,7 +210,7 @@ class main extends controler{
         return $distance;
     }
     protected function get_location(){
-    	$ip = $_SERVER['REMOTE_ADDR'];
+    	/*$ip = $_SERVER['REMOTE_ADDR'];
     	//$ip = '187.153.71.141';
 		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
 		$result = explode(';',$file);
@@ -215,7 +225,11 @@ class main extends controler{
 				$this->user_location = false;
 		}else{
 			$this->user_location = false;
-		}
+		}*/
+		$entidad = new entidad(rand(1,32));
+		$entidad->read('nombre,id');
+		$this->user_location = $entidad;
+
     }
     protected function load_compara_cookie(){
     	$this->compara_cookie = false;
