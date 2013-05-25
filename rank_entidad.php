@@ -35,7 +35,7 @@ $entidades = range(1,32);
 				@prev_val := promedio_general AS promedio_general,
 				cct
 				FROM escuelas
-				WHERE nivel = 12 AND entidad = '$entidad' AND `promedio_general` IS NOT NULL AND total_evaluados > 4 and poco_confiables<=.1*total_evaluados
+				WHERE nivel = 12 AND entidad = '$entidad' AND `promedio_general` IS NOT NULL AND total_evaluados >= 4 and poco_confiables<=.1*total_evaluados
 				ORDER BY promedio_general DESC) t2
 				ON t1.cct=t2.cct
 				SET t1.rank_entidad=t2.rank;";
