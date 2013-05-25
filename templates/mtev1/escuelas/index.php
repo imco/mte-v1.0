@@ -138,13 +138,24 @@ EOD;
 						<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
 						<h2>Número de alumnos evaluados</h2>
 					</div>
-					
 					<?php if($this->escuela->nivel->id == 12){ ?>
 						<div class='comment-info'>
 							<p class='rating'><?=$this->capitalize($this->escuela->poco_confiables)?><a href='#'></a></p>
 							<h2>Resultados no confiables</h2>
 						</div>					
 					<?php } ?>
+					<div class='comment-info'>
+						<p class='rating'><?=$this->capitalize($this->escuela->promedio_espaniol)?><a href='#'></a></p>
+						<h2>Promedio de Español</h2>
+					</div>					
+					<div class='comment-info'>
+						<p class='rating'><?=$this->capitalize($this->escuela->promedio_matematicas)?><a href='#'></a></p>
+						<h2>Promedio de Matemáticas</h2>
+					</div>					
+					<div class='comment-info'>
+						<p class='rating'><?=$this->capitalize($this->escuela->promedio_general)?><a href='#'></a></p>
+						<h2>Promedio general</h2>
+					</div>					
 				</div>
 			</div>
 		</div>
