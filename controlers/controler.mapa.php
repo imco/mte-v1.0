@@ -8,6 +8,7 @@ class mapa extends main{
 		$params->limit = '0,1000';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
+		$this->draw_map = true;
 		$this->include_theme('index','index');
 	}
 	
