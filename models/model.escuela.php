@@ -22,6 +22,9 @@ class escuela extends table{
 		$this->has_many['calificaciones'] = 'calificacion';
 		$this->has_many_keys['calificaciones'] = 'cct';
 
+		$this->has_many['reportes_ciudadanos'] = 'reporte_ciudadano';
+		$this->has_many_keys['reportes_ciudadanos'] = 'cct';
+
 		$this->semaforos = array('Reprobado','De Panzazo','Bien','Excelente','Sin Enlace','Poco confiable');
 		$this->semaforo_rangos[12] = array(400,480,590,900);
 		$this->semaforo_rangos[13] = array(400,467,575,900);
