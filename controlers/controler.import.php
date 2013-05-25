@@ -12,9 +12,9 @@ class import extends main{
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
 		//$this->average_enlaces(21,1);
-// 		$this->update_schools();
+		$this->update_schools();
 		$this->update_counties();
-// 		$this->update_locales();
+		$this->update_locales();
 
 	}
 	
@@ -148,6 +148,46 @@ class import extends main{
 			'open fail';
 		}
 	}
+	private function character($s){
+		$len = strlen($s);
+		$s2 = array();
+		$e = false;
+		$j = false;
+		for($i = 0;$i < $len;$i++){
+			if(ord($s[$i])==165 || ord($s[$i])== 164){//Ñ
+				$s2[$i] = 'Ñ';
+				$e = true;
+			}elseif(ord($s[$i]) == 181){ //Á
+				$s2[$i] = 'Á';
+				$e = true;
+			}elseif(ord($s[$i]) == 144){ //É
+				$s2[$i] = 'É';
+				$e = true;
+			}elseif(ord($s[$i]) == 214){ //Í
+				$s2[$i] = 'Í';
+				$e = true;
+			}elseif(ord($s[$i]) == 224){ //Ó
+				$s2[$i] = 'Ó';
+				$e = true;
+			}elseif(ord($s[$i]) == 154){ //Ü
+				$s2[$i] = 'Ü';
+				$e = true;
+			}elseif(ord($s[$i]) > 127){
+				$s2[$i] = $s[$i];
+				$e = true;
+				$j = true;
+			}else{
+				$s2[$i] = $s[$i];
+			}
+		}
+		$s3 = implode('',$s2);
+		if($j){
+			echo 'UNKNOW: '.$s3.'<br />';
+		}
+		$info->s = $s3;
+		$info->e = $e;
+		return $info;
+	}
 	private function update_locales(){
 		$handle = $this->open_file('escuelas.csv');
 		$localidad =  new localidad();
@@ -241,36 +281,6 @@ class import extends main{
 		}
 
 	}
-	private function character($s){
-		$len = strlen($s);
-		$s2 = array();
-		$e = false;
-		
-		print_r(ord($s[6]));
-		exit();
-		for($i = 0;$i < $len;$i++){
-			if(ord($s[$i])==165){
-				$s2[$i] = 'Ñ';
-				$e = true;
-			}elseif(ord($s[$i]) == 193){ //Á
-				echo $s;
-			}elseif(ord($s[$i]) == 201){ //É
-				$e = true;
-			}elseif(ord($s[$i]) == 205){//Í
-				$e = true;
-			}elseif(ord($s[$i]) == 211){//Ó
-				$e = true;
-			}elseif(ord($s[$i]) == 218){//Ú
-				$e = true;
-			}else{
-				$s2[$i] = $s[$i];
-			}
-		}
-		$s3 = implode('',$s2);
-		$info->s = $s3;
-		$info->e = $e;
-		return $info;
-	}
 	private function update_counties(){
 		$handle = $this->open_file('escuelas.csv');
 		$county =  new municipio();
@@ -279,7 +289,6 @@ class import extends main{
 		$states = array();
 		if ($handle){
 			$i = 0;
-			$r = 0;
 			while (($row = fgetcsv($handle,0, "|")) !== FALSE) {
 				$row = $this->clean_row($row);
 				if(!isset($states[$row[11]]) || !isset($states[$row[11]][$row[9]])){
@@ -287,11 +296,6 @@ class import extends main{
 					$states[$row[11]][$row[9]]->entidad = $row[11];
 					$states[$row[11]][$row[9]]->nombre = $row[10];
 					$states[$row[11]][$row[9]]->count = 1;
-					$r++;
-					if($r == 270){
-						$info = $this->character($row[10]);
-						exit($info->s);
-					}
 				}else{
 					$states[$row[11]][$row[9]]->count++;
 				}
