@@ -121,7 +121,16 @@ EOD;
 					<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
 
 					<h2>Tipo</h2>
-					<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>						
+					<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>
+					
+					<h2>Descripcón de campos</h2>
+					<p><span class='bold'>CLAVECCT:</span> Clave del centro de trabajo.</p>
+					<p>NOMBRECT: Nombre del centro de trabajo.</p>
+					<p>DOMICILIO: Datos generales del domicilio del centro de trabajo.</p>
+					<p>ENTRECALLE: Calle cercana en que se ubica el centro de trabajo.</p>
+					<p>YCALLE: Otra calle cercana en que se ubica el centro de trabajo.</p>
+					<p>COLONIA: Clave de la colonia en que se ubica el centro de trabajo.</p>
+					<p>NOMBRECOLONIA: Descripción de la colonia en que se ubica el centro de trabajo.</p>
 				</div>
 				<div class='right'>
 <!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
