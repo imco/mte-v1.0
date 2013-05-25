@@ -142,7 +142,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .home.container .decorations hr + img + img + img{top:234px;left:159px;}
 #header .home.container .decorations hr + img + img + img + img{top:228px;right:170px;}
 
-#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-36px;right:114px;background-repeat:no-repeat;background-position-y:-11px;width:223px;height:116px;}
+#header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-36px;right:114px;background-repeat:no-repeat;background-position:-1px -11px;width:223px;height:116px;}
 #header .home.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:99px;top:77px;width:224px;height:100px;}
 #header .home.container .decorations .circle{position:absolute;border-radius:50%;width:4px;height:4px;background-color:white;}
 #header .home.container .decorations .triangle2 + div{top:-19px;right:240px;}
@@ -422,7 +422,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/circulo2.png);}
 #content .container.home .circle a:nth-child(4n + 3){background-image:url(../img/home/circulo3.png);}
 #content .container.home .circle a:nth-child(4n + 4){background-image:url(../img/home/circulo4.png);margin-left:-19px;}
-#content .container.home .circle a:hover{background-position-y:-177px;}
+#content .container.home .circle a:hover{background-position:center -177px;}
 #content .container.home .circle a:hover:before{content:"";margin:43px 51px;display:block;height:100px;width:88px;background-position:center 0;background-repeat:no-repeat;background-image:url(../img/home/footer_vineta.png)}
 #content .container.home .circle a:hover:after{text-align:center;font-size:16px;display:block;width:107px;position:absolute;color:white;;line-height:19px;top:81px}
 #content .container.home .circle a:nth-child(4n + 1):hover:before{background-image:url(../img/home/buscar_footer.png);margin:43px 51px;}
