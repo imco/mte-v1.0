@@ -12,7 +12,7 @@ class compara extends main{
 			$params->entidad = $this->user_location ? $this->user_location : 9 ;
 		}
 		$params->pagination = 6;		
-		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->header_folder = 'compara';		
