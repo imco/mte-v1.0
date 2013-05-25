@@ -4,7 +4,7 @@
 		<a href='#' class='posicion-nacional'><span></span>Posición Nacional</a>
 		<a href='#' class='resultados-por-anio'><span></span>Resultados por año</a>
 		<a href='#' class='desempeno-de-alumnos'><span></span>Desempeño de Alumnos</a>
-		<a href='#' class='mapa'><span></span>Mapa</a>
+		<a href='#' class='mapa' id='compare-map-tab'><span></span>Mapa</a>
 		<div class='clear'></div>
 		<div class='shadow'></div>
 	</div>
@@ -24,6 +24,12 @@
 			?>
 		</div>
 		<div class='tab'><?php $this->include_template('por-anios-table','compara');?></div>
-		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div >
+		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div>
+		<div class='tab'>
+			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
+			<div id='mapa' class='map'></div>
+			<?php $this->include_template('map-infobox','global'); ?>
+			<input type='hidden' id='map-initialized' name='map-initialized' value='false'/>
+		</div>
 	</div>
 </div>
