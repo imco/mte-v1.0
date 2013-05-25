@@ -18,10 +18,10 @@
 			<? }else if($this->escuela->semaforo == 5){?>
 				<div class='pop-up-triangle shadow'></div>
 				<div class='pop-up'>
-					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)"</strong></p>
+					<p class='Poco-confiable'>Escuela en donde arriba del 10% de los resultados se catalogan como <strong>"no confiables". (<?= $this->escuela->porcentaje_poco_confiable ?>%)</strong></p>
 				</div>
-			<?php }?>
-			<div class='pop-up-triangle'></div>
+				<div class='pop-up-triangle'></div>
+			<?php }?>			
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
@@ -60,9 +60,11 @@
 				<p>Pagina Web: </p>
 			</div> -->
 	</div>
-
+	<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
+	<?php $this->include_template('map-infobox','global'); ?>
+
 	<div class='clear'></div>
 	<ul class='tabs'>
 		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
@@ -94,11 +96,25 @@ EOD;
 		</div>
 		<div class='tab jscrollpane'>
 			<!-- 	html y css terminado	 -->
-			<div class='comment reporte'> 
-				<p class='rating'>10<a href='#'></a></p>
-				<h2>Nombre</h2>
-				<p>Comentario</p>
-			</div>
+			<a name='reportes_ciudadanos'></a>
+			<?php
+			if($this->escuela->reportes_ciudadanos){
+				foreach ($this->escuela->reportes_ciudadanos as $reporte_ciudadano){
+					if(isset($reporte_ciudadano->publicar))
+					echo <<<EOD
+					<div class='comment reporte'>
+						<p class='rating'>{$reporte_ciudadano->likes}<a href='/escuelas/like_reportar/{$reporte_ciudadano->id}/'></a></p>
+						<h2>{$reporte_ciudadano->nombre_input}</h2>
+						<p>{$reporte_ciudadano->denuncia}</p>
+					</div>
+EOD;
+				}
+			}else{?>
+				<div class='buble-sin-comentario'>
+					<p>Sé el primero en escribir un reporte</p>
+				</div>
+			<?php }
+			?>
 		</div>
 			<!-- 		 Mas información-->
 		<div class='tab jscrollpane'>
@@ -135,7 +151,7 @@ EOD;
 				</div>
 			</div>
 		</div>
-		<div class='tab jscrollpane'><div class=' chart-box'>
+		<div class='tab jscrollpane charts'><div class='chart-box'>
 			<?php 
 			if($this->escuela->line_chart_espaniol ){
 				echo "<h2>Resultados ENLACE español</h2>";
@@ -200,10 +216,10 @@ EOD;
 				</select></p>
 				<p class='column'><select class='custom-select' name='categoria' >
 					<option value=''>Categoría de tu Reporte</option>
-					<option value='ocupacion 1'>Ocupación 1</option>
-					<option value='ocupacion 2'>Ocupación 2</option>
-					<option value='ocupacion 3'>Ocupación 3</option>
-					<option value='ocupacion 4'>Ocupación 4</option>
+					<option value='ocupacion 1'>Categoría 1</option>
+					<option value='ocupacion 2'>Categoría 2</option>
+					<option value='ocupacion 3'>Categoría 3</option>
+					<option value='ocupacion 4'>Categoría 4</option>
 				</select></p>
 				<div class='clear'></div>
 				<p class='strong'>
@@ -218,3 +234,5 @@ EOD;
 		</form>
 	</div>	
 </div>
+
+<?php $this->include_template('resultados','compara')?>
