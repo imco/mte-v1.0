@@ -95,7 +95,7 @@ a{text-decoration:none;}
 #content .right .gray-box p{line-height:16px;text-align:justify;}
 
 #content .column .banner{display:block;background-image:url(../img/home/texture_pink.png);text-align:center;color:white;font-size:25px;position:relative;margin:3px 0 6px;padding:23px 49px 22px 100px;line-height:28px;}
-#content .column .banner img{position:absolute;top:24px;left:50px;}
+#content .column .banner img{position:absolute;top:26px;left:39px;}
 #content .column .banner.orange{background-image:url(../img/home/texture_orange.png);}
 #content .column .banner.green{background-image:url(../img/home/texture_green.png);}
 
@@ -111,14 +111,15 @@ a{text-decoration:none;}
 #content .tweets .tweet p{line-height:14px;}
 #content .tweets .tweet .user{font-size:13px;}
 
-#footer{background-image:url(../img/home/texture-footer.jpg);border-top:3px solid #5E5E5E;text-align:center;color:#898989;position:relative;}
+#footer{background-image:url(../img/home/texture-footer.jpg);border-top:3px solid #5E5E5E;text-align:center;color:#898989;position:relative;margin-top:-87px;height:83px;}
 #footer .img{margin:0 auto;width:228px;}
 #footer .img a{display:block;float:left;margin:16px 9px 0;}
 #footer .img a + a{margin:11px 6px 0;}
 #footer a{color:#898989;font-size:13px;margin:0 17px;}
 #footer .sole{background-color:#5C5C5C;font-size:10px;line-height:33px;position:absolute;bottom:0;width:100%;}
 #footer .sole a{font-size:10px;margin:0;}
-
+#footer .menu{margin-top:15px;}
+#main{padding-bottom:54px;}
 
 
 body .ui-menu .ui-menu-item a{line-height:14px;font-family:'Varela Round';padding:8px 11px;color:#6C6C6C;background-color:#f8f8f8;background-image:-moz-linear-gradient(top, #F8F8F8, #EAEAEA);background-image:-webkit-linear-gradient(top, #F8F8F8, #EAEAEA);border-radius:0;border:none;}
@@ -408,12 +409,27 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .notas{margin-top:-6px;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a}
-#content .container.home .newsletter{text-align:center;color:white;}
-#content .container.home .newsletter p{font-size:20px;text-align:center;}
+#content .container.home .newsletter form{margin-top:-4px;}
+#content .container.home .newsletter{text-align:center;color:white;height:154px;}
+#content .container.home .newsletter p{font-size:27px;text-align:center;margin-top:-2px 0 6px 0;}
+#content .container.home .newsletter h1{font-size:13px;font-weight:bold;margin-top:-7px;}
+#content .column .banner.orange img{top:41px;}
+#content .column .banner.orange{width:140px;}
 #content .container.home .circle{height:206px;width:966px;display:inline-block;margin-top:16px;}
-#content .container.home .circle a{display:inline-block;width:200px;height:176px;background-position:center 0;background-repeat:no-repeat;vertical-align:top;margin:0 52px 0 -12px;}
+#content .container.home .circle a{display:inline-block;width:200px;height:176px;background-position:center 0;background-repeat:no-repeat;vertical-align:top;margin:0 52px 0 -12px;position:relative;}
 #content .container.home .circle a:nth-child(4n + 1){background-image:url(../img/home/circulo1.png);}
 #content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/circulo2.png);}
 #content .container.home .circle a:nth-child(4n + 3){background-image:url(../img/home/circulo3.png);}
 #content .container.home .circle a:nth-child(4n + 4){background-image:url(../img/home/circulo4.png);margin-left:-19px;}
 #content .container.home .circle a:hover{background-position-y:-177px;}
+#content .container.home .circle a:hover:before{content:"";margin:43px 51px;display:block;height:100px;width:88px;background-position:center 0;background-repeat:no-repeat;background-image:url(../img/home/footer_vineta.png)}
+#content .container.home .circle a:hover:after{text-align:center;font-size:16px;display:block;width:107px;position:absolute;color:white;;line-height:19px;top:81px}
+#content .container.home .circle a:nth-child(4n + 1):hover:before{background-image:url(../img/home/buscar_footer.png);margin:43px 51px;}
+#content .container.home .circle a:nth-child(4n + 1):hover:after{content:"BUSCAR ESCUELA";top:94px;left:43px;font-size:18px;}
+#content .container.home .circle a:nth-child(4n + 2):hover:before{margin:61px 58px;}
+#content .container.home .circle a:nth-child(4n + 2):hover:after{content:"De panzazo";left:50px;}
+#content .container.home .circle a:nth-child(4n + 3):hover:before{margin:62px 54px;}
+#content .container.home .circle a:nth-child(4n + 3):hover:after{content:"La clave es el Talento";left:47px;}
+#content .container.home .circle a:nth-child(4n + 4):hover:before{margin:62px 57px;}
+#content .container.home .circle a:nth-child(4n + 4):hover:after{content:"La Reforma Educativa";left:51px;}
+
