@@ -26,15 +26,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `reportes_ciudadano_likes`
 --
 
+
 CREATE TABLE IF NOT EXISTS `reportes_ciudadano_likes` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `calificacion` int(10) NOT NULL,
-  `ip` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `user_agent` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `denuncia` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `id` int(10) NOT NULL auto_increment,
+  `ip` varchar(20) collate utf8_unicode_ci NOT NULL,
+  `user_agent` varchar(200) collate utf8_unicode_ci NOT NULL,
+  `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `denuncia` int(10) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
