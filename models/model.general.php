@@ -102,4 +102,19 @@ class calificacion_like extends table{
 
 	}
 }
+class reporte_ciudadano extends table{
+	function info(){
+		$this->table_name = 'reportes_ciudadanos';
+		$this->objects['cct'] = 'escuela';
+
+		$this->has_many['likes'] = 'reporte_ciudadano_like';
+		$this->has_many_keys['likes'] = 'reporte_ciudadano'; 
+	}
+}
+class reporte_ciudadano_like extends table{
+	function info(){
+		$this->table_name = 'reporte_ciudadano_likes';
+		$this->objects['reporte_ciudadano'] = 'reporte_ciudadano';
+	}
+}
 ?>
