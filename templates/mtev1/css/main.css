@@ -394,8 +394,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box.wrap{padding:0}
 #content .container.home .gray-box .two-column{display:inline-block;vertical-align:top;padding:15px 24px 22px;margin-right:-9px;width:245px;}
 #content .container.home .column h1.cap.subtitle{position:relative;}
-#content .container.home .column h1.cap.subtitle.blue{padding:0 142px 0 27px;}
-#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white}
+#content .container.home .column h1.cap.subtitle.blue{padding:0 142px 0 27px;overflow:hidden;}
+#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white;top:0;}
 #content .container.home .column h1.cap.subtitle span a{padding-left:14px;color:white;}
 #content .container.home .column h1.cap.subtitle.blue span a{padding-left:36px}
 #content .container.home .gray-box .two-column h1{color:#46c47b;}
