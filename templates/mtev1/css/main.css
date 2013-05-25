@@ -17,7 +17,7 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 15px 24px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
+#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 15px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);}
 #header .menu a[href='/reportes-ciudadanos']{background-image:url(../img/home/denuncia.png);}
@@ -26,9 +26,9 @@ a{text-decoration:none;}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
-#header .menu.denuncia a[href='/denuncia']{background-color:rgba(0,0,0,.12)}
-#header .menu.volunatior a[href='/voluntarios']{background-color:rgba(0,0,0,.12)}
-#header .menu.webinars a[href='/webinars']{background-color:rgba(0,0,0,.12)}
+#header .menu.reportes_ciudadanos a[href='/reportes-ciudadanos']{background-color:rgba(0,0,0,.12)}
+#header .menu.datos_abiertos a[href='/datos-abiertos']{background-color:rgba(0,0,0,.12)}
+#header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
 #header .menu a.logo{width:auto;margin:26px 14px 0 26px;padding:0;}
@@ -432,4 +432,35 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .circle a:nth-child(4n + 3):hover:after{content:"La clave es el Talento";left:47px;}
 #content .container.home .circle a:nth-child(4n + 4):hover:before{margin:62px 57px;}
 #content .container.home .circle a:nth-child(4n + 4):hover:after{content:"La Reforma Educativa";left:51px;}
+/*Reportes*/
+#header .reportes-ciudadanos{height:auto;width:900px;}
+#header .reportes-ciudadanos h1{text-align:left;font-size:23px;line-height:49px;width:900px;padding:0;background:url(../img/home/texture_blue.png);}
+#header .reportes-ciudadanos h1 span{display:block;float:left;width:31px;height:28px;background-image:url(../img/reportes/reportemenu.png);margin:14px 10px 0 29px;}
+#header .reportes-ciudadanos .box{background-color:rgba(0,0,0,.4);color:white;margin:25px auto 41px;}
+#header .reportes-ciudadanos .box .content{padding:12px 26px 26px;width:696px;float:left;border-right:1px solid white;line-height:16px;}
+#header .reportes-ciudadanos .box .search{float:left;width:150px;}
+#header .reportes-ciudadanos .adv-search{font-size:10px;display:block;float:left;width:84px;height:84px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:8px 0 8px 32px;}
+#header .reportes-ciudadanos .adv-search a{width:73px;height:36px;margin:6px;display:block;background:#00AFF0 url(../img/reportes/buscar.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:37px;font-size:12px;text-align:center;}
 
+#content .reportes{width:900px;margin:20px auto;}
+#content .reportes .reporte{width:290px;height:273px;float:left;margin:0 15px 11px 0;}
+#content .reportes .reporte:nth-child(3n){margin:0 0 11px 0;}
+#content .reportes .reporte h2{line-height:28px;padding:0 15px;}
+#content .reportes .reporte hr{height:6px;}
+#content .reportes .reporte p{padding:0 15px;text-align:justify;}
+#content .reportes .reporte p.auth{padding:16px 15px 18px;color:black;}
+#content .reportes .reporte .top{background-color:rgba(255,255,255,.4);}
+#content .reportes .button{display:block;float:left;background-color:rgba(255,255,255,.5);margin:2px 2px 0 0;height:49px;text-align:center;}
+#content .reportes .button.votes{font-size:14px;width:60px;padding:10px 0 0;height:39px;line-height:15px;}
+#content .reportes .button.votes span{display:block;font-size:10px;}
+#content .reportes .button.share{color:#474747;line-height:49px;width:121px;font-size:13px;}
+#content .reportes .button.vote{line-height:53px;margin:2px 0 0 0;font-size:14px;padding:0 13px 0 42px;line-height:53px;position:relative;}
+#content .reportes .button.vote span{display:block;position:absolute;width:26px;height:22px;background-image:url(../img/reportes/like.png);top:14px;left:13px;}
+
+/*Datos Abiertos*/
+#header .datos-abiertos h1 span{display:block;float:left;width:31px;height:25px;background-image:url(../img/datos/datos.png);margin:14px 10px 0 29px;}
+#content .datos-abiertos hr{background-image:url(../img/home/texture_orange.png);}
+#content .datos-abiertos .reporte{height:190px;}
+#content .datos-abiertos .reporte .top{padding-bottom:22px;height:106px;}
+#content .datos-abiertos .reporte .button{height:57px;line-height:57px;}
+#content .datos-abiertos .reporte .button.descargar{width:167px;margin:2px 0 0 0;}
