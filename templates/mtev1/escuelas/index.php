@@ -46,19 +46,7 @@
 		<p class='icon fon'><?=$this->escuela->telefono?></p>
 		<p class='icon email'><?=$this->escuela->correoelectronico?></p>
 		<p class='website'><?=$this->escuela->paginaweb?></p>
-
-
-			<!--<p>Clave SEP: </p>
-			<p>Servicio: <?=$this->capitalize($this->escuela->servicio->nombre)?></p>
-			<p>Subnivel: <?=$this->capitalize($this->escuela->subnivel->nombre)?></p>
-			<p>Subcontrol: <?=$this->capitalize($this->escuela->subcontrol->nombre)?></p>
-			<p>Sostenimiento: <?=$this->capitalize($this->escuela->sostenimiento->nombre)?></p>
-			<p>Tipo:<?=$this->capitalize($this->escuela->tipo->nombre)?></p>
-			<div class='contact'>
-				<p>Telefono: </p>
-				<p>Correo Electronico: </p>
-				<p>Pagina Web: </p>
-			</div> -->
+<!-- 		<p>Clave SEP: </p> -->
 	</div>
 	<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
@@ -119,50 +107,40 @@ EOD;
 			<!-- 		 Mas información-->
 		<div class='tab jscrollpane'>
 			<div class='mas-info'>
-				<div class='left'>
-					<h2>This is Photoshop's version of Lorem</h2>
-					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-					tis sem nibh id elit.</p>
-					<div class='comment-info'>
-						<p class='rating'>10<a href='#'></a></p>
-						<h2>This is Photoshop's version of Lorem</h2>
-						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-						tis sem nibh id elit.</p>
-					</div>
+				<div class='left'>	
+					<h2>Servicio</h2>
+					<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
+					
+					<h2>Subnivel</h2>
+					<h3><?=$this->capitalize($this->escuela->subnivel->nombre)?></h3>
+					
+					<h2>Subcontrol</h2>
+					<h3><?=$this->capitalize($this->escuela->subcontrol->nombre)?></h3>
+					
+					<h2>Sostenimiento</h2>
+					<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
 
-					<div class='comment-info'>
-						<p class='rating'>10<a href='#'></a></p>
-						<h2>This is Photoshop's version of Lorem</h2>
-						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-						tis sem nibh id elit.</p>
-					</div>
+					<h2>Tipo</h2>
+					<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>						
 				</div>
 				<div class='right'>
-					<h2>This is Photoshop's version of Lorem</h2>
-					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-					tis sem nibh id elit.</p>
+<!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
+<!-- 					<h3>This is Photoshop's version of Lorem Ipsum.</h3> -->
+<!-- 					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin, -->
+<!-- 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit- -->
+<!-- 					tis sem nibh id elit.</p> -->
 					
-					<h2>This is Photoshop's version of Lorem</h2>
-					<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-					tis sem nibh id elit.</p>
 					<div class='comment-info'>
-						<p class='rating'>10<a href='#'></a></p>
-						<h2>This is Photoshop's version of Lorem</h2>
-						<h3>This is Photoshop's version of Lorem Ipsum.</h3>
-						<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit-
-						tis sem nibh id elit.</p>
+						<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
+						<h2>Número de alumnos evaluados</h2>
 					</div>
+					
+					<?php if($this->escuela->nivel->id == 12){ ?>
+						<div class='comment-info'>
+							<p class='rating'><?=$this->capitalize($this->escuela->poco_confiables)?><a href='#'></a></p>
+							<h2>Resultados no confiables</h2>
+						</div>					
+					<?php } ?>
 				</div>
 			</div>
 		</div>
