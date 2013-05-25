@@ -15,6 +15,7 @@ php_value max_input_time 200
 
 RewriteEngine On
 RewriteBase /
+RewriteRule ^nish/?$ rank_entidad.php [QSA,L]
 RewriteRule ^([-_\w]+)/?$ ?controler=$1 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
