@@ -24,8 +24,9 @@
 			$js_scripts[] = 'school-charts.js';
 			echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		}
-		if($this->location == 'mapa' || $this->location == 'escuelas'){
+		if($this->draw_map){
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=true"></script>';
+			$js_scripts[] = 'infobox_packed.js';
 			$js_scripts[] = 'map.js';
 		}
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");
