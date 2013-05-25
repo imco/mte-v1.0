@@ -138,7 +138,7 @@ class main extends controler{
 		if(isset($params->control) && $params->control){
 			$q->search_clause .= " AND escuelas.control = '{$params->control}' ";
 		}else{
-			$q->search_clause .= $this->request('control') === false || $this->request('control') === '' ? ' AND escuelas.control = "'.$this->request('control').'" ' : '';
+			$q->search_clause .= $this->request('control') ? ' AND escuelas.control = "'.$this->request('control').'" ' : '';
 		}
 
 		if(isset($params->rank_nacional)){
@@ -163,8 +163,7 @@ class main extends controler{
 			$q->limit = $this->pagination->limit;
 		}
 
-		//$q->debug = true;
-		//var_dump($q->search_clause);
+		$q->debug = isset($this->debug) ? $this->debug : false;
 		$this->escuelas = $q->read('cct,nombre,poco_confiables,domicilio,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre');
 
 		if($this->request('json')){
