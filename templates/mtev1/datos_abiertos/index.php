@@ -1,14 +1,13 @@
 <div class='container reportes datos-abiertos'>
-	<?php for($i = 0;$i<12;$i++){ ?>
+	<?php foreach($this->files as $file){ ?>
 	<div class='reporte'>
 		<div class='top'>
-			<h2>Nombre del Archivo</h2>
+			<h2><?=$file->nombre?></h2>
 			<hr/>
-			<p> Cras egestas convallis justo non pellentesque. Ut quis tortor ut tellus pretium pulvinar quis eu neque. Aenean suscipit viverra dignissim. Sed malesuada</p>
-			
+			<p><?=$file->descripcion?></p>
 		</div>
 		<a href='#' class='button share'>COMPARTIR</a>
-		<a href='#' class='button descargar share'><span></span>DESCARGAR</a>
+		<a href='<?=$file->url?>' class='button descargar share'><span></span>DESCARGAR</a>
 	</div>
 	<?php } ?>
 	<div class='clear'></div>
