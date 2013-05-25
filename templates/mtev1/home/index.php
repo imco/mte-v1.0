@@ -83,13 +83,14 @@
 		<div class='gray-box newsletter'>
 			<h1>Suscribete a nuestro</h1>
 			<p>Newsletter</p>
+			<?php $this->print_img_tag('news.png');?>
 			<form action="">
 				<input name='' type='text' placeholder='Tu correo'/>
 				<input type='submit' value='Suscribirme' />
 			</form>
 		</div>
-		<a href='' class='banner orange'><?php $this->print_img_tag('home/buacaresc_banner.png');?> Compara tu Escuela</a>
-		<a href='' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?> Reportes ciudadanos</a>
+		<a href='' class='banner orange'><?php $this->print_img_tag('home/comparador.png');?> Compara tu Escuela</a>
+		<a href='' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?>Reportes ciudadanos</a>
 
 		<a href="" class='gray-box'>
 			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
