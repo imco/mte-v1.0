@@ -414,7 +414,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .newsletter h1{font-size:13px;font-weight:bold;margin-top:-7px;}
 #content .column .banner.orange img{top:41px;}
 #content .column .banner.orange{width:140px;}
-#content .container.home .circle{height:206px;width:966px;display:inline-block;margin-top:16px;}
+#content .container.home .circle{height:206px;width:966px;display:inline-block;margin-top:16px;position:relative;}
+#content .container.home .circle .line1,#content .container.home .circle .line2{display:none;position:absolute;top:67px;width:38px;border-top:1px solid white;}
 #content .container.home .circle a{display:inline-block;width:200px;height:176px;background-position:center 0;background-repeat:no-repeat;vertical-align:top;margin:0 52px 0 -12px;position:relative;}
 #content .container.home .circle a:nth-child(4n + 1){background-image:url(../img/home/circulo1.png);}
 #content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/circulo2.png);}

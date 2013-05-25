@@ -106,6 +106,17 @@ $(document).ready(function(){
 			$("#localidad-input").html('<option value="">Localidad</option>');
 		}
 	});
+
+	$('#content .home .circle a.line').hover(function(){
+		var x=[27,23,19];
+		var i=$(this).index();
+		var xP=$(this).position().left;
+		$(this).parent().find('.line1').css({'left':xP+x[i-1] + 'px','display':'block'});
+		$(this).parent().find('.line2').css({'left':89+xP+x[i-1]+'px','display':'block'});
+	},function(){
+			$(this).parent().find('.line1').css('display','none');	
+			$(this).parent().find('.line2').css('display','none');	
+	});
 });
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
