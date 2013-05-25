@@ -25,7 +25,7 @@ class home extends main{
 		$params2->entidad = $this->user_location->id;
 		$params2->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.promedio_general DESC';
 		$params2->limit = '0,5';
-		$this->debug = true;
+		//$this->debug = true;
 		$this->get_escuelas($params2);
 		$this->process_escuelas();
 	}
