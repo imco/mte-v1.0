@@ -229,8 +229,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .gray-box .column{float:left;width:368px;height:109px;}
 #content .perfil .buble-sin-comentario{background:url(../img/perfil/bublesincoments.png);width:209px;height:236px;margin:0px auto;bottom:-3px;position:relative}
 #content .perfil .buble-sin-comentario p{background:url(../img/perfil/lapiz.png) center 28px no-repeat;margin:0px auto;font-size:22px;line-height:24px;padding-top:91px;text-align:center;width:146px}
-#content .perfil .mas-info .left{width:370px;float:left;margin-left:14px;padding-right:14px;border-right:2px #329DD1 dotted}
-#content .perfil .mas-info .right{width:370px;float:left;padding-left:14px;}
+#content .perfil .mas-info .left{width:370px;float:left;margin-left:14px;padding-right:14px;}
+#content .perfil .mas-info .right{width:370px;float:left;padding-left:14px;border-left:1px #329DD1 dotted}
 #content .perfil .mas-info h2{color:#329DD1}
 #content .perfil .mas-info h3{color:#717171}
 #content .perfil .mas-info p{line-height:13px;margin-bottom:10px}
