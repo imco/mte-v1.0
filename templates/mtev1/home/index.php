@@ -20,8 +20,8 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Leer más</a></h3>
 			</div>
 		</div>
-		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores escuelas en <?=$this->capitalize($this->user_location->nombre)?>
-			<span><a href='#'>+Ver más</a></span>
+		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->capitalize($this->user_location->nombre)?>
+			<span><a href='/compara/?search=true&amp;entidad=<?=$this->privada->entidad->id?>&amp;nivel=<?=$this->privada->nivel->id?>'>+Ver más</a></span>
 		</h1>
 		<div class='gray-box'>
 			<ol class='mejores'>
