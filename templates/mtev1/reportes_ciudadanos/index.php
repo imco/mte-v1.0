@@ -1,18 +1,29 @@
 <div class='container reportes'>
-	<?php for($i = 0;$i<9;$i++){ ?>
-	<div class='reporte'>
-		<div class='top'>
-			<h2>Reporte Ciudadano</h2>
-			<hr/>
-			<p> Cras egestas convallis justo non pellentesque. Ut quis tortor ut tellus pretium pulvinar quis eu neque. Aenean suscipit viverra dignissim. Sed malesuada malesuada nibh, non mollis leo ornare quisnon mollis leo ornare quis.</p>
-			<p><a href='/escuelas/index/'>Nombre de la Excuela</a></p>
-			<p><a href='/escuelas/index/'>Estado</a></p>
-			<p class='auth'>Por Daniel Martinez</p>
+	<?php 
+	if($this->reportes){
+		foreach($this->reportes as $reporte){ 
+			$entidad = new entidad($reporte->escuela->entidad);
+			$entidad->read('nombre,id');
+	?>
+		<div class='reporte'>
+			<div class='top'>
+				<h2>Reporte Ciudadano</h2>
+				<hr/>
+				<p><?=$reporte->denuncia?></p>
+				<p><a href='/escuelas/index/<?=$reporte->escuela->cct?>'><?=$this->capitalize($reporte->escuela->nombre)?></a></p>
+				<p><a href='/compara/?search=true&amp;entidad=<?=$entidad->id?>#resultados'><?=$this->capitalize($entidad->nombre)?></a></p>
+				<p class='auth'>Por <?=$reporte->nombre_input?></p>
+			</div>
+			<div class='button votes '><?=$reporte->likes?><span>VOTOS</span></div>
+			<a href='#' class='button share'>COMPARTIR</a>
+			<a href='/escuelas/like_reportar/<?=$reporte->id?>' class='button vote'><span></span>VOTAR</a>
 		</div>
-		<div class='button votes '>353<span>VOTOS</span></div>
-		<a href='#' class='button share'>COMPARTIR</a>
-		<a href='#' class='button vote'><span></span>VOTAR</a>
-	</div>
-	<?php } ?>
+		<?php 
+		}
+	}else{
+
+
+	} 
+		?>
 	<div class='clear'></div>
 </div>
