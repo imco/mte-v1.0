@@ -21,7 +21,8 @@ class home extends main{
 		$params->control = 2;
 		$this->get_escuelas($params);
 		$this->privada = $this->escuelas[0];
-		$params2->nivel = $params->nivel;
+		$params2->nivel = $niveles[rand(0,2)];
+		$this->nivel_5 = $params2->nivel;
 		$params2->entidad = $this->user_location->id;
 		$params2->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.promedio_general DESC';
 		$params2->limit = '0,5';
