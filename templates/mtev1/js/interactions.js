@@ -56,6 +56,7 @@ $(document).ready(function(){
 			}
 		}
 	});
+
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
   			$.post("/main/get_escuelas/",{
@@ -75,6 +76,7 @@ $(document).ready(function(){
 	}).data( "ui-autocomplete" )._renderItem = function( ul, item ){
       return $("<li>").append("<a>"+item.label+"<span>"+item.address+"</span></a>").appendTo(ul);
     };
+    
 	$('#map-button').click(function(e){
 		e.preventDefault();
 		$('#general-search').attr('action','/mapa/');
