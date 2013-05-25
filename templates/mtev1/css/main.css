@@ -447,6 +447,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .datos-abiertos h1 span{display:block;float:left;width:31px;height:25px;background-image:url(../img/datos/datos.png);margin:14px 10px 0 29px;}
 #content .datos-abiertos hr{background-image:url(../img/home/texture_orange.png);}
 #content .datos-abiertos .reporte{height:190px;}
-#content .datos-abiertos .reporte .top{padding-bottom:22px;}
+#content .datos-abiertos .reporte .top{padding-bottom:22px;height:106px;}
 #content .datos-abiertos .reporte .button{height:57px;line-height:57px;}
 #content .datos-abiertos .reporte .button.descargar{width:167px;margin:2px 0 0 0;}
