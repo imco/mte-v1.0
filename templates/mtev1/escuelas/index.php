@@ -107,30 +107,21 @@ EOD;
 			<!-- 		 Mas información-->
 		<div class='tab jscrollpane'>
 			<div class='mas-info'>
-				<div class='left'>					
-					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
-						<h2>Servicio</h2>
-						<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
-					</div>
+				<div class='left'>	
+					<h2>Servicio</h2>
+					<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
 					
-					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
-						<h2>Subnivel</h2>
-						<h3><?=$this->capitalize($this->escuela->subnivel->nombre)?></h3>
-					</div>
+					<h2>Subnivel</h2>
+					<h3><?=$this->capitalize($this->escuela->subnivel->nombre)?></h3>
 					
-					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
-						<h2>Subcontrol</h2>
-						<h3><?=$this->capitalize($this->escuela->subcontrol->nombre)?></h3>
-					</div>
+					<h2>Subcontrol</h2>
+					<h3><?=$this->capitalize($this->escuela->subcontrol->nombre)?></h3>
+					
+					<h2>Sostenimiento</h2>
+					<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
 
-					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
-						<h2>Sostenimiento</h2>
-						<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
-					</div>
+					<h2>Tipo</h2>
+					<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>						
 				</div>
 				<div class='right'>
 <!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
@@ -138,25 +129,16 @@ EOD;
 <!-- 					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin, -->
 <!-- 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit- -->
 <!-- 					tis sem nibh id elit.</p> -->
-
 					
 					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
-						<h2>Tipo</h2>
-						<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>
-					</div>
-					
-					<div class='comment-info'>
-						<p class='rating'><a href='#'></a></p>
+						<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
 						<h2>Número de alumnos evaluados</h2>
-						<h3><?=$this->capitalize($this->escuela->total_evaluados)?></h3>
 					</div>
 					
 					<?php if($this->escuela->nivel->id == 12){ ?>
 						<div class='comment-info'>
-							<p class='rating'><a href='#'></a></p>
+							<p class='rating'><?=$this->capitalize($this->escuela->poco_confiables)?><a href='#'></a></p>
 							<h2>Resultados no confiables</h2>
-							<h3><?=$this->capitalize($this->escuela->poco_confiables)?></h3>
 						</div>					
 					<?php } ?>
 				</div>
