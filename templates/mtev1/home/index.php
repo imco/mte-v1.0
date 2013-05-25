@@ -1,20 +1,23 @@
+<?php
+$niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
+?>
 <div class='container home'>
 	<div class='column'>
-		<h1 class='cap subtitle'><?php $this->print_img_tag('home/posicion.png');?> 1er Lugar Posición Nacional
+		<h1 class='cap subtitle'><?php $this->print_img_tag('home/posicion.png');?> Mejores <?=$niveles[$this->publica->nivel->id]?>
 			<span><a href='#'>+Ver posiciones</a></span>
 		</h1>
 		<div class='gray-box wrap'>
 			<div class="two-column left">
-				<h1>1ER LUGAR PÚBLICA</h1>
-				<h2>NOMBRE DE LA ESCUELA</h2>
-				<p>Datos generales</p>
-				<h3><a href="/">Leer más</a></h3>
+				<h1><?=$this->publica->rank_nacional?>&ordm; LUGAR PÚBLICA</h1>
+				<h2><?=$this->capitalize($this->publica->nombre)?></h2>
+				<p><?=$this->capitalize($this->publica->localidad->nombre)?>, <?=$this->capitalize($this->publica->entidad->nombre)?></p>
+				<h3><a href="/escuelas/index/<?=$this->publica->cct?>">Leer más</a></h3>
 			</div>
 			<div class="two-column right">
-				<h1>1ER LUGAR PRIVADA</h1>
-				<h2>NOMBRE DE LA ESCUELA</h2>
-				<p>Datos generales</p>
-				<h3><a href="/">Leer más</a></h3>
+				<h1><?=$this->privada->rank_nacional?>&ordm; LUGAR PRIVADA</h1>
+				<h2><?=$this->capitalize($this->privada->nombre)?></h2>
+				<p><?=$this->capitalize($this->privada->localidad->nombre)?>, <?=$this->capitalize($this->privada->entidad->nombre)?></p>
+				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Leer más</a></h3>
 			</div>
 		</div>
 		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores escuelas Quintana Roo
