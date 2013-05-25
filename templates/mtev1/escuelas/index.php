@@ -110,20 +110,30 @@ EOD;
 				<div class='left'>	
 					<h2>Servicio</h2>
 					<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
+					<p>Clave del servicio educativo.</p>
 					
 					<h2>Subnivel</h2>
 					<h3><?=$this->capitalize($this->escuela->subnivel->nombre)?></h3>
+					<p>Clave del subnivel educativo.</p>
 					
 					<h2>Subcontrol</h2>
 					<h3><?=$this->capitalize($this->escuela->subcontrol->nombre)?></h3>
+					<p>Clave del subcontrol administrativo.</p>
 					
 					<h2>Sostenimiento</h2>
 					<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
+					<p>Clave de sostenimiento.</p>
 
 					<h2>Tipo</h2>
 					<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>
-					<p><br /><p>
-
+					<p>Clave del tipo educativo.</p>
+				</div>
+				<div class='right'>
+<!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
+<!-- 					<h3>This is Photoshop's version of Lorem Ipsum.</h3> -->
+<!-- 					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin, -->
+<!-- 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit- -->
+<!-- 					tis sem nibh id elit.</p> -->
 					<div class='comment-info'>
 						<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
 						<h2>Número de alumnos evaluados</h2>
@@ -135,61 +145,6 @@ EOD;
 							<h2>Resultados no confiables</h2>
 						</div>					
 					<?php } ?>
-					
-				</div>
-				<div class='right'>
-<!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
-<!-- 					<h3>This is Photoshop's version of Lorem Ipsum.</h3> -->
-<!-- 					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin, -->
-<!-- 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit- -->
-<!-- 					tis sem nibh id elit.</p> -->
-
-					<h2>Descripcón de campos</h2>
-					<p>CLAVECCT: Clave del centro de trabajo.</p>
-					<p>NOMBRECT: Nombre del centro de trabajo.</p>
-					<p>DOMICILIO: Datos generales del domicilio del centro de trabajo.</p>
-					<p>ENTRECALLE: Calle cercana en que se ubica el centro de trabajo.</p>
-					<p>YCALLE: Otra calle cercana en que se ubica el centro de trabajo.</p>
-					<p>COLONIA: Clave de la colonia en que se ubica el centro de trabajo.</p>
-					<p>NOMBRECOLONIA: Descripción de la colonia en que se ubica el centro de trabajo.</p>
-					<p>LOCALIDAD: Clave de la localida en que se ubica el centro de trabajo.</p>
-					<p>NOMBRELOCALIDAD: Descripción de la localida en que se ubica el centro de trabajo.</p>
-					<p>MUNICIPIO: Clave del municipio en que se ubica el centro de trabajo.</p>
-					<p>NOMBREMUNICIPIO: Descripción del municipio en que se ubica el centro de trabajo.</p>
-					<p>ENTIDAD: Clave de la entida federativa en que se ubica el centro de trabajo.</p>
-					<p>NOMBREENTIDAD: Descripción de la entidad federativa en que se ubica el centro de trabajo.</p>
-					<p>CODIGOPOSTAL: Código postal en que se ubica el centro de trabajo.</p>
-					<p>TELEFONO: Teléfono del centro de trabajo.</p>
-					<p>TELEXTENSION: Extensión telefónoca del centro de trabajo.</p>
-					<p>FAX: Número de fax del centro de trabajo.</p>
-					<p>FAXEXTENSION: Extensión del fax del centro de trabajo.</p>
-					<p>CORREOELECTRONICO: Dirección del correo electrónico del centro de trabajo.</p>
-					<p>PAGINAWEB: Página web del centro de trabajo.</p>
-					<p>TURNO: Clave del turno del centro de trabajo.</p>
-					<p>NOMBRETURNO: Descripción del turno del centro de trabajo.</p>
-					<p>SECTOR: Clave de la jefatura de sector.</p>
-					<p>CCT_SECTOR: Clave de centro de trabajo de la jefatura de sector.</p>
-					<p>ALTITUD: Altitud.</p>
-					<p>LONGITUD: Longitud.</p>
-					<p>LATITUD: Latitud.</p>
-					<p>TIPO: Clave del tipo educativo.</p>
-					<p>NOMBRETIPO: Nombre del tipo educativo.</p>
-					<p>NIVEL: Clave del nivel educativo.</p>
-					<p>NOMBRENIVEL: Nombre del nivel educativo.</p>
-					<p>SUBNIVEL: Clave del subnivel educativo.</p>
-					<p>NOMBRESUBNIVEL: Nombre del subnivel educativo.</p>
-					<p>SERVICIO: Clave del servicio educativo.</p>
-					<p>NOMBRESERVICIO: Nombre del servicio educativo.</p>
-					<p>MODALIDAD: Clave de la modalidad educativa.</p>
-					<p>NOMBREMODALIDAD: Nombre de la modalidad educativa.</p>
-					<p>CONTROL: Clave del control administrativo.</p>
-					<p>NOMBRECONTROL: Nombre del control administrativo.</p>
-					<p>SUBCONTROL: Clave del subcontrol administrativo.</p>
-					<p>NOMBRESUBCONTROL: Nombre del subcontrol administrativo.</p>
-					<p>SOSTENIMIENTO: Clave de sostenimiento.</p>
-					<p>NOMBRESOSTENIMIENTO: Nombre del sostenimiento.</p>
-					<p>STATUS: Clave de status.</p>
-					<p>DESCRIPCION_STATUS: Descripción de estatus del centro de trabajo.</p>
 				</div>
 			</div>
 		</div>
