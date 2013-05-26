@@ -133,14 +133,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .home.container .decorations div + hr + hr{top:-17px;width:434px;left:242px;}
 #header .home.container .decorations div + hr + hr + hr{top:173px;width:236px;right:0px;}
 #header .home.container .decorations div + hr + hr + hr + hr{top:173px;width:428px;left:241px;}
-#header .home.container .decorations div + hr + hr + hr + hr + hr{top:239px;width:156px;left:0px;}
-#header .home.container .decorations div + hr + hr + hr + hr + hr + hr{top:239px;left:177px;width:148px;}
-#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr{top:239px;width:146px;right:188px;}
-#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr + hr {top:239px;width:164px;right:0px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr{top:239px;width:170px;left:0px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr{top:239px;left:192px;width:68px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr{top:239px;width:95px;right:166px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr + hr {top:239px;width:146px;right:0px;}
+#header .home.container .decorations div + hr + hr + hr + hr + hr + hr + hr + hr + hr{top:239px;width:29px;right:359px;}
 #header .home.container .decorations hr + img{top:168px;right:237px;}
 #header .home.container .decorations hr + img + img{top:-23px;left:227px;}
-#header .home.container .decorations hr + img + img + img{top:234px;left:159px;}
-#header .home.container .decorations hr + img + img + img + img{top:228px;right:170px;}
+#header .home.container .decorations hr + img + img + img{top:234px;left:174px;}
+#header .home.container .decorations hr + img + img + img + img{top:236px;right:151px;}
 
 #header .home.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:-36px;right:114px;background-repeat:no-repeat;background-position:-1px -11px;width:223px;height:116px;}
 #header .home.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:99px;top:77px;width:224px;height:100px;}
@@ -394,8 +395,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box.wrap{padding:0}
 #content .container.home .gray-box .two-column{display:inline-block;vertical-align:top;padding:15px 24px 22px;margin-right:-9px;width:245px;}
 #content .container.home .column h1.cap.subtitle{position:relative;}
-#content .container.home .column h1.cap.subtitle.blue{padding:0 142px 0 27px;}
-#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white}
+#content .container.home .column h1.cap.subtitle.blue{padding:0 142px 0 27px;overflow:hidden;}
+#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white;top:0;}
 #content .container.home .column h1.cap.subtitle span a{padding-left:14px;color:white;}
 #content .container.home .column h1.cap.subtitle.blue span a{padding-left:36px}
 #content .container.home .gray-box .two-column h1{color:#46c47b;}
