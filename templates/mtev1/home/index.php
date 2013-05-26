@@ -4,7 +4,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 <div class='container home'>
 	<div class='column'>
 		<h1 class='cap subtitle'><?php $this->print_img_tag('home/posicion.png');?> Mejores <?=$niveles[$this->publica->nivel->id]?>
-			<span><a href='#'>+Ver posiciones</a></span>
+			<span><a href='/compara/?search=true&amp;nivel=<?=$this->publica->nivel?>#resultados'>+Ver posiciones</a></span>
 		</h1>
 		<div class='gray-box wrap'>
 			<div class="two-column left">
@@ -20,8 +20,8 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Leer más</a></h3>
 			</div>
 		</div>
-		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores escuelas en <?=$this->capitalize($this->user_location->nombre)?>
-			<span><a href='#'>+Ver más</a></span>
+		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->capitalize($this->user_location->nombre)?>
+			<span><a href='/compara/?search=true&amp;entidad=<?=$this->user_location->id?>&amp;nivel=<?=$this->nivel_5?>#resultados'>+Ver más</a></span>
 		</h1>
 		<div class='gray-box'>
 			<ol class='mejores'>
