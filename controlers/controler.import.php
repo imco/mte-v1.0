@@ -15,7 +15,7 @@ class import extends main{
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
-		$this->update_pruebas_totales_enlace();
+// 		$this->update_pruebas_totales_enlace();
 
 	}
 	
