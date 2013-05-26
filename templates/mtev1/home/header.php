@@ -14,8 +14,15 @@
 		<div class='circle'></div>
 		<div class='circle'></div>
 		<hr /><hr /><hr /><hr />
+		<hr /><hr />
+		<hr />
+		<hr />
+		<hr />
+		
 		<?php $this->print_img_tag('home/palomita.png');?>
 		<?php $this->print_img_tag('home/birrete_small.png');?>
+		<?php $this->print_img_tag('home/birrete_small.png');?>
+		<?php $this->print_img_tag('home/palomita.png');?>
 	</div>
 </div>
 <div class='decorations'>
