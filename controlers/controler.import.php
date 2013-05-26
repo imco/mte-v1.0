@@ -15,6 +15,7 @@ class import extends main{
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
+		$this->update_pruebas_totales_enlace();
 
 	}
 	
@@ -528,6 +529,38 @@ class import extends main{
 			}
 			echo $i.'<br />';
 		}
+	}
+	private function update_pruebas_totales_enlace(){
+		//secundarias y preparatorias
+		$enlace = new enlace();
+		$enlace->debug = true;
+		$enlace->search_clause = "nivel = 'secundaria' || nivel = 'bachillerato'";
+		$per_page = 10000;
+		$enlaceP = new pagination('enlace',$per_page,$enlace->search_clause);
+		$document_pages = $enlaceP->document_pages;
+		$query = "SELECT COUNT(1) as total FROM enlaces WHERE {$enlace->search_clause};";
+		$result = $enlace->ExecuteReturnObject($query);
+		$total_items = $result[0]->total;
+		echo 'document_pages: '.$document_pages.'<br />';
+		echo 'total_items: '.$total_items.'<br />';
+		for($i = 1; $i <= $document_pages;$i++){
+			$start =  ($i-1)*$per_page;
+			$end = $per_page;
+			$limit = ($total_items > $per_page) ? "$start, $end" : false;
+			$enlace->limit = $limit;
+			$enlaces = $enlace->read("cct,alumnos_que_contestaron_total");
+			if($enlaces){
+				foreach($enlaces as $e){
+					$escuela = new escuela($e->cct);
+					$escuela->read('total_evaluados');
+					$total_evaluados = $escuela->total_evaluados + $e->alumnos_que_contestaron_total;
+// 					echo $total_evaluados.'<br />';
+// 					$escuela->update('total_evaluados',array($total_evaluados));
+				}
+			}
+			unset($enlaces);
+
+		}		
 	}
 }
 ?>
