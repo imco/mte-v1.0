@@ -497,3 +497,20 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header > .decorations.compara hr:first-child{top:335px;}
 #header > .decorations.compara hr + hr{display:none;}
 #header > .decorations.compara hr + hr + hr {display:block;top:579px;}
+
+/*Decorations simple_search*/
+#header .home.container .decorations.simple hr{display:none}
+#header .perfil.container{position:relative;}
+#header .perfil.container + .decorations.perfil hr{top:216px;}
+#header .perfil.container + .decorations.perfil hr + hr{display:none;}
+#header .perfil.container + .decorations.perfil hr + hr + hr{display:block;}
+#header .decorations.simple img{position:absolute}
+#header .decorations.simple img[alt$="palomita.png"]{top:69px;right:155px;}
+#header .decorations.simple img[alt$="birrete_small.png"]{top:67px;left:168px;}
+#header .decorations.simple hr{position:absolute;top:73px;height:1px;}
+#header .decorations.simple hr:nth-child(5n+1){width:166px;left:0}
+#header .decorations.simple hr:nth-child(5n+2){left:189px;width:69px;}
+#header .decorations.simple hr:nth-child(5n+3){right:361px;width:28px;;}
+#header .decorations.simple hr:nth-child(5n+4){right:169px;width:92px;}
+#header .decorations.simple hr:nth-child(5n+5){right:0;width:150px;}
+
