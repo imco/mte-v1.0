@@ -6,3 +6,13 @@
 	</p>
 	<p class='adv-search'><a href='/compara/' >Búsqueda Avanzada</a></p>
  </form>
+<div class="decorations simple">
+	<hr />
+	<hr />
+	<hr />
+	<hr />
+	<hr />	
+	<?php $this->print_img_tag('home/palomita.png');?>
+	<?php $this->print_img_tag('home/birrete_small.png');?>
+</div>
+
