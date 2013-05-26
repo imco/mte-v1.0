@@ -501,6 +501,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Decorations simple_search*/
 #header .home.container .decorations.simple hr{display:none}
 #header .perfil.container{position:relative;}
+#header .perfil.container + .decorations.perfil{height:0}
 #header .perfil.container + .decorations.perfil hr{top:216px;}
 #header .perfil.container + .decorations.perfil hr + hr{display:none;}
 #header .perfil.container + .decorations.perfil hr + hr + hr{display:block;}
