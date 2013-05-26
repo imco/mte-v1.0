@@ -554,8 +554,7 @@ class import extends main{
 					$escuela = new escuela($e->cct);
 					$escuela->read('total_evaluados');
 					$total_evaluados = $escuela->total_evaluados + $e->alumnos_que_contestaron_total;
-// 					echo $total_evaluados.'<br />';
-// 					$escuela->update('total_evaluados',array($total_evaluados));
+					$escuela->update('total_evaluados',array($total_evaluados));
 				}
 			}
 			unset($enlaces);
