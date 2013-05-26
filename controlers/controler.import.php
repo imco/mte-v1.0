@@ -535,15 +535,18 @@ class import extends main{
 		$enlace = new enlace();
 		$enlace->debug = true;
 		$enlace->search_clause = "nivel = 'secundaria' || nivel = 'bachillerato'";
-		$per_page = 1000;
+		$per_page = 10000;
 		$enlaceP = new pagination('enlace',$per_page,$enlace->search_clause);
 		$document_pages = $enlaceP->document_pages;
+		$query = "SELECT COUNT(1) as total FROM enlaces WHERE {$enlace->search_clause};";
+		$result = $enlace->ExecuteReturnObject($query);
+		$total_items = $result[0]->total;
 		echo 'document_pages: '.$document_pages.'<br />';
-		echo 'total_items: '.$enlaceP->total_items.'<br />';
+		echo 'total_items: '.$total_items.'<br />';
 		for($i = 1; $i <= $document_pages;$i++){
 			$start =  ($i-1)*$per_page;
 			$end = $per_page;
-			$limit = ($enlaceP->total_items > $per_page) ? "$start, $end" : false;
+			$limit = ($total_items > $per_page) ? "$start, $end" : false;
 			$enlace->limit = $limit;
 			$enlaces = $enlace->read("cct,alumnos_que_contestaron_total");
 			if($enlaces){
