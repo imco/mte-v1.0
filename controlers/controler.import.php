@@ -538,6 +538,8 @@ class import extends main{
 		$per_page = 10000;
 		$enlaceP = new pagination('enlace',$per_page,$enlace->search_clause);
 		$document_pages = $enlaceP->document_pages;
+		echo 'document_pages: '.$document_pages.'<br />';
+		echo 'total_items'.$enlaceP->total_items.'<br />';
 		for($i = 1; $i <= $document_pages;$i++){
 			$start =  ($i-1)*$per_page;
 			$end = $per_page;
