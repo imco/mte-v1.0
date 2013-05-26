@@ -8,12 +8,12 @@ class production_config extends default_config{
 		
 		//Database
 		$this->db_host = 'mysql51-014.wc1.dfw1.stabletransit.com';
-		$this->db_name = 'comparatuescuela';
+		$this->db_name = '630517_1Mk0_Mt3';
 		$this->db_user = '630517_Imc0T3';
 		$this->db_pass = '***REMOVED***';
 		
 		//MXNPHP
-		$this->dev_mode = false;
+		$this->dev_mode = true;
 		
 	}
 }
