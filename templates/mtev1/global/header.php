@@ -1,6 +1,6 @@
 <div class='menu <?= $this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>	
-	<a href='/compara'>Compara</a>
+	<a href='/compara'>Comparador</a>
 	<a href='/reportes-ciudadanos'>Reportes Ciudadanos</a>
 	<a href='/datos-abiertos'>Datos Abiertos</a>
 	<a href='/ayuda'>Ayuda</a>
