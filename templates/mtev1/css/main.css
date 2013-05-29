@@ -531,3 +531,17 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda .text-ayuda .section-two h3{margin-top:14px;}
 #content .container.ayuda .text-ayuda .section-two .img-example img{width:190px;margin-top:18px;height:175px;margin-right:18px;}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
+
+/*Contacto*/
+#header .reportes-ciudadanos.contacto h1{line-height:54px;}
+#header .reportes-ciudadanos.contacto h1 span{background-image:url(../img/home/contacto.png);background-repeat:no-repeat;}
+#header .reportes-ciudadanos.contacto h1 span{margin:15px -7px 0 24px;}
+#header .reportes-ciudadanos.contacto form{margin:4px 0 0 -2px;width:561px;}
+#header .reportes-ciudadanos.contacto input[type='text']{display:inline-block;vertical-align:top;width:278px;height:41px;border:none;font-size:22px;}
+#header .reportes-ciudadanos.contacto textarea{width:558px;height:115px;font-size:22px;}
+#header .reportes-ciudadanos.contacto .box{margin-bottom:26px;}
+#header .reportes-ciudadanos.contacto .box .content{width:556px;padding-bottom:22px;}
+#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:16px;color:white;font-weight:bold;}
+#header .reportes-ciudadanos.contacto p{margin-top:13px;font-size:13px;}
+#header .reportes-ciudadanos.contacto span.icon{display:block;float:left;width:35px;height:28px;background-image:url(../img/contacto/direccion.png);background-repeat:no-repeat;margin-left:24px;background-position:1px 4px;}
+#content .container.contacto .circle{margin-bottom:-30px;}
