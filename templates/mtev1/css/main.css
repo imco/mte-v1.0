@@ -421,21 +421,20 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .circle{height:206px;width:966px;display:inline-block;margin-top:16px;position:relative;}
 #content .container.home .circle .line1,#content .container.home .circle .line2{display:none;position:absolute;top:67px;width:38px;border-top:1px solid white;}
 #content .container.home .circle a{display:inline-block;width:200px;height:176px;background-position:center 0;background-repeat:no-repeat;vertical-align:top;margin:0 52px 0 -12px;position:relative;}
-#content .container.home .circle a:nth-child(4n + 1){background-image:url(../img/home/circulo1.png);}
-#content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/circulo2.png);}
-#content .container.home .circle a:nth-child(4n + 3){background-image:url(../img/home/circulo3.png);}
-#content .container.home .circle a:nth-child(4n + 4){background-image:url(../img/home/circulo4.png);margin-left:-19px;}
-#content .container.home .circle a:hover{background-position:center -177px;}
-#content .container.home .circle a:hover:before{content:"";margin:43px 51px;display:block;height:100px;width:88px;background-position:center 0;background-repeat:no-repeat;background-image:url(../img/home/footer_vineta.png)}
-#content .container.home .circle a:hover:after{text-align:center;font-size:16px;display:block;width:107px;position:absolute;color:white;;line-height:19px;top:81px}
-#content .container.home .circle a:nth-child(4n + 1):hover:before{background-image:url(../img/home/buscar_footer.png);margin:43px 51px;}
-#content .container.home .circle a:nth-child(4n + 1):hover:after{content:"BUSCAR ESCUELA";top:94px;left:43px;font-size:18px;}
-#content .container.home .circle a:nth-child(4n + 2):hover:before{margin:61px 58px;}
-#content .container.home .circle a:nth-child(4n + 2):hover:after{content:"De panzazo";left:50px;}
-#content .container.home .circle a:nth-child(4n + 3):hover:before{margin:62px 54px;}
-#content .container.home .circle a:nth-child(4n + 3):hover:after{content:"La clave es el Talento";left:47px;}
-#content .container.home .circle a:nth-child(4n + 4):hover:before{margin:62px 57px;}
-#content .container.home .circle a:nth-child(4n + 4):hover:after{content:"La Reforma Educativa";left:51px;}
+#content .container.home .circle a:nth-child(4n + 1){background-image:url(../img/home/links.png);}
+#content .container.home .circle a:nth-child(4n + 2){background-image:url(../img/home/links.png);}
+#content .container.home .circle a:nth-child(4n + 3){background-image:url(../img/home/videos.png);}
+#content .container.home .circle a:nth-child(4n + 4){background-image:url(../img/home/videos.png);margin-left:-19px;}
+#content .container.home .circle a{background-position:center -177px;}
+#content .container.home .circle a:before{content:"";margin:43px 51px;display:block;height:100px;width:88px;background-position:center 0;background-repeat:no-repeat;background-image:url(../img/home/footer_vineta.png)}
+#content .container.home .circle a:after{text-align:center;font-size:16px;display:block;width:107px;position:absolute;color:white;;line-height:19px;top:81px}
+#content .container.home .circle a:nth-child(4n + 1):after{content:"BUSCAR ESCUELA";top:94px;left:43px;font-size:18px;}
+#content .container.home .circle a:nth-child(4n + 2):before{margin:61px 58px;}
+#content .container.home .circle a:nth-child(4n + 2):after{content:"Version Anterior";left:50px;}
+#content .container.home .circle a:nth-child(4n + 3):before{margin:62px 54px;}
+#content .container.home .circle a:nth-child(4n + 3):after{content:"La clave es el Talento";left:47px;}
+#content .container.home .circle a:nth-child(4n + 4):before{margin:62px 57px;}
+#content .container.home .circle a:nth-child(4n + 4):after{content:"La Reforma Educativa";left:51px;}
 /*Reportes*/
 #header .reportes-ciudadanos{height:auto;width:900px;}
 #header .reportes-ciudadanos h1{text-align:left;font-size:23px;line-height:49px;width:900px;padding:0;background:url(../img/home/texture_blue.png);}
