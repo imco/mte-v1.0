@@ -4,7 +4,7 @@
 		<input type='submit' class='integrated' value='' />
 		<input type='hidden' name='search' value='true' />
 	</p>
-	<p class='adv-search'><a href='/compara/' >Búsqueda Avanzada</a></p>
+	<p class='adv-search'><a href='/compara/' >Búsqueda avanzada</a></p>
  </form>
 <div class="decorations simple">
 	<hr />
