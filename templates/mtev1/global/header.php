@@ -2,7 +2,8 @@
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>	
 	<a href='/compara'>Comparador</a>
 	<a href='/califica-tu-escuela'>Califica tu escuela</a>
-	<a href='/datos-abiertos'>Datos Abiertos</a>
+	<!--<a href='/datos-abiertos'>Datos Abiertos</a>-->
+	<!--<a href='/resultados-nacionales'>Resultados Nacionales</a>-->
 	<a href='/ayuda'>Ayuda</a>
 	<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' /></form>
 	<div class='social'>
