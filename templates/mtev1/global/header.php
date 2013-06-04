@@ -6,8 +6,8 @@
 	<a href='/ayuda'>Ayuda</a>
 	<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' /></form>
 	<div class='social'>
-		<a href='http://facebook.com' class='fb'></a>
-		<a href='http://twitter.com' class='twitter'></a>
+		<a href='https://www.facebook.com/MejoraTuEscuela' class='fb'></a>
+		<a href='https://twitter.com/mejoratuescuela' class='twitter'></a>
 	</div>
 	<div class='clear'></div>
 </div></div>
