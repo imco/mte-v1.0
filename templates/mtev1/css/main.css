@@ -19,10 +19,10 @@ a{text-decoration:none;}
 #header .menu .container{position:relative;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 15px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
-#header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);}
-#header .menu a[href='/reportes-ciudadanos']{background-image:url(../img/home/denuncia.png);}
-#header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);}
-#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
+#header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);padding-left:12px;background-position:29px 34px;}
+#header .menu a[href='/reportes-ciudadanos']{background-image:url(../img/home/denuncia.png);padding-left:9px;background-position:77px 31px;}
+#header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);padding-left:9px;background-position:47px 34px;}
+#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);padding-left:7px;background-position:21px 31px;}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
@@ -31,9 +31,9 @@ a{text-decoration:none;}
 #header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
-#header .menu a.logo{width:auto;margin:26px 14px 0 26px;padding:0;}
+#header .menu a.logo{width:auto;margin:26px 8px 0 37px;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
-#header .menu form{display:block;float:left;padding:59px 11px 0;background-image:url(../img/home/buscar.png);background-position:center 29px;background-repeat:no-repeat;}
+#header .menu form{display:block;float:left;padding:62px 11px 0 8px;background-image:url(../img/home/buscar.png);background-position:center 29px;background-repeat:no-repeat;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:5px 11px 3px;color:white;text-shadow:1px 1px #999;font-size:17px;line-height:17px;font-family:Varela Round;width:110px;}
 #header .menu input[placeholder]{color:white!important;}
 #header .menu ::-webkit-input-placeholder{color:white!important;}
@@ -517,7 +517,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Ayuda*/
 #header .reportes-ciudadanos.ayuda .box .content{width:846px;border-right:none}
 #header .reportes-ciudadanos.ayuda h1 span{background-image:url(../img/home/ayuda.png);background-repeat:no-repeat;}
-#content .container.ayuda{background:rgba(57,57,80,.2);margin-top:20px;padding-top:16px;}
+#content .container.ayuda{background:rgba(255,255,255,.3);margin-top:20px;padding-top:16px;}
 #content .container.ayuda h2{font-size:24px;margin-left:56px;margin-bottom:9px;line-height:16px;color:#464646}
 #content .container.ayuda .text-ayuda{margin:15px 55px;}
 #content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;}
@@ -530,3 +530,17 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda .text-ayuda .section-two h3{margin-top:14px;}
 #content .container.ayuda .text-ayuda .section-two .img-example img{width:190px;margin-top:18px;height:175px;margin-right:18px;}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
+
+/*Contacto*/
+#header .reportes-ciudadanos.contacto h1{line-height:54px;}
+#header .reportes-ciudadanos.contacto h1 span{background-image:url(../img/home/contacto.png);background-repeat:no-repeat;}
+#header .reportes-ciudadanos.contacto h1 span{margin:15px -7px 0 24px;}
+#header .reportes-ciudadanos.contacto form{margin:4px 0 0 -2px;width:561px;}
+#header .reportes-ciudadanos.contacto input[type='text']{display:inline-block;vertical-align:top;width:278px;height:41px;border:none;font-size:22px;}
+#header .reportes-ciudadanos.contacto textarea{width:558px;height:115px;font-size:22px;}
+#header .reportes-ciudadanos.contacto .box{margin-bottom:26px;}
+#header .reportes-ciudadanos.contacto .box .content{width:556px;padding-bottom:22px;}
+#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:16px;color:white;font-weight:bold;}
+#header .reportes-ciudadanos.contacto p{margin-top:13px;font-size:13px;}
+#header .reportes-ciudadanos.contacto span.icon{display:block;float:left;width:35px;height:28px;background-image:url(../img/contacto/direccion.png);background-repeat:no-repeat;margin-left:24px;background-position:1px 4px;}
+#content .container.contacto .circle{margin-bottom:-30px;}
