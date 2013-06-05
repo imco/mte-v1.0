@@ -1,12 +1,12 @@
 <form action='/compara/#resultados' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	<p class='button-frame'>
-		<input name='term' id='name-input' type='text' placeholder='Nombre de la Escuela' value='<?=$this->request('term');?>' />
+		<input name='term' id='name-input' type='text' placeholder='Nombre de la escuela' value='<?=$this->request('term');?>' />
 		<input type='submit' class='integrated' value='' />
 	</p>
 	<fieldset class='busqueda-avanzada'>
 		<p class='button-frame'>
 			<select name='nivel' id='nivel-input' class='custom-select'>
-				<option value=''>Nivel de Escolaridad</option>
+				<option value=''>Nivel escolar</option>
 				<?php 
 				foreach($this->niveles as $nivel){
 				$selected = $this->request('nivel') == $nivel->id && $this->request('nivel') != '' ? "selected='selected'" : '';
