@@ -75,8 +75,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 	</div>
 	<div class='column right'>
 		<div class='gray-box newsletter'>
-			<h1>Mantente informado</h1>
-			<p>Newsletter</p>
+			<p>Mantente informado</p>
 			<?php $this->print_img_tag('news.png');?>
 			<form action="">
 				<input name='' type='text' placeholder='Tu correo'/>
