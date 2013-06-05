@@ -11,13 +11,13 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<h1><?=$this->publica->rank_nacional?>&ordm; LUGAR PÚBLICA</h1>
 				<h2><?=$this->capitalize($this->publica->nombre)?></h2>
 				<p><?=$this->capitalize($this->publica->localidad->nombre)?>, <?=$this->capitalize($this->publica->entidad->nombre)?></p>
-				<h3><a href="/escuelas/index/<?=$this->publica->cct?>">Leer más</a></h3>
+				<h3><a href="/escuelas/index/<?=$this->publica->cct?>">Ver perfil</a></h3>
 			</div>
 			<div class="two-column right">
 				<h1><?=$this->privada->rank_nacional?>&ordm; LUGAR PRIVADA</h1>
 				<h2><?=$this->capitalize($this->privada->nombre)?></h2>
 				<p><?=$this->capitalize($this->privada->localidad->nombre)?>, <?=$this->capitalize($this->privada->entidad->nombre)?></p>
-				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Leer más</a></h3>
+				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Ver perfil</a></h3>
 			</div>
 		</div>
 		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->capitalize($this->user_location->nombre)?>
