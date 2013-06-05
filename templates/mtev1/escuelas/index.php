@@ -3,7 +3,7 @@
 		<?php $rank = isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
 		<div class='ranking'>
 			<h1><?=$rank?></h1>
-			<p>Posición <br/>Nivel estatal</p>
+			<p>Posición <br/>estatal</p>
 		</div>
 		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'>
 			<div class='bubble'></div>
