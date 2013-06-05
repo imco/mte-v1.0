@@ -17,12 +17,12 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 15px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
+#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 36px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
-#header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);padding-left:12px;background-position:29px 34px;}
-#header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/resultados.png);padding-left:9px;background-position:center 30px;}
-#header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);padding-left:9px;background-position:47px 34px;}
-#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);padding-left:7px;background-position:21px 31px;}
+#header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
+#header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/resultados.png);background-position:center 30px;}
+#header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);background-position:47px 34px;}
+#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
@@ -31,7 +31,7 @@ a{text-decoration:none;}
 #header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
-#header .menu a.logo{width:auto;margin:26px 8px 0 37px;padding:0;}
+#header .menu a.logo{width:auto;margin:26px 37px 0 37px;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
 #header .menu form{display:block;float:left;padding:62px 11px 0 8px;background-image:url(../img/home/buscar.png);background-position:center 29px;background-repeat:no-repeat;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:5px 11px 3px;color:white;text-shadow:1px 1px #999;font-size:17px;line-height:17px;font-family:Varela Round;width:110px;}
@@ -91,7 +91,7 @@ a{text-decoration:none;}
 #content .white-box.voluntarios .voluntario h2{color:#565857;font-size:14px;margin-top:19px;}
 #content .white-box.voluntarios .voluntario p{line-height:10px;font-size:10px;}
 
-#content .right .gray-box{padding:15px 21px 32px;margin:0 0 5px;}
+#content .right .gray-box{padding:15px 21px 18px;margin:0 0 5px;}
 #content .right .gray-box p{line-height:16px;text-align:justify;}
 
 #content .column .banner{display:block;background-image:url(../img/home/texture_pink.png);text-align:center;color:white;font-size:25px;position:relative;margin:3px 0 6px;padding:23px 49px 22px 100px;line-height:28px;}
@@ -268,7 +268,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara .titles{margin:6px auto 0;width:582px}
 #header .compara h1{font-size:48px;line-height:63px;padding:5px 0 0;}
 #header .compara h2{font-size:18px;line-height:31px;}
-#header .compara h3{background:url(../img/compara/lupa.png) no-repeat center 0px;padding:32px 0 1px;font-size:19px;}
+#header .compara h3{background:url(../img/compara/lupa.png) no-repeat center 0px;padding:32px 0 26px;font-size:19px;}
 #header .compara hr{width:578px;margin:0 auto;}
 #header .compara .button-frame{margin:10px auto 0;float:none;}
 #header .compara .busqueda-avanzada{margin:0 auto;clear:both;width:520px;}
@@ -410,11 +410,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box ol.mejores li a{color:white;}
 #content .container.home .gray-box ol.mejores li span.location{color:#959595;font-size:12px;}
 #content .container.home .notas{margin-top:-6px;}
-#content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282}
+#content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a}
 #content .container.home .newsletter form{margin-top:-4px;}
 #content .container.home .newsletter{text-align:center;color:white;height:154px;}
-#content .container.home .newsletter p{font-size:27px;text-align:center;margin-top:-2px 0 6px 0;}
+#content .container.home .newsletter p{font-size:25px;text-align:center;margin-top:-2px 0 6px 0;}
 #content .container.home .newsletter h1{font-size:13px;font-weight:bold;margin-top:-7px;}
 #content .column .banner.orange img{top:41px;}
 #content .column .banner.orange{width:140px;}
@@ -472,7 +472,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara.container{position:relative}
 #header .compara.container .decorations hr{position:absolute;height:1px;}
 #header .compara.container .decorations img{position:absolute;}
-#header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:188px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;}
+#header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:188px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;pointer-events:none;}
 #header .compara.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:1px;top:337px;width:290px;height:127px;background-size:303px;}
 #header .compara.container .decorations .circle{position:absolute;border-radius:50%;width:6px;height:6px;background-color:white;}
 #header .compara.container .decorations .circle:nth-child(4n+1){top:213px;right:172px;}
