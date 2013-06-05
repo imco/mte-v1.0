@@ -1,6 +1,6 @@
 <div class='compara container'>
 	<div class='titles'>
-		<h3>Busca escuelas para comparar</h3>
+		<!--<h3>Busca escuelas para comparar</h3>-->
 		<hr/>
 		<h1>COMPARA TU ESCUELA</h1>
 		<hr/>
