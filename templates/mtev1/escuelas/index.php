@@ -59,7 +59,7 @@
 		<li><a href='#' >Resultados educativos</a></li>
 		<li><a href='#' >Más información</a></li>
 		<li><a href='#' >Reportes ciudadanos</a></li>
-		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
+		<li class='on'><a href='#' class='long'>Comentarios con calificación</a></li>
 	</ul>
 	<div class='tab-container'>
 		<div class='tab jscrollpane on'>
