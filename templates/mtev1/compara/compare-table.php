@@ -2,7 +2,7 @@
 	<tr>
 		<th class='school'>Escuelas comparadas</th>
 		<th>Nivel Escolar</th>
-		<th class='rank'>Ranking <?=$this->current_rank->name?></th>
+		<th class='rank'>Posición <?=$this->current_rank->name?></th>
 		<th>Privada | Pública</th>
 		<th class='calificacion'>Calificación Enlace de Español</th>
 		<th class='calificacion'>Calificación Enlace de Matematicas</th>			
