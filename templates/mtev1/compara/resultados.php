@@ -8,7 +8,7 @@
 			<th class='school'>Escuelas</th>
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
-			<th class='rank'>Ranking Estatal</th>
+			<th class='rank'>Posición Estatal</th>
 			<th class='rank'>Semaforo Educativo</th>
 		</tr>
 	<?php
