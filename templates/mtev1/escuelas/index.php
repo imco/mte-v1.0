@@ -3,7 +3,7 @@
 		<?php $rank = isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
 		<div class='ranking'>
 			<h1><?=$rank?></h1>
-			<p>Posición <br/>Nivel Estatal</p>
+			<p>Posición <br/>Nivel estatal</p>
 		</div>
 		<div class='nivel <?php echo str_replace(' ', '-', $this->config->semaforos[$this->escuela->semaforo]) ?>'>
 			<div class='bubble'></div>
@@ -25,9 +25,9 @@
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
-			<h2>Semáforo Educativo</h2>
+			<h2>Semáforo educativo</h2>
 			<h3 class='nivel reprobado'>Reprobado</h3>
-			<h3 class='nivel elemental'>De Panzaso</h3>
+			<h3 class='nivel elemental'>De panzazo</h3>
 			<h3 class='nivel bien'>Bien</h3>
 			<h3 class='nivel excelente'>Excelente</h3>
 		</div>
@@ -55,10 +55,10 @@
 
 	<div class='clear'></div>
 	<ul class='tabs'>
-		<li><a href='#' class='long' >Asociaciones de Padres de Familia</a></li>
-		<li><a href='#' >Resultados Educativos</a></li>
-		<li><a href='#' >Más Informacion</a></li>
-		<li><a href='#' >Reportes Ciudadanos</a></li>
+		<li><a href='#' class='long' >Asociaciones de padres de familia</a></li>
+		<li><a href='#' >Resultados educativos</a></li>
+		<li><a href='#' >Más información</a></li>
+		<li><a href='#' >Reportes ciudadanos</a></li>
 		<li class='on'><a href='#' class='long'>Comentarios con Calificacion</a></li>
 	</ul>
 	<div class='tab-container'>
