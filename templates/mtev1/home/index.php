@@ -38,7 +38,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				?>
 			</ol>
 		</div>
-		<div class='notas'>
+		<!--<div class='notas'>
 			<div class='white-box column'>
 				<?php $this->print_img_tag('schoolchildren.png');?>
 				<h2>Notas relevantes</h2>
@@ -71,7 +71,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<p><a href="/">Leer más</a></p>
 			</div>
 			<div class='clear'></div>
-		</div>
+		</div>-->
 	</div>
 	<div class='column right'>
 		<div class='gray-box newsletter'>
