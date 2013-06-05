@@ -87,7 +87,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 
 		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box'>
 			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
-			@mejoratu escuela
+			/MejoraTuEscuela
 		</a>
 		<h2 class='twitcap'><?php $this->print_img_tag('home/twitter_logo.png') ?></h2>
 		<div class='gray-box tweets'>
