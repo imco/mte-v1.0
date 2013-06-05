@@ -191,7 +191,8 @@ class main extends controler{
 		$this->entidades = $q->read('id,nombre');
 	}
 	protected function capitalize($string){
-		return ucwords(strtolower($string));
+		return ucwords(mb_strtolower($string,'UTF-8'));
+		//return $string;
 	}
 	private function distance($lat1,$long1,$lat2,$long2) {
         $lat1 = deg2rad($lat1);
