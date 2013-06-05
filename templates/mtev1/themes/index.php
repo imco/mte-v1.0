@@ -3,6 +3,7 @@
  <head>
 	<meta charset="utf-8"/>
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="<?=$this->config->http_address?>/templates/<?=$this->config->theme?>/img/home/favicon.ico" />
 	<?php
 		$css_scripts = array(
 			"reset.css",
