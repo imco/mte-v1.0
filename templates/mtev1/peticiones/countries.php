@@ -141,7 +141,7 @@
 <option value="MR">Mauritania</option>
 <option value="MU">Mauritius</option>
 <option value="YT">Mayotte</option>
-<option value="MX">Mexico</option>
+<option value="MX" selected='selected'>Mexico</option>
 <option value="FM">Micronesia, Federated States of</option>
 <option value="MD">Moldova, Republic of</option>
 <option value="MC">Monaco</option>

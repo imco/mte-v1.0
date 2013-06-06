@@ -30,9 +30,13 @@ class peticiones extends main{
 		$parameters['country_code'] = $this->post('pais');
 		$parameters['hidden'] = $hidden;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$result = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
+		$this->sign_result = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
 		
-		var_dump($result);		
+
+		$this->header_folder = 'escuelas';
+		$this->read_peticion();
+		$this->include_theme('index','index');
+
 	}
 }
 ?>
