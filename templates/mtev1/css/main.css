@@ -267,14 +267,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /* Compara */
 #header .compara .titles{margin:6px auto 0;width:582px}
 #header .compara h1{font-size:48px;line-height:63px;padding:5px 0 0;}
-#header .compara h2{font-size:18px;line-height:31px;}
-#header .compara h3{background:url(../img/compara/lupa.png) no-repeat center 0px;padding:32px 0 26px;font-size:19px;}
+#header .compara h2{font-size:36px;line-height:39px;}
+#header .compara h3{background:url(../img/compara/lupa.png) no-repeat center 0px;padding:32px 0 27px;font-size:19px;}
 #header .compara hr{width:578px;margin:0 auto;}
 #header .compara .button-frame{margin:10px auto 0;float:none;}
 #header .compara .busqueda-avanzada{margin:0 auto;clear:both;width:520px;}
+#header .compara .busqueda-avanzada .button-frame.short{margin:14px 9px 1px}
 #header .compara .busqueda-avanzada .button-frame{float:left;margin:14px 9px 20px;width:240px;height:57px;} 
-#header .compara .busqueda-avanzada input[type='text']{}
-#header .compara .general-search{margin:19px auto 0;}
+#header .compara .busqueda-avanzada input[type='text']{width:198px;height:22px;line-height:22px;}
+#header .compara .busqueda-avanzada input.integrated[type='submit']{background-image:url(../img/compara/lupa-search.png);width:32px;height:34px;}
+#header .compara .general-search{margin:3px auto 0;}
 #header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;font-size:13px;}
 #header .compara .general-search .customSelect .customSelectInner{width:178px!important;height:18px;overflow:hidden;}
 #header .compara .general-search .customSelect.customSelectDisabled{opacity:.3;}
@@ -473,8 +475,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara.container{position:relative}
 #header .compara.container .decorations hr{position:absolute;height:1px;}
 #header .compara.container .decorations img{position:absolute;}
-#header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:188px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;pointer-events:none;}
-#header .compara.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:1px;top:337px;width:290px;height:127px;background-size:303px;}
+#header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:190px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;pointer-events:none;}
+#header .compara.container .decorations .triangle2{background-image:url(../img/home/blco_header_abajo.png);background-repeat:no-repeat;position:absolute;left:1px;top:337px;width:290px;height:127px;background-size:303px;pointer-events:none;}
 #header .compara.container .decorations .circle{position:absolute;border-radius:50%;width:6px;height:6px;background-color:white;}
 #header .compara.container .decorations .circle:nth-child(4n+1){top:213px;right:172px;}
 #header .compara.container .decorations .circle:nth-child(4n+2){top:334px;right:8px;}
@@ -484,11 +486,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara.container .decorations img[src$="birrete_small.png"]{top:209px;left:172px;}
 #header .compara.container .decorations img[src$="footer_vineta.png"]{top:332px;left:443px;}
 #header .compara.container .decorations hr:nth-child(10n+1){top:216px;width:169px;}
-#header .compara.container .decorations hr:nth-child(10n+2){top:216px;width:133px;left:190px;}
-#header .compara.container .decorations hr:nth-child(10n+3){top:216px;width:145px;right:178px;}
+#header .compara.container .decorations hr:nth-child(10n+2){top:216px;width:19px;left:190px;}
+#header .compara.container .decorations hr:nth-child(10n+3){top:216px;width:31px;right:178px;}
 #header .compara.container .decorations hr:nth-child(10n+4){top:338px;width:421px;right:13px;}
 #header .compara.container .decorations hr:nth-child(10n+5){top:338px;width:426px;left:13px;}
-#header .compara.container .decorations hr:nth-child(10n+6){top:460px;width:68px;left:179px;}
+#header .compara.container .decorations hr:nth-child(10n+6){top:460px;width:70px;left:179px;}
 #header .compara.container .decorations hr:nth-child(10n+7){bottom:74px;width:107px;right:0;}
 #header .compara.container .decorations hr:nth-child(10n+8){bottom:74px;width:107px;right:0;}
 #header .compara.container .decorations hr:nth-child(10n+9){bottom:74px;width:119px;right:123px;}
