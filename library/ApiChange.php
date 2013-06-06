@@ -28,8 +28,23 @@ class ApiChange{
 		
 		return $json_response;
 	}
-	
 	function regresa_info_peticion( $petition_url ){
+		$petition_id = $this->regresa_id_peticion( $petition_url );
+		$request_url = 'v1/petitions/'.$petition_id;
+		$parameters = array(
+		    'api_key' => $this->api_key
+		);
+
+		$query_string = http_build_query( $parameters );
+		$final_request_url = "{$this->base_url}$request_url?$query_string";
+
+		$response = file_get_contents($final_request_url);
+
+		$json_response = json_decode($response, true);
+
+		return $json_response;
+	}
+	function regresa_firmas_peticion( $petition_url ){
 		$petition_id = $this->regresa_id_peticion( $petition_url );
 		$request_url = 'v1/petitions/'.$petition_id.'/signatures';
 		$parameters = array(
@@ -58,7 +73,9 @@ class ApiChange{
 		$source_description = 'API en sitio del IMCO';
 		$source = 'http://www.mejoratuescuela.org/peticion';
 		$requester_email = 'francisco.mekler@imco.org.mx';
-		$callback_endpoint = '';
+		$callback_endpoint = 'http://www.mejoratuescuela.org/receive_auth_keys.php';
+
+
 
 		$parameters['source_description'] = $source_description;#	string	 User defined. The type of media around which signatures will be gathered. Example: "YouTube video"
 		$parameters['source'] = $source;#	string	 URL or other identifier of the source from which signatures will be gathered. Must be unique to the API consumer submitting the request. Example: http://www.youtube.com/watch?v=bflYjF90t7c
@@ -75,7 +92,7 @@ class ApiChange{
 
 		$data = http_build_query($parameters);
 
-		//echo $data;exit;
+		#echo $data;exit;
 
 		$curl_session = curl_init();
 		curl_setopt_array($curl_session, array(
@@ -85,7 +102,14 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		return $result;
+		var_dump($result);
+		exit('asa');
+//		return $result;
+//		echo "\n Se ha solicitado la auth_key";
+		$json_response = json_decode($response, true);
+		$auth_key = $json_response['auth_key'];
+		return $auth_key;
+		
 	}
 
 	function regresa_id_peticion( $petition_url ){
