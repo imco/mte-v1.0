@@ -14,8 +14,9 @@
 			<option value=''>País</option>
 			<?php $this->include_template('countries','peticiones'); ?>
 		</select></p>
-		<p><input type='text' name='ciudad' placeholder='ciudad' /></p>
+		<p><input type='text' name='ciudad' placeholder='Ciudad' /></p>
 		<p><input type='text' name='cp' placeholder='Código Postal' /></p>
+		<p><input type='checkbox' name='public' />publicar mi firma</p>
 		<p><input type='submit' value='Firmar' /></p>
 	</form>	
 	
