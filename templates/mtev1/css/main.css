@@ -273,6 +273,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara .button-frame{margin:10px auto 0;float:none;}
 #header .compara .busqueda-avanzada{margin:0 auto;clear:both;width:520px;}
 #header .compara .busqueda-avanzada .button-frame{float:left;margin:14px 9px 20px;width:240px;height:57px;} 
+#header .compara .busqueda-avanzada input[type='text']{}
 #header .compara .general-search{margin:19px auto 0;}
 #header .compara .general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;font-size:13px;}
 #header .compara .general-search .customSelect .customSelectInner{width:178px!important;height:18px;overflow:hidden;}
