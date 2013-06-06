@@ -17,19 +17,19 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 16px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
+#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 22px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
 #header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/califica.png);background-position:center 30px;}
 #header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);background-position:47px 34px;}
-#header .menu a[href='/metodologia']{background-image:url(../img/home/ayuda.png);}
+#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu a[href='/peticiones']{background-image:url(../img/home/peticiones.png);background-position:center 28px;}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
 #header .menu.reportes_ciudadanos a[href='/califica-tu-escuela']{background-color:rgba(0,0,0,.12)}
 #header .menu.datos_abiertos a[href='/datos-abiertos']{background-color:rgba(0,0,0,.12)}
-#header .menu.metodologia a[href='/metodologia']{background-color:rgba(0,0,0,.12)}
+#header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu.peticiones a[href='/peticiones']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
@@ -524,6 +524,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda{background:rgba(255,255,255,.3);margin-top:20px;padding-top:16px;font-size:13px;}
 #content .container.ayuda h2{font-size:24px;margin-left:56px;margin-bottom:9px;line-height:16px;color:#464646}
 #content .container.ayuda ol{margin:20px 56px;list-style-type:decimal;list-style-position:inside;}
+#content .container.ayuda ul{margin:20px 56px;list-style-type:disc;list-style-position:inside;}
 #content .container.ayuda a{color:black;}
 #content .container.ayuda .text-ayuda{margin:15px 55px;}
 #content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;line-height:50px;}
