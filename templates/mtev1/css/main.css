@@ -22,18 +22,18 @@ a{text-decoration:none;}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
 #header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/califica.png);background-position:center 30px;}
 #header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);background-position:47px 34px;}
-#header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
+#header .menu a[href='/metodologia']{background-image:url(../img/home/ayuda.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu a[href='/peticiones']{background-image:url(../img/home/peticiones.png);background-position:center 28px;}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
 #header .menu.reportes_ciudadanos a[href='/califica-tu-escuela']{background-color:rgba(0,0,0,.12)}
 #header .menu.datos_abiertos a[href='/datos-abiertos']{background-color:rgba(0,0,0,.12)}
-#header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
+#header .menu.metodologia a[href='/metodologia']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
-#header .menu.contacto a[href='/petciones']{background-color:rgba(0,0,0,.12)}
+#header .menu.peticiones a[href='/peticiones']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
-#header .menu a.logo{width:auto;margin:26px 37px 0 37px;padding:0;}
+#header .menu a.logo{width:auto;margin:26px 14px 0;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
 #header .menu form{display:block;float:left;padding:62px 11px 0 8px;background-image:url(../img/home/buscar.png);background-position:center 29px;background-repeat:no-repeat;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:5px 11px 3px;color:white;text-shadow:1px 1px #999;font-size:17px;line-height:17px;font-family:Varela Round;width:110px;}
@@ -528,6 +528,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda .text-ayuda{margin:15px 55px;}
 #content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;line-height:50px;}
 #content .container.ayuda .text-ayuda p{margin:10px 0}
+#content .container.ayuda .text-ayuda p.indent{margin:10px 20px;font-style:italic;font-size:12px;}
 #content .container.ayuda .text-ayuda .img-example img{border:3px solid white;width:275px;height:249px;float:left}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
 
