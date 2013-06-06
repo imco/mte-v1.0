@@ -521,18 +521,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Ayuda*/
 #header .reportes-ciudadanos.ayuda .box .content{width:846px;border-right:none}
 #header .reportes-ciudadanos.ayuda h1 span{background-image:url(../img/home/ayuda.png);background-repeat:no-repeat;}
-#content .container.ayuda{background:rgba(255,255,255,.3);margin-top:20px;padding-top:16px;}
+#content .container.ayuda{background:rgba(255,255,255,.3);margin-top:20px;padding-top:16px;font-size:13px;}
 #content .container.ayuda h2{font-size:24px;margin-left:56px;margin-bottom:9px;line-height:16px;color:#464646}
+#content .container.ayuda ol{margin:20px 56px;list-style-type:decimal;list-style-position:inside;}
+#content .container.ayuda a{color:black;}
 #content .container.ayuda .text-ayuda{margin:15px 55px;}
-#content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;}
-#content .container.ayuda .text-ayuda .section-one  p{margin-bottom:15px;}
+#content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;line-height:50px;}
+#content .container.ayuda .text-ayuda p{margin:10px 0}
 #content .container.ayuda .text-ayuda .img-example img{border:3px solid white;width:275px;height:249px;float:left}
-#content .container.ayuda .text-ayuda .section-one{height:417px;}
-#content .container.ayuda .text-ayuda .section-one .img-example img{margin-right:14px;}
-#content .container.ayuda .text-ayuda .section-two{display:inline-block;}
-#content .container.ayuda .text-ayuda .section-two h2{margin:0;font-size:18px;}
-#content .container.ayuda .text-ayuda .section-two h3{margin-top:14px;}
-#content .container.ayuda .text-ayuda .section-two .img-example img{width:190px;margin-top:18px;height:175px;margin-right:18px;}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
 
 /*Contacto*/
