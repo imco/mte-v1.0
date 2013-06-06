@@ -1,4 +1,5 @@
 $(document).ready(function(){	
+	twitterIni();
 	$.cookie.defaults.path = '/';
 	$('.jscrollpane').jScrollPane();
 	$('.custom-select').customSelect();
@@ -154,4 +155,13 @@ function toggle_escuela(cct){
 		$.cookie('escuelas',escuelas.join('-'));
 		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
 	}
+}
+function twitterIni(){
+	$("#tweets").tweet({
+		username: "***REMOVED***",
+		count: 3,
+		avatar_size: 50,
+		loading_text: "cargando tweets...",
+		template: '<a href="{user_url}"><img src="{avatar_url}" alt="{screen_name}" /></a><p><a href="{tweet_url}" class="user">@{screen_name}</a> {text}</p>'
+	});
 }
