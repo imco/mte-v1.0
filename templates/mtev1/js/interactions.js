@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$('.custom-select').customSelect();
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
+	$('.petition-form').validate();
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
