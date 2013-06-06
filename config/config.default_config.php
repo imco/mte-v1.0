@@ -17,6 +17,10 @@ class default_config{
 		
 		//MTE
 		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No Enlace','Poco confiable');
+
+		//Change.org
+		$this->change_api_key = '***REMOVED***';
+		$this->change_secret_token = '***REMOVED***';
 	}
 }
 ?>
