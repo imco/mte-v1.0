@@ -10,7 +10,7 @@ class califica_tu_escuela extends main{
 		$q = new calificacion();
 		$q->search_clause = '1';
 		$q->order_by = 'califica_tu_escuela.likes DESC';
-		$this->reportes = $q->read('cct=>cct,cct=>nombre,cct=>entidad=>id,nombre_input,ocupacion,denuncia,likes,publicar,id');
+		$this->calificaciones = $q->read('cct=>cct,cct=>nombre,cct=>entidad=>id,nombre_input,ocupacion,denuncia,likes,publicar,id');
 	}
 }
 ?>
