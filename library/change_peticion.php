@@ -41,5 +41,8 @@ $parameters['country_code'] = 'MX';
 $petition_auth_key = '3d123d2998aa55899a372ac09aef99f166e74c854df7ec877497533ee996103b';
 
 var_dump($x->regresa_info_peticion($petition_url));
+#$x->pedir_auth_key_peticion( $petition_url );
+
+//echo "\nSe ha solicitado la auth_key";
 //var_dump( $x->suma_firma_peticion($petition_url, $petition_auth_key, $parameters));
 ?>
