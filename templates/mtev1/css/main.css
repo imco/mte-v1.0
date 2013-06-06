@@ -20,7 +20,7 @@ a{text-decoration:none;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 16px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
-#header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/resultados.png);background-position:center 30px;}
+#header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/califica.png);background-position:center 30px;}
 #header .menu a[href='/datos-abiertos']{background-image:url(../img/home/datos.png);background-position:47px 34px;}
 #header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
