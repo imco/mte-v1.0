@@ -90,29 +90,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			/MejoraTuEscuela
 		</a>
 		<h2 class='twitcap'><?php $this->print_img_tag('home/twitter_logo.png') ?></h2>
-		<ul id='tweets' class='gray-box tweets'>
-			<li class='tweet'>
-				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
-			</li>
-			<li class='tweet'>
-				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
-			</li>
-			<li class='tweet'>
-				<?php $this->print_img_tag('home/voluntario1.jpg'); ?>
-				<p><a href="" class='user'>babtiste</a> @mejoratu escuela. Nam a nisl nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet. </p>
-			</li>
-		</div>
+		<ul id='tweets' class='gray-box tweets'></ul>
 	</div>
-	<!--<div class='circle'>
-		<a href='#'></a>
-		<a class='line' href='#'></a>
-		<a class='line' href='#'></a>
-		<a class='line' href='#'></a>
-		<div class="line1"></div>
-		<div class="line2"></div>
-	
-	</div>-->
 	<div class='clear'></div>
 </div>
