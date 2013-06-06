@@ -105,13 +105,13 @@ a{text-decoration:none;}
 #content a.gray-box{display:block;padding:0!important;line-height:51px;font-size:15px;color:white;height:51px;}
 #content a.gray-box img{float:left;margin:0 11px 0 0;}
 #content .twitcap{background:#43B6F5;padding:10px 16px 5px;}
-#content .tweets{padding:1px 13px 13px!important;}
+#content .tweets{padding:1px 13px 13px!important;display:block;}
 #content .tweets hr{height:2px;background:#767676;}
-#content .tweets .tweet{color:white;margin:10px 0 6px;}
-#content .tweets .tweet img{float:left;border-radius:50%;width:50px;height:50px;color:white;margin:0 5px 0 0;}
-#content .tweets .tweet a{color:white;font-weight:bold;}
-#content .tweets .tweet p{line-height:14px;}
-#content .tweets .tweet .user{font-size:13px;}
+#content .tweets li{color:white;margin:10px 0 0;border-bottom:2px solid #767676;display:block;padding-bottom:6px;}
+#content .tweets li img{float:left;border-radius:50%;width:50px;height:50px;color:white;margin:0 5px 0 0;}
+#content .tweets li a{color:white;font-weight:bold;}
+#content .tweets li p{line-height:14px;}
+#content .tweets li .user{font-size:13px;}
 
 #footer{background-image:url(../img/home/texture-footer.jpg);border-top:3px solid #5E5E5E;text-align:center;color:#898989;position:relative;height:83px;}
 #footer .img{margin:0 auto;width:228px;}

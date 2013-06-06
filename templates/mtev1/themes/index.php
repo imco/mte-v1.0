@@ -14,8 +14,10 @@
 		$js_scripts = array(
 			"jquery.js",
 			"jquery-ui.js",
+			"jquery.tweet.js",
 			'jquery.mousewheel.js',
 			'jquery.jscrollpane.min.js',
+			'jquery.formatDate.js',
 			'jquery.customSelect.min.js',
 			'jquery.validate.min.js',
 			'jquery.cookie.js',
