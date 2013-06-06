@@ -1,15 +1,23 @@
 <form action='/compara/#resultados' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	
 	<fieldset class='busqueda-avanzada'>
-		<p class='button-frame'>
+		<p class='button-frame short'>
 			<input name='term' id='name-input' type='text' placeholder='Nombre de la escuela' value='<?=$this->request('term');?>' />
 			<input type='submit' class='integrated' value='' />
 		</p>
-		<p class='button-frame'>
+		<p class='button-frame short'>
 			<select name='control' class='custom-select'>
+				<?php
+
+				?>
 				<option value=''>Pública | Privada</option>
-				<option value='1'>Pública</option>
-				<option value='2'>Privada</option>
+				<?php 
+				$controles = array(1 => 'Pública', 2 => 'Privada');
+				foreach($controles as $key => $control){
+					$selected = $this->request('control') == $key ? "selected='selected'" : '';
+					echo "<option $selected value='{$key}'>".$control."</option>"; 
+				}
+				?>
 			</select>
 		</p>
 		<p class='button-frame'>
