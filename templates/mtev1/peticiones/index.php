@@ -8,16 +8,19 @@
 	</div>
 	<form action='/peticiones/firmar' method='post' accept-charset='utf-8'>
 		<h2>Firma Aquí</h2>
+		<p><input type='text' name='nombre' placeholder='Nombre' /></p>	
 		<p><input type='text' name='email' placeholder='Email' /></p>
-		<p><input type='text' name='nombre' placeholder='Nombre' /></p>
 		<p><select name='pais' class='custom-select' >
 			<option value=''>País</option>
 			<?php $this->include_template('countries','peticiones'); ?>
 		</select></p>
 		<p><input type='text' name='ciudad' placeholder='Ciudad' /></p>
 		<p><input type='text' name='cp' placeholder='Código Postal' /></p>
-		<p><input type='checkbox' name='public' />publicar mi firma</p>
-		<p><input type='submit' value='Firmar' /></p>
+		<p>
+			<input type='submit' value='Firmar' />
+			<input type='hidden' value='<?=$this->petition_url?>' name='petition_url' />
+		</p>
+		<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
 	</form>	
 	
 	<div class='firmas'>
