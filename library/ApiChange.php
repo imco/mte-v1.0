@@ -139,10 +139,8 @@ class ApiChange{
 		//echo $url;exit();
 
 		$parameters['api_key'] = $this->api_key;
-
 		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC
-		
-		$parameters['endpoint'] = $endpoint;
+		$parameters['endpoint'] = $endpoint;		
 
 		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
 		#var_dump(http_build_query($parameters) , $this->secret_token , $petition_auth_key);
