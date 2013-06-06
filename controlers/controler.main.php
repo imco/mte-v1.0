@@ -132,7 +132,7 @@ class main extends controler{
 		if(isset($params->nivel) && $params->nivel){
 			$q->search_clause .= " AND escuelas.nivel = '{$params->nivel}' ";
 		}else{
-			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "21" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
+			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		}
 
 		if(isset($params->control) && $params->control){
@@ -140,7 +140,7 @@ class main extends controler{
 		}else{
 			$q->search_clause .= $this->request('control') ? ' AND escuelas.control = "'.$this->request('control').'" ' : '';
 		}
-
+		
 		if(isset($params->rank_nacional)){
 			$q->search_clause .= ' AND rank_nacional >= '.$params->rank_nacional;
 		}
@@ -182,7 +182,7 @@ class main extends controler{
 
 	public function load_niveles(){
 		$q = new nivel();
-		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "21" || niveles.id = "22"';
+		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';
 		$this->niveles = $q->read('id,nombre');
 	}
 	public function load_entidades(){
