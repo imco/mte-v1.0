@@ -551,17 +551,17 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Peticiones*/
 #content .peticion{margin:37px auto 28px;position:relative;width:903px;}
-#content .peticion h1{font-size:22px;background:#424242 url(../img/peticiones/peticion_titulo.png) no-repeat 59px 22px;color:#BFBFBF;display:block;border-radius:10px 10px 0 0;text-align:left;padding:20px 20px 23px 94px;line-height:39px;position:relative;}
+#content .peticion h1{font-size:22px;background:#424242 url(../img/peticiones/peticion_titulo.png) no-repeat 59px 22px;color:#BFBFBF;display:block;border-radius:10px 10px 0 0;text-align:left;padding:20px 20px 23px 94px;line-height:27px;position:relative;}
 #content .peticion h1 .shadow{position:absolute;bottom:-28px;left:0;width:903px;height:28px;background-image:url(../img/peticiones/sombra.png);}
-#content .peticion .content{float:left;background-color:rgba(255,255,255,.4);color:#424244;font-size:15px;width:365px;padding:34px 38px 34px 48px;line-height:22px;text-align:justify;}
-#content .peticion .content h2{color:#424244;font-size:22px;line-height:19px;text-align:left;margin:0 0 10px;}
+#content .peticion .content{float:left;background-color:rgba(255,255,255,.4);color:#424244;font-size:14px;width:365px;padding:34px 38px 34px 48px;text-align:justify;}
+#content .peticion .content h2{color:#424244;font-size:20px;line-height:22px;text-align:left;margin:0 0 10px;}
 #content .peticion .content a{color:black;}
-#content .peticion .content p{margin:10px 0;}
+#content .peticion .content p{margin:10px 0;line-height:19px;}
 
 #content .peticion form{background-color:#EFEFEF;color:#424242;padding:29px 53px 25px;width:345px;display:block;float:left;font-size:16px;}
 #content .peticion form h2{background:transparent url(../img/peticiones/firmar_icon.png) no-repeat 0 4px;text-align:left;padding:18px 0 12px 43px;font-size:40px;}
 #content .peticion form input[type='text']{background-color:#BFBFBF;color:#424242;font-size:16px;line-height:19px;padding:7px 18px 4px;width:319px;border:none;margin:9px 0 0;font-family:Varela Round;}
-#content .peticion form input[type='submit']{background-color: #3EC5F4;color:#424242;text-align:center;border:none;width:356px;height:60px;font-size:21px;font-family:Varela Round;border-radius:10px;display:block;margin:22px 0 0;}
+#content .peticion form input[type='submit']{background-color: #3EC5F4;color:#424242;text-align:center;border:none;width:356px;height:60px;font-size:21px;font-family:Varela Round;border-radius:10px;display:block;margin:10px 0 5px;}
 #content .peticion form input[type='checkbox']{margin:10px 10px 0 0;}
 #content .peticion form input[placeholder]{color:#424242!important;}
 #content .peticion form ::-webkit-input-placeholder{color:#424242!important;}
