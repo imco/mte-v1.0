@@ -1,7 +1,7 @@
 <div class='container peticion'>
-	<h1>Nombre de la Peticion</h1>
+	<h1><?=$this->peticion['title'] ?><span class='shadow'></span></h1>
 	<div class='content'>
-		<h2>This is Photosop's Version of Lorem Ipsum.</h2>
+		<h2><?=$this->peticion['title'] ?></h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum dignissim egestas. Etiam sagittis diam id molestie euismod. Cras nec imperdiet ipsum. Curabitur elementum ullamcorper viverra. Donec eget vestibulum augue. Cras luctus purus ultricies arcu scelerisque, quis scelerisque turpis volutpat. Nullam id lorem in est consequat interdum et in dolor. Curabitur volutpat, sapien quis dictum porta, tortor lorem convallis lorem, sed iaculis purus tellus in lorem. Curabitur faucibus ullamcorper justo sed sodales. Duis et rutrum tellus, eget faucibus mauris. . Duis et rutrum tellus, eget faucibus mauris . Duis et rutrum tellus, eget faucibus mauris</p>
 		<p><a href=''>Leer más</a></p>
 
@@ -20,7 +20,7 @@
 
 
 	</form>	
-	<div class='shadow'></div>
+	
 	<div class='firmas'>
 		<div class='img'></div>
 		<h3>Gracias a ti ya somos</h3>
