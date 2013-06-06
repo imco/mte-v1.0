@@ -4,14 +4,34 @@ class ApiChange{
 	private $secret_token;
 	private $base_url;
 
+
 	function __construct( $api_key, $secret_token = '', $base_url = 'https://api.change.org/' ){
 		$this->api_key = $api_key;
 		$this->secret_token = $secret_token;
 		$this->base_url = $base_url;
 	}
 
+	private function get_http_response_code($url) {
+		$headers = get_headers($url);
+		return substr($headers[0], 9, 3);
+	}
 	
+	private function is_url_online($url){
+		$onlie = false;
+		if (filter_var($url, FILTER_VALIDATE_URL)){
+			$online = ($this->get_http_response_code($url) != "404");
+		}
+
+		return $online;
+	}
+
 	function regresa_razones_peticion( $petition_url ){
+		$json_response = false;
+
+		if(preg_match("/ /", $petition_url)){
+			$petition_url=urlencode($petition_url);
+		}
+
 		$petition_id = $this->regresa_id_peticion( $petition_url );
 		$request_url = 'v1/petitions/'.$petition_id.'/reasons';
 		$parameters = array(
@@ -21,11 +41,12 @@ class ApiChange{
 		$query_string = http_build_query( $parameters );
 		$final_request_url = "{$this->base_url}$request_url?$query_string";
 
-		$response = file_get_contents($final_request_url);
+		if($this->is_url_online($final_request_url)){
+			$response = file_get_contents($final_request_url);
+			$json_response = json_decode($response, true);
+			$reasons = $json_response['reasons'];
+		}
 
-		$json_response = json_decode($response, true);
-		$reasons = $json_response['reasons'];
-		
 		return $json_response;
 	}
 	function regresa_info_peticion( $petition_url ){
@@ -113,6 +134,11 @@ class ApiChange{
 	}
 
 	function regresa_id_peticion( $petition_url ){
+		if(preg_match("/ /", $petition_url)){
+			$petition_url=urlencode($petition_url);
+		}
+
+		$petition_id = false;
 		$request_url = 'v1/petitions/get_id';
 		$parameters = array(
 		    'api_key' => $this->api_key,
@@ -122,11 +148,12 @@ class ApiChange{
 		$query_string = http_build_query( $parameters );
 		$final_request_url = "{$this->base_url}$request_url?$query_string";
 
-		$response = file_get_contents($final_request_url);
+		if($this->is_url_online($final_request_url)){
+			$response = file_get_contents($final_request_url);
+			$json_response = json_decode($response, true);
+			$petition_id = $json_response['petition_id'];
+		}
 
-		$json_response = json_decode($response, true);
-		$petition_id = $json_response['petition_id'];
-		
 		return $petition_id;
 	}
 
@@ -139,8 +166,10 @@ class ApiChange{
 		//echo $url;exit();
 
 		$parameters['api_key'] = $this->api_key;
+
 		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC
-		$parameters['endpoint'] = $endpoint;		
+		
+		$parameters['endpoint'] = $endpoint;
 
 		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
 		#var_dump(http_build_query($parameters) , $this->secret_token , $petition_auth_key);
@@ -154,7 +183,8 @@ class ApiChange{
 		curl_setopt_array($curl_session, array(
 		    CURLOPT_POST => 1,
 		    CURLOPT_URL => $url,
-		    CURLOPT_POSTFIELDS => $data
+		    CURLOPT_POSTFIELDS => $data,
+		    CURLOPT_RETURNTRANSFER => TRUE
 		));
 
 		$result = curl_exec($curl_session);
