@@ -16,7 +16,7 @@
 					<li>Para su integración a redes sociales incluyendo Facebook y Twitter.</li>
 					<li>Geolocalización del Titular para presentar propuestas basadas en una ubicación geográfica y presentar contenido relevante para el usuario.</li>
 				</ul>
-				<p>Para leer nuestro aviso de privacidad completo favor de hacer click <a href='/files/Avisoprivacidadversionlarga.pdf'>aquí</a></p>
+				<p>Para leer nuestro aviso de privacidad completo favor de hacer click <a href='/files/AvisoPrivacidadMTE_Jun7.pdf'>aquí</a></p>
 			</div>		
 		</div>
 	</div>
