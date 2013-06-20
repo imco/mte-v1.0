@@ -159,10 +159,9 @@ function toggle_escuela(cct){
 }
 function twitterIni(){
         var username =  "***REMOVED***",
-        count = 3, 
-	page_proxy = '/main/twitter';	
+	page_proxy = '/home/twitter';	
 	$("#tweets .tweet p").html("cargando tweets...");
-	$.getJSON(page_proxy+'?url='+encodeURIComponent('statuses/user_timeline.json?screen_name='+username+'&count='+count), function(data){
+	$.getJSON(page_proxy, function(data){
 		$("#tweets .tweet").css('display','none');
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
