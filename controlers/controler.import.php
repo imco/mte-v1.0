@@ -2,6 +2,7 @@
 class import extends main{
 	public function index(){
 		set_time_limit(10000000);
+		$this->import_teachers();
 		//$this->import_states();
 		//$this->import_locales()
 // 		$this->import_schools();
@@ -17,6 +18,28 @@ class import extends main{
 // 		$this->update_locales();
 // 		$this->update_pruebas_totales_enlace();
 
+	}
+
+	private function import_teachers(){
+			$id = $this->get('id');
+			$maestro = new maestro();
+			if($id){
+				$handle = $this->open_file("maestros/disk$id.gsd");
+				if($handle){
+					$i = 0;
+					$egreso = new egreso_nomina();
+					while (($row = fgetcsv($handle,0, "|")) !== FALSE){
+						//$egreso->debug = true;
+						$egreso->create('clave_trabajador,rfc,cct,entidad,fuente,clave_tipo_nomina,division,pago,clave_presupuestal,descripcion_categoria,tipo_funcion_plaza,id_plaza,horas,trimestre1,trimestre2,trimestre3,trimestre4',
+							array(
+								$row[0],$row[7],$row[2],$row[1],$row[3],$row[4],$row[5],$row[6],$row[8],$row[9],$row[10],$row[11],$row[12],$row[13],$row[14],$row[15],$row[16]
+							)
+						);
+						$i++;
+					}
+					echo "imported $i records";
+				}
+			}
 	}
 	
 	private function average_enlaces($nivel,$grados){
