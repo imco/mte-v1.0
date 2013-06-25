@@ -19,6 +19,7 @@ class import extends main{
 // 		$this->update_pruebas_totales_enlace();
 
 	}
+	
 
 	private function import_teachers(){
 			$id = $this->get('id');
