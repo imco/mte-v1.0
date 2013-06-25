@@ -31,5 +31,17 @@ class home extends main{
 		$this->process_escuelas();
 	}
 
+	public function twitter(){
+		$params = array('oauth_access_token'=>$this->config->twitter_access_token,
+			'oauth_access_token_secret'=>$this->config->twitter_access_token_secret,
+			'consumer_key'=>$this->config->twitter_consumer_key,
+			'consumer_secret'=>$this->config->twitter_consumer_secret,
+			'use_whitelist' => false,
+			'base_url' => 'http://api.twitter.com/1.1/'
+		);
+		$this->add_component("twitter_component",$params);
+	        $this->components['twitter_component']->twitterToken('***REMOVED***',3);
+	    }
+
 }
 ?>
