@@ -7,13 +7,15 @@ class twitter_component extends component{
 		$this->whitelist = array('statuses/user_timeline.json?screen_name=MikeRogers0&count=10&include_rts=false&exclude_replies=true'=>true);
 	}
 
-	public function twitterToken($url){
-		if(!isset($url)){
+	public function twitterToken($user='spaceshiplabs',$count=10){
+		/*if(!isset($url)){
 			die('No URL set');
 		}
 		if($this->config_tweet['use_whitelist'] && !isset($this->whitelist[$url])){
 			die('URL is not authorised');
 		}
+		*/
+		$url = 'statuses/user_timeline.json?screen_name='.$user.'&count='.$count;
 		$url_parts = parse_url($url);
 		parse_str($url_parts['query'], $url_arguments);
 		$full_url = $this->config_tweet['base_url'].$url; // Url with the query on it.
