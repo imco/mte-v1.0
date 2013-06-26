@@ -17,7 +17,7 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:17px;padding:60px 22px 23px;background-position:center 31px;background-repeat:no-repeat;height:30px;}
+#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:67px 13px 16px;background-position:center 31px;background-repeat:no-repeat;height:30px;width:86px;line-height:17px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
 #header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/califica.png);background-position:center 30px;}
@@ -25,6 +25,7 @@ a{text-decoration:none;}
 #header .menu a[href='/ayuda']{background-image:url(../img/home/ayuda.png);}
 #header .menu a[href='/contacto']{background-image:url(../img/home/contacto.png);}
 #header .menu a[href='/peticiones']{background-image:url(../img/home/peticiones.png);background-position:center 28px;}
+#header .menu a[href='/resultados-nacionales']{background-image:url(../img/home/resultados.png);background-position:center 28px;}
 #header .menu.blog a[href='/blog']{background-color:rgba(0,0,0,.12)}
 #header .menu.compara a[href='/compara']{background-color:rgba(0,0,0,.12)}
 #header .menu.reportes_ciudadanos a[href='/califica-tu-escuela']{background-color:rgba(0,0,0,.12)}
@@ -570,3 +571,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .peticion .firmas .img{float:left;width:173px;height:94px;background-image:url(../img/peticiones/gracias.png);margin:24px -11px 0 0px;}
 #content .peticion .firmas h2{color:#424242;font-size:49px;line-height:62px;text-align:center;}
 #content .peticion .firmas h3{color:#424242;font-size:20px;line-height:20px;margin-top:32px;text-align:center;}
+
+/*Resultados Nacionales*/
+#content h1.full-blue{display:block;width:100%;background-image:url(../img/home/texture_blue.png);color:white;font-size:33px;line-height:64px;text-transform:capitalize;margin:0 0 30px;}
+#content .resultados-nacionales img{width:180px;height:156px;margin:12px auto 0;display:block;background-color:#333;color:#333;position:relative;}
+#content .resultados-nacionales .h2{color:#757575;font-size:14px;text-align:center;text-transform:capitalize;display:block;}
+#content .resultados-nacionales .state-box{float:left;background:white;margin:24px 25px 0 0;width:205px;height:194px;display:block;position:relative;}
+#content .resultados-nacionales .state-box:nth-child(4n+1){margin:24px 0 0 0;}
+#content .resultados-nacionales .state-box:hover:before{content:'';display:block;position:absolute;top:-7px;width:100%;height:7px;background-color:#329ECF;}
+#content .resultados-nacionales .state-box:hover:after{content:'';display:block;position:absolute;bottom:-7px;width:100%;height:7px;background-color:#329ECF;}
+#content .resultados-nacionales .state-box .hover{content:'Ver Resultados';position:absolute;width:;color:#339DCF;background-color:rgba(50, 158, 207, .3);display:block;width:180px;height:156px;top:12px;left:12px;}
