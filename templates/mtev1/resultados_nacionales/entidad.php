@@ -42,13 +42,28 @@
 			</div>
 		</div>
 		<div class='clear'></div>
-		<a class='graph-button' href='#'>Titulo Gráfica1</a>
-		<div class='graph on'></div>
-
-		<a class='graph-button' href='#'>Titulo Gráfica1</a>
-		<div class='graph'></div>
-
-		<a class='graph-button' href='#'>Titulo Gráfica1</a>
-		<div class='graph'></div>
+		<di class='graphs'>
+			<div class='graph-set on'>
+				<a class='graph-button' href='#'>Distribución de Resultados en Primarias</a>
+				<input type='hidden' id='primaria-init' name='initialized' class='initialized' value='1' />
+				<input type='hidden' name='color' class='color' value='#0B9F49' />
+				<div class='data' id='data-primarias'><?=$this->entidad->distribucion_primarias?></div>
+				<div class='graph'id='graph-primarias'></div>
+			</div>
+			<div class='graph-set'>
+				<a class='graph-button' href='#'>Distribución de Resultados en Secundarias</a>
+				<input type='hidden' name='initialized' class='initialized' value='0' />
+				<input type='hidden' name='color' class='color' value='#329DD1' />
+				<div class='data' id='data-secundarias'><?=$this->entidad->distribucion_secundarias?></div>
+				<div class='graph' id='graph-secundarias'></div>
+			</div>
+			<div class='graph-set'>
+				<a class='graph-button' href='#'>Distribución de Resultados en Bachilleratos</a>
+				<input type='hidden' name='initialized' class='initialized' value='0' />	
+				<input type='hidden' name='color' class='color' value='#F6931B' />
+				<div class='data' id='data-bachilleratos'><?=$this->entidad->distribucion_bachilleratos?></div>
+				<div class='graph' id='graph-bachilleratos'></div>
+			</div>
+		</div>
 	</div>
 </div>
