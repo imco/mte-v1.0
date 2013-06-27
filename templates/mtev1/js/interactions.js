@@ -119,6 +119,18 @@ $(document).ready(function(){
 			$(this).parent().find('.line1').css('display','none');	
 			$(this).parent().find('.line2').css('display','none');	
 	});
+
+	$('#header .breadcrum li').click(function(){
+		console.log("adasd");
+	});
+	var coutBre;
+	if((coutBre = $('#header .breadcrumb li')) .length){
+		var i;
+		for(i=2;i<coutBre.length;i++){
+			$(coutBre[i]).css('left',$(coutBre[i-1]).position().left+($(coutBre[i]).width()-3));
+		}
+	}
+	
 });
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
