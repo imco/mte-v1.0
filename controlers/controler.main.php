@@ -34,7 +34,11 @@ class main extends controler{
 				$escuelas[$escuela->cct]->nivel = $this->capitalize($escuela->nivel->nombre);
 				$escuelas[$escuela->cct]->control = $this->capitalize($escuela->control->nombre);
 				$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
+				$escuelas[$escuela->cct]->promedio_general = $escuela->promedio_general;
+				$escuelas[$escuela->cct]->promedio_matematicas = $escuela->promedio_matematicas;
+				$escuelas[$escuela->cct]->promedio_espaniol = $escuela->promedio_espaniol;
 				$escuelas[$escuela->cct]->rank = $escuela->rank_entidad;
+				$escuelas[$escuela->cct]->rank_nacional = $escuela->rank_nacional;
 				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
@@ -114,7 +118,7 @@ class main extends controler{
 		}
 		
 	}
-	public function get_escuelas($params = false){		
+	public function get_escuelas($params = false){
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
 		
@@ -190,7 +194,7 @@ class main extends controler{
 	public function load_entidades(){
 		$q = new entidad();
 		$q->search_clause = '1';
-		$this->entidades = $q->read('id,nombre');
+		$this->entidades = $q->read('id,nombre,cct_count');
 	}
 	protected function capitalize($string){
 		return ucwords(mb_strtolower($string,'UTF-8'));
