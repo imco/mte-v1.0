@@ -3,16 +3,17 @@ class resultados_nacionales extends main{
 	public function index(){		
 		$this->header_folder ='escuelas';
 		$this->load_entidades();
+		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->include_theme('index','index');
 	}
 	public function entidad(){
 		$this->draw_charts = true;
-		
 		if($this->get('id')){
 			$this->header_folder ='escuelas';
 			$this->load_entidades();
 			$this->entidad = new entidad($this->get('id'));
 			$this->entidad->read('id,nombre,cct_count,distribucion_primarias,distribucion_secundarias,distribucion_bachilleratos');
+			$this->breadcrumb = array('/resultados-nacionales'=>'Resultados Nacionales','#' => $this->capitalize($this->entidad->nombre));
 			$this->initialize_histograms();
 			$this->include_theme('index','entidad');
 		}else{
@@ -39,7 +40,7 @@ class resultados_nacionales extends main{
 			$this->entidad->distribucion_bachilleratos = $data;
 		}
 	}
-	public function histogram($entidad,$nivel){
+	private function histogram($entidad,$nivel){
 		set_time_limit(100000);
 		$sql = "SELECT cct,nombre,promedio_general FROM escuelas WHERE nivel = '$nivel' AND entidad = '$entidad' AND promedio_general IS NOT NULL";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
