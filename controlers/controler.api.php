@@ -4,7 +4,12 @@ class api extends main{
 		$params->limit = "0 ,2000";
 		$this->get_escuelas($params);
 		$this->process_escuelas();
-		echo json_encode($this->escuelas_digest->escuelas);
+		if($this->request('formato') == 'csv'){
+			$this->format_csv();
+			echo($this->get_csv($this->escuelas_csv));
+		}else{
+			echo json_encode($this->escuelas_digest->escuelas);
+		}
 	}
 	public function municipios(){
 		$this->load_municipios();
@@ -29,6 +34,33 @@ class api extends main{
 
 		}
 		echo json_encode($digest);
+	}
+	private function get_csv(array &$array){		
+		if (count($array) == 0) {
+			return null;
+		}
+		ob_start();
+		$df = fopen("php://output", 'w');
+		fputcsv($df, array_keys(reset($array)));
+		foreach ($array as $row) {
+			fputcsv($df, $row);
+		}
+		fclose($df);
+		return ob_get_clean();
+	}
+	private function format_csv(){
+		$this->escuelas_csv = array();
+
+		foreach($this->escuelas as $escuela){
+			$this->escuelas_csv[] = array(
+				'cct' => $escuela->cct,
+				'Nombre' => $escuela->nombre,
+				'ID Entidad' => $escuela->entidad->id,
+				'Entidad' => $escuela->entidad->nombre,
+				'ID Municipio' => $escuela->municipio->id,
+				'Municipio' => $escuela->municipio->nombre
+			);
+		}
 	}
 }
 ?>
