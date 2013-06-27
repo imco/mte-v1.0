@@ -574,8 +574,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .peticion .firmas h3{color:#424242;font-size:20px;line-height:20px;margin-top:32px;text-align:center;}
 
 /*Resultados Nacionales*/
-#content h1.full-blue{display:block;width:853px;background-image:url(../img/home/texture_blue.png);color:white;font-size:31px;line-height:64px;margin:0 0 11px;padding:0 22px;}
-
+#content h1.full-blue{display:block;width:853px;background-image:url(../img/home/texture_blue.png);color:white;font-size:31px;line-height:64px;margin:0 0 11px;padding:0 22px;}f
 #content .resultados-nacionales{margin:35px auto 40px;}
 #content .resultados-nacionales img{width:180px;height:156px;margin:11px auto 0;display:block;background-color:#333;color:#333;position:relative;}
 #content .resultados-nacionales .h2{color:#757575;font-size:14px;text-align:center;text-transform:uppercase;display:block;line-height:26px;}
@@ -605,7 +604,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-entidad .table p span{float:right;margin-right:11px;}
 #content .resultados-entidad a.graph-button{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:17px auto 6px;line-height:39px;text-align:center;font-size:23px;}
 #content .resultados-entidad .graph{width:656px;height:430px;margin:0 auto 15px;background-color:white;display:none;}
-#content .resultados-entidad .graph.on{display:block;}
+#content .resultados-entidad .graph-set.on .graph{display:block;}
+#content .resultados-entidad .graph-set .data{display:none;}
 
 /*Perfil Presupuestos*/
 #content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
