@@ -170,7 +170,7 @@ class main extends controler{
 		}
 
 		$q->debug = isset($this->debug) ? $this->debug : false;
-		$this->escuelas = $q->read('cct,nombre,poco_confiables,domicilio,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre');
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,domicilio,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,municipio=>nombre,municipio=>id');
 
 		if($this->request('json')){
 			$response = array();
