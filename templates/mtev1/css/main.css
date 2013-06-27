@@ -190,8 +190,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .nivel .pop-up p strong{color:black;}
 #content .perfil .nivel .pop-up-triangle{position:absolute;bottom:67px;left:41px;width:42px;height:36px;background-color:#DEDEDE;display:none;}
 #content .perfil .nivel .pop-up-triangle.shadow{box-shadow:2px 2px 5px #555;}
-#content .perfil .semaforo{color:#A8A8A8;float:right;background-color:white;text-align:center;width:184px;height:84px;padding:12px 11px;}
-#content .perfil .semaforo h2{font-size:17px;line-height:23px;}
+#content .perfil .semaforo{color:#A8A8A8;float:right;background-color:white;text-align:center;width:184px;height:108px;padding:0 11px;}
+#content .perfil .semaforo h2{font-size:18px;line-height:35px;background-color:#888;color:white;margin:0 -11px 10px;height:32px;}
 #content .perfil .semaforo h3.nivel{color:#A8A8A8;display:block;float:left;background-position:center top;background-repeat:no-repeat;font-size:8px;text-align:center;width:44px;padding:38px 0 0 ;line-height:10px;margin:6px 1px 0;}
 #content .perfil .semaforo h3.nivel.reprobado{background-image:url(../img/perfil/reprobado.png);}
 #content .perfil .semaforo h3.nivel.elemental{background-image:url(../img/perfil/depanzazo.png);}
@@ -581,3 +581,33 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-nacionales .state-box:hover:before{content:'';display:block;position:absolute;top:-7px;width:100%;height:7px;background-color:#329ECF;}
 #content .resultados-nacionales .state-box:hover:after{content:'';display:block;position:absolute;bottom:-7px;width:100%;height:7px;background-color:#329ECF;}
 #content .resultados-nacionales .state-box .hover{content:'Ver Resultados';position:absolute;width:;color:#339DCF;background-color:rgba(50, 158, 207, .3);display:block;width:180px;height:156px;top:12px;left:12px;}
+
+#content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
+
+/*Perfil Presupuestos*/
+#content .perfil .presupuestos{overflow:hidden;}
+#content .perfil .presupuestos .column{display:inline-block;vertical-align:top;width:360px;height:auto;}
+#content .perfil .presupuestos h1{text-align:center;}
+#content .perfil .presupuestos h2{text-align:center;background-color:#888;margin-bottom:6px;}
+#content .perfil .presupuestos .column h3{height:45px;line-height:43px;padding-left:14px;}
+#content .perfil .presupuestos .column h3.gray{background-color:rgba(1,1,1,.15);margin-bottom:5px;}
+#content .perfil .presupuestos .column h3.gray span{background-color:#888;padding:12px 35px 15px 11px;margin-left:9px;}
+#content .perfil .presupuestos .column h3.blue{background-color:#329DD1;line-height:49px;font-size:19px;}
+#content .perfil .presupuestos .column.left p{min-height:71px;padding:12px;background:white;font-size:14px;}
+#content .perfil .presupuestos .column.right .salarios{background-color:white;}
+#content .perfil .presupuestos .column.right .salarios p{width:348px;padding-left:12px;overflow:hidden;font-size:13px;}
+#content .perfil .presupuestos .column.right .salarios p:hover{background-color:#dadada;}
+#content .perfil .presupuestos .column.right .salarios p:hover a span.icon{background-position:0px 5px;}
+#content .perfil .presupuestos .column.right .salarios p  a span.icon{background-image:url(../img/gris_s.png);width:21px;height:19px;margin-right:0;background-size:14px;background-repeat:no-repeat;background-position:0px 20px;}
+#content .perfil .presupuestos .column.right .salarios p span{float:right;width:143px;}
+#content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
+
+/*Breadcrum*/
+#header .breadcrumb{position:absolute;top:121px;left:179px;}
+#header .breadcrumb ul{position:relative;}
+#header .breadcrumb ul li{width:100px;height:27px;background-repeat:no-repeat;background-image:url(../img/seccion.png);position:absolute;left:30px;1px;text-align:center;font-size:15px;color:#737172;}
+#header .breadcrumb ul li a{color:#737172;}
+#header .breadcrumb ul li:first-child{background:none;left:0;right:0;text-align:left;}
+#header .breadcrumb ul li:last-child {color:black;}
+
+
