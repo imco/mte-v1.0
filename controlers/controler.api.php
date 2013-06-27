@@ -1,7 +1,7 @@
 <?php
 class api extends main{
 	public function escuelas(){
-		$params->limit = "0 ,2000";
+		$params->limit = "0 ,30000";
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		if($this->request('formato') == 'csv'){
@@ -55,10 +55,12 @@ class api extends main{
 			$this->escuelas_csv[] = array(
 				'cct' => $escuela->cct,
 				'Nombre' => $escuela->nombre,
-				'ID Entidad' => $escuela->entidad->id,
 				'Entidad' => $escuela->entidad->nombre,
-				'ID Municipio' => $escuela->municipio->id,
-				'Municipio' => $escuela->municipio->nombre
+				'Municipio' => $escuela->municipio->nombre,
+				'Localidad' => $escuela->localidad->nombre,
+				'Latitud' => $escuela->latitud,
+				'Longitud' => $escuela->longitud,
+
 			);
 		}
 	}
