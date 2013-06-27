@@ -574,20 +574,41 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .peticion .firmas h3{color:#424242;font-size:20px;line-height:20px;margin-top:32px;text-align:center;}
 
 /*Resultados Nacionales*/
-#content h1.full-blue{display:block;width:853px;background-image:url(../img/home/texture_blue.png);color:white;font-size:31px;line-height:64px;text-transform:capitalize;margin:0 0 11px;padding:0 22px;}
+#content h1.full-blue{display:block;width:853px;background-image:url(../img/home/texture_blue.png);color:white;font-size:31px;line-height:64px;margin:0 0 11px;padding:0 22px;}
+
 #content .resultados-nacionales{margin:35px auto 40px;}
 #content .resultados-nacionales img{width:180px;height:156px;margin:11px auto 0;display:block;background-color:#333;color:#333;position:relative;}
-#content .resultados-nacionales .h2{color:#757575;font-size:14px;text-align:center;text-transform:capitalize;display:block;line-height:26px;}
+#content .resultados-nacionales .h2{color:#757575;font-size:14px;text-align:center;text-transform:uppercase;display:block;line-height:26px;}
 #content .resultados-nacionales .state-box{float:left;background:white;margin:24px 27px 0 0;width:204px;height:193px;display:block;position:relative;}
 #content .resultados-nacionales .state-box:nth-child(4n+1){margin:24px 0 0 0;}
 #content .resultados-nacionales .state-box:hover:before{content:'';display:block;position:absolute;top:-7px;width:100%;height:7px;background-color:#329ECF;}
 #content .resultados-nacionales .state-box:hover:after{content:'';display:block;position:absolute;bottom:-7px;width:100%;height:7px;background-color:#329ECF;}
-//
 #content .resultados-nacionales .state-box .hover{content:'Ver Resultados';position:absolute;width:;color:#339DCF;background-color:rgba(50, 158, 207, .3);display:block;width:180px;height:156px;top:12px;left:12px;}
-
-#content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
+#content .resultados-nacionales .state-box .hover{display:none;}
+#content .resultados-nacionales .state-box:hover .hover{position:absolute;width:;color:#339DCF;background:rgba(19, 42, 75, 0.84) url(../img/resultados/resultados.png) no-repeat center 30px;display:block;width:84px;height:63px;top:11px;left:12px;padding:93px 48px 0;font-size:15px;text-align:center;line-height:16px;}
+#content .resultados-entidad{margin:35px auto 20px;}
+#content .resultados-entidad .column{width:428px;float:left;margin:0 8px 0 0;}
+#content .resultados-entidad .column:nth-child(3){margin:0;width:424px;}
+#content .resultados-entidad h1.full-blue{font-size:40px;padding:0 15px 0 26px;width:859px;}
+#content .resultados-entidad h1 a{text-align:right;font-size:18px;display:block;float:right;color:white;}
+#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:17px auto 7px;width:860px;padding:10px 20px 20px;}
+#content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:1px auto 6px;line-height:44px;text-align:center;font-size:23px;}
+#content .resultados-entidad .promedio-gen span{color:white;font-size:30px;}
+#content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:31px;line-height:34px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
+#content .resultados-entidad .promedio-green.blue{background-color:#329DD1;width:198px;}
+#content .resultados-entidad .promedio-green:nth-child(2){margin-right:0;}
+#content .resultados-entidad .promedio-green .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:63px;height:29px;}
+#content .resultados-entidad .promedio-orange{background-color:#F6931B;height:40px;line-height:42px;color:white;padding:0 0 0 10px;font-size:14px;margin: 15px 0 0;}
+#content .resultados-entidad .promedio-orange .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:70px;height:38px;font-size:13px;}
+#content .resultados-entidad .table{padding:4px 10px 17px;background-color:#BBBBBB;color:#585858;}
+#content .resultados-entidad .table p{line-height:22px;border-bottom:1px solid #8F8F8F;}
+#content .resultados-entidad .table p span{float:right;margin-right:11px;}
+#content .resultados-entidad a.graph-button{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:17px auto 6px;line-height:39px;text-align:center;font-size:23px;}
+#content .resultados-entidad .graph{width:656px;height:430px;margin:0 auto 15px;background-color:white;display:none;}
+#content .resultados-entidad .graph.on{display:block;}
 
 /*Perfil Presupuestos*/
+#content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
 #content .perfil .presupuestos{overflow:hidden;}
 #content .perfil .presupuestos .column{display:inline-block;vertical-align:top;width:360px;height:auto;}
 #content .perfil .presupuestos h1{text-align:center;}
@@ -605,7 +626,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .presupuestos .column.right .salarios p span{float:right;width:143px;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
-/*Breadcrum*/
+/*Breadcrumb*/
 #header .breadcrumb{position:absolute;top:121px;left:179px;}
 #header .breadcrumb ul{position:relative;}
 #header .breadcrumb ul li{width:100px;height:27px;background-repeat:no-repeat;background-image:url(../img/seccion.png);position:absolute;left:30px;1px;text-align:center;font-size:15px;color:#737172;}
@@ -613,13 +634,3 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .breadcrumb ul li:first-child{background:none;left:0;right:0;text-align:left;}
 #header .breadcrumb ul li:last-child {color:black;}
 
-#content .resultados-nacionales .state-box .hover{display:none;}
-#content .resultados-nacionales .state-box:hover .hover{position:absolute;width:;color:#339DCF;background:rgba(19, 42, 75, 0.84) url(../img/resultados/resultados.png) no-repeat center 30px;display:block;width:84px;height:63px;top:11px;left:12px;padding:93px 48px 0;font-size:15px;text-align:center;line-height:16px;}
-#content .resultados-entidad{margin:35px auto 40px;}
-#content .resultados-entidad h1 a{text-align:right;font-size:16px;display:block;float:right;color:white;}
-#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:17px auto 7px;width:860px;padding:10px 20px;}
-#content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;width:100%s;height:40px;margin:1px auto 6px;line-height:40px;text-align:center;}
-#content .resultados-entidad .promedio-gen span{color:white;font-size:23px;}
-#content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:32px;line-height:32px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
-#content .resultados-entidad .promedio-green .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:63px;height:30px;}
-#content .resultados-entidad .column{width:429px;float:left;}
