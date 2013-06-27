@@ -25,11 +25,12 @@
 		</div>
 		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		<div class='semaforo'>
+			<p><? $marca = $this->config->semaforos[$this->escuela->semaforo]?></p>
 			<h2>Semáforo educativo</h2>
-			<h3 class='nivel reprobado'>Reprobado</h3>
-			<h3 class='nivel elemental'>De panzazo</h3>
-			<h3 class='nivel bien'>Bien</h3>
-			<h3 class='nivel excelente'>Excelente</h3>
+			<h3 class='nivel reprobado<?= $marca=='Reprobado'?' marca':''?>'>Reprobado</h3>
+			<h3 class='nivel elemental<?= $marca=='De panzazo'?' marca':''?>'>De panzazo</h3>
+			<h3 class='nivel bien<?= $marca=='Bien'?' marca':''?>'>Bien</h3>
+			<h3 class='nivel excelente<?= $marca=='Excelente'?' marca':''?>'>Excelente</h3>
 		</div>
 	</div>
 	
@@ -175,6 +176,59 @@ EOD;
 			
 		</div>
 	</div>	
+	<div class='gray-box presupuestos'>
+		<h1>
+			<span class='icon'></span>
+			Presupuestos Asignados
+		</h1>
+		<h2>Promedio nacional</h2>
+			<div class='column left'>
+				<h3 class='gray'>
+					Presupuesto anual para la Escuela
+					<span>$89,000</span>
+				</h3>
+				<h3 class='blue'>Presupuesto para esta Escuela</h3>
+				<p>presupuesto anual $97,000</p>
+			</div>
+			<div class='column right'>
+				<h3 class='gray'>
+					Presupuesto anual para la Escuela
+					<span>$89,000</span>
+				</h3>
+				<h3 class='blue'>Salario mensual por maestro</h3>
+				<div class="salarios">
+					<p>Maria Martinez
+						<span>$7564
+							<a href="">REPORTAR
+								<span class="icon"></span>
+							</a>
+						</span>
+					</p>
+					<p>presupuesto anual 
+						<span>$7564
+							<a href="">REPORTAR
+								<span class="icon"></span>
+							</a>
+						</span>
+					</p>
+					<p>presupuesto anual 
+						<span>$7564
+							<a href="">REPORTAR
+								<span class="icon"></span>
+							</a>
+						</span>
+					</p>
+					<p>presupuesto anual 
+						<span>$7564
+							<a href="">REPORTAR
+								<span class="icon"></span>
+							</a>
+						</span>
+					</p>
+				</div>
+
+			</div>
+	</div>
 	<div class='gray-box'>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>
@@ -207,6 +261,7 @@ EOD;
 			<p><input type='submit' value='Califica tu escuela' /></p>
 		</form>
 	</div>
+	<!-- quitando reporte anonimo
 	<div class='gray-box reportar'>
 		<form method='post' action='/escuelas/reportar/' accept-charstet='utf-8' class='reporte-form'>
 			<h2>Tu reporte será completamente anónimo</h2>
@@ -240,7 +295,7 @@ EOD;
 			</fieldset>
 			<div class='clear'></div>
 		</form>
-	</div>	
+	</div>	-->
 </div>
 
 <?php $this->include_template('resultados','compara')?>

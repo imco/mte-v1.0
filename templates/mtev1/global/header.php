@@ -12,3 +12,22 @@
 	</div>
 	<div class='clear'></div>
 </div></div>
+<div class="breadcrumb">
+	<ul>
+<?php if(true){ ?>
+		<li>
+			<a href="/">
+				<?php $this->print_img_tag('home.png'); ?>"
+			</a>
+		</li>
+	<?php foreach($this->breadcrumb as $url => $breadcrumb){ ?>
+			<li>
+				<?if($url!='#') {?>
+					<a href="<?=$url ?>"><?=$breadcrumb ?></a>
+				<?php } else echo $breadcrumb ?>
+					
+			</li>
+			<?php } ?>
+<?php	} ?>	
+	</ul>
+</div>
