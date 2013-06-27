@@ -27,7 +27,12 @@ class escuelas extends main{
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
 			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
-			$this->breadcrumb = array('../'=>'escuela','../index'=>'index','#'=>'ultimo');
+			$this->breadcrumb = array(
+				'/compara/'=>'Escuelas',
+				'/compara/?search=true&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->entidad->nombre),
+				'/compara/?search=true&municipio='.$this->escuela->municipio->id.'&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->municipio->nombre),
+				'#'=> $this->capitalize($this->escuela->nombre)
+			);
 			$this->include_theme('index','index');
 		}else{
 			header('HTTP/1.0 404 Not Found');
@@ -38,7 +43,7 @@ class escuelas extends main{
 		//$this->escuela->debug = true;
 		$this->escuela->read("
 			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,
-			entidad=>nombre,municipio=>nombre,localidad=>nombre,localidad=>id,
+			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
 			turno=>nombre,latitud,longitud,tipo=>nombre,
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
