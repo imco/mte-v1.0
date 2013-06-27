@@ -8,6 +8,7 @@ class main extends controler{
 		$this->page_title = 'Mejora tu Escuela';
 		$this->breadcrumb = false;
 		$this->draw_map = false;
+		$this->draw_charts = false;
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
