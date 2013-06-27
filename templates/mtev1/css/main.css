@@ -33,6 +33,7 @@ a{text-decoration:none;}
 #header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu.peticiones a[href='/peticiones']{background-color:rgba(0,0,0,.12)}
+#header .menu.resultados-nacionales a[href='/resultados-nacionales']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
 #header .menu a.logo{width:auto;margin:26px 14px 0;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
@@ -584,4 +585,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-nacionales .state-box .hover{display:none;}
 #content .resultados-nacionales .state-box:hover .hover{position:absolute;width:;color:#339DCF;background:rgba(19, 42, 75, 0.84) url(../img/resultados/resultados.png) no-repeat center 30px;display:block;width:84px;height:63px;top:11px;left:12px;padding:93px 48px 0;font-size:15px;text-align:center;line-height:16px;}
 #content .resultados-entidad{margin:35px auto 40px;}
-#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:44px auto 7px;padding:0 0 5px;}
+#content .resultados-entidad h1 a{text-align:right;font-size:16px;display:block;float:right;color:white;}
+#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:17px auto 7px;width:860px;padding:10px 20px;}
+#content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;width:100%s;height:40px;margin:1px auto 6px;line-height:40px;text-align:center;}
+#content .resultados-entidad .promedio-gen span{color:white;font-size:23px;}
+#content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:32px;line-height:32px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
+#content .resultados-entidad .promedio-green .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:63px;height:30px;}
+#content .resultados-entidad .column{width:429px;float:left;}
