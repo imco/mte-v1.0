@@ -6,6 +6,7 @@ class main extends controler{
 		$this->location = get_class($this);
 		$this->header_folder = 'home';
 		$this->page_title = 'Mejora tu Escuela';
+		$this->breadcrumb = false;
 		$this->draw_map = false;
 	}
 	protected function process_escuelas(){
