@@ -27,6 +27,10 @@
 			$js_scripts[] = 'school-charts.js';
 			echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		}
+		if($this->draw_charts){
+			$js_scripts[] = 'entidad-charts.js';
+			echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
+		}
 		if($this->draw_map){
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=true"></script>';
 			$js_scripts[] = 'infobox_packed.js';
