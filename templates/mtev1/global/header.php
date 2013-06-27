@@ -14,7 +14,7 @@
 </div></div>
 <div class="breadcrumb">
 	<ul>
-<?php if(true){ ?>
+<?php if($this->breadcrumb){ ?>
 		<li>
 			<a href="/">
 				<?php $this->print_img_tag('home.png'); ?>"
