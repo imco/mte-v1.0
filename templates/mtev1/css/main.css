@@ -33,7 +33,7 @@ a{text-decoration:none;}
 #header .menu.ayuda a[href='/ayuda']{background-color:rgba(0,0,0,.12)}
 #header .menu.contacto a[href='/contacto']{background-color:rgba(0,0,0,.12)}
 #header .menu.peticiones a[href='/peticiones']{background-color:rgba(0,0,0,.12)}
-#header .menu.resultados-nacionales a[href='/resultados-nacionales']{background-color:rgba(0,0,0,.12)}
+#header .menu.resultados_nacionales a[href='/resultados-nacionales']{background-color:rgba(0,0,0,.12)}
 #header .menu a:hover{background-color:rgba(0,0,0,.12);}
 #header .menu a.logo{width:auto;margin:26px 14px 0;padding:0;}
 #header .menu a.logo:hover{background-color:transparent;}
