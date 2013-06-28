@@ -17,7 +17,7 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:113px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:67px 13px 16px;background-position:center 31px;background-repeat:no-repeat;height:30px;width:86px;line-height:17px;}
+#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:67px 13px 16px;background-position:center 31px;background-repeat:no-repeat;height:30px;width:114px;line-height:17px;}
 #header .menu a[href='/blog']{background-image:url(../img/home/blog.png);}
 #header .menu a[href='/compara']{background-image:url(../img/home/comparador.png);background-position:center 34px;}
 #header .menu a[href='/califica-tu-escuela']{background-image:url(../img/home/califica.png);background-position:center 30px;}
@@ -56,6 +56,7 @@ a{text-decoration:none;}
 #header .general-search .button-frame{float:left;margin:18px 27px 0 260px;width:271px;height:64px;}
 #header .general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #header .general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background:#00AFF0 url(../img/home/busquedavanzada.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;}
+#header .container{position:relative;z-index:0;}
 
 
 #content{color:#474747;padding:0 0 8px;min-height:79px;}
@@ -302,7 +303,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th.rank{width:74px;line-height:16px;}
 #content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.2);}
 #content .resultados table td.school{background-color:rgba(26,164,86,.2);text-align:left;}
-#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;font-size:14px;height:22px;overflow:hidden;white-space:nowrap;width:295px;text-overflow:ellipsis;}
+#content .resultados table td.school a{color:#3E8A5C;display:block;padding:10px 13px;font-size:14px;width:295px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:rgba(26,164,86,.2);}
 #content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;margin:0 auto;}
@@ -541,6 +542,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
 
 /*Contacto*/
+#header .reportes-ciudadanos.contacto{margin-top:50px;}
 #header .reportes-ciudadanos.contacto h1{line-height:54px;}
 #header .reportes-ciudadanos.contacto h1 span{background-image:url(../img/home/contacto.png);background-repeat:no-repeat;}
 #header .reportes-ciudadanos.contacto h1 span{margin:15px -7px 0 24px;}
@@ -632,19 +634,18 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
 /*Breadcrumb*/
-#header .breadcrumb{position:absolute;top:121px;left:179px;width:100%;}
+#header .breadcrumb{position:absolute;top:121px;left:50%;width:900px;z-index:1000;margin:0 0 0 -450px;}
 #header .breadcrumb ul{position:relative;width:100%;}
-#header .breadcrumb ul li{position:absolute;left:46px;text-align:center;font-size:15px;color:#737172;}
-#header .breadcrumb ul li a{color:#737172;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px;}
+#header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
+#header .breadcrumb ul li a{color:#737172;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}
+#header .breadcrumb ul li a.current{color:black;}
 #header .breadcrumb ul li a:before{content:"";background-image:url(../img/breadcrumb/bread_izq.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;left:-10px;background-size:10px;}
 #header .breadcrumb ul li a:after{content:"";background-image:url(../img/breadcrumb/bread_derecha.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;right:-25px;background-size:12px;}
-#header .breadcrumb ul li:first-child a{background-image:none;}
+#header .breadcrumb ul li:first-child a{background-image:none;padding:0;margin:0;}
 #header .breadcrumb ul li:first-child a:before{background-image:none;}
 #header .breadcrumb ul li:first-child a:after{background-image:none;}
-#header .breadcrumb ul li:first-child{background:none;left:0;right:0;text-align:left;}
-#header .breadcrumb ul li:last-child {color:black;background-image:url(../img/breadcrumb/bread_centro.png);padding:0;height:26px;}
-#header .breadcrumb ul li:last-child:before{content:"";background-image:url(../img/breadcrumb/bread_izq.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;left:-10px;background-size:10px;}
-#header .breadcrumb ul li:last-child:after{content:"";background-image:url(../img/breadcrumb/bread_derecha.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;right:-25px;background-size:12px;}
+#header .breadcrumb ul li:first-child{background:none;text-align:left;}
+#header .breadcrumb ul li:nth-child(2) a{margin:0 0 0 2px;}
 
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
@@ -657,4 +658,4 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.checkbox.compara_table:hover span.icon-popup{display:block;}
 #content .resultados table td.semaforo span.icon-popup,
 #content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/perfil/bublesincoments2.png);width:90px;height:90px;background-repeat:no-repeat;position:absolute;background-size:90px;top:-15px;left:66px;line-height:65px;font-size:12px;padding:8%;color:#888;font-weight:bold;display:none;}
-#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/COMPARADOR/dejar_comparar.png);left:-87px;top:-6px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
+#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/comparador/dejar_comparar.png);left:-87px;top:-6px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
