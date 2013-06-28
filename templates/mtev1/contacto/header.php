@@ -2,7 +2,7 @@
 	<div class='box'>
 		<h1><span></span>Contáctenos</h1>
 		<div class='content'>
-			<form action=''>
+			<form action='' method='post'   >
 				<input name='' type='text' placeholder='Nombre' />
 				<input name='' type='text' placeholder='Correo Electrónico' />
 				<textarea name='' rows='7' cols='68'  placeholder='Mensaje' ></textarea>
