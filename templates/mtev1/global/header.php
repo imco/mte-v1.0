@@ -1,7 +1,8 @@
+
 <div class='menu <?= $this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>	
 	<a href='/compara'>Comparador</a>
-	<a href='/califica-tu-escuela'>Califica tu escuela</a>
+	<!--<a href='/califica-tu-escuela'>Califica tu escuela</a>-->
 	<a href='/resultados-nacionales'>Resultados Nacionales</a>
 	<a href='/peticiones'>Peticiones</a>
 	<a href='/ayuda'>Ayuda</a>
@@ -12,12 +13,13 @@
 	</div>
 	<div class='clear'></div>
 </div></div>
+
 <div class="breadcrumb">
 	<ul>
 <?php if($this->breadcrumb){ ?>
 		<li>
 			<a href="/">
-				<?php $this->print_img_tag('breadcrumb/home.png'); ?>"
+				<?php $this->print_img_tag('breadcrumb/home.png'); ?>
 			</a>
 		</li>
 
@@ -25,7 +27,9 @@
 			<li>
 				<?if($url!='#') {?>
 					<a href="<?=$url ?>"><?=$breadcrumb ?></a>
-				<?php } else echo $breadcrumb ?>
+				<?php } else { ?>
+					<a class='current' href="<?=$url ?>"><?=$breadcrumb?></a>
+				<?php } ?>
 					
 			</li>
 			<?php } ?>
