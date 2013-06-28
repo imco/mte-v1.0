@@ -176,6 +176,7 @@ EOD;
 			
 		</div>
 	</div>	
+	<!--
 	<div class='gray-box presupuestos'>
 		<h1>
 			<span class='icon'></span>
@@ -229,6 +230,7 @@ EOD;
 
 			</div>
 	</div>
+	-->
 	<div class='gray-box'>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
 			<p>En ningún momento haremos público tu correo electrónico con tu comentario</p>

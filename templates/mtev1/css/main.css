@@ -598,7 +598,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:1px auto 6px;line-height:44px;text-align:center;font-size:23px;}
 #content .resultados-entidad .promedio-gen span{color:white;font-size:30px;}
 #content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:31px;line-height:34px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
-#content .resultados-entidad .promedio-green.blue{background-color:#329DD1;width:198px;}
+#content .resultados-entidad .promedio-green.blue{background-color:#329DD1;width:201px;padding: 0 0 0 7px;}
 #content .resultados-entidad .promedio-green:nth-child(2){margin-right:0;}
 #content .resultados-entidad .promedio-green .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:63px;height:29px;}
 #content .resultados-entidad .promedio-orange{background-color:#F6931B;height:40px;line-height:42px;color:white;padding:0 0 0 10px;font-size:14px;margin: 15px 0 0;}
