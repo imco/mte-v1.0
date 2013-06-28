@@ -2,43 +2,43 @@
 	<h1 class='full-blue'><?=$this->capitalize($this->entidad->nombre)?><a href='/resultados-nacionales'>Ver todos los estados</a></h1>
 	
 	<div class='content'>
-		<h2 class='promedio-gen'>Promedio General <span>87.8</span></h2>
+		<h2 class='promedio-gen'>Promedio General <span><?=$this->entidad->primaria_general?></span></h2>
 		<div class='column'>
 			<p class='promedio-green'>
 				Escuelas totales
-				<span class='value'>6790</span>
+				<span class='value'><?=$this->entidad->escuelas_totales?></span>
 			</p>
 			<p class='promedio-green'>
 				Escuelas evaluadas
-				<span class='value'>6790</span>
+				<span class='value'><?=$this->entidad->escuelas_evaluadas?></span>
 			</p>
 			<div class='clear'></div>
 			<p class='promedio-orange'>
 				Numero Escuelas Publicas
-				<span class='value'>790</span>
+				<span class='value'><?=$this->entidad->escuelas_publicas?></span>
 			</p>
 			<div class='table'>
-				<p>Promedio Español <span class='value'>87.6</span></p>
-				<p>Promedio Matemáticas <span class='value'>87.6</span></p>
+				<p>Promedio Español <span class='value'><?=$this->entidad->promedio_espaniol_publicas?></span></p>
+				<p>Promedio Matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_publicas?></span></p>
 			</div>
 		</div>
 		<div class='column'>
 			<p class='promedio-green blue'>
-				Escuelas totales
+				Promedio Español
 				<span class='value'>6790</span>
 			</p>
 			<p class='promedio-green blue'>
-				Escuelas evaluadas
+				Promedio Matemática
 				<span class='value'>6790</span>
 			</p>
 			<div class='clear'></div>
 			<p class='promedio-orange'>
 				Numero Escuelas Privadas
-				<span class='value'>790</span>
+				<span class='value'><?=$this->entidad->escuelas_privadas?></span>
 			</p>
 			<div class='table'>
-				<p>Promedio Español <span class='value'>87.6</span></p>
-				<p>Promedio Matemáticas <span class='value'>87.6</span></p>
+				<p>Promedio Español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
+				<p>Promedio Matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
 			</div>
 		</div>
 		<div class='clear'></div>
