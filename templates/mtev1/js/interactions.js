@@ -120,8 +120,8 @@ $(document).ready(function(){
 			$(this).parent().find('.line2').css('display','none');	
 	});
 
-	loadBreadcrumb();
-	setTimeout(loadBreadcrumb,1000);	
+	//loadBreadcrumb();
+	//setTimeout(loadBreadcrumb,1000);	
 });
 
 function loadBreadcrumb(){
