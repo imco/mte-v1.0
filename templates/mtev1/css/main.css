@@ -631,13 +631,19 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
 /*Breadcrumb*/
-#header .breadcrumb{position:absolute;top:121px;left:179px;}
-#header .breadcrumb ul{position:relative;}
-#header .breadcrumb ul li{width:100px;height:27px;background-repeat:no-repeat;background-image:url(../img/seccion.png);position:absolute;left:30px;1px;text-align:center;font-size:15px;color:#737172;}
-#header .breadcrumb ul li a{color:#737172;}
+#header .breadcrumb{position:absolute;top:121px;left:179px;width:100%;}
+#header .breadcrumb ul{position:relative;width:100%;}
+#header .breadcrumb ul li{position:absolute;left:46px;text-align:center;font-size:15px;color:#737172;}
+#header .breadcrumb ul li a{color:#737172;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px;}
+#header .breadcrumb ul li a:before{content:"";background-image:url(../img/breadcrumb/bread_izq.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;left:-10px;background-size:10px;}
+#header .breadcrumb ul li a:after{content:"";background-image:url(../img/breadcrumb/bread_derecha.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;right:-25px;background-size:12px;}
+#header .breadcrumb ul li:first-child a{background-image:none;}
+#header .breadcrumb ul li:first-child a:before{background-image:none;}
+#header .breadcrumb ul li:first-child a:after{background-image:none;}
 #header .breadcrumb ul li:first-child{background:none;left:0;right:0;text-align:left;}
-#header .breadcrumb ul li:last-child {color:black;}
-
+#header .breadcrumb ul li:last-child {color:black;background-image:url(../img/breadcrumb/bread_centro.png);padding:0;height:26px;}
+#header .breadcrumb ul li:last-child:before{content:"";background-image:url(../img/breadcrumb/bread_izq.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;left:-10px;background-size:10px;}
+#header .breadcrumb ul li:last-child:after{content:"";background-image:url(../img/breadcrumb/bread_derecha.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;right:-25px;background-size:12px;}
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
 #content .resultados table td.semaforo{position:relative}
