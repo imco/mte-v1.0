@@ -40,6 +40,8 @@ class main extends controler{
 				$escuelas[$escuela->cct]->rank = $escuela->rank_entidad;
 				$escuelas[$escuela->cct]->rank_nacional = $escuela->rank_nacional;
 				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
+				$escuelas[$escuela->cct]->promedio_matematicas = $escuela->promedio_matematicas;
+				$escuelas[$escuela->cct]->promedio_espaniol = $escuela->promedio_espaniol;
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
 			$height = $this->distance($maxlat,$minlong,$minlat,$minlong);
