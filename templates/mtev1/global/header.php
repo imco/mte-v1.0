@@ -17,9 +17,10 @@
 <?php if($this->breadcrumb){ ?>
 		<li>
 			<a href="/">
-				<?php $this->print_img_tag('home.png'); ?>"
+				<?php $this->print_img_tag('breadcrumb/home.png'); ?>"
 			</a>
 		</li>
+
 	<?php foreach($this->breadcrumb as $url => $breadcrumb){ ?>
 			<li>
 				<?if($url!='#') {?>
