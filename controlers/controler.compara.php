@@ -6,8 +6,14 @@ class compara extends main{
 		$this->load_municipios();
 		$this->load_localidades();
 		$this->load_compara_cookie();
+		$this->breadcrumb = array('#'=> 'Comparador');
 		$this->resultados_title = 'Resultados';
-		if(!$this->get('search')) $this->get_location();
+		if(!$this->get('search')){ 
+			$this->get_location();
+		}else{
+			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
+		}
+
 		if(!$this->request('search')){
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
 			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
