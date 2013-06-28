@@ -29,7 +29,7 @@ class stats extends main{
 			foreach($calificaciones as $calificacion){
 				foreach($niveles as $nivelid => $nivel){
 					$sql = "
-						SELECT AVG(promedio_$calificacion) AS {$nivel}_$calificacion FROM escuelas
+						SELECT AVG(promedio_$calificacion) AS {$nivel}_{$calificacion} FROM escuelas
 						WHERE `entidad` = $i AND `nivel` = $nivelid;
 					";
 					echo $sql.'<br/>';
@@ -38,6 +38,24 @@ class stats extends main{
 					$entidad->update($nivel."_".$calificacion,$result);
 				}
 			}
+		}
+	}
+	public function entidad_totales(){
+		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i";
+			$result = mysql_query($sql);
+			$result = mysql_fetch_row($result);
+
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND promedio_general IS NOT NULL";
+			$result2 = mysql_query($sql);
+			$result2 = mysql_fetch_row($result2);
+
+			$entidad->update('escuelas_totales,escuelas_evaluadas',array($result[0],$result[0]));
+
+
 		}
 	}
 }
