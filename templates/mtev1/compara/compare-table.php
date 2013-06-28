@@ -1,5 +1,6 @@
 <table>
 	<tr>
+		<th class='checkbox compara_table'></th>
 		<th class='school'>Escuelas comparadas</th>
 		<th>Nivel Escolar</th>
 		<th class='rank'>Posición <?=$this->current_rank->name?></th>
@@ -13,6 +14,9 @@
 		$escuela->get_semaforo();
 		$slug = $this->current_rank->slug;
 		echo "<tr>";
+		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
+			<span class='icon-popup'>Dejar de comparar</span>
+		</td>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
 		echo "<td class='rank'><span>".$escuela->$slug."</span></td>";

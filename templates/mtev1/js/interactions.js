@@ -167,6 +167,10 @@ function toggle_escuela(cct){
 		escuelas.sort();
 		$.cookie('escuelas',escuelas.join('-'));
 		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
+		if( $('.container.resultados').hasClass('comparar')){
+			var url=document.URL.replace('-'+cct,'');
+			location.href = url;
+		}
 	}
 }
 function twitterIni(){
