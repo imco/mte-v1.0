@@ -20,5 +20,25 @@ class stats extends main{
 		}
 		$this->include_template('index','stats');
 	}
+	public function entidad_promedios(){
+		$calificaciones = array('general','matematicas','espaniol');
+		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			foreach($calificaciones as $calificacion){
+				foreach($niveles as $nivelid => $nivel){
+					$sql = "
+						SELECT AVG(promedio_$calificacion) AS {$nivel}_$calificacion FROM escuelas
+						WHERE `entidad` = $i AND `nivel` = $nivelid;
+					";
+					echo $sql.'<br/>';
+					$result = mysql_query($sql);
+					$result = mysql_fetch_row($result);
+					$entidad->update($nivel."_".$calificacion,$result);
+				}
+			}
+		}
+	}
 }
 ?>
