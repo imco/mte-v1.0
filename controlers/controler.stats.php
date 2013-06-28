@@ -27,17 +27,17 @@ class stats extends main{
 			$entidad = new entidad($i);
 			$entidad->debug = true;
 			foreach($calificaciones as $calificacion){
-				foreach($controles as $controlid => $control){
+				
 					$sql = "
 						SELECT AVG(promedio_$calificacion) FROM escuelas
-						WHERE `entidad` = $i AND `control` = $controlid;
+						WHERE `entidad` = $i;
 					";
 					echo $sql.'<br/>';
 					$result = mysql_query($sql);
 					$result = mysql_fetch_row($result);
-					$entidad->update("promedio_".$calificacion.'_'.$control,$result);
-				}
+					$entidad->update("promedio_".$calificacion,$result);
 			}
+			break;
 		}
 	}
 	public function entidad_totales(){
