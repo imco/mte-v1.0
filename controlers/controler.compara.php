@@ -51,6 +51,7 @@ class compara extends main{
 			$this->process_escuelas();
 		}
 		$this->resultados_title = 'Resultados';
+		$this->breadcrumb = array('#'=>'Comparador');
 		$this->include_theme('index','index');
 	}
 }
