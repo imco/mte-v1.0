@@ -53,7 +53,7 @@ class stats extends main{
 			$result2 = mysql_query($sql);
 			$result2 = mysql_fetch_row($result2);
 
-			$entidad->update('escuelas_totales,escuelas_evaluadas',array($result[0],$result[0]));
+			$entidad->update('escuelas_totales,escuelas_evaluadas',array($result[0],$result2[0]));
 
 
 		}
