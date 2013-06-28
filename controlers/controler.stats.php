@@ -45,15 +45,15 @@ class stats extends main{
 		for($i=1;$i<=32;$i++){
 			$entidad = new entidad($i);
 			$entidad->debug = true;
-			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i";
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND control = 1";
 			$result = mysql_query($sql);
 			$result = mysql_fetch_row($result);
 
-			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND promedio_general IS NOT NULL";
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND control = 2";
 			$result2 = mysql_query($sql);
 			$result2 = mysql_fetch_row($result2);
 
-			$entidad->update('escuelas_totales,escuelas_evaluadas',array($result[0],$result2[0]));
+			$entidad->update('escuelas_publicas,escuelas_privadas',array($result[0],$result2[0]));
 
 
 		}
