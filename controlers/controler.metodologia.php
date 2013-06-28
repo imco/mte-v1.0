@@ -2,7 +2,8 @@
 class metodologia extends main{
 	public function index(){		
 		$this->header_folder ='escuelas';
-		$this->include_theme('index','index');
+		$this->breadcrumb = array('#'=>'Metodología');
+		$this->include_theme('index','index');		
 	}
 }
 ?>
