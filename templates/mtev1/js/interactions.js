@@ -120,18 +120,22 @@ $(document).ready(function(){
 			$(this).parent().find('.line2').css('display','none');	
 	});
 
-	$('#header .breadcrum li').click(function(){
-		console.log("adasd");
-	});
+	loadBreadcrumb();
+	setTimeout(loadBreadcrumb,1000);	
+});
+
+function loadBreadcrumb(){
 	var coutBre;
 	if((coutBre = $('#header .breadcrumb li')) .length){
-		var i;
+		var i,temp;
 		for(i=2;i<coutBre.length;i++){
-			$(coutBre[i]).css('left',$(coutBre[i-1]).position().left+($(coutBre[i]).width()-3));
+			//$(coutBre[i]).css('left',$(coutBre[i-1]).position().left+($(coutBre[i]).width()+50));
+			temp = $(coutBre[i-1]);
+			$(coutBre[i]).css('left',(temp.position().left+ temp.width()+15));
 		}
 	}
-	
-});
+}
+
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
 	input.next().addClass('customSelectDisabled');
