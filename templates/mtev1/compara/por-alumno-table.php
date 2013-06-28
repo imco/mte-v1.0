@@ -1,4 +1,4 @@
-<table>
+<table class='desemp'>
 	<tr>
 		<th class='school' rowspan='2'>Escuelas comparadas</th>
 		<th colspan='4' >Español</th>
