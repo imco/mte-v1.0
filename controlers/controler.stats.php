@@ -20,5 +20,41 @@ class stats extends main{
 		}
 		$this->include_template('index','stats');
 	}
+	public function entidad_promedios(){
+		$calificaciones = array('matematicas','espaniol','general');
+		$controles = array(1 => 'publicas', 2 => 'privadas');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			foreach($calificaciones as $calificacion){				
+					$sql = "
+						SELECT AVG(promedio_$calificacion) FROM escuelas
+						WHERE `entidad` = $i;
+					";
+					echo $sql.'<br/>';
+					$result = mysql_query($sql);
+					$result = mysql_fetch_row($result);
+					$entidad->update("promedio_".$calificacion,$result);
+			}
+		}
+	}
+	public function entidad_totales(){
+		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND control = 1";
+			$result = mysql_query($sql);
+			$result = mysql_fetch_row($result);
+
+			$sql = "SELECT count(cct) FROM escuelas WHERE (nivel = 12 OR nivel = 13 OR nivel = 22) AND entidad = $i AND control = 2";
+			$result2 = mysql_query($sql);
+			$result2 = mysql_fetch_row($result2);
+
+			$entidad->update('escuelas_publicas,escuelas_privadas',array($result[0],$result2[0]));
+
+
+		}
+	}
 }
 ?>
