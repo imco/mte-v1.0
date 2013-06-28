@@ -2,7 +2,7 @@
 	<h1 class='full-blue'><?=$this->capitalize($this->entidad->nombre)?><a href='/resultados-nacionales'>Ver todos los estados</a></h1>
 	
 	<div class='content'>
-		<h2 class='promedio-gen'>Promedio General <span><?=$this->entidad->primaria_general?></span></h2>
+		<h2 class='promedio-gen'>Promedio General <span><?=$this->entidad->promedio_general?></span></h2>
 		<div class='column'>
 			<p class='promedio-green'>
 				Escuelas totales
@@ -25,11 +25,11 @@
 		<div class='column'>
 			<p class='promedio-green blue'>
 				Promedio Español
-				<span class='value'>6790</span>
+				<span class='value'><?=$this->entidad->promedio_espaniol?></span>
 			</p>
 			<p class='promedio-green blue'>
 				Promedio Matemática
-				<span class='value'>6790</span>
+				<span class='value'><?=$this->entidad->promedio_matematicas?></span>
 			</p>
 			<div class='clear'></div>
 			<p class='promedio-orange'>
