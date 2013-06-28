@@ -13,7 +13,7 @@ class git_config extends default_config{
 		$this->db_pass = 'RtG/()rERtfkfGKLF';
 		
 		//MXNPHP
-		$this->dev_mode = true;
+		$this->dev_mode = false;
 		
 	}
 }
