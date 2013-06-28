@@ -3,6 +3,7 @@ class peticiones extends main{
 	public function index(){		
 		$this->header_folder ='escuelas';
 		$this->read_peticion();
+		$this->breadcrumb = array('#'=>'Peticiones');
 		$this->include_theme('index','index');
 	}
 	private function read_peticion(){
