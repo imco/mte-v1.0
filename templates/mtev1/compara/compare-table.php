@@ -1,4 +1,4 @@
-<table>
+<table class='general'>
 	<tr>
 		<th class='checkbox compara_table'></th>
 		<th class='school'>Escuelas comparadas</th>
