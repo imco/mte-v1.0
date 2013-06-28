@@ -21,13 +21,12 @@ class stats extends main{
 		$this->include_template('index','stats');
 	}
 	public function entidad_promedios(){
-		$calificaciones = array('matematicas','espaniol');
+		$calificaciones = array('matematicas','espaniol','general');
 		$controles = array(1 => 'publicas', 2 => 'privadas');
 		for($i=1;$i<=32;$i++){
 			$entidad = new entidad($i);
 			$entidad->debug = true;
-			foreach($calificaciones as $calificacion){
-				
+			foreach($calificaciones as $calificacion){				
 					$sql = "
 						SELECT AVG(promedio_$calificacion) FROM escuelas
 						WHERE `entidad` = $i;
