@@ -37,7 +37,6 @@ class stats extends main{
 					$result = mysql_fetch_row($result);
 					$entidad->update("promedio_".$calificacion,$result);
 			}
-			break;
 		}
 	}
 	public function entidad_totales(){
