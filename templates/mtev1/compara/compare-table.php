@@ -10,6 +10,7 @@
 		<th class='semaforos'>Semáforo educativo</th>
 	</tr>
 	<?php 
+	if($this->escuelas!=null)
 	foreach($this->escuelas as $escuela){
 		$escuela->get_semaforo();
 		$slug = $this->current_rank->slug;
