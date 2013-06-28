@@ -11,6 +11,7 @@
 		<th class='semaforos'>Semaforo Educativo</th>
 	</tr>
 	<?php 
+	if($this->escuelas!=null)
 	foreach($this->escuelas as $escuela){
 		$scores = array();
 		for($i = 2006;$i<2013;$i++){
