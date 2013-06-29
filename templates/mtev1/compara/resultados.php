@@ -30,9 +30,9 @@
 				<td class='control'>".$escuela->control."</td>
 				<td class='rank'><span>{$escuela->rank}</span></td>
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
-					<span class='icon-popup'>
-					".$this->config->semaforos[$escuela->semaforo]."
-					</span>
+					<div class='icon'><span class='icon-popup'>
+						".$this->config->semaforos[$escuela->semaforo]."
+					</span></div>
 				</td>
 			</tr>
 			";
