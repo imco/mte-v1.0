@@ -16,7 +16,9 @@
 		$slug = $this->current_rank->slug;
 		echo "<tr>";
 		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
+			<div class='icon'>
 			<span class='icon-popup'>Dejar de comparar</span>
+			</div>
 		</td>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
