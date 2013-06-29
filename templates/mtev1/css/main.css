@@ -623,13 +623,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
 #content .perfil .presupuestos{overflow:hidden;}
 #content .perfil .presupuestos .column{display:inline-block;vertical-align:top;width:360px;height:auto;}
-#content .perfil .presupuestos h1{text-align:center;}
+#content .perfil .presupuestos h1{text-align:center;color:#717171}
 #content .perfil .presupuestos h2{text-align:center;background-color:#888;margin-bottom:6px;}
 #content .perfil .presupuestos .column h3{height:45px;line-height:43px;padding-left:14px;}
 #content .perfil .presupuestos .column h3.gray{background-color:rgba(1,1,1,.15);margin-bottom:5px;}
-#content .perfil .presupuestos .column h3.gray span{background-color:#888;padding:12px 35px 15px 11px;margin-left:9px;}
+#content .perfil .presupuestos .column h3.gray span{background-color:#888;padding:12px 35px 15px 11px;float:right;height:18px;line-height:25px;}
+#content .perfil .presupuestos .column.right h3.gray span{width:93px;line-height:19px;}
 #content .perfil .presupuestos .column h3.blue{background-color:#329DD1;line-height:49px;font-size:19px;}
-#content .perfil .presupuestos .column.left p{min-height:71px;padding:12px;background:white;font-size:14px;}
+#content .perfil .presupuestos .column.left p{min-height:71px;padding:11px 15px;background:white;font-size:14px;}
+#content .perfil .presupuestos .column.right{margin-left:11px;}
 #content .perfil .presupuestos .column.right .salarios{background-color:white;}
 #content .perfil .presupuestos .column.right .salarios p{width:348px;padding-left:12px;overflow:hidden;font-size:13px;}
 #content .perfil .presupuestos .column.right .salarios p:hover{background-color:#dadada;}
