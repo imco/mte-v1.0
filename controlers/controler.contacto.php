@@ -13,6 +13,9 @@ class contacto extends main{
 			$this->post('email'),
 			$this->post('nombre')
 		);
+		$this->contact_status=true;
+		$this->header_folder ='contacto';
+		$this->include_theme('index','index');
 	}
 }
 ?>
