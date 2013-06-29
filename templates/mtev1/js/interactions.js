@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 	$('.petition-form').validate();
+	$('.contacto-form').validate();
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
@@ -60,6 +61,7 @@ $(document).ready(function(){
 		}
 	});
 
+	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
   			$.post("/main/get_escuelas/",{
@@ -120,7 +122,6 @@ $(document).ready(function(){
 			$(this).parent().find('.line1').css('display','none');	
 			$(this).parent().find('.line2').css('display','none');	
 	});
-
 
 });
 
