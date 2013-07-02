@@ -543,19 +543,24 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Contacto*/
 #header .reportes-ciudadanos.contacto{margin-top:50px;}
-#header .reportes-ciudadanos.contacto h1{line-height:54px;}
+#header .reportes-ciudadanos.contacto h1{line-height:54px;height:48px;padding-left:2px;}
 #header .reportes-ciudadanos.contacto h1 span{background-image:url(../img/home/contacto.png);background-repeat:no-repeat;}
 #header .reportes-ciudadanos.contacto h1 span{margin:15px -7px 0 24px;}
 #header .reportes-ciudadanos.contacto form{margin:4px 0 0 -2px;width:561px;}
-#header .reportes-ciudadanos.contacto input[type='text']{display:inline-block;vertical-align:top;width:278px;height:41px;border:none;font-size:22px;}
-#header .reportes-ciudadanos.contacto textarea{width:558px;height:115px;font-size:22px;}
+#header .reportes-ciudadanos.contacto input[type='text']{display:inline-block;vertical-align:top;width:264px;height:41px;border:none;font-size:18px;margin-top:5px;padding-left:15px;font-family:Varela Round;line-height:16px;}
+#header .reportes-ciudadanos.contacto textarea{width:530px;height:101px;font-size:18px;margin-top:2px;font-family:Varela Round;border:none;padding:6px 15px;}
 #header .reportes-ciudadanos.contacto .box{margin-bottom:26px;}
 #header .reportes-ciudadanos.contacto .box .content{width:556px;padding-bottom:22px;}
-#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:16px;color:white;font-weight:bold;}
-#header .reportes-ciudadanos.contacto p{margin-top:13px;font-size:13px;}
-#header .reportes-ciudadanos.contacto span.icon{display:block;float:left;width:35px;height:28px;background-image:url(../img/contacto/direccion.png);background-repeat:no-repeat;margin-left:24px;background-position:1px 4px;}
-#content .container.contacto .circle{margin-bottom:-30px;}
-
+#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:17px;color:white;font-weight:bold;line-height:42px;}
+#header .reportes-ciudadanos.contacto p{margin-top:16px;font-size:13px;}
+#header .reportes-ciudadanos.contacto span.icon{display:block;float:left;width:35px;height:28px;background-image:url(../img/contacto/direccion.png);background-repeat:no-repeat;margin:1px -1px 0 25px;background-position:1px 4px;}
+#header .reportes-ciudadanos.contacto p.tel{margin-top:6px;}
+#header .reportes-ciudadanos.contacto p.tel span.icon{background-image:url(../img/contacto/cel.png);margin-top:-5px;margin-left:30px}
+#header .contacto-form label.error{display:none!important;}
+#header .contacto-form textarea.error,
+#header .contacto-form input.error
+{background-color:rgba(255,255,255,.8);}
+#header .contacto .box h3.msj{font-size:30px;margin-top:9px;}
 /*Peticiones*/
 #content .peticion{margin:37px auto 28px;position:relative;width:903px;}
 #content .peticion h1{font-size:22px;background:#424242 url(../img/peticiones/peticion_titulo.png) no-repeat 59px 22px;color:#BFBFBF;display:block;border-radius:10px 10px 0 0;text-align:left;padding:20px 20px 23px 94px;line-height:27px;position:relative;}
@@ -618,13 +623,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .semaforo h3.nivel.marca:after{content:"";border-left: 10px solid transparent;border-right:9px solid transparent;border-top: 10px solid #888;top:-16px;display:block;position:absolute;right:30%;}
 #content .perfil .presupuestos{overflow:hidden;}
 #content .perfil .presupuestos .column{display:inline-block;vertical-align:top;width:360px;height:auto;}
-#content .perfil .presupuestos h1{text-align:center;}
+#content .perfil .presupuestos h1{text-align:center;color:#717171}
 #content .perfil .presupuestos h2{text-align:center;background-color:#888;margin-bottom:6px;}
 #content .perfil .presupuestos .column h3{height:45px;line-height:43px;padding-left:14px;}
 #content .perfil .presupuestos .column h3.gray{background-color:rgba(1,1,1,.15);margin-bottom:5px;}
-#content .perfil .presupuestos .column h3.gray span{background-color:#888;padding:12px 35px 15px 11px;margin-left:9px;}
+#content .perfil .presupuestos .column h3.gray span{background-color:#888;padding:12px 35px 15px 11px;float:right;height:18px;line-height:25px;}
+#content .perfil .presupuestos .column.right h3.gray span{width:93px;line-height:19px;}
 #content .perfil .presupuestos .column h3.blue{background-color:#329DD1;line-height:49px;font-size:19px;}
-#content .perfil .presupuestos .column.left p{min-height:71px;padding:12px;background:white;font-size:14px;}
+#content .perfil .presupuestos .column.left p{min-height:71px;padding:11px 15px;background:white;font-size:14px;}
+#content .perfil .presupuestos .column.right{margin-left:11px;}
 #content .perfil .presupuestos .column.right .salarios{background-color:white;}
 #content .perfil .presupuestos .column.right .salarios p{width:348px;padding-left:12px;overflow:hidden;font-size:13px;}
 #content .perfil .presupuestos .column.right .salarios p:hover{background-color:#dadada;}
@@ -657,5 +664,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo:hover span.icon-popup,
 #content .resultados table td.checkbox.compara_table:hover span.icon-popup{display:block;}
 #content .resultados table td.semaforo span.icon-popup,
-#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/perfil/bublesincoments2.png);width:90px;height:90px;background-repeat:no-repeat;position:absolute;background-size:90px;top:-15px;left:66px;line-height:65px;font-size:12px;padding:8%;color:#888;font-weight:bold;display:none;}
-#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/comparador/dejar_comparar.png);left:-87px;top:-6px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
+#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/perfil/bublesincoments2.png);width:90px;height:90px;background-repeat:no-repeat;position:absolute;background-size:90px;top:-54px;left:54px;line-height:65px;font-size:12px;padding:8%;color:#888;font-weight:bold;display:none;}
+#content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/COMPARADOR/dejar_comparar.png);left:-93px;top:-44px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
+#content .resultados table td div.icon{position:relative;}
+
+
