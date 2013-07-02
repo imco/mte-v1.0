@@ -1,2 +1,2 @@
-<div class='container home contacto'>
+<div class='container contacto'>
 </div>
