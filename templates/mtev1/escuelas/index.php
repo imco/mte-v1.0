@@ -193,7 +193,7 @@ EOD;
 			</div>
 			<div class='column right'>
 				<h3 class='gray'>
-					Presupuesto anual para la Escuela
+					Salario mensual por maestro
 					<span>$89,000</span>
 				</h3>
 				<h3 class='blue'>Salario mensual por maestro</h3>
