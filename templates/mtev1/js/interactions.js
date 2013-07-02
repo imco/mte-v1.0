@@ -1,11 +1,13 @@
-$(document).ready(function(){	
-	twitterIni();
+$(document).ready(function(){
+	if($('#content .container').hasClass('home'))
+		twitterIni();
 	$.cookie.defaults.path = '/';
 	$('.jscrollpane').jScrollPane();
 	$('.custom-select').customSelect();
 	$('.calificacion-form').validate();
 	$('.reporte-form').validate();
 	$('.petition-form').validate();
+	$('.contacto-form').validate();
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
@@ -59,6 +61,7 @@ $(document).ready(function(){
 		}
 	});
 
+	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
   			$.post("/main/get_escuelas/",{
@@ -121,7 +124,6 @@ $(document).ready(function(){
 	});
 });
 
-
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
 	input.next().addClass('customSelectDisabled');
@@ -158,7 +160,7 @@ function toggle_escuela(cct){
 		$.cookie('escuelas',escuelas.join('-'));
 		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
 		if( $('.container.resultados').hasClass('comparar')){
-			var url=document.URL.replace('-'+cct,'');
+			var url=document.URL.replace(new RegExp('-*'+cct),'');
 			location.href = url;
 		}
 	}
