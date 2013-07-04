@@ -239,10 +239,12 @@ EOD;
 					<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
 					<select class='custom-select' name='ocupacion' >
 						<option value=''>Ocupación</option>
-						<option value='ocupacion 1'>Ocupación 1</option>
-						<option value='ocupacion 2'>Ocupación 2</option>
-						<option value='ocupacion 3'>Ocupación 3</option>
-						<option value='ocupacion 4'>Ocupación 4</option>
+						<option value='alumno'>alumno</option>
+						<option value='exalumno'>exalumno</option>
+						<option value='padredefamilia'>padre de familia</option>
+						<option value='maestro'>maestro</option>
+						<option value='director'>director</option>
+						<option value='ciudadano'>ciudadano</option>
 					</select>
 					<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
 				</p>
