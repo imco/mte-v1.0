@@ -14,6 +14,12 @@ class production_config extends default_config{
 		
 		//MXNPHP
 		$this->dev_mode = true;
+
+		//twitter
+		$this->twitter_access_token ='124797851-HRntQp0YIVs3zDhbLoZMjogOI3Er8qXAp4yfsT7h';
+		$this->twitter_access_token_secret = 'jmWHX3BeB53tzZUwc1ymtWj33vr10lixJ4WMXtXGY';
+		$this->twitter_consumer_key = 'BRnaonyDBNhbRjXiiWsA';
+		$this->twitter_consumer_secret = 'lPI2SPRNMP1xOL3QaVizwDK5N47kOzxi0GvxwJl4';
 		
 	}
 }
