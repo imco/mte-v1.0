@@ -122,6 +122,11 @@ $(document).ready(function(){
 			$(this).parent().find('.line1').css('display','none');	
 			$(this).parent().find('.line2').css('display','none');	
 	});
+
+	$('#content .share-bt a.button-frame').click(function(e){
+		e.preventDefault();
+		$('#content .share-bt .social').toggleClass('on');
+	});
 });
 
 function load_location_options(input,directive,options,name){
