@@ -40,6 +40,7 @@
 	}	
 	?>
 	</table>
+	<?php if($this->location == 'escuelas'){ ?>
 	<div class="share-bt">
 		<div class="social">
 			<a href="#" class='share-face' 
@@ -66,6 +67,7 @@
 			<span class="bt-share">Compartir</span>
 		</a>
 	</div>
+	<?php } ?>
 	<div class="clear"></div>
 	<div class='pagination'><?php
 	if(isset($this->pagination)){
