@@ -668,4 +668,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/COMPARADOR/dejar_comparar.png);left:-93px;top:-44px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
 #content .resultados table td div.icon{position:relative;}
 
-
+/*Popup compartir*/
+#content .share-bt{float:right;position:relative;margin:8px 0 -35px;}
+#content .share-bt .social{position:absolute;bottom:58px;background-color:white;width:100%;border-radius:3px;display:none;}
+#content .share-bt .social.on{display:block;}
+#content .share-bt .social .share-face{float:left;padding:4px;color:blue;}
+#content .share-bt .social .twitter-share-button{padding:5px;float:left;}
+#content .share-bt .button-frame{width:183px;}
+#content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;}
