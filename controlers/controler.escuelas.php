@@ -20,7 +20,7 @@ class escuelas extends main{
 			}
 
 			$this->process_escuelas();
-			$this->escuelas_digest->zoom += 2;
+			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
 			$this->header_folder = 'escuelas';
