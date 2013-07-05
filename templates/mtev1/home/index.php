@@ -82,7 +82,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<input type='submit' value='Suscribirme' />
 			</form>
 		</div>
-		<a href='/compara/' class='banner orange'><?php $this->print_img_tag('home/comparador.png');?> Compara tu Escuela</a>
+		<a href='/compara/' class='banner orange compara'><span></span></a>
 		<a href='/reportes-ciudadanos/' class='banner green'><?php $this->print_img_tag('home/denuncia_banner.png');?>Califica tu escuela</a>
 
 		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box'>
