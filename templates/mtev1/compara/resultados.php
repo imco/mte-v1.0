@@ -54,7 +54,7 @@
 			<div class="tweet">
 
 			  <span class="twitter-icon"></span>
-			  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="El perfil de <?=$this->escuela->nombre; ?> " data-via='mejoratuescuela'>
+			  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="El perfil de <?=$this->capitalize($this->escuela->nombre); ?> " data-via='mejoratuescuela'>
 			  	Tweet
 			  </a>
 
