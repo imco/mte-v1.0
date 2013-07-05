@@ -41,7 +41,7 @@
 		$cssmin->tag('css');
 		$jsmin->tag('js');
 		if($this->location == 'escuelas'){
-			echo '<meta name="description" content="El perfil de '.$this->escuela->nombre.' via https://www.facebook.com/MejoraTuEscuela />';
+			echo '<meta name="description" content="El perfil de '.$this->escuela->nombre.' via https://www.facebook.com/MejoraTuEscuela" />';
 		}else if($this->location == 'compara'){
 			echo '<meta name="description" content="Escuelas comparadas: ';
 			$i=0;
@@ -49,7 +49,7 @@
 				echo $this->capitalize($this->escuelas[$i]->nombre).', ';
 			}
 			echo $this->capitalize($this->escuelas[$i]->nombre);
-			echo ' via https://www.facebook.com/MejoraTuEscuela />';	
+			echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
 		}
 	?>
 	<title><?=$this->page_title;?></title>
