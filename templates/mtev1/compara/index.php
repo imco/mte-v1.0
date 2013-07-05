@@ -38,19 +38,19 @@
 	 	 	onclick="
 			      window.open(
 	            		'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-		          	'El perfil de <?=$this->escuela->nombre; ?> via https://www.facebook.com/MejoraTuEscuela', 
+		          	'El perfil', 
 			       	'width=626,height=436'); 
 				 return false;">
 				  </a>
 
 				<div class="tweet">
 				  <span class="twitter-icon"></span>
-				  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Compara: <? 		if($this->escuelas);
+				  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Compara: <? 		if($this->escuelas){;
 			  	for($i=0;$i<count($this->escuelas)-1;$i++){
 			  		echo $this->capitalize($this->escuelas[$i]->nombre).', ';
 				}
 					echo $this->capitalize($this->escuelas[$i]->nombre);
-			  	?>" data-via='mejoratuescuela'>
+			  	} ?>" data-via='mejoratuescuela'>
 			  	Tweet
 				  </a>
 				</div>
