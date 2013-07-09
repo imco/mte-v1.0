@@ -35,10 +35,14 @@
 		<?php $this->include_template('map-infobox','global'); ?>
 		<div class='clear'></div>
 		<ul class='tabs'>
+			<li></li>
 			<li><a href='#' >Resultados educativos</a></li>
 			<li><a href='#' >Más información</a></li>
 			<li><a href='#' >Reportes ciudadanos</a></li>
-			<li class='on'><a href='#' class='long'>Comentarios con calificación</a></li>
+			<li class='on'><a href='#' class='long'>
+				<?php $this->print_img_tag('home/califica.png');?>
+				Comentarios con calificación
+			</a></li>
 		</ul>
 		<div class='tab-container'>
 			<div class='tab jscrollpane on'>
@@ -63,26 +67,56 @@ EOD;
 			</div>
 			<div class='tab jscrollpane'>
 				<a name='reportes_ciudadanos'></a>
-				<?php
-				if($this->escuela->reportes_ciudadanos){
-					foreach ($this->escuela->reportes_ciudadanos as $reporte_ciudadano){
-						if(isset($reporte_ciudadano->publicar))
-						echo <<<EOD
-						<div class='comment reporte'>
-							<p class='rating'>{$reporte_ciudadano->likes}<a href='/escuelas/like_reportar/{$reporte_ciudadano->id}/'></a></p>
-							<h2>{$reporte_ciudadano->nombre_input}</h2>
-							<p>{$reporte_ciudadano->denuncia}</p>
-						</div>
-EOD;
-					}
-				}else{?>
-					<div class='buble-sin-comentario'>
-						<p>Sé el primero en escribir un reporte</p>
+				<div class='gray-box presupuestos'>
+					<h2>Promedio nacional</h2>
+					<div class='column left'>
+						<h3 class='gray'>
+							Presupuesto anual para la Escuela
+							<span>$89,000</span>
+						</h3>
+						<h3 class='blue'>Presupuesto para esta Escuela</h3>
+						<p>Presupuesto anual $97,000</p>
 					</div>
-				<?php }
-				?>
+					<div class='column right'>
+						<h3 class='gray'>
+							Salario mensual por maestro
+							<span>$89,000</span>
+						</h3>
+						<h3 class='blue'>Salario mensual por maestro</h3>
+						<div class="salarios">
+							<p>Maria Martinez
+								<span>$7564
+									<a href="">REPORTAR
+										<span class="icon"></span>
+									</a>
+								</span>
+							</p>
+							<p>presupuesto anual 
+								<span>$7564
+									<a href="">REPORTAR
+										<span class="icon"></span>
+									</a>
+								</span>
+							</p>
+							<p>presupuesto anual 
+								<span>$7564
+									<a href="">REPORTAR
+										<span class="icon"></span>
+									</a>
+								</span>
+							</p>
+							<p>presupuesto anual 
+								<span>$7564
+									<a href="">REPORTAR
+										<span class="icon"></span>
+									</a>
+								</span>
+							</p>
+						</div>
+
+					</div>
+				</div>
 			</div>
-			<!-- 		 Mas información-->
 			<div class='tab jscrollpane'>
 				<div class='mas-info'>
 					<div class='left'>	
@@ -107,11 +141,6 @@ EOD;
 						<p>Clave del tipo educativo.</p>
 					</div>
 					<div class='right'>
-<!-- 					<h2>This is Photoshop's version of Lorem</h2> -->
-<!-- 					<h3>This is Photoshop's version of Lorem Ipsum.</h3> -->
-<!-- 					<p>Proim gravida nibh vel velit auctor aliquet. Aenean sollicitudin, -->
-<!-- 					lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagit- -->
-<!-- 					tis sem nibh id elit.</p> -->
 						<div class='comment-info'>
 							<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
 							<h2>Número de alumnos evaluados</h2>
@@ -196,34 +225,33 @@ EOD;
 				<p>Califica</p>
 				<p>tu escuela</p>
 			</div>
-		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
-				<p class='rater'>
-					<span class="tit">Arrastra la barra para asignar una calificion</span>
-					<span class='ranker' id='rank-bar'><span class='bar'></span></span>
-					<span class='label' id='rank-label'></span>
-					<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
-					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
-				</p>
-				<p>
-					<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
-					<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
-					<select class='custom-select' name='ocupacion' >
-						<option value=''>Ocupación</option>
-						<option value='alumno'>alumno</option>
-						<option value='exalumno'>exalumno</option>
-						<option value='padredefamilia'>padre de familia</option>
-						<option value='maestro'>maestro</option>
-						<option value='director'>director</option>
-						<option value='ciudadano'>ciudadano</option>
-					</select>
-					<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
-					<input type='submit' value='Calificar' />
-				</p>
-		</form>
-			
-			
+			<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
+					<p class='rater'>
+						<span class="tit">Arrastra la barra para asignar una calificion</span>
+						<span class='ranker' id='rank-bar'><span class='bar'></span></span>
+						<span class='label' id='rank-label'></span>
+						<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
+						<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
+					</p>
+					<p>
+						<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
+						<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
+						<select class='custom-select' name='ocupacion' >
+							<option value=''>Ocupación</option>
+							<option value='alumno'>alumno</option>
+							<option value='exalumno'>exalumno</option>
+							<option value='padredefamilia'>padre de familia</option>
+							<option value='maestro'>maestro</option>
+							<option value='director'>director</option>
+							<option value='ciudadano'>ciudadano</option>
+						</select>
+						<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
+						<input type='submit' value='Calificar' />
+					</p>
+			</form>
 		</div>
 	</div>
+	<div class="clear"></div>
 </div>
 
-<?php // $this->include_template('resultados','compara')?>
+<?php $this->include_template('resultados','compara')?>
