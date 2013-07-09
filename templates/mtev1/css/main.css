@@ -687,7 +687,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;box-shadow:0 3px 1px #d78017;height:31px;}
 
 /*Perfil B*/
-#content .perfil.B{margin-top:36px;padding:0;}
+#content .perfil.B{margin:36px auto 20px;padding:0;}
 #content .perfil.B .head{height:61px;}
 #content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
 #content .perfil.B .column.left{width:682px;}
@@ -702,10 +702,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .email{margin-top:6px;line-height:12px;}
 #content .perfil.B .info_B .email .icon{background-image:url(../img/perfil/correo.png);height:24px;margin-right:4px;background-size:21px;}
 #content .perfil.B .info_B .column.right{width:35%;}
-#content .perfil.B #mapa{margin:7px 0;width:100%;}
+#content .perfil.B #mapa{margin:7px 0;width:100%;height:461px;}
 #content .perfil.B .tabs{margin:0;}
 #content .perfil.B .tab-container{margin:0;width:643px;}
-#content .perfil.B .tab{width:682px;}
+#content .perfil.B .tab{width:645px;}
 #content .perfil.B .rank{background-color:#888;}
 #content .perfil.B .rank .posicion{width:120px;margin:0 auto;text-align:center;padding:15px 0 9px 0;}
 #content .perfil.B .rank .posicion p{font-size:17px;color:white;line-height:13px;}
@@ -740,7 +740,32 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .califica #rank-label{display:none;}
 #content .perfil.B .califica .rater + p{padding:0 14px;}
 #content .perfil.B .califica input[type="text"],
-#content .perfil.B .califica textarea{width:147px;}
+#content .perfil.B .califica textarea{width:147px;font-weight:bold;color:#888;}
 #content .perfil.B .califica input[type="submit"]{width:170px;height:25px;font-size:16px;}
-#content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;}
+#content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;color:#888;}
 #content .perfil.B .califica textarea{height:68px;}
+#content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 -18px;height:98px;border:1px solid #c3c9c9;width:187px;}
+#content .perfil.B .tabs li:first-child{display:none;}
+#content .perfil.B .tabs li:last-child{width:168px;}
+#content .perfil.B .tabs li.on:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:-6px;}
+#content .perfil.B .tabs li.on:after{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;bottom:-6px;}
+#content .perfil.B .tabs li a{color:#b1b1b1;font-weight:bold;text-align:center;width:110px;}
+#content .perfil.B .tabs li a img{display:block;margin:0 auto;width:38px;height:50px;margin-top:2px;}
+#content .perfil.B .mas-info .left{width:42%;}
+#content .perfil.B .mas-info .right{width:51%;}
+#content .perfil.B .tab-container{background-color:#e0e1e3;padding:31px 19px 0 18px;height:218px;overflow:hidden;}
+#content .perfil.B .presupuestos{background-color:#e0e1e3;padding:0;margin:0;}
+#content .perfil.B .presupuestos .column.left{margin:0;width:315px;}
+#content .perfil.B .presupuestos .column.right{width:321px;margin:0 0 0 9px;}
+#content .perfil.B .presupuestos h2{margin-bottom:2px;}
+#content .perfil.B .presupuestos h3.gray{padding-left:10px;line-height:38px;font-size:12px;height:41px;}
+#content .perfil.B .presupuestos h3.gray span{height:14px;line-height:16px;width:46px;}
+#content .perfil.B .presupuestos h3.blue{font-size:17px;padding-left:10px;line-height:39px;height:40px;}
+#content .perfil.B .presupuestos .right h3.blue{padding-left:14px;}
+#content .perfil.B .presupuestos .left p{padding:10px 10px 0;font-size:13px;}
+#content .perfil.B .presupuestos .right h3.gray{padding-left:14px}
+#content .perfil.B .presupuestos .right h3.gray span{width:79px;}
+#content .perfil.B .presupuestos .right .salarios p{width:310px;font-size:12px;line-height:16px;height:20px;}
+#content .perfil.B .presupuestos .right .salarios p span{line-height:19px;width:127px;}
+#content .perfil.B .presupuestos .right .salarios p span a{margin-left:9px;font-size:7px;}
+#content .perfil.B .buble-sin-comentario{height:209px;background-size:190px;width:185px;}
