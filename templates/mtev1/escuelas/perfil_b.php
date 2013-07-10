@@ -36,11 +36,20 @@
 		<div class='clear'></div>
 		<ul class='tabs'>
 			<li></li>
-			<li><a href='#' >Resultados educativos</a></li>
-			<li><a href='#' >Más información</a></li>
-			<li><a href='#' >Reportes ciudadanos</a></li>
-			<li class='on'><a href='#' class='long'>
-				<?php $this->print_img_tag('home/califica.png');?>
+			<li><a href='#' class='result'>
+				<span class="icon"></span>
+				Resultados educativos
+			</a></li>
+			<li><a href='#'  class='infor'>
+				<span class="icon"></span>
+				Más información
+			</a></li>
+			<li><a href='#' class='reportes'>
+				<span class="icon"></span>
+				Presupuestos Asignados
+			</a></li>
+			<li class='on'><a href='#' class='long comentarios'>
+				<span class="icon"></span>
 				Comentarios con calificación
 			</a></li>
 		</ul>
