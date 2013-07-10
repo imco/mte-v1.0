@@ -687,7 +687,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;box-shadow:0 3px 1px #d78017;height:31px;}
 
 /*Perfil B*/
-#content .perfil.B{margin:36px auto 20px;padding:0;}
+#content .perfil.B{margin:36px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .head{height:61px;}
 #content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
 #content .perfil.B .column.left{width:682px;}
