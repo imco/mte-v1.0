@@ -794,9 +794,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog .left p{padding:6px 27px;font-size:14px;text-align:justify;line-height:19px;}
 #content .blog .left p img{width:425px;height:236px;display:block;margin-bottom:12px;}
 #content .blog .right h1{background-color:#00aff0;font-size:18px;text-align:center;line-height:53px;height:51px;font-weight:bold;}
-#content .blog .right p{font-size:15px;padding-left:15px;background-color:#707070;height:53px;border-bottom:1px solid white;line-height:54px;}
-#content .blog .right p:last-child{border-bottom:none;}
-#content .blog .right p:hover{background-color:#00aff0;}
-#content .blog .right p a{color:white;}
+#content .blog .right ul li{font-size:15px;background-color:#707070;border-bottom:1px solid white;}
+#content .blog .right li a{padding-left:15px;height:53px;line-height:54px;display:block;}
+#content .blog .right li:last-child{border-bottom:none;}
+#content .blog .right li:hover{background-color:#00aff0;}
+#content .blog .right li a{color:white;}
 #content .blog .share-bt{margin:0 0 12px 0;}
 #content .blog .share-bt .button-frame{width:183px;margin-right:31px;line-height:37px;}
