@@ -45,11 +45,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie id magna e
 	</div>
 	<div class='column right'>
 		<h1>NOTAS RECIENTES</h1>
+
+		<ul>
 		<?php for($i=0;$i<10;$i++){ ?>
-		<p>
-			<a href=''>Titulo de la Nota para Blog</a>
-		</p>
+			<li><a href=''>Titulo de la Nota para Blog</a></li>
 		<?php } ?>
+		</ul>
 	</div>
 	<div class='clear'></div>
 </div>
