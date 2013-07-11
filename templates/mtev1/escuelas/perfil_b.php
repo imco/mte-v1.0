@@ -1,33 +1,33 @@
 <div class='perfil container B'>
-	<div class="column left">
-		<div class="head">
+	<div class='column left'>
+		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		</div>
-		<div class="info_B">
-			<div class="column left">
+		<div class='info_B'>
+			<div class='column left'>
 				<h2>
 					<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?>
 				</h2>
 				<p class='address'>
-					<span class="icon"></span>
+					<span class='icon'></span>
 					<?=$this->capitalize($this->escuela->domicilio)?>
 					<?=$this->capitalize($this->escuela->localidad->nombre)?>, 
 					<?=$this->capitalize($this->escuela->entidad->nombre)?>
 				</p>
 			</div>
-			<div class="column right">
+			<div class='column right'>
 				<p class='email'>
-					<span class="icon"></span>
+					<span class='icon'></span>
 					<?=$this->escuela->correoelectronico?>
 					<div class='clear'></div>
 				</p>
 				<p class='tel'>
-					<span class="icon"></span>
+					<span class='icon'></span>
 					<?=$this->escuela->telefono?>
 					<div class='clear'></div>
 				</p>
 			</div>
-			<div class="clear"></div>
+			<div class='clear'></div>
 		</div>
 		<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 		<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
@@ -37,19 +37,19 @@
 		<ul class='tabs'>
 			<li></li>
 			<li><a href='#' class='result'>
-				<span class="icon"></span>
+				<span class='icon'></span>
 				Resultados educativos
 			</a></li>
 			<li><a href='#'  class='infor'>
-				<span class="icon"></span>
+				<span class='icon'></span>
 				Más información
 			</a></li>
 			<li><a href='#' class='reportes'>
-				<span class="icon"></span>
+				<span class='icon'></span>
 				Presupuestos Asignados
 			</a></li>
 			<li class='on'><a href='#' class='long comentarios'>
-				<span class="icon"></span>
+				<span class='icon'></span>
 				Comentarios con calificación
 			</a></li>
 		</ul>
@@ -192,9 +192,9 @@ EOD;
 			</div>
 		</div>	
 	</div>
-	<div class="column right">
-		<div class="rank">
-			<div class="posicion">
+	<div class='column right'>
+		<div class='rank'>
+			<div class='posicion'>
 				<?php $this->print_img_tag('home/posicion.png');?>
 				<p>Posición </p>
 				<p>Nivel Nacional</p>
@@ -203,40 +203,40 @@ EOD;
 				</h2>
 			</div>
 		</div>
-		<div class="semaforo">
+		<div class='semaforo'>
 			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
 			<h2>Semáforo Educativo</h2>
-			<div class="level reprobado<?= $on=='Reprobado'?' on':''?>">
+			<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
 				<p>Reprobado</p>
-				<span class="icon"></span>
-				<div class="clear"></div>
+				<span class='icon'></span>
+				<div class='clear'></div>
 			</div>
-			<div class="level panzazo<?= $on=='De panzazo'?' on':''?>">
+			<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
 				<p>De panzazo</p>
-				<span class="icon"></span>
-				<div class="clear"></div>
+				<span class='icon'></span>
+				<div class='clear'></div>
 			</div>
-			<div class="level bien<?= $on=='Bien'?' on':''?>">
+			<div class='level bien<?= $on=='Bien'?' on':''?>'>
 				<p>Bien</p>
-				<span class="icon"></span>
-				<div class="clear"></div>
+				<span class='icon'></span>
+				<div class='clear'></div>
 			</div>
-			<div class="level excelente<?= $on=='Excelente'?' on':''?>">
+			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 				<p>Excelente</p>
-				<span class="icon"></span>
-				<div class="clear"></div>
+				<span class='icon'></span>
+				<div class='clear'></div>
 			</div>
 		</div>
-		<div class="clear"></div>
-		<div class="califica">
-			<div class="title">
+		<div class='clear'></div>
+		<div class='califica'>
+			<div class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
 				<p>Califica</p>
 				<p>tu escuela</p>
 			</div>
 			<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
 					<p class='rater'>
-						<span class="tit">Arrastra la barra para asignar una calificion</span>
+						<span class='tit'>Arrastra la barra para asignar una calificion</span>
 						<span class='ranker' id='rank-bar'><span class='bar'></span></span>
 						<span class='label' id='rank-label'></span>
 						<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
@@ -260,7 +260,7 @@ EOD;
 			</form>
 		</div>
 	</div>
-	<div class="clear"></div>
+	<div class='clear'></div>
 </div>
 
 <?php $this->include_template('resultados','compara')?>
