@@ -187,6 +187,24 @@ class main extends controler{
 			echo json_encode($response);
 		}
 	}
+	public function get_escuelas_new($params = false,$page = false,$sort = false){
+		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';		
+		$sort = $sort ? $sort : 'rank_entidad asc';
+		$q = isset($params->term) && $params->term ? "nombre:{$params->term}" : '*:*';
+		if($params){
+			foreach($params as $key => $param){
+				$fq .= $key != 'term' && $param ? " AND $key:$param" : '';
+			}
+		}
+		$start = $page ? ($page-1) * 10 : '0';
+		$q = urlencode($q);
+		$fq = urlencode($fq);
+		$sort = urlencode($sort);
+		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
+		$response = json_decode(file_get_contents($url));
+		$this->escuelas = $response->response->docs;
+		$this->num_results = $response->response->numFound;
+	}
 
 	public function load_niveles(){
 		$q = new nivel();
