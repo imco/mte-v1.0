@@ -190,7 +190,7 @@ class main extends controler{
 	public function get_escuelas_new($params = false,$page = false,$sort = false){
 		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';
 
-		$sort = $sort ? $sort : 'rank_entidad asc';
+		//$sort = $sort ? $sort : 'rank_entidad asc';
 		$q = isset($params->term) && $params->term ? "nombre:".str_replace(' ','~',$params->term).'~' : '*:*';
 		if($params){
 			foreach($params as $key => $param){
