@@ -330,7 +330,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
 #content .resultados .pagination a.on{background-color:#0BA14A;color:white;text-shadow:none;}
 #content .resultados .pagination a.on:hover{padding:6px 9px;border:none;}
-#content .resultados .button-frame{display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
+#content .resultados .button-frame,
+#content .share-bt .button-frame
+{display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
 #content .resultados .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;}
 #content .resultados .button:before{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;left:8px;position:absolute;}
 #content .resultados .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
@@ -673,11 +675,131 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;}
 #content .share-bt.comp{margin:10px;}
-#content .share-bt .social{position:absolute;bottom:58px;background-color:rgba(26,164,86,.2);width:100%;border-radius:3px;display:none;}
-#content .share-bt .social.on{display:block;}
-#content .share-bt .social .share-face{float:left;padding:15px;color:blue;background-image:url(../img/home/face.png);background-repeat:no-repeat;width:63px;background-position:68px;}
-#content .share-bt .social .tweet{position:relative;width:40px;overflow:hidden;height:30px;}
-#content .share-bt .social .twitter-icon{background-image:url(../img/home/twitter.png);padding:11px;position:absolute;left:0;margin-top:4px;}
-#content .share-bt .social .twitter-share-button{width:17px!important;position:absolute;bottom:5px;z-index:10;opacity:0;}
+#content .share-bt .social:after{content:""; width:0;height: 0;border-left: 15px solid transparent;border-right: 17px solid transparent;border-bottom: 17px solid #dcdcdc;position:absolute;display:block;top:-13px;left:112px;}
+#content .share-bt .social:after{left:61px;}
+/*#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:203px;right:-38px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset}*/
+#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:101px;right:13px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset;height:49px;}
+#content .share-bt .social .btns{width:109px;margin:0 auto;}
+#content .share-bt .social.on{display:block;z-index:10;}
+#content .share-bt .social .share-face{float:left;height:62px;background-image:url(../img/compartir/facebook.png);background-repeat:no-repeat;width:50px;background-size:55px;}
+#content .share-bt .social .tweet{position:relative;width:58px;overflow:hidden;height:52px;}
+#content .share-bt .social .twitter-icon{background-image:url(../img/compartir/twitter.png);position:absolute;left:0;width:100%;height:100%;background-size:55px;}
+#content .share-bt .social .twitter-share-button{width:100%!important;position:absolute;top:0;z-index:10;opacity:0;height:55px!important;}
+#content .share-bt .social .twitter-share-button #b.btn{height:54px;}
 #content .share-bt .button-frame{width:183px;}
-#content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;}
+#content .share-bt .button-frame .bt-share .icon{background-image:url(../img/compartir/compartir.png);}
+#content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;box-shadow:0 3px 1px #d78017;height:31px;}
+
+/*Perfil B*/
+#content .perfil.B{margin:36px auto 20px;padding:0;background-color:transparent;}
+#content .perfil.B .head{height:61px;}
+#content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
+#content .perfil.B .column.left{width:682px;}
+#content .perfil.B .column.right{width:202px;margin-left:12px;}
+#content .perfil.B .info_B{background-color:#888;color:white;min-height:72px;}
+#content .perfil.B .info_B .column.left{width:57%;padding-left:23px;padding-top:2px;}
+#content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
+#content .perfil.B .info_B .tel{line-height:25px;margin-left:2px;}
+#content .perfil.B .info_B .address{margin-top:5px;line-height:21px;}
+#content .perfil.B .info_B .address .icon{background-image:url(../img/perfil/direccion.png);background-repeat:no-repeat;background-size:15px;height:19px;width:20px;}
+#content .perfil.B .info_B .tel .icon{background-image:url(../img/perfil/telefono.png);background-size:12px;}
+#content .perfil.B .info_B .email{margin-top:6px;line-height:12px;}
+#content .perfil.B .info_B .email .icon{background-image:url(../img/perfil/correo.png);height:24px;margin-right:4px;background-size:21px;}
+#content .perfil.B .info_B .column.right{width:35%;}
+#content .perfil.B #mapa{margin:7px 0;width:100%;height:461px;}
+#content .perfil.B .tabs{margin:0;}
+#content .perfil.B .tab-container{margin:0;width:643px;}
+#content .perfil.B .tab{width:645px;}
+#content .perfil.B .rank{background-color:#888;}
+#content .perfil.B .rank .posicion{width:120px;margin:0 auto;text-align:center;padding:15px 0 9px 0;}
+#content .perfil.B .rank .posicion p{font-size:17px;color:white;line-height:13px;}
+#content .perfil.B .rank .posicion p + p{line-height:16px;}
+#content .perfil.B .rank .posicion h2{color:white;font-size:30px;line-height:40px;}
+#content .perfil.B .semaforo{padding:0;width:202px;margin-top:6px;height:auto;background-color:#eaeaea;}
+#content .perfil.B .semaforo h2{line-height:40px;margin:0;height:40px;}
+#content .perfil.B .semaforo p{float:left;font-size:15px;padding:14px 17px;}
+#content .perfil.B .semaforo .level{border-bottom:1px solid white;}
+#content .perfil.B .semaforo .level:last-child{border:none;}
+#content .perfil.B .semaforo .level.panzazo{margin-top:5px;}
+#content .perfil.B .semaforo .level.bien{margin-top:4px;}
+#content .perfil.B .semaforo .level.excelente{margin:4px 0  2px 0;}
+#content .perfil.B .semaforo .level.on p{width:92px;background-color:#329dd1;text-align:left;margin:-4px 0 0 0;height:22px;color:white;position:relative;line-height:24px;}
+#content .perfil.B .semaforo .level.reprobado.on p{margin:0 0 -4px 0;line-height:21px;height:18px;}
+#content .perfil.B .semaforo .level.on p:after{content:"";width:0;height:0;border-top:24px solid transparent;border-left:15px solid #329dd1;border-bottom:26px solid transparent;display:block;position:absolute;right:-15px;top:0;}
+#content .perfil.B .semaforo .level.reprobado.on p:after{border-top:21px solid transparent;}
+#content .perfil.B .semaforo .icon{float:right;background-repeat:no-repeat;width:37px;height:37px;margin:8px 10px 1px 0;}
+#content .perfil.B .semaforo .reprobado .icon{background-image:url(../img/perfil/reprobado.png);}
+#content .perfil.B .semaforo .panzazo .icon{background-image:url(../img/perfil/depanzazo.png);}
+#content .perfil.B .semaforo .bien .icon{background-image:url(../img/perfil/bien.png);}
+#content .perfil.B .semaforo .excelente .icon{background-image:url(../img/perfil/excelente.png);}
+#content .perfil.B .califica{margin-top:9px;}
+#content .perfil.B .califica .title{background-color:#888;text-align:center;color:white;height:99px;}
+#content .perfil.B .califica .title img{height:51px;width:40px;margin-top:4px;}
+#content .perfil.B .califica .title p{font-size:18px;line-height:5px;}
+#content .perfil.B .califica .title p + p{line-height:29px;}
+#content .perfil.B .califica .rater{width:174px;padding-top:6px;}
+#content .perfil.B .califica .ranker{width:100%;text-align:left;margin-bottom:-13px;}
+#content .perfil.B .califica form{background-color:#E4E4E4;padding-bottom:20px;}
+#content .perfil.B .califica form span.tit{text-align:center;display:block;width:162px;font-size:11px;padding-left:3px;margin-bottom:4px;}
+#content .perfil.B .califica #rank-label{display:none;}
+#content .perfil.B .califica .rater + p{padding:0 14px;}
+#content .perfil.B .califica input[type="text"],
+#content .perfil.B .califica textarea{width:147px;font-weight:bold;color:#888;}
+#content .perfil.B .califica input[type="submit"]{width:170px;height:25px;font-size:16px;}
+#content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;color:#888;}
+#content .perfil.B .califica textarea{height:68px;}
+#content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 0;height:98px;border:1px solid #c3c9c9;width:168px;}
+#content .perfil.B .tabs li:first-child{display:none;}
+#content .perfil.B .tabs li:nth-child(2){width:170px;}
+#content .perfil.B .tabs li.on:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:-6px;}
+#content .perfil.B .tabs li.on:after{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;bottom:-6px;}
+#content .perfil.B .tabs li a{color:#b1b1b1;font-weight:bold;width:100%;height:87px;padding:0;margin:17px auto;text-align:center;line-height:16px;}
+#content .perfil.B .tabs .icon{display:block;width:98px;height:43px;background-repeat:no-repeat;background-position:center 1px;width:100%}
+#content .perfil.B .tabs .comentarios .icon{background-image:url(../img/perfil/contarios_calif.png);background-position:66px -43px;}
+#content .perfil.B .tabs li.on .comentarios .icon{background-position:66px 0;}
+#content .perfil.B .tabs .reportes{width:60%;}
+#content .perfil.B .tabs .reportes .icon{background-image:url(../img/perfil/presupuestos.png);height:47px;margin-top:-6px;background-position:24px -45px;}
+#content .perfil.B .tabs li.on .reportes .icon{background-position:24px 2px;}
+#content .perfil.B .tabs .infor .icon{background-image:url(../img/perfil/info.png);background-position:62px -44px;}
+#content .perfil.B .tabs li.on .infor .icon{background-position:62px 0;}
+#content .perfil.B .tabs .result .icon{background-image:url(../img/perfil/resultados.png);background-position:67px -42px;}
+#content .perfil.B .tabs li.on .result .icon{background-position:67px 1px;}
+#content .perfil.B .tabs li a img{display:block;margin:0 auto;width:38px;height:50px;margin-top:2px;}
+#content .perfil.B .mas-info .left{width:42%;}
+#content .perfil.B .mas-info .right{width:51%;}
+#content .perfil.B .tab-container{background-color:#e0e1e3;padding:31px 19px 0 18px;height:218px;overflow:hidden;}
+#content .perfil.B .presupuestos{background-color:#e0e1e3;padding:0;margin:0;}
+#content .perfil.B .presupuestos .column.left{margin:0;width:315px;}
+#content .perfil.B .presupuestos .column.right{width:321px;margin:0 0 0 9px;}
+#content .perfil.B .presupuestos h2{margin-bottom:2px;}
+#content .perfil.B .presupuestos h3.gray{padding-left:10px;line-height:38px;font-size:12px;height:41px;}
+#content .perfil.B .presupuestos h3.gray span{height:14px;line-height:16px;width:46px;}
+#content .perfil.B .presupuestos h3.blue{font-size:17px;padding-left:10px;line-height:39px;height:40px;}
+#content .perfil.B .presupuestos .right h3.blue{padding-left:14px;}
+#content .perfil.B .presupuestos .left p{padding:10px 10px 0;font-size:13px;}
+#content .perfil.B .presupuestos .right h3.gray{padding-left:14px}
+#content .perfil.B .presupuestos .right h3.gray span{width:79px;}
+#content .perfil.B .presupuestos .right .salarios p{width:310px;font-size:12px;line-height:16px;height:20px;}
+#content .perfil.B .presupuestos .right .salarios p span{line-height:19px;width:127px;}
+#content .perfil.B .presupuestos .right .salarios p span a{margin-left:9px;font-size:7px;}
+#content .perfil.B .buble-sin-comentario{height:209px;background-size:190px;width:185px;}
+#content .perfil.B .charts{height:219px;}
+
+/*Blog*/
+#content .blog{margin-top:33px;width:940px;}
+#content .blog .column.left{width:650px;margin-left:19px;}
+#content .blog .column.right{width:250px;margin-left:19px;}
+#content .blog .left .title{background-image:url(../img/home/texture_blue.png);padding-left:27px;line-height:42px;font-size:23px;height:41px;}
+#content .blog .left .post{background-color:rgba(255,255,255,.3);margin-bottom:22px;}
+#content .blog .left .info{background-color:rgba(255,255,255,.8);padding-left:27px;font-size:23px;line-height:36px;}
+#content .blog .left .date{font-size:18px;padding-left:1px;}
+#content .blog .left p{padding:6px 27px;font-size:14px;text-align:justify;line-height:19px;}
+#content .blog .left p img{width:425px;height:236px;display:block;margin-bottom:12px;}
+#content .blog .right h1{background-color:#00aff0;font-size:18px;text-align:center;line-height:53px;height:51px;font-weight:bold;}
+#content .blog .right ul li{font-size:15px;background-color:#707070;border-bottom:1px solid white;}
+#content .blog .right li a{padding-left:15px;height:53px;line-height:54px;display:block;}
+#content .blog .right li:last-child{border-bottom:none;}
+#content .blog .right li:hover{background-color:#00aff0;}
+#content .blog .right li a{color:white;}
+#content .blog .share-bt{margin:0 0 12px 0;}
+#content .blog .share-bt .button-frame{width:183px;margin-right:31px;line-height:37px;}

@@ -116,5 +116,44 @@ class escuelas extends main{
 		));
 		header('location: /escuelas/index/'.$reporte->cct->cct.'#reportes_ciudadanos');
 	}
+
+	public function perfil_b(){
+		if($this->escuela_info()){
+			$params->limit = '0,8';
+			$params->localidad = $this->escuela->localidad->id;
+			$params->nivel = $this->escuela->nivel->id;		
+
+			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+
+			$this->load_compara_cookie();
+			$this->get_escuelas($params);
+			$this->escuelas[] = $this->escuela;
+		
+			if($this->compara_cookie){
+				$temp = $this->escuelas;
+				$params2->ccts = $this->compara_cookie;
+				$this->get_escuelas($params2);
+				$this->escuelas = array_merge($temp,$this->escuelas);
+			}
+
+			$this->process_escuelas();
+			$this->escuelas_digest->zoom += 2;
+			$this->escuelas_digest->centerlat = $this->escuela->latitud;
+			$this->escuelas_digest->centerlong = $this->escuela->longitud;
+			$this->header_folder = 'escuelas';
+			$this->draw_map = true;
+			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
+			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
+			$this->breadcrumb = array(
+				'/compara/'=>'Escuelas',
+				'/compara/?search=true&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->entidad->nombre),
+				'/compara/?search=true&municipio='.$this->escuela->municipio->id.'&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->municipio->nombre),
+				'#'=> $this->capitalize($this->escuela->nombre)
+			);
+			$this->include_theme('index','perfil_b');
+		}else{
+			header('HTTP/1.0 404 Not Found');
+		}
+	}
 }
 ?>
