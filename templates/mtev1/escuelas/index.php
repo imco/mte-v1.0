@@ -302,4 +302,4 @@ EOD;
 	</div>	-->
 </div>
 
-<?php $this->include_template('resultados','compara')?>
+<?php $this->include_template('resultados-escuela','compara')?>
