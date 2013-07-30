@@ -48,12 +48,13 @@ $(document).ready(function(){
 		$('#rank-value').val(rank);
 	});
 	$('#rank-bar').mouseout(function(e){
+		var max = $('.container').hasClass('B')?173:336;
 		var x = e.pageX - $(this).offset().left;
 		var y = e.pageY - $(this).offset().top;
-		if((y >= 10 || y < 0) || (x < 0 || x > 336)){
+		if((y >= 10 || y < 0) || (x < 0 || x > max)){
 			var val = $('#rank-value').val();
 			if(val != ''){
-				set_rank_bar(Math.round(val/100*336));
+				set_rank_bar(Math.round(val/100*max));
 			}else{
 				$('#rank-bar .bar').hide();
 				$('#rank-label').hide();
@@ -144,7 +145,8 @@ function load_location_options(input,directive,options,name){
 	},'json');
 }
 function set_rank_bar(x){
-	var rank = Math.round(x/336 * 100);
+	var max = $('.container').hasClass('B')?173:336;
+	var rank = Math.round(x/max * 100);
 	var offset = x - 12;
 	$('#rank-bar .bar').css('width',x+'px').show();
 	$('#rank-label').html(rank+'%').css('left',offset+'px').show();
