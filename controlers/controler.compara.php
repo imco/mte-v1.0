@@ -8,6 +8,7 @@ class compara extends main{
 		$this->load_compara_cookie();
 		$this->breadcrumb = array('#'=> 'Comparador');
 		$this->resultados_title = 'Resultados';
+		$this->header_folder = 'compara';		
 		if(!$this->get('search')){ 
 			$this->get_location();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
@@ -15,21 +16,24 @@ class compara extends main{
 		}else{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}
-		$params->term = $this->get('term');
-		$params->control = $this->get('control');
-		$params->nivel = $this->get('nivel');
-		$params->entidad = $this->get('entidad');
-		$params->municipio = $this->get('municipio');
-		$params->localidad = $this->get('localidad');
-		//$params->pagination = 6;		
-		//$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
-		$p = $this->get('p') ? $this->get('p') : 1;
-		$this->get_escuelas_new($params,$p);
-		//$this->process_escuelas();
-
-		$this->header_folder = 'compara';		
+		if($this->get('term')){
+			$params->term = $this->get('term');
+			$params->control = $this->get('control');
+			$params->nivel = $this->get('nivel');
+			$params->entidad = $this->get('entidad');
+			$params->municipio = $this->get('municipio');
+			$params->localidad = $this->get('localidad');
+			$p = $this->get('p') ? $this->get('p') : 1;
+			$this->get_escuelas_new($params,$p);			
+			$this->include_theme('index','resultados');
+		}else{
+			$params->pagination = 6;
+			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+			$this->get_escuelas($params);
+			$this->process_escuelas();			
+			$this->include_theme('index','resultados-escuela');
+		}
 		
-		$this->include_theme('index','resultados');
 	}
 	public function mapa(){
 		$this->load_niveles();
