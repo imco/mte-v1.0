@@ -3,6 +3,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 ?>
 <div class='container home'>
 	<div class='column'>
+		<!--
 		<h1 class='cap subtitle'><?php $this->print_img_tag('home/posicion.png');?> Mejores <?=$niveles[$this->publica->nivel->id]?>
 			<span><a href='/compara/?search=true&amp;nivel=<?=$this->publica->nivel?>#resultados'>+Ver posiciones</a></span>
 		</h1>
@@ -19,6 +20,10 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<p><?=$this->capitalize($this->privada->localidad->nombre)?>, <?=$this->capitalize($this->privada->entidad->nombre)?></p>
 				<h3><a href="/escuelas/index/<?=$this->privada->cct?>">Ver perfil</a></h3>
 			</div>
+		</div>
+		-->
+		<div class="video">
+		
 		</div>
 		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->capitalize($this->user_location->nombre)?>
 			<span><a href='/compara/?search=true&amp;entidad=<?=$this->user_location->id?>&amp;nivel=<?=$this->nivel_5?>#resultados'>+Ver más</a></span>
@@ -38,7 +43,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				?>
 			</ol>
 		</div>
-		<!--<div class='notas'>
+		<div class='notas'>
 			<div class='white-box column'>
 				<?php $this->print_img_tag('schoolchildren.png');?>
 				<h2>Notas relevantes</h2>
@@ -71,7 +76,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<p><a href="/">Leer más</a></p>
 			</div>
 			<div class='clear'></div>
-		</div>-->
+		</div>
 	</div>
 	<div class='column right'>
 		<div class='gray-box newsletter'>
