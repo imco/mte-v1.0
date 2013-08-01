@@ -1,10 +1,22 @@
 
 <div class='menu <?= $this->location?>'><div class='container'>
-	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>	
-	<a href='/conoce'>CONOCE</a>
-	<a href='/compara'>COMPARA</a>
-	<a href='/califica-tu-escuela'>CALIFICA</a>
-	<a href='/mejora'>MEJORA</a>
+	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
+	<a href='/conoce'>CONOCE
+		<span class='circle'></span>
+		<span class='decor'>1</span>
+	</a>
+	<a href='/compara'>COMPARA
+		<span class='circle'></span>
+		<span class='decor'>2</span>
+	</a>
+	<a href='/califica-tu-escuela'>CALIFICA
+		<span class='circle'></span>
+		<span class='decor'>3</span>
+	</a>
+	<a href='/mejora'>MEJORA
+		<span class='circle'></span>
+		<span class='decor'>4</span>
+	</a>
 	<!--
 	<a href='/resultados-nacionales'>Resultados Nacionales</a>
 	<a href='/peticiones'>Peticiones</a>
@@ -27,7 +39,7 @@
 
 <div class="breadcrumb">
 	<ul>
-<?php if($this->breadcrumb){ ?>
+<?php if($this->breadcrumb && false){ ?>
 		<li>
 			<a href="/">
 				<?php $this->print_img_tag('breadcrumb/home.png'); ?>
