@@ -237,12 +237,17 @@ class main extends controler{
         return $distance;
     }
     protected function get_location(){
-    	/*$ip = $_SERVER['REMOTE_ADDR'];
-    	//$ip = '187.153.71.141';
-		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
-		$result = explode(';',$file);
-		$entidad = $result[5];
-		if($entidad != '-'){
+    	$ip = 
+    		isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
+    		isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
+    		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+		var_dump($ip);
+		$url = "http://freegeoip.net/json/";
+		$location_request = file_get_contents($url);
+		$location = json_decode($location_request);
+		var_dump($location);
+    	/*
+    	if($entidad != '-'){
 			$q = new entidad();
 			$q->search_clause = "entidades.nombre LIKE '$entidad%'";
 			$entidad = $q->read('id,nombre');
@@ -256,6 +261,7 @@ class main extends controler{
 		$entidad = new entidad(rand(1,32));
 		$entidad->read('nombre,id');
 		$this->user_location = $entidad;
+		exit;
 
     }
     protected function load_compara_cookie(){
