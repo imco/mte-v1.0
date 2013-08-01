@@ -11,7 +11,7 @@
 	<div class='clear'></div>
 	<?php //$this->include_template('general_search','global'); ?>
 	<div class='decorations'>
-		<div class='triangle1'></div>
+		<?php $this->print_img_tag('home/blco_header.png');?>
 		<div class='triangle2'></div>
 		<div class='circle'></div>
 		<div class='circle'></div>
