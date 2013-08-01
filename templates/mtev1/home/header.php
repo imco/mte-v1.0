@@ -5,7 +5,8 @@
 			ciudadana que busca promover cambios positivos <br />
 			en la educacion de México.
 		</h2>
-		<hr/>
+		<hr />
+		<hr />	
 	</div>
 	<!--
 	<a href='/compara/' class='button-frame'><span class='button'>Compara tu escuela</span></a>
@@ -30,6 +31,8 @@
 		<?php $this->print_img_tag('home/birrete_small.png');?>
 		<?php $this->print_img_tag('home/birrete_small.png');?>
 		<?php $this->print_img_tag('home/palomita.png');?>
+		<?php $this->print_img_tag('home/palomita.png');?>
+		<?php $this->print_img_tag('home/birrete_small.png');?>
 	</div>
 </div>
 <div class='decorations'>
