@@ -67,7 +67,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<input name='' type='text' placeholder='Tu correo'/>
 				<input type='submit' value='Suscribirme' />
 			</form>
-			<p>Aviso de privacidad</p>
+			<a href='/aviso-de-privacidad'>Aviso de privacidad</a>
 		</div>
 		<a href='/peticiones/' class='banner orange peticiones'>
 			<?php $this->print_img_tag('home/peticiones.png');?>
