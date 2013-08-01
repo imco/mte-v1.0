@@ -242,7 +242,7 @@ class main extends controler{
     		isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
     		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
 		var_dump($ip);
-		$url = "http://freegeoip.net/json/";
+		$url = "http://freegeoip.net/json/$ip";
 		$location_request = file_get_contents($url);
 		$location = json_decode($location_request);
 		var_dump($location);
