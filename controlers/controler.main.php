@@ -244,14 +244,14 @@ class main extends controler{
 		$url = "http://freegeoip.net/json/$ip";
 		$location_request = file_get_contents($url);
 		$location = json_decode($location_request);
-    	if($location->region_code != ''){
+		var_dump($location);
+    	if($location->region_code != '' && $location->country_code == 'MX'){
 			$this->user_location = new entidad($location->region_code);
 			$this->user_location->read('id,nombre');
 		}else{
 			$this->user_location = new entidad(rand(1,32));
 			$this->user_location->read('nombre,id');		
 		}
-
     }
     protected function load_compara_cookie(){
     	$this->compara_cookie = false;
