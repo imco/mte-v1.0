@@ -240,28 +240,17 @@ class main extends controler{
     	$ip = 
     		isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
     		isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
-    		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
-		var_dump($ip);
+    		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';    	
 		$url = "http://freegeoip.net/json/$ip";
 		$location_request = file_get_contents($url);
 		$location = json_decode($location_request);
-		var_dump($location);
-    	/*
-    	if($entidad != '-'){
-			$q = new entidad();
-			$q->search_clause = "entidades.nombre LIKE '$entidad%'";
-			$entidad = $q->read('id,nombre');
-			if($entidad && count($entidad) == 1) 
-				$this->user_location = $entidad[0]->id;
-			else
-				$this->user_location = false;
+    	if($location->region_code != ''){
+			$this->user_location = new entidad($location->region_code);
+			$this->user_location->read('id,nombre');
 		}else{
-			$this->user_location = false;
-		}*/
-		$entidad = new entidad(rand(1,32));
-		$entidad->read('nombre,id');
-		$this->user_location = $entidad;
-		exit;
+			$this->user_location = new entidad(rand(1,32));
+			$this->user_location->read('nombre,id');		
+		}
 
     }
     protected function load_compara_cookie(){
