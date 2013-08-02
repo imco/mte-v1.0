@@ -244,7 +244,7 @@ class main extends controler{
 		$url = "http://freegeoip.net/json/$ip";
 		$location_request = file_get_contents($url);
 		$location = json_decode($location_request);
-		var_dump($location);
+		//var_dump($location);
     	if($location->region_code != '' && $location->country_code == 'MX'){
 			$this->user_location = new entidad($location->region_code);
 			$this->user_location->read('id,nombre');
