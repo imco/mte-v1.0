@@ -1,6 +1,6 @@
 <div class='compara container'>
 	<div class='titles'>
-		<h1>Compara tu escuela</h1>
+		<h1><?php echo isset($this->title_header)?$this->title_header:'Compara tu escuela' ?></h1>
 		<hr/>
 		<h2>
 			Mejora tu escuela es una plataforma de participacion <br />
