@@ -140,7 +140,8 @@ class escuelas extends main{
 			$this->escuelas_digest->zoom += 2;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
-			$this->header_folder = 'escuelas';
+			$this->title_header = 'Conoce tu escuela';
+			$this->header_folder = 'compara';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
 			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
