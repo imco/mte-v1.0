@@ -4,55 +4,77 @@
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 		</div>
 		<div class='info_B'>
-			<div class='column left'>
-				<h2>
-					<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?>
-				</h2>
+			<h2>
+				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?>
+			</h2>
+
+		</div>
+		<div class='map-wrap'>	
+			<div class='info_B lateral'>
 				<p class='address'>
 					<span class='icon'></span>
-					<?=$this->capitalize($this->escuela->domicilio)?>
-					<?=$this->capitalize($this->escuela->localidad->nombre)?>, 
-					<?=$this->capitalize($this->escuela->entidad->nombre)?>
+					Dirección
+					<span class='title'>
+						<?=$this->capitalize($this->escuela->domicilio)?>
+						<?=$this->capitalize($this->escuela->localidad->nombre)?>, 
+						<?=$this->capitalize($this->escuela->entidad->nombre)?>
+					</span>
 				</p>
-			</div>
-			<div class='column right'>
-				<p class='email'>
-					<span class='icon'></span>
-					<?=$this->escuela->correoelectronico?>
+				<p class='cct'>
+					CCT <?=$this->escuela->cct?>
 					<div class='clear'></div>
 				</p>
 				<p class='tel'>
+					Teléfonos
 					<span class='icon'></span>
-					<?=$this->escuela->telefono?>
+					<span class='title'>
+						<?=$this->escuela->telefono?>
+					</span>
+				<div class='clear'></div>
+				</p>
+				<p class='email'>
+					<span class='icon'></span>
+					Mail
+					<span class='title'>
+						<?=$this->escuela->correoelectronico?>
+					</span>
+					<div class='clear'></div>
+				</p>
+				<p class='director'>
+					<span class='icon'></span>
+					Director
+					<span class='title'>
+						<?=$this->escuela->correoelectronico?>
+					</span>
 					<div class='clear'></div>
 				</p>
 			</div>
+			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
+			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
+			<div id='mapa' class='map'></div>
+			<?php $this->include_template('map-infobox','global'); ?>
 			<div class='clear'></div>
 		</div>
-		<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
-		<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
-		<div id='mapa' class='map'></div>
-		<?php $this->include_template('map-infobox','global'); ?>
-		<div class='clear'></div>
-		<ul class='tabs'>
-			<li></li>
-			<li><a href='#' class='result'>
-				<span class='icon'></span>
-				Resultados educativos
-			</a></li>
-			<li><a href='#'  class='infor'>
-				<span class='icon'></span>
-				Más información
-			</a></li>
-			<li><a href='#' class='reportes'>
-				<span class='icon'></span>
-				Presupuestos Asignados
-			</a></li>
-			<li class='on'><a href='#' class='long comentarios'>
-				<span class='icon'></span>
-				Comentarios con calificación
-			</a></li>
-		</ul>
+			<ul class='tabs'>
+				<li></li>
+				<li><a href='#' class='result'>
+					<span class='icon'></span>
+					Resultados educativos
+				</a></li>
+				<li><a href='#'  class='infor'>
+					<span class='icon'></span>
+					Más información
+				</a></li>
+				<li><a href='#' class='reportes'>
+					<span class='icon'></span>
+					Presupuestos Asignados
+				</a></li>
+				<li class='on'><a href='#' class='long comentarios'>
+					<span class='icon'></span>
+					Comentarios con calificación
+				</a></li>
+			</ul>
+
 		<div class='tab-container'>
 			<div class='tab jscrollpane on'>
 				<a name='calificaciones'></a>
@@ -206,13 +228,8 @@ EOD;
 		<div class='semaforo'>
 			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
 			<h2>Semáforo Educativo</h2>
-			<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
-				<p>Reprobado</p>
-				<span class='icon'></span>
-				<div class='clear'></div>
-			</div>
-			<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
-				<p>De panzazo</p>
+			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
+				<p>Excelente</p>
 				<span class='icon'></span>
 				<div class='clear'></div>
 			</div>
@@ -221,8 +238,13 @@ EOD;
 				<span class='icon'></span>
 				<div class='clear'></div>
 			</div>
-			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
-				<p>Excelente</p>
+			<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
+				<p>De panzazo</p>
+				<span class='icon'></span>
+				<div class='clear'></div>
+			</div>
+			<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
+				<p>Reprobado</p>
 				<span class='icon'></span>
 				<div class='clear'></div>
 			</div>
@@ -231,9 +253,17 @@ EOD;
 		<div class='califica'>
 			<div class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica</p>
-				<p>tu escuela</p>
+				<p>Califica<br />
+				tu escuela</p>
+				<div class='clear'></div>
 			</div>
+			<div class='title'>
+				<p>Porcentaje de alumnos en nivel reprobados
+				<br />
+				<span>21%</span>
+				</p>
+			</div>
+		<!--
 			<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
 					<p class='rater'>
 						<span class='tit'>Arrastra la barra para asignar una calificion</span>
@@ -258,9 +288,25 @@ EOD;
 						<input type='submit' value='Calificar' />
 					</p>
 			</form>
+		-->
 		</div>
 	</div>
 	<div class='clear'></div>
 </div>
+<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form container'>
+	<fieldset>
+		<p>Comentario</p>
+		<input type='text' placeholder='Nombre*' name='nombre' class='required' />
+		<input type='text' class='required email' placeholder='Email' name='email' />
+		<input type='text' class='required' placeholder='¿Quién eres?' />
+		<textarea placeholder='Tu comentario' name='comentario' class='required'></textarea>
+		<p>Aviso de privacidad.
+			<span>
+			En ningún momento haremos público tu correo electrónico con tu reporte o comentario
+			</span>
+		</p>
+		<p><input type='submit' value='Enviar' /></p>
+	</fieldset>		
+</form>
 
 <?php $this->include_template('resultados','compara')?>
