@@ -3,9 +3,11 @@
 		<h1><?php echo isset($this->title_header)?$this->title_header:'Compara tu escuela' ?></h1>
 		<hr/>
 		<h2>
+			<?php echo isset($this->subtitle_header) ?$this->subtitle_header:'
 			Mejora tu escuela es una plataforma de participacion <br />
 			ciudadana que busca promover cambios positivos <br />
-			en la educacion de México.
+			en la educacion de México.';
+			?>
 		</h2>
 	</div>
 	<div class='clear'></div>
