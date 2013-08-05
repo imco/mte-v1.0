@@ -55,7 +55,8 @@ class compara extends main{
 		$this->include_theme('index','map');
 	}
 	public function escuelas(){
-		$this->header_folder ='escuelas';
+		//$this->header_folder ='escuelas';
+		$this->header_folder = 'compara';		
 		$this->draw_map = true;
 		$this->load_compara_cookie();
 		$params->ccts = explode('-',$this->get('id'));
