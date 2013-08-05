@@ -48,6 +48,9 @@
 					</span>
 					<div class='clear'></div>
 				</p>
+				<p class='web'>
+					<?=$this->escuela->paginaweb ?>
+				</p>
 			</div>
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
@@ -218,10 +221,9 @@ EOD;
 		<div class='rank'>
 			<div class='posicion'>
 				<?php $this->print_img_tag('home/posicion.png');?>
-				<p>Posición </p>
-				<p>Nivel Nacional</p>
+				<p>Posición estatal</p>
 				<h2>
-					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
+					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de 345
 				</h2>
 			</div>
 		</div>
@@ -251,44 +253,21 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<div class='title'>
+			<a href='/califica-tu-escuela/' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica<br />
-				tu escuela</p>
-				<div class='clear'></div>
-			</div>
+				<p>Califica tu escuela</p>
+				
+			</a>
 			<div class='title'>
-				<p>Porcentaje de alumnos en nivel reprobados
+				<p>Porcentaje de 
+				<br />
+				alumnos en 
+				<br />
+				nivel reprobados
 				<br />
 				<span>21%</span>
 				</p>
 			</div>
-		<!--
-			<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
-					<p class='rater'>
-						<span class='tit'>Arrastra la barra para asignar una calificion</span>
-						<span class='ranker' id='rank-bar'><span class='bar'></span></span>
-						<span class='label' id='rank-label'></span>
-						<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
-						<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
-					</p>
-					<p>
-						<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
-						<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
-						<select class='custom-select' name='ocupacion' >
-							<option value=''>Ocupación</option>
-							<option value='alumno'>alumno</option>
-							<option value='exalumno'>exalumno</option>
-							<option value='padredefamilia'>padre de familia</option>
-							<option value='maestro'>maestro</option>
-							<option value='director'>director</option>
-							<option value='ciudadano'>ciudadano</option>
-						</select>
-						<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
-						<input type='submit' value='Calificar' />
-					</p>
-			</form>
-		-->
 		</div>
 	</div>
 	<div class='clear'></div>
@@ -298,7 +277,15 @@ EOD;
 		<p>Comentario</p>
 		<input type='text' placeholder='Nombre*' name='nombre' class='required' />
 		<input type='text' class='required email' placeholder='Email' name='email' />
-		<input type='text' class='required' placeholder='¿Quién eres?' />
+		<select class='custom-select' name='ocupacion' >
+			<option value=''>¿Quién eres?</option>
+			<option value='alumno'>alumno</option>
+			<option value='exalumno'>exalumno</option>
+			<option value='padredefamilia'>padre de familia</option>
+			<option value='maestro'>maestro</option>
+			<option value='director'>director</option>
+			<option value='ciudadano'>ciudadano</option>
+		</select>
 		<textarea placeholder='Tu comentario' name='comentario' class='required'></textarea>
 		<p>Aviso de privacidad.
 			<span>
