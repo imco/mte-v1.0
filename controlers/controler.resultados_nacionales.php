@@ -1,9 +1,10 @@
 <?php
 class resultados_nacionales extends main{
 	public function index(){		
-		$this->header_folder ='escuelas';
 		$this->load_entidades();
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
+		$this->header_folder = 'compara';
+		$this->title_header = 'Resultados por Estado';
 		$this->include_theme('index','index');
 	}
 	public function entidad(){
@@ -15,6 +16,8 @@ class resultados_nacionales extends main{
 			$this->entidad->read('id,nombre,cct_count,promedio_general,promedio_espaniol,promedio_matematicas,distribucion_primarias,distribucion_secundarias,distribucion_bachilleratos,primaria_espaniol,primaria_matematicas,primaria_general,secundaria_espaniol,secundaria_matematicas,secundaria_general,bachillerato_espaniol,bachillerato_matematicas,bachillerato_general,escuelas_totales,escuelas_evaluadas,escuelas_publicas,escuelas_privadas,promedio_matematicas_publicas,promedio_espaniol_publicas,promedio_matematicas_privadas,promedio_espaniol_privadas');
 			$this->breadcrumb = array('/resultados-nacionales'=>'Resultados Nacionales','#' => $this->capitalize($this->entidad->nombre));
 			$this->initialize_histograms();
+			$this->header_folder = 'compara';
+			$this->title_header = 'Busca tu estado';
 			$this->include_theme('index','entidad');
 		}else{
 			$this->index();
