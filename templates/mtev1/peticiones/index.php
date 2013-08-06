@@ -1,6 +1,6 @@
 <div class='container peticion'>
 	<h1><?=$this->peticion['title'] ?><span class='shadow'></span></h1>
-	<div class='content'>
+	<div class='content jscrollpane'>
 		<h2><?=$this->peticion['title'] ?></h2>
 		<p><?=$this->peticion['overview'] ?></p>
 		<p><a href='<?=$this->peticion['url'] ?>'>Leer más</a></p>
@@ -27,10 +27,12 @@
 			<p><input type='text' name='ciudad' placeholder='Ciudad'  class='required' /></p>
 			<p><input type='text' name='cp' placeholder='Código Postal' class='required'  /></p>
 			<p>
-				<input type='submit' value='Firmar' />
+				<input type='submit' value='Firma' />
 				<input type='hidden' value='<?=$this->petition_url?>' name='petition_url' />
 			</p>
+			<!--
 			<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
+			-->
 		<?php } ?>
 	</form>	
 	
