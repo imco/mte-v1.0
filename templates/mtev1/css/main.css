@@ -550,7 +550,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .container .decorations hr:nth-child(15){top:74px;width:119px;right:123px;}
 #header .container .decorations hr:nth-child(16){top:74px;width:119px;right:123px;}
 #header .container .decorations hr:nth-child(17){top:74px;width:28px;right:340px;}
-#header .container .decorations img[src$="blco_header.png"]{top:-13px;right:106px;width:228px;height:83px;}
+#header .container .decorations .wrap-triangle{position:absolute;top:-13px;right:106px;width:228px;height:83px;top:0;}
+#header .container .decorations .wrap-triangle .triangle{position:relative;height:83px;overflow:hidden;}
+#header .container .decorations img[src$="blco_header.png"]{width:228px;height:83px;top:-13px;}
 #header .container .decorations .triangle2{top:69px;left:101px;background-size:233px;height:101px;}
 
 #header > .decorations hr:first-child{top:138px;}
@@ -610,19 +612,24 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 {background-color:rgba(255,255,255,.8);}
 #header .contacto .box h3.msj{font-size:30px;margin-top:9px;}
 /*Peticiones*/
-#content .peticion{margin:37px auto 28px;position:relative;width:903px;}
-#content .peticion h1{font-size:22px;background:#424242 url(../img/peticiones/peticion_titulo.png) no-repeat 59px 22px;color:#BFBFBF;display:block;border-radius:10px 10px 0 0;text-align:left;padding:20px 20px 23px 94px;line-height:27px;position:relative;}
+#content .peticion{margin:41px auto 28px;position:relative;width:903px;}
+#content .peticion h1{font-size:20px;background:#424242 url(../img/peticiones/peticion_titulo.png) no-repeat 59px 22px;color:#BFBFBF;display:block;border-radius:10px 10px 0 0;text-align:left;padding:20px 20px 20px 94px;line-height:22px;position:relative;}
 #content .peticion h1 .shadow{position:absolute;bottom:-28px;left:0;width:903px;height:28px;background-image:url(../img/peticiones/sombra.png);}
-#content .peticion .content{float:left;background-color:rgba(255,255,255,.4);color:#424244;font-size:14px;width:365px;padding:34px 38px 34px 48px;text-align:justify;}
+#content .peticion .content{float:left;background-color:rgba(255,255,255,.4);color:#424244;font-size:14px;width:365px;padding:34px 38px 34px 48px;text-align:justify;height:550px;overflow:hidden;}
+#content .peticion .content .jspTrack{height:444px;}
+#content .peticion .content .jspDrag{height:89px;}
+#content .peticion .jspVerticalBar{right:22px!important;width:8px;top:96px;}
+#content .peticion .jspTrack{background-color:#C1C1C1;height:404px!important;}
+#content .peticion .jspDrag{background-color:#6E6E6E;border-radius:6px;height:89px!important;}
 #content .peticion .content h2{color:#424244;font-size:20px;line-height:22px;text-align:left;margin:0 0 10px;}
 #content .peticion .content a{color:black;}
 #content .peticion .content p{margin:10px 0;line-height:19px;}
 
-#content .peticion form{background-color:#EFEFEF;color:#424242;padding:29px 53px 25px;width:345px;display:block;float:left;font-size:16px;}
-#content .peticion form h2{background:transparent url(../img/peticiones/firmar_icon.png) no-repeat 0 4px;text-align:left;padding:18px 0 12px 43px;font-size:40px;line-height:38px;}
+#content .peticion form{background-color:#EFEFEF;color:#424242;padding:29px 53px 21px;width:345px;display:block;float:left;font-size:16px;}
+#content .peticion form h2{background:transparent url(../img/peticiones/firmar_icon.png) no-repeat 0 4px;text-align:left;padding:18px 0 12px 43px;font-size:40px;line-height:28px;}
 #content .peticion form input[type='text']{background-color:#BFBFBF;color:#424242;font-size:16px;line-height:19px;padding:7px 18px 4px;width:319px;border:none;margin:9px 0 0;font-family:Varela Round;}
 #content .peticion form input[type='text'].error{background-color:#ddbfbf;}
-#content .peticion form input[type='submit']{background-color: #3EC5F4;color:#424242;text-align:center;border:none;width:356px;height:60px;font-size:21px;font-family:Varela Round;border-radius:10px;display:block;margin:10px 0 5px;}
+#content .peticion form input[type='submit']{background-color: #3EC5F4;color:#424242;text-align:center;border:none;width:356px;height:60px;font-size:21px;font-family:Varela Round;border-radius:10px;display:block;margin:24px 0 5px;}
 #content .peticion form input[type='checkbox']{margin:10px 10px 0 0;}
 #content .peticion form input[placeholder]{color:#424242!important;}
 #content .peticion form ::-webkit-input-placeholder{color:#424242!important;}
@@ -965,3 +972,35 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .califica .title:nth-child(2){height:144px;}
 #content .perfil.B .califica .title:nth-child(2) p{padding:19px;font-size:18px;line-height:19px;}
 #content .perfil.B .califica .title:nth-child(2) p span{font-size:29px;line-height:56px;}
+
+/*resultados por estado*/
+#content .resultados-nacionales .rank{position:absolute;display:block;background-color:#00A8F3;top:11px;width:49px;left:12px;height:49px;text-align:center;font-size:25px;line-height:53px;color:white;}
+
+/*¿Quienes somos?*/
+#content .container.quienes_somos{margin:41px auto;}
+#content .container.quienes_somos .wrap_text{padding:34px 26px;font-size:15px;background-color:rgba(219,220,219,.5);} 
+#content .container.quienes_somos .wrap_text p{line-height:16px;color:#636564;}
+#content .container.quienes_somos .wrap_text .info{margin-top:66px;}
+#content .container.quienes_somos .wrap_text .info span:first-child{display:block;}
+#content .container.quienes_somos .wrap_text .info span{color:#06A94A;}
+#content .container.quienes_somos .wrap_text p + p{margin-top:19px;}
+
+/*califica*/
+#content .container.califica{margin:65px auto;}
+#content .califica h2{background-color:#8B9091;color:white;padding:15px 36px 14px;font-size:18px;line-height:19px;}
+#content .califica .calificacion{margin-top:15px;height:149px;background-color:#DCDDDF;}
+#content .califica .calificacion:nth-child(2n + 1){float:right;width:429px;}
+#content .califica .calificacion:nth-child(2n + 2){float:left;width:427px;}
+#content .califica .calificacion h2{background-color:#F39B3A;}
+#content .califica .calificacion p{font-size:13px;margin-bottom:4px;}
+#content .califica .calificacion:nth-child(2n + 1) h2{padding:15px 22px 14px;}
+#content .califica .calificacion:nth-child(2n + 2) h2{padding:15px 14px 14px;}
+#content .califica .calificacion:nth-child(2n + 1) p{padding:3px 24px;}
+#content .califica .calificacion:nth-child(2n + 2) p{padding:3px 16px;}
+#content .califica .calificacion .wrap_cal{float:left;}
+#content .califica .calificacion .button-frame{float:right;width:175px;margin-right:16px;}
+#content .califica .calificacion .button-frame span{font-size:13px;line-height:28px;margin:6px 9px;overflow:hidden;background-color:#FF8900;box-shadow:inset -1px -1px 2px #DD7800,inset 1px 1px 2px #DD7800;}
+#content .califica .calificacion .wrap_cal span:first-child{margin-left:14px;}
+#content .califica .calificacion .wrap_cal span{display:inline-block;height:42px;background-color:#3A3A3A;box-shadow:1px 2px 3px #151515 inset;color:white;font-size:10px;padding:0 3px;line-height:72px;}
+#content .califica .calificacion .wrap_cal span + span{margin-left:5px;}
+#content .califica .calificacion .wrap_cal span.on{background-color:#F39B3A;box-shadow:none;color:black;}

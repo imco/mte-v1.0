@@ -4,7 +4,7 @@
 		<hr/>
 		<h2>
 			<?php echo isset($this->subtitle_header) ?$this->subtitle_header:'
-			Mejora tu escuela es una plataforma de participacion <br />
+			MejoraTuEscuela.org es una plataforma de participacion <br />
 			ciudadana que busca promover cambios positivos <br />
 			en la educacion de México.';
 			?>
@@ -13,7 +13,11 @@
 	<div class='clear'></div>
 	<?php //$this->include_template('general_search','global'); ?>
 	<div class='decorations'>
-		<?php $this->print_img_tag('home/blco_header.png');?>
+		<div class='wrap-triangle'>
+			<div class='triangle'>
+				<?php $this->print_img_tag('home/blco_header.png');?>
+			</div>
+		</div>
 		<div class='triangle2'></div>
 		<div class='circle'></div>
 		<div class='circle'></div>
