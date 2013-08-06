@@ -128,6 +128,18 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('#content .share-bt .social').toggleClass('on');
 	});
+
+	$('.wrap_cal span').mouseenter(function(){
+		var span =  $(this).parent().find('span');
+		if($(this).hasClass('on') && $(this).index()==0){
+			span.removeClass('on');
+		}else{
+			span.removeClass('on');
+			for(var i=0;i<=$(this).index();i++){
+				$(span[i]).addClass('on');
+			}
+		}
+	});
 });
 
 function load_location_options(input,directive,options,name){
