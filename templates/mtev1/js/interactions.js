@@ -173,7 +173,7 @@ function toggle_escuela(cct){
 	}
 }
 function twitterIni(){
-        var username =  "***REMOVED***",
+    var username =  "mejoratuescuela",
 	page_proxy = '/home/twitter';	
 	$("#tweets .tweet p").html("cargando tweets...");
 	$.getJSON(page_proxy, function(data){
