@@ -18,17 +18,18 @@ a{text-decoration:none;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:124px;}
 #header .menu .container{position:relative;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
-#header .menu a[href='/conoce']{background-image:url(../img/header/conoce.png);}
-#header .menu a[href='/compara']{background-image:url(../img/header/compara.png);background-position:center 21px;}
+#header .menu a[href='/compara/']{background-image:url(../img/header/conoce.png);}
+#header .menu a[href='/compara/escuelas/']{background-image:url(../img/header/compara.png);background-position:center 21px;}
 #header .menu a[href='/califica/']{background-image:url(../img/header/califica.png);}
 #header .menu a[href='/mejora']{background-image:url(../img/header/mejora.png);background-position:center 17px;}
 #header .menu a + a + a{margin-left:2px;}
-#header .menu.compara a[href='/compara'],
+#header .menu.compara a[href='/compara/'],
 #header .menu.califica a[href='/califica/'],
 #header .menu.mejora a[href='/mejora'],
-#header .menu.compara a[href='/compara'] .decor,
+#header .menu.resultados a.logo + a + a ,
+#header .menu.compara a[href='/compara/'] .decor,
 #header .menu.califica a[href='/califica/'] .decor,
-#header .menu.peticiones a[href='/peticiones'] .decor,
+#header .menu.resultados a[href='/peticiones'] .decor,
 #header .menu a:hover{background-color:#0a9e48;}
 #header .menu a.logo{width:auto;margin:28px 13px 0;padding:0;background-color:transparent;}
 #header .menu a.logo img{width:210px;}
@@ -446,7 +447,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a;font-size:14px;text-indent:-4px;font-weight:bold;}
 #content .container.home .newsletter form{margin-top:-8px;}
-#content .container.home .newsletter form + a{font-size:14px;margin-top:14px;text-indent:-4px;color:white;}
+#content .container.home .newsletter form + a{font-size:14px;margin-top:12px;text-indent:-4px;color:white;display:block;}
 #content .container.home .newsletter{text-align:center;color:white;height:189px;margin-bottom:11px;}
 #content .container.home .newsletter p{font-size:23px;text-align:center;margin-top:5px;}
 #content .container.home .newsletter img{margin:25px 0 0 -10px;}
@@ -545,7 +546,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .home.container .decorations.simple hr{display:none}
 #header .perfil.container{position:relative;}
 #header .perfil.container + .decorations.perfil{height:0}
-#header .perfil.container + .decorations.perfil hr{top:216px;}
+#header .perfil.container + .decorations.perfil hr{top:220px;}
 #header .perfil.container + .decorations.perfil hr + hr{display:none;}
 #header .perfil.container + .decorations.perfil hr + hr + hr{display:block;}
 #header .decorations.simple img{position:absolute}
@@ -678,7 +679,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
 /*Breadcrumb*/
-#header .breadcrumb{position:absolute;top:121px;left:50%;width:900px;z-index:1000;margin:0 0 0 -450px;}
+#header .breadcrumb{position:absolute;top:147px;left:50%;width:900px;z-index:1000;margin:0 0 0 -450px;}
 #header .breadcrumb ul{position:relative;width:100%;}
 #header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
 #header .breadcrumb ul li a{color:#737172;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}
@@ -738,6 +739,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .tel .icon{background-image:url(../img/perfil/telefono.png);background-size:12px;}
 #content .perfil.B .info_B .email{margin-top:6px;line-height:12px;}
 #content .perfil.B .info_B .email .icon{background-image:url(../img/perfil/correo.png);height:24px;margin-right:4px;background-size:21px;}
+#content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
 #content .perfil.B .info_B .column.right{width:35%;}
 #content .perfil.B #mapa{margin:7px 0;width:100%;height:354px;}
 #content .perfil.B .tabs{margin:0;}
@@ -856,17 +858,21 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .menu a{position:relative;}
 #header .menu .decor{position:absolute;display:block;bottom:-34px;width:100%;left:0;height:30px;line-height:32px;font-size:17px;text-align:center;text-indent:-2px;background-color:rgba(255,255,255,.5);color:#0e9e48;text-shadow:none;font-weight:bold;}
 #header .menu.califica .container a:nth-child(4) .decor,
-#header .menu.compara .container a:nth-child(3) .decor,
+#header .menu.compara .container a:nth-child(2) .decor,
+#header .menu.resultados .container a:nth-child(3) .decor,
 #header .menu.mejora .container a:nth-child(5) .decor,
 #header .menu a:hover .decor{background-color:#0a9e48;color:white;}
 #header .menu .circle{top:86px;left:60px;background-color:rgba(255,255,255,.6);border:3px solid black;width:7px;height:7px;z-index:1;}
 #header .menu.califica .container a:nth-child(4) .circle,
 #header .menu.mejora .container a:nth-child(5) .circle,
-#header .menu.compara .container a:nth-child(3) .circle,
+#header .menu.compara .container a:nth-child(2) .circle,
+#header .menu.resultados .container a:nth-child(3) .circle,
 #header .menu a:hover .circle{background-color:#0a9e48;}
 #header .menu .container a:nth-child(2) .circle{border-color:rgba(240,138,75,.5);}
+#header .menu.compara .container a:nth-child(2) .circle,
 #header .menu .container a:nth-child(2):hover .circle{border-color:rgba(240,138,75,.8);}
 #header .menu .container a:nth-child(3) .circle{border-color:rgba(190,177,179,.6);}
+#header .menu.resultados .container a:nth-child(3) .circle,
 #header .menu .container a:nth-child(3):hover .circle{border-color:rgba(190,177,179,1);}
 #header .menu .container a:nth-child(4) .circle{border-color:rgba(167,192,185,.6);}
 #header .menu.califica .container a:nth-child(4) .circle,
@@ -954,7 +960,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .head + .info_B h2{text-indent:24px;line-height:32px;}
 #content .perfil.B .tabs{margin-top:4px;}
 
-#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:24px auto;height:306px;position:relative;}
+#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;height:306px;position:relative;}
 #content .calificacion-form.B:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .calificacion-form.B fieldset{padding:14px 30px 0 37px;}
 #content .calificacion-form.B fieldset p:first-child{margin-bottom:12px;font-size:19px;}
@@ -964,7 +970,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .calificacion-form.B input[type='submit']{background-color:#FF8900;margin:14px 216px;width:386px;font-size:20px;text-indent:-19px;}
 #content .calificacion-form.B input[type='text']{width:249px;margin:0;margin-right:3px;padding:8px 12px;}
 #content .calificacion-form.B .custom-select{width:257px;margin:0;padding:7px 7px;}
-#content .calificacion-form.B .customSelect{background-size:35px;}
+#content .calificacion-form.B .customSelect:before{content:'';position:absolute;width:35px;height:32px;background:orange url(../img/quienes_somos/flechadropd.png) no-repeat center 15px;display:block;right:32px;top:42px;}
 #content .calificacion-form.B p{color:#858786;}
 #content .calificacion-form.B p span{color:#8D908F;}
 
@@ -976,8 +982,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*resultados por estado*/
 #content .resultados-nacionales.container{margin:12px auto;}
+#content .search-estado{position:relative;}
 #content .search-estado .customSelect{width:880px;height:37px;margin-bottom:20px;text-align:right;background-size:41px;background-color:#00A8F3;}
-#content .search-estado .customSelectInner{width:275px!important;font-size:23px;margin-right:34px;line-height:34px;color:white;}
+#content .search-estado .customSelect:before{content:'';position:absolute;width:66px;height:47px;background:white url(../img/quienes_somos/flecha_estados.png) no-repeat center 20px;display:block;right:6px;top:0;}
+#content .search-estado .customSelectInner{width:275px!important;font-size:23px;margin-right:80px;line-height:34px;color:white;}
 #content .resultados-nacionales .rank{position:absolute;display:block;background-color:#00A8F3;top:11px;width:49px;left:12px;height:49px;text-align:center;font-size:25px;line-height:53px;color:white;}
 
 #content .resultados-entidad.container{margin:13px auto 20px;}
@@ -999,6 +1007,12 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.quienes_somos .wrap_text .info span:first-child{display:block;}
 #content .container.quienes_somos .wrap_text .info span{color:#06A94A;}
 #content .container.quienes_somos .wrap_text p + p{margin-top:19px;}
+#content .container.quienes_somos .wrap_text img{display:block;float:left;}
+#content .container.quienes_somos .wrap_text img[src$='imco_qs.png']{margin-top:35px;}
+#content .container.quienes_somos .wrap_text img[src$='mexicanos1ero_qs.png']{margin:14px 0 0 36px;}
+#content .container.quienes_somos .wrap_text img[src$='on_qs.png']{margin:52px 0 0 30px;}
+#content .container.quienes_somos .column:first-child{position:relative;}
+#content .container.quienes_somos .column:first-child:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:37px;display:block;position:absolute;bottom:-37px;}
 
 /*califica*/
 #content .container.califica{margin:65px auto;}
@@ -1019,12 +1033,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica .calificacion .wrap_cal span:first-child{margin-left:14px;}
 #content .califica .calificacion .wrap_cal span{display:inline-block;height:42px;background-color:#3A3A3A;box-shadow:1px 2px 3px #151515 inset;color:white;font-size:10px;padding:0 3px;line-height:72px;}
 #content .califica .calificacion .wrap_cal span + span{margin-left:5px;}
-#content .califica .calificacion .wrap_cal span.on{background-color:#F39B3A;box-shadow:none;color:black;}
+#content .califica .calificacion .wrap_cal span.on{background-color:#F39B3A;box-shadow:0px -1px 6px inset;color:black;}
 #content .califica .promedio{background-image:url(../img/home/texture_orange.png);font-size:21px;text-align:center;color:white;padding:25px 0 23px;text-indent:-3px;margin-top:18px;position:relative;}
 #content .califica .promedio:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .califica .promedio span{font-size:39px;display:block;margin-top:18px;text-indent:-5px;}
 #content .califica form{margin-top:22px;}
 #content .califica .calificacion-form.B fieldset p:first-child{margin-top:18px;margin-bottom:20px;color:black;}
+#content .califica .calificacion-form.B .customSelect:before{top:68px;}
 
 /*mejora*/
 #content .container.mejora{margin:44px auto;}
@@ -1039,3 +1054,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .mejorar hr{background-color:#6176A9;background-image:none;margin-bottom:3px;}
 #content .mejora .mejorar p{color:#6F7070;font-size:12px;}
 #content .mejora .mejorar a{color:#090F09;margin:6px 0 0;display:block;font-size:10px;}
+
+/*peticiones*/
+#content .peticion h1{margin-top:36px;cursor:pointer;}
+#content .peticion h1:first-child{margin-top:0;}
+#content .peticion .wrap_peticion{display:none;}
+#content .peticion .wrap_peticion.on{display:block;}
+
