@@ -253,7 +253,7 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<a href='/califica-tu-escuela/' class='title'>
+			<a href='/califica/' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
 				<p>Califica tu escuela</p>
 				
@@ -272,7 +272,7 @@ EOD;
 	</div>
 	<div class='clear'></div>
 </div>
-<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form container'>
+<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B container'>
 	<fieldset>
 		<p>Comentario</p>
 		<input type='text' placeholder='Nombre*' name='nombre' class='required' />
