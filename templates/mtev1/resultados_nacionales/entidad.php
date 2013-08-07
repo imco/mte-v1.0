@@ -1,5 +1,17 @@
 <div class='container resultados-entidad'>
-	<h1 class='full-blue'><?=$this->capitalize($this->entidad->nombre)?><a href='/resultados-nacionales'>Ver todos los estados</a></h1>
+	<form action='' class='search-estado'>
+		<select class='custom-select' name='estado' >
+			<option value=''>Busca tu estado</option>
+			<option value=''>estado1</option>
+			<option value=''>estado2</option>
+			<option value=''>estado3</option>
+
+		</select>
+	
+	</form>
+	<h1 class='full-blue'><?=$this->capitalize($this->entidad->nombre)?>
+		<span><?=$this->entidad->id?>º de 32</span>	
+	</h1>
 	
 	<div class='content'>
 		<h2 class='promedio-gen'>Promedio General <span><?=$this->entidad->promedio_general?></span></h2>
