@@ -2,9 +2,10 @@
 	<form action='' class='search-estado'>
 		<select class='custom-select' name='estado' >
 			<option value=''>Busca tu estado</option>
-			<option value=''>estado1</option>
-			<option value=''>estado2</option>
-			<option value=''>estado3</option>
+			<?php foreach($this->entidades as $entidad){ 
+				echo "<option value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
+			}
+			?>
 
 		</select>
 	
