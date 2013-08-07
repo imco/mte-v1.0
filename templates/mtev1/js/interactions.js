@@ -148,6 +148,18 @@ $(document).ready(function(){
 			promedio.toString().length>3?promedio.toFixed(1):promedio
 		);
 	});
+
+	$('.menu a.logo + a + a').click(function(e){
+		e.preventDefault();
+		var cookie = $.cookie('escuelas'),
+		    url = '/compara/escuelas/'+ (cookie != undefined ? cookie:'');
+		location.href = url;
+	});
+
+	$('.peticion h1').click(function(){
+		$('.wrap_peticion').removeClass('on');
+		$(this).next().addClass('on');
+	});
 });
 
 function load_location_options(input,directive,options,name){
