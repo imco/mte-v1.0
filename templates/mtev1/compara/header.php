@@ -11,7 +11,6 @@
 		</h2>
 	</div>
 	<div class='clear'></div>
-	<?php //$this->include_template('general_search','global'); ?>
 	<div class='decorations'>
 		<div class='wrap-triangle'>
 			<div class='triangle'>
@@ -29,9 +28,49 @@
 		<hr />
 		<?php $this->print_img_tag('home/palomita.png');?>
 		<?php $this->print_img_tag('home/birrete_small.png');?>
-		<?php $this->print_img_tag('home/footer_vineta.png');?>
 	</div>
 </div>
+<?php if(isset($this->principal) && $this->principal){?>
+<div class='add-escuela-wrap'>
+	<div class='add-escuela'>
+			<div class='decorations'>
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='triangle1'></div>
+				<div class='triangle2'></div>
+				<?php $this->print_img_tag('home/birrete_small.png');?>
+				<?php $this->print_img_tag('home/palomita.png');?>
+				<?php $this->print_img_tag('home/comparador.png');?>
+			</div>
+		<a class='button-frame' href='/compara/'>
+			<span class='button'>Agrega otra escuela</span>
+		</a>
+		<?php $this->include_template('general_search','global'); ?>
+		
+	</div>
+	<div class='decorations out'>
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+	</div>
+</div>
+
+<?php }?>
 <div class='decorations compara'>
 	<hr /><hr /><hr />
 </div>

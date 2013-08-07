@@ -140,6 +140,14 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+	$('.calificacion .button-frame').click(function(e){
+		e.preventDefault();
+		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
+		$('.promedio span').html(
+			promedio.toString().length>3?promedio.toFixed(1):promedio
+		);
+	});
 });
 
 function load_location_options(input,directive,options,name){
