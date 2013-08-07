@@ -156,6 +156,13 @@ $(document).ready(function(){
 		location.href = url;
 	});
 
+	$('.search-estado select.custom-select').change(function(){
+		var id;
+		if((id = $(this).val())!=''){
+			location.href = '/resultados-nacionales/entidad/'+id;		
+		}
+	});
+
 	$('.peticion h1').click(function(){
 		$('.wrap_peticion').removeClass('on');
 		$(this).next().addClass('on');
