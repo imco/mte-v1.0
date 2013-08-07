@@ -14,7 +14,17 @@
 	</h1>
 	
 	<div class='content'>
-		<h2 class='promedio-gen'>Promedio General <span><?=$this->entidad->promedio_general?></span></h2>
+		<h2 class='promedio-gen'>
+			<span class='left'>
+				Promedio de <?=$this->capitalize($this->entidad->nombre)?>
+				<span><?=$this->entidad->promedio_general?></span>
+			</span>
+			<span class='right'>
+				Promedio Nacional
+				<span><?=$this->entidad->promedio_general?></span>
+			</span>
+			<span class='decor'></span>
+		</h2>
 		<div class='column'>
 			<p class='promedio-green'>
 				Escuelas totales
@@ -25,36 +35,63 @@
 				<span class='value'><?=$this->entidad->escuelas_evaluadas?></span>
 			</p>
 			<div class='clear'></div>
+
 			<p class='promedio-orange'>
-				Numero Escuelas Publicas
-				<span class='value'><?=$this->entidad->escuelas_publicas?></span>
+				Número de escuelas primarias
+				<span class='value'><?=$this->entidad->primaria_general?></span>
 			</p>
 			<div class='table'>
-				<p>Promedio Español <span class='value'><?=$this->entidad->promedio_espaniol_publicas?></span></p>
-				<p>Promedio Matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_publicas?></span></p>
+				<p>Promedio de español <span class='value'><?=$this->entidad->primaria_espaniol?></span></p>
+				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->primaria_matematicas?></span></p>
 			</div>
+
+			<p class='promedio-orange'>
+				Número de escuelas secundarias
+				<span class='value'><?=$this->entidad->secundaria_general?></span>
+			</p>
+			<div class='table'>
+				<p>Promedio de español <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
+				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
+			</div>
+
+			<p class='promedio-orange'>
+				Número de escuelas bachillerato
+				<span class='value'><?=$this->entidad->bachillerato_general?></span>
+			</p>
+			<div class='table'>
+				<p>Promedio de español <span class='value'><?=$this->entidad->bachillerato_espaniol?></span></p>
+				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->bachillerato_matematicas?></span></p>
+			</div>
+
 		</div>
 		<div class='column'>
 			<p class='promedio-green blue'>
-				Promedio Español
+				Promedio de español
 				<span class='value'><?=$this->entidad->promedio_espaniol?></span>
 			</p>
 			<p class='promedio-green blue'>
-				Promedio Matemática
+				Promedio de matemática
 				<span class='value'><?=$this->entidad->promedio_matematicas?></span>
 			</p>
 			<div class='clear'></div>
-			<p class='promedio-orange'>
-				Numero Escuelas Privadas
-				<span class='value'><?=$this->entidad->escuelas_privadas?></span>
-			</p>
 			<div class='table'>
-				<p>Promedio Español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
-				<p>Promedio Matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+			</div>
+
+			<div class='table'>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+			</div>
+
+			<div class='table'>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
 			</div>
 		</div>
 		<div class='clear'></div>
-		<di class='graphs'>
+		<!--
+		<div class='graphs'>
 			<div class='graph-set on'>
 				<a class='graph-button' href='#'>Distribución de Resultados en Primarias</a>
 				<input type='hidden' id='primaria-init' name='initialized' class='initialized' value='1' />
@@ -77,5 +114,6 @@
 				<div class='graph' id='graph-bachilleratos'></div>
 			</div>
 		</div>
+		-->
 	</div>
 </div>
