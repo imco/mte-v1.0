@@ -15,6 +15,9 @@
 				IMCO con Alexandra Zapata: 
 				<span>(55)5985-1017 al 19.</span>
 			</p>
+			<?php $this->print_img_tag('home/imco_footer.png'); ?>
+
+			<?php $this->print_img_tag('home/mexprimero_footer.png'); ?>
 		</div>
 	</div>
 	<div class='column right'>

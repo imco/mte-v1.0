@@ -1,11 +1,23 @@
 <div class='container resultados-nacionales'>
-	<h1 class='full-blue'>Resultados Nacionales Por Estado</h1>
-	<?php
-	foreach($this->entidades as $entidad){
-		echo "<a href='/resultados-nacionales/entidad/{$entidad->id}' class='state-box'>";
-		$this->print_img_tag('entidades/'.$entidad->id.'.jpg');
-		echo "<span class='h2'>".$this->capitalize($entidad->nombre)."</span><span class='hover'>Ver Resultados</span><span class='rank'>{$entidad->id}º</a>";
-	}
-	?>
+	<form action='' class='search-estado'>
+		<select class='custom-select' name='estado' >
+			<option value=''>Busca tu estado</option>
+			<option value=''>estado1</option>
+			<option value=''>estado2</option>
+			<option value=''>estado3</option>
+
+		</select>
+	
+	</form>
+	<div class="wrap_resultados">
+		<h1 class='full-blue'>Resultados Nacionales Por Estado</h1>
+		<?php
+		foreach($this->entidades as $entidad){
+			echo "<a href='/resultados-nacionales/entidad/{$entidad->id}' class='state-box'>";
+			$this->print_img_tag('entidades/'.$entidad->id.'.jpg');
+			echo "<span class='h2'>".$this->capitalize($entidad->nombre)."</span><span class='hover'>Ver Resultados</span><span class='rank'>{$entidad->id}º</a>";
+		}
+		?>
+	</div>
 	<div class='clear'></div>
 </div>
