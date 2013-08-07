@@ -639,14 +639,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-entidad .column:nth-child(3){margin:0;width:424px;}
 #content .resultados-entidad h1.full-blue{font-size:40px;padding:0 15px 0 26px;width:859px;}
 #content .resultados-entidad h1 a{text-align:right;font-size:18px;display:block;float:right;color:white;}
-#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:17px auto 7px;width:860px;padding:10px 20px 20px;}
+#content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:14px auto 7px;width:860px;padding:10px 20px 20px;}
 #content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:1px auto 6px;line-height:44px;text-align:center;font-size:23px;}
-#content .resultados-entidad .promedio-gen span{color:white;font-size:30px;}
+#content .resultados-entidad .promedio-gen span span{color:white;font-size:30px;}
 #content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:31px;line-height:34px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
 #content .resultados-entidad .promedio-green.blue{background-color:#329DD1;width:201px;padding: 0 0 0 7px;}
 #content .resultados-entidad .promedio-green:nth-child(2){margin-right:0;}
 #content .resultados-entidad .promedio-green .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:63px;height:29px;}
-#content .resultados-entidad .promedio-orange{background-color:#F6931B;height:40px;line-height:42px;color:white;padding:0 0 0 10px;font-size:14px;margin: 15px 0 0;}
+#content .resultados-entidad .promedio-orange{background-color:#F6931B;height:40px;line-height:42px;color:white;padding:0 0 0 10px;font-size:14px;margin: 7px 0 0;}
 #content .resultados-entidad .promedio-orange .value{float:right;display:block;border-top:1px solid #B5C6BC;border-bottom:1px solid #B5C6BC;background-color:#CACACA;color:#969696;text-align:center;width:70px;height:38px;font-size:13px;}
 #content .resultados-entidad .table{padding:4px 10px 17px;background-color:#BBBBBB;color:#585858;}
 #content .resultados-entidad .table p{line-height:22px;border-bottom:1px solid #8F8F8F;}
@@ -980,10 +980,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .search-estado .customSelectInner{width:275px!important;font-size:23px;margin-right:34px;line-height:34px;color:white;}
 #content .resultados-nacionales .rank{position:absolute;display:block;background-color:#00A8F3;top:11px;width:49px;left:12px;height:49px;text-align:center;font-size:25px;line-height:53px;color:white;}
 
-
 #content .resultados-entidad.container{margin:13px auto 20px;}
 #content .resultados-entidad .full-blue span{float:right;}
 #content .resultados-entidad .search-estado .customSelect{margin-bottom:15px;}
+#content .resultados-entidad .column + .column .promedio-green.blue .value{width:43px;}
+#content .resultados-entidad .column + .column .promedio-green.blue + .promedio-green.blue .value{width:39px;}
+#content .resultados-entidad .column + .column .table{margin-top:47px;}
+#content .resultados-entidad .promedio-gen .left{float:left;width:428px;text-align:right;}
+#content .resultados-entidad .promedio-gen .right{float:right;width:412px;text-align:left;}
+#content .resultados-entidad .promedio-gen{position:relative;overflow:hidden;}
+#content .resultados-entidad .promedio-gen .decor{position:absolute;width:2px;height:26px;background-color:white;top:10px;left:429px;}
 
 /*¿Quienes somos?*/
 #content .container.quienes_somos{margin:41px auto;}
@@ -997,7 +1003,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*califica*/
 #content .container.califica{margin:65px auto;}
 #content .califica h2{background-color:#8B9091;color:white;padding:15px 36px 14px;font-size:18px;line-height:19px;}
-#content .califica .calificacion{margin-top:15px;height:149px;background-color:#DCDDDF;position:relative;}
+#content .califica .calificacion{margin-top:15px;height:149px;background-color:#DCDDDF;position:relative;margin-bottom:2px;}
 #content .califica .calificacion:before{content:'';background:transparent url(../img/peticiones/sombra_columna.png) no-repeat center center;width:100%;height:8px;display:block;position:absolute;bottom:-7px;}
 #content .califica .calificacion:nth-child(2n + 1){float:right;width:429px;}
 #content .califica .calificacion:nth-child(2n + 2){float:left;width:427px;}
@@ -1014,7 +1020,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica .calificacion .wrap_cal span{display:inline-block;height:42px;background-color:#3A3A3A;box-shadow:1px 2px 3px #151515 inset;color:white;font-size:10px;padding:0 3px;line-height:72px;}
 #content .califica .calificacion .wrap_cal span + span{margin-left:5px;}
 #content .califica .calificacion .wrap_cal span.on{background-color:#F39B3A;box-shadow:none;color:black;}
-#content .califica .promedio{background-image:url(../img/home/texture_orange.png);font-size:21px;text-align:center;color:white;padding:25px 0 23px;text-indent:-3px;margin-top:22px;position:relative;}
+#content .califica .promedio{background-image:url(../img/home/texture_orange.png);font-size:21px;text-align:center;color:white;padding:25px 0 23px;text-indent:-3px;margin-top:18px;position:relative;}
 #content .califica .promedio:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .califica .promedio span{font-size:39px;display:block;margin-top:18px;text-indent:-5px;}
 #content .califica form{margin-top:22px;}
