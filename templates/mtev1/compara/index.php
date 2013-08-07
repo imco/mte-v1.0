@@ -58,11 +58,52 @@
 				  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
 		</div>
+		<!--
 		<a href="#" class="button-frame">
 			<span class="bt-share">
 				<?php $this->print_img_tag('compartir/compartir.png');?>
 				Compartir
 			</span>
 		</a>
+		-->
 	</div>
 </div>
+	<div class='add-escuela-wrap'>
+		<div class='add-escuela'>
+				<div class='decorations'>
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<hr />
+					<div class='circle'></div>
+					<div class='circle'></div>
+					<div class='circle'></div>
+					<div class='circle'></div>
+					<div class='triangle1'></div>
+					<div class='triangle2'></div>
+					<?php $this->print_img_tag('home/birrete_small.png');?>
+					<?php $this->print_img_tag('home/palomita.png');?>
+					<?php $this->print_img_tag('home/comparador.png');?>
+					
+				</div>
+			<a class='button-frame' href='/compara/'>
+				<span class='button'>Agrega otra escuela</span>
+			</a>
+			<?php $this->include_template('general_search','global'); ?>
+			
+		</div>
+		<div class='decorations out'>
+			<hr />
+			<hr />
+			<hr />
+			<hr />
+		</div>
+	</div>
