@@ -187,6 +187,25 @@ class main extends controler{
 			echo json_encode($response);
 		}
 	}
+	public function get_escuelas_new($params = false,$page = false,$sort = false){
+		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';
+
+		//$sort = $sort ? $sort : 'rank_entidad asc';
+		$q = isset($params->term) && $params->term ? "nombre:".str_replace(' ','~',$params->term).'~' : '*:*';
+		if($params){
+			foreach($params as $key => $param){
+				$fq .= $key != 'term' && $param ? " AND $key:$param" : '';
+			}
+		}
+		$start = $page ? ($page-1) * 10 : '0';
+		$q = urlencode($q);
+		$fq = urlencode($fq);
+		$sort = urlencode($sort);
+		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
+		$response = json_decode(file_get_contents($url));
+		$this->escuelas = $response->response->docs;
+		$this->num_results = $response->response->numFound;
+	}
 
 	public function load_niveles(){
 		$q = new nivel();
@@ -218,26 +237,21 @@ class main extends controler{
         return $distance;
     }
     protected function get_location(){
-    	/*$ip = $_SERVER['REMOTE_ADDR'];
-    	//$ip = '187.153.71.141';
-		$file = file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=cdccbbece6854ef58d1341e85a009e4e99cdffddc7e7e8002ff38aed37344e5f&ip=$ip");
-		$result = explode(';',$file);
-		$entidad = $result[5];
-		if($entidad != '-'){
-			$q = new entidad();
-			$q->search_clause = "entidades.nombre LIKE '$entidad%'";
-			$entidad = $q->read('id,nombre');
-			if($entidad && count($entidad) == 1) 
-				$this->user_location = $entidad[0]->id;
-			else
-				$this->user_location = false;
+    	$ip = 
+    		isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
+    		isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
+    		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';    	
+		$url = "http://freegeoip.net/json/$ip";
+		$location_request = file_get_contents($url);
+		$location = json_decode($location_request);
+		//var_dump($location);
+    	if($location->region_code != '' && $location->country_code == 'MX'){
+			$this->user_location = new entidad($location->region_code);
+			$this->user_location->read('id,nombre');
 		}else{
-			$this->user_location = false;
-		}*/
-		$entidad = new entidad(rand(1,32));
-		$entidad->read('nombre,id');
-		$this->user_location = $entidad;
-
+			$this->user_location = new entidad(rand(1,32));
+			$this->user_location->read('nombre,id');		
+		}
     }
     protected function load_compara_cookie(){
     	$this->compara_cookie = false;
