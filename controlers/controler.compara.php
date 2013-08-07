@@ -26,9 +26,10 @@ class compara extends main{
 		$p = $this->get('p') ? $this->get('p') : 1;
 		$this->get_escuelas_new($params,$p);
 		//$this->process_escuelas();
-
-		$this->header_folder = 'compara';		
 		
+		$this->principal = true;
+		$this->title_header = 'Conoce tu escuela';
+		$this->header_folder = 'compara';		
 		$this->include_theme('index','resultados');
 	}
 	public function mapa(){
