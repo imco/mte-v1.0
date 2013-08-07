@@ -44,7 +44,7 @@
 					<span class='icon'></span>
 					Director
 					<span class='title'>
-						<?=$this->escuela->correoelectronico?>
+						<!--<?=$this->escuela->correoelectronico?>-->
 					</span>
 					<div class='clear'></div>
 				</p>
