@@ -147,6 +147,7 @@ $(document).ready(function(){
 		$('.promedio span').html(
 			promedio.toString().length>3?promedio.toFixed(1):promedio
 		);
+		$('#rank-value').val(promedio);
 	});
 
 	$('.menu a.logo + a + a').click(function(e){
