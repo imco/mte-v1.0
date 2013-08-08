@@ -167,6 +167,8 @@
 				En ningún momento haremos público tu correo electrónico con tu reporte o comentario
 				</span>
 			</p>
+			<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
+			<input type='hidden' id='cct' name='cct' value='<?=$this->get('cct')?>' class='required' />
 			<p><input type='submit' value='Enviar' /></p>
 		</fieldset>		
 	</form>
