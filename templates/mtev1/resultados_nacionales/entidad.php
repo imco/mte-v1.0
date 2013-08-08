@@ -76,18 +76,18 @@
 			</p>
 			<div class='clear'></div>
 			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_primaria?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_primaria?></span></p>
 			</div>
 
 			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_secundaria?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_secundaria?></span></p>
 			</div>
 
 			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_espaniol_privadas?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_matematicas_privadas?></span></p>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_bachillerato?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_bachillerato?></span></p>
 			</div>
 		</div>
 		<div class='clear'></div>
