@@ -128,6 +128,46 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('#content .share-bt .social').toggleClass('on');
 	});
+
+	$('.wrap_cal span').mouseenter(function(){
+		var span =  $(this).parent().find('span');
+		if($(this).hasClass('on') && $(this).index()==0){
+			span.removeClass('on');
+		}else{
+			span.removeClass('on');
+			for(var i=0;i<=$(this).index();i++){
+				$(span[i]).addClass('on');
+			}
+		}
+	});
+
+	$('.calificacion .button-frame').click(function(e){
+		e.preventDefault();
+		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
+		$('.promedio span').html(
+			promedio.toString().length>3?promedio.toFixed(1):promedio
+		);
+		$('#rank-value').val(promedio);
+	});
+
+	$('.menu a.logo + a + a').click(function(e){
+		e.preventDefault();
+		var cookie = $.cookie('escuelas'),
+		    url = '/compara/escuelas/'+ (cookie != undefined ? cookie:'');
+		location.href = url;
+	});
+
+	$('.search-estado select.custom-select').change(function(){
+		var id;
+		if((id = $(this).val())!=''){
+			location.href = '/resultados-nacionales/entidad/'+id;		
+		}
+	});
+
+	$('.peticion h1').click(function(){
+		$('.wrap_peticion').removeClass('on');
+		$(this).next().addClass('on');
+	});
 });
 
 function load_location_options(input,directive,options,name){
