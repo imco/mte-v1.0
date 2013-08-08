@@ -51,9 +51,25 @@ class stats extends main{
 			$result2 = mysql_query($sql);
 			$result2 = mysql_fetch_row($result2);
 
-			$entidad->update('escuelas_publicas,escuelas_privadas',array($result[0],$result2[0]));
 
+			$sql = "SELECT count(cct) FROM escuelas WHERE nivel = 12 AND entidad = $i";
+			$result3 = mysql_query($sql);
+			$result3 = mysql_fetch_row($result3);
 
+			$sql = "SELECT count(cct) FROM escuelas WHERE nivel = 13 AND entidad = $i";
+			$result4 = mysql_query($sql);
+			$result4 = mysql_fetch_row($result4);
+
+			$sql = "SELECT count(cct) FROM escuelas WHERE nivel = 22 AND entidad = $i";
+			$result5 = mysql_query($sql);
+			$result5 = mysql_fetch_row($result5);
+
+			$entidad->update(
+				'escuelas_publicas,escuelas_privadas,numero_escuelas_primaria,numero_escuelas_secundaria,numero_escuelas_bachillerato',
+				array(
+					$result[0],$result2[0],$result3[0],$result4[0],$result5[0]
+					)
+				);
 		}
 	}
 }
