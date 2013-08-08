@@ -1,20 +1,22 @@
 <?php
 class resultados_nacionales extends main{
 	public function index(){		
-		$this->header_folder ='escuelas';
 		$this->load_entidades();
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
+		$this->header_folder = 'compara';
+		$this->title_header = 'Resultados por Estado';
 		$this->include_theme('index','index');
 	}
 	public function entidad(){
-		$this->draw_charts = true;
+		$this->draw_charts = false;
 		if($this->get('id')){
-			$this->header_folder ='escuelas';
 			$this->load_entidades();
 			$this->entidad = new entidad($this->get('id'));
-			$this->entidad->read('id,nombre,cct_count,promedio_general,promedio_espaniol,promedio_matematicas,distribucion_primarias,distribucion_secundarias,distribucion_bachilleratos,primaria_espaniol,primaria_matematicas,primaria_general,secundaria_espaniol,secundaria_matematicas,secundaria_general,bachillerato_espaniol,bachillerato_matematicas,bachillerato_general,escuelas_totales,escuelas_evaluadas,escuelas_publicas,escuelas_privadas,promedio_matematicas_publicas,promedio_espaniol_publicas,promedio_matematicas_privadas,promedio_espaniol_privadas');
+			$this->entidad->read('id,nombre,cct_count,promedio_general,promedio_espaniol,promedio_matematicas,distribucion_primarias,distribucion_secundarias,distribucion_bachilleratos,primaria_espaniol,primaria_matematicas,primaria_general,secundaria_espaniol,secundaria_matematicas,secundaria_general,bachillerato_espaniol,bachillerato_matematicas,bachillerato_general,escuelas_totales,escuelas_evaluadas,escuelas_publicas,escuelas_privadas,promedio_matematicas_publicas,promedio_espaniol_publicas,promedio_matematicas_privadas,promedio_espaniol_privadas,numero_escuelas_primaria,numero_escuelas_secundaria,numero_escuelas_bachillerato,promedio_nacional_matematicas_primaria,promedio_nacional_espaniol_primaria,promedio_nacional_matematicas_secundaria,promedio_nacional_espaniol_secundaria,promedio_nacional_matematicas_bachillerato,promedio_nacional_espaniol_bachillerato,promedio_nacional_general');
 			$this->breadcrumb = array('/resultados-nacionales'=>'Resultados Nacionales','#' => $this->capitalize($this->entidad->nombre));
-			$this->initialize_histograms();
+			//$this->initialize_histograms();
+			$this->header_folder = 'compara';
+			$this->title_header = 'Busca tu estado';
 			$this->include_theme('index','entidad');
 		}else{
 			$this->index();
