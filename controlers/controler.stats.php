@@ -38,6 +38,24 @@ class stats extends main{
 			}
 		}
 	}
+
+	public function nacional_promedios(){
+		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
+		$calificaciones = array('matematicas','espaniol');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			foreach($niveles as $nivel => $name){
+				foreach($calificaciones as $calificacion){
+					$sql = "SELECT AVG(promedio_$calificacion) FROM escuelas WHERE (nivel = $nivel);";
+					$result = mysql_query($sql);
+					$result = mysql_fetch_row($result);
+					$entidad->update("promedio_nacional_".$calificacion."_".$name,$result);
+				}
+			}	
+		}
+	}
+
 	public function entidad_totales(){
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
 		for($i=1;$i<=32;$i++){
