@@ -22,7 +22,7 @@
 			</span>
 			<span class='right'>
 				Promedio Nacional
-				<span><?=$this->entidad->promedio_general?></span>
+				<span><?=$this->entidad->promedio_nacional_general?></span>
 			</span>
 			<span class='decor'></span>
 		</h2>
