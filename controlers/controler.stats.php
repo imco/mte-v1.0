@@ -52,7 +52,11 @@ class stats extends main{
 					$result = mysql_fetch_row($result);
 					$entidad->update("promedio_nacional_".$calificacion."_".$name,$result);
 				}
-			}	
+			}
+			$sql = "SELECT AVG(promedio_general) FROM escuelas;";
+			$result = mysql_query($sql);
+			$result = mysql_fetch_row($result);
+			$entidad->update('promedio_nacional_general',$result);
 		}
 	}
 
