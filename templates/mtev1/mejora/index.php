@@ -1,5 +1,5 @@
 <div class='container mejora'>
-	<?php $column = ['left','center','right'];
+	<?php $column = array('left','center','right');
 	for($i = 0;$i<3;$i++){ ?>
 	<div class='column <?=$column[$i]?>'>
 	
