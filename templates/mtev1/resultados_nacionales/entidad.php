@@ -39,7 +39,7 @@
 
 			<p class='promedio-orange'>
 				Número de escuelas primarias
-				<span class='value'><?=$this->entidad->primaria_general?></span>
+				<span class='value'><?=$this->entidad->numero_escuelas_primaria?></span>
 			</p>
 			<div class='table'>
 				<p>Promedio de español <span class='value'><?=$this->entidad->primaria_espaniol?></span></p>
@@ -48,7 +48,7 @@
 
 			<p class='promedio-orange'>
 				Número de escuelas secundarias
-				<span class='value'><?=$this->entidad->secundaria_general?></span>
+				<span class='value'><?=$this->entidad->numero_escuelas_secundaria?></span>
 			</p>
 			<div class='table'>
 				<p>Promedio de español <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
@@ -57,7 +57,7 @@
 
 			<p class='promedio-orange'>
 				Número de escuelas bachillerato
-				<span class='value'><?=$this->entidad->bachillerato_general?></span>
+				<span class='value'><?=$this->entidad->numero_escuelas_bachillerato?></span>
 			</p>
 			<div class='table'>
 				<p>Promedio de español <span class='value'><?=$this->entidad->bachillerato_espaniol?></span></p>
