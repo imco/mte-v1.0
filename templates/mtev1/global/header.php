@@ -1,15 +1,15 @@
 
-<div class='menu <?= $this->location?>'><div class='container'>
+<div class='menu <?= isset($this->resultados_title) && $this->resultados_title=='Resultados'?' resultados':$this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
-	<a href='/conoce'>CONOCE
+	<a href='/compara/'>CONOCE
 		<span class='circle'></span>
 		<span class='decor'>1</span>
 	</a>
-	<a href='/compara'>COMPARA
+	<a href='/compara/escuelas/'>COMPARA
 		<span class='circle'></span>
 		<span class='decor'>2</span>
 	</a>
-	<a href='/califica-tu-escuela'>CALIFICA
+	<a href='/califica/'>CALIFICA
 		<span class='circle'></span>
 		<span class='decor'>3</span>
 	</a>
@@ -39,7 +39,7 @@
 
 <div class="breadcrumb">
 	<ul>
-<?php if($this->breadcrumb && false){ ?>
+<?php if($this->breadcrumb){ ?>
 		<li>
 			<a href="/">
 				<?php $this->print_img_tag('breadcrumb/home.png'); ?>
