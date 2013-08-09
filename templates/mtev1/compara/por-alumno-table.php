@@ -2,21 +2,21 @@
 	<tr>
 		<th class='school' rowspan='2'>Escuelas comparadas</th>
 		<th colspan='4' >Español</th>
-		<th colspan='4' >Matematicas</th>
+		<th colspan='4' >Matemáticas</th>
 		<th rowspan='2' class='calificacion'>Alumnos que tomaron la prueba</th>
 		<th rowspan='2' class='calificacion'>Muestras poco confiables</th>
 	</tr>
 	<tr>
 		
 
-		<th class='calificacion'>Insuficiente</th>
-		<th class='calificacion'>Elemental</th>
-		<th class='calificacion'>Bueno</th>
+		<th class='calificacion'>Reprobado</th>
+		<th class='calificacion'>De panzazo</th>
+		<th class='calificacion'>Bien</th>
 		<th class='calificacion'>Excelente</th>
 
-		<th class='calificacion'>Insuficiente</th>
-		<th class='calificacion'>Elemental</th>
-		<th class='calificacion'>Bueno</th>
+		<th class='calificacion'>Reprobado</th>
+		<th class='calificacion'>De panzazo</th>
+		<th class='calificacion'>Bien</th>
 		<th class='calificacion'>Excelente</th>
 		
 
