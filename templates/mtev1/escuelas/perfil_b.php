@@ -262,7 +262,7 @@ EOD;
 		<div class='califica'>
 			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica tu escuela</p>
+				<p>Califica esta escuela</p>
 				
 			</a>
 			<div class='title'>
@@ -303,4 +303,4 @@ EOD;
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
-<?php $this->include_template('resultados-escuela','compara')?>
+<?php $this->include_template('resultados','compara')?>
