@@ -36,7 +36,7 @@
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
-					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)."</span>".
+					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</span>".
 				"</a></td>
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
@@ -55,39 +55,21 @@
 	?>
 	</table>
 	<div class="clear"></div>
-	<div class='pagination'>
-	<?php
-	if($this->num_results > 10){
-		$pages = ceil($this->num_results/10);
-		$current = $this->get('p') ? $this->get('p') : 1;
-		$start = $current - 3;
-		$start = $start > 0 ? $start : 1;
-		$end = $start + 4;
-		$end = $end <= $pages ? $end : $pages;
+	<div class='pagination'><?php
+	if(isset($this->pagination)){
+		$labels->prev_page = "<< primeras";
+		$labels->prev = "<<";
+		$labels->next_page = "últimas >>";
+		$labels->next = ">>";
+		$labels->hash = '#resultados';
 		$get = $_GET;
 		if(isset($get['action'])) unset($get['action']);
 		if(isset($get['p'])) unset($get['p']);
 		unset($get['controler']);
 		$query = http_build_query($get);
 		$query .= $query != '' ? '&' : '';
-
-		$next = $end + 1;
-		$next = $end < $pages ? '<a class="next_page" href="/compara/?'.$query.'p='.$next.'#resultados">&gt;&gt;</a>' : '';
-		$last = $end + 1 < $pages ? '<a class=" last_page" href="/compara/?'.$query.'p='.$pages.'#resultados">últimas &gt;&gt;</a>' : '';
-		$prev = $start - 1;
-		$prev = $prev > 0 ? "<a class='prev_page' href='/compara/?{$query}p=$prev#resultados'>&lt;&lt;</a>" : '';
-		$first = $start > 2 ? "<a class='first_page' href='/compara/?{$query}p=1#resultados'>&lt;&lt; primeras</a>" : '';
-
-		echo $first.$prev;
-		for($i=$start;$i<=$end;$i++){
-			$on = $i == $current ? 'class="on"' : '';
-			echo "<a href='/compara/?{$query}p=$i#resultados' $on>$i</a>";
-		}
-		echo $next.$last;
+		$this->pagination->echo_paginate('/compara/?'.$query,'p',5,false,$labels); 
 	}
-	?>
-<?php
-	
 	?></div>
 	<?php $sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : ''; ?>
 	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
