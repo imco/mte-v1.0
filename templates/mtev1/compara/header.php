@@ -4,9 +4,9 @@
 		<hr/>
 		<h2>
 			<?php echo isset($this->subtitle_header) ?$this->subtitle_header:'
-			MejoraTuEscuela.org es una plataforma de participación <br />
-			ciudadana que busca promover cambios positivos <br />
-			en la educacion de México.';
+			El primer paso para poder mejorar tu centro escolar es saber <br />
+			cómo está. Te invitamos a que conozcas y compartas esta<br />
+			información.';
 			?>
 		</h2>
 	</div>
