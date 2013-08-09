@@ -65,7 +65,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			<?php $this->print_img_tag('news.png');?>
 			<form action="">
 				<input name='' type='text' placeholder='Tu correo'/>
-				<input type='submit' value='Suscribirme' />
+				<input type='submit' value='Suscríbete' />
 			</form>
 			<a href='/aviso-de-privacidad'>Aviso de privacidad</a>
 		</div>
