@@ -141,7 +141,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.calificacion .button-frame').click(function(e){
+	$('.califica .button-frame').click(function(e){
 		e.preventDefault();
 		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
 		$('.promedio span').html(
@@ -168,6 +168,13 @@ $(document).ready(function(){
 		$('.wrap_peticion').removeClass('on');
 		$(this).next().addClass('on');
 	});
+
+	if($('#content .container').hasClass('perfil')){
+		$('.menu a.logo + a + a + a').click(function(e){
+			e.preventDefault();
+			location.href = $('.califica a:first-child').attr('href');
+		});
+	}
 });
 
 function load_location_options(input,directive,options,name){
@@ -221,7 +228,7 @@ function twitterIni(){
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
 			var x = data[d];
-			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'"><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user">@'+username+'</a> '+x.text+'</p></li>');
+			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+x.text+'</p></li>');
 	    	}
 	    })
 }
