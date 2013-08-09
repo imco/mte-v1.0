@@ -29,6 +29,7 @@
 		</div>
 		<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' />
 			<input type='submit' value='' />
+			<div class='clear'></div>
 		</form>
 		<a href='/quienes-somos'>¿Quiénes somos?</a>
 		<a href='/ayuda'>Ayuda</a>
