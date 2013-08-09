@@ -1,4 +1,9 @@
 <div class='container peticion'>
+	<h1 class='title'>
+		Estas peticiones se crean en alianza con 
+		<a href='http://www.change.org/'>change.org</a>
+		<a href='http://www.change.org/es-LA/start-a-petition'>Inicie una petición</a>
+	</h1>
 	<?php $on = 'on'; ?>
 	<?php foreach($this->petition_info as $petition){ ?>
 	<h1><?=$petition['title'] ?><span class='shadow'></span></h1>

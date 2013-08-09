@@ -1,5 +1,5 @@
 <a name='resultados'></a>
-<div class='resultados container'>
+<div class='resultados container conoce'>
 	<h1><?=$this->resultados_title;?></h1>
 	<hr/>
 	<span class='tooltip'>
@@ -13,7 +13,7 @@
 			<th class='matematicas'>Calificacion Enlace de Matemáticas</th>
 			<th class='espanol'>Calificacion Enlace de Español</th>
 			--!>
-			<th class='nivel'>Nivel</th>
+			<th class='nivel'>Nivel escolar</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Ranking estatal</th>
 			<!--
