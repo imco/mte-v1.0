@@ -1,3 +1,7 @@
+<?php
+$niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
+?>
+
 <div class='container resultados-entidad'>
 	<form action='' class='search-estado'>
 		<select class='custom-select' name='estado' >
@@ -26,6 +30,37 @@
 			</span>
 			<span class='decor'></span>
 		</h2>
+		<?php $i=0;
+		foreach($niveles as $nivel => $name){ 
+			$escuelas = $this->mejores_escuelas[$i];
+			$i++;
+		?>
+
+
+		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores    
+			<span class='resalt'><?=$name?></span>
+			en <?=$this->capitalize($this->entidad->nombre)?>
+		</h1>
+		<div class='gray-box'>
+				<p class='title'>NOMBRE
+					<span class='location'> | DIRECCIÓN</span>
+				</p>
+			<ol class='mejores'>
+				<?php
+				foreach($escuelas as $escuela){
+					echo "
+						<li>
+							<a href='/escuelas/index/{$escuela->cct}'>{$escuela->nombre}</a>
+							<span class='location'> | {$escuela->localidad}, {$escuela->entidad} | {$escuela->control} </span>
+						</li>
+					";
+				}
+
+				?>
+			</ol>
+		</div>
+		<?php } ?>
+
 		<div class='column'>
 			<p class='promedio-green'>
 				Escuelas totales

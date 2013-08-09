@@ -441,10 +441,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .gray-box .two-column p{line-height:25px;}
 #content .container.home .gray-box .two-column h3{line-height:9px;}
 #content .container.home .gray-box .two-column.left{border-right:1px solid white;width:250px}
-#content .container.home .gray-box ol.mejores{list-style-type:decimal;margin:0;padding:10px 25px 18px;overflow:hidden;}
-#content .container.home .gray-box ol.mejores li{color:white;font-size:14px;margin-left:19px;line-height:19px;}
-#content .container.home .gray-box ol.mejores li a{color:white;}
-#content .container.home .gray-box ol.mejores li span.location{color:#959595;font-size:12px;float:right;width:47%;height:18px;overflow:hidden;}
+#content .container .gray-box ol.mejores{list-style-type:decimal;margin:0;padding:10px 25px 18px;overflow:hidden;}
+#content .container .gray-box ol.mejores li{color:white;font-size:14px;margin-left:19px;line-height:19px;}
+#content .container .gray-box ol.mejores li a{color:white;}
+#content .container .gray-box ol.mejores li span.location{color:#959595;font-size:12px;float:right;width:47%;height:18px;overflow:hidden;}
+#content .container.resultados-entidad .gray-box ol.mejores li span.location{width:58%;}
+#content .container.resultados-entidad h1.cap.subtitle.blue{color:#D8D8D8;}
+#content .container.resultados-entidad h1.cap.subtitle.blue .resalt{color:white;}
 #content .container.home .notas{margin-top:-6px;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a;font-size:14px;text-indent:-4px;font-weight:bold;}
@@ -638,12 +641,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-nacionales .state-box .hover{display:none;}
 #content .resultados-nacionales .state-box:hover .hover{position:absolute;width:;color:#339DCF;background:rgba(19, 42, 75, 0.84) url(../img/resultados/resultados.png) no-repeat center 30px;display:block;width:84px;height:63px;top:11px;left:12px;padding:93px 48px 0;font-size:15px;text-align:center;line-height:16px;}
 #content .resultados-entidad{margin:35px auto 20px;}
-#content .resultados-entidad .column{width:428px;float:left;margin:0 8px 0 0;}
+#content .resultados-entidad .column{width:428px;float:left;margin:0 2px 0 0;}
 #content .resultados-entidad .column:nth-child(3){margin:0;width:424px;}
 #content .resultados-entidad h1.full-blue{font-size:40px;padding:0 15px 0 26px;width:859px;}
 #content .resultados-entidad h1 a{text-align:right;font-size:18px;display:block;float:right;color:white;}
 #content .resultados-entidad .content{background-color:rgba(255,255,255,.5);margin:14px auto 7px;width:860px;padding:10px 20px 20px;}
-#content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:1px auto 6px;line-height:44px;text-align:center;font-size:23px;}
+#content .resultados-entidad .promedio-gen{background-color:#888888;color:#D8D8D8;display:block;height:40px;margin:1px auto 29px;line-height:44px;text-align:center;font-size:23px;}
+#content .resultados-entidad .gray-box{margin:0 0 15px;}
+#content .resultados-entidad .cap.blue img{margin:8px 21px 0 0;}
 #content .resultados-entidad .promedio-gen span span{color:white;font-size:30px;}
 #content .resultados-entidad .promedio-green{background-color:#0B9F49;float:left;width:200px;height:31px;line-height:34px;color:white;padding:0 0 0 10px;font-size:12px;margin:0 8px 0 0;}
 #content .resultados-entidad .promedio-green.blue{background-color:#329DD1;width:201px;padding: 0 0 0 7px;}
@@ -893,9 +898,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
 #content .home .banner.resultados + .gray-box img{margin:0 26px 0 0;width:103px;height:51px;}
 #content .home .gray-box.twitter{margin-top:9px;font-size:15px;margin-bottom:2px;}
+#content .resultados-entidad .gray-box,
 #content .home .video + h1 + .gray-box{padding:0;}
+#content .resultados-entidad .gray-box .title,
 #content .home .video + h1 + .gray-box .title{font-size:14px;background-color:gray;height:28px;margin-top:-1px;line-height:30px;font-weight:bold;padding:0 24px;color:white;}
+#content .resultados-entidad .gray-box .title .location,
 #content .home .video + h1 + .gray-box .title .location{margin-left:228px;color:white;}
+#content .resultados-entidad .gray-box .title .location{margin-left:280px;}
 #content .home .notas .white-box{padding:13px 14px 15px;}
 #content .home .notas .white-box hr{margin-top:2px;}
 #content .home .notas .white-box p{text-align:justify;}
