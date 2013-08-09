@@ -6,7 +6,7 @@
 			<?php echo isset($this->subtitle_header) ?$this->subtitle_header:'
 			El primer paso para poder mejorar tu centro escolar es saber <br />
 			cómo está. Te invitamos a que conozcas y compartas esta<br />
-			información.';
+			informacióN.';
 			?>
 		</h2>
 	</div>
