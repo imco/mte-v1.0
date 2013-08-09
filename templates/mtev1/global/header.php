@@ -9,7 +9,7 @@
 		<span class='circle'></span>
 		<span class='decor'>2</span>
 	</a>
-	<a href='/califica/'>CALIFICA
+	<a href='/califica-tu-escuela/califica/'>CALIFICA
 		<span class='circle'></span>
 		<span class='decor'>3</span>
 	</a>
