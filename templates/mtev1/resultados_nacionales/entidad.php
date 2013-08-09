@@ -22,11 +22,11 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 		<h2 class='promedio-gen'>
 			<span class='left'>
 				Promedio de <?=$this->capitalize($this->entidad->nombre)?>
-				<span><?=$this->entidad->promedio_general?></span>
+				<span><?=round($this->entidad->promedio_general,1)?></span>
 			</span>
 			<span class='right'>
 				Promedio Nacional
-				<span><?=$this->entidad->promedio_nacional_general?></span>
+				<span><?=round($this->entidad->promedio_nacional_general,1)?></span>
 			</span>
 			<span class='decor'></span>
 		</h2>
