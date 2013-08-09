@@ -116,5 +116,9 @@
 			</div>
 		</div>
 		-->
+		<?php if($this->petition_data){ 
+				echo "<a href='/peticiones/'>firmar:".$this->petition_data[0]['title']."</a>";
+			}
+		?>
 	</div>
 </div>
