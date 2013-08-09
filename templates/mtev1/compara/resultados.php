@@ -28,7 +28,6 @@
 			$espaniol = $escuela->promedio_espaniol >= 0 ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
 
-			var_dump($escuela->control);
 			echo "
 			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
