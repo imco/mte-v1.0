@@ -236,7 +236,7 @@ EOD;
 		</div>
 		<div class='semaforo'>
 			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
-			<h2>Semáforo Educativo</h2>
+			<h2>Semáforo educativo</h2>
 			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 				<p>Excelente</p>
 				<span class='icon'></span>
