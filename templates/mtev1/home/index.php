@@ -75,11 +75,11 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 		</a>
 		<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>
 
-		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box'>
+		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box' target='_blank' >
 			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
 			/MejoraTuEscuela
 		</a>
-		<a href='https://twitter.com/mejoratuescuela' class='gray-box twitter'>
+		<a href='https://twitter.com/mejoratuescuela' class='gray-box twitter' target='_blank' >
 			<span class='icon'></span>
 			@MejoraTuEscuela
 		</a>

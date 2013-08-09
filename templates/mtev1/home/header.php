@@ -1,10 +1,10 @@
 <div class=' home  container'>
 	<div class='titles'>
-		<h2>
+		<h1>
 			Mejora tu escuela es una plataforma de participacion <br />
 			ciudadana que busca promover cambios positivos <br />
 			en la educacion de México.
-		</h2>
+		</h1>
 		<hr />
 		<hr />	
 	</div>
