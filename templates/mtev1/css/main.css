@@ -20,15 +20,15 @@ a{text-decoration:none;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
 #header .menu a[href='/compara/']{background-image:url(../img/header/conoce.png);}
 #header .menu a[href='/compara/escuelas/']{background-image:url(../img/header/compara.png);background-position:center 21px;}
-#header .menu a[href='/califica/']{background-image:url(../img/header/califica.png);}
+#header .menu a[href$='/califica/']{background-image:url(../img/header/califica.png);}
 #header .menu a[href='/mejora']{background-image:url(../img/header/mejora.png);background-position:center 17px;}
 #header .menu a + a + a{margin-left:2px;}
 #header .menu.compara a[href='/compara/'],
-#header .menu.califica a[href='/califica/'],
+#header .menu.califica_tu_escuela a[href$='/califica/'],
 #header .menu.mejora a[href='/mejora'],
 #header .menu.resultados a.logo + a + a ,
 #header .menu.compara a[href='/compara/'] .decor,
-#header .menu.califica a[href='/califica/'] .decor,
+#header .menu.califica_tu_escuela a[href$='/califica/'] .decor,
 #header .menu.resultados a[href='/peticiones'] .decor,
 #header .menu a:hover{background-color:#0a9e48;}
 #header .menu a.logo{width:auto;margin:28px 13px 0;padding:0;background-color:transparent;}
@@ -858,13 +858,13 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*menu*/
 #header .menu a{position:relative;}
 #header .menu .decor{position:absolute;display:block;bottom:-34px;width:100%;left:0;height:30px;line-height:32px;font-size:17px;text-align:center;text-indent:-2px;background-color:rgba(255,255,255,.5);color:#0e9e48;text-shadow:none;font-weight:bold;}
-#header .menu.califica .container a:nth-child(4) .decor,
+#header .menu.califica_tu_escuela .container a:nth-child(4) .decor,
 #header .menu.compara .container a:nth-child(2) .decor,
 #header .menu.resultados .container a:nth-child(3) .decor,
 #header .menu.mejora .container a:nth-child(5) .decor,
 #header .menu a:hover .decor{background-color:#0a9e48;color:white;}
 #header .menu .circle{top:86px;left:60px;background-color:rgba(255,255,255,.6);border:3px solid black;width:7px;height:7px;z-index:1;}
-#header .menu.califica .container a:nth-child(4) .circle,
+#header .menu.califica_tu_escuela .container a:nth-child(4) .circle,
 #header .menu.mejora .container a:nth-child(5) .circle,
 #header .menu.compara .container a:nth-child(2) .circle,
 #header .menu.resultados .container a:nth-child(3) .circle,
