@@ -2,16 +2,23 @@
 <div class='resultados container'>
 	<h1><?=$this->resultados_title;?></h1>
 	<hr/>
+	<span class='tooltip'>
+		Ver perfil
+	</span>
 	<table>
 		<tr>
 			<th class='checkbox'></th>
 			<th class='school'>Escuelas</th>
+			<!--
 			<th class='matematicas'>Calificacion Enlace de Matemáticas</th>
 			<th class='espanol'>Calificacion Enlace de Español</th>
+			--!>
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
-			<th class='rank'>Posición estatal</th>
+			<th class='rank'>Ranking estatal</th>
+			<!--
 			<th class='rank'>Semáforo educativo</th>
+			-->
 		</tr>
 	<?php
 	if(isset($this->escuelas_digest->escuelas)){
@@ -24,16 +31,21 @@
 					$escuela->nombre." | ".
 					"<span>".$escuela->direccion."</span>".
 				"</a></td>
+				<!--
 				<td class='rank matematicas'><span>".round($escuela->promedio_matematicas)."</span></td> 
      				<td class='rank espanol'><span>".round($escuela->promedio_espaniol)."</span></td>
+				-->
 				<td class='nivel'>".$escuela->nivel."</td>
 				<td class='control'>".$escuela->control."</td>
 				<td class='rank'><span>{$escuela->rank}</span></td>
+				<!--
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
 						".$this->config->semaforos[$escuela->semaforo]."
 					</span></div>
 				</td>
+				-->
+				
 			</tr>
 			";
 		}

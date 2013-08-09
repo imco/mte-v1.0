@@ -1,7 +1,7 @@
 <?php
 class resultados_nacionales extends main{
 	public function index(){		
-		$this->load_entidades();
+		$this->load_entidades();	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
 		$this->title_header = 'Resultados por Estado';
@@ -17,6 +17,8 @@ class resultados_nacionales extends main{
 			//$this->initialize_histograms();
 			$this->header_folder = 'compara';
 			$this->title_header = 'Busca tu estado';
+
+			$this->load_petition();
 			$this->include_theme('index','entidad');
 		}else{
 			$this->index();
@@ -56,6 +58,19 @@ class resultados_nacionales extends main{
 			$data[round($row['promedio_general'])][1]++;
 		}
 		return $data;	
+	}
+	private function load_petition(){
+		date_default_timezone_set('America/Mexico_City');
+		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+		$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
+		$this->petition_data = array();
+		foreach($petition_info as $petition){
+			$regExp = "/".$this->entidad->nombre."/i";
+			if(preg_match($regExp, $petition['title'])){
+				$this->petition_data[] = $petition;
+			}
+		}
+	
 	}
 }
 ?>
