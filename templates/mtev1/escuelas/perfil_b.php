@@ -70,7 +70,7 @@
 				</a></li>
 				<li><a href='#' class='reportes'>
 					<span class='icon'></span>
-					Presupuestos Asignados
+					Presupuestos asignados
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
 					<span class='icon'></span>
@@ -86,7 +86,7 @@
 					foreach($this->escuela->calificaciones as $calificacion){
 						echo <<<EOD
 						<div class='comment'>
-							<p class='rating'>{$calificacion->calificacion}%<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+							<p class='rating'>{$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
 							<h2>{$calificacion->nombre}</h2>
 							<p>{$calificacion->comentario}</p>
 						</div>
@@ -97,6 +97,13 @@ EOD;
 						<p>Sé el primero en escribir un comentario</p>
 					</div>
 				<?php }
+				if($this->get('error')){
+					echo "
+						<span>Error no ingreso 
+							<a href='/califica_tu_escuela/califica/".$this->escuela->cct."' >calificacion</a>
+						</span>
+						";
+				}
 				?>
 			</div>
 			<div class='tab jscrollpane'>
@@ -176,25 +183,25 @@ EOD;
 					</div>
 					<div class='right'>
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->total_evaluados,2)?><a href='#'></a></p>
 							<h2>Número de alumnos evaluados</h2>
 						</div>
 						<?php if($this->escuela->nivel->id == 12){ ?>
 							<div class='comment-info'>
-								<p class='rating'><?=$this->capitalize($this->escuela->poco_confiables)?><a href='#'></a></p>
+								<p class='rating'><?=round($this->escuela->poco_confiables,2)?><a href='#'></a></p>
 								<h2>Resultados no confiables</h2>
 							</div>					
 						<?php } ?>
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_espaniol)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_espaniol,2)?><a href='#'></a></p>
 							<h2>Promedio de Español</h2>
 						</div>					
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_matematicas)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_matematicas,2)?><a href='#'></a></p>
 							<h2>Promedio de Matemáticas</h2>
 						</div>					
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_general)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_general,2)?><a href='#'></a></p>
 							<h2>Promedio general</h2>
 						</div>					
 					</div>
@@ -223,7 +230,7 @@ EOD;
 				<?php $this->print_img_tag('home/posicion.png');?>
 				<p>Posición estatal</p>
 				<h2>
-					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de 345
+					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de <?=$this->entidad_cct_count?>
 				</h2>
 			</div>
 		</div>
@@ -292,8 +299,8 @@ EOD;
 			En ningún momento haremos público tu correo electrónico con tu reporte o comentario
 			</span>
 		</p>
+			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
-
 <?php $this->include_template('resultados','compara')?>
