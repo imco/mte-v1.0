@@ -1,9 +1,9 @@
 <div class=' home  container'>
 	<div class='titles'>
 		<h1>
-			MejoraTuEscuela.org es una plataforma de participacion <br />
+			MejoraTuEscuela.org es una plataforma de participación <br />
 			ciudadana que busca promover cambios positivos <br />
-			en la educacion de México.
+			para la educacion en México.
 		</h1>
 		<hr />
 		<hr />	
