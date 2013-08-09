@@ -253,7 +253,7 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<a href='/califica?cct=<?=$this->escuela->cct?>' class='title'>
+			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
 				<p>Califica tu escuela</p>
 				
