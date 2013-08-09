@@ -32,7 +32,7 @@
 			<div class='clear'></div>
 		</form>
 		<a href='/quienes-somos'>¿Quiénes somos?</a>
-		<a href='/ayuda'>Ayuda</a>
+		<a href='/preguntas-frecuentes'>Preguntas frecuentes</a>
 
 	</div>
 
