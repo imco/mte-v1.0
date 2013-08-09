@@ -28,7 +28,7 @@
 			$espaniol = $escuela->promedio_espaniol >= 0 ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
 
-
+			var_dump($escuela->control);
 			echo "
 			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
@@ -39,7 +39,7 @@
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
-				<td class='control'>".(isset($escuela->control)?$controles[$escuela->control]:'')."</td>
+				<td class='control'>".$this->capitalize($escuela->control->nombre)."</td>
 				<td class='rank'><span>{$rank_entidad}</span></td>
 				<td class='semaforo sem{$esc->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
