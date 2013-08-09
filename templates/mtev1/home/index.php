@@ -7,7 +7,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 		
 		</div>
 		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->capitalize($this->user_location->nombre)?>
-			<span><a href='/compara/?search=true&amp;entidad=<?=$this->user_location->id?>&amp;nivel=<?=$this->nivel_5?>#resultados'>+Ver más estados</a></span>
+			<span><a href='/resultados-nacionales/'>+Ver más estados</a></span>
 		</h1>
 		<div class='gray-box'>
 				<p class='title'>NOMBRE
