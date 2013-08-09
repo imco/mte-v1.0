@@ -6,6 +6,28 @@ class califica_tu_escuela extends main{
 		$this->include_theme('index','index');
 
 	}
+	public function califica(){
+		if($this->escuela_info()){
+			$this->title_header = 'Califica tu escuela';
+			$this->header_folder = 'compara';
+			$this->breadcrumb = array('/califica-tu-escuela/'=>'Califica tu escuela','#'=>$this->escuela->nombre);
+			$this->include_theme('index','califica');
+		
+		}else{
+			header("location: /compara/");
+		}
+	}
+
+	public function escuela_info(){
+		$this->escuela = new escuela($this->get('id'));
+		$this->escuela->read("cct,nombre");
+		if(isset($this->escuela->cct)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	private function load_calificaciones(){
 		$q = new calificacion();
 		$q->search_clause = '1';
