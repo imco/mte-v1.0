@@ -1,11 +1,12 @@
 <div class='container peticion'>
-	<?php for($i=0;$i<count($this->peticion);$i++){ ?>
-	<h1><?=$this->peticion[$i]['title'] ?><span class='shadow'></span></h1>
-	<div class='wrap_peticion<?= $i==0?' on':''?>'>
+	<?php $on = 'on'; ?>
+	<?php foreach($this->petition_info as $petition){ ?>
+	<h1><?=$petition['title'] ?><span class='shadow'></span></h1>
+	<div class='wrap_peticion <?php echo $on;$on=''?>'>
 		<div class='content jscrollpane'>
-			<h2><?=$this->peticion[$i]['title'] ?></h2>
-			<p><?=$this->peticion[$i]['overview'] ?></p>
-			<p><a href='<?=$this->peticion[$i]['url'] ?>'>Leer más</a></p>
+			<h2><?=$petition['title'] ?></h2>
+			<p><?=$petition['overview'] ?></p>
+			<p><a href='<?=$petition['url'] ?>'>Leer más</a></p>
 
 		</div>
 		<form action='/peticiones/firmar' method='post' class='petition-form' accept-charset='utf-8'>
@@ -30,18 +31,16 @@
 				<p><input type='text' name='cp' placeholder='Código Postal' class='required'  /></p>
 				<p>
 					<input type='submit' value='Firma' />
-					<input type='hidden' value='<?=$this->petition_url[$i]?>' name='petition_url' />
+					<input type='hidden' value='<?=$petition['url']?>' name='petition_url' />
 				</p>
-				<!--
 				<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
-				-->
 			<?php } ?>
 		</form>	
 	
 		<div class='firmas'>
 			<div class='img'></div>
 			<h3>Gracias a ti ya somos</h3>
-			<h2><?=$this->peticion[$i]['signature_count']?></h2>
+			<h2><?=$petition['signature_count']?></h2>
 		</div>
 		<div class='clear'></div>
 	</div>
