@@ -1052,7 +1052,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica .calificacion .wrap_cal span.on{background-color:#54BAE0;box-shadow:0px -1px 6px inset;color:black;}
 #content .califica .promedio{background-image:url(../img/home/texture_blue.png);font-size:24px;text-align:center;color:white;padding:25px 0 23px;text-indent:-3px;margin-top:15px;position:relative;min-height:47px;line-height:4px;}
 #content .califica .promedio:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
-#content .califica .promedio span{font-size:39px;display:block;margin-top:18px;text-indent:-5px;}
+#content .califica .promedio span{font-size:39px;display:block;margin-top:30px;text-indent:-5px;}
 #content .califica form{margin-top:22px;}
 #content .califica .calificacion-form.B fieldset p:first-child{margin-top:18px;margin-bottom:20px;color:black;}
 #content .califica .calificacion-form.B .customSelect:before{top:68px;}
