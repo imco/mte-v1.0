@@ -27,7 +27,7 @@ class escuelas extends main{
 			$this->header_folder = 'escuelas';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
-			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
+			$this->resultados_title = 'Escuelas similares <span>| Cercanas</span>';
 			$this->breadcrumb = array(
 				'/compara/'=>'Escuelas',
 				'/compara/?search=true&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->entidad->nombre),

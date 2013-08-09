@@ -270,7 +270,7 @@ EOD;
 				<br />
 				alumnos en 
 				<br />
-				nivel reprobados
+				nivel "Reprobado"
 				<br />
 				<span>21%</span>
 				</p>
@@ -283,7 +283,7 @@ EOD;
 	<fieldset>
 		<p>Deja aquí un comentario sobre esta escuela</p>
 		<input type='text' placeholder='Nombre' name='nombre' />
-		<input type='text' class='required email' placeholder='Correo electrónico*' name='email' />
+		<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
 		<select class='custom-select' name='ocupacion' >
 			<option value=''>¿Quién eres?</option>
 			<option value='alumno'>Alumno</option>
@@ -294,7 +294,6 @@ EOD;
 			<option value='ciudadano'>Ciudadano</option>
 		</select>
 		<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
-		<p>Correo electrónico (obligatorio)</p>
 		<p>Aviso de privacidad.
 			<span>
 			En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
@@ -304,4 +303,4 @@ EOD;
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
-<?php $this->include_template('resultados-escuela','compara')?>
+<?php $this->include_template('resultados','compara')?>
