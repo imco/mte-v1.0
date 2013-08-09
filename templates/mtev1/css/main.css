@@ -49,6 +49,7 @@ a{text-decoration:none;}
 #header .menu .submenu a + a{margin:5px 0;height:28px;}
 
 #header .titles{margin:31px auto 18px;width:450px;}
+#header .home.container .titles{width:503px;}
 #header .home.container .titles hr{position:absolute;width:564px;left:241px;top:78px;height:1px;}
 #header .home.container .titles hr + hr{left:0;width:228px;}
 #header .home.container .titles h1,
