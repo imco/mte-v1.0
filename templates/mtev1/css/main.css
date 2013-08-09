@@ -311,7 +311,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #general-search .adv-search.mapa a{background-image:url(../img/compara/vermapa.png);background-position:center 12px;padding-top:38px;height:49px;}
 #general-search .adv-search.mapa span{font-size:19px;display:block;line-height:17px;}
 
-#content .resultados{margin:10px auto;}
+#content .resultados{margin:10px auto;position:relative;}
 #content .resultados h1{color:#5D5D5D;font-size:18px;line-height:36px}
 #content .resultados h1 span{font-size:13px;}
 #content .resultados hr{background-color:#0BA14A;margin:0 2px;height:4px;background-image:none;}
@@ -747,7 +747,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tab-container{margin:0;width:643px;}
 #content .perfil.B .tab{width:645px;}
 #content .perfil.B .rank{background-color:#888;}
-#content .perfil.B .rank .posicion{width:167px;margin:0 auto;text-align:center;padding:15px 0 9px 0;height:109px;}
+#content .perfil.B .rank .posicion{width:167px;margin:0 auto;text-align:center;padding:15px 0 9px 0;min-height:109px;}
 #content .perfil.B .rank .posicion p{font-size:22px;color:white;line-height:16px;padding-top:11px;}
 #content .perfil.B .rank .posicion p + p{line-height:16px;}
 #content .perfil.B .rank .posicion h2{color:white;font-size:30px;line-height:40px;margin-top:5px;}
@@ -970,7 +970,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .calificacion-form.B textarea + p span{font-size:12px;}
 #content .calificacion-form.B input[type='submit']{background-color:#FF8900;margin:14px 216px;width:386px;font-size:20px;text-indent:-19px;}
 #content .calificacion-form.B input[type='text']{width:249px;margin:0;margin-right:3px;padding:8px 12px;}
-#content .calificacion-form.B .custom-select{width:257px;margin:0;padding:7px 7px;}
+#content .calificacion-form.B .custom-select{width:257px;margin:0;padding:7px 7px;z-index:10}
 #content .calificacion-form.B .customSelect:before{content:'';position:absolute;width:35px;height:32px;background:orange url(../img/quienes_somos/flechadropd.png) no-repeat center 15px;display:block;right:32px;top:42px;}
 #content .calificacion-form.B p{color:#858786;}
 #content .calificacion-form.B p span{color:#8D908F;}
@@ -1063,3 +1063,5 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .peticion .wrap_peticion{display:none;}
 #content .peticion .wrap_peticion.on{display:block;}
 
+/*tooltip resultados*/
+#content .resultados .tooltip{position:absolute;background-color:rgba(0,0,0,.3);border-radius:5px;padding:1px 5px;color:white;left:298px;display:none;}

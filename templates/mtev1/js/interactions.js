@@ -144,9 +144,8 @@ $(document).ready(function(){
 	$('.califica .button-frame').click(function(e){
 		e.preventDefault();
 		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
-		$('.promedio span').html(
-			promedio.toString().length>3?promedio.toFixed(1):promedio
-		);
+		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
+		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
 	});
 
@@ -174,7 +173,25 @@ $(document).ready(function(){
 			e.preventDefault();
 			location.href = $('.califica a:first-child').attr('href');
 		});
+
+		$('.tabs a.result').click(function(){
+		var texts = $('text[text-anchor="start"]'),
+		    text;
+		for(var i=0;i<texts.length;i++){
+			text = $(texts[i]);
+			text.text(text.text()+' grado');
+		}
+		});
+
 	}
+
+	$('td.school').hover(function(){
+		$('.tooltip').css({top:$(this).position().top,display:'block'});
+	},	
+	function(){
+		$('.tooltip').css('display','none');	
+	});
+
 });
 
 function load_location_options(input,directive,options,name){
