@@ -26,7 +26,7 @@ class compara extends main{
 			$params->municipio = $this->get('municipio');
 			$params->localidad = $this->get('localidad');
 			$p = $this->get('p') ? $this->get('p') : 1;
-			$this->get_escuelas_new($params,$p);			
+			$this->get_escuelas_new($params,$p);
 			$this->include_theme('index','resultados');
 		}else{
 			$params->pagination = 6;
