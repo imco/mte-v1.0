@@ -230,7 +230,7 @@ EOD;
 				<?php $this->print_img_tag('home/posicion.png');?>
 				<p>Posición estatal</p>
 				<h2>
-					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de <?=$this->entidad_cct_count?>
+					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
 				</h2>
 			</div>
 		</div>
