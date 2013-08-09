@@ -19,11 +19,27 @@ class resultados_nacionales extends main{
 			$this->title_header = 'Busca tu estado';
 
 			$this->load_petition();
+			$this->load_escuelas();
 			$this->include_theme('index','entidad');
 		}else{
 			$this->index();
 		}
 	}
+
+	private function load_escuelas(){
+		$niveles = array(12,13,22);
+		$this->mejores_escuelas = array();
+		for($i=0;$i<count($niveles);$i++){
+			$params->entidad = $this->entidad->id;
+			$params->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.promedio_general DESC';
+			$params->limit = '0,5';
+			$params->nivel = $niveles[$i];
+			$this->get_escuelas($params);
+			$this->process_escuelas();
+			$this->mejores_escuelas[] = $this->escuelas_digest->escuelas;
+		}
+	}
+
 	private function initialize_histograms(){
 		//primarias
 		if($this->entidad->distribucion_primarias == ''){
