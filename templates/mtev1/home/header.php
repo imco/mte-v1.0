@@ -3,7 +3,7 @@
 		<h1>
 			MejoraTuEscuela.org es una plataforma que busca <br />
 			promover la participación ciudadana para transformar <br />
-			la educacion en México.
+			la educación en México.
 		</h1>
 		<hr />
 		<hr />	
