@@ -38,7 +38,7 @@ class escuela extends table{
 		$this->porcentaje_poco_confiable = number_format($porcentaje_poco_confiable,2);
 		if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
 			$this->semaforo = 5;
-		}else if(isset($this->nivel->id) && isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0){
+		}else if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0){
 			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])$this->semaforo++;
 		}else{
 			$this->semaforo = 4;
