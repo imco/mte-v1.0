@@ -36,9 +36,8 @@ class escuelas extends main{
 			);
 			//$this->include_theme('index','index');
 			$this->title_header = 'Conoce tu escuela';
-			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está.<br />
-			Te invitamos a que verifiques y compartas aquí toda la información <br /> que tengas acerca de tu escuela.
-			';
+			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber <br />
+			cómo está. Te invitamos a que conozcas y compartas esta<br />información.';
 			$this->header_folder = 'compara';
 			$this->include_theme('index','perfil_b');
 		}else{
