@@ -281,22 +281,23 @@ EOD;
 </div>
 <form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B container'>
 	<fieldset>
-		<p>Comentario</p>
-		<input type='text' placeholder='Nombre*' name='nombre' class='required' />
-		<input type='text' class='required email' placeholder='Email' name='email' />
+		<p>Deja aquí un comentario sobre esta escuela</p>
+		<input type='text' placeholder='Nombre' name='nombre' />
+		<input type='text' class='required email' placeholder='Correo electrónico*' name='email' />
 		<select class='custom-select' name='ocupacion' >
 			<option value=''>¿Quién eres?</option>
-			<option value='alumno'>alumno</option>
-			<option value='exalumno'>exalumno</option>
-			<option value='padredefamilia'>padre de familia</option>
-			<option value='maestro'>maestro</option>
-			<option value='director'>director</option>
-			<option value='ciudadano'>ciudadano</option>
+			<option value='alumno'>Alumno</option>
+			<option value='exalumno'>Exalumno</option>
+			<option value='padredefamilia'>Padre de familia</option>
+			<option value='maestro'>Maestro</option>
+			<option value='director'>Director</option>
+			<option value='ciudadano'>Ciudadano</option>
 		</select>
-		<textarea placeholder='Tu comentario' name='comentario' class='required'></textarea>
+		<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
+		<p>Correo electrónico (obligatorio)</p>
 		<p>Aviso de privacidad.
 			<span>
-			En ningún momento haremos público tu correo electrónico con tu reporte o comentario
+			En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
 			</span>
 		</p>
 			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
