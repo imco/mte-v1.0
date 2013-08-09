@@ -11,7 +11,7 @@ class escuelas extends main{
 
 			$this->load_compara_cookie();
 			$this->get_escuelas($params);
-			$this->escuelas[] = $this->escuela;
+			//$this->escuelas[] = $this->escuela;
 		
 			if($this->compara_cookie){
 				$temp = $this->escuelas;
@@ -63,6 +63,9 @@ class escuelas extends main{
 			$this->escuela->get_semaforo();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
+			$entidad_info = new entidad($this->escuela->entidad->id);
+			$entidad_info->read("cct_count");
+			$this->entidad_cct_count = $entidad_info->cct_count;
 			return true;
 		}else{
 			return false;
@@ -70,6 +73,7 @@ class escuelas extends main{
 	}
 	public function calificar(){
 		$comment = strip_tags($this->post('comentario'));
+		if($this->post('calificacion')){
 		$calificacion = new calificacion();
 		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
 			$this->post('nombre'),
@@ -82,6 +86,10 @@ class escuelas extends main{
 		)); 
 		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
 		header("location: $location");
+		}else{
+			header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
+		}
+
 	}
 	public function like_calificacion(){
 		$calif = new calificacion($this->get('id'));
