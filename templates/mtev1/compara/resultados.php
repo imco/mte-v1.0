@@ -39,7 +39,7 @@
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
-				<td class='control'>".(isset($controles[$escuela->control])?$controles[$escuela->control]:'')."</td>
+				<td class='control'>".(isset($escuela->control)?$controles[$escuela->control]:'')."</td>
 				<td class='rank'><span>{$rank_entidad}</span></td>
 				<td class='semaforo sem{$esc->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
