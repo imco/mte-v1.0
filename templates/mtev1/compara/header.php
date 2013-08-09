@@ -4,7 +4,7 @@
 		<hr/>
 		<h2>
 			<?php echo isset($this->subtitle_header) ?$this->subtitle_header:'
-			MejoraTuEscuela.org es una plataforma de participacion <br />
+			MejoraTuEscuela.org es una plataforma de participación <br />
 			ciudadana que busca promover cambios positivos <br />
 			en la educacion de México.';
 			?>
