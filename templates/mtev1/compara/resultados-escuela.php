@@ -6,8 +6,8 @@
 		<tr>
 			<th class='checkbox'></th>
 			<th class='school'>Escuelas</th>
-			<th class='matematicas'>Calificacion Enlace de Matemáticas</th>
-			<th class='espanol'>Calificacion Enlace de Español</th>
+			<th class='matematicas'>Calificación ENLACE de matemáticas</th>
+			<th class='espanol'>Calificación ENLACE de español</th>
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Posición estatal</th>
