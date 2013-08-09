@@ -304,4 +304,4 @@ EOD;
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
-<?php $this->include_template('resultados','compara')?>
+<?php $this->include_template('resultados-escuela','compara')?>
