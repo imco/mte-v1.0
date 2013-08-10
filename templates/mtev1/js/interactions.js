@@ -164,7 +164,7 @@ $(document).ready(function(){
 	});
 
 	$('.peticion h1').click(function(){
-		$('.wrap_peticion').removeClass('on');
+		$('.wrap_peticion, .social.on').removeClass('on');
 		$(this).next().addClass('on');
 	});
 
