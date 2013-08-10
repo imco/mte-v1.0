@@ -716,6 +716,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;}
 #content .share-bt.comp{margin:10px;}
+#content .peticion .share-bt.comp{margin:-13px 0 -43px 0;}
 #content .share-bt .social:after{content:""; width:0;height: 0;border-left: 15px solid transparent;border-right: 17px solid transparent;border-bottom: 17px solid #dcdcdc;position:absolute;display:block;top:-13px;left:112px;}
 #content .share-bt .social:after{left:61px;}
 /*#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:203px;right:-38px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset}*/

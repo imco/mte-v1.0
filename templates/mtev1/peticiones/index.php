@@ -5,16 +5,18 @@
 		<a href='http://www.change.org/es-LA/start-a-petition'>Inicie una petición</a>
 	</h1>
 	<?php $on = 'on'; ?>
-	<?php foreach($this->petition_info as $petition){ ?>
-	<h1><?=$petition['title'] ?><span class='shadow'></span></h1>
+	<?php 
+	foreach($this->petition_info as $this->petition){ 
+	?>
+	<h1><?=$this->petition['title'] ?><span class='shadow'></span></h1>
 	<div class='wrap_peticion <?php echo $on;$on=''?>'>
 		<div class='content jscrollpane'>
-			<h2><?=$petition['title'] ?></h2>
-			<p><?=$petition['overview'] ?></p>
-			<p><a href='<?=$petition['url'] ?>'>Leer más</a></p>
+			<h2><?=$this->petition['title'] ?></h2>
+			<p><?=$this->petition['overview'] ?></p>
+			<p><a href='<?=$this->petition['url'] ?>'>Leer más</a></p>
 
 		</div>
-		<form action='/peticiones/firmar' method='post' class='petition-form' accept-charset='utf-8'>
+		<form action='/peticiones/firmar' method='post' class='this->petition-form' accept-charset='utf-8'>
 			<?php 
 			if(isset($this->sign_result) && $this->sign_result->result != 'failure'){
 				echo "<h2>Gracias por firmar la peticion</h2>";
@@ -36,7 +38,7 @@
 				<p><input type='text' name='cp' placeholder='Código Postal' class='required'  /></p>
 				<p>
 					<input type='submit' value='Firma' />
-					<input type='hidden' value='<?=$petition['url']?>' name='petition_url' />
+					<input type='hidden' value='<?=$this->petition['url']?>' name='this->petition_url' />
 				</p>
 				<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
 			<?php } ?>
@@ -45,7 +47,8 @@
 		<div class='firmas'>
 			<div class='img'></div>
 			<h3>Gracias a ti ya somos</h3>
-			<h2><?=$petition['signature_count']?></h2>
+			<h2><?=$this->petition['signature_count']?></h2>
+			<?php $this->include_template('share_buttons','global')?>
 		</div>
 		<div class='clear'></div>
 	</div>
