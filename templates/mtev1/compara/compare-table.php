@@ -26,7 +26,11 @@
 		echo "<td>".$this->capitalize($escuela->control->nombre)."</td>";
 		echo "<td class='rank'><span>".round($escuela->promedio_espaniol)."</span></td>";
 		echo "<td class='rank'><span>".round($escuela->promedio_matematicas)."</span></td>";
-		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span></td>";
+		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
+				<div class='icon'><span class='icon-popup'>
+					".$this->config->semaforos[$escuela->semaforo]."
+				</span></div>
+		</td>";
 		echo "</tr>";
 	}
 	?>
