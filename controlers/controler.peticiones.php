@@ -1,16 +1,16 @@
 <?php
 class peticiones extends main{
 	public function index(){		
-		$this->header_folder ='escuelas';
 		$this->read_peticion();
 		$this->breadcrumb = array('#'=>'Peticiones');
+		$this->header_folder = 'compara';
+		$this->title_header = 'PETICIONES';
 		$this->include_theme('index','index');
 	}
 	private function read_peticion(){
 		date_default_timezone_set('America/Mexico_City');
-		$this->petition_url = 'http://www.change.org/peticiones/autoridades-educativas-del-gobierno-del-estado-de-m%C3%A9xico-exigimos-saber-como-se-gastan-nuestras-cuotas-en-la-escuela-%C3%A1ngel-maria-garibay-kintana';
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$this->peticion = $change->regresa_info_peticion($this->petition_url);
+		$this->petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
 	}
 	public function firmar(){
 		$petition_url = $this->post('petition_url');
