@@ -44,9 +44,12 @@
 					<span class='icon'></span>
 					Director
 					<span class='title'>
-						<?=$this->escuela->correoelectronico?>
+						<!--<?=$this->escuela->correoelectronico?>-->
 					</span>
 					<div class='clear'></div>
+				</p>
+				<p class='web'>
+					<?=$this->escuela->paginaweb ?>
 				</p>
 			</div>
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
@@ -67,7 +70,7 @@
 				</a></li>
 				<li><a href='#' class='reportes'>
 					<span class='icon'></span>
-					Presupuestos Asignados
+					Presupuestos asignados
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
 					<span class='icon'></span>
@@ -83,7 +86,7 @@
 					foreach($this->escuela->calificaciones as $calificacion){
 						echo <<<EOD
 						<div class='comment'>
-							<p class='rating'>{$calificacion->calificacion}%<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+							<p class='rating'>{$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
 							<h2>{$calificacion->nombre}</h2>
 							<p>{$calificacion->comentario}</p>
 						</div>
@@ -94,6 +97,13 @@ EOD;
 						<p>Sé el primero en escribir un comentario</p>
 					</div>
 				<?php }
+				if($this->get('error')){
+					echo "
+						<span>Error no ingreso 
+							<a href='/califica_tu_escuela/califica/".$this->escuela->cct."' >calificacion</a>
+						</span>
+						";
+				}
 				?>
 			</div>
 			<div class='tab jscrollpane'>
@@ -173,25 +183,25 @@ EOD;
 					</div>
 					<div class='right'>
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->total_evaluados)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->total_evaluados,2)?><a href='#'></a></p>
 							<h2>Número de alumnos evaluados</h2>
 						</div>
 						<?php if($this->escuela->nivel->id == 12){ ?>
 							<div class='comment-info'>
-								<p class='rating'><?=$this->capitalize($this->escuela->poco_confiables)?><a href='#'></a></p>
+								<p class='rating'><?=round($this->escuela->poco_confiables,2)?><a href='#'></a></p>
 								<h2>Resultados no confiables</h2>
 							</div>					
 						<?php } ?>
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_espaniol)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_espaniol,2)?><a href='#'></a></p>
 							<h2>Promedio de Español</h2>
 						</div>					
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_matematicas)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_matematicas,2)?><a href='#'></a></p>
 							<h2>Promedio de Matemáticas</h2>
 						</div>					
 						<div class='comment-info'>
-							<p class='rating'><?=$this->capitalize($this->escuela->promedio_general)?><a href='#'></a></p>
+							<p class='rating'><?=round($this->escuela->promedio_general,2)?><a href='#'></a></p>
 							<h2>Promedio general</h2>
 						</div>					
 					</div>
@@ -218,16 +228,15 @@ EOD;
 		<div class='rank'>
 			<div class='posicion'>
 				<?php $this->print_img_tag('home/posicion.png');?>
-				<p>Posición </p>
-				<p>Nivel Nacional</p>
+				<p>Posición estatal</p>
 				<h2>
-					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?>
+					<?=isset($this->escuela->rank_entidad) ? $this->escuela->rank_entidad : '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
 				</h2>
 			</div>
 		</div>
 		<div class='semaforo'>
 			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
-			<h2>Semáforo Educativo</h2>
+			<h2>Semáforo educativo</h2>
 			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 				<p>Excelente</p>
 				<span class='icon'></span>
@@ -251,62 +260,47 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<div class='title'>
+			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica<br />
-				tu escuela</p>
-				<div class='clear'></div>
-			</div>
+				<p>Califica esta escuela</p>
+				
+			</a>
 			<div class='title'>
-				<p>Porcentaje de alumnos en nivel reprobados
+				<p>Porcentaje de 
+				<br />
+				alumnos en 
+				<br />
+				nivel "Reprobado"
 				<br />
 				<span>21%</span>
 				</p>
 			</div>
-		<!--
-			<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form'>
-					<p class='rater'>
-						<span class='tit'>Arrastra la barra para asignar una calificion</span>
-						<span class='ranker' id='rank-bar'><span class='bar'></span></span>
-						<span class='label' id='rank-label'></span>
-						<input type='hidden' id='rank-value' name='calificacion' value='' class='required'/>
-						<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' />
-					</p>
-					<p>
-						<input type='text' placeholder='Tu nombre' name='nombre' class='required' />
-						<input type='text' class='required email' placeholder='Correo eléctronico' name='email' />
-						<select class='custom-select' name='ocupacion' >
-							<option value=''>Ocupación</option>
-							<option value='alumno'>alumno</option>
-							<option value='exalumno'>exalumno</option>
-							<option value='padredefamilia'>padre de familia</option>
-							<option value='maestro'>maestro</option>
-							<option value='director'>director</option>
-							<option value='ciudadano'>ciudadano</option>
-						</select>
-						<textarea placeholder='Comentario' name='comentario' class='required'></textarea>
-						<input type='submit' value='Calificar' />
-					</p>
-			</form>
-		-->
 		</div>
 	</div>
 	<div class='clear'></div>
 </div>
-<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form container'>
+<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B container'>
 	<fieldset>
-		<p>Comentario</p>
-		<input type='text' placeholder='Nombre*' name='nombre' class='required' />
-		<input type='text' class='required email' placeholder='Email' name='email' />
-		<input type='text' class='required' placeholder='¿Quién eres?' />
-		<textarea placeholder='Tu comentario' name='comentario' class='required'></textarea>
+		<p>Deja aquí un comentario sobre esta escuela</p>
+		<input type='text' placeholder='Nombre' name='nombre' />
+		<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
+		<select class='custom-select' name='ocupacion' >
+			<option value=''>¿Quién eres?</option>
+			<option value='alumno'>Alumno</option>
+			<option value='exalumno'>Exalumno</option>
+			<option value='padredefamilia'>Padre de familia</option>
+			<option value='maestro'>Maestro</option>
+			<option value='director'>Director</option>
+			<option value='ciudadano'>Ciudadano</option>
+		</select>
+		<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
 		<p>Aviso de privacidad.
 			<span>
-			En ningún momento haremos público tu correo electrónico con tu reporte o comentario
+			En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
 			</span>
 		</p>
+			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
-
-<?php $this->include_template('resultados','compara')?>
+<?php $this->include_template('resultados-escuela','compara')?>
