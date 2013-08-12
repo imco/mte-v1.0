@@ -6,29 +6,43 @@
 		<tr>
 			<th class='checkbox'></th>
 			<th class='school'>Escuelas</th>
-			<th class='matematicas'>Calificacion Enlace de Matemáticas</th>
-			<th class='espanol'>Calificacion Enlace de Español</th>
+			<th class='matematicas'>Calificación ENLACE de matemáticas</th>
+			<th class='espanol'>Calificación ENLACE de español</th>
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Posición estatal</th>
 			<th class='rank'>Semáforo educativo</th>
 		</tr>
 	<?php
-	if(isset($this->escuelas_digest->escuelas)){
-		foreach($this->escuelas_digest->escuelas as $escuela){
+	if(isset($this->escuelas)){
+		foreach($this->escuelas as $escuela){
+			/*
+			$esc = new escuela();
+			$esc->poco_confiables = $escuela->poco_confiables;
+			$esc->total_evaluados = $escuela->total_evaluados;
+			$esc->promedio_general = $escuela->promedio_general;
+			$esc->nivel->id = $escuela->nivel;
+			$esc->get_semaforo();
+			*/
+			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
+			$controles = array(1=>'Publica', 2=>'Privada');
+			$matematicas = $escuela->promedio_matematicas >= 0 ? round($escuela->promedio_matematicas) : '';
+			$espaniol = $escuela->promedio_espaniol >= 0 ? round($escuela->promedio_espaniol) : '';
+			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
+
 			echo "
 			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
-					$escuela->nombre." | ".
-					"<span>".$escuela->direccion."</span>".
+					$this->capitalize($escuela->nombre)." | ".
+					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</span>".
 				"</a></td>
-				<td class='rank matematicas'><span>".round($escuela->promedio_matematicas)."</span></td> 
-     				<td class='rank espanol'><span>".round($escuela->promedio_espaniol)."</span></td>
-				<td class='nivel'>".$escuela->nivel."</td>
-				<td class='control'>".$escuela->control."</td>
-				<td class='rank'><span>{$escuela->rank}</span></td>
+				<td class='rank matematicas'><span>".$matematicas."</span></td> 
+     				<td class='rank espanol'><span>".$espaniol."</span></td>
+				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
+				<td class='control'>".$controles[$escuela->control->id]."</td>
+				<td class='rank'><span>{$rank_entidad}</span></td>
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
 						".$this->config->semaforos[$escuela->semaforo]."
@@ -40,39 +54,6 @@
 	}	
 	?>
 	</table>
-	<?php if($this->location == 'escuelas'){ ?>
-	<div class="share-bt">
-		<div class="social">
-			<div class="btns">
-				<a href="#" class='share-face' 
-		 	 	onclick="
-				      window.open(
-		            		'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-			          	'El perfil de <?=$this->escuela->nombre; ?> via https://www.facebook.com/MejoraTuEscuela', 
-				       	'width=626,height=436'); 
-					 return false;">
-					  </a>
-	
-				<div class="tweet">
-	
-					  <span class="twitter-icon"></span>
-					  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="El perfil de <?=$this->capitalize($this->escuela->nombre); ?> " data-via='mejoratuescuela'>
-				  	Tweet
-					  </a>
-	
-					  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
-			</div>
-	
-		</div>
-		<a href="#" class="button-frame">
-			<span class="bt-share">
-				<?php $this->print_img_tag('compartir/compartir.png');?>
-				Compartir
-			</span>
-		</a>
-	</div>
-	<?php } ?>
 	<div class="clear"></div>
 	<div class='pagination'><?php
 	if(isset($this->pagination)){

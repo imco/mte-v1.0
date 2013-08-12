@@ -2,6 +2,7 @@
 class escuelas extends main{
 	public function index(){
 		if($this->escuela_info()){
+			
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;		
@@ -10,7 +11,7 @@ class escuelas extends main{
 
 			$this->load_compara_cookie();
 			$this->get_escuelas($params);
-			$this->escuelas[] = $this->escuela;
+			//$this->escuelas[] = $this->escuela;
 		
 			if($this->compara_cookie){
 				$temp = $this->escuelas;
@@ -26,14 +27,19 @@ class escuelas extends main{
 			$this->header_folder = 'escuelas';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
-			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
+			$this->resultados_title = 'Escuelas similares <span>| Cercanas</span>';
 			$this->breadcrumb = array(
 				'/compara/'=>'Escuelas',
 				'/compara/?search=true&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->entidad->nombre),
 				'/compara/?search=true&municipio='.$this->escuela->municipio->id.'&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->municipio->nombre),
 				'#'=> $this->capitalize($this->escuela->nombre)
 			);
-			$this->include_theme('index','index');
+			//$this->include_theme('index','index');
+			$this->title_header = 'Conoce tu escuela';
+			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber <br />
+			cómo está. Te invitamos a que conozcas y compartas esta<br />información.';
+			$this->header_folder = 'compara';
+			$this->include_theme('index','perfil_b');
 		}else{
 			header('HTTP/1.0 404 Not Found');
 		}
@@ -56,6 +62,9 @@ class escuelas extends main{
 			$this->escuela->get_semaforo();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
+			$entidad_info = new entidad($this->escuela->entidad->id);
+			$entidad_info->read("cct_count");
+			$this->entidad_cct_count = $entidad_info->cct_count;
 			return true;
 		}else{
 			return false;
@@ -63,6 +72,7 @@ class escuelas extends main{
 	}
 	public function calificar(){
 		$comment = strip_tags($this->post('comentario'));
+		if($this->post('calificacion')){
 		$calificacion = new calificacion();
 		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
 			$this->post('nombre'),
@@ -75,6 +85,10 @@ class escuelas extends main{
 		)); 
 		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
 		header("location: $location");
+		}else{
+			header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
+		}
+
 	}
 	public function like_calificacion(){
 		$calif = new calificacion($this->get('id'));
@@ -115,46 +129,6 @@ class escuelas extends main{
 			$_SERVER['HTTP_USER_AGENT']
 		));
 		header('location: /escuelas/index/'.$reporte->cct->cct.'#reportes_ciudadanos');
-	}
-
-	public function perfil_b(){
-		if($this->escuela_info()){
-			$params->limit = '0,8';
-			$params->localidad = $this->escuela->localidad->id;
-			$params->nivel = $this->escuela->nivel->id;		
-
-			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
-
-			$this->load_compara_cookie();
-			$this->get_escuelas($params);
-			$this->escuelas[] = $this->escuela;
-		
-			if($this->compara_cookie){
-				$temp = $this->escuelas;
-				$params2->ccts = $this->compara_cookie;
-				$this->get_escuelas($params2);
-				$this->escuelas = array_merge($temp,$this->escuelas);
-			}
-
-			$this->process_escuelas();
-			$this->escuelas_digest->zoom += 2;
-			$this->escuelas_digest->centerlat = $this->escuela->latitud;
-			$this->escuelas_digest->centerlong = $this->escuela->longitud;
-			$this->title_header = 'Conoce tu escuela';
-			$this->header_folder = 'compara';
-			$this->draw_map = true;
-			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
-			$this->resultados_title = 'Escuelas Similares <span>| Cercanas</span>';
-			$this->breadcrumb = array(
-				'/compara/'=>'Escuelas',
-				'/compara/?search=true&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->entidad->nombre),
-				'/compara/?search=true&municipio='.$this->escuela->municipio->id.'&entidad='.$this->escuela->entidad->id.'#resultados' => $this->capitalize($this->escuela->municipio->nombre),
-				'#'=> $this->capitalize($this->escuela->nombre)
-			);
-			$this->include_theme('index','perfil_b');
-		}else{
-			header('HTTP/1.0 404 Not Found');
-		}
 	}
 }
 ?>

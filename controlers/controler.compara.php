@@ -8,7 +8,9 @@ class compara extends main{
 		$this->load_compara_cookie();
 		$this->breadcrumb = array('#'=> 'Comparador');
 		$this->resultados_title = 'Resultados';
-		$this->header_folder = 'compara';		
+		$this->header_folder = 'compara';				
+		$this->principal = true;
+		$this->title_header = 'Conoce tu escuela';
 		if(!$this->get('search')){ 
 			$this->get_location();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
@@ -24,7 +26,7 @@ class compara extends main{
 			$params->municipio = $this->get('municipio');
 			$params->localidad = $this->get('localidad');
 			$p = $this->get('p') ? $this->get('p') : 1;
-			$this->get_escuelas_new($params,$p);			
+			$this->get_escuelas_new($params,$p);
 			$this->include_theme('index','resultados');
 		}else{
 			$params->pagination = 6;
@@ -33,6 +35,8 @@ class compara extends main{
 			$this->process_escuelas();			
 			$this->include_theme('index','resultados-escuela');
 		}
+		
+
 		
 	}
 	public function mapa(){
