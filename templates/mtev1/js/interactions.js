@@ -223,7 +223,7 @@ function toggle_escuela(cct){
 		var escuelas = $.cookie('escuelas').split('-');
 		var index = escuelas.indexOf(cct);
 		if(index != -1){
-			escuelas.splice(index,1);
+			escuelas.pop(index);
 		}else{
 			escuelas.push(cct);
 		}
