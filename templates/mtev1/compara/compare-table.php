@@ -5,8 +5,8 @@
 		<th>Nivel Escolar</th>
 		<th class='rank'>Posición <?=$this->current_rank->name?></th>
 		<th>Privada | Pública</th>
-		<th class='calificacion'>Calificación enlace de español</th>
-		<th class='calificacion'>Calificación enlace de matemáticas</th>			
+		<th class='calificacion'>Calificación ENLACE de español</th>
+		<th class='calificacion'>Calificación ENLACE de matemáticas</th>			
 		<th class='semaforos'>Semáforo educativo</th>
 	</tr>
 	<?php 
@@ -26,7 +26,11 @@
 		echo "<td>".$this->capitalize($escuela->control->nombre)."</td>";
 		echo "<td class='rank'><span>".round($escuela->promedio_espaniol)."</span></td>";
 		echo "<td class='rank'><span>".round($escuela->promedio_matematicas)."</span></td>";
-		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span></td>";
+		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
+				<div class='icon'><span class='icon-popup'>
+					".$this->config->semaforos[$escuela->semaforo]."
+				</span></div>
+		</td>";
 		echo "</tr>";
 	}
 	?>
