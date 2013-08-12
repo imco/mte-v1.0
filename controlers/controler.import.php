@@ -24,11 +24,11 @@ class import extends main{
 	private function import_teachers(){
 			$id = $this->get('id');
 			$maestro = new maestro();
-			if($id){
+			if($id !== false){
 				$handles = array(
 					'NOMINA_QROO_PEF_2012.txt'
 				);
-				$handle = $this->open_file("/files/maestros/".$handles[$id]);
+				$handle = $this->open_file("/maestros/".$handles[$id]);
 				if($handle){
 					$i = 0;
 					$egreso = new egreso_nomina();
