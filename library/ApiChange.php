@@ -190,5 +190,51 @@ class ApiChange{
 		$result = curl_exec($curl_session);
 		return $result;
 	}
+
+	function regresa_id_organizacion( $organization_url ){
+		if(preg_match("/ /", $organization_url)){
+			$organization_url=urlencode($organization_url);
+		}
+
+		$organization_id = false;
+		$request_url = 'v1/organizations/get_id';
+		$parameters = array(
+		    'api_key' => $this->api_key,
+		    'organization_url' => $organization_url
+		);
+
+		$query_string = http_build_query( $parameters );
+		$final_request_url = "{$this->base_url}$request_url?$query_string";
+		if($this->is_url_online($final_request_url)){
+			$response = file_get_contents($final_request_url);
+			$json_response = json_decode($response, true);
+			$organization_id = $json_response['organization_id'];
+		}
+		return $organization_id;
+
+	}
+	
+	function regresa_info_peticiones_organizacion($organization_url){
+		$organization_id = $this->regresa_id_organizacion($organization_url);
+		$request_url = "v1/organizations/$organization_id/petitions";
+		$parameters = array(
+		    'api_key' => $this->api_key,
+		);
+
+		$query_string = http_build_query( $parameters );
+		$final_request_url = "{$this->base_url}$request_url?$query_string";
+		$petitions = array();
+		if($this->is_url_online($final_request_url)){
+			$response = file_get_contents($final_request_url);
+			$json_response = json_decode($response, true);
+
+			foreach($json_response['petitions'] as $petition){
+				$petition['url'] = str_replace('https://api.change.org/petitions/','http://www.change.org/peticiones/',$petition['url']);
+				$petitions[] = $petition;
+			}
+		}
+		return $petitions;
+	}
+
 }
 ?>
