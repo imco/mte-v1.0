@@ -25,9 +25,8 @@ class import extends main{
 			$id = $this->get('id');
 			$maestro = new maestro();
 			if($id !== false){
-				$handles = array(
-					'NOMINA_QROO_PEF_2012.txt'
-				);
+				$handles = scandir($this->config->document_root.'/files/maestros');
+				//var_dump($handles);
 				$handle = $this->open_file("/maestros/".$handles[$id]);
 				if($handle){
 					$i = 0;
