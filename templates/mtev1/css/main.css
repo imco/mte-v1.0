@@ -713,6 +713,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/COMPARADOR/dejar_comparar.png);left:-93px;top:-44px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
 #content .resultados table td div.icon{position:relative;}
 
+#content .container.comparar.resultados table.general td.semaforo span.icon-popup{left:62px;}
+
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;}
 #content .share-bt.comp{margin:10px;}
