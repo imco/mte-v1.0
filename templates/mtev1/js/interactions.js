@@ -128,6 +128,70 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('#content .share-bt .social').toggleClass('on');
 	});
+
+	$('.wrap_cal span').mouseenter(function(){
+		var span =  $(this).parent().find('span');
+		if($(this).hasClass('on') && $(this).index()==0){
+			span.removeClass('on');
+		}else{
+			span.removeClass('on');
+			for(var i=0;i<=$(this).index();i++){
+				$(span[i]).addClass('on');
+			}
+		}
+	});
+
+	$('.califica .button-frame').click(function(e){
+		e.preventDefault();
+		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
+		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
+		$('.promedio span').html(promedio);
+		$('#rank-value').val(promedio);
+	});
+
+	$('.menu a.logo + a + a').click(function(e){
+		e.preventDefault();
+		var cookie = $.cookie('escuelas'),
+		    url = '/compara/escuelas/'+ (cookie != undefined ? cookie:'');
+		location.href = url;
+	});
+
+	$('.search-estado select.custom-select').change(function(){
+		var id;
+		if((id = $(this).val())!=''){
+			location.href = '/resultados-nacionales/entidad/'+id;		
+		}
+	});
+
+	$('.peticion h1').click(function(){
+		$('.wrap_peticion, .social.on').removeClass('on');
+		$(this).next().addClass('on');
+	});
+
+	if($('#content .container').hasClass('perfil')){
+		$('.menu a.logo + a + a + a').click(function(e){
+			e.preventDefault();
+			location.href = $('.califica a:first-child').attr('href');
+		});
+
+		$('.tabs a.result').click(function(){
+		var texts = $('text[text-anchor="start"]'),
+		    text;
+		for(var i=0;i<texts.length;i++){
+			text = $(texts[i]);
+			text.text(text.text()+' grado');
+		}
+		});
+
+	}
+
+	$('td.school').hover(function(){
+		$('.tooltip').css({top:$(this).position().top,display:'block'});
+	},	
+	function(){
+		$('.tooltip').css('display','none');	
+	});
+
 });
 
 function load_location_options(input,directive,options,name){
@@ -159,7 +223,7 @@ function toggle_escuela(cct){
 		var escuelas = $.cookie('escuelas').split('-');
 		var index = escuelas.indexOf(cct);
 		if(index != -1){
-			escuelas.splice(index,1);
+			escuelas.pop(index);
 		}else{
 			escuelas.push(cct);
 		}
@@ -181,7 +245,7 @@ function twitterIni(){
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
 			var x = data[d];
-			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'"><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user">@'+username+'</a> '+x.text+'</p></li>');
+			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+x.text+'</p></li>');
 	    	}
 	    })
 }

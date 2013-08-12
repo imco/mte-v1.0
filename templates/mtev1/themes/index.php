@@ -53,6 +53,11 @@
 		}
 	?>
 	<title><?=$this->page_title;?></title>
+	<link rel="canonical" href="<?=$this->config->http_address.
+					(isset($_GET['controler'])?$_GET['controler']:'').
+					(isset($_GET['action'])?"/".$_GET['action']:'').
+					(isset($_GET['id'])?"/".$_GET['id']:'')
+					?>" />
  </head>
  <body>
  	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
