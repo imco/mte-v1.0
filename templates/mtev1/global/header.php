@@ -1,15 +1,15 @@
 
-<div class='menu <?= $this->location?>'><div class='container'>
+<div class='menu <?= isset($this->resultados_title) && $this->resultados_title=='Resultados'?' resultados':$this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
-	<a href='/conoce'>CONOCE
+	<a href='/compara/'>CONOCE
 		<span class='circle'></span>
 		<span class='decor'>1</span>
 	</a>
-	<a href='/compara'>COMPARA
+	<a href='/compara/escuelas/'>COMPARA
 		<span class='circle'></span>
 		<span class='decor'>2</span>
 	</a>
-	<a href='/califica-tu-escuela'>CALIFICA
+	<a href='/califica-tu-escuela/califica/'>CALIFICA
 		<span class='circle'></span>
 		<span class='decor'>3</span>
 	</a>
@@ -29,9 +29,11 @@
 		</div>
 		<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' />
 			<input type='submit' value='' />
+			<div class='clear'></div>
 		</form>
 		<a href='/quienes-somos'>¿Quiénes somos?</a>
-		<a href='/ayuda'>Ayuda</a>
+		<a href='/preguntas-frecuentes'>Preguntas frecuentes</a>
+
 	</div>
 
 	<div class='clear'></div>
@@ -39,7 +41,7 @@
 
 <div class="breadcrumb">
 	<ul>
-<?php if($this->breadcrumb && false){ ?>
+<?php if($this->breadcrumb){ ?>
 		<li>
 			<a href="/">
 				<?php $this->print_img_tag('breadcrumb/home.png'); ?>
