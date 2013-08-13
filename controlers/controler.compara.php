@@ -32,7 +32,8 @@ class compara extends main{
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 			$this->get_escuelas($params);
-			$this->process_escuelas();			
+			$this->process_escuelas();
+			$this->cct_count_entidad();
 			$this->include_theme('index','resultados-escuela');
 		}
 		
@@ -61,6 +62,7 @@ class compara extends main{
 	public function escuelas(){
 		//$this->header_folder ='escuelas';
 		$this->header_folder = 'compara';		
+		$this->subtitle_header = 'Esta herramienta te ayuda a comparar la calidad <br />educativa de tu escuela con la de otras <br />similares o cercanas.';
 		$this->draw_map = true;
 		$this->load_compara_cookie();
 		$params->ccts = explode('-',$this->get('id'));
