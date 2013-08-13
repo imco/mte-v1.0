@@ -8,6 +8,10 @@
 			if($this->location == 'peticiones'){
 				$title = 'Firma la peticion :';
 				$description = $this->petition['title'];
+				$url = $this->config->http_address.'/peticiones/index/'.$this->petition_number;
+			}else if($this->location == 'resultados_nacionales'){
+				$url = $this->config->http_address.$this->location."/".$this->get('action')."/".$this->get('id');
+				$title = "Resultados de ".$this->capitalize($this->entidad->nombre);
 			}
 			
 			?>
@@ -22,8 +26,8 @@
 			  		echo $this->capitalize($this->escuelas[$i]->nombre).', ';
 				}
 					echo $this->capitalize($this->escuelas[$i]->nombre);
-			}else if($this->location=='peticiones'){
-				echo $url;
+			}else{
+				echo $title;
 			
 			} ?>" data-via='mejoratuescuela'>
 			  	Tweet
