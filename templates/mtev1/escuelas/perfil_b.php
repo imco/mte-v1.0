@@ -260,11 +260,6 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
-				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica esta escuela</p>
-				
-			</a>
 			<div class='title'>
 				<p>Porcentaje de 
 				<br />
@@ -275,6 +270,30 @@ EOD;
 				<span>21%</span>
 				</p>
 			</div>
+			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
+				<?php $this->print_img_tag('home/califica.png');?>
+				<p>Califica esta escuela</p>
+				
+			</a>
+
+			<?php
+			if($this->petition_data){
+			?>
+			<div class='title petitions'>
+				<h2>Peticiones </h2>
+				<ul>
+				<?php 
+				foreach($this->petition_data as $petition){
+					$count = $petition['count'];
+					echo "<li><a href=".$this->config->http_address."peticiones/index/$count >"
+						.$petition['title']."
+					</a></li>";
+				
+				}?>
+				</ul>
+			</div>
+			<?php } ?>
+			
 		</div>
 	</div>
 	<div class='clear'></div>

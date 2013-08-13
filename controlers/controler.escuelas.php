@@ -21,6 +21,7 @@ class escuelas extends main{
 			}
 
 			$this->process_escuelas();
+			$this->cct_count_entidad();
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
@@ -62,9 +63,11 @@ class escuelas extends main{
 			$this->escuela->get_semaforo();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
+			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
-			$entidad_info->read("cct_count");
-			$this->entidad_cct_count = $entidad_info->cct_count;
+			$entidad_info->read($nivel);
+			$this->entidad_cct_count = $entidad_info->$nivel;
+			$this->petition_data = $this->load_estado_petitions($this->escuela->entidad->nombre);
 			return true;
 		}else{
 			return false;
