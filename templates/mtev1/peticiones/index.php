@@ -4,12 +4,13 @@
 		<a href='http://www.change.org/'>change.org</a>
 		<a href='http://www.change.org/es-LA/start-a-petition'>Inicie una petición</a>
 	</h1>
-	<?php $on = 'on'; ?>
 	<?php 
+	$this->petition_number = 1;
+	$on = $this->get('id')?$this->get('id'):1;
 	foreach($this->petition_info as $this->petition){ 
 	?>
 	<h1><?=$this->petition['title'] ?><span class='shadow'></span></h1>
-	<div class='wrap_peticion <?php echo $on;$on=''?>'>
+	<div class='wrap_peticion <?php echo $on==$this->petition_number?'on':''; $this->petition_number++; ?>'>
 		<div class='content jscrollpane'>
 			<h2><?=$this->petition['title'] ?></h2>
 			<p><?=$this->petition['overview'] ?></p>
@@ -36,11 +37,12 @@
 				</select></p>
 				<p><input type='text' name='ciudad' placeholder='Ciudad'  class='required' /></p>
 				<p><input type='text' name='cp' placeholder='Código Postal' class='required'  /></p>
+				<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
 				<p>
 					<input type='submit' value='Firma' />
 					<input type='hidden' value='<?=$this->petition['url']?>' name='this->petition_url' />
 				</p>
-				<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
+
 			<?php } ?>
 		</form>	
 	
