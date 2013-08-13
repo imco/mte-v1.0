@@ -259,5 +259,30 @@ class main extends controler{
     	}
     }
     
+    protected function cct_count_entidad(){
+	foreach($this->escuelas as $escuela){
+		$entidad = new entidad($escuela->entidad->id);
+		$nivel = "numero_escuelas_".strtolower($escuela->nivel->nombre);
+		$entidad->read($nivel);
+		$escuela->entidad_cct_count = $entidad->$nivel;
+	}
+    }
+
+    protected function load_estado_petitions($estado){
+	date_default_timezone_set('America/Mexico_City');
+	$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+	$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
+	$petition_data = array();
+	$i=0;
+	foreach($petition_info as $petition){
+		$regExp = "/".$estado."/i";
+		if(preg_match($regExp, $petition['title'])){
+			$petition_data[] = $petition;
+			$petition_data[count($petition_data)-1]['count'] = ++$i;
+		}else
+			$i++;
+	}
+	return $petition_data;	
+    }
 }
 ?>
