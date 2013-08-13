@@ -43,5 +43,46 @@ class home extends main{
 	        $this->components['twitter_component']->twitterToken('mejoratuescuela',3);
 	    }
 
+	protected function get_abreviatura_estado($estado){
+    		$estado = strtolower($estado);
+		$estados["aguascalientes"] = "Ags";
+		$estados["baja california"] = "BC";
+		$estados["baja california sur"] = "BCS";
+		$estados["campeche"] = "Camp";
+		$estados["chiapas"] = "Chis";
+		$estados["chihuahua"] = "Chih";
+		$estados["coahuila"] = "Coah";
+		$estados["colima"] = "Col";
+		$estados["distrito federal"] = "DF";
+		$estados["durango"] = "Dgo";
+		$estados["guanajuato"] = "Gto";
+		$estados["guerrero"] = "Gro";
+		$estados["hidalgo"] = "Hgo";
+		$estados["jalisco"] = "Jal";
+		$estados["méxico"] = "Méx";
+		$estados["michoacán"] = "Mich";
+		$estados["morelos"] = "Mor";
+		$estados["nayarit"] = "Nay";
+		$estados["nuevo león"] = "NL";
+		$estados["oaxaca"] = "Oax";
+		$estados["puebla"] = "Pue";
+		$estados["querétaro"] = "Qro";
+		$estados["quintana roo"] = "QR";
+		$estados["san luis potosí"] = "SLP";
+		$estados["sinaloa"] = "Sin";
+		$estados["sonora"] = "Son";
+		$estados["tabasco"] = "Tab";
+		$estados["tamaulipas"] = "Tamps";
+		$estados["tlaxcala"] = "Tlax";
+		$estados["veracruz"] = "Ver";
+		$estados["yucatán"] = "Yuc";
+		$estados["zacatecas"] = "Zac";
+		if(isset($estados[$estado]))
+			return $estados[$estado];
+		else
+			return $estado;
+    	
+	}
+
 }
 ?>
