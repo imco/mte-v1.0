@@ -5,7 +5,7 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 <div class='container resultados-entidad'>
 	<form action='' class='search-estado'>
 		<select class='custom-select' name='estado' >
-			<option value=''>Busca tu estado</option>
+			<option value=''>Busca otro estado</option>
 			<?php foreach($this->entidades as $entidad){ 
 				echo "<option value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
 			}
@@ -25,11 +25,76 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 				<span><?=round($this->entidad->promedio_general,1)?></span>
 			</span>
 			<span class='right'>
-				Promedio Nacional
+				Promedio nacional
 				<span><?=round($this->entidad->promedio_nacional_general,1)?></span>
 			</span>
 			<span class='decor'></span>
 		</h2>
+		<div class='column'>
+			<p class='promedio-green'>
+				Escuelas totales
+				<span class='value'><?=$this->entidad->escuelas_totales?></span>
+			</p>
+			<p class='promedio-green'>
+				Escuelas evaluadas
+				<span class='value'><?=$this->entidad->escuelas_evaluadas?></span>
+			</p>
+			<div class='clear'></div>
+
+			<p class='promedio-orange'>
+				Número de escuelas primarias
+				<span class='value'><?=$this->entidad->numero_escuelas_primaria?></span>
+			</p>
+			<div class='table'>
+				<p>Promedio estatal de español <span class='value'><?=$this->entidad->primaria_espaniol?></span></p>
+				<p>Promedio estatal de matemáticas <span class='value'><?=$this->entidad->primaria_matematicas?></span></p>
+			</div>
+
+			<p class='promedio-orange'>
+				Número de escuelas secundarias
+				<span class='value'><?=$this->entidad->numero_escuelas_secundaria?></span>
+			</p>
+			<div class='table'>
+				<p>Promedio estatal de español <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
+				<p>Promedio estatal de matemáticas <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
+			</div>
+
+			<p class='promedio-orange'>
+				Número de escuelas bachillerato
+				<span class='value'><?=$this->entidad->numero_escuelas_bachillerato?></span>
+			</p>
+			<div class='table'>
+				<p>Promedio estatal de español <span class='value'><?=$this->entidad->bachillerato_espaniol?></span></p>
+				<p>Promedio estatal de matemáticas <span class='value'><?=$this->entidad->bachillerato_matematicas?></span></p>
+			</div>
+
+		</div>
+		<div class='column'>
+			<p class='promedio-green blue'>
+				Promedio de español
+				<span class='value'><?=$this->entidad->promedio_espaniol?></span>
+			</p>
+			<p class='promedio-green blue'>
+				Promedio de matemática
+				<span class='value'><?=$this->entidad->promedio_matematicas?></span>
+			</p>
+			<div class='clear'></div>
+			<div class='table'>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_primaria?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_primaria?></span></p>
+			</div>
+
+			<div class='table'>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_secundaria?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_secundaria?></span></p>
+			</div>
+
+			<div class='table'>
+				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_bachillerato?></span></p>
+				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_bachillerato?></span></p>
+			</div>
+		</div>
+		<div class='clear'></div>
 		<?php $i=0;
 		foreach($niveles as $nivel => $name){ 
 			$escuelas = $this->mejores_escuelas[$i];
@@ -60,72 +125,6 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 			</ol>
 		</div>
 		<?php } ?>
-
-		<div class='column'>
-			<p class='promedio-green'>
-				Escuelas totales
-				<span class='value'><?=$this->entidad->escuelas_totales?></span>
-			</p>
-			<p class='promedio-green'>
-				Escuelas evaluadas
-				<span class='value'><?=$this->entidad->escuelas_evaluadas?></span>
-			</p>
-			<div class='clear'></div>
-
-			<p class='promedio-orange'>
-				Número de escuelas primarias
-				<span class='value'><?=$this->entidad->numero_escuelas_primaria?></span>
-			</p>
-			<div class='table'>
-				<p>Promedio de español <span class='value'><?=$this->entidad->primaria_espaniol?></span></p>
-				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->primaria_matematicas?></span></p>
-			</div>
-
-			<p class='promedio-orange'>
-				Número de escuelas secundarias
-				<span class='value'><?=$this->entidad->numero_escuelas_secundaria?></span>
-			</p>
-			<div class='table'>
-				<p>Promedio de español <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
-				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
-			</div>
-
-			<p class='promedio-orange'>
-				Número de escuelas bachillerato
-				<span class='value'><?=$this->entidad->numero_escuelas_bachillerato?></span>
-			</p>
-			<div class='table'>
-				<p>Promedio de español <span class='value'><?=$this->entidad->bachillerato_espaniol?></span></p>
-				<p>Promedio de matemáticas <span class='value'><?=$this->entidad->bachillerato_matematicas?></span></p>
-			</div>
-
-		</div>
-		<div class='column'>
-			<p class='promedio-green blue'>
-				Promedio de español
-				<span class='value'><?=$this->entidad->promedio_espaniol?></span>
-			</p>
-			<p class='promedio-green blue'>
-				Promedio de matemática
-				<span class='value'><?=$this->entidad->promedio_matematicas?></span>
-			</p>
-			<div class='clear'></div>
-			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_primaria?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_primaria?></span></p>
-			</div>
-
-			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_secundaria?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_secundaria?></span></p>
-			</div>
-
-			<div class='table'>
-				<p>Promedio nacional de español <span class='value'><?=$this->entidad->promedio_nacional_espaniol_bachillerato?></span></p>
-				<p>Promedio nacional de matemáticas <span class='value'><?=$this->entidad->promedio_nacional_matematicas_bachillerato?></span></p>
-			</div>
-		</div>
-		<div class='clear'></div>
 		<!--
 		<div class='graphs'>
 			<div class='graph-set on'>
@@ -151,9 +150,13 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 			</div>
 		</div>
 		-->
-		<?php if($this->petition_data){ 
-				echo "<a href='/peticiones/'>firmar:".$this->petition_data[0]['title']."</a>";
-			}
+		<?php 
+		if($this->petition_data){ 
+			echo "<a href='/peticiones/'>firmar:".$this->petition_data[0]['title']."</a>";
+		}
 		?>
 	</div>
+	<?php
+	$this->include_template('share_buttons','global')
+	?>
 </div>
