@@ -49,8 +49,9 @@
 						<p class='title_semaforo'>
 							".$this->config->semaforos[$esc->semaforo]."
 						</p>
+						"/*
 						descripcion del semáforo
-
+						*/."
 					</span></div>
 				</td>
 			</tr>
