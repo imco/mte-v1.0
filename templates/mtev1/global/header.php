@@ -1,5 +1,5 @@
 
-<div class='menu <?= isset($this->resultados_title) && $this->resultados_title=='Resultados'?' resultados':$this->location?>'><div class='container'>
+<div class='menu <?= ($this->get('action')=='escuelas')?' resultados':$this->location?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
 	<a href='/compara/'>CONOCE
 		<span class='circle'></span>
