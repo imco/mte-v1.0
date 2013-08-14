@@ -113,7 +113,7 @@ EOD;
 				<a name='reportes_ciudadanos'></a>
 				<div class='gray-box presupuestos'>
 					<!-- <h2>Promedio nacional</h2> -->
-					<h2>En construcción.</h2>
+					<h2>Esta escuela no tiene información de presupuesto disponible.</h2>
 					<!--
 					<div class='column left'>
 						<h3 class='gray'>
