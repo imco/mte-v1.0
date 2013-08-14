@@ -172,7 +172,7 @@ $(document).ready(function(){
 	if($('#content .container').hasClass('perfil')){
 		$('.menu a.logo + a + a + a').click(function(e){
 			e.preventDefault();
-			location.href = $('.califica a:first-child').attr('href');
+			location.href = $('.califica a.title').attr('href');
 		});
 
 		$('.tabs a.result').click(function(){
