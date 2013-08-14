@@ -5,7 +5,8 @@
 		</div>
 		<div class='info_B'>
 			<h2>
-				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?>
+				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$controles[$this->escuela->control->id]?>
 			</h2>
 
 		</div>
