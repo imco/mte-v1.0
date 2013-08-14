@@ -765,7 +765,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .rank .posicion p{font-size:22px;color:white;line-height:16px;padding-top:11px;}
 #content .perfil.B .rank .posicion p + p{line-height:16px;}
 #content .perfil.B .rank .posicion h2{color:white;font-size:30px;line-height:40px;margin-top:5px;}
-#content .perfil.B .semaforo{padding:0;width:202px;margin-top:6px;height:auto;background-color:#eaeaea;}
+#content .perfil.B .semaforo{padding:0;width:202px;margin-top:6px;height:auto;background-color:#eaeaea;position:relative;}
 #content .perfil.B .semaforo h2{line-height:40px;margin:0;height:38px;}
 #content .perfil.B .semaforo p{float:left;font-size:15px;padding:14px 17px;}
 #content .perfil.B .semaforo .level{border-bottom:1px solid white;}
@@ -774,6 +774,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .semaforo .level.panzazo{padding-top:5px;}
 #content .perfil.B .semaforo .level.bien{padding-bottom:3px;}
 #content .perfil.B .semaforo .level.reprobado{padding-top:7px;}
+
 /*
 #content .perfil.B .semaforo .level.bien{margin-top:4px;}*/
 #content .perfil.B .semaforo .level.excelente{margin:1px 0  2px 0;}
@@ -795,6 +796,12 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .semaforo .panzazo .icon{background-image:url(../img/perfil/depanzazo.png);}
 #content .perfil.B .semaforo .bien .icon{background-image:url(../img/perfil/bien.png);}
 #content .perfil.B .semaforo .excelente .icon{background-image:url(../img/perfil/excelente.png);}
+
+#content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
+#content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-image:url(../img/perfil/rojo_s.png);margin:0 auto;float:none;margin-bottom:5px;}
+#content .perfil.B .semaforo .sem-overlay .icon.icon5{background-image:url(../img/perfil/gris_s.png);}
+
+
 #content .perfil.B .califica{margin-top:4px;}
 #content .perfil.B .califica .title{background-color:#888;text-align:center;color:white;height:99px;}
 #content .perfil.B .califica .title.petitions{height:auto;margin-top:10px;}
