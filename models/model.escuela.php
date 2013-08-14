@@ -71,6 +71,7 @@ class escuela extends table{
 				$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;
 				$grados[$enlace->grado] = $enlace->grado;
 			}
+			ksort($enlaces);
 			$grados = array_values($grados);
 			sort($grados);
 			$keys = array_flip($grados);
