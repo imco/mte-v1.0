@@ -5,7 +5,6 @@ $user = 'root';
 $pwd = 'RtG/()rERtfkfGKLF'; /* Put your password here */
 $db = 'comparatuescuela';
 //$db = 'compara';
-exit;
 $conn = new mysqli($host,$user,$pwd,$db);
 
 if (mysqli_connect_errno()) {
