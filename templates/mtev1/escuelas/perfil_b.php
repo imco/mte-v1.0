@@ -25,14 +25,14 @@
 						<?=$this->capitalize($this->escuela->entidad->nombre)?>
 					</span>
 				</p>
-				<p class='director'>
+				<!--<p class='director'>
 					<span class='icon'></span>
 					Director/Directora
 					<span class='title'>
-						<!--<?=$this->escuela->correoelectronico?>-->
+						
 					</span>
 					<div class='clear'></div>
-				</p>
+				</p>-->
 				<p class='contacto'>CONTACTO</p>
 				<p class='tel'>
 					Teléfonos
