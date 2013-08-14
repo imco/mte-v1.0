@@ -117,4 +117,16 @@ class reporte_ciudadano_like extends table{
 		$this->objects['reporte_ciudadano'] = 'reporte_ciudadano';
 	}
 }
+
+class newsletters extends table{
+	function info(){
+		$this->table_name = 'newsletters';
+	}
+}
+
+class user_search extends table{
+	function info(){
+		$this->table_name = 'user_search';
+	}
+}
 ?>
