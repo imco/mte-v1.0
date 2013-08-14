@@ -1,7 +1,9 @@
 <div class=' container comparar resultados'>
 	<div class='compara-tabs'>
 		<a href='#' class='general on'><span></span>General</a>
+		<!--
 		<a href='#' class='posicion-nacional'><span></span>Posición nacional</a>
+		-->
 		<a href='#' class='resultados-por-anio'><span></span>Resultados por año</a>
 		<a href='#' class='desempeno-de-alumnos'><span></span>Desempeño por alumno</a>
 		<a href='#' class='mapa' id='compare-map-tab'><span></span>Mapa</a>
@@ -16,6 +18,7 @@
 			$this->include_template('compare-table','compara');
 			?>
 		</div>
+		<!--
 		<div class='tab'>
 			<?php 
 			$this->current_rank->name = 'Nacional';
@@ -23,6 +26,7 @@
 			$this->include_template('compare-table','compara');
 			?>
 		</div>
+		-->
 		<div class='tab'><?php $this->include_template('por-anios-table','compara');?></div>
 		<div class='tab'><?php $this->include_template('por-alumno-table','compara');?></div>
 		<div class='tab'>
@@ -73,3 +77,27 @@
 			<hr />
 		</div>
 	</div>
+
+	<?php if($this->post('term')){
+			$params->term = $this->post('term');
+			$params->control = $this->post('control');
+			$params->nivel = $this->post('nivel');
+			$params->entidad = $this->post('entidad');
+			$params->municipio = $this->post('municipio');
+			$params->localidad = $this->post('localidad');
+			$p = $this->post('p') ? $this->post('p') : 1;
+			$this->get_escuelas_new($params,$p);
+			$this->set_info_user_search($this->num_results);
+			$this->include_template('resultados','compara');
+		}else if($this->post('search')){
+			$params->pagination = 6;
+			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+			$this->get_escuelas($params);
+			$this->process_escuelas();
+			$this->cct_count_entidad();
+			$this->include_template('resultados-escuela','compara');
+		
+		}
+	?>	
+
+

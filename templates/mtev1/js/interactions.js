@@ -8,6 +8,7 @@ $(document).ready(function(){
 	$('.reporte-form').validate();
 	$('.petition-form').validate();
 	$('.contacto-form').validate();
+	$('form.newsletter').validate();
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
