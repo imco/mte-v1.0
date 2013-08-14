@@ -264,6 +264,12 @@ EOD;
 				<span class='icon'></span>
 				<div class='clear'></div>
 			</div>
+			<?php
+				if($this->escuela->semaforo >= 4){
+					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>".
+					$this->config->semaforos[$this->escuela->semaforo]."</div>";
+				}
+			?>
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
@@ -329,4 +335,5 @@ EOD;
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
+
 <?php $this->include_template('resultados-escuela','compara')?>
