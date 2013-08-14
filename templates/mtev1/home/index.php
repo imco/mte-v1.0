@@ -71,13 +71,25 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 	</div>
 	<div class='column right'>
 		<div class='gray-box newsletter'>
-			<p>Mantente informado</p>
+			<?php if($this->get('news') && $this->get('news')!='false'){ 
+						echo "<p>Registrado correctamente</p>";
+			}else{
+				if($this->get('news')=='false')
+					echo "<p>Error intentalo de nuevo</p>";
+				else
+					echo "<p>Mantente informado</p>";
+			
+			  ?>
 			<?php $this->print_img_tag('news.png');?>
-			<form action="">
-				<input name='' type='text' placeholder='Tu correo'/>
+			<form method='post' action='/home/newsletter/' accept-charstet='utf-8' class='newsletter' >
+				<input name='correo' type='text' placeholder='Tu correo' class='required email' />
+				<p class='check'><input type='checkbox' name='aviso' class='required' />	
+					<a href='/aviso-de-privacidad'>Aceptar aviso de privacidad</a>
+				</p>
+
 				<input type='submit' value='Suscríbete' />
 			</form>
-			<a href='/aviso-de-privacidad'>Aviso de privacidad</a>
+			<?php } ?>
 		</div>
 		<a href='/peticiones/' class='banner orange peticiones'>
 			<?php $this->print_img_tag('home/peticiones.png');?>
