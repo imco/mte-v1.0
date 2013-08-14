@@ -1,4 +1,4 @@
-<div class="share-bt comp">
+<div class="share-bt comp  <?=$this->location."_".($this->get('action')?$this->get('action'):"") ?>">
 	<div class="social">
 		<div class="btns">
 			
@@ -8,10 +8,21 @@
 			if($this->location == 'peticiones'){
 				$title = 'Firma la peticion :';
 				$description = $this->petition['title'];
-				$url = $this->config->http_address.'/peticiones/index/'.$this->petition_number;
+				$url = $this->config->http_address.'peticiones/index/'.$this->petition_number++;
 			}else if($this->location == 'resultados_nacionales'){
 				$url = $this->config->http_address.$this->location."/".$this->get('action')."/".$this->get('id');
 				$title = "Resultados de ".$this->capitalize($this->entidad->nombre);
+			}else if($this->location == 'escuelas' && $this->get('action')=='index'){
+				$url = $url."/index/".$this->get('id');
+				$title = "El perfil de ".$this->capitalize($this->escuela->nombre);
+			}else if($this->location == 'compara' && $this->get('action') == 'escuelas' && $this->get('id')){
+				$title = "compara: ";
+			  	for($i=0;$i<count($this->escuelas)-1;$i++){
+			  		$title = $title.$this->capitalize($this->escuelas[$i]->nombre).', ';
+				}
+				$title = $title.$this->capitalize($this->escuelas[$i]->nombre);
+				$url = $url."/escuelas/".$this->get('id');
+
 			}
 			
 			?>
@@ -20,16 +31,7 @@
 
 				<div class="tweet">
 				  <span class="twitter-icon"></span>
-				  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text=" <?php 		if($this->location == 'compara' &&  isset($this->escuelas)){;
-				  echo 'Compara:';
-			  	for($i=0;$i<count($this->escuelas)-1;$i++){
-			  		echo $this->capitalize($this->escuelas[$i]->nombre).', ';
-				}
-					echo $this->capitalize($this->escuelas[$i]->nombre);
-			}else{
-				echo $title;
-			
-			} ?>" data-via='mejoratuescuela'>
+				  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text=" <?=$title;?>" data-via='mejoratuescuela'>
 			  	Tweet
 				  </a>
 				</div>
