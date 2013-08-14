@@ -8,7 +8,7 @@
 		<th>Privada | Pública</th>
 		<th class='calificacion'>Calificación ENLACE de español</th>
 		<th class='calificacion'>Calificación ENLACE de matemáticas</th>			
-		<th class='semaforos'>Semáforo educativo</th>
+		<th class='semaforos'>Semáforo educativo <span class='infor I'>i</span></th>
 	</tr>
 	<?php 
 	if($this->escuelas!=null)
@@ -35,7 +35,13 @@
 		echo "<td class='rank'><span>".round($escuela->promedio_matematicas)."</span></td>";
 		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
 				<div class='icon'><span class='icon-popup'>
-					".$this->config->semaforos[$escuela->semaforo]."
+						<p class='infor I'>i</p>
+						<p class='title_semaforo'>
+							".$this->config->semaforos[$escuela->semaforo]."
+						</p>
+						"/*
+						descripcion del semáforo
+						*/."
 				</span></div>
 		</td>";
 		echo "</tr>";
