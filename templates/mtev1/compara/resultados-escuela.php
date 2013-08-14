@@ -79,6 +79,11 @@
 		$this->pagination->echo_paginate('/compara/?'.$query,'p',5,false,$labels); 
 	}
 	?></div>
+	<?php
+	if($this->location == 'escuelas' && $this->get('action')=='index')
+		$this->include_template('share_buttons','global');
+	?>
+
 	<?php $sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : ''; ?>
 	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
 		<span class="button">Compara</span>
