@@ -263,8 +263,10 @@ class main extends controler{
 	foreach($this->escuelas as $escuela){
 		$entidad = new entidad($escuela->entidad->id);
 		$nivel = "numero_escuelas_".strtolower($escuela->nivel->nombre);
-		$entidad->read($nivel);
+		$nivelNacional = "numero_nacional_escuelas_".strtolower($escuela->nivel->nombre);
+		$entidad->read($nivel.",".$nivelNacional);
 		$escuela->entidad_cct_count = $entidad->$nivel;
+		$escuela->nacional_cct_count = $entidad->$nivelNacional;
 	}
     }
 
@@ -283,6 +285,33 @@ class main extends controler{
 			$i++;
 	}
 	return $petition_data;	
+    }
+
+    protected function set_info_user_search($escuelas_num){
+	$params= array();
+	if($this->get('search')){
+	    	$params[] = $this->get('term')?$this->get('term'):"";
+		$params[] = $this->get('control')?$this->get('control'):0;
+		$params[] = $this->get('nivel')?$this->get('nivel'):0;
+		$params[] = $this->get('entidad')?$this->get('entidad'):0;
+		$params[] = $this->get('municipio')?$this->get('municipio'):0;
+		$params[] = $this->get('localidad')?$this->get('localidad'):0;
+	}else if($this->post('search')){
+	    	$params[] = $this->post('term')?$this->post('term'):"";
+		$params[] = $this->post('control')?$this->post('control'):0;
+		$params[] = $this->post('nivel')?$this->post('nivel'):0;
+		$params[] = $this->post('entidad')?$this->post('entidad'):0;
+		$params[] = $this->post('municipio')?$this->post('municipio'):0;
+		$params[] = $this->post('localidad')?$this->post('localidad'):0;		
+	}
+
+	if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
+		$params[] = $escuelas_num;
+		$user_search = new user_search();
+		$user_search->create(
+			'term,control,nivel,entidad,municipio,localidad,cct_count',$params
+		);
+	}
     }
 }
 ?>
