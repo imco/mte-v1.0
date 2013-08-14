@@ -11,7 +11,7 @@
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Posición estatal</th>
-			<th class='rank'>Semáforo educativo</th>
+			<th class='rank'>Semáforo educativo <span class='infor I'>i</span> </th>
 		</tr>
 	<?php
 	if(isset($this->escuelas)){
@@ -40,10 +40,18 @@
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
 				<td class='control'>".$controles[$escuela->control]."</td>
-				<td class='rank'><span>{$rank_entidad}</span></td>
+				<td class='rank'><span>{$rank_entidad}</span>
+						<span>de {$escuela->entidad_cct_count}</span>
+				</td>
 				<td class='semaforo sem{$esc->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
-						".$this->config->semaforos[$esc->semaforo]."
+						<p class='infor I'>i</p>
+						<p class='title_semaforo'>
+							".$this->config->semaforos[$esc->semaforo]."
+						</p>
+						"/*
+						descripcion del semáforo
+						*/."
 					</span></div>
 				</td>
 			</tr>
