@@ -42,7 +42,9 @@
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
 				<td class='control'>".$controles[$escuela->control->id]."</td>
-				<td class='rank'><span>{$rank_entidad}</span></td>
+				<td class='rank'><span>{$rank_entidad}</span>
+					<span>de {$escuela->entidad_cct_count}</span>
+				</td>
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
 						".$this->config->semaforos[$escuela->semaforo]."
