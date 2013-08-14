@@ -11,7 +11,7 @@
 			<th class='nivel'>Nivel</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Posición estatal</th>
-			<th class='rank'>Semáforo educativo</th>
+			<th class='rank'>Semáforo educativo  <span class='infor I'>i</span></th>
 		</tr>
 	<?php
 	if(isset($this->escuelas)){
@@ -26,7 +26,7 @@
 			*/
 			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
-			$controles = array(1=>'Publica', 2=>'Privada');
+			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
@@ -47,7 +47,11 @@
 				</td>
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
-						".$this->config->semaforos[$escuela->semaforo]."
+						<p class='infor I'>i</p>
+						<p class='title_semaforo'>
+							".$this->config->semaforos[$escuela->semaforo]."
+						</p>
+						descripcion del semáforo
 					</span></div>
 				</td>
 			</tr>
