@@ -5,7 +5,8 @@
 		</div>
 		<div class='info_B'>
 			<h2>
-				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?>
+				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$controles[$this->escuela->control->id]?>
 			</h2>
 
 		</div>
@@ -25,14 +26,14 @@
 						<?=$this->capitalize($this->escuela->entidad->nombre)?>
 					</span>
 				</p>
-				<p class='director'>
+				<!--<p class='director'>
 					<span class='icon'></span>
 					Director/Directora
 					<span class='title'>
-						<!--<?=$this->escuela->correoelectronico?>-->
+						
 					</span>
 					<div class='clear'></div>
-				</p>
+				</p>-->
 				<p class='contacto'>CONTACTO</p>
 				<p class='tel'>
 					Teléfonos
@@ -113,7 +114,7 @@ EOD;
 				<a name='reportes_ciudadanos'></a>
 				<div class='gray-box presupuestos'>
 					<!-- <h2>Promedio nacional</h2> -->
-					<h2>En construcción.</h2>
+					<h2>Esta escuela no tiene información de presupuesto disponible.</h2>
 					<!--
 					<div class='column left'>
 						<h3 class='gray'>
@@ -165,8 +166,7 @@ EOD;
 				</div>
 			</div>
 			<div class='tab jscrollpane'>
-				<h2>En construcción.</h2>
-				<!--
+				<!--<h2>En construcción.</h2>-->
 				<div class='mas-info'>
 					<div class='left'>	
 						<h2>Servicio</h2>
@@ -214,7 +214,6 @@ EOD;
 						</div>					
 					</div>
 				</div>
-				-->
 			</div>
 			<div class='tab jscrollpane charts'><div class='chart-box'>
 				<?php 
@@ -266,6 +265,13 @@ EOD;
 				<span class='icon'></span>
 				<div class='clear'></div>
 			</div>
+			<?php
+				if($this->escuela->semaforo >= 4){
+					$semaforos = array('Escuela que no tomo prueba ENLACE','Escuela no Confiable');
+					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>".
+					$semaforos[$this->escuela->semaforo-4]."</div>";
+				}
+			?>
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
@@ -331,4 +337,5 @@ EOD;
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
+
 <?php $this->include_template('resultados-escuela','compara')?>
