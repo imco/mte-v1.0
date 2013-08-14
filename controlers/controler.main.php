@@ -260,7 +260,7 @@ class main extends controler{
     }
     
     protected function cct_count_entidad(){
-    	if(isset($this->escuelas){
+    	if(isset($this->escuelas)){
 		foreach($this->escuelas as $escuela){
 			$entidad = new entidad($escuela->entidad->id);
 			$nivel = "numero_escuelas_".strtolower($escuela->nivel->nombre);
