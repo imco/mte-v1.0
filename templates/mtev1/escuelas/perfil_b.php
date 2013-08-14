@@ -11,6 +11,11 @@
 		</div>
 		<div class='map-wrap'>	
 			<div class='info_B lateral'>
+				<p class='cct'>
+					CCT <?=$this->escuela->cct?>
+					<div class='clear'></div>
+				</p>
+
 				<p class='address'>
 					<span class='icon'></span>
 					Dirección
@@ -20,10 +25,15 @@
 						<?=$this->capitalize($this->escuela->entidad->nombre)?>
 					</span>
 				</p>
-				<p class='cct'>
-					CCT <?=$this->escuela->cct?>
+				<p class='director'>
+					<span class='icon'></span>
+					Director/Directora
+					<span class='title'>
+						<!--<?=$this->escuela->correoelectronico?>-->
+					</span>
 					<div class='clear'></div>
 				</p>
+				<p class='contacto'>CONTACTO</p>
 				<p class='tel'>
 					Teléfonos
 					<span class='icon'></span>
@@ -40,14 +50,7 @@
 					</span>
 					<div class='clear'></div>
 				</p>
-				<p class='director'>
-					<span class='icon'></span>
-					Director
-					<span class='title'>
-						<!--<?=$this->escuela->correoelectronico?>-->
-					</span>
-					<div class='clear'></div>
-				</p>
+
 				<p class='web'>
 					<?=$this->escuela->paginaweb ?>
 				</p>
@@ -260,11 +263,6 @@ EOD;
 		</div>
 		<div class='clear'></div>
 		<div class='califica'>
-			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
-				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica esta escuela</p>
-				
-			</a>
 			<div class='title'>
 				<p>Porcentaje de 
 				<br />
@@ -275,6 +273,30 @@ EOD;
 				<span>21%</span>
 				</p>
 			</div>
+			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
+				<?php $this->print_img_tag('home/califica.png');?>
+				<p>Califica esta escuela</p>
+				
+			</a>
+
+			<?php
+			if($this->petition_data){
+			?>
+			<div class='title petitions'>
+				<h2>Peticiones </h2>
+				<ul>
+				<?php 
+				foreach($this->petition_data as $petition){
+					$count = $petition['count'];
+					echo "<li><a href=".$this->config->http_address."peticiones/index/$count >"
+						.$petition['title']."
+					</a></li>";
+				
+				}?>
+				</ul>
+			</div>
+			<?php } ?>
+			
 		</div>
 	</div>
 	<div class='clear'></div>
