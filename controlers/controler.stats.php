@@ -94,5 +94,22 @@ class stats extends main{
 				);
 		}
 	}
+
+	public function nacional_totales(){
+		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
+		for($i=1;$i<=32;$i++){
+			$entidad = new entidad($i);
+			$entidad->debug = true;
+			foreach($niveles as $nivel => $name){	
+				$sql = "SELECT count(cct) FROM escuelas WHERE nivel = $nivel";
+				$result = mysql_query($sql);
+				$result = mysql_fetch_row($result);
+				$entidad->update("numero_nacional_escuelas_".$name,$result);
+				
+			}
+		}
+
+	
+	}
 }
 ?>
