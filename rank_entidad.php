@@ -1,9 +1,9 @@
 <?php
-$host = '***REMOVED***';
-$user = 'root';
+$host = 'mysql51-030.wc1.dfw1.stabletransit.com';
+$user = '***REMOVED***';
 //$pwd = ''; /* Put your password here */
-$pwd = 'RtG/()rERtfkfGKLF'; /* Put your password here */
-$db = 'comparatuescuela';
+$pwd = '***REMOVED***'; /* Put your password here */
+$db = '***REMOVED***';
 //$db = 'compara';
 $conn = new mysqli($host,$user,$pwd,$db);
 //exit;
