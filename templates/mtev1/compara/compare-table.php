@@ -39,7 +39,9 @@
 						<p class='title_semaforo'>
 							".$this->config->semaforos[$escuela->semaforo]."
 						</p>
+						"/*
 						descripcion del semáforo
+						*/."
 				</span></div>
 		</td>";
 		echo "</tr>";
