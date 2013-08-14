@@ -11,6 +11,11 @@
 		</div>
 		<div class='map-wrap'>	
 			<div class='info_B lateral'>
+				<p class='cct'>
+					CCT <?=$this->escuela->cct?>
+					<div class='clear'></div>
+				</p>
+
 				<p class='address'>
 					<span class='icon'></span>
 					Dirección
@@ -20,10 +25,15 @@
 						<?=$this->capitalize($this->escuela->entidad->nombre)?>
 					</span>
 				</p>
-				<p class='cct'>
-					CCT <?=$this->escuela->cct?>
+				<p class='director'>
+					<span class='icon'></span>
+					Director/Directora
+					<span class='title'>
+						<!--<?=$this->escuela->correoelectronico?>-->
+					</span>
 					<div class='clear'></div>
 				</p>
+				<p class='contacto'>CONTACTO</p>
 				<p class='tel'>
 					Teléfonos
 					<span class='icon'></span>
@@ -40,14 +50,7 @@
 					</span>
 					<div class='clear'></div>
 				</p>
-				<p class='director'>
-					<span class='icon'></span>
-					Director
-					<span class='title'>
-						<!--<?=$this->escuela->correoelectronico?>-->
-					</span>
-					<div class='clear'></div>
-				</p>
+
 				<p class='web'>
 					<?=$this->escuela->paginaweb ?>
 				</p>

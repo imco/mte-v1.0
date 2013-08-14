@@ -27,6 +27,8 @@ class compara extends main{
 			$params->localidad = $this->get('localidad');
 			$p = $this->get('p') ? $this->get('p') : 1;
 			$this->get_escuelas_new($params,$p);
+			$this->resultados_title = 'Resultados de tu búsqueda';
+			$this->set_info_user_search($this->num_results);
 			$this->include_theme('index','resultados');
 		}else{
 			$params->pagination = 6;
@@ -60,7 +62,6 @@ class compara extends main{
 		$this->include_theme('index','map');
 	}
 	public function escuelas(){
-		//$this->header_folder ='escuelas';
 		$this->header_folder = 'compara';		
 		$this->subtitle_header = 'Esta herramienta te ayuda a comparar la calidad <br />educativa de tu escuela con la de otras <br />similares o cercanas.';
 		$this->draw_map = true;
@@ -70,9 +71,19 @@ class compara extends main{
 		if(count($params->ccts)){
 			$this->get_escuelas($params);		
 			$this->process_escuelas();
+			$this->cct_count_entidad();
 		}
 		$this->resultados_title = 'Resultados';
 		$this->breadcrumb = array('#'=>'Comparador');
+
+		$this->resultados_title = 'Resultados de tu búsqueda';
+
+		if(!$this->post('search')){ 
+			$this->get_location();
+			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
+			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
+		}
+
 		$this->include_theme('index','index');
 	}
 }
