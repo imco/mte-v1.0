@@ -9,6 +9,7 @@ class califica_tu_escuela extends main{
 	public function califica(){
 		if($this->escuela_info()){
 			$this->title_header = 'Califica tu escuela';
+			$this->subtitle_header = 'Una vez que conoces y has comparado tu escuela, te invitamos a<br />que califiques algunos aspectos de la misma. Las calificaciones<br />ayudan a detectar áreas de mejora y a reconocer los<br />logros alcanzados.';
 			$this->header_folder = 'compara';
 			$this->breadcrumb = array('/califica-tu-escuela/'=>'Califica tu escuela','#'=>$this->escuela->nombre);
 			$this->include_theme('index','califica');
