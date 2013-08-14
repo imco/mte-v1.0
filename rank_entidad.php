@@ -6,7 +6,7 @@ $pwd = 'RtG/()rERtfkfGKLF'; /* Put your password here */
 $db = 'comparatuescuela';
 //$db = 'compara';
 $conn = new mysqli($host,$user,$pwd,$db);
-
+exit;
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
