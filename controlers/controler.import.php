@@ -24,9 +24,16 @@ class import extends main{
 	private function import_teachers(){
 			$id = $this->get('id');
 			$maestro = new maestro();
+<<<<<<< HEAD
+			if($id){
+				$handles = array(
+					'NOMINA_QROO_PEF_2012.txt'
+				);
+=======
 			if($id !== false){
 				$handles = scandir($this->config->document_root.'/files/maestros');
 				//var_dump($handles);
+>>>>>>> 17c620afb226a5efa27837cb2b5bb21c6732f8c1
 				$handle = $this->open_file("/maestros/".$handles[$id]);
 				if($handle){
 					$i = 0;
