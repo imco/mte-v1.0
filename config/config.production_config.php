@@ -7,11 +7,17 @@ class production_config extends default_config{
 		$this->mxnphp_dir = "/mnt/stor9-wc1-dfw1/630517/www.mejoratuescuela.org/web/mxnphp/";
 		
 		//Database
-		$this->db_host = 'mysql51-014.wc1.dfw1.stabletransit.com';
+		/*$this->db_host = 'mysql51-014.wc1.dfw1.stabletransit.com';
 		$this->db_name = '630517_1Mk0_Mt3';
 		$this->db_user = '630517_Imc0T3';
 		$this->db_pass = '***REMOVED***';
+		*/
+		$this->db_host = 'mysql51-030.wc1.dfw1.stabletransit.com';
+		$this->db_name = '***REMOVED***';
+		$this->db_user = '***REMOVED***';
+		$this->db_pass = '***REMOVED***';
 		
+
 		//MXNPHP
 		$this->dev_mode = true;
 
