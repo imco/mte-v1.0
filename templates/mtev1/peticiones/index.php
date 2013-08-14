@@ -30,7 +30,7 @@
 				}
 			?>			
 				<p><input type='text' name='nombre' placeholder='Nombre' class='required' /></p>	
-				<p><input type='text' name='email' placeholder='Email'  class='required email' /></p>
+				<p><input type='text' name='email' placeholder='Correo electrónico'  class='required email' /></p>
 				<p><select name='pais' class='custom-select' class='required'  >
 					<option value=''>País</option>
 					<?php $this->include_template('countries','peticiones'); ?>
