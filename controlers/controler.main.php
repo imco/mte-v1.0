@@ -260,13 +260,15 @@ class main extends controler{
     }
     
     protected function cct_count_entidad(){
-	foreach($this->escuelas as $escuela){
-		$entidad = new entidad($escuela->entidad->id);
-		$nivel = "numero_escuelas_".strtolower($escuela->nivel->nombre);
-		$nivelNacional = "numero_nacional_escuelas_".strtolower($escuela->nivel->nombre);
-		$entidad->read($nivel.",".$nivelNacional);
-		$escuela->entidad_cct_count = $entidad->$nivel;
-		$escuela->nacional_cct_count = $entidad->$nivelNacional;
+    	if(isset($this->escuelas){
+		foreach($this->escuelas as $escuela){
+			$entidad = new entidad($escuela->entidad->id);
+			$nivel = "numero_escuelas_".strtolower($escuela->nivel->nombre);
+			$nivelNacional = "numero_nacional_escuelas_".strtolower($escuela->nivel->nombre);
+			$entidad->read($nivel.",".$nivelNacional);
+			$escuela->entidad_cct_count = $entidad->$nivel;
+			$escuela->nacional_cct_count = $entidad->$nivelNacional;
+		}
 	}
     }
 
