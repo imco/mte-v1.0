@@ -54,7 +54,7 @@ class escuelas extends main{
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
 			turno=>nombre,latitud,longitud,tipo=>nombre,
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
-			control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
+			control=>id,control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,
 			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
