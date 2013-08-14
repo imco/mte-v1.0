@@ -4,7 +4,8 @@ class resultados_nacionales extends main{
 		$this->load_entidades();	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
-		$this->title_header = 'Resultados por Estado';
+		$this->title_header = 'Resultados por estado';
+		$this->subtitle_header = 'Revisa los resultados educativos de tu estado y cómo se comparan con el<br />promedio nacional.  En el perfil de tu estado también podrás <br />encontrar tablas de las mejores escuelas primarias, <br />secundarias y bachilleratos.';
 		$this->include_theme('index','index');
 	}
 	public function entidad(){
@@ -18,8 +19,9 @@ class resultados_nacionales extends main{
 			$this->header_folder = 'compara';
 			$this->title_header = 'Busca tu estado';
 
-			$this->load_petition();
+			//$this->load_petition();
 			$this->load_escuelas();
+			$this->petition_data = $this->load_estado_petitions($this->entidad->nombre);
 			$this->include_theme('index','entidad');
 		}else{
 			$this->index();
@@ -75,6 +77,7 @@ class resultados_nacionales extends main{
 		}
 		return $data;	
 	}
+	/*
 	private function load_petition(){
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
@@ -88,5 +91,6 @@ class resultados_nacionales extends main{
 		}
 	
 	}
+	*/
 }
 ?>
