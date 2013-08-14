@@ -717,7 +717,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.checkbox.compara_table span.icon-popup{background-image:url(../img/COMPARADOR/dejar_comparar.png);left:-93px;top:-44px;line-height:normal;padding:21px 0px;text-align:center;width:91px;background-position:7px 0}
 #content .resultados table td div.icon{position:relative;}
 
-#content .container.comparar.resultados table.general td.semaforo span.icon-popup{left:62px;}
+#content .resultados table tbody td.semaforo span.icon-popup,
+#content  table.general td.semaforo span.icon-popup{left:62px;/**/width:135px;height:98px;background-size:128px;line-height:normal;top:-72px;}
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;}
@@ -1100,10 +1101,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .peticion .title a{color:white;font-weight:bold;}
 #content .peticion .title a + a{float:right;width:299px;background:#ED4431;margin-right:8px;border-radius:5px;height:49px;margin-top:4px;text-align:center;line-height:50px;font-size:18px;text-indent:-5px;box-shadow:1px 2px 3px red;}
 
-/*tooltip resultados*/
-#content .resultados .tooltip{position:absolute;background-color:rgba(0,0,0,.3);border-radius:5px;padding:1px 5px;color:white;left:298px;display:none;}
 /*conoce*/
 #content .resultados.conoce table th.school{width:155px;}
 #content .resultados.conoce table th.nivel{width:131px;}
 #content .resultados.conoce table th.control{width:128px;}
 #content .resultados.conoce table th.rank{width:127px;}
+
+#content table .infor.I{display:block;font-size:35px;font-weight:bold;font-family:serif;color:#0BA04D;margin-top:11px;}
+#content table p.title_semaforo{font-size:18px;text-align:center;margin-top:6px;color:#0BA04D;}
