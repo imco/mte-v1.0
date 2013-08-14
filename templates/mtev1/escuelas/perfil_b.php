@@ -112,7 +112,9 @@ EOD;
 			<div class='tab jscrollpane'>
 				<a name='reportes_ciudadanos'></a>
 				<div class='gray-box presupuestos'>
-					<h2>Promedio nacional</h2>
+					<!-- <h2>Promedio nacional</h2> -->
+					<h2>En construcción.</h2>
+					<!--
 					<div class='column left'>
 						<h3 class='gray'>
 							Presupuesto anual para la Escuela
@@ -159,9 +161,12 @@ EOD;
 						</div>
 
 					</div>
+					-->
 				</div>
 			</div>
 			<div class='tab jscrollpane'>
+				<h2>En construcción.</h2>
+				<!--
 				<div class='mas-info'>
 					<div class='left'>	
 						<h2>Servicio</h2>
@@ -209,6 +214,7 @@ EOD;
 						</div>					
 					</div>
 				</div>
+				-->
 			</div>
 			<div class='tab jscrollpane charts'><div class='chart-box'>
 				<?php 
