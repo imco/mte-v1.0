@@ -15,7 +15,7 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 	
 	</form>
 	<h1 class='full-blue'><?=$this->capitalize($this->entidad->nombre)?>
-		<span><?=$this->entidad->id?>º de 32</span>	
+		<span><?=$this->entidad->rank?>º de 32</span>	
 	</h1>
 	
 	<div class='content'>
