@@ -2,7 +2,8 @@
 class import extends main{
 	public function index(){
 		set_time_limit(10000000);
-		$this->import_teachers();
+		//$this->import_teachers();
+		$this->import_percents();
 		//$this->import_states();
 		//$this->import_locales()
 // 		$this->import_schools();
@@ -19,7 +20,26 @@ class import extends main{
 // 		$this->update_pruebas_totales_enlace();
 
 	}
-
+	private function import_percents(){
+		$handles = scandir($this->config->document_root.'/files/2013stats/');
+		var_dump($handles);
+		$handle = $this->open_file("/2013stats/".$handles[$this->get('id')]);
+		$i = 0;
+		if($handle){
+			while (($row = fgetcsv($handle,0, ",")) !== FALSE){				
+				if($i != 0){
+					$rep = ($row[17] *.8)+($row[13] * .2);
+					//var_dump($row[17],$row[13],$rep);
+					$escuela = new escuela($row[1]);
+					$escuela->debug = true;
+					$escuela->update('pct_reprobados',array($rep));
+					$i++
+				}
+				//if($i++ == 5) exit;
+			}
+			echo "$i records updated";
+		}
+	}
 
 	private function import_teachers(){
 			$id = $this->get('id');
