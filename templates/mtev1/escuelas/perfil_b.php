@@ -13,7 +13,8 @@
 		<div class='map-wrap'>	
 			<div class='info_B lateral'>
 				<p class='cct'>
-					CCT <?=$this->escuela->cct?>
+					CCT 
+					<span class="CCT"><?=$this->escuela->cct?></span>
 					<div class='clear'></div>
 				</p>
 
