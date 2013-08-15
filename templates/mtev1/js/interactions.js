@@ -193,6 +193,13 @@ $(document).ready(function(){
 		$('.tooltip').css('display','none');	
 	});
 
+	if($('.container').hasClass('perfil')){
+		var cct = $('span.CCT').html();
+		if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
+		$('a[href="'+cct+'"]').trigger('click');	
+		}
+	}
+
 });
 
 function load_location_options(input,directive,options,name){
