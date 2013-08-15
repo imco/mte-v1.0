@@ -30,9 +30,9 @@
 				  </a>
 
 				<div class="tweet">
+				<a href="http://twitter.com/home?status=<?=$title." ".$url," por @mejoratuescuela"?> " target='_blank' >
 				  <span class="twitter-icon"></span>
-				  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text=" <?=$title;?>" data-via='mejoratuescuela'>
-			  	Tweet
+				</a>
 				  </a>
 				</div>
 			  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
