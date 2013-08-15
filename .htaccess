@@ -19,6 +19,7 @@ RewriteEngine On
 
 RewriteBase /
 RewriteRule ^califica-tu-escuela/?$ ?controler=compara [QSA,L]
+RewriteRule ^preguntas-frecuentes/?$ ?controler=metodologia [QSA,L]
 RewriteRule ^([-_\w]+)/?$ ?controler=$1 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
