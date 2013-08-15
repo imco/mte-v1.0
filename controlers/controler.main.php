@@ -210,10 +210,11 @@ class main extends controler{
 		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';
 		$this->niveles = $q->read('id,nombre');
 	}
-	public function load_entidades(){
+	public function load_entidades($order_by = false){
 		$q = new entidad();
 		$q->search_clause = '1';
-		$this->entidades = $q->read('id,nombre,cct_count');
+		if($order_by) $q->order_by = $order_by;
+		$this->entidades = $q->read('id,nombre,cct_count,promedio_general,rank');
 	}
 	protected function capitalize($string){
 		return ucwords(mb_strtolower($string,'UTF-8'));
