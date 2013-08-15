@@ -283,7 +283,7 @@ EOD;
 				<br />
 				nivel "Reprobado"
 				<br />
-				<span>21%</span>
+				<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
 				</p>
 			</div>
 			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
