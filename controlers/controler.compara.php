@@ -1,6 +1,8 @@
 <?php
 class compara extends main{
 	public function index(){
+
+
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
@@ -63,6 +65,11 @@ class compara extends main{
 		$this->include_theme('index','map');
 	}
 	public function escuelas(){
+		$this->load_niveles();
+		$this->load_entidades();
+		$this->load_municipios();
+		$this->load_localidades();
+		
 		$this->header_folder = 'compara';		
 		$this->subtitle_header = 'Esta herramienta te ayuda a comparar la calidad <br />educativa de tu escuela con la de otras <br />similares o cercanas.';
 		$this->draw_map = true;
