@@ -196,8 +196,12 @@ $(document).ready(function(){
 	if($('.container').hasClass('perfil')){
 		var cct = $('span.CCT').html();
 		if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
-		$('a[href="'+cct+'"]').trigger('click');	
+			$('a[href="'+cct+'"]').trigger('click');	
+			if(!$('a[href="'+cct+'"]').size()){
+				toggle_escuela(cct);
+			}
 		}
+
 	}
 
 });
