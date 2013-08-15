@@ -1047,7 +1047,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*¿Quienes somos?*/
 #content .container.quienes_somos{margin:41px auto;}
-#content .container.quienes_somos .wrap_text{padding:34px 26px;font-size:15px;background-color:rgba(219,220,219,.5);} 
+#content .container.quienes_somos .wrap_text{padding:34px 26px;font-size:15px;background-color:rgba(219,220,219,.5);text-align:justify;} 
 #content .container.quienes_somos .wrap_text p{line-height:16px;color:#636564;}
 #content .container.quienes_somos .wrap_text .info{margin-top:66px;}
 #content .container.quienes_somos .wrap_text .info span:first-child{display:block;}
