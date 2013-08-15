@@ -244,8 +244,8 @@ class main extends controler{
 		$location = json_decode($location_request);
 		//var_dump($location);
     	if($location->region_code != '' && $location->country_code == 'MX'){
-			$this->user_location = new entidad(9);
-			//$this->user_location = new entidad($location->region_code);
+			//$this->user_location = new entidad(9);
+			$this->user_location = new entidad($location->region_code);
 			$this->user_location->read('id,nombre');
 		}else{
 			$this->user_location = new entidad(rand(1,32));
