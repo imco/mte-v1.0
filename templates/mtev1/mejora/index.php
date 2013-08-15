@@ -18,7 +18,7 @@
 		</div>
 		<div class='mejorar'>
 			<h1>
-				<?php $this->print_img_tag('mejora/4.jpg') ?>
+				<?php $this->print_img_tag('mejora/3.jpg') ?>
 
 
 				<a href="<?=$url."MTE_4.pdf"?>">
@@ -49,7 +49,7 @@
 	
 		<div class='mejorar'>
 			<h1>
-				<?php $this->print_img_tag('mejora/3.jpg') ?>
+				<?php $this->print_img_tag('mejora/4.jpg') ?>
 
 				<a href="<?=$url."MTE_03.pdf"?>">
 								<span>Descargar</span>
