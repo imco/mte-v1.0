@@ -27,15 +27,17 @@ class import extends main{
 		$i = 0;
 		if($handle){
 			while (($row = fgetcsv($handle,0, ",")) !== FALSE){				
+				//var_dump($row);
 				if($i != 0){
-					$rep = ($row[17] *.8)+($row[13] * .2);
+
+					$rep = ($row[18] *.8)+($row[14] * .2);
 					//var_dump($row[17],$row[13],$rep);
 					$escuela = new escuela($row[1]);
 					$escuela->debug = true;
 					$escuela->update('pct_reprobados',array($rep));
-					$i++
+					
 				}
-				//if($i++ == 5) exit;
+				$i++;
 			}
 			echo "$i records updated";
 		}
