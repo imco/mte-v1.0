@@ -1,15 +1,15 @@
 @import url('reset.css');
 
-body{font-family:Arial, Helvetica, sans-serif;background:#DEDEDE;color:#323232;}
+body{font-family:Arial, Helvetica, sans-serif;background:#white;color:#323232;}
 a{text-decoration:none;color:#359B37;}
 .hidden{display:none;}
 .clear{clear:both;}
 
-#container{border:1px solid white;width:187px;background-color:white;margin:5px auto 0;}
+#container{border:1px solid white;width:187px;background-color:white;}
 #container h1{font-size:15px;font-weight:bold;color:#323232;line-height:15px;padding:0 5px 1px;}
 #container h3{font-size:12px;font-weight:bold;color:#343434;line-height:12px;padding:0 5px;}
-#container p{color:#323232;padding:0 5px;line-height:14px;}
-#container form input{display:block;float:left;background:white;border:1px solid #CFCFCF;color:black;padding:6px 8px 7px;margin:10px 0 8px;width:130px;font-size:11px;}
-#container form input.submit{margin:0;padding:0;float:left;width:29px;height:29px;background-image: url(../img/widget-search.png);border-left:none;margin:10px 0 5px;background-repeat:no-repeat;}
+#container p{color:#323232;line-height:14px;}
+#container form input{display:block;float:left;background:white;border:1px solid #CFCFCF;color:black;padding:7px 8px 7px;width:130px;font-size:11px;}
+#container form input.submit{margin:0;padding:0;float:left;width:29px;height:29px;background-image: url(../img/widget-search.png);border-left:none;background-repeat:no-repeat;}
 #container ul{padding:0 5px;font-size:11px;}
 #container ul li{list-style-type:square;color:#359B37;list-style-position:inside;padding-left:2px;}
