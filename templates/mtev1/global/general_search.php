@@ -68,7 +68,7 @@
 			</select>
 		</p>
 		<p class='submit button-frame'>
-			<input type='submit' value='Buscar' class='button'/>
+			<input type='submit' value='Buscar' class='button  button-efect blue'/>
 			<input type='hidden' value='true' name='search' />
 			<span class='before'></span>
 			<span class='before after'></span>
