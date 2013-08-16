@@ -65,7 +65,7 @@
 					
 				</div>
 			<a class='button-frame' href='/compara/'>
-				<span class='button'>Agrega otra escuela</span>
+				<span class='button button-efect green'>Agrega otra escuela</span>
 			</a>
 			<?php $this->include_template('general_search','global'); ?>
 			
