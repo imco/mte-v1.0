@@ -128,7 +128,7 @@
 	</div>
 	<div class='clear'></div>
 		<a href='#' class='button-frame'>
-			<span class='button'>Califica</span>
+			<span class='button button-efect blue'>Califica</span>
 		</a>
 
 	<p class='promedio'>
