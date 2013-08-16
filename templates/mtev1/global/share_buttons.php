@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<a href="#" class="button-frame">
-		<span class="bt-share">
+		<span class="bt-share button-efect">
 			<?php $this->print_img_tag('compartir/compartir.png');?>
 			Compartir
 		</span>
