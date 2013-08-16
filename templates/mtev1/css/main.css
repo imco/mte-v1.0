@@ -15,7 +15,7 @@ a{text-decoration:none;}
 #header h3{text-align:center;font-size:14px;line-height:25px;}
 #header hr{display:block;border:none;height:2px;background:white;/*width:440px*/}
 #header a{color:white;}
-#header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px black;height:124px;}
+#header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px rgba(0,0,0,.6);height:124px;}
 #header .menu .container{position:relative;}
 #header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
 #header .menu a[href='/compara/']{background-image:url(../img/header/conoce.png);}
@@ -35,11 +35,11 @@ a{text-decoration:none;}
 #header .menu a.logo img{width:210px;}
 #header .menu a.logo:hover{background-color:transparent;}
 #header .menu form{display:block;margin-top:22px;}
-#header .menu form input[type='text']{width:86px;float:left;}
+#header .menu form input[type='text']{width:86px;float:left;color:gray;font-size:16px;text-indent:0;padding:11px 11px 0}
 #header .menu form input[type='submit']{background-image:url(../img/home/buscar.png);;background-repeat:no-repeat;width:35px;margin-left:-3px;background-position:center;background-color:rgba(255,255,255,.7);float:right;margin-right:4px;height:31px;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:8px 11px 0;color:white;text-shadow:1px 1px #999;font-size:19px;line-height:20px;font-family:Varela Round;width:110px;text-indent:-3px;}
-#header .menu input[placeholder]{color:white!important;}
-#header .menu ::-webkit-input-placeholder{color:white!important;}
+#header .menu input[placeholder]{color:white;font-size:19px;}
+#header .menu ::-webkit-input-placeholder{color:white;}
 #header .menu .social{position:absolute;right:-56px;top:96px;}
 #header .menu .submenu .social a{float:right;;display: block;width:23px;height:23px;background:url(../img/home/face.png);margin:0 2px;padding:0;background-position:-25px 0}
 #header .menu .social a:hover{background-position:0 0}
@@ -134,6 +134,7 @@ a{text-decoration:none;}
 #footer .img a{display:block;float:left;margin:16px 9px 0;}
 #footer .img a + a{margin:11px 6px 0;}
 #footer a{color:#898989;font-size:13px;margin:0 17px;}
+#footer a:hover{color:white;}
 #footer .sole{background-color:#5C5C5C;font-size:10px;line-height:33px;position:absolute;bottom:0;width:100%;}
 #footer .sole a{font-size:10px;margin:0;}
 #footer .menu{margin-top:15px;}
@@ -319,8 +320,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados hr{background-color:#0BA14A;margin:0 2px;height:4px;background-image:none;}
 #content .resultados table{border-spacing:2px;border-collapse:separate;margin-top:-2px;}
 #content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:12px 5px;vertical-align:middle;font-size:13px;}
-#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas.png) no-repeat center;width:42px;padding:0 4px;}
-#content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 13px 9px;width:70px;padding:4px 216px 0 51px;color:white;line-height:15px;}
+#content .resultados table th.checkbox{background:#7E7E7E url(../img/compara/esc_comparadas_vertical.png) no-repeat center;width:42px;padding:0 4px;}
+#content .resultados table th.school{background:#7E7E7E url(../img/compara/escuelas.png) no-repeat 32% center ;width:70px;color:white;line-height:15px;}
 #content .resultados table th.rank{width:74px;line-height:16px;}
 #content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.2);}
 #content .resultados table td.school{background-color:rgba(26,164,86,.2);text-align:left;}
@@ -329,7 +330,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.checkbox{background-color:rgba(26,164,86,.2);}
 #content .resultados table td.checkbox a{display:block;border:2px solid #23A358;width:18px;height:18px;border-radius:3px;position:relative;margin:0 auto;}
 #content .resultados table td.rank span{display:block;background-image:url(../img/compara/posicion.png);width:33px;height:32px;text-align:center;line-height:32px;margin:0 auto;font-size:12px;}
-#content .resultados table td.rank span + span{background:transparent;width:100%;line-height:normal;}
+#content .resultados table td.rank span + span{background:transparent;width:100%;line-height:normal;text-align:center;margin:5px 0 0 0;height:auto;}
 #content .resultados table th.matematicas,
 #content .resultados table th.espanol{line-height:14px;padding:0;}
 
@@ -341,6 +342,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
 #content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
+#content .resultados table tr td.school:hover{background-color:rgba(26,164,86,.5);}
+
 #content .resultados table tr.on .school a{color:white;}
 #content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr.on .checkbox a{border:2px solid white;position:relative;}
@@ -360,7 +363,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Comparador*/
 #content .comparar{margin:11px auto;width:898px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
-#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:178px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
+#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:222px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}
 #content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
 #content .comparar .compara-tabs a span{display:block;}
@@ -433,8 +436,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.home .column h1.cap.subtitle{position:relative;}
 #content .container.home .column h1.cap.subtitle.blue{padding:1px 142px 0 27px;overflow:hidden;}
 #content .container.home .column h1.cap.subtitle.blue img{margin:7px 13px 0 0;}
-#content .container.home .column h1.cap.subtitle.blue a{padding-left:6px;font-size:15px;}
-#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:136px;border-left:1px solid white;top:0;}
+#content .container.home .column h1.cap.subtitle.blue a{padding-left:6px;font-size:13px;}
+#content .container.home .column h1.cap.subtitle span{font-size:15px;position:absolute;right:0;width:122px;border-left:1px solid white;top:0;}
 #content .container.home .column h1.cap.subtitle span a{padding-left:14px;color:white;}
 #content .container.home .column h1.cap.subtitle.blue span a{padding-left:6px}
 #content .container.home .gray-box .two-column h1{color:#46c47b;}
@@ -833,7 +836,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 0;height:98px;border:1px solid #c3c9c9;width:168px;}
 #content .perfil.B .tabs li:first-child{display:none;}
 #content .perfil.B .tabs li:nth-child(2){width:170px;}
+#content .perfil.B .tabs li:hover:before,
 #content .perfil.B .tabs li.on:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:-6px;}
+#content .perfil.B .tabs li:hover:after,
 #content .perfil.B .tabs li.on:after{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;bottom:-6px;}
 #content .perfil.B .tabs li a{color:#b1b1b1;font-weight:bold;width:100%;height:87px;padding:0;margin:17px auto;text-align:center;line-height:16px;}
 #content .perfil.B .tabs .icon{display:block;width:98px;height:43px;background-repeat:no-repeat;background-position:center 1px;width:100%}
@@ -890,7 +895,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*MTEV4*/
 /*menu*/
 #header .menu a{position:relative;}
-#header .menu .decor{position:absolute;display:block;bottom:-34px;width:100%;left:0;height:30px;line-height:32px;font-size:17px;text-align:center;text-indent:-2px;background-color:rgba(255,255,255,.5);color:#0e9e48;text-shadow:none;font-weight:bold;}
+#header .menu .decor{position:absolute;display:block;bottom:-34px;width:100%;left:0;height:30px;line-height:37px;font-size:17px;text-align:center;text-indent:3px;background-color:rgba(255,255,255,.5);color:#0e9e48;text-shadow:none;font-weight:bold;}
 #header .menu.califica_tu_escuela .container a:nth-child(4) .decor,
 #header .menu.compara .container a:nth-child(2) .decor,
 #header .menu.resultados .container a:nth-child(3) .decor,
@@ -920,7 +925,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .home .gray-box.twitter .icon{width:102px;height:51px;float:left;background:url(../img/home/twitter_logo.png) no-repeat #31a4e3 center;margin-right:24px;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
 #content .home .banner.orange.peticiones img{top:6px;left:60px;}
-#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:18px;font-size:25px;margin-bottom:10px;}
+#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:10px;}
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
 #content .home .banner.resultados + .gray-box img{margin:0 26px 0 0;width:103px;height:51px;}
@@ -982,10 +987,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*Perfil*/
 
 #content .perfil.B .map-wrap{position:relative;}
-#content .perfil.B .map-wrap .lateral{position:absolute;z-index:10;top:6px;right:0;height:344px;width:146px;padding:11px 17px 0;overflow:hidden;}
+#content .perfil.B .map-wrap .lateral{position:absolute;z-index:10;top:6px;right:0;height:344px;width:155px;padding:11px 17px 0;overflow:hidden;}
 #content .perfil.B .map-wrap .lateral p{font-size:16px;text-indent:2px;}
 #content .perfil.B .map-wrap .lateral p .title{font-weight:bold;line-height:17px;padding-top:3px;font-size:13px;}
-#content .perfil.B .map-wrap .lateral .contacto{margin-top:14px;}
+#content .perfil.B .map-wrap .lateral .contacto{margin-top:14px;font-size:13px;}
 #content .perfil.B .map-wrap .lateral .tel .icon{margin-right:-5px;}
 #content .perfil.B .map-wrap .lateral .email{margin-top:4px;}
 #content .perfil.B .map-wrap .lateral .email .title{margin-top:9px;}
@@ -999,6 +1004,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .head + .info_B{height:24px;margin-bottom:6px;}
 #content .perfil.B .head + .info_B h2{text-indent:24px;line-height:32px;}
 #content .perfil.B .tabs{margin-top:4px;}
+#content .perfil.B .tabs .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:8px 9px 0;position:absolute;top:0;left:74px;display:none;}
+#content .perfil.B .tabs li.on .triangle{display:block;}
+#content .perfil.B .tabs li:hover .triangle{display:block;}
 
 #content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;height:306px;position:relative;}
 #content .calificacion-form.B:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
@@ -1018,7 +1026,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .calificacion-form.B p{color:#858786;}
 #content .calificacion-form.B p span{color:#8D908F;}
 
-#content .perfil.B .califica .title:nth-child(2){height:77px;margin-bottom:20px;border-radius:7px;box-shadow:1px 2px 4px black;background-color:#F6921A;display:block;}
+#content .perfil.B .califica .title:nth-child(2){height:77px;margin-bottom:20px;border-radius:7px;box-shadow:2px 2px 4px #B36B12, 3px 3px 4px #FAC382 inset;background-color:#F6921A;display:block;}
 #content .perfil.B .califica .title:nth-child(2) p{line-height:0px;text-indent:-4px;}
 #content .perfil.B .califica .title:nth-child(1){height:144px;margin-bottom:6px;}
 #content .perfil.B .califica .title:nth-child(1) p{padding:19px;font-size:18px;line-height:19px;}
@@ -1084,7 +1092,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica .promedio:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .califica .promedio span{font-size:39px;display:block;margin-top:30px;text-indent:-5px;}
 #content .califica form{margin-top:22px;}
-#content .califica .calificacion-form.B fieldset p:first-child{margin-top:18px;margin-bottom:20px;color:black;}
+#content .califica .calificacion-form.B fieldset p:first-child{margin-top:18px;margin-bottom:20px;color:#353737;}
 #content .califica .calificacion-form.B .customSelect:before{top:68px;}
 #content .califica .button-frame .button{width:212px;font-size:21px;line-height:57px;height:54px;background:#2DB4E4;}
 #content .califica .button-frame{margin-top:16px;height:68px;width:295px;}
@@ -1122,5 +1130,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados.conoce table th.control{width:128px;}
 #content .resultados.conoce table th.rank{width:127px;}
 
-#content table .infor.I{display:block;font-size:35px;font-weight:bold;font-family:serif;color:#0BA04D;margin-top:11px;}
-#content table p.title_semaforo{font-size:18px;text-align:center;margin-top:6px;color:#0BA04D;}
+#content table .infor.I{display:block;font-size:35px;font-weight:bold;font-family:serif;color:#0BA04D;margin-top:11px;margin-top:19px;}
+#content table p.title_semaforo{font-size:15px;text-align:center;margin-top:6px;color:#0BA04D;}
+
+#general-search #ver-en-mapa,
+#header .button-efect,
+#header .adv-search a,
+#content .button-efect{webkit-transition: all .6s;-moz-transition: all .6s;-o-transition: all .6s;-ms-transition: all .6s;transition: all .6s;}
+#content .button-frame .button.button-efect.green:hover{background-color:#168544;box-shadow:none;}
+#content .button-frame .bt-share.button-efect:hover{background-color:#EB8B1A;box-shadow:none;}
+#general-search #ver-en-mapa:hover,
+#header .adv-search a:hover,
+#header .button-frame .button.button-efect.blue:hover,
+#content .button-frame .button.button-efect.blue:hover{background-color:#10759D;box-shadow:none;cursor:pointer;}
