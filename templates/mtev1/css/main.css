@@ -342,7 +342,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
 #content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
-#content .resultados table tr:hover .school{background-color:rgba(26,164,86,.5);}
+#content .resultados table tr td.school:hover{background-color:rgba(26,164,86,.5);}
 
 #content .resultados table tr.on .school a{color:white;}
 #content .resultados table tr.on .checkbox{background-color:rgba(26,164,86,.5);}
@@ -1135,9 +1135,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #general-search #ver-en-mapa,
 #header .button-efect,
+#header .adv-search a,
 #content .button-efect{webkit-transition: all .6s;-moz-transition: all .6s;-o-transition: all .6s;-ms-transition: all .6s;transition: all .6s;}
 #content .button-frame .button.button-efect.green:hover{background-color:#168544;box-shadow:none;}
 #content .button-frame .bt-share.button-efect:hover{background-color:#EB8B1A;box-shadow:none;}
 #general-search #ver-en-mapa:hover,
+#header .adv-search a:hover,
 #header .button-frame .button.button-efect.blue:hover,
 #content .button-frame .button.button-efect.blue:hover{background-color:#10759D;box-shadow:none;cursor:pointer;}
