@@ -23,19 +23,26 @@ class import extends main{
 	private function import_percents(){
 		$handles = scandir($this->config->document_root.'/files/2013stats/');
 		var_dump($handles);
+		///exit;
 		$handle = $this->open_file("/2013stats/".$handles[$this->get('id')]);
 		$i = 0;
 		if($handle){
 			while (($row = fgetcsv($handle,0, ",")) !== FALSE){				
-				//var_dump($row);
-				if($i != 0){
 
-					$rep = ($row[18] *.8)+($row[14] * .2);
+				if($i != 0){
+					$rep = ($row[19] *.5)+($row[15] * .5);
+
+					/*if($row[1] == '09PES0942C'){
+						var_dump($row);
+						var_dump($rep);
+						exit;	
+					}*/
+					
 					//var_dump($row[17],$row[13],$rep);
 					$escuela = new escuela($row[1]);
 					$escuela->debug = true;
 					$escuela->update('pct_reprobados',array($rep));
-					
+					//exit;
 				}
 				$i++;
 			}
