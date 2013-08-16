@@ -67,20 +67,25 @@
 				<li></li>
 				<li><a href='#' class='result'>
 					<span class='icon'></span>
+					<span class='triangle'></span>
 					Resultados educativos
 				</a></li>
 				<li><a href='#'  class='infor'>
 					<span class='icon'></span>
+					<span class='triangle'></span>
 					Más información
 				</a></li>
 				<li><a href='#' class='reportes'>
 					<span class='icon'></span>
+					<span class='triangle'></span>
 					Presupuestos asignados
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
 					<span class='icon'></span>
+					<span class='triangle'></span>
 					Comentarios con calificación
 				</a></li>
+				<div class='clear'></div>
 			</ul>
 
 		<div class='tab-container'>
@@ -288,7 +293,7 @@ EOD;
 			</div>
 			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
 				<?php $this->print_img_tag('home/califica.png');?>
-				<p>Califica esta escuela</p>
+				<p>Califica tu escuela</p>
 				
 			</a>
 
