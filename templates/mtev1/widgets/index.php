@@ -22,17 +22,18 @@
  <body>
  	<div id='container'>
  		<a href='http://www.mejoratuescuela.org' title='Mejora tu Escuela'><?php $this->print_img_tag('reforma-widget-logo.png','Meoratuescuela.org') ?></a>
- 		<h1>Ayuda a transformar tu colegio</h1>
- 		<p>Consulta los resultados de Enlace de las escuelas públicas y privadas del País y aprende cómo puedes ayudar a mejorar la educación de tu</p>
- 		<form action='' method='get' accept-charset='utf-8'>
+ 		<h1><?=$this->widget->title?></h1>
+ 		<p><?=$this->widget->text?></p>
+ 		<form action='http://www.mejoratuescuela.org/compara/' method='get' accept-charset='utf-8'>
  			<p>
  				<input type='text' placeholder='Busca tu escuela aquí' name='term' />
+ 				<input type='hidden' name='search' value='true' class='submit'/>
  				<input type='submit' value='' class='submit'/>
  			</p>
  			<div class='clear'></div>
  		</form>
- 		<h3>Cabeza de la nota aquí</h3>
- 		<ul><li><a href=''>nota</a></li></ul>
+ 		<h3><?=$this->widget->news_title?></h3>
+ 		<ul><?php foreach($this->widget->news_items as $item) echo "<li><a href='$item->url'>$item->title</a></li>"; ?></ul>
  	</div>
  </body>
  </html>
