@@ -1,8 +1,12 @@
 <?php
 class widgets extends main{
 	public function index(){	
-		$this->widget = json_decode( stripslashes(urldecode($this->get('w'))));
+		$this->widget = json_decode(stripslashes(urldecode($this->get('w'))));
 		$this->include_template('index','widgets');
+	}	
+	public function reforma(){	
+		$this->widget = json_decode(stripslashes(urldecode($this->get('w'))));
+		$this->include_template('reforma','widgets');
 	}
 	public function generate(){
 		$widget->title = 'Ayuda a transformar tu colegio';
