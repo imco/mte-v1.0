@@ -23,8 +23,8 @@
 	-->
 	<div class='submenu'>
 		<div class='social'>
-			<a href='https://twitter.com/mejoratuescuela' class='twitter'></a>
-			<a href='https://www.facebook.com/MejoraTuEscuela' class='fb'></a>
+			<a href='https://twitter.com/mejoratuescuela' class='twitter' target='_blank' ></a>
+			<a href='https://www.facebook.com/MejoraTuEscuela' class='fb' target='_blank' ></a>
 			<div class='clear'></div>
 		</div>
 		<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' />
@@ -39,7 +39,7 @@
 	<div class='clear'></div>
 </div></div>
 
-<div class="breadcrumb">
+<div class="breadcrumb<?=($this->location=="escuelas" && $this->get('action')=="index")?' large':''; ?>">
 	<ul>
 <?php if($this->breadcrumb){ ?>
 		<li>
