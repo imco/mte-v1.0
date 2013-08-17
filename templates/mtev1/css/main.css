@@ -17,7 +17,9 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:rgba(255,255,255,0.3);box-shadow:0 0 10px rgba(0,0,0,.6);height:124px;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:white;text-shadow:1px 1px 2px #999;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
+#header .menu a{display:block;float:left;text-align:center;color:#0e9e48;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
+#header .menu a:hover{color:white;}
+#header .menu .submenu a{color:white;text-shadow:1px 1px 2px #999;font-weight:normal;}
 #header .menu a[href='/compara/']{background-image:url(../img/header/conoce.png);}
 #header .menu a[href='/compara/escuelas/']{background-image:url(../img/header/compara.png);background-position:center 21px;}
 #header .menu a[href$='/califica/']{background-image:url(../img/header/califica.png);}
@@ -518,6 +520,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*decorations compara*/
 #header .compara.container{position:relative}
+#header .compara.container.large{margin:49px auto -40px;}
 #header .compara.container .decorations hr{position:absolute;height:1px;}
 #header .compara.container .decorations img{position:absolute;}
 #header .compara.container .decorations .triangle1{background-image:url(../img/home/blco_header.png);position:absolute;top:190px;right:8px;background-repeat:no-repeat;background-position:-1px -11px;width:290px;height:160px;background-size:304px;pointer-events:none;}
@@ -553,7 +556,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header > .decorations hr:first-child{top:138px;}
 #header > .decorations.compara hr:first-child + hr{display:none;}
 #header > .decorations hr + hr + hr {display:block;top:294px;}
-
+#header > .decorations.large hr:first-child{top:181px;}
+#header > .decorations.large hr + hr + hr{top:337px;}
 /*Decorations simple_search*/
 #header .home.container .decorations.simple hr{display:none}
 #header .perfil.container{position:relative;}
@@ -712,6 +716,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .breadcrumb ul li:first-child{background:none;text-align:left;}
 #header .breadcrumb ul li:nth-child(2) a{margin:0 0 0 2px;}
 
+#header .breadcrumb.large{top:140px;}
+
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
 #content .resultados table td.semaforo{position:relative}
@@ -750,7 +756,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt.escuelas_index{margin:-16px 0;}
 
 /*Perfil B*/
-#content .perfil.B{margin:33px auto 20px;padding:0;background-color:transparent;}
+#content .perfil.B{margin:17px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .head{height:61px;}
 #content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
 #content .perfil.B .column.left{width:682px;}
