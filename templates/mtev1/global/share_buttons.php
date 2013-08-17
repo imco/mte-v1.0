@@ -25,13 +25,14 @@
 
 			}
 			
-			$url = $this->shorten_url($url);
+			$urlFb = $this->shorten_url($url."#facebook");
+			$urlTwitter = $this->shorten_url($url."#twitter");
 			?>
-			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?=$url?>&p[images][0]=<?=$url_logo?>&p[title]=<?=$title?>&p[summary]=<?=$description?>" class='share-face' target='_blank' >
+			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?=$urlFb?>&p[images][0]=<?=$url_logo?>&p[title]=<?=$title?>&p[summary]=<?=$description?>" class='share-face' target='_blank' >
 				  </a>
 
 				<div class="tweet">
-				<a href="http://twitter.com/home?status=<?=$title." ".$url," por @mejoratuescuela"?> " target='_blank' >
+				<a href="http://twitter.com/home?status=<?=$title." ".$urlTwitter," por @mejoratuescuela"?> " target='_blank' >
 				  <span class="twitter-icon"></span>
 				</a>
 				</div>
