@@ -1,7 +1,7 @@
 <?php
 class api extends main{
 	public function escuelas(){
-		$params->limit = "0 ,2000";
+		$params->limit = "0 ,100";
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		if($this->request('formato') == 'csv'){
