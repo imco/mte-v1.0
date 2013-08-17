@@ -25,6 +25,7 @@
 
 			}
 			
+			$url = $this->shorten_url($url);
 			?>
 			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?=$url?>&p[images][0]=<?=$url_logo?>&p[title]=<?=$title?>&p[summary]=<?=$description?>" class='share-face' target='_blank' >
 				  </a>
@@ -33,9 +34,7 @@
 				<a href="http://twitter.com/home?status=<?=$title." ".$url," por @mejoratuescuela"?> " target='_blank' >
 				  <span class="twitter-icon"></span>
 				</a>
-				  </a>
 				</div>
-			  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 	</div>
 	<a href="#" class="button-frame">
