@@ -1,8 +1,6 @@
 <?php
 class compara extends main{
 	public function index(){
-
-
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
