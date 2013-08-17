@@ -1,4 +1,4 @@
-<div class='compara container'>
+<div class='compara container<?=($this->location=="escuelas" && $this->get('action')=="index")?' large':''; ?>'>
 	<div class='titles'>
 		<h1><?php echo isset($this->title_header)?$this->title_header:'Compara tu escuela' ?></h1>
 		<hr/>
@@ -71,6 +71,6 @@
 </div>
 
 <?php }?>
-<div class='decorations compara'>
+<div class='decorations compara<?=($this->location=="escuelas" && $this->get('action')=="index")?' large':''; ?> '>
 	<hr /><hr /><hr />
 </div>
