@@ -319,5 +319,12 @@ class main extends controler{
 		);
 	}
     }
+
+    protected function shorten_url($url){
+	$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
+	$shortUrl = $hootSuite->shorten($url);
+	return $shortUrl['results']['shortUrl'];
+    
+    }
 }
 ?>

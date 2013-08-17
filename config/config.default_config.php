@@ -27,6 +27,9 @@ class default_config{
 		$this->twitter_access_token_secret = 'xA2osI7KtxKA1WG6pTwVduDM1Avnw2Umw94fJoNxo';
 		$this->twitter_consumer_key = '***REMOVED***';
 		$this->twitter_consumer_secret = '***REMOVED***';
+
+		//hoot suite
+		$this->hootSuite_api_key = '***REMOVED***';
 	}
 }
 ?>
