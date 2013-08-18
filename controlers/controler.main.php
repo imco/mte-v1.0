@@ -277,53 +277,53 @@ class main extends controler{
     }
 
     protected function load_estado_petitions($estado){
-	date_default_timezone_set('America/Mexico_City');
-	$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-	$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
-	$petition_data = array();
-	$i=0;
-	foreach($petition_info as $petition){
-		$regExp = "/".$estado."/i";
-		if(preg_match($regExp, $petition['title'])){
-			$petition_data[] = $petition;
-			$petition_data[count($petition_data)-1]['count'] = ++$i;
-		}else
-			$i++;
-	}
-	return $petition_data;	
+		date_default_timezone_set('America/Mexico_City');
+		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+		$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
+		$petition_data = array();
+		$i=0;
+		foreach($petition_info as $petition){
+			$regExp = "/".$estado."/i";
+			if(preg_match($regExp, $petition['title'])){
+				$petition_data[] = $petition;
+				$petition_data[count($petition_data)-1]['count'] = ++$i;
+			}else
+				$i++;
+		}
+		return $petition_data;	
     }
 
     protected function set_info_user_search($escuelas_num){
-	$params= array();
-	if($this->get('search')){
-	    	$params[] = $this->get('term')?$this->get('term'):"";
-		$params[] = $this->get('control')?$this->get('control'):0;
-		$params[] = $this->get('nivel')?$this->get('nivel'):0;
-		$params[] = $this->get('entidad')?$this->get('entidad'):0;
-		$params[] = $this->get('municipio')?$this->get('municipio'):0;
-		$params[] = $this->get('localidad')?$this->get('localidad'):0;
-	}else if($this->post('search')){
-	    	$params[] = $this->post('term')?$this->post('term'):"";
-		$params[] = $this->post('control')?$this->post('control'):0;
-		$params[] = $this->post('nivel')?$this->post('nivel'):0;
-		$params[] = $this->post('entidad')?$this->post('entidad'):0;
-		$params[] = $this->post('municipio')?$this->post('municipio'):0;
-		$params[] = $this->post('localidad')?$this->post('localidad'):0;		
-	}
+		$params= array();
+		if($this->get('search')){
+		    $params[] = $this->get('term')?$this->get('term'):"";
+			$params[] = $this->get('control')?$this->get('control'):0;
+			$params[] = $this->get('nivel')?$this->get('nivel'):0;
+			$params[] = $this->get('entidad')?$this->get('entidad'):0;
+			$params[] = $this->get('municipio')?$this->get('municipio'):0;
+			$params[] = $this->get('localidad')?$this->get('localidad'):0;
+		}else if($this->post('search')){
+		    $params[] = $this->post('term')?$this->post('term'):"";
+			$params[] = $this->post('control')?$this->post('control'):0;
+			$params[] = $this->post('nivel')?$this->post('nivel'):0;
+			$params[] = $this->post('entidad')?$this->post('entidad'):0;
+			$params[] = $this->post('municipio')?$this->post('municipio'):0;
+			$params[] = $this->post('localidad')?$this->post('localidad'):0;		
+		}
 
-	if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
-		$params[] = $escuelas_num;
-		$user_search = new user_search();
-		$user_search->create(
-			'term,control,nivel,entidad,municipio,localidad,cct_count',$params
-		);
-	}
+		if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
+			$params[] = $escuelas_num;
+			$user_search = new user_search();
+			$user_search->create(
+				'term,control,nivel,entidad,municipio,localidad,cct_count',$params
+			);
+		}	
     }
 
     protected function shorten_url($url){
-	$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
-	$shortUrl = $hootSuite->shorten($url);
-	return $shortUrl['results']['shortUrl'];
+		$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
+		$shortUrl = $hootSuite->shorten($url);
+		return $shortUrl['results']['shortUrl'];
     
     }
 }
