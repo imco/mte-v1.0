@@ -27,10 +27,10 @@
 			<a href='https://www.facebook.com/MejoraTuEscuela' class='fb' target='_blank' ></a>
 			<div class='clear'></div>
 		</div>
-		<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' />
+		<!--<form method='get' action='/compara/#resultados' accept-charset='utf-8' ><input type='text' name='term' placeholder='Buscar' /><input type='hidden' name='search' value='true' />
 			<input type='submit' value='' />
 			<div class='clear'></div>
-		</form>
+		</form>-->
 		<a href='/quienes-somos'>¿Quiénes somos?</a>
 		<a href='/preguntas-frecuentes'>Preguntas frecuentes</a>
 
