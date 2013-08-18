@@ -32,7 +32,7 @@ a{text-decoration:none;}
 #header .menu.compara a[href='/compara/'] .decor,
 #header .menu.califica_tu_escuela a[href$='/califica/'] .decor,
 #header .menu.resultados a[href='/peticiones'] .decor,
-#header .menu a:hover{background-color:#0a9e48;}
+#header .menu a:hover{background-color:#0a9e48;color:white;}
 #header .menu a.logo{width:auto;margin:28px 13px 0;padding:0;background-color:transparent;}
 #header .menu a.logo img{width:210px;}
 #header .menu a.logo:hover{background-color:transparent;}
