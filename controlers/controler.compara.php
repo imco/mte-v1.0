@@ -34,7 +34,6 @@ class compara extends main{
 		}else{
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
-			$this->debug = true;
 			$this->get_escuelas($params);
 			$this->process_escuelas();
 			$this->cct_count_entidad();
