@@ -18,9 +18,9 @@
 			<a href='http://imco.org.mx/home/' >
 				<?php $this->print_img_tag('quienes_somos/imco_qs.png'); ?>
 			</a>
-			<a href='http://www.mexicanosprimero.org/' >
-				<?php $this->print_img_tag('quienes_somos/mexicanos1ero_qs.png'); ?>		
-			</a>
+			<!--<a href='http://www.mexicanosprimero.org/' >
+				<?php //$this->print_img_tag('quienes_somos/mexicanos1ero_qs.png'); ?>		
+			</a>-->
 			<a href='http://www.omidyar.com/' >
 				<?php $this->print_img_tag('quienes_somos/on_qs.png'); ?>
 			</a>
