@@ -11,11 +11,19 @@ class production_config extends default_config{
 		$this->db_name = '630517_1Mk0_Mt3';
 		$this->db_user = '630517_Imc0T3';
 		$this->db_pass = '***REMOVED***';
+
+
+		$this->db_host = '184.106.242.65';
+		$this->db_name = 'comparatuescuela';
+		$this->db_user = 'root';
+		$this->db_pass = 'RtG/()rERtfkfGKLF';
+		
 		*/
 		$this->db_host = 'mysql51-030.wc1.dfw1.stabletransit.com';
 		$this->db_name = '***REMOVED***';
 		$this->db_user = '***REMOVED***';
 		$this->db_pass = '***REMOVED***';
+
 		
 
 		//MXNPHP
