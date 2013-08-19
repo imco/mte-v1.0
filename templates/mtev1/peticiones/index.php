@@ -42,6 +42,7 @@
 				<p>
 					<input type='submit' value='Firma' />
 					<input type='hidden' value='<?=$this->petition['url']?>' name='petition_url' />
+					<input type='hidden' value='<?=$this->petition_number?>' name='number' />
 				</p>
 
 			<?php } ?>
