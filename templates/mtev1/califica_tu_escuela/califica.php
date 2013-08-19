@@ -127,10 +127,6 @@
 
 	</div>
 	<div class='clear'></div>
-		<a href='#' class='button-frame'>
-			<span class='button button-efect blue'>Califica</span>
-		</a>
-
 	<p class='promedio'>
 		En promedio, calificas a tu escuela con:
 		<br />
@@ -159,7 +155,9 @@
 			</p>
 			<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
 			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
-			<p><input type='submit' value='Enviar' /></p>
+			<p class='button-frame' >
+				<input type='submit' value='Enviar calificación y comentario' class='button button-efect blue' />
+			</p>
 		</fieldset>		
 	</form>
 
