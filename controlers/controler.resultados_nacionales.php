@@ -1,7 +1,7 @@
 <?php
 class resultados_nacionales extends main{
 	public function index(){		
-		$this->load_entidades('promedio_general DESC');	
+		$this->load_entidades('rank ASC');	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
 		$this->title_header = 'Resultados por estado';
