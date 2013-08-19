@@ -75,7 +75,7 @@ class escuelas extends main{
 	}
 	public function calificar(){
 		$comment = strip_tags($this->post('comentario'));
-		if($this->post('calificacion')){
+		//if($this->post('calificacion')){
 		$calificacion = new calificacion();
 		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
 			$this->post('nombre'),
@@ -88,9 +88,9 @@ class escuelas extends main{
 		)); 
 		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
 		header("location: $location");
-		}else{
-			header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
-		}
+		//}else{
+		//	header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
+		//}
 
 	}
 	public function like_calificacion(){
