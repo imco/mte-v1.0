@@ -172,8 +172,8 @@ EOD;
 				</div>
 			</div>
 			<div class='tab jscrollpane'>
-				<!--<h2>En construcción.</h2>-->
-				<div class='mas-info'>
+				<h2>En construcción.</h2>
+				<!--<div class='mas-info'>
 					<div class='left'>	
 						<h2>Servicio</h2>
 						<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
@@ -219,7 +219,7 @@ EOD;
 							<h2>Promedio general</h2>
 						</div>					
 					</div>
-				</div>
+				</div>-->
 			</div>
 			<div class='tab jscrollpane charts'><div class='chart-box'>
 				<?php 
