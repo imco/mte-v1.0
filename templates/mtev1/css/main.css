@@ -716,7 +716,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .breadcrumb ul li:first-child{background:none;text-align:left;}
 #header .breadcrumb ul li:nth-child(2) a{margin:0 0 0 2px;}
 
-#header .breadcrumb.large{top:140px;}
+#header .breadcrumb.escuelas_breadcrumb{top:140px;}
+#header .breadcrumb.preguntas_frecuentes_breadcrumb,
+#header .breadcrumb.metodologia_breadcrumb,
+#header .breadcrumb.aviso_de_privacidad_breadcrumb,
+#header .breadcrumb.contacto_breadcrumb{top:138px;}
 
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
