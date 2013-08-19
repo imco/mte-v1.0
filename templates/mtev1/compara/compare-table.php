@@ -16,7 +16,7 @@
 		$escuela->get_semaforo();
 		$slug = $this->current_rank->slug;
 		$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
-		echo "<tr>";
+		echo "<tr class='on'>";
 		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
 			<div class='icon'>
 			<span class='icon-popup'>Dejar de comparar</span>
@@ -24,11 +24,11 @@
 		</td>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
-		echo "<td class='rank'><span>".$escuela->rank_entidad."</span>
-					<span>de {$escuela->entidad_cct_count}</span>
+		echo "<td class='rank'>".$escuela->rank_entidad."<br />	
+					de {$escuela->entidad_cct_count}
 		</td>";
-		echo "<td class='rank'><span>".$escuela->rank_nacional."</span>
-					<span>de {$escuela->nacional_cct_count}</span>
+		echo "<td class='rank'>".$escuela->rank_nacional."<br />	
+					de {$escuela->nacional_cct_count}
 		</td>";
 		echo "<td>".$this->capitalize($escuela->control->nombre)."</td>";
 		echo "<td class='rank'><span>".round($escuela->promedio_espaniol)."</span></td>";
