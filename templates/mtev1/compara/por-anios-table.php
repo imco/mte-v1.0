@@ -8,13 +8,14 @@
 		<th class='calificacion'>2010</th>
 		<th class='calificacion'>2011</th>
 		<th class='calificacion'>2012</th>
+		<th class='calificacion'>2013</th>
 		<th class='semaforos'>Semaforo Educativo</th>
 	</tr>
 	<?php 
 	if($this->escuelas!=null)
 	foreach($this->escuelas as $escuela){
 		$scores = array();
-		for($i = 2006;$i<2013;$i++){
+		for($i = 2006;$i<=2013;$i++){
 			$scores[$i]->sum = 0;
 			$scores[$i]->count = 0;
 		}
