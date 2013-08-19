@@ -18,7 +18,7 @@
 			<p><a href='<?=$this->petition['url'] ?>'>Leer más</a></p>
 
 		</div>
-		<form action='/peticiones/firmar' method='post' class='this->petition-form' accept-charset='utf-8'>
+		<form action='/peticiones/firmar' method='post' class='petition-form' accept-charset='utf-8'>
 			<?php 
 			if(isset($this->sign_result) && $this->sign_result->result != 'failure'){
 				echo "<h2>Gracias por firmar la peticion</h2>";
@@ -41,7 +41,7 @@
 				<p><input type='checkbox' name='public' checked='checked' />publicar mi firma</p>
 				<p>
 					<input type='submit' value='Firma' />
-					<input type='hidden' value='<?=$this->petition['url']?>' name='this->petition_url' />
+					<input type='hidden' value='<?=$this->petition['url']?>' name='petition_url' />
 				</p>
 
 			<?php } ?>
