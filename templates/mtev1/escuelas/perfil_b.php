@@ -65,11 +65,7 @@
 		</div>
 			<ul class='tabs'>
 				<li></li>
-				<li><a href='#' class='result'>
-					<span class='icon'></span>
-					<span class='triangle'></span>
-					Resultados educativos
-				</a></li>
+
 				<li><a href='#'  class='infor'>
 					<span class='icon'></span>
 					<span class='triangle'></span>
@@ -79,6 +75,11 @@
 					<span class='icon'></span>
 					<span class='triangle'></span>
 					Presupuestos asignados
+				</a></li>
+				<li><a href='#' class='result'>
+					<span class='icon'></span>
+					<span class='triangle'></span>
+					Resultados educativos
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
 					<span class='icon'></span>
@@ -116,6 +117,19 @@ EOD;
 				}
 				?>
 			</div>
+			<!---->
+			<div class='tab jscrollpane charts'><div class='chart-box'>
+				<?php 
+				if($this->escuela->line_chart_espaniol ){
+					echo "<h2>Resultados ENLACE español</h2>";
+					echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
+					echo "<h2>Resultados ENLACE matematicas</h2>";
+					echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
+				}else{
+
+				} 
+				?>
+			</div></div>
 			<div class='tab jscrollpane'>
 				<a name='reportes_ciudadanos'></a>
 				<div class='gray-box presupuestos'>
@@ -221,18 +235,7 @@ EOD;
 					</div>
 				</div>-->
 			</div>
-			<div class='tab jscrollpane charts'><div class='chart-box'>
-				<?php 
-				if($this->escuela->line_chart_espaniol ){
-					echo "<h2>Resultados ENLACE español</h2>";
-					echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
-					echo "<h2>Resultados ENLACE matematicas</h2>";
-					echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
-				}else{
 
-				} 
-				?>
-			</div></div>
 			<div class='tab jscrollpane'>
 				
 			</div>
