@@ -15,7 +15,13 @@ class peticiones extends main{
 	}
 	public function firmar(){
 		$petition_url = $this->post('petition_url');
-		$petition_auth_key = '3d123d2998aa55899a372ac09aef99f166e74c854df7ec877497533ee996103b';
+		$petition_auth_keys = array();
+		$petition_auth_keys[] = 'uno';
+		$petition_auth_keys[] = 'dos';
+		$petition_auth_keys[] = 'tres';
+		$petition_auth_key = $petition_auth_keys[$this->post('number')-1];
+
+		//$petition_auth_key = '3d123d2998aa55899a372ac09aef99f166e74c854df7ec877497533ee996103b';
 
 		$names = explode(' ',$this->post('nombre'));
 		$name = $names[0];
