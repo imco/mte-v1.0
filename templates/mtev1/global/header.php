@@ -39,7 +39,7 @@
 	<div class='clear'></div>
 </div></div>
 
-<div class="breadcrumb<?=($this->location=="escuelas" && $this->get('action')=="index")?' large':''; ?>">
+<div class="breadcrumb <?=$this->location."_breadcrumb" ?>">
 	<ul>
 <?php if($this->breadcrumb){ ?>
 		<li>
