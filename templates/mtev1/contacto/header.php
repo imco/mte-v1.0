@@ -1,6 +1,6 @@
 <div class='container reportes-ciudadanos contacto'>
 	<div class='box'>
-		<h1><span></span>Contáctenos</h1>
+		<h1><span></span>Contáctanos</h1>
 		<div class='content'>
 			<form action='/contacto/enviar/' method='post' class = 'contacto-form'  >
 				<input name='nombre' type='text' placeholder='Nombre' class='required' />
