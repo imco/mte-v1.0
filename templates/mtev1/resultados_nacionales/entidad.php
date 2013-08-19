@@ -113,10 +113,12 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 			<ol class='mejores'>
 				<?php
 				foreach($escuelas as $escuela){
+					$control = $escuela->control=="Publico"?"Pública":$escuela->control;
+
 					echo "
 						<li>
 							<a href='/escuelas/index/{$escuela->cct}'>{$escuela->nombre}</a>
-							<span class='location'> | {$escuela->localidad}, {$escuela->entidad} | {$escuela->control} </span>
+							<span class='location'> | {$escuela->localidad}, {$escuela->entidad} | {$control} </span>
 						</li>
 					";
 				}
