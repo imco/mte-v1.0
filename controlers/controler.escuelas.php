@@ -9,6 +9,7 @@ class escuelas extends main{
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 
 			$this->load_compara_cookie();
+			//$this->debug = true;
 			$this->get_escuelas($params);
 			//$this->escuelas[] = $this->escuela;
 		
