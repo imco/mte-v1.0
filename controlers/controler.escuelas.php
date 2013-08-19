@@ -77,6 +77,7 @@ class escuelas extends main{
 		$comment = strip_tags($this->post('comentario'));
 		//if($this->post('calificacion')){
 		$calificacion = new calificacion();
+		//$calificacion->debug = true;
 		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
 			$this->post('nombre'),
 			$this->post('email'),
