@@ -37,6 +37,17 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<p><a href='http://www.comunicacion.sep.gob.mx/index.php/comunicados/agosto/231-comunicado-118-dan-a-conocer-sep-y-profeco-la-lista-de-utiles-para-el-ciclo-escolar-2013-2014' >Leer más</a></p>
 			</div>
 			<div class='white-box column'>
+				<?php $this->print_img_tag('/home/notas4.jpg');?>
+				<h2>
+				Guía para impulsar el aprendizaje en tu hogar
+				</h2>
+				<hr/>
+				<p>
+				Conoce 10 prácticas y actividades que te ayudarán a mejorar la educación de tus hijos.  Descarga la guía aquí.
+				</p>
+				<p><a href='http://www.consejosescolares.sep.gob.mx/images/pdf/10quehaceres.pdf' >Leer más</a></p>
+			</div>
+			<div class='white-box column'>
 				<?php $this->print_img_tag('/home/notas2.jpg');?>
 				<h2>Lee con tus hijos 20 minutos al día</h2>
 				<hr/>
@@ -54,17 +65,6 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				<p>Consulta aquí las calificaciones individuales de tu hij@ en la prueba ENLACE
 				</p>
 				<p><a href='http://www2.sepdf.gob.mx/SIEBDF01/Calif/calif000.jsp' >Leer más</a></p>
-			</div>
-			<div class='white-box column'>
-				<?php $this->print_img_tag('/home/notas4.jpg');?>
-				<h2>
-				Guía para impulsar el aprendizaje en tu hogar
-				</h2>
-				<hr/>
-				<p>
-				Conoce 10 prácticas y actividades que te ayudarán a mejorar la educación de tus hijos.  Descarga la guía aquí.
-				</p>
-				<p><a href='http://www.consejosescolares.sep.gob.mx/images/pdf/10quehaceres.pdf' >Leer más</a></p>
 			</div>
 			<div class='clear'></div>
 		</div>
