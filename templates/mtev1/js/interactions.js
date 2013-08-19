@@ -130,7 +130,7 @@ $(document).ready(function(){
 		$('#content .share-bt .social').toggleClass('on');
 	});
 
-	$('.wrap_cal span').mouseenter(function(){
+	$('.wrap_cal span').click(function(){
 		var span =  $(this).parent().find('span');
 		if($(this).hasClass('on') && $(this).index()==0){
 			span.removeClass('on');
@@ -140,8 +140,13 @@ $(document).ready(function(){
 				$(span[i]).addClass('on');
 			}
 		}
+		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
+		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
+		$('.promedio span').html(promedio);
+		$('#rank-value').val(promedio);
 	});
 
+	/*
 	$('.califica .button-frame').click(function(e){
 		e.preventDefault();
 		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
@@ -149,6 +154,7 @@ $(document).ready(function(){
 		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
 	});
+	*/
 
 	$('.menu a.logo + a + a').click(function(e){
 		e.preventDefault();
