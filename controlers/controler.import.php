@@ -24,10 +24,9 @@ class import extends main{
 	private function import_percents_manual(){
 		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
 		FROM  enlaces 
-		WHERE anio =  "2012"
+		WHERE anio =  "2013"
 		AND nivel =  "bachillerato"
-		GROUP BY cct
-		LIMIT 0 , 30';
+		GROUP BY cct';
 		$results = mysql_query($sql);
 		$i = 0;
 		while($row = mysql_fetch_row($results)){
