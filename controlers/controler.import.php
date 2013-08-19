@@ -3,7 +3,8 @@ class import extends main{
 	public function index(){
 		set_time_limit(10000000);
 		//$this->import_teachers();
-		$this->import_percents();
+		//$this->import_percents();
+		$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
 // 		$this->import_schools();
@@ -19,6 +20,24 @@ class import extends main{
 // 		$this->update_locales();
 // 		$this->update_pruebas_totales_enlace();
 
+	}
+	private function import_percents_manual(){
+		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
+		FROM  enlaces 
+		WHERE anio =  "2012"
+		AND nivel =  "bachillerato"
+		GROUP BY cct
+		LIMIT 0 , 30';
+		$results = mysql_query($sql);
+		$i = 0;
+		while($row = mysql_fetch_row($results)){
+			$pct = ($row[1] + $row[2]) / 2 / $row[3];
+			$escuela = new escuela($row[0]);
+			$escuela->debug = true;
+			$escuela->update('pct_reprobados,total_evaluados',array($pct,$row[3]));
+			$i++;
+		}
+		echo "<br/>$i records updated";
 	}
 	private function import_percents(){
 		$handles = scandir($this->config->document_root.'/files/2013stats/');
