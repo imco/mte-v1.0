@@ -33,7 +33,8 @@ class resultados_nacionales extends main{
 		$this->mejores_escuelas = array();
 		for($i=0;$i<count($niveles);$i++){
 			$params->entidad = $this->entidad->id;
-			$params->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.rank_entidad DESC';
+			//$params->order_by = ' ISNULL(escuelas.rank_nacional), escuelas.rank_nacional ASC, escuelas.rank_entidad DESC';
+			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 			$params->limit = '0,5';
 			$params->nivel = $niveles[$i];
 			$this->get_escuelas($params);
