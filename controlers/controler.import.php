@@ -3,8 +3,8 @@ class import extends main{
 	public function index(){
 		set_time_limit(10000000);
 		//$this->import_teachers();
-		//$this->import_percents();
-		$this->import_percents_manual();
+		$this->import_percents();
+		//$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
 // 		$this->import_schools();
@@ -41,14 +41,15 @@ class import extends main{
 	private function import_percents(){
 		$handles = scandir($this->config->document_root.'/files/2013stats/');
 		var_dump($handles);
-		///exit;
+		//exit;
 		$handle = $this->open_file("/2013stats/".$handles[$this->get('id')]);
 		$i = 0;
 		if($handle){
 			while (($row = fgetcsv($handle,0, ",")) !== FALSE){				
-
+				//var_dump($row);
+				//exit;
 				if($i != 0){
-					$rep = ($row[19] *.5)+($row[15] * .5);
+					$rep = ($row[17] *.5)+($row[13] * .5);
 
 					/*if($row[1] == '09PES0942C'){
 						var_dump($row);
