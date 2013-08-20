@@ -1,11 +1,11 @@
 <?php
 class widgets extends main{
-	public function index(){	
-		$this->widget = json_decode(stripslashes(urldecode($this->get('w'))));
+	public function index(){
+		$this->page_title = 'Mejoratuescuela.org widget';	
 		$this->include_template('index','widgets');
 	}	
 	public function reforma(){	
-		$this->widget = json_decode(stripslashes(urldecode($this->get('w'))));
+		$this->page_title = 'Mejoratuescuela.org widget';
 		$this->include_template('reforma','widgets');
 	}
 	public function generate(){
