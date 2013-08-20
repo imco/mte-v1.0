@@ -2,38 +2,29 @@
  <html lang="es">
  <head>
 	<meta charset="utf-8"/>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<?php
-		$css_scripts = array(
-			"widget.css",
-			"jquery-ui.css"
-		);
-		$js_scripts = array(
-			"jquery.js",
-			"jquery-ui.js"
-		);
-		
+		$css_scripts = array("widget2.css");		
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min--mte-widget");
-		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte-widget");
 		$cssmin->tag('css');
-		$jsmin->tag('js');
 	?>
 	<title><?=$this->page_title;?></title>
  </head>
  <body>
  	<div id='container'>
- 		<a href='http://www.mejoratuescuela.org' title='Mejora tu Escuela'><?php $this->print_img_tag('reforma-widget-logo.png','Meoratuescuela.org') ?></a>
- 		<h1><?=$this->widget->title?></h1>
- 		<p><?=$this->widget->text?></p>
+ 		<div class='head'>
+	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><span><?php $this->print_img_tag('/widget/logomte.png','Meoratuescuela.org') ?></span></a>
+	 		<h1>Ayuda a transformar tu colegio</h1>
+ 		</div>
+ 		<p class='text'>Consulta los resultados de Enlace de las escuelas públicas y privadas del País y aprende cómo puedes ayudar a mejorar la educación de tu centro escolar.</p>
  		<form action='http://www.mejoratuescuela.org/compara/#resultados' method='get' accept-charset='utf-8' target="_blank">
  			<p>
- 				<input type='text' placeholder='Busca tu escuela aquí' name='term' />
+ 				<input type='text' placeholder='Buscar Escuela' name='term' />
  				<input type='hidden' name='search' value='true' class='submit'/>
  				<input type='submit' value='' class='submit'/>
  			</p>
  			<div class='clear'></div>
  		</form>
- 		<h3><?=$this->widget->news_title?></h3>
- 		<ul><?php foreach($this->widget->news_items as $item) echo "<li><a href='$item->url'>$item->title</a></li>"; ?></ul>
  	</div>
  </body>
  </html>
