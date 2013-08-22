@@ -8,6 +8,8 @@ a{text-decoration:none;}
 .hidden{display:none;}
 .clear{clear:both;}
 .jscrollpane{overflow:auto;}
+.sprites{background:url(../img/sprites.png);}
+.sprites.icon{display:block;position:absolute;}
 
 #header{width:100%;margin-bottom:10px;background:url(../img/home/img_fondo.jpg) center top #E9EEF4;color:white;box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;position:relative;overflow:hidden;}
 #header h1{text-align:center;font-size:41px;line-height:77px;}
@@ -19,11 +21,12 @@ a{text-decoration:none;}
 #header .menu .container{position:relative;}
 #header .menu a{display:block;float:left;text-align:center;color:#0e9e48;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
 #header .menu a:hover{color:white;}
+
 #header .menu .submenu a{color:white;text-shadow:1px 1px 2px #999;font-weight:normal;}
-#header .menu a[href='/compara/']{background-image:url(../img/header/conoce.png);}
-#header .menu a[href='/compara/escuelas/']{background-image:url(../img/header/compara.png);background-position:center 21px;}
-#header .menu a[href$='/califica/']{background-image:url(../img/header/califica.png);}
-#header .menu a[href='/mejora']{background-image:url(../img/header/mejora.png);background-position:center 17px;}
+#header .menu a[href='/compara/'] .icon{background-position:0 0;width:40px;height:43px;top:14px;left:45px;}
+#header .menu a[href='/compara/escuelas/'] .icon{background-position:-49px 0;width:90px;height:29px;top:21px;left:20px;}
+#header .menu a[href$='/califica/'] .icon{background-position:-141px 0;width:34px;height:41px;top:13px;left:49px;}
+#header .menu a[href='/mejora'] .icon{background-position:-177px 0;width:40px;height:40px;top:17px;left:45px;}
 #header .menu a + a + a{margin-left:2px;}
 #header .menu.compara a[href='/compara/'],
 #header .menu.califica_tu_escuela a[href$='/califica/'],
@@ -36,16 +39,19 @@ a{text-decoration:none;}
 #header .menu a.logo{width:auto;margin:28px 13px 0;padding:0;background-color:transparent;}
 #header .menu a.logo img{width:210px;}
 #header .menu a.logo:hover{background-color:transparent;}
+/*sin form en menu
 #header .menu form{display:block;margin-top:22px;}
 #header .menu form input[type='text']{width:86px;float:left;color:gray;font-size:16px;text-indent:0;padding:11px 11px 0}
 #header .menu form input[type='submit']{background-image:url(../img/home/buscar.png);;background-repeat:no-repeat;width:35px;margin-left:-3px;background-position:center;background-color:rgba(255,255,255,.7);float:right;margin-right:4px;height:31px;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:8px 11px 0;color:white;text-shadow:1px 1px #999;font-size:19px;line-height:20px;font-family:Varela Round;width:110px;text-indent:-3px;}
 #header .menu input[placeholder]{color:white;font-size:19px;}
-#header .menu ::-webkit-input-placeholder{color:white;}
+#header .menu ::-webkit-input-placeholder{color:white;}*/
 #header .menu .social{position:absolute;right:-56px;top:96px;}
-#header .menu .submenu .social a{float:right;;display: block;width:23px;height:23px;background:url(../img/home/face.png);margin:0 2px;padding:0;background-position:-25px 0}
-#header .menu .social a:hover{background-position:0 0}
-#header .menu .social a.twitter{background-image:url(../img/home/twitter.png)}
+#header .menu .submenu .social a{float:right;;display: block;width:23px;height:23px;margin:0 2px;padding:0;background-position:-25px 0;background-color:transparent;}
+#header .menu .social a.fb{background-position:-245px 0;}
+#header .menu .social a.fb:hover{background-position:-220px 0;}
+#header .menu .social a.twitter{background-position:-246px -26px;}
+#header .menu .social a.twitter:hover{background-position:-221px -26px;}
 #header .menu .submenu{float:left;width:147px;padding:7px 0 0 5px;}
 #header .menu .submenu a{float:none;background-color:rgba(255,255,255,.24);line-height:27px;font-size:12px;padding:0;margin:1px 0;height:30px;width:143px;}
 #header .menu .submenu a + a{margin:5px 0;height:28px;}
@@ -66,7 +72,8 @@ a{text-decoration:none;}
 #general-search.general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:36px;height:38px;position:absolute;right:15px;top:13px;display:block;}
 #general-search.general-search .button-frame{float:left;margin:18px 27px 0 260px;width:271px;height:64px;}
 #general-search.general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
-#general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background:#00AFF0 url(../img/home/busquedavanzada.png) no-repeat center 10px;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;}
+#general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;}
+#general-search.general-search .adv-search a .icon{background-position:-273px 0;width:33px;height:33px;top:10px;left:27px;}
 #header .container{position:relative;z-index:0;}
 
 
