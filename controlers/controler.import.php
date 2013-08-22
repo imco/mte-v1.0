@@ -117,9 +117,11 @@ class import extends main{
 						$grado++;
 					}
 				}
-				$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
-				$escuela->debug = true;
-				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
+				if($grados != 0){
+					$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
+					$escuela->debug = true;
+					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
+				}
 			}
 		}
 		$this->stop_measure_time();
