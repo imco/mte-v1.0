@@ -3,7 +3,7 @@ class import extends main{
 	public function index(){
 		set_time_limit(10000000);
 		//$this->import_teachers();
-		$this->import_percents();
+		//$this->import_percents();
 		//$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		//$this->average_enlaces(21,1);
+		$this->average_enlaces(12);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -96,7 +96,7 @@ class import extends main{
 			}
 	}
 	
-	private function average_enlaces($nivel,$grados){
+	private function average_enlaces($nivel){
 		$this->start_measure_time();
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
@@ -105,17 +105,20 @@ class import extends main{
 			$q = new enlace();
 			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
 			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
-			if(count($enlaces) == $grados){
+			if(count($enlaces)){
 				$i++;
-				$sum_spa = $sum_mat = $sum_geo = 0;
+				$grados = $sum_spa = $sum_mat = $sum_geo = 0;
 				$escuela = new escuela($row['cct']);
 				foreach($enlaces as $enlace){
-					$sum_spa += $enlace->puntaje_espaniol;
-					$sum_mat += $enlace->puntaje_matematicas;
-					$sum_geo += $enlace->puntaje_geografia;
+					if($enlace->puntaje_espaniol != 0 || $enlace->puntaje_matematicas != 0){
+						$sum_spa += $enlace->puntaje_espaniol;
+						$sum_mat += $enlace->puntaje_matematicas;
+						$sum_geo += $enlace->puntaje_geografia;
+						$grado++;
+					}
 				}
-				$prom_gen = ($sum_spa+$sum_mat)/($grados*2);
-				//$escuela->debug = true;
+				$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
+				$escuela->debug = true;
 				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
 			}
 		}
