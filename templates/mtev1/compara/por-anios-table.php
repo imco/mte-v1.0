@@ -30,8 +30,10 @@
 		');
 		if($escuela->enlaces){
 			foreach($escuela->enlaces as $enlace){
-				$scores[$enlace->anio]->sum += $enlace->puntaje_espaniol + $enlace->puntaje_matematicas;
-				$scores[$enlace->anio]->count++;
+				if($enlace->puntaje_espaniol != 0 || $enlace->puntaje_matematicas != 0){
+					$scores[$enlace->anio]->sum += $enlace->puntaje_espaniol + $enlace->puntaje_matematicas;
+					$scores[$enlace->anio]->count++;
+				}
 			}
 		}
 		foreach($scores as $year => $score){
