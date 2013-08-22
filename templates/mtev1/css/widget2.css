@@ -7,7 +7,7 @@ a{text-decoration:none;color:#359B37;}
 
 #container{border:3px solid #8A8A8A;max-width:261px;margin:0 auto;background-image:url(../img/widget/fondogris.jpg);background-color:#CACCCB;position:relative;}
 #container .head{width:100%;height:110px;background-image:url(../img/widget/fondoblur.jpg);background-position:center center;position:relative;}
-#container .head .logo{display:block;background-color:rgba(255,255,255,.3);height:66px;}
+#container .head .logo{display:block;background-color:rgba(255,255,255,.6);height:66px;}
 #container .head .logo span{width:100%;max-width:150px;margin:0 auto;display:block;}
 #container .head .logo span img{width:100%;margin-top:5px;}
 #container .head .logo:after{content:'';position:absolute;top:65px;left:50%;margin-left:-131.5px;width:263px;height:19px;background-image:url(../img/widget/sombra.png);}
