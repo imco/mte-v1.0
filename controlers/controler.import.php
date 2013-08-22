@@ -122,6 +122,7 @@ class import extends main{
 				$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
 			}
 		}
+		$this->stop_measure_time();
 		echo $i.' records updated';
 	}
 	private function count_enlaces($nivel){
