@@ -119,10 +119,10 @@ class import extends main{
 				}
 				if($grados != 0){
 					$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
-					//$escuela->debug = true;
+					$escuela->debug = true;
 					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general,grados',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen,$grados));
 				}
-				//if($i == 200) exit;
+				if($i == 200) exit;
 			}
 		}
 		$this->stop_measure_time();
