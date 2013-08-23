@@ -1,9 +1,10 @@
 <?php
-$host = 'mysql51-030.wc1.dfw1.stabletransit.com';
+$host = '***REMOVED***';
 $user = '***REMOVED***';
 //$pwd = ''; /* Put your password here */
 $pwd = '***REMOVED***'; /* Put your password here */
 $db = '***REMOVED***';
+
 //$db = 'compara';
 $conn = new mysqli($host,$user,$pwd,$db);
 //exit;
@@ -19,7 +20,7 @@ $niveles = array(12,13,22);
 
 //foreach($niveles as $nivel){
 
-	//foreach($entidades as $entidad){
+	foreach($entidades as $entidad){
 		/*Using bound variables for efficiency
 		$stmt = $conn->stmt_init();
 		$stmt->prepare($query);
@@ -34,15 +35,15 @@ $niveles = array(12,13,22);
 				@prev_val := promedio_general AS promedio_general,
 				cct
 				FROM escuelas
-				WHERE nivel = 12 AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 and poco_confiables<=.1*total_evaluados
+				WHERE nivel = 12 AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<=.1*total_evaluados AND grados = 3 AND entidad = $entidad
 				ORDER BY promedio_general DESC) t2
 				ON t1.cct=t2.cct
-				SET t1.rank_nacional=t2.rank;";
+				SET t1.rank_entidad=t2.rank;";
 		if(!$conn->query($sql)){
 			echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;
 		}
 		echo $sql.'<br/>';
-	//}
+	}
 //}
 
 $conn->close();
