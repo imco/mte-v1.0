@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(13,3);
+		$this->average_enlaces(12,4);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -120,10 +120,7 @@ class import extends main{
 				if($grados != 0){
 					$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
 					//$escuela->debug = true;
-					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
-				}
-				if($grados != $std_grados){
-					echo "unstandard grados: $grados <br/>";
+					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general,grados',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen,$grados));
 				}
 				//if($i == 200) exit;
 			}
