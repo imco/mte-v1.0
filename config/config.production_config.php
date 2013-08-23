@@ -32,7 +32,7 @@ class production_config extends default_config{
 		
 
 		//MXNPHP
-		//$this->dev_mode = true;
+		$this->dev_mode = true;
 
 		//twitter
 		$this->twitter_access_token ='124797851-HRntQp0YIVs3zDhbLoZMjogOI3Er8qXAp4yfsT7h';
