@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(12);
+		$this->average_enlaces(12,4);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -96,13 +96,13 @@ class import extends main{
 			}
 	}
 	
-	private function average_enlaces($nivel){
+	private function average_enlaces($nivel,$std_grados){
 		$this->start_measure_time();
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
 		$i = 0;
+		$q = new enlace();
 		while($row = mysql_fetch_assoc($result)){
-			$q = new enlace();
 			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
 			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
 			if(count($enlaces)){
@@ -114,14 +114,18 @@ class import extends main{
 						$sum_spa += $enlace->puntaje_espaniol;
 						$sum_mat += $enlace->puntaje_matematicas;
 						$sum_geo += $enlace->puntaje_geografia;
-						$grado++;
+						$grados++;
 					}
 				}
 				if($grados != 0){
 					$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
-					$escuela->debug = true;
+					//$escuela->debug = true;
 					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen));
 				}
+				if($grados != $std_grados){
+					echo "unstandard grados: $grados <br/>";
+				}
+				//if($i == 200) exit;
 			}
 		}
 		$this->stop_measure_time();
