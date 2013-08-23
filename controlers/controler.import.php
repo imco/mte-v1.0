@@ -98,7 +98,15 @@ class import extends main{
 	
 	private function average_enlaces($nivel,$std_grados){
 		$this->start_measure_time();
-		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		if($this->get('id') !== false){
+			$id = $this->get('id');
+			$limit_start = $id * 10000;
+			$limit_end = ($id+1) * 10000;
+			$limit = "LIMIT $limit_start, $limit_end";
+		}else{
+			$limit = '';
+		}
+		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel' $limit ";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
 		$i = 0;
 		$q = new enlace();
