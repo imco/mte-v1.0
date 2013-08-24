@@ -106,7 +106,7 @@ class import extends main{
 		}else{
 			$limit = '';
 		}
-		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel' $limit ";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		$sql = "SELECT cct,nombre FROM escuelas WHERE cct = '19PPR0909I'";//nivel = '$nivel' $limit ";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
 		$i = 0;
 		$q = new enlace();
