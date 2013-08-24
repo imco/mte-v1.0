@@ -112,12 +112,14 @@ class import extends main{
 		$q = new enlace();
 		while($row = mysql_fetch_assoc($result)){
 			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
+			$q->debug = true;
 			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
 			if(count($enlaces)){
 				$i++;
 				$grados = $sum_spa = $sum_mat = $sum_geo = 0;
 				$escuela = new escuela($row['cct']);
 				foreach($enlaces as $enlace){
+					//var_dump($enlace);
 					if($enlace->puntaje_espaniol != 0 || $enlace->puntaje_matematicas != 0){
 						$sum_spa += $enlace->puntaje_espaniol;
 						$sum_mat += $enlace->puntaje_matematicas;
