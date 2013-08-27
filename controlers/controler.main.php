@@ -33,7 +33,7 @@ class main extends controler{
 				$escuelas[$escuela->cct]->entidad = $this->capitalize($escuela->entidad->nombre);
 				$escuelas[$escuela->cct]->nivel = $this->capitalize($escuela->nivel->nombre);
 				$escuelas[$escuela->cct]->control = $this->capitalize($escuela->control->nombre);
-				$escuelas[$escuela->cct]->semaforo = isset($escuela->grados) && $escuela->grados < 6 && $escuela->nivel->nombre == "PRIMARIA" ? 5:$escuela->semaforo;
+				$escuelas[$escuela->cct]->semaforo = isset($escuela->grados) && $escuela->nivel->nombre != "BACHILLERATO"  && ($escuela->grados < 4 && $escuela->nivel->nombre == "PRIMARIA") || ($escuela->grados < 3 && $escuela->nivel->nombre == "SECUNDARIA") ? 5:$escuela->semaforo;
 				//$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
 				$escuelas[$escuela->cct]->promedio_general = $escuela->promedio_general;
 				$escuelas[$escuela->cct]->promedio_matematicas = $escuela->promedio_matematicas;
