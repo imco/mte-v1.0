@@ -283,7 +283,7 @@ EOD;
 			?>
 		</div>
 		<div class='clear'></div>
-		<div class='califica'>
+		<div class='califica'>	
 			<div class='title'>
 				<p>Porcentaje de 
 				<br />
