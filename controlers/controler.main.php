@@ -33,7 +33,8 @@ class main extends controler{
 				$escuelas[$escuela->cct]->entidad = $this->capitalize($escuela->entidad->nombre);
 				$escuelas[$escuela->cct]->nivel = $this->capitalize($escuela->nivel->nombre);
 				$escuelas[$escuela->cct]->control = $this->capitalize($escuela->control->nombre);
-				$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
+				$escuelas[$escuela->cct]->semaforo = isset($escuela->grados) && $escuela->nivel->nombre != "BACHILLERATO"  && ($escuela->grados < 4 && $escuela->nivel->nombre == "PRIMARIA") || ($escuela->grados < 3 && $escuela->nivel->nombre == "SECUNDARIA") ? 5:$escuela->semaforo;
+				//$escuelas[$escuela->cct]->semaforo = $escuela->semaforo;
 				$escuelas[$escuela->cct]->promedio_general = $escuela->promedio_general;
 				$escuelas[$escuela->cct]->promedio_matematicas = $escuela->promedio_matematicas;
 				$escuelas[$escuela->cct]->promedio_espaniol = $escuela->promedio_espaniol;
@@ -172,7 +173,7 @@ class main extends controler{
 		}
 
 		$q->debug = isset($this->debug) ? $this->debug : false;
-		$this->escuelas = $q->read('cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,domicilio,total_evaluados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,municipio=>nombre,municipio=>id,control=>nombre');
+		$this->escuelas = $q->read('cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,domicilio,total_evaluados,grados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,municipio=>nombre,municipio=>id,control=>nombre');
 
 		if($this->request('json')){
 			$response = array();
