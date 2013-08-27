@@ -276,7 +276,7 @@ EOD;
 			</div>
 			<?php
 				if($this->escuela->semaforo >= 4){
-					$semaforos = array('Escuela que no tomo prueba ENLACE','Escuela no Confiable');
+					$semaforos = array('Escuela que no tomo prueba ENLACE','Escuela no Confiable','Esta escuela no tomo la prueba enlace para todos los años');
 					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>".
 					$semaforos[$this->escuela->semaforo-4]."</div>";
 				}
