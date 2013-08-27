@@ -39,7 +39,7 @@
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");
 		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte");
 		$cssmin->tag('css');
-		$jsmin->tag('js');
+		//$jsmin->tag('js'); js abajo.
 		if($this->location == 'escuelas'){
 			echo '<meta name="description" content="El perfil de '.$this->escuela->nombre.' via https://www.facebook.com/MejoraTuEscuela" />';
 		}else if($this->location == 'compara'){
@@ -70,5 +70,6 @@
 		<div id='content'><?php $this->include_template($this->template,$this->location);?></div>
 	</div></div></div>	
 	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
+	<?php $jsmin->tag('js'); ?>
  </body>
  </html>
