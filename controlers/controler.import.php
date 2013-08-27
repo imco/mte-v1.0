@@ -106,33 +106,34 @@ class import extends main{
 		}else{
 			$limit = '';
 		}
-		$sql = "SELECT cct,nombre FROM escuelas WHERE cct = '19PPR0909I'";//nivel = '$nivel' $limit ";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
 		$result = mysql_query($sql);
 		$i = 0;
 		$q = new enlace();
 		while($row = mysql_fetch_assoc($result)){
 			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
-			$q->debug = true;
-			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia');
+			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia,alumnos_que_contestaron_total');
 			if(count($enlaces)){
-				$i++;
+				//$i++;
 				$grados = $sum_spa = $sum_mat = $sum_geo = 0;
 				$escuela = new escuela($row['cct']);
 				foreach($enlaces as $enlace){
 					//var_dump($enlace);
-					if($enlace->puntaje_espaniol != 0 || $enlace->puntaje_matematicas != 0){
-						$sum_spa += $enlace->puntaje_espaniol;
-						$sum_mat += $enlace->puntaje_matematicas;
-						$sum_geo += $enlace->puntaje_geografia;
+					if($enlace->alumnos_que_contestaron_total != 0){
 						$grados++;
+						$sump_spa += $enlace->puntaje_espaniol;
+						$sum_mat += $enlace->puntaje_matematicas;
 					}
 				}
-				if($grados != 0){
-					$prom_gen = (($sum_spa/$grados)*.2)+(($sum_mat/$grados)*.8);
+				if($grados < $std_grados){
 					$escuela->debug = true;
-					$escuela->update('promedio_espaniol,promedio_matematicas,promedio_geografia,promedio_general,grados',array($sum_spa/$grados,$sum_mat/$grados,$sum_geo/$grados,$prom_gen,$grados));
+					$prom_mat = $sum_mat / $grados;
+					$prom_spa = $sum_spa / $grados;
+					$gen = ($prom_spa * .2) + ($prom_mat *.8);
+					$escuela->update('grados',array($grados,$sum_mat,$sum_spa,$gen));
+					$i++;
 				}
-				//if($i == 200) exit;
+				if($i == 20) exit;
 			}
 		}
 		$this->stop_measure_time();
