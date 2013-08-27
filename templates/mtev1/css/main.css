@@ -72,7 +72,7 @@ a{text-decoration:none;}
 #general-search.general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:36px;height:38px;position:absolute;right:15px;top:13px;display:block;}
 #general-search.general-search .button-frame{float:left;margin:18px 27px 0 260px;width:271px;height:64px;}
 #general-search.general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
-#general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;}
+#general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;background-repeat:no-repeat;}
 #general-search.general-search .adv-search a .icon{background-position:-273px 0;width:33px;height:33px;top:10px;left:27px;}
 #header .container{position:relative;z-index:0;}
 
@@ -1047,7 +1047,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .perfil.B .califica .title:nth-child(2){height:77px;margin-bottom:20px;border-radius:7px;box-shadow:2px 2px 4px #B36B12, 3px 3px 4px #FAC382 inset;background-color:#F6921A;display:block;}
 #content .perfil.B .califica .title:nth-child(2) p{line-height:0px;text-indent:-4px;}
-#content .perfil.B .califica .title:nth-child(1){height:144px;margin-bottom:6px;}
+#content .perfil.B .califica .title:nth-child(1){height:144px;margin-bottom:6px;display:none;}
 #content .perfil.B .califica .title:nth-child(1) p{padding:19px;font-size:18px;line-height:19px;}
 #content .perfil.B .califica .title:nth-child(1) p span{font-size:29px;line-height:56px;}
 
