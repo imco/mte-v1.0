@@ -48,13 +48,13 @@
 					<span class='icon'></span>
 					Mail
 					<span class='title'>
-						<?=$this->escuela->correoelectronico?>
+						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
 					</span>
 					<div class='clear'></div>
 				</p>
 
 				<p class='web'>
-					<?=$this->escuela->paginaweb ?>
+					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>
 			</div>
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
@@ -277,8 +277,9 @@ EOD;
 			<?php
 				if($this->escuela->semaforo >= 4){
 					$semaforos = array('Escuela que no tomo prueba ENLACE','Escuela no Confiable','Esta escuela no tomo la prueba enlace para todos los años');
-					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>".
-					$semaforos[$this->escuela->semaforo-4]."</div>";
+					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>
+					<p>".
+					$semaforos[$this->escuela->semaforo-4]."</p></div>";
 				}
 			?>
 		</div>
