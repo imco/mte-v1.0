@@ -134,5 +134,16 @@ class escuelas extends main{
 		));
 		header('location: /escuelas/index/'.$reporte->cct->cct.'#reportes_ciudadanos');
 	}
+
+	public function str_limit($str,$limit){
+		$length = strlen($str)/$limit;
+		$newStr = "";
+		$temp = 0;
+		for($i=0;$i<$length;$i++){
+			$newStr = $newStr." ".substr($str,$temp,$limit);
+			$temp += $limit;
+		}
+		return $newStr;
+	}
 }
 ?>
