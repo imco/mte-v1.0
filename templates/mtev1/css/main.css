@@ -350,6 +350,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem3 span{background-image:url(../img/perfil/excelente.png);}
 #content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
 #content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
+#content .resultados table td.semaforo.sem6 span{background:url(../img/perfil/gris_s.png) center no-repeat;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr td.school:hover{background-color:rgba(26,164,86,.5);}
 
@@ -416,6 +417,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 .infoBox .semafo.sem3{background-image:url(../img/compara/excelente.png);}
 .infoBox .semafo.sem4{background-image:url(../img/compara/negro_s.png);}
 .infoBox .semafo.sem5{background-image:url(../img/compara/rojo_s.png);}
+.infoBox .semafo.sem6{background-image:url(../img/perfil/gris_s.png);}
 
 /*Mapa*/
 #content .search-map{width:906px;position:relative;margin:0 auto 10px;}
@@ -747,6 +749,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .resultados table tbody td.semaforo span.icon-popup,
 #content  table.general td.semaforo span.icon-popup{left:62px;/**/width:135px;height:98px;background-size:128px;line-height:normal;top:-72px;}
+#content .resultados table td.semaforo.sem6 span.icon-popup{background-size:150px;width:138px;height:135px;top:-91px;}
+#content .resultados table td.semaforo.sem6 span.icon-popup .infor.I{width:159px;}
+#content .resultados table td.semaforo.sem6 span.icon-popup .title_semaforo{margin-left:17px;}
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;z-index:10;}
@@ -828,6 +833,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
 #content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-image:url(../img/perfil/rojo_s.png);margin:0 auto;float:none;margin-bottom:5px;}
+#content .perfil.B .semaforo .sem-overlay .icon.icon6,
 #content .perfil.B .semaforo .sem-overlay .icon.icon4{background-image:url(../img/perfil/gris_s.png);}
 
 
