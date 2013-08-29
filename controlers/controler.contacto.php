@@ -6,14 +6,13 @@ class contacto extends main{
 		$this->include_theme('index','index');
 	}
 	public function enviar(){
-		$this->send_email(
-			'aero.uriel@gmail.com',
+		$this->contact_status = $this->send_email(
+			'contacto@mejoratuescuela.org',
 			'Correo electronico desde Mejora tu escuela',
 			$this->post('mensaje'),
 			$this->post('email'),
 			$this->post('nombre')
 		);
-		$this->contact_status=true;
 		$this->header_folder ='contacto';
 		$this->include_theme('index','index');
 	}
