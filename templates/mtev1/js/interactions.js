@@ -210,6 +210,19 @@ $(document).ready(function(){
 
 	}
 
+	if($('.container').hasClass('comparar')){
+		console.log(false);
+		$('#general-search').submit(function(e){
+			e.preventDefault();
+			var url='';
+			$(this).find('[name]').each(function(i,val){
+				url +='&'+$(val).attr('name')+'='+$(val).val();
+				console.log(i,val);
+			});
+			window.location = $(this).attr('action')+url;
+		});
+	}
+
 });
 
 function load_location_options(input,directive,options,name){
