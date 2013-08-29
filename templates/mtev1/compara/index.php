@@ -78,18 +78,19 @@
 		</div>
 	</div>
 
-	<?php if($this->post('term')){
-			$params->term = $this->post('term');
-			$params->control = $this->post('control');
-			$params->nivel = $this->post('nivel');
-			$params->entidad = $this->post('entidad');
-			$params->municipio = $this->post('municipio');
-			$params->localidad = $this->post('localidad');
-			$p = $this->post('p') ? $this->post('p') : 1;
+	<?php 
+		if($this->get('term')){
+			$params->term = $this->get('term');
+			$params->control = $this->get('control');
+			$params->nivel = $this->get('nivel');
+			$params->entidad = $this->get('entidad');
+			$params->municipio = $this->get('municipio');
+			$params->localidad = $this->get('localidad');
+			$p = $this->get('p') ? $this->get('p') : 1;
 			$this->get_escuelas_new($params,$p);
 			$this->set_info_user_search($this->num_results);
 			$this->include_template('resultados','compara');
-		}else if($this->post('search')){
+		}else if($this->get('search')){
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 			$this->get_escuelas($params);
