@@ -833,8 +833,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
 #content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-image:url(../img/perfil/rojo_s.png);margin:0 auto;float:none;margin-bottom:5px;}
-#content .perfil.B .semaforo .sem-overlay .icon.icon6,
-#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-image:url(../img/perfil/gris_s.png);}
+#content .perfil.B .semaforo .sem-overlay .icon.icon6{background-image:url(../img/perfil/gris_s.png);}
+#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-image:url(../img/perfil/negro_s.png);}
 
 
 #content .perfil.B .califica{margin-top:4px;}
