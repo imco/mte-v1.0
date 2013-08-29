@@ -253,7 +253,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .tab{color:#8D8D8D;width:816px;height:252px;overflow:auto;clear:both;display:none;}
 #content .perfil .tab.charts{height:555px;}
 #content .perfil .tab.on{display:block}
-#content .perfil .tab .comment{width:374px;height:60px;float:left;background:#EAEAEA;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
+#content .perfil .tab .comment{width:288px;min-height:60px;float:left;background:#EAEAEA;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
 #content .perfil .tab .comment:nth-child(even){margin:0 9px 6px 0}
 #content .perfil .tab .comment h2{font-size:13px;color:#626262;line-height:18px;margin:0 0 0 5px;}
 #content .perfil .tab .comment p{margin:0 5px;line-height:13px;}

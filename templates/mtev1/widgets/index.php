@@ -16,10 +16,10 @@
 	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><span><?php $this->print_img_tag('/widget/logomte.png','Meoratuescuela.org') ?></span></a>
 	 		<h1>Ayuda a transformar tu colegio</h1>
  		</div>
- 		<p class='text'>Consulta los resultados de Enlace de las escuelas públicas y privadas del País y aprende cómo puedes ayudar a mejorar la educación de tu centro escolar.</p>
+ 		<p class='text'>Consulta información sobre la calidad de escuelas públicas y privadas del país y aprende cómo puedes ayudar a mejorar la educación de tu centro escolar</p>
  		<form action='http://www.mejoratuescuela.org/compara/#resultados' method='get' accept-charset='utf-8' target="_blank">
  			<p>
- 				<input type='text' placeholder='Buscar Escuela' name='term' />
+ 				<input type='text' placeholder='Busca una escuela' name='term' />
  				<input type='hidden' name='search' value='true' class='submit'/>
  				<input type='submit' value='' class='submit'/>
  			</p>
