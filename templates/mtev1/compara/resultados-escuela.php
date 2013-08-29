@@ -76,7 +76,10 @@
 		unset($get['controler']);
 		$query = http_build_query($get);
 		$query .= $query != '' ? '&' : '';
-		$this->pagination->echo_paginate('/compara/?'.$query,'p',5,false,$labels); 
+		if($this->get("action")=="escuelas")
+			$this->pagination->echo_paginate('/compara/escuelas?'.$query,'p',5,false,$labels); 
+		else
+			$this->pagination->echo_paginate('/compara/?'.$query,'p',5,false,$labels); 
 	}
 	?></div>
 	<?php
