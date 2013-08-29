@@ -78,16 +78,18 @@
 		$query .= $query != '' ? '&' : '';
 
 		$next = $end + 1;
-		$next = $end < $pages ? '<a class="next_page" href="/compara/?'.$query.'p='.$next.'#resultados">&gt;&gt;</a>' : '';
-		$last = $end + 1 < $pages ? '<a class=" last_page" href="/compara/?'.$query.'p='.$pages.'#resultados">últimas &gt;&gt;</a>' : '';
+
+		$url = $this->get("action")=="escuelas"?"/compara/escuelas/?":"/compara/?";
+		$next = $end < $pages ? '<a class="next_page" href="'.$url.$query.'p='.$next.'#resultados">&gt;&gt;</a>' : '';
+		$last = $end + 1 < $pages ? '<a class=" last_page" href="'.$url.$query.'p='.$pages.'#resultados">últimas &gt;&gt;</a>' : '';
 		$prev = $start - 1;
-		$prev = $prev > 0 ? "<a class='prev_page' href='/compara/?{$query}p=$prev#resultados'>&lt;&lt;</a>" : '';
-		$first = $start > 2 ? "<a class='first_page' href='/compara/?{$query}p=1#resultados'>&lt;&lt; primeras</a>" : '';
+		$prev = $prev > 0 ? "<a class='prev_page' href='".$url."{$query}p=$prev#resultados'>&lt;&lt;</a>" : '';
+		$first = $start > 2 ? "<a class='first_page' href='".$url."{$query}p=1#resultados'>&lt;&lt; primeras</a>" : '';
 
 		echo $first.$prev;
 		for($i=$start;$i<=$end;$i++){
 			$on = $i == $current ? 'class="on"' : '';
-			echo "<a href='/compara/?{$query}p=$i#resultados' $on>$i</a>";
+			echo "<a href='".$url."{$query}p=$i#resultados' $on>$i</a>";
 		}
 		echo $next.$last;
 	}
