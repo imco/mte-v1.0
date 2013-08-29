@@ -217,7 +217,6 @@ $(document).ready(function(){
 			var url='';
 			$(this).find('[name]').each(function(i,val){
 				url +='&'+$(val).attr('name')+'='+$(val).val();
-				console.log(i,val);
 			});
 			window.location = $(this).attr('action')+url;
 		});
