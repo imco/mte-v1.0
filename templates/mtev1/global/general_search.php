@@ -1,4 +1,4 @@
-<form action="<?=$this->get("action")=="escuelas"?'/compara/escuelas/'.$this->get('id').'-#resultados':'/compara/#resultados' ?>" method='<?=$this->get("action")=="escuelas"?'post':'get'?>' accept-charset='utf-8' class='general-search' id='general-search'>
+<form action="<?=$this->get("action")=="escuelas"?'/compara/escuelas/?id='.$this->get('id').'-':'/compara/#resultados' ?>" method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	
 	<fieldset class='busqueda-avanzada'>
 		<p class='button-frame short'>

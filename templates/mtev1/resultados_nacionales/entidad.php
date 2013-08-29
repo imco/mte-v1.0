@@ -75,7 +75,7 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 				<span class='value'><?=$this->entidad->promedio_espaniol?></span>
 			</p>
 			<p class='promedio-green blue'>
-				Promedio de matemática
+				Promedio de matemáticas
 				<span class='value'><?=$this->entidad->promedio_matematicas?></span>
 			</p>
 			<div class='clear'></div>
