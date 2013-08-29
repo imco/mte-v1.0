@@ -78,7 +78,8 @@
 		$query .= $query != '' ? '&' : '';
 
 		$next = $end + 1;
-		$url = "/compara/?";
+
+		$url = $this->get("action")=="escuelas"?"/compara/escuelas/?":"/compara/?";
 		$next = $end < $pages ? '<a class="next_page" href="'.$url.$query.'p='.$next.'#resultados">&gt;&gt;</a>' : '';
 		$last = $end + 1 < $pages ? '<a class=" last_page" href="'.$url.$query.'p='.$pages.'#resultados">últimas &gt;&gt;</a>' : '';
 		$prev = $start - 1;
