@@ -7,7 +7,7 @@ class contacto extends main{
 	}
 	public function enviar(){
 		$this->send_email(
-			$this->post('contacto@mejoratuescuela.org'),
+			'aero.uriel@gmail.com',
 			'Correo electronico desde Mejora tu escuela',
 			$this->post('mensaje'),
 			$this->post('email'),
