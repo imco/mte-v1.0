@@ -262,7 +262,8 @@ function toggle_escuela(cct){
 		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
 		if( $('.container.resultados').hasClass('comparar')){
 			var url=document.URL.replace(new RegExp('-*'+cct),'');
-			location.href = url;
+			if(document.URL != url)
+				location.href = url;
 		}
 	}
 }
