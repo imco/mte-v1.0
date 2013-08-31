@@ -8,7 +8,7 @@
 			<h1>
 				<?php $this->print_img_tag('mejora/1.jpg') ?>
 
-				<a href="<?=$url."MTE_01.pdf"?>">
+				<a href="<?=$url."MTE_1.jpg"?>">
 				<span>Descargar</span>
 				</a>
 			</h1>
@@ -21,7 +21,7 @@
 				<?php $this->print_img_tag('mejora/3.jpg') ?>
 
 
-				<a href="<?=$url."MTE_4.pdf"?>">
+				<a href="<?=$url."MTE_4.jpg"?>">
 								<span>Descargar</span>
 				</a>
 			</h1>
@@ -35,7 +35,7 @@
 		<div class='mejorar'>
 			<h1>
 				<?php $this->print_img_tag('mejora/2.jpg') ?>
-				<a href="<?=$url."MTE_2.pdf"?>">
+				<a href="<?=$url."MTE_2.jpg"?>">
 								<span>Descargar</span>
 				</a>
 
@@ -51,7 +51,7 @@
 			<h1>
 				<?php $this->print_img_tag('mejora/4.jpg') ?>
 
-				<a href="<?=$url."MTE_03.pdf"?>">
+				<a href="<?=$url."MTE_3.jpg"?>">
 								<span>Descargar</span>
 				</a>
 			</h1>
