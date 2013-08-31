@@ -15,6 +15,7 @@
 			}else if($this->location == 'escuelas' && $this->get('action')=='index'){
 				$url = $url."/index/".$this->get('id');
 				$title = "El perfil de ".$this->capitalize($this->escuela->nombre);
+				$description = $title;
 			}else if($this->location == 'compara' && $this->get('action') == 'escuelas' && $this->get('id')){
 				$title = "compara: ";
 			  	for($i=0;$i<count($this->escuelas)-1;$i++){
