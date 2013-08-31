@@ -5,6 +5,7 @@ class git_config extends default_config{
 		//Site
 		$this->http_address = 'http://comparatuescuela.proyects.spaceshiplabs.com/';
 		$this->mxnphp_dir = "/var/www/mxnphp/";
+		$this->contact_email = 'aero.uriel@gmail.com';
 		
 		//Database
 		$this->db_host = '***REMOVED***';

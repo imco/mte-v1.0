@@ -146,16 +146,6 @@ $(document).ready(function(){
 		$('#rank-value').val(promedio);
 	});
 
-	/*
-	$('.califica .button-frame').click(function(e){
-		e.preventDefault();
-		var promedio = $('.wrap_cal span.on').size() / $('.wrap_cal').size();
-		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
-		$('.promedio span').html(promedio);
-		$('#rank-value').val(promedio);
-	});
-	*/
-
 	$('.menu a.logo + a + a').click(function(e){
 		e.preventDefault();
 		var cookie = $.cookie('escuelas'),
@@ -192,26 +182,25 @@ $(document).ready(function(){
 
 	}
 
-	$('td.school').hover(function(){
-		$('.tooltip').css({top:$(this).position().top,display:'block'});
-	},	
-	function(){
-		$('.tooltip').css('display','none');	
-	});
-
 	if($('.container').hasClass('perfil')){
 		var cct = $('span.CCT').html();
-		if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
+		var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
+		if(escuelas.indexOf(cct)==-1){
+			escuelas.push(cct);
+			escuelas.sort();
+			$.cookie('escuelas',escuelas.join('-'));
+			$('a[href="'+cct+'"]').parent().parent().addClass('on');
+		}
+		/*if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
 			$('a[href="'+cct+'"]').trigger('click');	
 			if(!$('a[href="'+cct+'"]').size()){
 				toggle_escuela(cct);
 			}
-		}
+		}*/
 
 	}
 
 	if($('.container').hasClass('comparar')){
-		console.log(false);
 		$('#general-search').submit(function(e){
 			e.preventDefault();
 			var url='';
@@ -221,6 +210,32 @@ $(document).ready(function(){
 			window.location = $(this).attr('action')+url;
 		});
 	}
+	
+	if($('.container').hasClass('resultados')){
+		$(window).unload(function(){
+			add_escuelas_cookie();	
+		});
+	}
+
+	$('#compara-main-button').click(function(e){
+		e.preventDefault();
+		add_escuelas_cookie();
+		$(window).off();
+		location.href = '/compara/escuelas/' + $.cookie('escuelas');
+	});
+
+	$('#content .comparar.resultados table tr.on .compara-escuela').click(function(e){
+		e.preventDefault();
+		var cct = $(this).attr('href'),
+		url=document.URL.replace(new RegExp('-*'+cct),''),
+		escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
+		escuelas.splice(escuelas.indexOf(cct),1);
+		$.cookie('escuelas',escuelas.join('-'));
+		if(document.URL != url)
+			location.href = url;
+
+	
+	});
 
 });
 
@@ -247,6 +262,15 @@ function set_rank_bar(x){
 	return rank;
 }
 function toggle_escuela(cct){
+	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
+	index;
+	if((index = escuelas.indexOf(cct)) != -1){
+		escuelas.splice(index,1);
+		escuelas.sort();
+		$.cookie('escuelas',escuelas.join('-'));
+	}
+	//$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-') || '');
+	/*
 	if(typeof($.cookie('escuelas')) == 'undefined'){		
 		$.cookie('escuelas',[cct]);
 	}else{
@@ -257,14 +281,15 @@ function toggle_escuela(cct){
 		}else{
 			escuelas.push(cct);
 		}
-		escuelas.sort();
+		//escuelas.sort();
 		$.cookie('escuelas',escuelas.join('-'));
-		$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-'));
 		if( $('.container.resultados').hasClass('comparar')){
 			var url=document.URL.replace(new RegExp('-*'+cct),'');
-			location.href = url;
+			if(document.URL != url)
+				location.href = url;
 		}
 	}
+	*/
 }
 function twitterIni(){
     var username =  "mejoratuescuela",
@@ -278,4 +303,22 @@ function twitterIni(){
 			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+x.text+'</p></li>');
 	    	}
 	    })
+}
+
+function add_escuelas_cookie(){
+	var selector_table = $('.resultados.container table'),
+	on = selector_table.find('tr.on'),
+	cookie = $.cookie('escuelas'),
+	escuelas = cookie && cookie.split('-') || [];
+	for(var i=0;i<on.length;i++){
+		var val = $(on[i]),
+		cct = val.find('.compara-escuela').attr('href');
+		if(escuelas.indexOf(cct)==-1)
+			escuelas.push(cct);
+	}
+	escuelas.sort();
+	if(escuelas.length){
+		$.cookie('escuelas',escuelas.join('-'));
+	}
+
 }

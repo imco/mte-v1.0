@@ -30,6 +30,8 @@ class default_config{
 
 		//hoot suite
 		$this->hootSuite_api_key = '***REMOVED***';
+
+		$this->contact_email = 'contacto@mejoratuescuela.org';
 	}
 }
 ?>
