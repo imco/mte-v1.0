@@ -236,22 +236,35 @@ class main extends controler{
         return $distance;
     }
     protected function get_location(){
-    	$ip = 
-    		isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
-    		isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
-    		isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';    	
-		$url = "http://freegeoip.net/json/$ip";
-		$location_request = file_get_contents($url);
-		$location = json_decode($location_request);
+
+	/*
+	for test
+	*/
+	if(!($location_cookie = $this->cookie('user_location'))){
+    		$ip = 
+    			isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
+    			isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
+    			isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';    	
+			$url = "http://freegeoip.net/json/$ip";
+			$location_request = file_get_contents($url);
+			$location = json_decode($location_request);
 		//var_dump($location);
-    	if($location->region_code != '' && $location->country_code == 'MX'){
+    		if($location->region_code != '' && $location->country_code == 'MX'){
 			//$this->user_location = new entidad(9);
 			$this->user_location = new entidad($location->region_code);
 			$this->user_location->read('id,nombre');
 		}else{
 			$this->user_location = new entidad(rand(1,32));
-			$this->user_location->read('nombre,id');		
+			$this->user_location->read('nombre,id');
 		}
+		$this->set_cookie('user_location',$this->user_location->nombre."-".$this->user_location->id);
+	}else{
+		$temp = explode('-',$location_cookie);
+		$this->user_location = new stdClass();
+		$this->user_location->nombre = $temp[0];
+		$this->user_location->id = $temp[1];
+	}
+
     }
     protected function load_compara_cookie(){
     	$this->compara_cookie = false;
