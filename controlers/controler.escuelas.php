@@ -48,6 +48,7 @@ class escuelas extends main{
 	public function escuela_info(){
 		$this->escuela = new escuela($this->get('id'));
 		//$this->escuela->debug = true;
+		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
 		$this->escuela->read("
 			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,pct_reprobados,grados,
 			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
