@@ -229,12 +229,11 @@ $(document).ready(function(){
 		var cct = $(this).attr('href'),
 		url=document.URL.replace(new RegExp('-*'+cct),''),
 		escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
-		escuelas.pop(escuelas.indexOf(cct));
+		escuelas.splice(escuelas.indexOf(cct),1);
 		$.cookie('escuelas',escuelas.join('-'));
 		if(document.URL != url)
 			location.href = url;
 
-		console.log(true,cct);	
 	
 	});
 
@@ -266,7 +265,7 @@ function toggle_escuela(cct){
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
 	if((index = escuelas.indexOf(cct)) != -1){
-		escuelas.pop(index);
+		escuelas.splice(index,1);
 		escuelas.sort();
 		$.cookie('escuelas',escuelas.join('-'));
 	}
@@ -306,10 +305,9 @@ function twitterIni(){
 	    })
 }
 
-function add_escuelas_cookie(selector_table){
-	console.log(true);
-	selector_table = $('.resultados.container table');
-	var on = selector_table.find('tr.on'),
+function add_escuelas_cookie(){
+	var selector_table = $('.resultados.container table'),
+	on = selector_table.find('tr.on'),
 	cookie = $.cookie('escuelas'),
 	escuelas = cookie && cookie.split('-') || [];
 	for(var i=0;i<on.length;i++){
@@ -319,7 +317,6 @@ function add_escuelas_cookie(selector_table){
 			escuelas.push(cct);
 	}
 	escuelas.sort();
-	console.log(escuelas);
 	if(escuelas.length){
 		$.cookie('escuelas',escuelas.join('-'));
 	}
