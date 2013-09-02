@@ -20,7 +20,7 @@
 				<p>Nuestro sitio tiene perfiles de todas las escuelas primarias, secundarias y bachilleratos públicas y privadas registradas ante la SEP a nivel nacional. Si intentaste buscar tu escuela por nombre y no te aparece en los resultados, intenta hacer una nueva búsqueda por zona geográfica. Si aún no encuentras tu escuela, escríbenos a contacto@mejoratuescuela.org y te ayudaremos a encontrarla. </p>
 				<a name='pregunta2'></a>
 				<h3>2. ¿Cómo se calcula la posición estatal de mi escuela?</h3>
-				<p>Para generar las posiciones hacemos una lista de todas las escuelas del estado, de cada nivel educativo, por sus calificaciones globales. La calificación global de una escuela está basada en un promedio ponderado de sus resultados de matemáticas y español en la prueba ENLACE del último año. Si quieres conocer a detalle la metodología detrás de nuestro sitio te invitamos a leer nuestra ficha metodológica <a href="http://www.mejoratuescuela.org/metodologia">aquí</a><./p>
+				<p>Para generar las posiciones hacemos una lista de todas las escuelas del estado, de cada nivel educativo, por sus calificaciones globales. La calificación global de una escuela está basada en un promedio ponderado de sus resultados de matemáticas y español en la prueba ENLACE del último año. Si quieres conocer a detalle la metodología detrás de nuestro sitio te invitamos a leer nuestra ficha metodológica <a href="http://www.mejoratuescuela.org/metodologia">aquí</a>.</p>
 				<a name='pregunta3'></a>
 				<h3>3. ¿Cómo se calcula la ubicación de una escuela en el semáforo educativo?</h3>
 				<p>Ya que tenemos los promedios globales de cada escuela, graficamos la distribución de escuelas y generamos los cortes para el semáforo educativo. Los cortes son los siguientes: </p>
