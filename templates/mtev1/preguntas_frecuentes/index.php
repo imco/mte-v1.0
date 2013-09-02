@@ -41,10 +41,10 @@
 				<p><span class="red">Reprobado:</span> menos de 551 de promedio. <p>
 				<a name='pregunta4'></a>
 				<h3>4. ¿Por qué mi escuela tiene una mala calificación en el semáforo educativo si mi hij@ está obteniendo buenas calificaciones en la escuela?</h3>
-				<p>Las calificaciones individuales de tu hij@ son independientes del desempeño de la escuela en conjunto o de su calidad educativa. En la boleta de calificaciones de la escuela, tu hij@ puede tener resultados muy altos, pero eso no quiere decir que tu hij@ esta cumpliendo con los estándares nacionales de aprendizaje. Te sugerimos que revises los resultados de tu hij@ en la prueba ENLACE, su calificación te puede dar un mejor estimado de su nivel de aprendizaje comparad@ con otros estudiantes de su edad. Sus resultados conocerlos en: </p>
-				<p>Para primaria y secundaria: <a href='http://201.175.44.205/Enlace/Resultados2012/Basica2012/R12Folio.aspx' >http://201.175.44.205/Enlace/Resultados2012/Basica2012/R12Folio.aspx</a> </p>
+				<p>Las calificaciones individuales de tu hij@ son independientes del desempeño de la escuela en conjunto o de su calidad educativa. En la boleta de calificaciones de la escuela, tu hij@ puede tener resultados muy altos, pero eso no quiere decir que tu hij@ esta cumpliendo con los estándares nacionales de aprendizaje. Te sugerimos que revises los resultados de tu hij@ en la prueba ENLACE, su calificación te puede dar un mejor estimado de su nivel de aprendizaje comparad@ con otros estudiantes de su edad. Puedes conocer los resultados de tu hij@ en: </p>
+				<p>Para primaria y secundaria: <a href='http://bit.ly/1dAOfs6'>http://bit.ly/1dAOfs6</a> </p>
 				<p>Y para bachillerato en: </p>
-				<p><a href='http://201.175.44.205/Enlace/Resultados2013/MediaSuperior2013/R13msFolio.aspx'>http://201.175.44.205/Enlace/Resultados2013/MediaSuperior2013/R13msFolio.aspx</a></p>
+				<p><a href=' http://bit.ly/15t9pWS'>http://bit.ly/15t9pWS</a></p>
 				<a name='pregunta5'></a>
 				<h3>5. ¿Qué es la prueba ENLACE?</h3>
 				<p>La Evaluación Nacional de Logro Académico en Centros Escolares (ENLACE) es una prueba del Sistema Educativo Nacional,  cuyo objetivo, es contribuir al avance educativo de los alumnos mexicanos de cada centro escolar y entidad federativa.</p>
