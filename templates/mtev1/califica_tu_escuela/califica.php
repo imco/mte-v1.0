@@ -6,7 +6,7 @@
 
 	<div class='calificacion'>
 		<h2>Preparación de los maestros</h2>
-		<p>¿Qué tan preparados y capacitados estan los maestros 
+		<p>¿Qué tan preparados y capacitados están los maestros 
 		<br />
 		de tu escuela?
 		</p>
@@ -29,7 +29,7 @@
 		<h2>Asistencia de los maestros</h2>
 		<p>¿Los maestros faltan a clases constantemente o siem- 
 		<br />
-		pre estan en el aula?
+		pre están en el aula?
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
