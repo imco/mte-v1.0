@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(12,4);
+		$this->average_enlaces(13,3);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -121,19 +121,19 @@ class import extends main{
 					//var_dump($enlace);
 					if($enlace->alumnos_que_contestaron_total != 0){
 						$grados++;
-						$sump_spa += $enlace->puntaje_espaniol;
+						$sum_spa += $enlace->puntaje_espaniol;
 						$sum_mat += $enlace->puntaje_matematicas;
 					}
 				}
-				if($grados < $std_grados){
+				//if($grados < $std_grados){
 					$escuela->debug = true;
 					$prom_mat = $sum_mat / $grados;
 					$prom_spa = $sum_spa / $grados;
 					$gen = ($prom_spa * .2) + ($prom_mat *.8);
-					$escuela->update('grados',array($grados,$sum_mat,$sum_spa,$gen));
+					$escuela->update('grados,promedio_matematicas,promedio_espaniol,promedio_general',array($grados,$prom_mat,$prom_spa,$gen));
 					$i++;
-				}
-				if($i == 20) exit;
+				//}
+				//if($i == 20) exit;
 			}
 		}
 		$this->stop_measure_time();
