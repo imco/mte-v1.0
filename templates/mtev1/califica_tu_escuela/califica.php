@@ -40,6 +40,7 @@
 		1 = "Faltan constantemente"
 		<br />	
 		10 = "Nunca faltan"
+
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
