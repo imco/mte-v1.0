@@ -1,6 +1,7 @@
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(initializeCharts);
-
+if(typeof google != 'undefined'){
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(initializeCharts);
+}
 function initializeCharts(){
 	drawChart($('#data-primarias').html(),'graph-primarias','#0B9F49');
 	$('.initialized').val(0);
