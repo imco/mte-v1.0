@@ -1,7 +1,7 @@
 <div class='container califica'>
 	<h2>Califica tu escuela seleccionando para cada campo una calificación del 1-10.
 	<br />
-	Estas calificaciones se promedian para generar la calificacion general de tu escuela.
+	Estas calificaciones se promedian para generar la calificación general de tu escuela.
 	</h2>
 
 	<div class='calificacion'>
