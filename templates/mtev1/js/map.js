@@ -1,7 +1,9 @@
+;
 var markers = [];
 var infoboxes = [];
 $().ready(function(){
-	initialize_map();
+	if(typeof google != 'undefined')
+		initialize_map();
 	$('#compare-map-tab').click(function(e){
 		if($('#map-initialized').val() == 'false'){
 			initialize_map();
