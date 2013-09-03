@@ -18,10 +18,12 @@ $conn->query('UPDATE escuelas SET rank_entidad = NULL WHERE 1');
 foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
 	foreach($entidades as $entidad){
-		$sql = "SET @rownum = 0, @rank = 0, @prev_val = NULL; ";
+		//$sql = "";
 		if($conn->query($sql)){
-			echo $sql.'<br/>';
-			$sql = "UPDATE escuelas t1
+			//echo $sql.'<br/>';
+			$sql = "
+			SET @rownum = 0, @rank = 0, @prev_val = NULL; 
+			UPDATE escuelas t1
 					JOIN (
 						SELECT @rownum := @rownum + 1 AS row,
 						@rank := IF(@prev_val!=promedio_general,@rownum,@rank) AS rank,
