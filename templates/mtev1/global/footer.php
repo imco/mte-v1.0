@@ -16,10 +16,10 @@
   ga('create', 'UA-4404650-7', 'mejoratuescuela.org');
   ga('send', 'pageview');
 </script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
   (function() {
     var ff = document.createElement('script'); ff.type = 'text/javascript'; ff.async = true;
     ff.src = 'https://usabilitytools.com/ff/rest/script/58503'; ff.charset = 'utf-8';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ff, s);
   })();
-</script>
+</script>-->
