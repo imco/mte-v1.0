@@ -55,7 +55,7 @@
 								<span>Descargar</span>
 				</a>
 			</h1>
-			<h2>¿En que te debes fijar de la infraestructura de la escuela?</h2>
+			<h2>¿En qué te debes fijar de la infraestructura de la escuela?</h2>
 			<hr />
 			<p></p>
 		</div>
