@@ -62,7 +62,6 @@ $(document).ready(function(){
 			}
 		}
 	});*/
-
 	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
