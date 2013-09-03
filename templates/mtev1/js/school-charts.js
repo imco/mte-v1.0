@@ -1,5 +1,7 @@
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawCharts);
+if(typeof google != 'undefined' && google['load'] ){
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawCharts);
+}
 
 function drawCharts() {
 	drawChart('matematicas');

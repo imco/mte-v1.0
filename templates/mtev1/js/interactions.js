@@ -41,14 +41,14 @@ $(document).ready(function(){
 		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
 		if($(this).html() == 'Resultados Educativos' ) drawCharts();
 	})
-	$('#rank-bar').mousemove(function(e){
+	/*$('#rank-bar').mousemove(function(e){
 		set_rank_bar(e.pageX - $(this).offset().left);
-	});
-	$('#rank-bar').click(function(e){
+	});*/
+	/*$('#rank-bar').click(function(e){
 		var rank = set_rank_bar(e.pageX - $(this).offset().left);
 		$('#rank-value').val(rank);
-	});
-	$('#rank-bar').mouseout(function(e){
+	});*/
+	/*$('#rank-bar').mouseout(function(e){
 		var max = $('.container').hasClass('B')?173:336;
 		var x = e.pageX - $(this).offset().left;
 		var y = e.pageY - $(this).offset().top;
@@ -61,7 +61,7 @@ $(document).ready(function(){
 				$('#rank-label').hide();
 			}
 		}
-	});
+	});*/
 
 	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
@@ -212,9 +212,7 @@ $(document).ready(function(){
 	}
 	
 	if($('.container').hasClass('resultados')){
-		$(window).unload(function(){
-			add_escuelas_cookie();	
-		});
+		$(window).unload(add_escuelas_cookie);
 	}
 
 	$('#compara-main-button').click(function(e){
@@ -253,14 +251,14 @@ function load_location_options(input,directive,options,name){
 		input.trigger('change');
 	},'json');
 }
-function set_rank_bar(x){
+/*function set_rank_bar(x){
 	var max = $('.container').hasClass('B')?173:336;
 	var rank = Math.round(x/max * 100);
 	var offset = x - 12;
 	$('#rank-bar .bar').css('width',x+'px').show();
 	$('#rank-label').html(rank+'%').css('left',offset+'px').show();
 	return rank;
-}
+}*/
 function toggle_escuela(cct){
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
@@ -320,5 +318,4 @@ function add_escuelas_cookie(){
 	if(escuelas.length){
 		$.cookie('escuelas',escuelas.join('-'));
 	}
-
 }
