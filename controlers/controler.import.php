@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(13,3);
+		$this->average_enlaces(12,4);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
