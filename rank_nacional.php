@@ -19,7 +19,7 @@ foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
 	$sql = "SET @rownum = 0, @rank = 0, @prev_val = NULL; ";
 	$conn->query($sql);
-
+	echo $sql.'<br/>';
 	$sql = "UPDATE escuelas t1
 			JOIN (
 			SELECT @rownum := @rownum + 1 AS row,
