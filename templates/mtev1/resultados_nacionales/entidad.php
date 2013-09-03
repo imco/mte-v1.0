@@ -56,7 +56,7 @@ $niveles = array(12 => 'Primarias',13 => 'Secundarias',22 => 'Bachilleratos')
 			</p>
 			<div class='table'>
 				<p>Promedio estatal de español <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
-				<p>Promedio estatal de matemáticas <span class='value'><?=$this->entidad->secundaria_espaniol?></span></p>
+				<p>Promedio estatal de matemáticas <span class='value'><?=$this->entidad->secundaria_matematicas?></span></p>
 			</div>
 
 			<p class='promedio-orange'>
