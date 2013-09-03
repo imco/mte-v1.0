@@ -19,7 +19,7 @@ foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
 	foreach($entidades as $entidad){
 		//$sql = "";
-		if($conn->query($sql)){
+		//if($conn->query($sql)){
 			//echo $sql.'<br/>';
 			$sql = "
 			SET @rownum = 0, @rank = 0, @prev_val = NULL; 
@@ -39,9 +39,6 @@ foreach($niveles as $i => $nivel){
 				echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;
 			}
 			echo $sql.'<br/>';
-		}else{
-			echo 'could not reset vars <br>';
-		}
 	}
 }
 
