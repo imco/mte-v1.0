@@ -6,9 +6,14 @@
 
 	<div class='calificacion'>
 		<h2>Preparación de los maestros</h2>
-		<p>¿Qué tan preparados y capacitados estan los maestros 
+		<p>¿Qué tan preparados y capacitados están los maestros 
 		<br />
 		de tu escuela?
+		</p>
+		<p>
+		1 = "Poco preparados"
+		<br />	
+		10 = "Muy preparados"
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
@@ -29,7 +34,12 @@
 		<h2>Asistencia de los maestros</h2>
 		<p>¿Los maestros faltan a clases constantemente o siem- 
 		<br />
-		pre estan en el aula?
+		pre están en el aula?
+		</p>
+		<p>
+		1 = "Faltan constantemente"
+		<br />	
+		10 = "Nunca faltan"
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
@@ -52,6 +62,11 @@
 		<br />
 		padres de familia?
 		</p>
+		<p>
+		1 = "Mala"
+		<br />
+		10 = "Muy buena"
+		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
 			<span>2</span>
@@ -64,13 +79,17 @@
 			<span>9</span>
 			<span>10</span>
 		</div>
-
 	</div>
 	<div class='calificacion'>
 		<h2>Infraestructura de la escuela</h2>
 		<p>¿La escuela cuenta con las instalaciones necesarias
 		<br />
 		para dar clases?
+		</p>
+		<p>
+		1 = "Inadecuadas"
+		<br />
+		10 = "Muy buenas"
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
@@ -93,6 +112,11 @@
 		<br />
 		organizada en la escuela?
 		</p>
+		<p>
+		1 = "No participan"
+		<br />
+		10 = "Participación activa"
+		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
 			<span>2</span>
@@ -111,6 +135,12 @@
 		<p>¿Las evaluaciones y exámenes se administran de
 		<br />
 		manera honesta y transparente?
+		</p>
+		<p>
+		1 = "Hay copia y trampa"
+		<br />
+		
+		10 = "Con honestidad"
 		</p>
 		<div class='wrap_cal'>
 			<span>1</span>
