@@ -199,7 +199,7 @@ class main extends controler{
 		$q = urlencode($q);
 		$fq = urlencode($fq);
 		$sort = urlencode($sort);
-		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";exit;
+		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
 		$response = json_decode(file_get_contents($url));
 		$this->escuelas = $response->response->docs;
 		$this->num_results = $response->response->numFound;
