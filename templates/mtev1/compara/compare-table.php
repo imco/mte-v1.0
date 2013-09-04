@@ -18,8 +18,8 @@
 		$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
 		$matematicas = $escuela->promedio_matematicas >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
 		$espaniol = $escuela->promedio_espaniol >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_espaniol) : '';
-		$r_entidad_text = $escuela->rank_entidad != '' ? "de {$escuela->entidad_cct_count}";
-		$r_nacional_text = $escuela->rank_nacional != '' ? "de {$escuela->nacional_cct_count}";
+		$r_entidad_text = $escuela->rank_entidad != '' ? "de {$escuela->entidad_cct_count}" : '';
+		$r_nacional_text = $escuela->rank_nacional != '' ? "de {$escuela->nacional_cct_count}" : '';
 		echo "<tr class='on'>";
 		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
 			<div class='icon'>
