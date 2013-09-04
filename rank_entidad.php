@@ -12,8 +12,8 @@ if (mysqli_connect_errno()) {
 /*This will rank the schools at the entidad level */
 
 $entidades = range(1,32);
-$niveles = array(12,13,22);
-$grados = array(4,3,1);
+$niveles = array(22);
+$grados = array(4,3,0);
 $conn->query('UPDATE escuelas SET rank_entidad = NULL WHERE 1');
 foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
@@ -33,9 +33,9 @@ foreach($niveles as $i => $nivel){
 					) t2
 					ON t1.cct=t2.cct
 					SET t1.rank_entidad=t2.rank;";
-			if(!$conn->query($sql)){
+			/*if(!$conn->query($sql)){
 				echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;
-			}
+			}*/
 			echo $sql.'<br/>';
 		}else{
 			echo 'could not reset vars <br>';
