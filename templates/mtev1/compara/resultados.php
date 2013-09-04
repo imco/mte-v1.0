@@ -29,7 +29,7 @@
 			//$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
-			var_dump($escuela->semaforo);exit;
+			
 			$matematicas = $escuela->promedio_matematicas >= 0 && $esc->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && $esc->semaforo <= 3 ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
