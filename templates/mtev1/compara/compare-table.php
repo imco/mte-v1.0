@@ -16,6 +16,10 @@
 		$escuela->get_semaforo();
 		$slug = $this->current_rank->slug;
 		$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
+		$matematicas = $escuela->promedio_matematicas >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
+		$espaniol = $escuela->promedio_espaniol >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_espaniol) : '';
+		$r_entidad_text = $escuela->rank_entidad != '' ? "de {$escuela->entidad_cct_count}";
+		$r_nacional_text = $escuela->rank_nacional != '' ? "de {$escuela->nacional_cct_count}";
 		echo "<tr class='on'>";
 		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
 			<div class='icon'>
@@ -25,14 +29,14 @@
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
 		echo "<td class='rank'>".$escuela->rank_entidad."<br />	
-					de {$escuela->entidad_cct_count}
+					$r_entidad_text
 		</td>";
 		echo "<td class='rank'>".$escuela->rank_nacional."<br />	
-					de {$escuela->nacional_cct_count}
+					$r_nacional_text
 		</td>";
 		echo "<td>".$this->capitalize($escuela->control->nombre)."</td>";
-		echo "<td class='rank'><span>".round($escuela->promedio_espaniol)."</span></td>";
-		echo "<td class='rank'><span>".round($escuela->promedio_matematicas)."</span></td>";
+		echo "<td class='rank'><span>".round($espaniol)."</span></td>";
+		echo "<td class='rank'><span>".round($matematicas)."</span></td>";
 		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
 				<div class='icon'><span class='icon-popup'>
 						<p class='infor I'>i</p>
