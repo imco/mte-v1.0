@@ -22,10 +22,10 @@
 			$esc->promedio_general = $escuela->promedio_general;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nivel->nom_nivel;
-			
+
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
-			var_dump( $esc,$escuela );exit;
+			var_dump( $escuela );exit;
 			//$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
