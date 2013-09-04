@@ -16,14 +16,6 @@
 	<?php
 	if(isset($this->escuelas)){
 		foreach($this->escuelas as $escuela){
-			/*
-			$esc = new escuela();
-			$esc->poco_confiables = $escuela->poco_confiables;
-			$esc->total_evaluados = $escuela->total_evaluados;
-			$esc->promedio_general = $escuela->promedio_general;
-			$esc->nivel->id = $escuela->nivel;
-			$esc->get_semaforo();
-			*/
 			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
