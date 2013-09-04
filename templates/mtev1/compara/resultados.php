@@ -22,7 +22,7 @@
 			$esc->promedio_general = $escuela->promedio_general;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nivel->nom_nivel;
-			var_dump( $escuela->nivel->nom_nivel);exit;
+			
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
 			var_dump( $esc,$escuela );exit;
