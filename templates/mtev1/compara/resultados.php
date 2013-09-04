@@ -22,7 +22,7 @@
 			$esc->promedio_general = $escuela->promedio_general;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->get_semaforo();
-			var_dump( $esc );exit;
+			var_dump( $esc,$escuela );exit;
 			//$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
