@@ -25,6 +25,7 @@ class main extends controler{
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
 				$escuela->get_semaforo();
+var_dump($escuela->get_semaforo());
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
 				$escuelas[$escuela->cct]->latitud = $escuela->latitud;
 				$escuelas[$escuela->cct]->longitud = $escuela->longitud;
