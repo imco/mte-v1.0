@@ -14,6 +14,7 @@
 	if($this->escuelas!=null)
 	foreach($this->escuelas as $escuela){
 		$escuela->get_semaforo();
+		$controles = array(1=>'Pública', 2=>'Privada');
 		$slug = $this->current_rank->slug;
 		$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
 		$matematicas = $escuela->promedio_matematicas >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
@@ -34,9 +35,9 @@
 		echo "<td class='rank'>".$escuela->rank_nacional."<br />	
 					$r_nacional_text
 		</td>";
-		echo "<td>".$this->capitalize($escuela->control->nombre)."</td>";
-		echo "<td class='rank'><span>".round($espaniol)."</span></td>";
-		echo "<td class='rank'><span>".round($matematicas)."</span></td>";
+		echo "<td>".$controles[$escuela->control->id]."</td>";
+		echo "<td class='rank'><span>".$espaniol."</span></td>";
+		echo "<td class='rank'><span>".$matematicas."</span></td>";
 		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
 				<div class='icon'><span class='icon-popup'>
 						<p class='infor I'>i</p>
