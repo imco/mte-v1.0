@@ -25,7 +25,6 @@ class main extends controler{
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
 				$escuela->get_semaforo();
-var_dump($escuela->get_semaforo());exit;
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
 				$escuelas[$escuela->cct]->latitud = $escuela->latitud;
 				$escuelas[$escuela->cct]->longitud = $escuela->longitud;
@@ -200,7 +199,7 @@ var_dump($escuela->get_semaforo());exit;
 		$q = urlencode($q);
 		$fq = urlencode($fq);
 		$sort = urlencode($sort);
-		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
+		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";exit;
 		$response = json_decode(file_get_contents($url));
 		$this->escuelas = $response->response->docs;
 		$this->num_results = $response->response->numFound;
