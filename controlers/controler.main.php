@@ -202,6 +202,7 @@ class main extends controler{
 		$url = "http://busquedas.mejoratuescuela.org/solr/mte/select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
 		$response = json_decode(file_get_contents($url));
 		$this->escuelas = $response->response->docs;
+		var_dump($this->escuelas);exit;
 		$this->num_results = $response->response->numFound;
 	}
 
