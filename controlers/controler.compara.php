@@ -26,7 +26,8 @@ class compara extends main{
 			$params->municipio = $this->get('municipio');
 			$params->localidad = $this->get('localidad');
 			$p = $this->get('p') ? $this->get('p') : 1;
-			$this->get_escuelas_new($params,$p);exit('d');
+			$this->get_escuelas_new($params,$p);
+			var_dump($this->escuelas);exit('d');
 			$this->cct_count_entidad();
 			$this->resultados_title = 'Resultados de tu búsqueda';
 			$this->set_info_user_search($this->num_results);
