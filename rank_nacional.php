@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
 /*This will rank the schools at the entidad level */
 
 $niveles = array(12,13,22);
-$grados = array(4,3,1);
+$grados = array(4,3,0);
 $conn->query('UPDATE escuelas SET rank_nacional = NULL WHERE 1');
 foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
