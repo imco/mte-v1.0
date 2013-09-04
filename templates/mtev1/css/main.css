@@ -1169,7 +1169,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .button-frame .button.button-efect.blue:hover{background-color:#10759D;box-shadow:none;cursor:pointer;}
 
 #content .comparar.resultados .rank{font-size:14px;line-height:normal;}
-#content .comparar.resultados table tr + tr{display:none;}
 #content .comparar.resultados table tr + tr.on{display:table-row;}
 #content .comparar.resultados table tr.on .checkbox a:before{content:'x';color:white;top:-10px;left:0;font-size:14px;background-color:transparent;}
 
