@@ -9,6 +9,7 @@
 			<th class='matematicas'>Calificación ENLACE de matemáticas</th>
 			<th class='espanol'>Calificación ENLACE de español</th>
 			<th class='nivel'>Nivel</th>
+			<th class='turno'>Turno</th>
 			<th class='control'>Privada | Pública</th>
 			<th class='rank'>Posición estatal</th>
 			<th class='rank'>Semáforo educativo <span class='infor I'>i</span> </th>
@@ -39,6 +40,7 @@
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
+				<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>
 				<td class='control'>".$controles[$escuela->control]."</td>
 				<td class='rank'><span>{$rank_entidad}</span>
 						<span>de {$escuela->entidad_cct_count}</span>
