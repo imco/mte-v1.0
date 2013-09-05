@@ -16,7 +16,7 @@ class default_config{
 		$this->dev_mode = false;
 		
 		//MTE
-		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No Enlace','Poco confiable','Esta escuela no tomo la prueba enlace para todos los años');
+		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No Enlace','Poco confiable','Esta escuela no tomó la prueba ENLACE para todos los años');
 
 		//Change.org
 		$this->change_api_key = '***REMOVED***';
