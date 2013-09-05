@@ -83,7 +83,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			<?php $this->print_img_tag('news.png');?>
 			<form method='post' action='/home/newsletter/' accept-charstet='utf-8' class='newsletter' >
 				<input name='correo' type='text' placeholder='Tu correo' class='required email' />
-				<p class='check'><input type='checkbox' name='aviso' class='required' />	
+				<p class='check'><input type='checkbox' name='aviso' class='required' checked="checked" />	
 					<a href='/aviso-de-privacidad'>Aceptar aviso de privacidad</a>
 				</p>
 
