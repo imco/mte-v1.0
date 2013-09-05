@@ -243,6 +243,7 @@ function load_location_options(input,directive,options,name){
 		input.html('<option value="">'+name+'</option>');
 		for(x in data){
 			var item = data[x];
+			item.nombre = item.nombre[0].toLocaleUpperCase() + item.nombre.substr(1);
 			input.append('<option value="'+item.id+'">'+item.nombre+'</option>');
 		}
 		input.prop('disabled', false);
