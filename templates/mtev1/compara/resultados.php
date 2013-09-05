@@ -24,7 +24,7 @@
 			$esc->promedio_general = $escuela->promedio_general;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nom_nivel;
-			$esc->turno->nombre = $escuela->turno;
+			$esc->turno->nombre = $turnos[$escuela->turno];
 
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
