@@ -311,6 +311,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #general-search .busqueda-avanzada input.integrated[type='submit']{background-image:url(../img/compara/lupa-search.png);width:32px;height:34px;}
 #general-search.general-search{margin:23px auto 0;}
 #general-search.general-search .customSelect {padding:11px 38px 11px 7px;width:178px;background:rgba(255,255,255,.68) url(../img/compara/dropdown.png) no-repeat 186px center;margin:8px 7px;line-height:18px;color:#686868;text-align:left;border-radius:5px;height:19px;overflow:hidden;font-size:13px;}
+#general-search.general-search select#municipio-input + .customSelect{text-transform:capitalize;}
 #general-search.general-search .customSelect .customSelectInner{width:178px!important;height:18px;overflow:hidden;}
 #general-search.general-search .customSelect.customSelectDisabled{opacity:.3;}
 #general-search.general-search select option{background-color:#F1F1F1;border:none;background-image:-moz-linear-gradient(top,#F8F8F8,#e9e9e9);color:#888888;padding:6px 18px;font-family:Varela Round;}
