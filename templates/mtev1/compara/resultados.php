@@ -16,7 +16,7 @@
 		</tr>
 	<?php
 	if(isset($this->escuelas)){
-		$turnos = array('100' => 'Matutino', '200' => 'Vespertino', '500' => 'Continuo (tiempo completo)', '400' => 'Discontinuo', '300' => 'Nocturno', '120' => 'Matutino y vespertino');
+		$turnos = array(100 => 'Matutino', 200 => 'Vespertino', 500 => 'Continuo (tiempo completo)', 400 => 'Discontinuo', 300 => 'Nocturno', 120 => 'Matutino y vespertino');
 		foreach($this->escuelas as $escuela){
 			$esc = new escuela();
 			$esc->poco_confiables = $escuela->poco_confiables;
@@ -25,6 +25,7 @@
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nom_nivel;
 			$esc->turno->nombre = $turnos[$escuela->turno];
+			var_dump($escuela->turno);
 
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
