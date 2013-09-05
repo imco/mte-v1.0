@@ -1,7 +1,7 @@
 <a name='resultados'></a>
 <div class='search-map container'>
 	<?php $showing = $this->pagination->count > 100 ? "Mostrando las primeras 100" : ''?>
-	<h1>Se encontraron <?= $this->pagination->count ?> <span>Escuelas de acuerdo a sú búsqueda. <?=$showing?></span></h1>
+	<h1>Se encontraron <?= $this->pagination->count ?> <span>Escuelas de acuerdo a su búsqueda. <?=$showing?></span></h1>
 	<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 	<div id='mapa' class='map'></div>
 	<?php $this->include_template('map-infobox','global'); ?>
