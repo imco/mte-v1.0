@@ -38,12 +38,11 @@ class escuela extends table{
 		$porcentaje_poco_confiable = $this->poco_confiables > 0 && $this->total_evaluados > 0?($this->poco_confiables * 100) / $this->total_evaluados:0;
 		$this->porcentaje_poco_confiable = number_format($porcentaje_poco_confiable,2);
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
-		var_dump($this);exit;
 		if(isset($this->grados) && $this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
 			$this->semaforo = 6;
 		}else if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
 			$this->semaforo = 5;
-		}else if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general != 0){
+		}else if(isset($this->semaforo_rangos[$this->nivel->id]) && $this->promedio_general > 0){
 			while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])$this->semaforo++;
 		}else{
 			$this->semaforo = 4;
