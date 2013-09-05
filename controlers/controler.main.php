@@ -203,7 +203,6 @@ class main extends controler{
 		$response = json_decode(file_get_contents($url));
 		$this->escuelas = $response->response->docs;
 		$this->num_results = $response->response->numFound;
-		var_dump($response->response);
 	}
 
 	public function load_niveles(){
