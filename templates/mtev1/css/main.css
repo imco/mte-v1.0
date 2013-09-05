@@ -342,6 +342,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th.matematicas,
 #content .resultados table th.espanol{line-height:14px;padding:0;}
 
+#content .resultados table td.turno{font-size:16px;line-height:normal;}
+#content .perfil + form + a + .resultados table .turno{display:none;}
 #content .resultados table td.semaforo span{display:block;width:34px;height:34px;margin:0 auto;}
 #content .resultados table td.semaforo.sem0 span{background-image:url(../img/perfil/reprobado.png);}
 #content .resultados table td.semaforo.sem1 span{background-image:url(../img/perfil/depanzazo.png);}
