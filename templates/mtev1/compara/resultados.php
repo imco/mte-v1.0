@@ -24,8 +24,6 @@
 			$esc->promedio_general = $escuela->promedio_general;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nom_nivel;
-			$esc->turno->nombre = $turnos[$escuela->turno];
-			var_dump($escuela->turno);
 
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
@@ -48,7 +46,7 @@
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
-				<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>
+				<td class='turno'>".$turnos[$escuela->turno]."</td>
 				<td class='control'>".$controles[$escuela->control]."</td>
 				<td class='rank'><span>{$rank_entidad}</span>
 						<span>de {$escuela->entidad_cct_count}</span>
