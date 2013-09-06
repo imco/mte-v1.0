@@ -95,11 +95,12 @@
 				<?php
 				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
+						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
 						echo <<<EOD
 						<div class='comment'>
 							<p class='rating'>{$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
 							<h2>{$calificacion->nombre}</h2>
-							<p>{$calificacion->comentario}</p>
+							<p>{$coment}</p>
 						</div>
 EOD;
 					}
