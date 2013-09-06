@@ -57,6 +57,7 @@
 				foreach($score->mat as $esp){
 					$pct = $score->alumnos ? round($esp/$score->alumnos*100)."%" : '--';
 					echo "<td class='rank'>$pct</td>";
+
 				}
 				$total = $score->alumnos;
 			}
