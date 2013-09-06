@@ -16,6 +16,7 @@
 		</tr>
 	<?php
 	if(isset($this->escuelas)){
+		$turnos = array(100 => 'Matutino', 200 => 'Vespertino', 500 => 'Continuo (tiempo completo)', 400 => 'Discontinuo', 300 => 'Nocturno', 120 => 'Matutino y vespertino');
 		foreach($this->escuelas as $escuela){
 			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
