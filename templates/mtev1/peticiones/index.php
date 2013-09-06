@@ -2,7 +2,7 @@
 	<h1 class='title'>
 		Estas peticiones se crean en alianza con 
 		<a href='http://www.change.org/'>change.org</a>
-		<a href='http://www.change.org/es-LA/start-a-petition'>Inicie una petición</a>
+		<a href='http://www.change.org/es-LA/start-a-petition'>Inicia una petición</a>
 	</h1>
 	<?php 
 	$this->petition_number = 1;
