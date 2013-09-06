@@ -42,16 +42,10 @@
 				<p><span class="red">Reprobado:</span> menos de 551 de promedio. <p>
 				<a name='pregunta4'></a>
 				<h3>4. ¿Por qué mi escuela tiene una mala calificación en el semáforo educativo si mi hij@ está obteniendo buenas calificaciones en la escuela?</h3>
-<<<<<<< HEAD
-				<p>Las calificaciones individuales de tu hij@ son independientes del desempeño de la escuela en conjunto o de su calidad educativa. En la boleta de calificaciones de la escuela, tu hij@ puede tener resultados muy altos, pero eso no quiere decir que tu hij@ esta cumpliendo con los estándares nacionales de aprendizaje. Te sugerimos que revises los resultados de tu hij@ en la prueba ENLACE, su calificación te puede dar un mejor estimado de su nivel de aprendizaje comparad@ con otros estudiantes de su edad. Puedes conocer los resultados por alumno en: </p>
-				<p>Para primaria y secundaria: <a href='http://201.175.44.205/Enlace/Resultados2012/Basica2012/R12Folio.aspx' >http://201.175.44.205/Enlace/Resultados2012/Basica2012/R12Folio.aspx</a> </p>
-				<p>Y para bachillerato en: </p>
-				<p><a href='http://201.175.44.205/Enlace/Resultados2013/MediaSuperior2013/R13msFolio.aspx'>http://201.175.44.205/Enlace/Resultados2013/MediaSuperior2013/R13msFolio.aspx</a></p>
-=======
+
 				<p>Las calificaciones individuales de tu hij@ son independientes del desempeño de la escuela en conjunto o de su calidad educativa. En la boleta de calificaciones de la escuela, tu hij@ puede tener resultados muy altos, pero eso no quiere decir que tu hij@ esta cumpliendo con los estándares nacionales de aprendizaje. Te sugerimos que revises los resultados de tu hij@ en la prueba ENLACE, su calificación te puede dar un mejor estimado de su nivel de aprendizaje comparad@ con otros estudiantes de su edad. Puedes conocer los resultados de tu hij@ en: </p>
 				<p>Para primaria y secundaria: <a href='http://bit.ly/1dAOfs6'>http://bit.ly/1dAOfs6</a> </p>
 				<p>Y para bachillerato en: <a href=' http://bit.ly/15t9pWS'>http://bit.ly/15t9pWS</a></p>
->>>>>>> 0907ddf3b2a4603b887708ad39d068e03b692e45
 				<a name='pregunta5'></a>
 				<h3>5. ¿Qué es la prueba ENLACE?</h3>
 				<p>La Evaluación Nacional de Logro Académico en Centros Escolares (ENLACE) es una prueba del Sistema Educativo Nacional,  cuyo objetivo, es contribuir al avance educativo de los alumnos mexicanos de cada centro escolar y entidad federativa.</p>
@@ -73,13 +67,9 @@
 				<p>La prueba ENLACE utiliza tecnologías avanzadas para garantizar el control de calidad de los resultados individuales y por grupo.  La SEP identifica como “copia u otras acciones inaceptables” cualquier tendencia que indique la existencia de copia, dictado de respuestas y otras prácticas fraudulentas.  El símbolo de precaución junto al nombre de una escuela indica que la SEP  considera más del 10% de las pruebas ENLACE administradas por esa escuela como “no confiables” o “fraudulentas”.</p>
 				<a name='pregunta9'></a>
 				<h3>9. ¿Cómo puedo crear mi propia petición?</h3>
-<<<<<<< HEAD
-				<p>Si quieres crear tu propia petición te invitamos a visitar el sitio de nuestros aliados: www.Change.org   Change.org® es un sitio independiente y apartidista que permite que cualquier persona, desde cualquier lugar del mundo pueda iniciar una campaña para generar cambios sociales en su comunidad. </p>
-				<p>Para iniciar una petición deberás registrarte en el sitio de Change.org, describir la problemática que deseas compartir, escoger a qué autoridades quieres que se le envíe tu petición, y finalmente compartirla con tus amigos y conocidos por medio de correos electrónicos o redes sociales. Si quieres que tu petición se muestre en MejoraTuEscuela.org, mándanos la liga a tu petición a: contacto@mejoratuescuela.org  y con mucho gusto la revisaremos. Mejora tu escuela busca promover iniciativas y peticiones ciudadanas para mejorar la calidad de la educación en México.</p>
-=======
+
 				<p>Si quieres crear tu propia petición te invitamos a visitar el sitio de nuestros aliados: www.Change.org Change.org® es un sitio independiente y apartidista que permite que cualquier persona, desde cualquier lugar del mundo pueda iniciar una campaña para generar cambios sociales en su comunidad. </p>
 				<p>Para iniciar una petición deberás registrarte en el sitio de Change.org, describir la problemática que deseas compartir, escoger a qué autoridades quieres que se le envíe tu petición, y finalmente compartirla con tus amigos y conocidos por medio de correos electrónicos o redes sociales. Si quieres que tu petición se muestre en MejoraTuEscuela.org, mándanos la liga a tu petición a: contacto@mejoratuescuela.org  y con mucho gusto la revisaremos. Mejora tu escuela busca promover iniciativas y peticiones ciudadanas para mejorar la calidad de la educación en México. </p>
->>>>>>> 0907ddf3b2a4603b887708ad39d068e03b692e45
 			</div>	
 		</div>
 	</div>
