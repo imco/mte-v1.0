@@ -27,7 +27,6 @@
 
 			$esc->grados = $escuela->grados;
 			$esc->get_semaforo();
-			
 			//$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
@@ -41,7 +40,7 @@
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
-					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)."</span>".
+					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)." | ".$turnos[$escuela->turno]."</span>".
 				"</a></td>
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
