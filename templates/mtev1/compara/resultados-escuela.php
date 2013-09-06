@@ -16,8 +16,10 @@
 		</tr>
 	<?php
 	if(isset($this->escuelas)){
+		$turnos = array(100 => 'Matutino', 200 => 'Vespertino', 500 => 'Continuo (tiempo completo)', 400 => 'Discontinuo', 300 => 'Nocturno', 120 => 'Matutino y vespertino');
 		foreach($this->escuelas as $escuela){
 			$escuela->get_semaforo();
+			
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
@@ -29,7 +31,7 @@
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
-					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)."</span>".
+					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)." | ".$turnos[$escuela->turno]."</span>".
 				"</a></td>
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
