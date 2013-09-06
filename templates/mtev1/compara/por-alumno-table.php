@@ -51,19 +51,19 @@
 		foreach($scores as $year => $score){
 			if($year == 2012){
 				foreach($score->esp as $esp){
-					$pct = $score->alumnos ? round($esp/$score->alumnos*100) : '--';
-					echo "<td class='rank'>$esp</td>";
+					$pct = $score->alumnos ? round($esp/$score->alumnos*100)."%" : '--';
+					echo "<td class='rank'>$pct</td>";
 				}
 				foreach($score->mat as $esp){
-					$pct = $score->alumnos ? round($esp/$score->alumnos*100) : '--';
-					echo "<td class='rank'>$esp</td>";
+					$pct = $score->alumnos ? round($esp/$score->alumnos*100)."%" : '--';
+					echo "<td class='rank'>$pct</td>";
 				}
 				$total = $score->alumnos;
 			}
 		}		
-
+		$conf = $total ? round($escuela->poco_confiables/$total * 100).'%' : '--';
 		echo "<td class='rank'>{$total}</td>";
-		echo "<td class='rank'>{$escuela->poco_confiables}</td>";		
+		echo "<td class='rank'>{$conf}</td>";		
 		echo "</tr>";
 	}
 	?>

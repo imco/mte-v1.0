@@ -217,9 +217,13 @@ class main extends controler{
 		$this->entidades = $q->read('id,nombre,cct_count,promedio_general,rank');
 	}
 	protected function capitalize($string){
-		return ucwords(mb_strtolower($string,'UTF-8'));
-		//return $string;
+		return $this->mb_ucwords(mb_strtolower($string,'UTF-8'));
+		return $string;
 	}
+	private function mb_ucwords($str) { 
+	    $str = mb_convert_case($str, MB_CASE_TITLE, "UTF-8"); 
+	    return ($str); 
+	} 
 	private function distance($lat1,$long1,$lat2,$long2) {
         $lat1 = deg2rad($lat1);
         $long1 = deg2rad($long1);
