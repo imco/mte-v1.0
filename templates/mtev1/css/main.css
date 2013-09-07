@@ -593,14 +593,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.ayuda h2{font-size:24px;margin-left:56px;margin-bottom:9px;line-height:16px;color:#464646}
 #content .container.ayuda ol{margin:20px 56px;list-style-type:decimal;list-style-position:inside;}
 #content .container.ayuda ul{margin:20px 56px;list-style-type:disc;list-style-position:inside;}
-#content .container.ayuda a{color:black;}
+#content .container.ayuda a:not(.aviso-completo){color:black;}
 #content .container.ayuda .text-ayuda{margin:15px 55px;}
 #content .container.ayuda .text-ayuda h3{font-size:18px;color:#000100;margin:28px 0;}
 #content .container.ayuda .text-ayuda p{margin:10px 0;text-align:justify;}
 #content .container.ayuda .text-ayuda p.indent{margin:10px 20px;font-style:italic;font-size:12px;}
 #content .container.ayuda .text-ayuda .img-example img{border:3px solid white;width:275px;height:249px;float:left}
 #content .container.ayuda .ayuda{padding-bottom:74px;margin-bottom:44px;}
-#content .container.ayuda .text-ayuda img{width:100%;}
+#content .container.ayuda .text-ayuda img{width:263px;height:432px;}
 #content .container.ayuda .text-ayuda span.green{color:#008000;}
 #content .container.ayuda .text-ayuda span.amarillo{color:#FFFF25;}
 #content .container.ayuda .text-ayuda span.naranja{color:#FF6600;}
