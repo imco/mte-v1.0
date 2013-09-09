@@ -79,14 +79,16 @@ class home extends main{
 			$correo = $this->post('correo');
 			$news = new newsletters();
 			$news->create('email_input',array($correo));
-			/*if($news->id){
-				echo "creado correctamente";
-			}else{
-				echo "ya existe";
-			}*/
 			$location = $news->id ? "/home/index?news=true" : "/home/index?news=false";
 		}
-			header("location: $location");
+		$this->send_email(
+			$correo,
+			'Mejora tu escuela',
+			'A sido registrado correctamente en http://www.mejoratuescuela.org',
+			'contacto@mejoratuescuela.org',
+			'www.mejoratuescuela.org'
+		);	
+		header("location: $location");
 	}
 }
 ?>
