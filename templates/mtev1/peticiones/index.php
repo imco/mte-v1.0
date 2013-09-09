@@ -12,7 +12,7 @@
 	<h1><?=$this->petition['title'] ?><span class='shadow'></span></h1>
 	<div class='wrap_peticion <?php echo $on==$this->petition_number?'on':''; $this->petition_number; ?>'>
 
-		<div class='content jscrollpane'>
+		<div class='content'>
 			<h2><?=$this->petition['title'] ?></h2>
 			<p><?=$this->petition['overview'] ?></p>
 			<p><a href='<?=$this->petition['url'] ?>'>Leer más</a></p>
