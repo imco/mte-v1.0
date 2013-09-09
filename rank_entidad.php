@@ -33,9 +33,9 @@ foreach($niveles as $i => $nivel){
 					) t2
 					ON t1.cct=t2.cct
 					SET t1.rank_entidad=t2.rank;";
-			/*if(!$conn->query($sql)){
+			if(!$conn->query($sql)){
 				echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;
-			}*/
+			}
 			echo $sql.'<br/>';
 		}else{
 			echo 'could not reset vars <br>';
