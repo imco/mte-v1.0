@@ -99,7 +99,7 @@
 						echo <<<EOD
 						<div class='comment'>
 							<p class='rating'>{$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
-							<h2>{$calificacion->nombre}</h2>
+							<h2>{$calificacion->nombre} ({$calificacion->ocupacion}) </h2>
 							<p>{$coment}</p>
 						</div>
 EOD;
