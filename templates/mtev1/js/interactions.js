@@ -161,8 +161,16 @@ $(document).ready(function(){
 
 	$('.peticion h1').click(function(){
 		$('.wrap_peticion, .social.on').removeClass('on');
-		$(this).next().addClass('on');
+		var next = $(this).next();
+		next.addClass('on');
+		if(!(next.find('.content').hasClass('jscrollpane'))){
+			next.find('.content').addClass('jscrollpane').jScrollPane();
+		}
 	});
+	if($('#content .container').hasClass('peticion')){
+		$('.wrap_peticion.on .content').addClass('jscrollpane').jScrollPane();	
+	}
+
 
 	if($('#content .container').hasClass('perfil')){
 		$('.menu a.logo + a + a + a').click(function(e){
