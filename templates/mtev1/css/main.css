@@ -1178,3 +1178,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica .calificacion-form.B input[type='submit']{margin:7px auto;}
 #content .califica .calificacion-form.B .button-frame{width:403px;margin:12px auto;}
 #content .califica .calificacion-form.B{height:329px;}
+
+/*ordena comentarios*/
+#content .sort{display:inline-block;width:310px;text-align:center;color:black;}
+#content .sort.on{background-color:rgba(255,255,255,.7);position:relative;}
+#content .sort.on[href='top'] .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:8px 9px 0;position:absolute;right:15px;top:6px;}
+#content .sort.on[href='bottom'] .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:0 9px 8px;position:absolute;right:15px;top:6px;}
