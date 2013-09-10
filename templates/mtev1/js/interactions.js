@@ -242,6 +242,36 @@ $(document).ready(function(){
 	
 	});
 
+	$('.perfil .sort').click(function(e){
+		e.preventDefault();
+		var comments = $('.comment').remove(),
+		temp = $(this).attr('href');
+		$('.perfil .sort.on').removeClass('on');
+		$(this).addClass('on');
+		if($(this).hasClass('recientes')){
+			comments.sort(function(a,b){
+				var t1 = new Date($(a).find('.timestamp').html()),
+				t2 = new Date($(b).find('.timestamp').html());
+				if(temp=='top')
+					return t1>t2?-1:1;
+				else
+					return t1>t2?1:-1;
+			})
+		}else{
+			comments.sort(function(a,b){
+				var l1 = parseFloat($(a).find('.likes').html()),
+				l2 = parseFloat($(b).find('.likes').html());
+				if(temp=='top')
+					return l1>l2?-1:1;
+				else
+					return l1>l2?1:-1;
+
+			})
+		}
+		$(this).attr('href',$(this).attr('href')=='top'?'bottom':'top');
+		$('[name="calificaciones"]').parent().append(comments);
+	});
+
 });
 
 function load_location_options(input,directive,options,name){
