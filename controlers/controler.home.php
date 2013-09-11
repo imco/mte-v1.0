@@ -90,8 +90,9 @@ class home extends main{
 		);
 		
 		include_once $_SERVER['DOCUMENT_ROOT'].'/library/SendGrid_loader.php';
+
 		$sendgrid = new SendGrid('***REMOVED***', '***REMOVED***');
-		var_dump($sendgrid);exit;
+		var_dump($_SERVER['DOCUMENT_ROOT'].'/library/SendGrid_loader.php', $sendgrid);exit;
 		exit;
 		header("location: $location");
 	}
