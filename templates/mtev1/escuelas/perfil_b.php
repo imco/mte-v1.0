@@ -100,9 +100,10 @@
 				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
+						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
 						echo <<<EOD
 						<div class='comment'>
-							<p class='rating'>{$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+							<p class='rating'>{$text_calificacion} {$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
 							<h2>{$calificacion->nombre} ({$calificacion->ocupacion}) </h2>
 							<p>{$coment}</p>
 							<span class='hidden timestamp'>$calificacion->timestamp</span>
