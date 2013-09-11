@@ -57,7 +57,7 @@ class escuelas extends main{
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
 			control=>id,control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,
+			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
 			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 		");
 		if(isset($this->escuela->cct)){
