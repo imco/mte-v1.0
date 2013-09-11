@@ -26,7 +26,7 @@ foreach($niveles as $i => $nivel){
 			@prev_val := promedio_general AS promedio_general,
 			cct
 			FROM escuelas
-			WHERE nivel = '$nivel' AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<=.1*total_evaluados AND grados >= $grado
+			WHERE nivel = '$nivel' AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<.1*total_evaluados AND grados >= $grado
 			ORDER BY promedio_general DESC) t2
 			ON t1.cct=t2.cct
 			SET t1.rank_nacional=t2.rank;";
