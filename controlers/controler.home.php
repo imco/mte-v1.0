@@ -87,7 +87,8 @@ class home extends main{
 			'A sido registrado correctamente en http://www.mejoratuescuela.org',
 			'contacto@mejoratuescuela.org',
 			'www.mejoratuescuela.org'
-		);	
+		);
+		var_dump($correo);exit;	
 		header("location: $location");
 	}
 }
