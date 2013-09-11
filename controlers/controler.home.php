@@ -88,7 +88,11 @@ class home extends main{
 			'contacto@mejoratuescuela.org',
 			'www.mejoratuescuela.org'
 		);
-		var_dump($correo);exit;	
+		
+		include_once $_SERVER['DOCUMENT_ROOT'].'/library/SendGrid_loader.php';
+		$sendgrid = new SendGrid('***REMOVED***', '***REMOVED***');
+		var_dump($sendgrid);exit;
+		exit;
 		header("location: $location");
 	}
 }
