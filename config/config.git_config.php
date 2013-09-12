@@ -12,7 +12,7 @@ class git_config extends default_config{
 		$this->db_host = '***REMOVED***';
 		$this->db_name = 'comparatuescuela';
 		$this->db_user = 'root';
-		$this->db_pass = 'RtG/()rERtfkfGKLF';
+		$this->db_pass = '#02n4c4y5:ssl';
 /*
 		
 		$this->db_host = '***REMOVED***';
