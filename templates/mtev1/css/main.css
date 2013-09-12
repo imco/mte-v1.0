@@ -22,18 +22,18 @@ a{text-decoration:none;}
 #header .menu a{display:block;float:left;text-align:center;color:#0e9e48;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:114px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
 #header .menu a:hover{color:white;}
 #header .menu .submenu a{color:white;text-shadow:1px 1px 2px #999;font-weight:normal;}
-#header .menu a[href='/compara/'] .icon{background-position:0 0;width:40px;height:43px;top:14px;left:45px;}
-#header .menu a[href='/compara/escuelas/'] .icon{background-position:-49px 0;width:90px;height:29px;top:21px;left:20px;}
+#header .menu a[href$='/compara/'] .icon{background-position:0 0;width:40px;height:43px;top:14px;left:45px;}
+#header .menu a[href$='/compara/escuelas/'] .icon{background-position:-49px 0;width:90px;height:29px;top:21px;left:20px;}
 #header .menu a[href$='/califica/'] .icon{background-position:-141px 0;width:34px;height:41px;top:13px;left:49px;}
-#header .menu a[href='/mejora'] .icon{background-position:-177px 0;width:40px;height:40px;top:17px;left:45px;}
+#header .menu a[href$='/mejora'] .icon{background-position:-177px 0;width:40px;height:40px;top:17px;left:45px;}
 #header .menu a + a + a{margin-left:2px;}
-#header .menu.compara a[href='/compara/'],
+#header .menu.compara a[href$='/compara/'],
 #header .menu.califica_tu_escuela a[href$='/califica/'],
-#header .menu.mejora a[href='/mejora'],
+#header .menu.mejora a[href$='/mejora'],
 #header .menu.resultados a.logo + a + a ,
-#header .menu.compara a[href='/compara/'] .decor,
+#header .menu.compara a[href$='/compara/'] .decor,
 #header .menu.califica_tu_escuela a[href$='/califica/'] .decor,
-#header .menu.resultados a[href='/peticiones'] .decor,
+#header .menu.resultados a[href$='/peticiones'] .decor,
 #header .menu a:hover{background-color:#0a9e48;color:white;}
 #header .menu a.logo{width:auto;margin:28px 13px 0;padding:0;background-color:transparent;}
 #header .menu a.logo img{width:210px;}
@@ -716,7 +716,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Breadcrumb*/
 #header .breadcrumb{position:absolute;top:313px;left:50%;width:900px;z-index:1000;margin:0 0 0 -450px;}
-
+#header .breadcrumb.blog_breadcrumb{top:275px;}
 #header .breadcrumb ul{position:relative;width:100%;}
 #header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
 #header .breadcrumb ul li a{color:white;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}
@@ -914,7 +914,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog .left p img{width:425px;height:236px;display:block;margin-bottom:12px;}
 #content .blog .right h1{background-color:#00aff0;font-size:18px;text-align:center;line-height:53px;height:51px;font-weight:bold;}
 #content .blog .right ul li{font-size:15px;background-color:#707070;border-bottom:1px solid white;}
-#content .blog .right li a{padding-left:15px;height:53px;line-height:54px;display:block;}
+#content .blog .right li a{padding-left:15px;min-height:53px;display:block;padding-top:7px;}
 #content .blog .right li:last-child{border-bottom:none;}
 #content .blog .right li:hover{background-color:#00aff0;}
 #content .blog .right li a{color:white;}
