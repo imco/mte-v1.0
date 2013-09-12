@@ -1,8 +1,8 @@
 <div class='container ayuda'>
 	<div class='ayuda'>
-		<h2>Metodología</h2>
+		<h2>Metodología.</h2>
 		<hr/>
-		<h2>Nota metodológica para educación básica</h2>
+		<h2>Nota metodológica para educación básica.</h2>
 		<!--
 		<ol>
 			<li><a href='#pregunta1'>¿Dónde obtiene su información Mejora tu escuela?</a></li>
