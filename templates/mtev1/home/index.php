@@ -28,6 +28,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			</ol>
 		</div>
 		<div class='notas'>
+			<!--
 			<div class='white-box column'>
 				<?php $this->print_img_tag('/home/notas1.jpg');?>
 				<h2>Consulta las listas de útiles escolares</h2>
@@ -66,6 +67,8 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				</p>
 				<p><a href='http://www2.sepdf.gob.mx/SIEBDF01/Calif/calif000.jsp' >Leer más</a></p>
 			</div>
+			-->
+			<?=file_get_contents($this->config->blog_address."notas") ?>
 			<div class='clear'></div>
 		</div>
 	</div>
