@@ -1,6 +1,6 @@
 <div class='container ayuda'>
 	<div class='ayuda'>
-		<h2>Aviso de privacidad</h2>
+		<h2>AVISO DE PRIVACIDAD</h2>
 		<hr/>
 		
 		<div class="text-ayuda">
