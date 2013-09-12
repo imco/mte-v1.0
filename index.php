@@ -4,8 +4,7 @@ if($env != "")
 	$config_name= $env;
 else
 	$config_name = 'production_config';
-echo "watup";
-/*
+
 require_once "config/config.default_config.php"; 
 require_once "config/config.$config_name.php";
 //echo $config_name;
