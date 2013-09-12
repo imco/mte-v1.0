@@ -12,6 +12,6 @@ $config = new $config_name();
 require_once $config->mxnphp_dir."/scripts/autoload.php";
 $mxnphp = new mxnphp($config);
 $mxnphp->load_model();
-$mxnphp->load_controler();*/
+$mxnphp->load_controler();
 
 ?>
