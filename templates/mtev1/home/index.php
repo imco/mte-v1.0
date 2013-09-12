@@ -28,44 +28,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			</ol>
 		</div>
 		<div class='notas'>
-			<div class='white-box column'>
-				<?php $this->print_img_tag('/home/notas1.jpg');?>
-				<h2>Consulta las listas de útiles escolares</h2>
-				<hr/>
-				<p>La SEP y PROFECO dan a conocer la lista de útiles para el ciclo escolar 2012-2014
-				</p>
-				<p><a href='http://www.comunicacion.sep.gob.mx/index.php/comunicados/agosto/231-comunicado-118-dan-a-conocer-sep-y-profeco-la-lista-de-utiles-para-el-ciclo-escolar-2013-2014' >Leer más</a></p>
-			</div>
-			<div class='white-box column'>
-				<?php $this->print_img_tag('/home/notas4.jpg');?>
-				<h2>
-				Los 10 quehaceres de nuestra familia
-				</h2>
-				<hr/>
-				<p>
-				Conoce 10 prácticas y actividades que te ayudarán a mejorar la educación de tus hij@s. Desde cómo desarrollar autonomía en el aprendizaje hasta cómo establecer mejores hábitos de estudio.
-				</p>
-				<p><a href='http://www.consejosescolares.sep.gob.mx/images/pdf/10quehaceres.pdf' >Descarga la guía completa aquí.</a></p>
-			</div>
-			<div class='white-box column'>
-				<?php $this->print_img_tag('/home/notas2.jpg');?>
-				<h2>Habilidad lectora</h2>
-				<hr/>
-				<p>
-				Conoce los estándares nacionales de habilidad lectora y utiliza el cronómetro y la calculadora de velocidad lectora para medir cuantas palabras puede leer tu hij@ por minuto.
-				</p>
-				<p><a href=' http://www.leer.sep.gob.mx' >Para utilizar la herramienta haz click aquí</a></p>
-			</div>
-			<div class='white-box column'>
-				<?php $this->print_img_tag('/home/notas3.jpg');?>
-				<h2>
-				¿Conoces los resultados ENLACE de tu hij@?
-				</h2>
-				<hr/>
-				<p>Consulta aquí las calificaciones individuales de tu hij@ en la prueba ENLACE
-				</p>
-				<p><a href='http://www2.sepdf.gob.mx/SIEBDF01/Calif/calif000.jsp' >Leer más</a></p>
-			</div>
+			<?=file_get_contents($this->config->blog_address."notas") ?>
 			<div class='clear'></div>
 		</div>
 	</div>
