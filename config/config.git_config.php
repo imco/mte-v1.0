@@ -4,6 +4,7 @@ class git_config extends default_config{
 		parent::__construct();
 		//Site
 		$this->http_address = 'http://comparatuescuela.proyects.spaceshiplabs.com/';
+		$this->blog_address = 'http://comparatuescuela-blog.proyects.spaceshiplabs.com/';
 		$this->mxnphp_dir = "/var/www/mxnphp/";
 		$this->contact_email = 'aero.uriel@gmail.com';
 		
