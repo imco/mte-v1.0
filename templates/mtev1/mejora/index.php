@@ -1,4 +1,6 @@
 <div class='container mejora'>
+	<?=file_get_contents($this->config->blog_address."mejora") ?>
+<!--
 	<?php $column = array('left','center','right');
 	$url = $this->config->http_address."files/infografias/";
 	?>
@@ -62,4 +64,5 @@
 	</div>
 
 	<div class='clear'></div>
+	-->
 </div>
