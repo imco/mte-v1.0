@@ -101,10 +101,12 @@
 					foreach($this->escuela->calificaciones as $calificacion){
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
 						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
+						
+						$ocupacion = $calificacion->ocupacion =='padredefamilia'?'Padre de familia':($this->capitalize($calificacion->ocupacion));
 						echo <<<EOD
 						<div class='comment'>
 							<p class='rating'>{$text_calificacion} {$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
-							<h2>{$calificacion->nombre} ({$calificacion->ocupacion}) </h2>
+							<h2>{$calificacion->nombre} ({$ocupacion}) </h2>
 							<p>{$coment}</p>
 							<span class='hidden timestamp'>$calificacion->timestamp</span>
 						</div>
@@ -283,7 +285,7 @@ EOD;
 			</div>
 			<?php
 				if($this->escuela->semaforo >= 4){
-					$semaforos = array('Escuela que no tomo prueba ENLACE','Escuela no Confiable','Esta escuela no tomó la prueba ENLACE para todos los años');
+					$semaforos = array('Escuela que no tomó prueba ENLACE','Escuela no Confiable','Esta escuela no tomó la prueba ENLACE para todos los años');
 					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>
 					<p>".
 					$semaforos[$this->escuela->semaforo-4]."</p></div>";
