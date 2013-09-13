@@ -1136,7 +1136,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .mejorar{background-color:#DEE0DF;width:289px;padding:14px;width:260px;margin-bottom:17px;position:relative;}
 #content .mejora .mejorar:before{content:'';background:transparent url(../img/peticiones/sombra_columna.png) no-repeat center center;width:100%;height:17px;display:block;position:absolute;bottom:-16px;left:0;}
 #content .mejora .mejorar h1{position:relative;}
-#content .mejora .mejorar h1 img{width:100%;}
+#content .mejora .mejorar h1 img{width:100%!important;height:auto!important;}
 #content .mejora .mejorar h1 a{display:none;}
 #content .mejora .mejorar h1 a span{display:block;;text-indent:79px;position:absolute;top:54%;color:#00AEED;}
 #content .mejora .mejorar h1:hover a{position:absolute;background: rgba(0,0,0,.5) url(../img/mejora/descargar.png);width:100%;height:96%;background-repeat:no-repeat;top:0;background-position:center;display:block!important;}
