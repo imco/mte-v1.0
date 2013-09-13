@@ -23,8 +23,6 @@
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
-			var_dump($matematicas,$escuela->semaforo);
-
 			echo "
 			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
