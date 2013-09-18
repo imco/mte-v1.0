@@ -6,7 +6,7 @@ class default_config{
 		$this->theme = 'mtev1';
 		$this->default_controler = 'home';
 		$this->default_action = 'index';
-	
+		$this->blog_address = 'http://comparatuescuela-blog.proyects.spaceshiplabs.com/';
 		//Security 
 		$this->secured = false;
 		
