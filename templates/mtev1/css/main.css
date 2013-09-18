@@ -92,6 +92,7 @@ a{text-decoration:none;}
 
 #content .column .column{float:left;width:290px;margin:8px 0;}
 #content .column .column:nth-child(2n){margin-left:16px;}
+#content .column .column:nth-child(2n+1){clear:both;}
 #content .cap{display:block;background-color:rgba(11, 161, 74,.6);padding:0px 27px;line-height:49px;background-image:url(../img/home/texture_green.png);height:49px;}
 #content .cap img{margin:8px 4px 0 0;display:block;float:left;}
 #content .cap.blue{background-color:rgba(49, 101, 159,.6);background-image:url(../img/home/texture_blue.png);}
