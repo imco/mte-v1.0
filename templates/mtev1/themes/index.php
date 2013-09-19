@@ -22,7 +22,7 @@
 			'jquery.cookie.js',
 			'interactions.js',
 			'school-charts.js',
-			//'entidad-charts.js', ya no se usa
+			'masonry.pkgd.min.js',
 			'infobox_packed.js',
 			'map.js'
 		);

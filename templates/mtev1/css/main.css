@@ -91,7 +91,6 @@ a{text-decoration:none;}
 #content .home .column.right{width:290px;margin-left:14px;}
 
 #content .column .column{float:left;width:290px;margin:8px 0;}
-#content .column .column:nth-child(2n){margin-left:16px;}
 #content .column .column:nth-child(2n+1){clear:both;}
 #content .cap{display:block;background-color:rgba(11, 161, 74,.6);padding:0px 27px;line-height:49px;background-image:url(../img/home/texture_green.png);height:49px;}
 #content .cap img{margin:8px 4px 0 0;display:block;float:left;}
@@ -469,7 +468,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.resultados-entidad h1.cap.subtitle.blue{color:#D8D8D8;}
 #content .container.resultados-entidad h1.cap.subtitle.blue .resalt{color:white;}
 #content .container.resultados-entidad .clear + h1.cap.subtitle.blue{margin-top:12px;}
-#content .container.home .notas{margin-top:-6px;padding-bottom:60px;}
+#content .container.home .notas{margin-top:-6px;padding-bottom:60px;width:100%;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a;font-size:14px;text-indent:-4px;font-weight:bold;}
 #content .container.home .newsletter form{margin-top:-8px;}
@@ -967,7 +966,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados-entidad .gray-box .title .location,
 #content .home .video + h1 + .gray-box .title .location{margin-left:228px;color:white;}
 #content .resultados-entidad .gray-box .title .location{margin-left:280px;}
-#content .home .notas .white-box{padding:13px 14px 15px;min-height:219px;}
+#content .home .notas .white-box{padding:13px 14px 15px;}
 #content .home .notas .white-box img{width:100%;}
 #content .home .notas .white-box hr{margin-top:2px;}
 #content .home .notas .white-box p{text-align:justify;}
@@ -1134,7 +1133,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.mejora{margin:44px auto;}
 #content .mejora .column{width:initial;margin-left:0;}
 #content .mejora .column.center{margin:0 17px 0 19px;}
-#content .mejora .mejorar{background-color:#DEE0DF;width:289px;padding:14px;width:260px;margin-bottom:17px;position:relative;}
+#content .mejora .mejorar{background-color:#DEE0DF;width:289px;padding:14px;width:260px;margin-bottom:17px;position:relative;float:left;}
 #content .mejora .mejorar:before{content:'';background:transparent url(../img/peticiones/sombra_columna.png) no-repeat center center;width:100%;height:17px;display:block;position:absolute;bottom:-16px;left:0;}
 #content .mejora .mejorar h1{position:relative;}
 #content .mejora .mejorar h1 img{width:100%!important;height:auto!important;}
