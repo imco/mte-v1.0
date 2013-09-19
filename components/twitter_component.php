@@ -16,7 +16,7 @@ class twitter_component extends component{
 		}
 		*/
 		$url = 'statuses/user_timeline.json?screen_name='.$user.'&count='.$count;
-		$url = $search ? "search/tweets.json?q=$search$count=$count" : $url;
+		$url = $search ? "search/tweets.json?q=$search&count=$count" : $url;
 		$url_parts = parse_url($url);
 		parse_str($url_parts['query'], $url_arguments);
 		$full_url = $this->config_tweet['base_url'].$url; // Url with the query on it.
