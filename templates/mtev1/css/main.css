@@ -354,6 +354,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
 #content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
 #content .resultados table td.semaforo.sem6 span{background:url(../img/perfil/gris_s.png) center no-repeat;}
+#content .resultados table td.semaforo.sem5 .icon-popup .title_semaforo{font-size:14px;}
+#content .resultados table td.semaforo.sem6 .icon-popup .title_semaforo{font-size:13px;padding-top:0!important;margin-top:7px;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr td.school:hover{background-color:rgba(26,164,86,.5);}
 
@@ -751,10 +753,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td div.icon{position:relative;}
 
 #content .resultados table tbody td.semaforo span.icon-popup,
-#content  table.general td.semaforo span.icon-popup{left:62px;/**/width:135px;height:98px;background-size:128px;line-height:normal;top:-72px;}
+#content  table.general td.semaforo span.icon-popup{left:62px;/**/width:135px;height:101px;background-size:128px;line-height:normal;top:-72px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup{background-size:150px;width:138px;height:135px;top:-91px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup .infor.I{width:159px;}
-#content .resultados table td.semaforo.sem6 span.icon-popup .title_semaforo{margin-left:17px;}
+#content .resultados table td.semaforo.sem6 span.icon-popup .title_semaforo{margin-left:17px;padding:20px 4px 0;}
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;z-index:10;}
@@ -1160,7 +1162,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados.conoce table th.rank{width:127px;}
 
 #content table .infor.I{display:block;font-size:35px;font-weight:bold;font-family:serif;color:#0BA04D;margin-top:11px;margin-top:19px;}
-#content table p.title_semaforo{font-size:15px;text-align:center;margin-top:6px;color:#0BA04D;}
+#content table p.title_semaforo{font-size:15px;text-align:center;margin-top:17px;color:#0BA04D;}
 
 #general-search #ver-en-mapa,
 #header .button-efect,
