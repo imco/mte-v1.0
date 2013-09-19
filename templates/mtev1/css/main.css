@@ -260,7 +260,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .tab .comment .rating{display:block;float:right;width:82px;height:78px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:13px;}
 #content .perfil .tab .comment .rating span{display:block;font-size:11px;line-height:8px;margin:6px 0 -9px 0}
 #content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:43px;position:absolute;width:46px;bottom:0;left:0;text-align:left;padding:0 16px;line-height:45px;z-index:0;}
-#content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:relative;}
+#content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:absolute;top:44px;}
 #content .perfil .tab .comment.reporte .rating{background:#135798;font-weight:bold;padding-top:5px;height:73px}
 #content .perfil .tab .comment.reporte .rating a{margin:-3px auto 0px}
 #content .perfil .gray-box{background-color:rgba(0,0,0,.2);margin:11px 22px 17px;padding:4px 60px 7px;}
