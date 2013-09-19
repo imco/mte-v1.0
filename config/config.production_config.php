@@ -5,6 +5,7 @@ class production_config extends default_config{
 		//Site
 		$this->http_address = 'http://mejoratuescuela.org/';
 		$this->mxnphp_dir = "/mnt/stor9-wc1-dfw1/630517/www.mejoratuescuela.org/web/mxnphp/";
+		$this->blog_address = 'http://blog.mejoratuescuela.org/';
 		
 		//Database
 		/*$this->db_host = 'mysql51-014.wc1.dfw1.stabletransit.com';
