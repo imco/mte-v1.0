@@ -1,4 +1,4 @@
-<form action='/compara#resultados' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
+<form action='<?=$this->get('action') == 'califica'?'/califica-tu-escuela/califica':'/compara#resultados'?>' method='get' accept-charset='utf-8' class='general-search' id='general-search'>
 	<p class='button-frame'>
 		<input name='term' id='name-input' type='text' placeholder='Busca tu escuela' value='<?=$this->request('term');?>' />
 		<input type='submit' class='integrated' value='' />
