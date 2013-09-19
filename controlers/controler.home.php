@@ -12,6 +12,7 @@ class home extends main{
 		$niveles = array(12,13,22);
 		$this->get_location();
 		//$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+		
 		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];
 		$params->entidad = $this->user_location->id;
@@ -29,8 +30,8 @@ class home extends main{
 			'base_url' => 'http://api.twitter.com/1.1/'
 		);
 		$this->add_component("twitter_component",$params);
-	        $this->components['twitter_component']->twitterToken('mejoratuescuela',3);
-	    }
+	    $this->components['twitter_component']->twitterToken('mejoratuescuela',3);
+	   }
 
 	protected function get_abreviatura_estado($estado){
     		$estado = strtolower($estado);

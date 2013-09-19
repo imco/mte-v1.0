@@ -125,8 +125,10 @@ $(document).ready(function(){
 	});
 
 	$('#content .share-bt a.button-frame').click(function(e){
-		e.preventDefault();
-		$('#content .share-bt .social').toggleClass('on');
+		if(!$(this).hasClass('static')){
+			e.preventDefault();
+			$('#content .share-bt .social').toggleClass('on');
+		}
 	});
 
 	$('.wrap_cal span').click(function(){
@@ -336,9 +338,18 @@ function twitterIni(){
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
 			var x = data[d];
-			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+x.text+'</p></li>');
+			var text = replaceHashTags(replaceURLWithHTMLLinks(x.text));
+			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+text+'</p></li>');
 	    	}
 	    })
+}
+function replaceURLWithHTMLLinks(text) {
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(exp,"<a href='$1'>$1</a>"); 
+}
+function replaceHashTags(text) {
+    var exp = /#(\S*)/ig;
+    return text.replace(exp,"<a href='http://twitter.com/#!/search/$1'>#$1</a>"); 
 }
 
 function add_escuelas_cookie(){
