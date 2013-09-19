@@ -30,8 +30,8 @@ class home extends main{
 			'base_url' => 'http://api.twitter.com/1.1/'
 		);
 		$this->add_component("twitter_component",$params);
-	        $this->components['twitter_component']->twitterToken('mejoratuescuela',3);
-	    }
+	    $this->components['twitter_component']->twitterToken('mejoratuescuela',3);
+	   }
 
 	protected function get_abreviatura_estado($estado){
     		$estado = strtolower($estado);
