@@ -349,8 +349,9 @@ function twitterIni(){
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
 			var x = data[d];
-			var text = replaceHashTags(replaceURLWithHTMLLinks(x.text));
-			$("#tweets ul").append('<li><a href="http://twitter.com/'+username+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+username+'" /></a><p><a href="http://www.twitter.com/'+username+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+username+'</a> '+text+'</p></li>');
+			console.log(x);
+			var text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(x.text)));
+			$("#tweets ul").append('<li><a href="http://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
 	    	}
 	    })
 }
@@ -362,6 +363,11 @@ function replaceHashTags(text) {
     var exp = /#(\S*)/ig;
     return text.replace(exp,"<a href='http://twitter.com/#!/search/$1'>#$1</a>"); 
 }
+function replaceMentions(text) {
+    var exp = /@(\w{3,})/ig;
+    return text.replace(exp,"<a href='http://twitter.com/$1'>@$1</a>"); 
+}
+
 
 function add_escuelas_cookie(){
 	//var selector_table = $('.resultados.container table'),
