@@ -29,7 +29,7 @@ class stats extends main{
 			foreach($calificaciones as $calificacion){				
 					$sql = "
 						SELECT AVG(promedio_$calificacion) FROM escuelas
-						WHERE `entidad` = $i;
+						WHERE `entidad` = $i AND rank_entidad IS NOT NULL;
 					";
 					echo $sql.'<br/>';
 					$result = mysql_query($sql);
@@ -47,7 +47,7 @@ class stats extends main{
 			$entidad->debug = true;
 			foreach($niveles as $nivel => $name){
 				foreach($calificaciones as $calificacion){
-					$sql = "SELECT AVG(promedio_$calificacion) FROM escuelas WHERE (nivel = $nivel);";
+					$sql = "SELECT AVG(promedio_$calificacion) FROM escuelas WHERE (nivel = $nivel) AND rank_entidad IS NOT NULL;";
 					$result = mysql_query($sql);
 					$result = mysql_fetch_row($result);
 					$entidad->update("promedio_nacional_".$calificacion."_".$name,$result);

@@ -15,20 +15,28 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				</p>
 			<ol class='mejores'>
 				<?php
-				foreach($this->escuelas_digest->escuelas as $escuela){
+				if($this->escuelas_digest->escuelas){foreach($this->escuelas_digest->escuelas as $escuela){
 					echo "
 						<li>
 							<a href='/escuelas/index/{$escuela->cct}'>{$escuela->nombre}</a>
 							<span class='location'> | {$escuela->localidad}, {$escuela->entidad} | {$escuela->control} </span>
 						</li>
 					";
-				}
+				}}
 
 				?>
 			</ol>
 		</div>
 		<div class='notas'>
-			<?=file_get_contents($this->config->blog_address."notas") ?>
+			<?=file_get_contents($this->config->blog_address."notas")?>
+			<div class='clear'></div>
+			<div class="share-bt bl">
+				<a class="button-frame static" href="<?=$this->config->blog_address?>">
+					<span class="bt-share button-efect">		
+						Mas Notas
+					</span>
+				</a>
+			</div>
 			<div class='clear'></div>
 		</div>
 	</div>
