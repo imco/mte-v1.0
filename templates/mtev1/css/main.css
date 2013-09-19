@@ -200,8 +200,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .perfil .general-search .adv-search{margin:23px 0 0 3px}
 
 #content .perfil{background-color:rgba(255,255,255,.5);margin:44px auto 7px;padding:0 0 5px;}
-#content .perfil .head{background-image:url(../img/home/texture_blue.png);height:108px;color:white;}
-#content .perfil .head h1.main-name{float:left;line-height:110px;font-size:30px;margin-left:7px;width:465px;overflow:hidden;height:110px;}
+#content .perfil .head{background-image:url(../img/home/texture_blue.png);color:white;}
+#content .perfil .head h1.main-name{font-size:27px;margin-left:7px;}
 #content .perfil .ranking{float:left;color:white;font-size:12px;background-color:rgba(255, 255, 255, 0.2);height:82px;padding:13px 20px;background-image:url(../img/perfil/posicion.png);background-repeat:no-repeat;background-position:17px 27px}
 #content .perfil .ranking h1{margin-left:37px;font-size:26px;l`ine-height:47px;}
 #content .perfil .ranking p{line-height:14px;}
@@ -780,8 +780,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Perfil B*/
 #content .perfil.B{margin:17px auto 20px;padding:0;background-color:transparent;}
-#content .perfil.B .head{height:61px;}
-#content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
+#content .perfil.B .head h1.main-name{line-height:45px;padding-left:14px;}
 #content .perfil.B .column.left{width:682px;}
 #content .perfil.B .column.right{width:202px;margin-left:12px;}
 #content .perfil.B .info_B{background-color:#888;color:white;padding:7px 0;}
