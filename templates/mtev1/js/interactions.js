@@ -125,8 +125,10 @@ $(document).ready(function(){
 	});
 
 	$('#content .share-bt a.button-frame').click(function(e){
-		e.preventDefault();
-		$('#content .share-bt .social').toggleClass('on');
+		if(!$(this).hasClass('static')){
+			e.preventDefault();
+			$('#content .share-bt .social').toggleClass('on');
+		}
 	});
 
 	$('.wrap_cal span').click(function(){
