@@ -18,7 +18,7 @@ RewriteEngine On
 #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
 RewriteBase /
-RewriteRule ^califica-tu-escuela/?$ ?controler=compara [QSA,L]
+#RewriteRule ^califica-tu-escuela/?$ ?controler=compara [QSA,L]
 RewriteRule ^([-_\w]+)/?$ ?controler=$1 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [QSA,L]
 RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
