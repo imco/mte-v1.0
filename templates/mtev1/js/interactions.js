@@ -218,7 +218,7 @@ $(document).ready(function(){
 		});
 	}
 	
-	if($('.container').hasClass('resultados')){
+	if($('.container').hasClass('resultados') || $('.container').hasClass('califica_select')){
 		$(window).unload(add_escuelas_cookie);
 	}
 
@@ -342,7 +342,8 @@ function twitterIni(){
 }
 
 function add_escuelas_cookie(){
-	var selector_table = $('.resultados.container table'),
+	//var selector_table = $('.resultados.container table'),
+	var selector_table = $('.resultados table'),
 	on = selector_table.find('tr.on'),
 	cookie = $.cookie('escuelas'),
 	escuelas = cookie && cookie.split('-') || [];
