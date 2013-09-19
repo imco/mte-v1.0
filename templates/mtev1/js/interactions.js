@@ -9,6 +9,16 @@ $(document).ready(function(){
 	$('.petition-form').validate();
 	$('.contacto-form').validate();
 	$('form.newsletter').validate();
+	//Masonry Home
+	$('#notas-container').masonry({
+	  itemSelector: '.white-box.column',
+	  gutter: 16
+	});
+
+	$('.mejora.container').masonry({
+	  itemSelector: '.mejorar',
+	  gutter: 16
+	});
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
