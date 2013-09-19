@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(12,4);
+		$this->average_enlaces(13,3);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -119,7 +119,7 @@ class import extends main{
 				$escuela = new escuela($row['cct']);
 				foreach($enlaces as $enlace){
 					//var_dump($enlace);
-					if($enlace->alumnos_que_contestaron_total != 0){
+					if($enlace->alumnos_que_contestaron_total != 0 && ($enlace->puntaje_espaniol != 0 && $enlace->puntaje_matematicas != 0)){
 						$grados++;
 						$sum_spa += $enlace->puntaje_espaniol;
 						$sum_mat += $enlace->puntaje_matematicas;
