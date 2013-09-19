@@ -28,14 +28,14 @@ foreach($niveles as $i => $nivel){
 						@prev_val := promedio_general AS promedio_general,
 						cct
 						FROM escuelas
-						WHERE nivel = '$nivel' AND entidad = '$entidad' AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<=.1*total_evaluados AND grados >= $grado
+						WHERE nivel = '$nivel' AND entidad = '$entidad' AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<.1*total_evaluados AND grados >= $grado
 						ORDER BY promedio_general DESC
 					) t2
 					ON t1.cct=t2.cct
 					SET t1.rank_entidad=t2.rank;";
-			/*if(!$conn->query($sql)){
+			if(!$conn->query($sql)){
 				echo "Table creation failed: (" . $conn->errno . ") " . $conn->error;
-			}*/
+			}
 			echo $sql.'<br/>';
 		}else{
 			echo 'could not reset vars <br>';
