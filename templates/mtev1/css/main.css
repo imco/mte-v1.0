@@ -469,7 +469,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.resultados-entidad h1.cap.subtitle.blue{color:#D8D8D8;}
 #content .container.resultados-entidad h1.cap.subtitle.blue .resalt{color:white;}
 #content .container.resultados-entidad .clear + h1.cap.subtitle.blue{margin-top:12px;}
-#content .container.home .notas{margin-top:-6px;}
+#content .container.home .notas{margin-top:-6px;padding-bottom:60px;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a;font-size:14px;text-indent:-4px;font-weight:bold;}
 #content .container.home .newsletter form{margin-top:-8px;}
@@ -759,6 +759,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;z-index:10;}
+#content .share-bt.left{float:left;}
 #content .share-bt.comp{margin:10px;}
 #content .peticion .share-bt.comp{margin:1px 19px 0 0;}
 #content .share-bt .social:after{content:""; width:0;height: 0;border-left: 15px solid transparent;border-right: 17px solid transparent;border-bottom: 17px solid #dcdcdc;position:absolute;display:block;top:-13px;left:112px;}
