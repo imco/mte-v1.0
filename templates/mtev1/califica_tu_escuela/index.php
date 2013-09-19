@@ -3,10 +3,18 @@
 		<?php $this->print_img_tag('header/califica.png')?>
 	</div>
 	<h1>Para poder calificar <br />  debes buscar una escuela</h1>
-	
+</div>	
+<div class='select_search_wrap'>
 	<div class='califica_select_search'>
 		<?php $this->include_template('simple_search','global'); ?>
 	</div>
+	<div class='decorations_out'>
+		<hr />
+		<hr />
+	</div>	
+</div>
+
+<div class='container califica_select'>
 	<?php if(isset($this->escuelas)){ ?>
 	<div class="clear"></div>
 	<div class="resultados">

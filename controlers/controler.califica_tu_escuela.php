@@ -3,7 +3,8 @@ class califica_tu_escuela extends main{
 	public function index(){		
 		$this->header_folder ='califica_tu_escuela';
 		$this->load_calificaciones();
-		$this->include_theme('index','index');
+		//$this->include_theme('index','index');
+		$this->califica();
 
 	}
 	public function califica(){
@@ -16,6 +17,7 @@ class califica_tu_escuela extends main{
 		
 		}else{
 			#header("location: /compara/");
+			$this->breadcrumb = array('#'=>'Califica');
 			$this->load_compara_cookie();
 			if($this->get('term')){
 				
