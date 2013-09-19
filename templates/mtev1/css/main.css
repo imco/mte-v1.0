@@ -92,6 +92,7 @@ a{text-decoration:none;}
 
 #content .column .column{float:left;width:290px;margin:8px 0;}
 #content .column .column:nth-child(2n){margin-left:16px;}
+#content .column .column:nth-child(2n+1){clear:both;}
 #content .cap{display:block;background-color:rgba(11, 161, 74,.6);padding:0px 27px;line-height:49px;background-image:url(../img/home/texture_green.png);height:49px;}
 #content .cap img{margin:8px 4px 0 0;display:block;float:left;}
 #content .cap.blue{background-color:rgba(49, 101, 159,.6);background-image:url(../img/home/texture_blue.png);}
@@ -199,8 +200,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .perfil .general-search .adv-search{margin:23px 0 0 3px}
 
 #content .perfil{background-color:rgba(255,255,255,.5);margin:44px auto 7px;padding:0 0 5px;}
-#content .perfil .head{background-image:url(../img/home/texture_blue.png);height:108px;color:white;}
-#content .perfil .head h1.main-name{float:left;line-height:110px;font-size:30px;margin-left:7px;width:465px;overflow:hidden;height:110px;}
+#content .perfil .head{background-image:url(../img/home/texture_blue.png);color:white;}
+#content .perfil .head h1.main-name{font-size:27px;margin-left:7px;}
 #content .perfil .ranking{float:left;color:white;font-size:12px;background-color:rgba(255, 255, 255, 0.2);height:82px;padding:13px 20px;background-image:url(../img/perfil/posicion.png);background-repeat:no-repeat;background-position:17px 27px}
 #content .perfil .ranking h1{margin-left:37px;font-size:26px;l`ine-height:47px;}
 #content .perfil .ranking p{line-height:14px;}
@@ -259,7 +260,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .tab .comment .rating{display:block;float:right;width:82px;height:78px;color:white;background:#329DD1;font-size:14px;text-align:center;margin:0;position:relative;line-height:36px;top:-9px;left:13px;}
 #content .perfil .tab .comment .rating span{display:block;font-size:11px;line-height:8px;margin:6px 0 -9px 0}
 #content .perfil .tab .comment .rating .likes{background:#135798;font-size:10px;height:43px;position:absolute;width:46px;bottom:0;left:0;text-align:left;padding:0 16px;line-height:45px;z-index:0;}
-#content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:relative;}
+#content .perfil .tab .comment .rating a{display:block;width:27px;height:23px;background-image:url(../img/perfil/like.png);margin:8px 0 0 43px;z-index:1;position:absolute;top:44px;}
 #content .perfil .tab .comment.reporte .rating{background:#135798;font-weight:bold;padding-top:5px;height:73px}
 #content .perfil .tab .comment.reporte .rating a{margin:-3px auto 0px}
 #content .perfil .gray-box{background-color:rgba(0,0,0,.2);margin:11px 22px 17px;padding:4px 60px 7px;}
@@ -468,7 +469,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.resultados-entidad h1.cap.subtitle.blue{color:#D8D8D8;}
 #content .container.resultados-entidad h1.cap.subtitle.blue .resalt{color:white;}
 #content .container.resultados-entidad .clear + h1.cap.subtitle.blue{margin-top:12px;}
-#content .container.home .notas{margin-top:-6px;}
+#content .container.home .notas{margin-top:-6px;padding-bottom:60px;}
 #content .container.home .newsletter input[type='text']{width:192px;margin:4px auto;display:block;background-color:#828282;color:#DEDEDE;}
 #content .container.home .newsletter input[type='submit']{width:215px;height:28px;background-color:#0ba14a;font-size:14px;text-indent:-4px;font-weight:bold;}
 #content .container.home .newsletter form{margin-top:-8px;}
@@ -758,6 +759,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;z-index:10;}
+#content .share-bt.left{float:left;}
 #content .share-bt.comp{margin:10px;}
 #content .peticion .share-bt.comp{margin:1px 19px 0 0;}
 #content .share-bt .social:after{content:""; width:0;height: 0;border-left: 15px solid transparent;border-right: 17px solid transparent;border-bottom: 17px solid #dcdcdc;position:absolute;display:block;top:-13px;left:112px;}
@@ -778,8 +780,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Perfil B*/
 #content .perfil.B{margin:17px auto 20px;padding:0;background-color:transparent;}
-#content .perfil.B .head{height:61px;}
-#content .perfil.B .head h1.main-name{line-height:60px;height:58px;padding-left:14px;}
+#content .perfil.B .head h1.main-name{line-height:45px;padding-left:14px;}
 #content .perfil.B .column.left{width:682px;}
 #content .perfil.B .column.right{width:202px;margin-left:12px;}
 #content .perfil.B .info_B{background-color:#888;color:white;padding:7px 0;}
@@ -882,7 +883,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tabs li a img{display:block;margin:0 auto;width:38px;height:50px;margin-top:2px;}
 #content .perfil.B .mas-info .left{width:42%;}
 #content .perfil.B .mas-info .right{width:51%;}
-#content .perfil.B .tab-container{background-color:#e0e1e3;padding:31px 19px 0 18px;height:218px;overflow:hidden;}
+#content .perfil.B .tab-container{background-color:#e0e1e3;padding:31px 19px 0 18px;height:270px;overflow:hidden;}
 #content .perfil.B .presupuestos{background-color:#e0e1e3;padding:0;margin:0;}
 #content .perfil.B .presupuestos .column.left{margin:0;width:315px;}
 #content .perfil.B .presupuestos .column.right{width:321px;margin:0 0 0 9px;}
@@ -898,7 +899,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .presupuestos .right .salarios p span{line-height:19px;width:127px;}
 #content .perfil.B .presupuestos .right .salarios p span a{margin-left:9px;font-size:7px;}
 #content .perfil.B .buble-sin-comentario{height:209px;background-size:190px;width:185px;}
-#content .perfil.B .charts{height:219px;}
+#content .perfil.B .charts{height:260px;}
 
 
 /*Blog*/
