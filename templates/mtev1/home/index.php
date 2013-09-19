@@ -27,10 +27,10 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				?>
 			</ol>
 		</div>
-		<div class='notas'>
+		<div id='notas-container' class='notas'>
 			<?=file_get_contents($this->config->blog_address."notas")?>
 			<div class='clear'></div>
-			<div class="share-bt bl">
+			<div class="share-bt bl" style='position:absolute;right:0;bottom:30px'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
 					<span class="bt-share button-efect">		
 						Mas Notas
@@ -38,6 +38,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				</a>
 			</div>
 			<div class='clear'></div>
+
 		</div>
 	</div>
 	<div class='column right'>
