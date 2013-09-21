@@ -128,12 +128,15 @@ a{text-decoration:none;}
 #content a.gray-box{display:block;padding:0!important;line-height:51px;font-size:15px;color:white;height:51px;}
 #content a.gray-box img{float:left;margin:0 11px 0 0;}
 #content .twitcap{background:#43B6F5;padding:10px 16px 5px;}
-#content .tweets{padding:1px 13px 13px!important;display:block;}
+#content .tweets{padding:17px 13px 13px!important;display:block;background-color:rgba(255,255,255,.69);}
+#content .tweets ul{height:243px;overflow:hidden;}
 #content .tweets hr{height:2px;background:#767676;}
-#content .tweets li{color:white;margin:10px 0 0;border-bottom:2px solid #767676;display:block;padding-bottom:6px;}
+#content .tweets li{color:white;margin:10px 0 0;border-bottom:2px solid #DADADA;display:block;padding-bottom:6px;color:#848484;width:246px;}
 #content .tweets li:last-child{border-bottom:none;}
 #content .tweets li img{float:left;border-radius:50%;width:50px;height:50px;color:white;margin:0 5px 0 0;}
-#content .tweets li a{color:white;font-weight:bold;}
+#content .tweets li a{color:#636363;font-weight:bold;}
+#content .tweets .jspDrag{background-color:#4E4E4E!important;}
+#content .tweets .jspTrack{background-color:#B1B1B1!important;}
 #content #tweets.tweets li p{line-height:14px;margin-left:59px;text-align:left;}
 #content .tweets li .user{font-size:13px;}
 
@@ -345,6 +348,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th.espanol{line-height:14px;padding:0;}
 
 #content .resultados table td.turno{font-size:16px;line-height:normal;}
+#content .comparar.resultados table.general td.turno{font-size:14px;}
+#content .comparar .general td{font-size:15px;}
 #content .perfil + form + a + .resultados table .turno{display:none;}
 #content .resultados table td.semaforo span{display:block;width:34px;height:34px;margin:0 auto;}
 #content .resultados table td.semaforo.sem0 span{background-image:url(../img/perfil/reprobado.png);}
@@ -376,9 +381,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .button-frame .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}
 
 /*Comparador*/
-#content .comparar{margin:11px auto;width:898px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar{margin:11px auto;width:904px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
-#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:222px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
+#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:224px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}
 #content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
 #content .comparar .compara-tabs a span{display:block;}
@@ -397,7 +402,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar table th{line-height:16px;padding:10px 3px;width:130px;border-top:3px solid #0CA14D;}
 #content .comparar table th.school{text-align:left;padding:19px 35px 0 79px;background:#7e7e7e url(../img/comparador/escuelas.png) no-repeat 29px 11px;border-top:none;}
 #content .comparar table th.checkbox.compara_table{border:none;background-image:none;}
-#content .comparar table th.calificacion{width:86px;}
+#content .comparar table th.calificacion{width:86px;font-size:12px;}
 #content .comparar table th.rank{width:90px;}
 #content .comparar table th.semaforos{width:118px;}
 #content .comparar table td.school{font-size:14px;color:#087B3A;border-left:3px solid #0ca14d;padding:0 6px;text-align:center;}
@@ -407,7 +412,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar table.desemp td.school a{width:195px;}
 #content .comparar .compara-tab-container .tab{display:none;}
 #content .comparar .compara-tab-container .tab.on{display:block;position:relative;}
-#content .comparar .map{width:898px;height:510px;position:relative;}
+#content .comparar .map{width:904px;height:510px;position:relative;}
 .infoBox{width:236px;color:white;background:#5D5D5D;position:relative;}
 .infoBox:before{content:'';display:block;position:absolute;left:50%;bottom:-12px;width: 0;height:0;border-left:13px solid transparent;border-right: 13px solid transparent;border-top: 13px solid #5d5d5d;margin-left:-13px;}
 .infoBox a{padding:11px 13px;color:white!important;background-color:#0BA14A;font-size:13px!important;line-height:19px!important;display:block;}
@@ -754,6 +759,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .resultados table tbody td.semaforo span.icon-popup,
 #content  table.general td.semaforo span.icon-popup{left:62px;/**/width:135px;height:101px;background-size:128px;line-height:normal;top:-72px;}
+#content .comparar .general .icon .icon-popup{left:53px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup{background-size:150px;width:138px;height:135px;top:-91px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup .infor.I{width:159px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup .title_semaforo{margin-left:17px;padding:20px 4px 0;}
@@ -960,7 +966,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
 #content .home .banner.resultados + .gray-box img{margin:0 26px 0 0;width:103px;height:51px;}
-#content .home .gray-box.twitter{margin-top:9px;font-size:15px;margin-bottom:2px;}
+#content .home .gray-box.twitter{margin-top:9px;font-size:15px;margin-bottom:0;}
 #content .resultados-entidad .gray-box,
 #content .home .video + h1 + .gray-box{padding:0;}
 #content .resultados-entidad .gray-box .title,

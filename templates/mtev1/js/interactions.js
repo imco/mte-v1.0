@@ -352,8 +352,9 @@ function twitterIni(){
 			console.log(x);
 			var text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(x.text)));
 			$("#tweets ul").append('<li><a href="http://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
-	    	}
-	    })
+		}
+		$('#tweets ul').jScrollPane();
+	})
 }
 function replaceURLWithHTMLLinks(text) {
     var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
