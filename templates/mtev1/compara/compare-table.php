@@ -3,6 +3,7 @@
 		<th class='checkbox compara_table'></th>
 		<th class='school'>Escuelas comparadas</th>
 		<th>Nivel Escolar</th>
+		<th class='turno'>Turno</th>
 		<th class='rank'>Posición Estatal</th>
 		<th class='rank'>Posición Nacional</th>
 		<th>Privada | Pública</th>
@@ -29,6 +30,7 @@
 		</td>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
+		echo "<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>";
 		echo "<td class='rank'>".$escuela->rank_entidad."<br />	
 					$r_entidad_text
 		</td>";
