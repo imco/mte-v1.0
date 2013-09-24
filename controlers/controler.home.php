@@ -85,7 +85,7 @@ class home extends main{
 		$this->send_email(
 			$correo,
 			'Mejora tu escuela',
-			'A sido registrado correctamente en http://www.mejoratuescuela.org',
+			'Ha sido registrado correctamente en http://www.mejoratuescuela.org',
 			'contacto@mejoratuescuela.org',
 			'www.mejoratuescuela.org'
 		);
