@@ -4,7 +4,7 @@ class import extends main{
 		set_time_limit(10000000);
 		//$this->import_teachers();
 		//$this->import_percents();
-		//$this->import_percents_manual();
+		$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
 // 		$this->import_schools();
@@ -14,7 +14,7 @@ class import extends main{
 // 		$this->enlaces();
 //		$this->import_no_confiables();
 		//$this->count_enlaces(31);
-		$this->average_enlaces(13,3);
+		//$this->average_enlaces(22,1);
 // 		$this->update_schools();
 // 		$this->update_counties();
 // 		$this->update_locales();
@@ -25,7 +25,7 @@ class import extends main{
 		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
 		FROM  enlaces 
 		WHERE anio =  "2013"
-		AND nivel =  "bachillerato"
+		AND nivel =  "primaria"
 		GROUP BY cct';
 		$results = mysql_query($sql);
 		$i = 0;
