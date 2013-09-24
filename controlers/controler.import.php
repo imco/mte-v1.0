@@ -111,18 +111,20 @@ class import extends main{
 		$i = 0;
 		$q = new enlace();
 		while($row = mysql_fetch_assoc($result)){
-			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2012"';
+			$q->search_clause = 'cct = "'.$row['cct'].'" AND anio = "2013"';
 			$enlaces = $q->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia,alumnos_que_contestaron_total');
 			if(count($enlaces)){
 				//$i++;
 				$grados = $sum_spa = $sum_mat = $sum_geo = 0;
 				$escuela = new escuela($row['cct']);
+				$alumnos_total = 0;
 				foreach($enlaces as $enlace){
 					//var_dump($enlace);
 					if($enlace->alumnos_que_contestaron_total != 0 && ($enlace->puntaje_espaniol != 0 && $enlace->puntaje_matematicas != 0)){
 						$grados++;
 						$sum_spa += $enlace->puntaje_espaniol;
 						$sum_mat += $enlace->puntaje_matematicas;
+						$alumnos_total += $enlace->alumnos_que_contestaron_total;
 					}
 				}
 				//if($grados < $std_grados){
@@ -130,7 +132,7 @@ class import extends main{
 					$prom_mat = $sum_mat / $grados;
 					$prom_spa = $sum_spa / $grados;
 					$gen = ($prom_spa * .2) + ($prom_mat *.8);
-					$escuela->update('grados,promedio_matematicas,promedio_espaniol,promedio_general',array($grados,$prom_mat,$prom_spa,$gen));
+					$escuela->update('grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados',array($grados,$prom_mat,$prom_spa,$gen,$alumnos_total));
 					$i++;
 				//}
 				//if($i == 20) exit;
