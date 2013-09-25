@@ -4,7 +4,7 @@
 	<div class="share-bt bl left" style='position:absolute;left:0;bottom:0;'>
 		<a class="button-frame static" href="<?=$this->config->blog_address?>">
 			<span class="bt-share button-efect">		
-				Mas Notas
+				Más notas
 			</span>
 		</a>
 	</div>

@@ -2,3 +2,5 @@
 templates/cancuncondos/*/*~
 controlers/*~
 ftpinfo.info
+config/config.production.php
+config/config.git_config.php

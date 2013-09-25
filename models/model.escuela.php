@@ -27,9 +27,9 @@ class escuela extends table{
 
 		$this->semaforos = array('Reprobado','De Panzazo','Bien','Excelente','Sin Enlace','Poco confiable');
 		#$this->semaforo_rangos[12] = array(433,524,615,900);
-		$this->semaforo_rangos[12] = array(546,587,664,900);
-		$this->semaforo_rangos[13] = array(530,567,622,900);
-		$this->semaforo_rangos[22] = array(551,581,632,900);
+		$this->semaforo_rangos[12] = array(559,601,662,900);
+		$this->semaforo_rangos[13] = array(511,544,591,900);
+		$this->semaforo_rangos[22] = array(551,580,632,900);
 		$this->semaforo_poco_confiable = 10;
 
 	}
