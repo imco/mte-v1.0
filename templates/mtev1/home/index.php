@@ -33,7 +33,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			<div class="share-bt bl" style='position:absolute;right:0;bottom:30px'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
 					<span class="bt-share button-efect">		
-						Mas Notas
+						Más notas
 					</span>
 				</a>
 			</div>
