@@ -4,10 +4,10 @@ class import extends main{
 		set_time_limit(10000000);
 		//$this->import_teachers();
 		//$this->import_percents();
-		$this->import_percents_manual();
+		//$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
-// 		$this->import_schools();
+		//$this->check_nl();
 		//$this->loop_tables();
 		//$this->import_generic("tipo",27,28);
 		//$this->get_latitudes();
@@ -96,7 +96,8 @@ class import extends main{
 			}
 	}
 	
-	private function average_enlaces($nivel,$std_grados){
+	public function average_enlaces($nivel = false){
+		$nivel = $this->get('id');
 		$this->start_measure_time();
 		if($this->get('id') !== false){
 			$id = $this->get('id');
@@ -106,7 +107,10 @@ class import extends main{
 		}else{
 			$limit = '';
 		}
+		$sql = "UPDATE escuelas SET promedio_general = NULL,grados = NULL,promedio_matematicas = NULL,promedio_espaniol = NULL,total_evaluados = NULL WHERE 1";
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+
+
 		$result = mysql_query($sql);
 		$i = 0;
 		$q = new enlace();
@@ -198,6 +202,21 @@ class import extends main{
 					$escuela->update('nombre,domicilio,entrecalle,ycalle',array($nombre->s,$domicilio->s,$entrecalle->s,$ycalle->s));
 				}
 			}
+		}
+	}
+	private function check_nl(){ 
+		$handle = $this->open_file('escuelas.csv');
+		if ($handle){
+			$nocount = $i = 0;
+			$escuela = new escuela();
+			//$escuela->debug = true;
+			while (($row = fgetcsv($handle,0, "|")) !== FALSE){
+				if($row[11] == '019' && $row[29] == '12' && $row[37] == 2){
+					var_dump($row);
+					$i++;
+				}
+			}
+			echo $i;
 		}
 	}
 	private function import_schools(){ 
