@@ -75,6 +75,7 @@ class compara extends main{
 		$this->load_compara_cookie();
 		$params->ccts = explode('-',$this->get('id'));
 		$params->order_by = 'escuelas.promedio_general DESC';
+		$params->limit =  '0,100';
 		if(count($params->ccts)){
 			$this->get_escuelas($params);		
 			$this->process_escuelas();
