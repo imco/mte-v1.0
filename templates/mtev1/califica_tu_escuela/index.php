@@ -1,9 +1,12 @@
 <div class='container califica_select'>
-	<div class="circle">
-		<?php $this->print_img_tag('header/califica.png')?>
-	</div>
-	<h1>Para poder calificar <br />  debes buscar una escuela</h1>
+	<!--<div class="circle">
+	</div>-->
+	<h1>
+	<?php $this->print_img_tag('header/califica.png')?>
+	<?=$this->instruction?></h1>
+	<h2><?=$this->instruction2 ?></h2>
 </div>	
+<?php if(!$this->compara_cookie || $this->get('term')) {?>
 <div class='select_search_wrap'>
 	<div class='califica_select_search'>
 		<?php $this->include_template('simple_search','global'); ?>
@@ -13,12 +16,14 @@
 		<hr />
 	</div>	
 </div>
-
+<?php } ?>
 <div class='container califica_select'>
+
+
 	<?php if(isset($this->escuelas)){ ?>
 	<div class="clear"></div>
 	<div class="resultados">
-		<p>Resultado de la búsqueda</p>
+		<!--<p>Resultado de la búsqueda</p>-->
 		<table>
 		<!--<tr>
 			<th class='checkbox'></th>
@@ -55,8 +60,20 @@
 		}
 	}	
 	?>
-	</table>
+		</table>
 	</div>
-
 	<div class='clear'></div>
 </div>
+<?php if($this->compara_cookie && !$this->get('term')) {?>
+
+<h2 class='buscaOtra'>Si la escuela que quieres calificar no está aquí búscala...</h2>
+<div class='select_search_wrap'>
+	<div class='califica_select_search'>
+		<?php $this->include_template('simple_search','global'); ?>
+	</div>
+	<div class='decorations_out'>
+		<hr />
+		<hr />
+	</div>	
+</div>
+<?php } ?>
