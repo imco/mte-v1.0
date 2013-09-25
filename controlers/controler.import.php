@@ -4,7 +4,7 @@ class import extends main{
 		set_time_limit(10000000);
 		//$this->import_teachers();
 		//$this->import_percents();
-		//$this->import_percents_manual();
+		$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
 		//$this->check_nl();
