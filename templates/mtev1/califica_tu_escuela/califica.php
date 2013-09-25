@@ -1,4 +1,6 @@
 <div class='container califica'>
+	<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+	<h1>Estas calificando la escuela: <?=$this->capitalize($this->escuela->nombre)?> | <?=$this->capitalize($this->escuela->entidad->nombre)?> | <?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$controles[$this->escuela->control->id]?></h1>
 	<h2>Califica tu escuela seleccionando para cada campo una calificación del 1-10.
 	<br />
 	Estas calificaciones se promedian para generar la calificación general de tu escuela.
@@ -169,7 +171,7 @@
 			<p>Deja aquí un comentario sobre esta escuela</p>
 			<input type='text' placeholder='Nombre' name='nombre' class='required' />
 			<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
-			<select class='custom-select' name='ocupacion' >
+			<select class='custom-select required' name='ocupacion' >
 				<option value=''>¿Quién eres?</option>
 				<option value='alumno'>Alumno</option>
 				<option value='exalumno'>Exalumno</option>
