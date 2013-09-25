@@ -20,7 +20,7 @@ class califica_tu_escuela extends main{
 			$this->breadcrumb = array('#'=>'Califica');
 			$this->load_compara_cookie();
 			if($this->get('term')){
-				
+				$this->instruction = 'Selecciona una escuela';
 				$params->term = $this->get('term');
 				$params->control = $this->get('control');
 				$params->nivel = $this->get('nivel');
@@ -34,17 +34,23 @@ class califica_tu_escuela extends main{
 				$this->resultados_title = 'Resultados de tu búsqueda';
 				$this->set_info_user_search($this->num_results);
 				
-				/*$params->pagination = 6;
+				/*
+				$params->pagination = 6;
 				$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 				$this->get_escuelas($params);
 				$this->process_escuelas();
 				*/
-			}
-			if($this->compara_cookie){
+				
+			}else if($this->compara_cookie){
+				$this->instruction = 'Selecciona la escuela que quieres calificar';
+				$this->instruction2 = 'Estas son escuelas que has revisado recientemente:';
 				$temp = isset($this->escuelas)?$this->escuelas:array();
 				$params2->ccts = $this->compara_cookie;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
+			}else{
+				$this->instruction = '¿Qué escuela quieres calificar?';
+				$this->instruction2 = 'Búscala aquí';
 			}
 			$this->include_theme('index','index');
 		}
@@ -52,7 +58,7 @@ class califica_tu_escuela extends main{
 
 	public function escuela_info(){
 		$this->escuela = new escuela($this->get('id'));
-		$this->escuela->read("cct,nombre");
+		$this->escuela->read("cct,nombre,nivel=>nombre,turno=>nombre,entidad=>nombre");
 		if(isset($this->escuela->cct)){
 			return true;
 		}else{
