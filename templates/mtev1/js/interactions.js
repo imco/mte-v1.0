@@ -20,6 +20,11 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
+	$('.comments.container').masonry({
+	  itemSelector: '.comment',
+	  gutter: 16
+	});
+
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
 		$('#general-search').attr('action',$(this).attr('href'));
@@ -241,6 +246,13 @@ $(document).ready(function(){
 		location.href = '/compara/escuelas/' + $.cookie('escuelas');
 	});
 
+	$('a[href="/califica-tu-escuela/califica/"]').click(function(e){
+		e.preventDefault();
+		add_escuelas_cookie();
+		$(window).off();
+		location.href = '/califica-tu-escuela/califica/' + $.cookie('escuelas');
+	});
+
 	$('#content .comparar.resultados table tr.on .compara-escuela').click(function(e){
 		e.preventDefault();
 		var cct = $(this).attr('href'),
@@ -282,6 +294,19 @@ $(document).ready(function(){
 		}
 		$(this).attr('href',$(this).attr('href')=='top'?'bottom':'top');
 		$('[name="calificaciones"]').parent().append(comments);
+	});
+
+	$('form[action="/escuelas/calificar/"]').submit(function(e){
+		if($(this).find('select').hasClass('error')){
+			$(this).find('.customSelect.custom-select').css('background-color','#ee8888');
+			e.preventDefault();
+		}else{
+			$(this).find('.customSelect.custom-select').css('background-color','white');
+		}
+	});
+
+	$('form[action="/escuelas/calificar/"] select').change(function(e){
+		$(this).parent().find('.customSelect.custom-select').css('background-color','white');
 	});
 
 });
