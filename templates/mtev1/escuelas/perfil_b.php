@@ -98,20 +98,24 @@
 				<?php
 				}
 				if($this->escuela->calificaciones){
+				echo '<div class="container comments">';
 					foreach($this->escuela->calificaciones as $calificacion){
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
 						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
 						
 						$ocupacion = $calificacion->ocupacion =='padredefamilia'?'Padre de familia':($this->capitalize($calificacion->ocupacion));
+						$cali = $calificacion->calificacion;
+						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
 						echo <<<EOD
 						<div class='comment'>
-							<p class='rating'>{$text_calificacion} {$calificacion->calificacion}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
+							<p class='rating'>{$text_calificacion} {$cali}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>
 							<h2>{$calificacion->nombre} ({$ocupacion}) </h2>
 							<p>{$coment}</p>
 							<span class='hidden timestamp'>$calificacion->timestamp</span>
 						</div>
 EOD;
 					}
+				echo "</div>";
 				}else{?>
 					<div class='buble-sin-comentario'>
 						<p>Sé el primero en escribir un comentario</p>
@@ -337,7 +341,7 @@ EOD;
 		<p>Deja aquí un comentario sobre esta escuela</p>
 		<input type='text' placeholder='Nombre' name='nombre' />
 		<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
-		<select class='custom-select' name='ocupacion' >
+		<select class='custom-select required' name='ocupacion' >
 			<option value=''>¿Quién eres?</option>
 			<option value='alumno'>Alumno</option>
 			<option value='exalumno'>Exalumno</option>
