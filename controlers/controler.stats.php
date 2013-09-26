@@ -3,6 +3,19 @@ class stats extends main{
 	public function index(){
 		//$this->histogram(12);
 	}
+	public function rank_states(){
+		$q = new entidad();
+		$q->search_clause = '1';
+		$q->debug = true;
+		$q->order_by = 'promedio_general DESC';
+		$entidades = $q->read('id,promedio_general,rank');
+		$i = 1;
+		foreach($entidades as $entidad){
+			$entidad->debug = true;
+			$entidad->update('rank',array($i++));
+		}
+
+	}
 	public function histogram(){
 		set_time_limit(100000);
 		$nivel = $this->get('id') ? $this->get('id') : 12;
