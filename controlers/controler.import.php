@@ -25,7 +25,7 @@ class import extends main{
 		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
 		FROM  enlaces 
 		WHERE anio =  "2013"
-		AND nivel =  "primaria"
+		AND nivel =  "secundaria"
 		GROUP BY cct';
 		$results = mysql_query($sql);
 		$i = 0;
@@ -108,8 +108,8 @@ class import extends main{
 			$limit = '';
 		}
 		$sql = "UPDATE escuelas SET promedio_general = NULL,grados = NULL,promedio_matematicas = NULL,promedio_espaniol = NULL,total_evaluados = NULL WHERE 1";
-		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
-
+		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel' && cct = '09DBN0007I'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
+		echo $sql;
 
 		$result = mysql_query($sql);
 		$i = 0;
