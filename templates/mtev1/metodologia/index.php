@@ -23,33 +23,33 @@
 				<p>El 50% de las escuelas con las calificaciones más bajas en la distribución teórica corresponden al nivel “reprobado”. El siguiente 20% de las escuelas se clasifican en el nivel “de panzazo”, el siguiente 20% entran al nivel “bien” y finalmente, el mejor 10% de las escuelas están en el nivel “excelente”.
 				</p>
 				<p>
-				Para el 2012, los cortes para
+				Para el 2013, los cortes para
 					<span class="subrayado">primaria</span>
 					son:
 					<br />
-					664 < <span class="green">Excelente</span>
+					662 < <span class="green">Excelente</span>
 					<br />
-					587 < <span class="amarillo">Bien</span> < 664
+					601 < <span class="amarillo">Bien</span> < 662
 					<br />
-					546 < 
-					<span class="naranja">De panzazo</span>< 587
+					559 < 
+					<span class="naranja">De panzazo</span>< 601
 					<br />
-					<span class="red">Reprobado </span> <546
+					<span class="red">Reprobado </span> <559
 					
 				</p>
 				<p>
-				Para el 2012, los cortes para
+				Para el 2013, los cortes para
 					<span class="subrayado">secundaria</span>
 					son:
 					<br />
-					622 < <span class="green">Excelente</span>
+					591 < <span class="green">Excelente</span>
 					<br />
-					567 < <span class="amarillo">Bien</span> < 622
+					544 < <span class="amarillo">Bien</span> < 591
 					<br />
-					530 < 
-					<span class="naranja">De panzazo</span>< 567
+					511 < 
+					<span class="naranja">De panzazo</span>< 544
 					<br />
-					<span class="red">Reprobado </span> <530
+					<span class="red">Reprobado </span> <511
 				</p>
 				<h3>Nota metodológica para educación media superior
 				</h3>
