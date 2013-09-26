@@ -1,15 +1,3 @@
-<!--<!DOCTYPE html>
- <html lang="es">
- <head>
-	<meta charset="utf-8"/>
-	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" href="/templates/mtev1/img/home/favicon.ico" />
-	<title>Mejora tu escuela</title>
- </head>
- <body>
- 	<img src='/templates/mtev1/img/home/update.jpg' alt='Mejora tu escuela' />
- </body>
- </html>-->
 <?php
 $env = getenv('APPLICATION_ENV');
 if($env != "")
