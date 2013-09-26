@@ -62,7 +62,7 @@ class escuela extends table{
 				}
 			}
 		}
-		
+
 /*		
 		if(isset($this->grados) && $this->grados>0 ){
 			if( $this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
@@ -73,6 +73,7 @@ class escuela extends table{
 				while($this->promedio_general > $this->semaforo_rangos[$this->nivel->id][$this->semaforo])$this->semaforo++;
 			}
 		}*/
+		}
 	}
 	function rank($nivel,$entidad = false,$municipio = false){
 		$entidad_clause = $entidad ? " AND entidad LIKE '$entidad'" : '';
