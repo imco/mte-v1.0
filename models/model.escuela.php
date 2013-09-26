@@ -40,6 +40,7 @@ class escuela extends table{
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
 
 		if(isset($this->grados) && $this->grados>0 ){
+			var_dump($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") );exit;
 			if($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
 				$this->semaforo = 6;//no se cuentan
 				exit('a');
