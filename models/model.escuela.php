@@ -40,22 +40,23 @@ class escuela extends table{
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
 
 		if(isset($this->grados) && $this->grados>0 ){
-			var_dump($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") );exit;
 			if($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
 				$this->semaforo = 6;//no se cuentan
-				exit('a');
-			}else if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
-				$this->semaforo = 5;//no confiables
-			}elseif( $promedio_general > 0){
-				var_dump( $promedio_general, $semaforo_rangos[$nivel_id][0] );
-				if( $promedio_general < $semaforo_rangos[$nivel_id][0]){
-					$this->semaforo=0;
-				}elseif( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] ){
-					$this->semaforo = 1;
-				}elseif( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] ){
-					$this->semaforo = 2;
+			}else{
+				exit('b');
+				if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
+					$this->semaforo = 5;//no confiables
 				}else
-					$this->semaforo = 3;
+					if( $promedio_general > 0){
+					var_dump( $promedio_general, $semaforo_rangos[$nivel_id][0] );
+					if( $promedio_general < $semaforo_rangos[$nivel_id][0]){
+						$this->semaforo=0;
+					}elseif( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] ){
+						$this->semaforo = 1;
+					}elseif( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] ){
+						$this->semaforo = 2;
+					}else
+						$this->semaforo = 3;
 			}
 		}
 /*
