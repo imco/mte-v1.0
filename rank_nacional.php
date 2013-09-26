@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
 /*This will rank the schools at the entidad level */
 
 $niveles = array(12,13,22);
-$grados = array(4,3,0);
+$grados = array(4,3,1);
 $conn->query('UPDATE escuelas SET rank_nacional = NULL WHERE 1');
 foreach($niveles as $i => $nivel){
 	$grado = $grados[$i];
@@ -26,7 +26,7 @@ foreach($niveles as $i => $nivel){
 			@prev_val := promedio_general AS promedio_general,
 			cct
 			FROM escuelas
-			WHERE nivel = '$nivel' AND `promedio_general` IS NOT NULL AND total_evaluados >= 0 AND poco_confiables<.1*total_evaluados AND grados >= $grado
+			WHERE nivel = '$nivel' AND `promedio_general` IS NOT NULL AND total_evaluados > 0 AND poco_confiables<.1*total_evaluados AND grados % $grado = 0 AND grados > 0
 			ORDER BY promedio_general DESC) t2
 			ON t1.cct=t2.cct
 			SET t1.rank_nacional=t2.rank;";
