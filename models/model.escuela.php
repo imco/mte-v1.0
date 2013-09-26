@@ -40,6 +40,7 @@ class escuela extends table{
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
 
 		if(isset($this->grados) && $this->grados>0 ){
+			echo 'entro 1';exit;
 			if($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
 				$this->semaforo = 6;//no se cuentan
 			}else if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
