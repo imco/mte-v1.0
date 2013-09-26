@@ -47,6 +47,7 @@ class escuela extends table{
 				if($porcentaje_poco_confiable > 0 && $porcentaje_poco_confiable >= $this->semaforo_poco_confiable){
 					$this->semaforo = 5;//no confiables
 				}else{
+					exit('c');
 					if( $promedio_general > 0){
 						var_dump( $promedio_general, $semaforo_rangos[$nivel_id][0] );
 						if( $promedio_general < $semaforo_rangos[$nivel_id][0])
