@@ -103,7 +103,7 @@
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
 						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
 						
-						$ocupacion = $calificacion->ocupacion =='padredefamilia'?'Padre de familia':($this->capitalize($calificacion->ocupacion));
+						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
 						$cali = $calificacion->calificacion;
 						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
 						echo <<<EOD
