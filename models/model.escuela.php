@@ -34,7 +34,7 @@ class escuela extends table{
 
 	}
 	function get_semaforo(){
-		$this->semaforo = 0;
+		$this->semaforo = 4;
 		$porcentaje_poco_confiable = $this->poco_confiables > 0 && $this->total_evaluados > 0?($this->poco_confiables * 100) / $this->total_evaluados:0;
 		$this->porcentaje_poco_confiable = number_format($porcentaje_poco_confiable,2);
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
