@@ -14,6 +14,7 @@ class default_config{
 		$this->document_root = $_SERVER['DOCUMENT_ROOT']."/";
 		$this->lang = "en";
 		$this->dev_mode = false;
+		$this->search_location = false;
 		
 		//MTE
 		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No tomó la <br /> prueba <br />ENLACE','Poco confiable','Esta escuela no tomó la prueba ENLACE para todos los años');
