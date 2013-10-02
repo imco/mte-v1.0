@@ -244,7 +244,7 @@ class main extends controler{
 	/*
 	for test
 	*/
-	if(!($location_cookie = $this->cookie('user_location'))){
+	if(!($location_cookie = $this->cookie('user_location')) && $this->config->search_location){
     		$ip = 
     			isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] :
     			isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :
@@ -262,11 +262,14 @@ class main extends controler{
 			$this->user_location->read('nombre,id');
 		}
 		$this->set_cookie('user_location',$this->user_location->nombre."-".$this->user_location->id);
-	}else{
+	}else if($location_cookie){
 		$temp = explode('-',$location_cookie);
 		$this->user_location = new stdClass();
 		$this->user_location->nombre = $temp[0];
 		$this->user_location->id = $temp[1];
+	}else{
+		$this->user_location = new entidad(rand(1,32));
+		$this->user_location->read('nombre,id');
 	}
 
     }
