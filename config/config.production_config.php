@@ -42,6 +42,7 @@ class production_config extends default_config{
 		$this->twitter_consumer_key = 'BRnaonyDBNhbRjXiiWsA';
 		$this->twitter_consumer_secret = 'lPI2SPRNMP1xOL3QaVizwDK5N47kOzxi0GvxwJl4';
 		
+		$this->search_location = true;
 	}
 }
 ?>
