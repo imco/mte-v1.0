@@ -1,5 +1,5 @@
 <?php
-class escuela extends table{
+class escuela extends memcached_table{
 	function info(){
 		$this->table_name = "escuelas";
 		$this->key = 'cct';
@@ -50,7 +50,7 @@ class escuela extends table{
 					
 					if( $this->promedio_general > 0){
 						
-						if( $this->promedio_general < $semaforo_rangos[$nivel_id][0])
+						if( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
 							$this->semaforo=0;
 						else
 							if( $this->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )

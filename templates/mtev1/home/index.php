@@ -15,7 +15,8 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 				</p>
 			<ol class='mejores'>
 				<?php
-				if($this->escuelas_digest->escuelas){foreach($this->escuelas_digest->escuelas as $escuela){
+				if($this->escuelas_digest->escuelas){
+					foreach($this->escuelas_digest->escuelas as $escuela){
 					echo "
 						<li>
 							<a href='/escuelas/index/{$escuela->cct}'>{$escuela->nombre}</a>
