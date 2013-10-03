@@ -13,7 +13,7 @@ class memcached_table extends table{
 				return $result;
 			}else{
 				print("<br/>Query from DB<br/>");
-				$result = parent::read();				
+				$result = parent::read($fields);				
 				var_dump($result);
 				$memcache->set($query_hash,$result,false,0);
 				return $result;
