@@ -43,7 +43,7 @@ class califica_tu_escuela extends main{
 				
 			}else if($this->compara_cookie){
 				$this->instruction = 'Selecciona la escuela que quieres calificar';
-				$this->instruction2 = 'Estas son escuelas que has revisado recientemente:';
+				$this->instruction2 = 'Estás son escuelas que has revisado recientemente:';
 				$temp = isset($this->escuelas)?$this->escuelas:array();
 				$params2->ccts = $this->compara_cookie;
 				$this->get_escuelas($params2);
