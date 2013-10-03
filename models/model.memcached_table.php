@@ -2,6 +2,7 @@
 class memcached_table extends table{
 	function read($fields){
 		if(class_exists('Memcache')){
+
 			$memcache = new Memcache;	
 			$memcache->connect('***REMOVED***', 11211) or die ("Could not connect memcache");
 			$this->execute = false;
@@ -17,6 +18,7 @@ class memcached_table extends table{
 				$memcache->set($query_hash,$result,false,0);
 			}
 		}else{
+			echo "no memcache";
 			return parent::read($fields);
 		}		
 	}
