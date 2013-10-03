@@ -8,6 +8,7 @@ class memcached_table extends table{
 			$this->execute = false;
 			parent::read($fields);
 			$this->execute = true;
+			var_dump($this->sql);
 			$query_hash = sha1($this->sql);
 			var_dump($query_hash);
 			if($result = $memcache->get($query_hash)){				
