@@ -1,7 +1,7 @@
 <?php
 class memcached_table extends table{
 	function read($fields){
-		if(extension_loaded('memcache')){
+		if(class_exists('Memcache'){
 			$memcache = new Memcache;	
 			$memcache->connect('***REMOVED***', 11211) or die ("Could not connect memcache");
 			$this->execute = false;
