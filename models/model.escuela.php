@@ -39,6 +39,10 @@ class escuela extends memcached_table{
 		$this->porcentaje_poco_confiable = number_format($porcentaje_poco_confiable,2);
 		$turnos = isset($this->turno->num) ? $this->turno->num : 1;
 
+		if($this->nivel->nombre=="PREESCOLAR"){
+			$this->semaforo = 7;		
+		}
+
 		if(isset($this->grados) && $this->grados>0 ){
 			if($this->nivel->nombre != "BACHILLERATO"  && ($this->grados < 4 * $turnos && $this->nivel->nombre == "PRIMARIA") || ($this->grados < 3 * $turnos && $this->nivel->nombre == "SECUNDARIA") ){
 				$this->semaforo = 6;//no se cuentan
