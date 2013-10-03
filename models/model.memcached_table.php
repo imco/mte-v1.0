@@ -1,6 +1,7 @@
 <?php
 class memcached_table extends table{
 	function read($fields){
+		$time_start = microtime(true);
 		if(class_exists('Memcache')){
 			$memcache = new Memcache;	
 			$memcache->connect('***REMOVED***', 11211) or die ("Could not connect memcache");
@@ -9,17 +10,19 @@ class memcached_table extends table{
 			$this->execute = true;
 			$query_hash = md5($this->sql);
 			if($result = $memcache->get($query_hash)){
-				echo 'memcached';
+				
+				$time_end = microtime(true);
+				$time = $time_end - $time_start;
+				echo 'Memcached: '.$time;
 				return $result;
 			}else{
-				print("<br/>Query from DB<br/>");
+				echo "Query from DB:".$time;
 				$result = parent::read($fields);				
-				var_dump($result);
+				$time_end = microtime(true);
 				$memcache->set($query_hash,$result,false,0);
 				return $result;
 			}
 		}else{
-			echo "no memcache";
 			return parent::read($fields);
 		}		
 	}
