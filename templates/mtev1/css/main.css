@@ -304,6 +304,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .chart-box{height:542px;}
 #content .perfil .chart{width:797px;height:247px;position:relative;}
 
+#content .perfil .total_alumnos{height:67px;background-color:#329dd1;text-align:center;font-size:17px;padding-top:12px;margin-top:3px;color:white;}
+#content .perfil .total_alumnos span{display:block;margin-top:8px;font-weight:bold;}
 /* Compara */
 #header .compara .titles{margin:6px auto 0;width:614px}
 #header .compara h3{background:url(../img/compara/regla.png) no-repeat center 14px;padding:32px 0 27px;font-size:19px;}
@@ -359,8 +361,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
 #content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
 #content .resultados table td.semaforo.sem6 span{background:url(../img/perfil/gris_s.png) center no-repeat;}
+#content .resultados table td.semaforo.sem7 span{background:url(../img/perfil/azul.png) center no-repeat;}
 #content .resultados table td.semaforo.sem5 .icon-popup .title_semaforo{font-size:14px;}
 #content .resultados table td.semaforo.sem6 .icon-popup .title_semaforo{font-size:13px;padding-top:0!important;margin-top:7px;}
+#content .resultados table td.semaforo.sem7 .icon-popup{left:48px;width:149px;height:130px;background-size:163px;top:-86px;padding-left:29px;}
 #content .resultados table tr.on .school{background-color:rgba(26,164,86,.5);}
 #content .resultados table tr td.school:hover{background-color:rgba(26,164,86,.5);}
 
@@ -846,6 +850,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-image:url(../img/perfil/rojo_s.png);margin:0 auto;float:none;margin-bottom:5px;}
 #content .perfil.B .semaforo .sem-overlay .icon.icon6{background-image:url(../img/perfil/gris_s.png);}
 #content .perfil.B .semaforo .sem-overlay .icon.icon4{background-image:url(../img/perfil/negro_s.png);}
+#content .perfil.B .semaforo .sem-overlay .icon.icon7{background-image:url(../img/perfil/azul.png);}
 
 
 #content .perfil.B .califica{margin-top:4px;}
