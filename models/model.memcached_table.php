@@ -9,8 +9,8 @@ class memcached_table extends table{
 			parent::read($fields);
 			$this->execute = true;
 			$query_hash = md5($this->sql);
-			if($result = $memcache->get($query_hash)){
-				
+			var_dump($query_hash);
+			if($result = $memcache->get($query_hash)){				
 				$time_end = microtime(true);
 				$time = $time_end - $time_start;
 				echo 'Memcached: '.$time;
