@@ -1,8 +1,8 @@
 <?php
 class memcached_table extends table{
 	function read($fields){
-		if(extension_loaded('memcached')){
-			$memcache = new memcached;	
+		if(extension_loaded('memcache')){
+			$memcache = new Memcache;	
 			$memcache->connect('***REMOVED***', 11211) or die ("Could not connect memcache");
 			$this->execute = false;
 			parent::read($fields);
