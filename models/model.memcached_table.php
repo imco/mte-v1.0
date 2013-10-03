@@ -15,6 +15,7 @@ class memcached_table extends table{
 				print("<br/>Query from DB<br/>");
 				$result = parent::read();				
 				$memcache->set($query_hash,$result,false,0);
+				return $result;
 			}
 		}else{
 			echo "no memcache";
