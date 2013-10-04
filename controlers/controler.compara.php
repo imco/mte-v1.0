@@ -35,7 +35,9 @@ class compara extends main{
 		}else{
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+
 			$this->get_escuelas($params);
+			$this->set_info_user_search($this->pagination->total_results);
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 			$this->include_theme('index','resultados-escuela');
@@ -93,6 +95,15 @@ class compara extends main{
 		}
 
 		$this->include_theme('index','index');
+	}
+	public function get_meta_description(){
+		echo '<meta name="description" content="Escuelas comparadas: ';
+		$i=0;
+		for($i=0;$i<count($this->escuelas)-1;$i++){
+			echo $this->capitalize($this->escuelas[$i]->nombre).', ';
+		}
+		echo $this->capitalize($this->escuelas[$i]->nombre);
+		echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
 	}
 }
 ?>
