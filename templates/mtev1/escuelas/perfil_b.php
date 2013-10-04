@@ -11,20 +11,22 @@
 
 		</div>
 		<div class='map-wrap'>	
-			<div class='info_B lateral'>
+			<div class='info_B lateral' itemscope itemtype="http://schema.org/LocalBusiness">
+				<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
 				<p class='cct'>
 					CCT 
 					<span class="CCT"><?=$this->escuela->cct?></span>
 					<div class='clear'></div>
 				</p>
 
-				<p class='address'>
+				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<span class='icon'></span>
 					Dirección
 					<span class='title'>
-						<?=$this->capitalize($this->escuela->domicilio)?>
-						<?=$this->capitalize($this->escuela->localidad->nombre)?>, 
-						<?=$this->capitalize($this->escuela->entidad->nombre)?>
+						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
+						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
+						<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
+						<span itemprop="addressCountry" content="MX"></span>
 					</span>
 				</p>
 				<!--<p class='director'>
@@ -39,7 +41,7 @@
 				<p class='tel'>
 					Teléfonos
 					<span class='icon'></span>
-					<span class='title'>
+					<span itemprop="telephone" class='title'>
 						<?=$this->escuela->telefono?>
 					</span>
 				<div class='clear'></div>
@@ -47,7 +49,7 @@
 				<p class='email'>
 					<span class='icon'></span>
 					Mail
-					<span class='title'>
+					<span itemprop="email" class='title'>
 						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
 					</span>
 					<div class='clear'></div>
