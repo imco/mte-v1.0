@@ -330,12 +330,13 @@ class main extends controler{
 			$params[] = $this->post('municipio')?$this->post('municipio'):0;
 			$params[] = $this->post('localidad')?$this->post('localidad'):0;		
 		}
-
 		if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
 			$params[] = $escuelas_num;
+			$params[] = $_SERVER['HTTP_USER_AGENT'];
 			$user_search = new user_search();
+			$user_search->debug = true;
 			$user_search->create(
-				'term,control,nivel,entidad,municipio,localidad,cct_count',$params
+				'term,control,nivel,entidad,municipio,localidad,cct_count,useragent',$params
 			);
 		}	
     }
