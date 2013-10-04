@@ -1106,7 +1106,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.quienes_somos .wrap_text img{display:block;float:left;}
 #content .container.quienes_somos .wrap_text img[src$='imco_qs.png']{margin-top:35px;}
 #content .container.quienes_somos .wrap_text img[src$='mexicanos1ero_qs.png']{margin:14px 0 0 36px;}
-#content .container.quienes_somos .wrap_text img[src$='on_qs.png']{margin:52px 0 0 30px;}
+#content .container.quienes_somos .wrap_text img[src$='on_qs.png']{margin:36px 0 0 30px;}
 #content .container.quienes_somos .column:first-child{position:relative;}
 #content .container.quienes_somos .column:first-child:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:37px;display:block;position:absolute;bottom:-37px;}
 
