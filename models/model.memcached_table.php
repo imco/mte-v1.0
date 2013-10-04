@@ -16,7 +16,7 @@ class memcached_table extends table{
 				return $result;
 			}else{
 				$result = parent::read($fields);			
-				var_dump($result);
+				if(!isset($result)){ echo 's'; $result = $this;}
 				$time_end = microtime(true);
 				$memcache->set($query_hash,$result,false,0);
 				$time = $time_end - $time_start;
