@@ -45,8 +45,6 @@
 		$cssmin->tag('css');
 		//$jsmin->tag('js'); js abajo.
 		if($this->location == 'escuelas'){
-			#var_dump(isset($this->escuela->rank_nacional));
-			var_dump($this->escuela->entidad->id);
 			if(isset($this->escuela->rank_nacional)){
 				$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
 				if($this->escuela->rank_entidad<=10){
