@@ -44,41 +44,7 @@
 		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte");
 		$cssmin->tag('css');
 		//$jsmin->tag('js'); js abajo.
-		if($this->location == 'escuelas'){
-			if(isset($this->escuela->rank_nacional)){
-				$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
-				if($this->escuela->rank_entidad<=10){
-					$description =$description."obtuvo una de las mejores calificaciones en la prueba ENLACE 2013 en el ";
-					if($this->escuela->entidad->id!=9){
-						$description=$description." Estado de ";
-					}
-					$description = $description.$this->capitalize($this->escuela->entidad->nombre);
-					if($this->escuela->rank_nacional<=10){
-						$description = $description." y a nivel nacional";
-					}
-					$description = $description.".";
-				
-				}else{
-					$semaforosd = array("MALO", "ACEPTABLE", "BUENO", "EXCELENTE");
-					$description = $description."tiene un aprovechamiento académico ".$semaforosd[$this->escuela->semaforo]." en comparación con otras escuelas que presentaron la prueba ENLACE 2013.";
-				}
-			
-			}else{
-				$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
-			}
-			$description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-			echo "<meta name='description' content='{$description}' />";
-		}else if($this->location == 'compara'){
-		/*
-			echo '<meta name="description" content="Escuelas comparadas: ';
-			$i=0;
-			for($i=0;$i<count($this->escuelas)-1;$i++){
-				echo $this->capitalize($this->escuelas[$i]->nombre).', ';
-			}
-			echo $this->capitalize($this->escuelas[$i]->nombre);
-			echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
-		*/
-		}
+		if(isset($this->meta_description)) echo "<meta name='description' content='{$this->meta_description}' />";
 	?>
 	<title><?=$this->page_title;?></title>
 	<link rel="canonical" href="<?=$this->config->http_address.
