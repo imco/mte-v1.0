@@ -10,7 +10,7 @@ class memcached_table extends table{
 			$this->execute = true;
 			$query_hash = sha1($this->sql);
 			if($result = $memcache->get($query_hash)){
-				var_dump(get_class($result));
+				if(get_class($result) == 'escuela') $this = $result;
 				$time_end = microtime(true);
 				$time = $time_end - $time_start;
 				echo 'Memcached: '.$time.'<br/>';
