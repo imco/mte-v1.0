@@ -333,10 +333,12 @@ class main extends controler{
 		if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
 			$params[] = $escuelas_num;
 			$params[] = $_SERVER['HTTP_USER_AGENT'];
+			$params[] = $_SERVER['REMOTE_ADDR'];
+			$params[] = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '';
 			$user_search = new user_search();
-			$user_search->debug = true;
+			//$user_search->debug = true;
 			$user_search->create(
-				'term,control,nivel,entidad,municipio,localidad,cct_count,useragent',$params
+				'term,control,nivel,entidad,municipio,localidad,cct_count,useragent,remote_addr,http_x_forwarded_for',$params
 			);
 		}	
     }
