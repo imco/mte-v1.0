@@ -28,6 +28,7 @@
 			
 			$urlFb = $this->shorten_url($url."#facebook");
 			$urlTwitter = $this->shorten_url($url."#twitter");
+			$urlMail = $this->shorten_url($url."#mail");
 			?>
 			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?=$urlFb?>&p[images][0]=<?=$url_logo?>&p[title]=<?=$title?>&p[summary]=<?=$description?>" class='share-face' target='_blank' >
 				  </a>
@@ -37,6 +38,8 @@
 				  <span class="twitter-icon"></span>
 				</a>
 				</div>
+			<a href="mailto:?subject=<?=$title?>&amp;body=<?=$description.": ".$urlMail?>" class='share-face mail'  target='_blank' ></a>
+
 		</div>
 	</div>
 	<a href="#" class="button-frame">
@@ -45,4 +48,5 @@
 			Compartir
 		</span>
 	</a>
+
 </div>
