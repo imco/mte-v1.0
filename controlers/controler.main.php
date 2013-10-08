@@ -349,5 +349,9 @@ class main extends controler{
 		return $shortUrl['results']['shortUrl'];
     
     }
+    public function get_captcha(){
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		return $captcha->form();
+    }
 }
 ?>

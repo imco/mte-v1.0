@@ -125,8 +125,8 @@ EOD;
 				<?php }
 				if($this->get('error')){
 					echo "
-						<span>Error no ingreso 
-							<a href='/califica_tu_escuela/califica/".$this->escuela->cct."' >calificacion</a>
+						<span>
+						Error no ingreso las letras de control correctamente.
 						</span>
 						";
 				}
@@ -367,6 +367,7 @@ EOD;
 			</span>
 		</p>
 			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
+			<?=$this->get_captcha();?>
 		<p><input type='submit' value='Enviar' /></p>
 	</fieldset>		
 </form>
