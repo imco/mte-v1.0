@@ -32,6 +32,10 @@ class default_config{
 		//hoot suite
 		$this->hootSuite_api_key = '***REMOVED***';
 
+		//recapcha
+		$this->recaptcha_public_key = '***REMOVED***';
+		$this->recaptcha_private_key = '***REMOVED***';
+
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 	}
 }
