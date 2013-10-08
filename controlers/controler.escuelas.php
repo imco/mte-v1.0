@@ -76,20 +76,29 @@ class escuelas extends main{
 		}
 	}
 	public function calificar(){
-		$comment = strip_tags($this->post('comentario'));
-		//if($this->post('calificacion')){
-		$calificacion = new calificacion();
-		//$calificacion->debug = true;
-		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
-			$this->post('nombre'),
-			$this->post('email'),
-			$this->post('cct'),
-			$comment,
-			$this->post('ocupacion'),
-			$this->post('calificacion'),
-			$_SERVER['HTTP_USER_AGENT']
-		)); 
-		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		if($captcha->check_answer($this->config->http_address,
+					  $this->post('recaptcha_challenge_field'),
+					  $this->post('recaptcha_response_field'))){		
+			$comment = strip_tags($this->post('comentario'));
+			//if($this->post('calificacion')){
+			$calificacion = new calificacion();
+			//$calificacion->debug = true;
+			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
+				$this->post('nombre'),
+				$this->post('email'),
+				$this->post('cct'),
+				$comment,
+				$this->post('ocupacion'),
+				$this->post('calificacion'),
+				$_SERVER['HTTP_USER_AGENT']
+			)); 
+			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";	
+		
+		}else{
+			$location = "/escuelas/index/".$this->post('cct')."/e=captcha#calificaciones";	
+		}
+
 		header("location: $location");
 		//}else{
 		//	header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
@@ -172,5 +181,6 @@ class escuelas extends main{
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
 		
 	}
+
 }
 ?>
