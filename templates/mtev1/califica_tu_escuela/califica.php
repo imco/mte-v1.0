@@ -188,6 +188,7 @@
 			</p>
 			<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
 			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
+			<?=$this->get_captcha();?>
 			<p class='button-frame' >
 				<input type='submit' value='Enviar calificación y comentario' class='button button-efect blue' />
 			</p>
