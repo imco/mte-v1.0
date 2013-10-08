@@ -47,8 +47,8 @@
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
 				<td class='turno'>".$turnos[$escuela->turno]."</td>
 				<td class='control'>".$controles[$escuela->control]."</td>
-				<td class='rank'><span>{$rank_entidad}</span>
-						<span>de {$escuela->entidad_cct_count}</span>
+				<td class='rank'><span>".number_format($rank_entidad,0)."</span>
+						<span>de ".number_format($escuela->entidad_cct_count,0)."</span>
 				</td>
 				<td class='semaforo sem{$esc->semaforo}'><span></span>
 					<div class='icon'><span class='icon-popup'>
