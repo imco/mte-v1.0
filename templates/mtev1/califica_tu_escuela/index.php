@@ -66,7 +66,7 @@
 </div>
 <?php if($this->compara_cookie && !$this->get('term')) {?>
 
-<h2 class='buscaOtra'>Si la escuela que quieres calificar no está aquí búscala...</h2>
+<h2 class='buscaOtra'>Si la escuela que quieres calificar no está aquí, búscala...</h2>
 <div class='select_search_wrap'>
 	<div class='califica_select_search'>
 		<?php $this->include_template('simple_search','global'); ?>
