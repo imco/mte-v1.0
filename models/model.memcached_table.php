@@ -4,7 +4,7 @@ class memcached_table extends table{
 		$time_start = microtime(true);
 		if(class_exists('Memcache')){
 			$memcache = new Memcache;	
-			$memcache->connect('166.78.183.204', 11211) or die ("Could not connect memcache");
+			$memcache->connect('50.56.175.47', 11211) or die ("Could not connect memcache");
 			$this->execute = false;
 			parent::read($fields);
 			$this->execute = true;
