@@ -1,5 +1,5 @@
 <?php
-class escuela extends table{
+class escuela extends memcached_table{
 	function info(){
 		$this->table_name = "escuelas";
 		$this->key = 'cct';
