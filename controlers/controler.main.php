@@ -9,7 +9,6 @@ class main extends controler{
 		$this->breadcrumb = false;
 		$this->draw_map = false;
 		$this->draw_charts = false;
-		error_reporting(E_ALL);
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
