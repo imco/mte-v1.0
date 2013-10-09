@@ -19,7 +19,7 @@ class compara extends main{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}
 		if($this->get('term')){
-			$params = new new StdClass();
+			//$params = new new StdClass();
 			$params->term = $this->get('term');
 			$params->control = $this->get('control');
 			$params->nivel = $this->get('nivel');
