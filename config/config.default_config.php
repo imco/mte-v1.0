@@ -15,6 +15,7 @@ class default_config{
 		$this->lang = "en";
 		$this->dev_mode = false;
 		$this->search_location = false;
+		$this->memcache_host = '***REMOVED***';
 		
 		//MTE
 		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No tomó la <br /> prueba <br />ENLACE','Poco confiable','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
