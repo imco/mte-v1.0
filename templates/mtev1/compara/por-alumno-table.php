@@ -61,11 +61,12 @@
 				}
 				$total = $score->alumnos;
 			}
-		}		
+		}
 		$conf = $total ? round($escuela->poco_confiables/$total * 100).'%' : '--';
 		echo "<td class='rank'>{$total}</td>";
 		echo "<td class='rank'>{$conf}</td>";		
 		echo "</tr>";
+		$total = null;
 	}
 	?>
 </table>

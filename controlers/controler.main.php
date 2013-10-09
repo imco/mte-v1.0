@@ -9,6 +9,7 @@ class main extends controler{
 		$this->breadcrumb = false;
 		$this->draw_map = false;
 		$this->draw_charts = false;
+		error_reporting(E_ALL);
 	}
 	protected function process_escuelas(){
 		$this->escuelas_digest = false;
@@ -330,12 +331,15 @@ class main extends controler{
 			$params[] = $this->post('municipio')?$this->post('municipio'):0;
 			$params[] = $this->post('localidad')?$this->post('localidad'):0;		
 		}
-
 		if(!$this->get('p') && ($this->get('search') || $this->post('search'))){
 			$params[] = $escuelas_num;
+			$params[] = $_SERVER['HTTP_USER_AGENT'];
+			$params[] = $_SERVER['REMOTE_ADDR'];
+			$params[] = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '';
 			$user_search = new user_search();
+			//$user_search->debug = true;
 			$user_search->create(
-				'term,control,nivel,entidad,municipio,localidad,cct_count',$params
+				'term,control,nivel,entidad,municipio,localidad,cct_count,useragent,remote_addr,http_x_forwarded_for',$params
 			);
 		}	
     }
@@ -345,6 +349,10 @@ class main extends controler{
 		$shortUrl = $hootSuite->shorten($url);
 		return $shortUrl['results']['shortUrl'];
     
+    }
+    public function get_captcha(){
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		return $captcha->form();
     }
 }
 ?>
