@@ -33,7 +33,7 @@
 			
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 &&  ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->promedio_espaniol) : '';
-			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
+			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
 
 			echo "
 			<tr $on>
@@ -47,7 +47,7 @@
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
 				<td class='turno'>".$turnos[$escuela->turno]."</td>
 				<td class='control'>".$controles[$escuela->control]."</td>
-				<td class='rank'><span>".number_format($rank_entidad,0)."</span>
+				<td class='rank'><span>".$rank_entidad."</span>
 						<span>de ".number_format($escuela->entidad_cct_count,0)."</span>
 				</td>
 				<td class='semaforo sem{$esc->semaforo}'><span></span>
