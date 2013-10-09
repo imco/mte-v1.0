@@ -774,13 +774,14 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt.comp{margin:10px;}
 #content .peticion .share-bt.comp{margin:1px 19px 0 0;}
 #content .share-bt .social:after{content:""; width:0;height: 0;border-left: 15px solid transparent;border-right: 17px solid transparent;border-bottom: 17px solid #dcdcdc;position:absolute;display:block;top:-13px;left:112px;}
-#content .share-bt .social:after{left:61px;}
+#content .share-bt .social:after{left:88px;}
 /*#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:203px;right:-38px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset}*/
-#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:101px;right:13px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset;height:49px;}
-#content .share-bt .social .btns{width:109px;margin:0 auto;}
+#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:150px;right:13px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset;height:49px;left:0;}
+#content .share-bt .social .btns{width:160px;margin:0 auto;}
 #content .share-bt .social.on{display:block;z-index:10;}
 #content .share-bt .social .share-face{float:left;height:62px;background-image:url(../img/compartir/facebook.png);background-repeat:no-repeat;width:50px;background-size:55px;}
-#content .share-bt .social .tweet{position:relative;width:58px;overflow:hidden;height:52px;}
+#content .share-bt .social .tweet{position:relative;width:58px;overflow:hidden;height:52px;float:left;}
+#content .share-bt .social .mail{background-image:url(../img/compartir/mail.png);display:block;margin-left:-6px;}
 #content .share-bt .social .twitter-icon{background-image:url(../img/compartir/twitter.png);position:absolute;left:0;width:100%;height:100%;background-size:55px;}
 #content .share-bt .social .twitter-share-button{width:100%!important;position:absolute;top:0;z-index:10;opacity:0;height:55px!important;}
 #content .share-bt .social .twitter-share-button #b.btn{height:54px;}
@@ -923,7 +924,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog .left .post{background-color:rgba(255,255,255,.3);margin-bottom:22px;}
 #content .blog .left .info{background-color:rgba(255,255,255,.8);padding-left:27px;font-size:23px;line-height:36px;}
 #content .blog .left .date{font-size:18px;padding-left:1px;}
-#content .blog .left p{padding:6px 27px;font-size:14px;text-align:justify;line-height:19px;}
+#content .blog .left .content-post{padding:6px 27px;font-size:14px;text-align:justify;line-height:19px;}
 #content .blog .left p img{width:425px;height:236px;display:block;margin-bottom:12px;}
 #content .blog .right h1{background-color:#00aff0;font-size:18px;text-align:center;line-height:53px;height:51px;font-weight:bold;}
 #content .blog .right ul li{font-size:15px;background-color:#707070;border-bottom:1px solid white;}
@@ -1050,7 +1051,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tabs li.on .triangle{display:block;}
 #content .perfil.B .tabs li:hover .triangle{display:block;}
 
-#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;height:306px;position:relative;}
+#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;height:409px;position:relative;}
 #content .calificacion-form.B:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .calificacion-form.B fieldset{padding:14px 30px 0 37px;}
 #content .calificacion-form.B fieldset p:first-child{margin-bottom:12px;font-size:19px;}
@@ -1106,7 +1107,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.quienes_somos .wrap_text img{display:block;float:left;}
 #content .container.quienes_somos .wrap_text img[src$='imco_qs.png']{margin-top:35px;}
 #content .container.quienes_somos .wrap_text img[src$='mexicanos1ero_qs.png']{margin:14px 0 0 36px;}
-#content .container.quienes_somos .wrap_text img[src$='on_qs.png']{margin:52px 0 0 30px;}
+#content .container.quienes_somos .wrap_text img[src$='on_qs.png']{margin:36px 0 0 30px;}
 #content .container.quienes_somos .column:first-child{position:relative;}
 #content .container.quienes_somos .column:first-child:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:37px;display:block;position:absolute;bottom:-37px;}
 
@@ -1193,7 +1194,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .califica .calificacion-form.B input[type='submit']{margin:7px auto;}
 #content .califica .calificacion-form.B .button-frame{width:403px;margin:12px auto;}
-#content .califica .calificacion-form.B{height:329px;}
+#content .califica .calificacion-form.B{height:465px;}
 
 /*ordena comentarios*/
 #content .sort{display:inline-block;width:310px;text-align:center;color:black;border-radius:6px;margin:0 0 5px 0;background-color:rgba(255,255,255,.3);}
@@ -1232,3 +1233,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .califica_select .resultados .calificar .icon{background-image:url(../img/header/califica.png);display:block;width:22px;height:26px;position:absolute;left:19px;background-size:24px;top:5px;}
 #content .califica_select .resultados .calificar-school{color:white;width:100%;display:block;position:relative;padding-left:13px;}
 #content .buscaOtra{width:900px;margin:0 auto;}
+
+/*Wp style*/
+/*#content .blog.container .post .info + p a{color:rgb(71, 71, 71);}*/
+#content .blog.container .post .info + .content-post strong{font-weight:bold;}
+#content .blog.container .post .info + .content-post em{font-style:italic;}
+#content .blog.container .post .info + .content-post ul{list-style-type:disc;list-style-position:inside;}
+#content .blog.container .post .info + .content-post ul:first-child{list-style:none;}
+#content .blog.container .post .info + .content-post ol{list-style-type:decimal;list-style-position:inside;}
+#content .blog.container .post .info + .content-post blockquote{display:block;margin: 0 12%;width:100%;}
+#content .blog.container .post .info + .content-post .alignleft{float:left} 
+#content .blog.container .post .info + .content-post .alignright{float:right;}
+#content .blog.container .post .info + .content-post .aligncenter{display:block;margin:0 auto;}
