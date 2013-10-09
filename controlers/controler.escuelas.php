@@ -22,6 +22,7 @@ class escuelas extends main{
 
 			$this->process_escuelas();
 			$this->cct_count_entidad();
+			$this->get_metadata();
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
@@ -75,20 +76,29 @@ class escuelas extends main{
 		}
 	}
 	public function calificar(){
-		$comment = strip_tags($this->post('comentario'));
-		//if($this->post('calificacion')){
-		$calificacion = new calificacion();
-		//$calificacion->debug = true;
-		$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
-			$this->post('nombre'),
-			$this->post('email'),
-			$this->post('cct'),
-			$comment,
-			$this->post('ocupacion'),
-			$this->post('calificacion'),
-			$_SERVER['HTTP_USER_AGENT']
-		)); 
-		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		if($captcha->check_answer($this->config->http_address,
+					  $this->post('recaptcha_challenge_field'),
+					  $this->post('recaptcha_response_field'))){		
+			$comment = strip_tags($this->post('comentario'));
+			//if($this->post('calificacion')){
+			$calificacion = new calificacion();
+			//$calificacion->debug = true;
+			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
+				$this->post('nombre'),
+				$this->post('email'),
+				$this->post('cct'),
+				$comment,
+				$this->post('ocupacion'),
+				$this->post('calificacion'),
+				$_SERVER['HTTP_USER_AGENT']
+			)); 
+			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";	
+		
+		}else{
+			$location = "/escuelas/index/".$this->post('cct')."/e=captcha#calificaciones";	
+		}
+
 		header("location: $location");
 		//}else{
 		//	header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
@@ -146,5 +156,31 @@ class escuelas extends main{
 		}
 		return $newStr;
 	}
+	public function get_metadata(){
+		if(isset($this->escuela->rank_nacional)){
+			$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
+			if($this->escuela->rank_entidad<=10){
+				$description =$description."obtuvo una de las mejores calificaciones en la prueba ENLACE 2013 en el ";
+			if($this->escuela->entidad->id!=9){
+				$description=$description." Estado de ";
+			}
+			$description = $description.$this->capitalize($this->escuela->entidad->nombre);
+			if($this->escuela->rank_nacional<=10){
+				$description = $description." y a nivel nacional";
+			}
+			$description = $description.".";
+
+		}else{
+			$semaforosd = array("MALO", "ACEPTABLE", "BUENO", "EXCELENTE");
+			$description = $description."tiene un aprovechamiento académico ".$semaforosd[$this->escuela->semaforo]." en comparación con otras escuelas que presentaron la prueba ENLACE 2013.";
+		}
+
+		}else{
+			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
+		}
+		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
+		
+	}
+
 }
 ?>

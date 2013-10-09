@@ -378,6 +378,14 @@ function twitterIni(){
 			var text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(x.text)));
 			$("#tweets ul").append('<li><a href="http://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
 		}
+		var heightX5Tweets = 0,
+		tweets = $("#tweets ul li");
+		for(i=0;i<5;i++){
+			heightX5Tweets += parseInt($(tweets[i]).css('height'));
+			heightX5Tweets += 18;//border padding margin
+		}
+		$('#tweets ul').css('height',heightX5Tweets);
+		console.log(heightX5Tweets);
 		$('#tweets ul').jScrollPane();
 	})
 }
