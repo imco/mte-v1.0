@@ -44,17 +44,7 @@
 		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte");
 		$cssmin->tag('css');
 		//$jsmin->tag('js'); js abajo.
-		if($this->location == 'escuelas'){
-			echo '<meta name="description" content="El perfil de '.$this->escuela->nombre.' via https://www.facebook.com/MejoraTuEscuela" />';
-		}else if($this->location == 'compara'){
-			echo '<meta name="description" content="Escuelas comparadas: ';
-			$i=0;
-			for($i=0;$i<count($this->escuelas)-1;$i++){
-				echo $this->capitalize($this->escuelas[$i]->nombre).', ';
-			}
-			echo $this->capitalize($this->escuelas[$i]->nombre);
-			echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
-		}
+		if(isset($this->meta_description)) echo "<meta name='description' content='{$this->meta_description}' />";
 	?>
 	<title><?=$this->page_title;?></title>
 	<link rel="canonical" href="<?=$this->config->http_address.

@@ -12,14 +12,14 @@ class memcached_table extends table{
 			if($result = $memcache->get($query_hash)){				
 				$time_end = microtime(true);
 				$time = $time_end - $time_start;
-				echo 'Memcached: '.$time;
+				//echo 'Memcached: '.$time.'<br/>';
 				return $result;
 			}else{
 				$result = parent::read($fields);				
 				$time_end = microtime(true);
 				$memcache->set($query_hash,$result,false,0);
 				$time = $time_end - $time_start;
-				echo "Query from DB:".$time;
+				//echo "Query from DB:".$time."<br/>";
 
 				return $result;
 			}
