@@ -25,16 +25,16 @@
 				<a name='pregunta3'></a>
 				<h3>3. ¿Cómo se calcula la ubicación de una escuela en el semáforo educativo?</h3>
 				<p>Ya que tenemos los promedios globales de cada escuela, graficamos la distribución de escuelas y generamos los cortes para el semáforo educativo. Los cortes son los siguientes: </p>
-				<p><b>Para primaria 2012:</b> <p>
-				<p><span class="green">Excelente:</span> calificación por encima de 664 puntos. <p>
-				<p><span class="amarillo">Bien:</span> por encima de 587 pero menos de 664.  <p>
-				<p><span class="naranja">De panzazo:</span> por encima de 546 pero menos de 587.<p>
-				<p><span class="red">Reprobado:</span> menos de 546 de promedio. <p>
-				<p><b>Para secundaria 2012:</b> <p>
-				<p><span class="green">Excelente:</span> calificación por encima de 622 puntos. <p>
-				<p><span class="amarillo">Bien:</span> por encima de 567 pero menos de 622.  <p>
-				<p><span class="naranja">De panzazo:</span> por encima de 530 pero menos de 567.<p>
-				<p><span class="red">Reprobado:</span> menos de 530 de promedio. <p>
+				<p><b>Para primaria 2013:</b> <p>
+				<p><span class="green">Excelente:</span> calificación por encima de 662 puntos. <p>
+				<p><span class="amarillo">Bien:</span> por encima de 601 pero menos de 662.  <p>
+				<p><span class="naranja">De panzazo:</span> por encima de 559 pero menos de 601.<p>
+				<p><span class="red">Reprobado:</span> menos de 559 de promedio. <p>
+				<p><b>Para secundaria 2013:</b> <p>
+				<p><span class="green">Excelente:</span> calificación por encima de 591 puntos. <p>
+				<p><span class="amarillo">Bien:</span> por encima de 544 pero menos de 591.  <p>
+				<p><span class="naranja">De panzazo:</span> por encima de 511 pero menos de 544.<p>
+				<p><span class="red">Reprobado:</span> menos de 511 de promedio. <p>
 				<p><b>Para bachillerato 2013:</b> <p>
 				<p><span class="green">Excelente:</span> calificación por encima de 632 puntos. <p>
 				<p><span class="amarillo">Bien:</span> por encima de 580 pero menos de 632.  <p>
