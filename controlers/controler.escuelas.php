@@ -90,7 +90,7 @@ class escuelas extends main{
 				$this->post('cct'),
 				$comment,
 				$this->post('ocupacion'),
-				$this->post('calificacion'),
+				stripslashes($this->post('calificacion')),
 				$_SERVER['HTTP_USER_AGENT']
 			)); 
 			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";	
