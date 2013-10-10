@@ -8,6 +8,7 @@ class califica_tu_escuela extends main{
 
 	}
 	public function califica(){
+		$this->get_metadata();
 		$this->title_header = 'Califica tu escuela';
 		$this->subtitle_header = 'Una vez que conoces y has comparado tu escuela, te invitamos a<br />que califiques algunos aspectos de la misma. Las calificaciones<br />ayudan a detectar áreas de mejora y a reconocer los<br />logros alcanzados.';
 		$this->header_folder = 'compara';
@@ -71,6 +72,10 @@ class califica_tu_escuela extends main{
 		$q->search_clause = '1';
 		$q->order_by = 'califica_tu_escuela.likes DESC';
 		$this->calificaciones = $q->read('cct=>cct,cct=>nombre,cct=>entidad=>id,nombre_input,ocupacion,denuncia,likes,publicar,id');
+	}
+
+	public function get_metadata(){
+		$this->meta_description = "¿Qué puede mejorar en la escuela de tus hijos? Califica las instalaciones, trabajo de los maestros y relación con los padres de familia aquí. Deja un comentario sobre tu escuela.";
 	}
 }
 ?>
