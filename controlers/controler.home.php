@@ -6,6 +6,7 @@ class home extends main{
 		$this->load_municipios();
 		$this->load_localidades();
 		$this->load_escuelas();
+		$this->get_metadata();
 		$this->include_theme('index','index');
 	}
 	public function load_escuelas(){
@@ -96,6 +97,10 @@ class home extends main{
 		//var_dump($_SERVER['DOCUMENT_ROOT'].'/library/SendGrid_loader.php', $sendgrid);exit;
 		//exit;
 		header("location: $location");
+	}
+
+	public function get_metadata(){
+		$this->meta_description = "Encuentra las mejores primarias, secundarias y bachilleratos públicos y privados en tu zona, según la prueba ENLACE 2013. Consulta la calificación de tu escuela en la prueba ENLACE de español y matemáticas.";
 	}
 }
 ?>
