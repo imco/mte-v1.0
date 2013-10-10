@@ -919,7 +919,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog{margin-top:33px;width:940px;}
 #content .blog .column.left{width:650px;margin-left:19px;}
 #content .blog .column.right{width:250px;margin-left:19px;}
-#content .blog .left .title{background-image:url(../img/home/texture_blue.png);padding-left:27px;line-height:42px;font-size:23px;height:41px;}
+#content .blog .left .title{background-image:url(../img/home/texture_blue.png);padding-left:27px;line-height:42px;font-size:23px;min-height:41px;}
 #content .blog .left .title a{color:white;}
 #content .blog .left .post{background-color:rgba(255,255,255,.3);margin-bottom:22px;}
 #content .blog .left .info{background-color:rgba(255,255,255,.8);padding-left:27px;font-size:23px;line-height:36px;}
