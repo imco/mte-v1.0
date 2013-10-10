@@ -103,6 +103,7 @@
 				echo '<div class="container comments">';
 					foreach($this->escuela->calificaciones as $calificacion){
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
+                        $coment = stripslashes($coment);
 						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
 						
 						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
