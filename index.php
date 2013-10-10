@@ -1,5 +1,4 @@
 <?php
-
 $env = getenv('APPLICATION_ENV');
 if($env != "")
 	$config_name= $env;
