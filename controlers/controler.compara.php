@@ -6,6 +6,7 @@ class compara extends main{
 		$this->load_municipios();
 		$this->load_localidades();
 		$this->load_compara_cookie();
+		$this->get_metadata();
 		$this->breadcrumb = array('#'=> 'Comparador');
 		$this->resultados_title = 'Resultados';
 		$this->header_folder = 'compara';				
@@ -94,6 +95,7 @@ class compara extends main{
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
 			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
 		}
+		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Conoce el semáforo educativo de preescolar, primarias, secundarias y bachilleratos de otras escuelas.";
 
 		$this->include_theme('index','index');
 	}
@@ -105,6 +107,9 @@ class compara extends main{
 		}
 		echo $this->capitalize($this->escuelas[$i]->nombre);
 		echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
+	}
+	public function get_metadata(){
+		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
 	}
 }
 ?>
