@@ -1078,6 +1078,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*resultados por estado*/
 #content .resultados-nacionales.container{margin:12px auto;}
 #content .resultados-nacionales.container .wrap_resultados h1{display:none}
+#content .resultados-nacionales.container a.como{float:left;width:466px;background-color:#E9E9E9;color:#00aaef;height:47px;margin-bottom:20px;padding: 0px 19px;width:454px;font-size:23px;line-height:53px;text-indent:15px;}
+#content .resultados-nacionales.container a.como img{width:auto;height:auto;float:left;background:transparent;}
+#content .resultados-nacionales.container .search-estado .customSelect{width:364px;float:right;}
+ #content .resultados-nacionales.container .search-estado .customSelect .customSelectInner{margin-right:63px;}
 #content .search-estado{position:relative;}
 #content .search-estado .custom-select{z-index:2;}
 #content .search-estado .customSelect{width:880px;height:37px;margin-bottom:20px;text-align:right;background-size:41px;background-color:#00A8F3;}
