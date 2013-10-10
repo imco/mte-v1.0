@@ -1,6 +1,6 @@
 <div class='container resultados-nacionales'>
 	<form action='' class='search-estado'>
-		<a href='/preguntas-frecuentes' class='como'>
+		<a href='/preguntas-frecuentes#pregunta2' class='como'>
 		<?php $this->print_img_tag('resultados/i.png')?>
 		¿Cómo calculamos estos resultados?
 		</a>
