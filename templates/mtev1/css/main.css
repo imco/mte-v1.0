@@ -925,7 +925,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog .left .info{background-color:rgba(255,255,255,.8);padding-left:27px;font-size:23px;line-height:36px;}
 #content .blog .left .date{font-size:18px;padding-left:1px;}
 #content .blog .left .content-post{padding:6px 27px;font-size:14px;text-align:justify;line-height:19px;}
-#content .blog .left p img{width:425px;height:236px;display:block;margin-bottom:12px;}
+#content .blog .left p img{max-width:596px;height:auto;display:block;margin-bottom:12px;}
 #content .blog .right h1{background-color:#00aff0;font-size:18px;text-align:center;line-height:53px;height:51px;font-weight:bold;}
 #content .blog .right ul li{font-size:15px;background-color:#707070;border-bottom:1px solid white;}
 #content .blog .right li a{padding-left:15px;min-height:53px;display:block;padding-top:7px;}
