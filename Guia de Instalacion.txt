@@ -1,0 +1,47 @@
+Guia de Instalacion
+
+Requerimientos
+
+- Apache > 2.2 (con mod_rewrite)
+- MySql > 5.1
+- PHP > 5.3 (opcion de Short Open Tags habilitada)
+- Git
+- Apache SOLR (opcional)
+- Memcached (opcional)
+
+Instalación
+
+1. Clonar el Framework MXNPHP:
+En la linea de comandos de git clonar en la carpeta de su preferncia el framework MXNPHP
+
+git clone http://---------------
+
+2. Clonar el Proyecto Mejora tu Escuela:
+Desde la linea de comandos de git clonar en la carpeta de su preferencia el Proyecto Mejoratuescuela
+
+git clone hhtp://github.com/mekler/cte-v2.0.git
+
+3. Importar la base de datos:
+
+Descargar el dump de la base de datos mysql desde:
+
+Despues crear una nueva base de datos en su seridor e importar el dump con el metodo de su preferencia (linea de comandos, phpmyadmin, etc.). Debemos tambien tener un usuario de preferencia con contraseña con todos los permisos para accesar la base de datos.
+
+4. Crear un Host Virtual en Apache
+Mejoratuescuela debe ejecutarse desde el DocumentRoot; para lograr esto debemos crear un host virtual donde ademas especificaremos el archivo de configuración a continuación una configuración ejemplo para un servidor local:
+
+
+Dependiendo de su Sistema Operativo debera consultar la documentacion de Apache para configurar el virtual host.
+
+5. Crear el archivo de configuración:
+En la carpeta del proyecto encontrara una carpeta "config", adentro de la carpeta vera un archivo "config.sample_config.php" copie el archivo y re-nombrelo con el valor que asigno en la configuracion virtual de la siguiente manera config.<variable>.php recomendamos que la variable este seguido de _config para evitar que el nombre de la clase haga conflicto con alguna de las clases en uso en el proyecto.
+Abra el archivo y cambie las variables de dirección http, y base de datos. Finalmente para el valor mxnphp dir ingrese la ruta donde clono el framework MXNPHP.
+
+Abra su navegador y navegue hacia la dirección http que a asignado a su proyecto en el virtual host, debe ver la pagina principal como aparece en mejoratuescuela.org
+
+Los siguientes pasos son opcionales para configurar un servidor de SOLR (para agilizar las busquedas de texto) y el BLOG
+
+Instalación del Blog
+
+1. Descargue la ultima version de wordpress desde wordpress.org
+
