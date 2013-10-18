@@ -54,7 +54,7 @@ class escuelas extends main{
 			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,pct_reprobados,grados,
 			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
-			turno=>nombre,latitud,longitud,tipo=>nombre,
+			turno=>nombre,latitud,longitud,
 			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
 			control=>id,control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
