@@ -85,6 +85,10 @@
 				$this->print_img_tag('metodologia/Secundaria2012Ultimo.png');
 				$this->print_img_tag('metodologia/Bachillerato2013.png');
 				?>
+				<h3>Metodología para determinar los resultados por estado</h3>
+				<p><span class="space"></span>Para determinar las posiciones estatales se utilizaron los promedios ponderados (matemáticas 80- español 20) de todas las escuelas del estado para cada nivel escolar.</p>
+				<p><span class="space"></span>A las escuelas que están categorizadas como “no confiables” por tener una incidencia de copia por arriba del 10% se les asignó una calificación de cero.  De igual manera, las escuelas que no tomaron la prueba ENLACE tuvieron una calificación de cero.   Por último, las escuelas en donde no todos los años de la escuela tomaron la prueba ENLACE no se consideran para el promedio estatal.</p>
+				<p><span class="space"></span>Los promedios estatales de primaria, secundaria y bachillerato se promedian entre tres para generar una calificacion global del estado.</p>
 				<h3>Otras consideraciones y preguntas frecuentes acerca de la metodología:
 				</h3>
 				<p>1. ¿Por qué no utilizan los cortes que usa la SEP?
