@@ -6,14 +6,14 @@ class default_config{
 		$this->theme = 'mtev1';
 		$this->default_controler = 'home';
 		$this->default_action = 'index';
-		$this->blog_address = 'http://comparatuescuela-blog.proyects.spaceshiplabs.com/';
+		$this->blog_address = 'http://blog.mejoratuescuela.org/';
 		//Security 
 		$this->secured = false;
 		
 		//Sofware
 		$this->document_root = $_SERVER['DOCUMENT_ROOT']."/";
 		$this->lang = "en";
-		$this->dev_mode = false;
+		$this->dev_mode = true;
 		$this->search_location = false;
 		$this->memcache_host = '***REMOVED***';
 		
