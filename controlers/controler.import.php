@@ -4,7 +4,7 @@ class import extends main{
 		set_time_limit(10000000);
 		//$this->import_teachers();
 		//$this->import_percents();
-		$this->import_percents_manual();
+		//$this->import_percents_manual();
 		//$this->import_states();
 		//$this->import_locales()
 		//$this->check_nl();
@@ -19,7 +19,31 @@ class import extends main{
 // 		$this->update_counties();
 // 		$this->update_locales();
 // 		$this->update_pruebas_totales_enlace();
+		$this->complete_extentions();
 
+	}
+	private function complete_extentions(){
+		$q = new escuela();
+		$q->search_clause = "control = '0'";
+		$q->debug = true;
+		$escuelas = $q->read('cct,nombre,subcontrol,nivel');
+		//var_dump(count($escuelas));
+		$e = $ne = 0;
+		foreach($escuelas as $escuela){
+			if(strlen($escuela->cct) == 11){
+				$e++;
+				$parent = new $escuela(substr($escuela->cct,0,10));
+				//$parent->debug = true;
+				$parent->read('control=>id,subcontrol=>id,tipo=>id,subnivel=>id,servicio=>id,modalidad=>id,sostenimiento=>id,status=>id');
+				$escuela = new escuela($escuela->cct);
+				$escuela->debug = true;
+				$escuela->update('control,subcontrol,tipo,subnivel,servicio,modalidad,sostenimiento,status',
+				array($parent->control->id,$parent->subcontrol->id,$parent->tipo->id,$parent->subnivel->id,$parent->servicio->id,$parent->modalidad->id,$parent->sostenimiento->id,$parent->status->id));
+			}else{
+				$ne++;
+			}
+		}
+		var_dump($e,$ne);
 	}
 	private function import_percents_manual(){
 		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
