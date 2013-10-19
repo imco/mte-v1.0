@@ -55,8 +55,8 @@ class escuelas extends main{
 			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
 			turno=>nombre,latitud,longitud,
-			nivel=>nombre,nivel=>id,subnivel=>nombre,servicio=>nombre,
-			control=>id,control=>nombre,subcontrol=>nombre,sostenimiento=>nombre,status=>nombre,
+			nivel=>nombre,nivel=>id,
+			control=>id,control=>nombre,
 			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
 			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
@@ -67,6 +67,7 @@ class escuelas extends main{
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
+			$entidad_info->debug = true;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
 			$this->petition_data = $this->load_estado_petitions($this->escuela->entidad->nombre);
