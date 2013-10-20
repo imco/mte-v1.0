@@ -1,6 +1,11 @@
 <?php
 class main extends controler{
+	/* Clase que hereda las utilidades necesarias para conectar los controladores.
+	Contiene métodos y atributos que podrán ser usados por todos los controladores.
+	*/
 	public function main($config){
+		/* Realiza la conexión con la base de datos y deja disponible variables que se usaran en todas los controladores.
+		*/
 		$this->config = $config;
 		$this->dbConnect();
 		$this->location = get_class($this);
@@ -11,6 +16,8 @@ class main extends controler{
 		$this->draw_charts = false;
 	}
 	protected function process_escuelas(){
+		/* A partir de las datos contenidos en el atributo 'escuelas' crea un atributo de tipo objeto con datos necesarios para mostrar el mapa y además contiene un arreglo asociativo de objetos donde la llave es el CCT y los datos contenidos en dicho objeto es la información que es usada de las escuelas.
+		*/
 		$this->escuelas_digest = false;
 		if($this->escuelas){
 			$escuelas = array();
@@ -84,22 +91,25 @@ class main extends controler{
 		return $scales;
     }
 	public function load_municipios(){
+		/* Lee la información de la tabla municipios los cuales guarda en el atributo 'municipios' y dependiendo si al momento de la llamada por POST se especifica la variable "entidad" son regresados los municipios de este, si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
+		*/
 		$q = new municipio();
 		//$q->debug = true;
 		$q->search_clause = $this->request('entidad') ? 'municipios.entidad = "'.$this->request('entidad').'"' : '1';
 		$q->order_by = 'municipios.nombre';
 		$this->municipios = $q->read('id,nombre,entidad=>nombre,entidad=>id');
-		if($this->request('json')){
+		if($this->request('json') || true){
 			$response = array();
 			foreach($this->municipios as $key => $municipio){
 				$response[$key]->id = $municipio->id;
 				$response[$key]->nombre = $this->capitalize($municipio->nombre).", ".$this->capitalize($municipio->entidad->nombre);
 			}
-			echo json_encode($response);
 		}
 		
 	}
 	public function load_localidades(){
+		/* Lee la información de la tabla localidades los cuales guarda en el atributo 'localidades' y dependiendo si al momento de la llamada por POST se especifica la variable "entidad" o "municipio" son regresados las localidades con esos filtros, si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
+		*/
 		if($this->request('entidad') || $this->request('municipio')){
 			$q = new localidad();
 			$q->search_clause = $this->request('entidad') ? 'localidades.entidad = "'.$this->request('entidad').'"' : '1';
@@ -121,6 +131,8 @@ class main extends controler{
 		
 	}
 	public function get_escuelas($params = false){
+		/* Lee la información de la tabla escuelas aplicando los filtros especificados en la variable $params los cuales guarda en el atributo 'escuelas' si al momento de hacer la llamada por POST se encuentra la variable json la información es presentada en este formato.
+		*/
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
 		
@@ -188,6 +200,8 @@ class main extends controler{
 		}
 	}
 	public function get_escuelas_new($params = false,$page = false,$sort = false){
+		/* Realiza una petición al servidor de solr para obtener información de las escuelas para una búsqueda por nombre avanzada, guarda la información obtenida en el atributo 'escuelas' además del numero de resultados obtenidos en el atributo 'num_results'.
+		*/
 		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';
 		$q = isset($params->term) && $params->term ? "nombre:".str_replace(' ','~ ',$params->term).'~' : '*:*';
 		if($params){
@@ -206,40 +220,51 @@ class main extends controler{
 	}
 
 	public function load_niveles(){
+		/* Lee la información de la tabla niveles solo para primaria, secundaria y bachillerato guarda los datos en el atributo 'niveles'.
+		*/
 		$q = new nivel();
 		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';
 		$this->niveles = $q->read('id,nombre');
 	}
 	public function load_entidades($order_by = false){
+		/* Lee la información de la tabla entidades aplicando opcionalmente el orden con el que se guardaran los datos en el atributo 'entidades'.
+		*/
 		$q = new entidad();
 		$q->search_clause = '1';
 		if($order_by) $q->order_by = $order_by;
 		$this->entidades = $q->read('id,nombre,cct_count,promedio_general,rank');
 	}
 	protected function capitalize($string){
+		/* Regresa el valor del parámetro $string con la primera letra en mayúsculas.
+		*/
 		return $this->mb_ucwords(mb_strtolower($string,'UTF-8'));
 		return $string;
 	}
-	private function mb_ucwords($str) { 
+	private function mb_ucwords($str){
+		/* Regresa el valor del parámetro $str con todas las primeras letras de cada palabra en mayúscula
+		*/
 	    $str = mb_convert_case($str, MB_CASE_TITLE, "UTF-8"); 
 	    return ($str); 
 	} 
-	private function distance($lat1,$long1,$lat2,$long2) {
-        $lat1 = deg2rad($lat1);
-        $long1 = deg2rad($long1);
-        $lat2 = deg2rad($lat2);
-        $long2 = deg2rad($long2);
-        $radiusOfEarth = 6371000;// Earth's radius in meters.
-        $diffLatitude = $lat1 - $lat2;
-        $diffLongitude = $long1 - $long2;
-        $a = sin($diffLatitude / 2) * sin($diffLatitude / 2) +
-            cos($lat2) * cos($lat1) *
-            sin($diffLongitude / 2) * sin($diffLongitude / 2);
-        $c = 2 * asin(sqrt($a));
-        $distance = $radiusOfEarth * $c;
-        return $distance;
+	private function distance($lat1,$long1,$lat2,$long2){
+		/* Regresa la distancia aproximada entre la latitud 1 ($lat1),longitud 1 ($long1) y latitud 2 ($lat2),longitud 2 ($long2) 
+		*/
+	        $lat1 = deg2rad($lat1);
+	        $long1 = deg2rad($long1);
+	        $lat2 = deg2rad($lat2);
+	        $long2 = deg2rad($long2);
+	        $radiusOfEarth = 6371000;// Earth's radius in meters.
+	        $diffLatitude = $lat1 - $lat2;
+	        $diffLongitude = $long1 - $long2;
+	        $a = sin($diffLatitude / 2) * sin($diffLatitude / 2) +
+	            cos($lat2) * cos($lat1) *
+        	    sin($diffLongitude / 2) * sin($diffLongitude / 2);
+	        $c = 2 * asin(sqrt($a));
+	        $distance = $radiusOfEarth * $c;
+	        return $distance;
     }
     protected function get_location(){
+    	/* Obtiene la localización basada en la IP del usuario usando http://freegeoip.net/ además el atributo de configuración search_location deberá tener valor evaluado como True*/
 
 	/*
 	for test
@@ -253,7 +278,7 @@ class main extends controler{
 			$location_request = file_get_contents($url);
 			$location = json_decode($location_request);
 		//var_dump($location);
-    	if(isset($location) && $location->region_code != '' && $location->country_code == 'MX'){
+    		if(isset($location) && $location->region_code != '' && $location->country_code == 'MX'){
 			//$this->user_location = new entidad(9);
 			$this->user_location = new entidad($location->region_code);
 			$this->user_location->read('id,nombre');
@@ -274,6 +299,8 @@ class main extends controler{
 
     }
     protected function load_compara_cookie(){
+    	/* Lee la cookie 'escuelas' la cual si tiene algún valor la guarda este en el atributo 'compara_cookie' si no pone un valor de false al mismo.
+	*/
     	$this->compara_cookie = false;
     	if($this->cookie('escuelas')){
     		$this->compara_cookie = explode('-',$this->cookie('escuelas'));
@@ -283,6 +310,8 @@ class main extends controler{
     
     protected function cct_count_entidad(){
     	if(isset($this->escuelas)){
+		/* Lee de la tabla entidades cuantas escuelas hay del mismo nivel tanto nacional como por entidad y las guarda en los atributos 'nacional_cct_count' y 'entidad_cct_count' respectivamente.
+		*/
 		foreach($this->escuelas as $escuela){
 			$id_entidad = isset($escuela->entidad->id)?$escuela->entidad->id:$escuela->entidad;
 			$entidad = new entidad($id_entidad);
@@ -297,6 +326,8 @@ class main extends controler{
     }
 
     protected function load_estado_petitions($estado){
+    		/* Obtiene las peticiones que se encuentran en http://www.change.org/ del usuario mejora_tu_escuela y regresa un arreglo con las peticiones que contengan en el titulo el valor del parámetro $estado.
+		*/
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -314,6 +345,8 @@ class main extends controler{
     }
 
     protected function set_info_user_search($escuelas_num){
+    		/* Guarda en la tabla user_search un campo con los valores ingresados al momento de realizar una búsqueda donde el parámetro $escuelas_num es la cantidad de resultados que devolvió esa búsqueda
+		*/
 		$params= array();
 		if($this->get('search')){
 		    $params[] = $this->get('term')?$this->get('term'):"";
@@ -344,12 +377,16 @@ class main extends controler{
     }
 
     protected function shorten_url($url){
+    		/* Regresa la url generada por http://ow.ly/url/shorten-url 
+		*/
 		$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
 		$shortUrl = $hootSuite->shorten($url);
 		return $shortUrl['results']['shortUrl'];
     
     }
     public function get_captcha(){
+    		/* Regresa un captcha usando el api http://www.google.com/recaptcha  
+		*/
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		return $captcha->form();
     }
