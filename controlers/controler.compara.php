@@ -74,7 +74,7 @@ class compara extends main{
 		$this->include_theme('index','map');
 	}
 	public function escuelas(){
-		/*
+		/* Lee la información de las escuelas para mostrar la tabla de comparación
 		*/
 		$this->load_niveles();
 		$this->load_entidades();
@@ -108,6 +108,7 @@ class compara extends main{
 		$this->include_theme('index','index');
 	}
 	public function get_meta_description(){
+		//Este ya no se usa a eliminar
 		echo '<meta name="description" content="Escuelas comparadas: ';
 		$i=0;
 		for($i=0;$i<count($this->escuelas)-1;$i++){
@@ -117,6 +118,7 @@ class compara extends main{
 		echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
 	}
 	public function get_metadata(){
+		/*Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador*/
 		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
 	}
 }
