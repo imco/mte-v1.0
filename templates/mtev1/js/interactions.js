@@ -293,7 +293,11 @@ $(document).ready(function(){
 			})
 		}
 		$(this).attr('href',$(this).attr('href')=='top'?'bottom':'top');
-		$('[name="calificaciones"]').parent().append(comments);
+		$('.container.comments').append(comments.removeAttr('style'))
+		.masonry({
+	  		itemSelector: '.comment',
+	  		gutter: 16
+		});;
 	});
 
 	$('form[action="/escuelas/calificar/"]').submit(function(e){
