@@ -1,6 +1,10 @@
 <?php
 class compara extends main{
+	/* Controlador: /compara
+	*/
 	public function index(){
+		/* Obtiene los datos necesarios para mostrar adecuadamente la vista compara/index
+		*/
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
@@ -49,6 +53,8 @@ class compara extends main{
 		
 	}
 	public function mapa(){
+		/* Lee la información de las escuelas para renderizar el mapa de /compara/mapa
+		*/
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
@@ -68,6 +74,8 @@ class compara extends main{
 		$this->include_theme('index','map');
 	}
 	public function escuelas(){
+		/*
+		*/
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
