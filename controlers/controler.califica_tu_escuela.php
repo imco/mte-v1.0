@@ -1,5 +1,7 @@
 <?php
 class califica_tu_escuela extends main{
+	/* Controlador: /califica_tu_escuela/*
+	*/
 	public function index(){		
 		$this->header_folder ='califica_tu_escuela';
 		$this->load_calificaciones();
@@ -8,6 +10,13 @@ class califica_tu_escuela extends main{
 
 	}
 	public function califica(){
+		/*De acuerdo a la interacción del usuario al momento de iniciar este controlador si procede de:
+			Algún perfil mostrara la vista de calificación de esta escuela.
+			Cualquier otra parte:
+				Si existen datos en la cookie 'escuelas' de perfiles previamente visitados muestra estos y deja al usuario la posibilidad de escoger alguna así como realizar una búsqueda para calificar alguna otra escuela.
+				Si la cookie esta vacía muestra un buscador para encontrar la escuela que el usuario desea calificar.
+
+		*/
 		$this->get_metadata();
 		$this->title_header = 'Califica tu escuela';
 		$this->subtitle_header = 'Una vez que conoces y has comparado tu escuela, te invitamos a<br />que califiques algunos aspectos de la misma. Las calificaciones<br />ayudan a detectar áreas de mejora y a reconocer los<br />logros alcanzados.';
@@ -58,6 +67,7 @@ class califica_tu_escuela extends main{
 	}
 
 	public function escuela_info(){
+		/* Lee la información de la escuela que se calificara y la guarda en el atributo 'escuela'. */
 		$this->escuela = new escuela($this->get('id'));
 		$this->escuela->read("cct,nombre,nivel=>nombre,turno=>nombre,entidad=>nombre");
 		if(isset($this->escuela->cct)){
@@ -68,6 +78,7 @@ class califica_tu_escuela extends main{
 	}
 
 	private function load_calificaciones(){
+		/* Guarda en el atributo 'calificaciones' todas las calificaciones de todas las escuelas ordenadas en forma descendente. */
 		$q = new calificacion();
 		$q->search_clause = '1';
 		$q->order_by = 'califica_tu_escuela.likes DESC';
@@ -75,7 +86,9 @@ class califica_tu_escuela extends main{
 	}
 
 	public function get_metadata(){
+		/* Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador */
 		$this->meta_description = "¿Qué puede mejorar en la escuela de tus hijos? Califica las instalaciones, trabajo de los maestros y relación con los padres de familia aquí. Deja un comentario sobre tu escuela.";
 	}
+
 }
 ?>
