@@ -1,6 +1,7 @@
 <?php
 class compara extends main{
-	/* Controlador: /compara
+	/* Controlador: /compara/*
+	   Obtiene la información para comparar escuelas presentando los datos en forma de mapa y tabla. De igual forma gestiona las búsquedas de escuelas.
 	*/
 	public function index(){
 		/* Obtiene los datos necesarios para mostrar adecuadamente la vista compara/index
@@ -107,16 +108,7 @@ class compara extends main{
 
 		$this->include_theme('index','index');
 	}
-	public function get_meta_description(){
-		//Este ya no se usa a eliminar
-		echo '<meta name="description" content="Escuelas comparadas: ';
-		$i=0;
-		for($i=0;$i<count($this->escuelas)-1;$i++){
-			echo $this->capitalize($this->escuelas[$i]->nombre).', ';
-		}
-		echo $this->capitalize($this->escuelas[$i]->nombre);
-		echo ' via https://www.facebook.com/MejoraTuEscuela" />';	
-	}
+
 	public function get_metadata(){
 		/*Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador*/
 		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
