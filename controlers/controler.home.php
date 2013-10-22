@@ -1,5 +1,7 @@
 <?php
 class home extends main{
+	/* Controlador: /home
+	*/
 	public function index(){
 		$this->load_niveles();
 		$this->load_entidades();
@@ -10,6 +12,8 @@ class home extends main{
 		$this->include_theme('index','index');
 	}
 	public function load_escuelas(){
+		/* Lee de la tabla escuelas las 5 primeras en un determinado nivel. El nivel es elegido de manera aleatoria entre: primaria (12) secundara (13)  o bachillerato (22). El estado al que pertenecen las escuelas se determina por IP.
+		*/
 		$niveles = array(12,13,22);
 		$this->get_location();
 		//$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
@@ -23,6 +27,8 @@ class home extends main{
 	}
 
 	public function twitter(){
+		/* Crea las peticiones que se harán al API de twitter con autenticación y los resultados son presentados en formato JSON.
+		*/
 		$params = array('oauth_access_token'=>$this->config->twitter_access_token,
 			'oauth_access_token_secret'=>$this->config->twitter_access_token_secret,
 			'consumer_key'=>$this->config->twitter_consumer_key,
@@ -35,6 +41,8 @@ class home extends main{
 	   }
 
 	protected function get_abreviatura_estado($estado){
+		/* Recibe como parámetro el estado si encuentra abreviatura para este lo regresa sí no el valor del parámetro pasado es devuelto.
+		*/
     		$estado = strtolower($estado);
 		$estados["aguascalientes"] = "Ags.";
 		$estados["baja california"] = "B.C.";
@@ -76,7 +84,9 @@ class home extends main{
 	}
 
 	public function newsletter(){
-		$location = "/home/";
+		/* Guarda en la tabla newsletters la información del usuario que desea registrarse a través del formulario en el home "Mantente informado" y notifica a este si fue o no registrado correctamente.
+		*/
+		$location = "/tome/";
 		if($this->post('aviso')){
 			$correo = $this->post('correo');
 			$news = new newsletters();
@@ -100,6 +110,7 @@ class home extends main{
 	}
 
 	public function get_metadata(){
+		/*Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador*/
 		$this->meta_description = "Encuentra las mejores primarias, secundarias y bachilleratos públicos y privados en tu zona, según la prueba ENLACE 2013. Consulta la calificación de tu escuela en la prueba ENLACE de español y matemáticas.";
 	}
 }
