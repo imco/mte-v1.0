@@ -1,6 +1,9 @@
 <?php
 class peticiones extends main{
-	public function index(){		
+	/* Controlador: host/peticiones/*
+	*/
+	public function index(){
+		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->read_peticion();
 		$this->breadcrumb = array('#'=>'Peticiones');
 		$this->header_folder = 'compara';
@@ -9,6 +12,7 @@ class peticiones extends main{
 		$this->include_theme('index','index');
 	}
 	private function read_peticion(){
+		/* Guarda en el atributo 'petition_url' la información de las peticiones procedentes de http://www.change.org/  */
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$this->petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -18,6 +22,7 @@ class peticiones extends main{
 
 	}
 	public function firmar(){
+		/* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org */
 		$petition_url = $this->post('petition_url');
 		$petition_auth_keys = array();
 		$petition_auth_keys[] = 'uno';

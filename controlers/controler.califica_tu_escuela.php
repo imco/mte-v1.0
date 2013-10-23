@@ -1,8 +1,10 @@
 <?php
 class califica_tu_escuela extends main{
-	/* Controlador: /califica_tu_escuela/*
+	/* Controlador: host/califica_tu_escuela/*
+	   Brinda al usuario la posibilidad de otorgar una califcación a una determinada escuela.
 	*/
 	public function index(){		
+		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->header_folder ='califica_tu_escuela';
 		$this->load_calificaciones();
 		//$this->include_theme('index','index');
