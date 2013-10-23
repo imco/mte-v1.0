@@ -1,6 +1,10 @@
 <?php
 class api extends main{
+	/* Controlador: host/api/*
+	   Brinda la interfaz de programación de aplicaciones.
+	*/
 	public function escuelas(){
+		/* Obtiene y presenta información relevante de cien escuelas ya se en formato csv o json dependiendo del valor de la variable 'formato' en los datos procedentes ya sea de POST o GET. */
 		$params->limit = "0 ,100";
 		$this->get_escuelas($params);
 		$this->process_escuelas();
@@ -12,6 +16,7 @@ class api extends main{
 		}
 	}
 	public function municipios(){
+		/* Obtiene y presenta información relevante de los municipios en formato json */
 		$this->load_municipios();
 		$digest = array();
 		$i = 0;
@@ -24,6 +29,7 @@ class api extends main{
 		echo json_encode($digest);
 	}
 	public function entidades(){
+		/* Obtiene y presenta información relevante de los estados en formato json */
 		$this->load_entidades();
 		$digest = array();
 		$i = 0;
@@ -36,6 +42,7 @@ class api extends main{
 		echo json_encode($digest);
 	}
 	private function get_csv(array &$array){		
+		/* A partir de un arreglo asociativo presenta la información de este en formato csv*/
 		if (count($array) == 0) {
 			return null;
 		}
@@ -49,8 +56,8 @@ class api extends main{
 		return ob_get_clean();
 	}
 	private function format_csv(){
+		/* Lee la información de las escuelas que se encuentran en el atributo de tipo arreglo del mismo nombre y crea un atributo 'escuelas_csv' de tipo arreglo que contiene un arreglo asociativo por cada escuela, donde la llave de este es el nombre del dato y es asociado a su valor. */
 		$this->escuelas_csv = array();
-
 		foreach($this->escuelas as $escuela){
 			$this->escuelas_csv[] = array(
 				'cct' => $escuela->cct,

@@ -1,9 +1,17 @@
 <?php
 class stats extends main{
+	/* Controlador: host/stats/*
+	   Se encarga de actualizar los resultados de:
+	   	Promedio general, por estado y a nivel nacional.
+		Rank por estado.
+		Numero de escuelas a nivel estatal y nacional.
+
+	*/
 	public function index(){
 		//$this->histogram(12);
 	}
 	public function rank_states(){
+		/* Actualiza los datos del rank para cada entidad. */
 		$q = new entidad();
 		$q->search_clause = '1';
 		$q->debug = true;
@@ -34,6 +42,7 @@ class stats extends main{
 		$this->include_template('index','stats');
 	}
 	public function entidad_promedios(){
+		/* Actualiza los datos del promedio a nivel estatal para cada estado estado. */
 		$calificaciones = array('matematicas','espaniol','general');
 		$controles = array(1 => 'publicas', 2 => 'privadas');
 		for($i=1;$i<=32;$i++){
@@ -53,6 +62,7 @@ class stats extends main{
 	}
 
 	public function nacional_promedios(){
+		/* Actualiza los datos del promedio a nivel nacional para cada entidad. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
 		$calificaciones = array('matematicas','espaniol');
 		for($i=1;$i<=32;$i++){
@@ -74,6 +84,7 @@ class stats extends main{
 	}
 
 	public function entidad_totales(){
+		/* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel estatal. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
 		for($i=1;$i<=32;$i++){
 			$entidad = new entidad($i);
@@ -109,6 +120,7 @@ class stats extends main{
 	}
 
 	public function nacional_totales(){
+		/* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel nacional. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
 		for($i=1;$i<=32;$i++){
 			$entidad = new entidad($i);
