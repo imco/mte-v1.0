@@ -24,4 +24,4 @@ class widgets extends main{
 		echo $this->config->http_address.'/widgets/?w='.$code;
 	}
 }
-?>
+?>	
