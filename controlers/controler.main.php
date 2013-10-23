@@ -131,7 +131,7 @@ class main extends controler{
 		
 	}
 	public function get_escuelas($params = false){
-		/* Lee la información de la tabla escuelas aplicando los filtros especificados en la variable $params los cuales guarda en el atributo 'escuelas' si al momento de hacer la llamada por POST se encuentra la variable json la información es presentada en este formato.
+		/* Lee la información de la tabla escuelas aplicando los filtros especificados en la variable $params guarda los datos leidos en el atributo 'escuelas'. sí al momento de hacer la llamada por POST o GET se encuentra la variable json la información es presentada en este formato.
 		*/
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
