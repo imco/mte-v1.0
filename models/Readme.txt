@@ -1,0 +1,1 @@
+Representa la información de las tablas procedentes de la base de datos, brinda una capa de abstracción a dicha información los cuales pueden ser consultas, actualizaciones y creación de nuevos datos.
