@@ -1,0 +1,1 @@
+Responden a peticiones del usuario e invoca peticiones al modelo cuando se necesita información procedente de la base de datos. Prepara variables/atributos para que la información pueda ser usadas y presentadas por las vistas. Es el intermediario entre las vistas y los modelos.
