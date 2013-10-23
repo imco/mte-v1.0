@@ -1,8 +1,9 @@
 <?php
 class contacto extends main{
-	/* Controlador: /contacto/*
+	/* Controlador: host/contacto/*
 	*/
-	public function index(){		
+	public function index(){
+		/* Se encarga de mostrar la vista adecuada al usuario. */
 		$this->header_folder ='contacto';		
 		$this->breadcrumb = array('#'=>'Contacto');
 		$this->include_theme('index','index');
