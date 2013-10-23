@@ -1,6 +1,10 @@
 <?php
 class resultados_nacionales extends main{
+	/* Controlador: /resultados_nacionales/*
+	   Muestra los resultados de las pruebas enlace clasificados por estados.
+	*/
 	public function index(){		
+		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->load_entidades('rank ASC');	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
@@ -9,6 +13,7 @@ class resultados_nacionales extends main{
 		$this->include_theme('index','index');
 	}
 	public function entidad(){
+		/* Lee de la tabla entidades los campos para mostrar la información de este en la vista. */
 		$this->draw_charts = false;
 		if($this->get('id')){
 			$this->load_entidades();
@@ -29,6 +34,7 @@ class resultados_nacionales extends main{
 	}
 
 	private function load_escuelas(){
+		/* Guarda en el atributo 'mejores_escuelas' los resultados de las 5 mejores escuelas pertenecientes al estado que se esta revisando. */
 		$niveles = array(12,13,22);
 		$this->mejores_escuelas = array();
 		for($i=0;$i<count($niveles);$i++){

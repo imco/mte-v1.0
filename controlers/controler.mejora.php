@@ -1,6 +1,9 @@
 <?php
 class mejora extends main{
+	/* Controlador: host/mejora/*
+	*/
 	public function index(){
+		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->title_header = 'Mejora tu escuela';
 		$this->subtitle_header = 'Aquí encontrarás herramientas para que actúes como agente <br />de cambio positivo en tu comunidad educativa. <br />¡Participa e involúcrate!';
 		$this->header_folder = 'compara';
