@@ -1,9 +1,10 @@
 <?php
 class resultados_nacionales extends main{
 	/* Controlador: /resultados_nacionales/*
-	   Muestra los resultados enlaces clasificados por estados.
+	   Muestra los resultados de las pruebas enlace clasificados por estados.
 	*/
 	public function index(){		
+		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->load_entidades('rank ASC');	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
