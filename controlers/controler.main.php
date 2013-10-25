@@ -213,7 +213,7 @@ class main extends controler{
 		$q = urlencode($q);
 		$fq = urlencode($fq);
 		$sort = urlencode($sort);
-		$url = $this->config->solr."select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
+		$url = $this->config->solr_server."select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
 		$respones = file_get_contents($url);
 		var_dump($url);
 		$response = json_decode($response);
