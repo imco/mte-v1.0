@@ -33,7 +33,6 @@ class compara extends main{
 			$params->municipio = $this->get('municipio');
 			$params->localidad = $this->get('localidad');
 			$p = $this->get('p') ? $this->get('p') : 1;
-			echo 'solr';
 			$this->get_escuelas_new($params,$p);
 			
 			$this->cct_count_entidad();
