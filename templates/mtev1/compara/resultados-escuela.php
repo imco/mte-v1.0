@@ -22,7 +22,7 @@
 			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
-			$rank_entidad = $escuela->rank_entidad > 0 ? $escuela->rank_entidad : '';
+			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
 			echo "
 			<tr $on>
 				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
@@ -35,7 +35,7 @@
 				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
 				<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>
 				<td class='control'>".$controles[$escuela->control->id]."</td>
-				<td class='rank'><span>".number_format($rank_entidad,0)."</span>
+				<td class='rank'><span>".$rank_entidad."</span>
 					<span>de ".number_format($escuela->entidad_cct_count,0)."</span>
 				</td>
 				<td class='semaforo sem{$escuela->semaforo}'><span></span>
