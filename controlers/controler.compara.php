@@ -24,7 +24,7 @@ class compara extends main{
 		}else{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}
-		if($this->get('term')){
+		if($this->get('term') && isset($this->config->solr_server)){
 			//$params = new new StdClass();
 			$params->term = $this->get('term');
 			$params->control = $this->get('control');
