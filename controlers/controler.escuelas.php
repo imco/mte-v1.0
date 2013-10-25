@@ -72,7 +72,7 @@ class escuelas extends main{
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
-			$entidad_info->debug = true;
+			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
 			$this->petition_data = $this->load_estado_petitions($this->escuela->entidad->nombre);
