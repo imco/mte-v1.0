@@ -214,7 +214,7 @@ class main extends controler{
 		$fq = urlencode($fq);
 		$sort = urlencode($sort);
 		$url = $this->config->solr_server."select?q=$q&fq=$fq&wt=json&sort=$sort&start=$start";
-		$respones = file_get_contents($url);
+		$response = file_get_contents($url);
 		var_dump($url);
 		$response = json_decode($response);
 		$this->escuelas = $response->response->docs;
