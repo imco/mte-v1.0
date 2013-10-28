@@ -1,23 +1,36 @@
 <?php
+	/** 
+	* Clase Principal main.
+	* Clase que hereda las utilidades necesarias para conectar los controladores
+	* Contiene métodos y atributos que podrán ser usados por todos los controladores.
+	*/
 class main extends controler{
-	/* Clase que hereda las utilidades necesarias para conectar los controladores.
-	Contiene métodos y atributos que podrán ser usados por todos los controladores.
+	/** 
+	* Constructor de la Clase main.
+	* Realiza la conexión con la base de datos y deja disponible variables que se usaran en todas los controladores
+	* Constructor main recive el parametro $config
+	* \param $config 
 	*/
 	public function main($config){
-		/* Realiza la conexión con la base de datos y deja disponible variables que se usaran en todas los controladores.
-		*/
-		$this->config = $config;
-		$this->dbConnect();
-		$this->location = get_class($this);
-		$this->header_folder = 'home';
-		$this->page_title = 'Mejora tu Escuela';
-		$this->breadcrumb = false;
-		$this->draw_map = false;
-		$this->draw_charts = false;
+
+		$this->config = $config; 
+		$this->dbConnect(); 
+		$this->location = get_class($this); 
+		$this->header_folder = 'home'; 
+		$this->page_title = 'Mejora tu Escuela'; 
+		$this->breadcrumb = false; 
+		$this->draw_map = false; 
+		$this->draw_charts = false; 
 	}
+
+	/** 
+	* Funcion Protegida process_escuelas.
+	* A partir de las datos contenidos en el atributo 'escuelas' crea un atributo de tipo objeto con datos necesarios para 
+	* mostrar el mapa y además contiene un arreglo asociativo de objetos donde la llave es el CCT y los datos contenidos en 
+	* dicho objeto es la información que es usada de las escuelas.
+	*/
 	protected function process_escuelas(){
-		/* A partir de las datos contenidos en el atributo 'escuelas' crea un atributo de tipo objeto con datos necesarios para mostrar el mapa y además contiene un arreglo asociativo de objetos donde la llave es el CCT y los datos contenidos en dicho objeto es la información que es usada de las escuelas.
-		*/
+		
 		$this->escuelas_digest = false;
 		if($this->escuelas){
 			$escuelas = array();
@@ -67,6 +80,10 @@ class main extends controler{
 			$this->escuelas_digest = $response;
 		}
 	}
+
+	/**
+	* Funcion Protegida get_scales.
+	*/
 	protected function get_scales(){
 		$scales[0] = 20088000;
 		$scales[1] = 10044000;
@@ -90,9 +107,15 @@ class main extends controler{
 		//$scales[19] = 38;
 		return $scales;
     }
+
+    /** 
+    * Funcion Publica load_municipios.
+    * Lee la información de la tabla municipios los cuales guarda en el atributo 'municipios' y dependiendo si 
+    * al momento de la llamada por POST se especifica la variable "entidad" son regresados los municipios de este, 
+    * si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
+	*/
 	public function load_municipios(){
-		/* Lee la información de la tabla municipios los cuales guarda en el atributo 'municipios' y dependiendo si al momento de la llamada por POST se especifica la variable "entidad" son regresados los municipios de este, si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
-		*/
+
 		$q = new municipio();
 		//$q->debug = true;
 		$q->search_clause = $this->request('entidad') ? 'municipios.entidad = "'.$this->request('entidad').'"' : '1';
@@ -104,12 +127,17 @@ class main extends controler{
 				$response[$key]->id = $municipio->id;
 				$response[$key]->nombre = $this->capitalize($municipio->nombre).", ".$this->capitalize($municipio->entidad->nombre);
 			}
-		}
-		
+		}	
 	}
+
+	/**
+	* Funcion Publica load_localidades. 
+	* Lee la información de la tabla localidades los cuales guarda en el atributo 'localidades' y dependiendo si 
+	* al momento de la llamada por POST se especifica la variable "entidad" o "municipio" son regresados las localidades 
+	* con esos filtros, si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
+	*/
 	public function load_localidades(){
-		/* Lee la información de la tabla localidades los cuales guarda en el atributo 'localidades' y dependiendo si al momento de la llamada por POST se especifica la variable "entidad" o "municipio" son regresados las localidades con esos filtros, si no es así se muestran todos los municipios además si es especificado la variable json se regresan los resultados en este formato.
-		*/
+		
 		if($this->request('entidad') || $this->request('municipio')){
 			$q = new localidad();
 			$q->search_clause = $this->request('entidad') ? 'localidades.entidad = "'.$this->request('entidad').'"' : '1';
@@ -130,9 +158,16 @@ class main extends controler{
 		}
 		
 	}
+
+	/**
+	* Funcion Publica get_escuelas.
+	* Lee la información de la tabla escuelas aplicando los filtros especificados en la variable $params guarda los
+	* datos leidos en el atributo 'escuelas'. Sí al momento de hacer la llamada por POST o GET se encuentra la variable json 
+	* la información es presentada en este formato.
+	* \param $param establecida false
+	*/
 	public function get_escuelas($params = false){
-		/* Lee la información de la tabla escuelas aplicando los filtros especificados en la variable $params guarda los datos leidos en el atributo 'escuelas'. sí al momento de hacer la llamada por POST o GET se encuentra la variable json la información es presentada en este formato.
-		*/
+		
 		$q = new escuela();
 		$q->search_clause .= ' 1 ';
 		
@@ -199,9 +234,17 @@ class main extends controler{
 			echo json_encode($response);
 		}
 	}
+
+	/**
+	* Funcion Publica get_escuelas_new.
+	* Realiza una petición al servidor de solr para obtener información de las escuelas para una búsqueda por nombre avanzada, 
+	* guarda la información obtenida en el atributo 'escuelas' además del numero de resultados obtenidos en el atributo 'num_results'.
+	* \param $params establecida "false"
+	* \param $page establecida "false"
+	* \param $sort establecida "false"
+	*/
 	public function get_escuelas_new($params = false,$page = false,$sort = false){
-		/* Realiza una petición al servidor de solr para obtener información de las escuelas para una búsqueda por nombre avanzada, guarda la información obtenida en el atributo 'escuelas' además del numero de resultados obtenidos en el atributo 'num_results'.
-		*/
+		
 		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';
 		$q = isset($params->term) && $params->term ? "nombre:".str_replace(' ','~ ',$params->term).'~' : '*:*';
 		if($params){
@@ -220,36 +263,61 @@ class main extends controler{
 		$this->num_results = $response->response->numFound;
 	}
 
+	/**
+	* Funcion Publica load_niveles. 
+	*Lee la información de la tabla niveles solo para primaria, secundaria y bachillerato guarda los datos en el atributo 'niveles'.
+	*/
 	public function load_niveles(){
-		/* Lee la información de la tabla niveles solo para primaria, secundaria y bachillerato guarda los datos en el atributo 'niveles'.
-		*/
+		
 		$q = new nivel();
 		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';
 		$this->niveles = $q->read('id,nombre');
 	}
+
+	/**
+	* Funcion Publica load_entidades.
+	* Lee la información de la tabla entidades aplicando opcionalmente el orden con el que se guardaran los datos en el atributo 'entidades'.
+	*/
 	public function load_entidades($order_by = false){
-		/* Lee la información de la tabla entidades aplicando opcionalmente el orden con el que se guardaran los datos en el atributo 'entidades'.
-		*/
+		
 		$q = new entidad();
 		$q->search_clause = '1';
 		if($order_by) $q->order_by = $order_by;
 		$this->entidades = $q->read('id,nombre,cct_count,promedio_general,rank');
 	}
+
+	/**
+	* Funcioin Protegida capitalize.
+	* Regresa el valor del parámetro $string con la primera letra en mayúsculas.
+	* \param $string a capitalizar
+	*/
 	protected function capitalize($string){
-		/* Regresa el valor del parámetro $string con la primera letra en mayúsculas.
-		*/
+		
 		return $this->mb_ucwords(mb_strtolower($string,'UTF-8'));
 		return $string;
 	}
+
+	/**
+	* Funcion privada mb_ucwords.
+	* Regresa el valor del parámetro $str con todas las primeras letras de cada palabra en mayúscula
+	* \param $str a transformar
+	*/
 	private function mb_ucwords($str){
-		/* Regresa el valor del parámetro $str con todas las primeras letras de cada palabra en mayúscula
-		*/
+		
 	    $str = mb_convert_case($str, MB_CASE_TITLE, "UTF-8"); 
 	    return ($str); 
-	} 
+	}
+
+	/**
+	* Funcion Privada distance
+	* Regresa la distancia aproximada entre la latitud 1 ($lat1),longitud 1 ($long1) y latitud 2 ($lat2),longitud 2 ($long2) 
+	* \param $lat1 Latitud 1
+	* \param $long1 Longitud 1
+	* \param $lat2 Latitud 2
+	* \param $long2 Longitud 2
+	*/
 	private function distance($lat1,$long1,$lat2,$long2){
-		/* Regresa la distancia aproximada entre la latitud 1 ($lat1),longitud 1 ($long1) y latitud 2 ($lat2),longitud 2 ($long2) 
-		*/
+		
 	        $lat1 = deg2rad($lat1);
 	        $long1 = deg2rad($long1);
 	        $lat2 = deg2rad($lat2);
@@ -264,8 +332,14 @@ class main extends controler{
 	        $distance = $radiusOfEarth * $c;
 	        return $distance;
     }
+
+    /**
+    * Funcion Protegida get_location.
+    * Obtiene la localización basada en la IP del usuario usando http://freegeoip.net/ además el atributo de configuración
+    * search_location deberá tener valor evaluado como True
+    */
     protected function get_location(){
-    	/* Obtiene la localización basada en la IP del usuario usando http://freegeoip.net/ además el atributo de configuración search_location deberá tener valor evaluado como True*/
+    	
 
 	/*
 	for test
@@ -299,9 +373,13 @@ class main extends controler{
 	}
 
     }
-    protected function load_compara_cookie(){
-    	/* Lee la cookie 'escuelas' la cual si tiene algún valor la guarda este en el atributo 'compara_cookie' si no pone un valor de false al mismo.
+
+    /**
+    * Funcion Protegida load_compara_cookie.
+    * Lee la cookie 'escuelas' la cual si tiene algún valor la guarda este en el atributo 'compara_cookie' si no pone un valor de false al mismo.
 	*/
+    protected function load_compara_cookie(){
+    	
     	$this->compara_cookie = false;
     	if($this->cookie('escuelas')){
     		$this->compara_cookie = explode('-',$this->cookie('escuelas'));
@@ -309,10 +387,14 @@ class main extends controler{
     	}
     }
     
+    /**
+    * Funcion Protegida cct_count_entidad.
+    * Lee de la tabla entidades cuantas escuelas hay del mismo nivel tanto nacional como por entidad y las guarda en los atributos
+    * 'nacional_cct_count' y 'entidad_cct_count' respectivamente.
+	*/
     protected function cct_count_entidad(){
     	if(isset($this->escuelas)){
-		/* Lee de la tabla entidades cuantas escuelas hay del mismo nivel tanto nacional como por entidad y las guarda en los atributos 'nacional_cct_count' y 'entidad_cct_count' respectivamente.
-		*/
+		
 		foreach($this->escuelas as $escuela){
 			$id_entidad = isset($escuela->entidad->id)?$escuela->entidad->id:$escuela->entidad;
 			$entidad = new entidad($id_entidad);
@@ -326,9 +408,14 @@ class main extends controler{
 	}
     }
 
+    /**
+    * Funcion Protegida load_estado_petitions
+    * Obtiene las peticiones que se encuentran en http://www.change.org/ del usuario mejora_tu_escuela y regresa un arreglo con
+    * las peticiones que contengan en el titulo el valor del parámetro $estado.
+    * \param $estado string
+	*/
     protected function load_estado_petitions($estado){
-    		/* Obtiene las peticiones que se encuentran en http://www.change.org/ del usuario mejora_tu_escuela y regresa un arreglo con las peticiones que contengan en el titulo el valor del parámetro $estado.
-		*/
+    	
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -345,9 +432,14 @@ class main extends controler{
 		return $petition_data;	
     }
 
+    /**
+    * Funcion Protegida set_info_user_search
+    * Guarda en la tabla user_search un campo con los valores ingresados al momento de realizar una búsqueda donde
+    * el parámetro $escuelas_num es la cantidad de resultados que devolvió esa búsqueda.
+    * \param $escuelas_num es la cantidad de resultados devueltos
+	*/
     protected function set_info_user_search($escuelas_num){
-    		/* Guarda en la tabla user_search un campo con los valores ingresados al momento de realizar una búsqueda donde el parámetro $escuelas_num es la cantidad de resultados que devolvió esa búsqueda
-		*/
+    		
 		$params= array();
 		if($this->get('search')){
 		    $params[] = $this->get('term')?$this->get('term'):"";
@@ -377,17 +469,25 @@ class main extends controler{
 		}	
     }
 
+    /**
+    * Funcion Protegida shorten_url.
+    * Regresa la url generada por http://ow.ly/url/shorten-url.
+    * \param $url string 
+	*/
     protected function shorten_url($url){
-    		/* Regresa la url generada por http://ow.ly/url/shorten-url 
-		*/
+    		
 		$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
 		$shortUrl = $hootSuite->shorten($url);
 		return $shortUrl['results']['shortUrl'];
     
     }
+
+    /**
+    * Funcion Publica get_captcha.
+    * Regresa un captcha usando el api http://www.google.com/recaptcha  
+	*/
     public function get_captcha(){
-    		/* Regresa un captcha usando el api http://www.google.com/recaptcha  
-		*/
+    		
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		return $captcha->form();
     }
