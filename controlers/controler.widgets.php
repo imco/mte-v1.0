@@ -1,18 +1,34 @@
 <?php
+
+/**
+* Clase widgets Extiende main.
+* Controlador: host/widget
+* Se encarga de mostrar elementos que pueden ser embebidos en otras paginas
+*/
 class widgets extends main{
-	/* Controlador: host/widget/*
-	   Se encarga de mostrar elementos que pueden ser embebidos en otras paginas.
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas
 	*/
 	public function index(){
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->page_title = 'Mejoratuescuela.org widget';	
 		$this->include_template('index','widgets');
 	}	
+
+	/**
+	* Funcion Publica reforma.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas
+	*/
 	public function reforma(){
-		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->page_title = 'Mejoratuescuela.org widget';
 		$this->include_template('reforma','widgets');
 	}
+
+	/**
+	* Funcion Publica generate.
+	* Genera y imprime la url para acceder al widget que se encuentra en el 'index'
+	*/
 	public function generate(){
 		/* Genera y imprime la url para acceder al widget que se encuentra en el 'index'.*/
 		$widget->title = 'Ayuda a transformar tu colegio';

@@ -1,5 +1,14 @@
 <?php
+
+/**
+* Clase import Extiende main.
+*/
 class import extends main{
+
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
+	*/
 	public function index(){
 		set_time_limit(10000000);
 		//$this->import_teachers();
@@ -22,6 +31,10 @@ class import extends main{
 		$this->complete_extentions();
 
 	}
+
+	/*
+	* Funcion Privada complete_extentions.
+	*/
 	private function complete_extentions(){
 		$q = new escuela();
 		$q->search_clause = "control = '0'";
@@ -45,6 +58,10 @@ class import extends main{
 		}
 		var_dump($e,$ne);
 	}
+
+	/*
+	* Funcion Privada import_percents_manual.
+	*/
 	private function import_percents_manual(){
 		$sql = 'SELECT cct, SUM(  alumnos_en_nivel0_espaniol ) , SUM(  alumnos_en_nivel0_matematicas ) , SUM(  alumnos_que_contestaron_total ) 
 		FROM  enlaces 
@@ -62,6 +79,10 @@ class import extends main{
 		}
 		echo "<br/>$i records updated";
 	}
+
+	/*
+	* Funcion Privada import_percents.
+	*/
 	private function import_percents(){
 		$handles = scandir($this->config->document_root.'/files/2013stats/');
 		var_dump($handles);
@@ -93,6 +114,9 @@ class import extends main{
 		}
 	}
 
+	/*
+	* Funcion Privada import_teachers.
+	*/
 	private function import_teachers(){
 			$id = $this->get('id');
 			$maestro = new maestro();
@@ -120,6 +144,10 @@ class import extends main{
 			}
 	}
 	
+	/*
+	* Funcion Publica average_enlaces.
+	* \param $nivel
+	*/
 	public function average_enlaces($nivel = false){
 		$nivel = $this->get('id');
 		$this->start_measure_time();
@@ -169,6 +197,11 @@ class import extends main{
 		$this->stop_measure_time();
 		echo $i.' records updated';
 	}
+
+	/*
+	* Funcion Privada count_enlaces.
+	* \param $nivel
+	*/
 	private function count_enlaces($nivel){
 		$this->start_measure_time();
 		$sql = "SELECT cct,nombre FROM escuelas WHERE nivel = '$nivel'";//" OR nivel = '13' or nivel = '22' or nivel = '21'";
@@ -185,6 +218,10 @@ class import extends main{
 		}
 		var_dump($totals);
 	}
+
+	/*
+	* Funcion Privada get_latitudes.
+	*/
 	private function get_latitudes(){
 		$q = new localidad();
 		$q->search_clause = "1";
@@ -199,9 +236,11 @@ class import extends main{
 
 			}
 		}	
-
-
 	}
+
+	/*
+	* Funcion Privada update_schools.
+	*/
 	private function update_schools(){
 		header('Content-Type: text/html;charset=ISO-8859-1');
 		$handle = $this->open_file('escuelas.csv');
@@ -228,6 +267,10 @@ class import extends main{
 			}
 		}
 	}
+
+	/*
+	* Funcion Privada check_nl.
+	*/
 	private function check_nl(){ 
 		$handle = $this->open_file('escuelas.csv');
 		if ($handle){
@@ -243,6 +286,10 @@ class import extends main{
 			echo $i;
 		}
 	}
+
+	/*
+	* Funcion Privada import_schools.
+	*/
 	private function import_schools(){ 
 		$handle = $this->open_file('escuelas.csv');
 		if ($handle){
@@ -289,6 +336,11 @@ class import extends main{
 			'open fail';
 		}
 	}
+
+	/*
+	* Funcion Privada character.
+	* \param $s
+	*/
 	private function character($s){
 		$len = strlen($s);
 		$s2 = array();
@@ -329,6 +381,10 @@ class import extends main{
 		$info->e = $e;
 		return $info;
 	}
+
+	/*
+	* Funcion Privada update_locales.
+	*/
 	private function update_locales(){
 		$handle = $this->open_file('escuelas.csv');
 		$localidad =  new localidad();
@@ -381,6 +437,10 @@ class import extends main{
 			'open fail';
 		}
 	}
+
+	/*
+	* Funcion Privada import_locales.
+	*/
 	private function import_locales(){
 		$handle = $this->open_file('escuelas.txt');
 		$localidad =  new localidad();
@@ -422,6 +482,10 @@ class import extends main{
 		}
 
 	}
+
+	/*
+	* Funcion Privada update_counties.
+	*/
 	private function update_counties(){
 		$handle = $this->open_file('escuelas.csv');
 		$county =  new municipio();
@@ -465,6 +529,10 @@ class import extends main{
 			'open fail';
 		}
 	}
+
+	/*
+	* Funcion Privada import_counties.
+	*/
 	private function import_counties(){
 		$handle = $this->open_file('escuelas.csv');
 		$county =  new county();
@@ -502,7 +570,9 @@ class import extends main{
 
 	}
 
-	
+	/*
+	* Funcion Privada import_states.
+	*/
 	private function import_states(){
 		$handle = $this->open_file('escuelas.txt');
 		$state =  new state();
@@ -533,6 +603,10 @@ class import extends main{
 		}
 
 	}
+
+	/*
+	* Funcion Privada import_generic.
+	*/
 	private function import_generic($object,$id_field,$name_field){
 		$handle = $this->open_file('escuelas.txt');
 		$object =  new $object();
@@ -572,14 +646,24 @@ class import extends main{
 
 	}
 	
+	/*
+	* Funcion Privada open_file.
+	*/
 	private function open_file($file){
 		return fopen($_SERVER['DOCUMENT_ROOT']."/files/$file", "r");
 	}
+
+	/*
+	* Funcion Privada clean_row.
+	*/
 	private function clean_row($row){
 		foreach($row as $key => $cell) $row[$key] = $cell == 'NO ESPECIFICADO' ? '' : $cell;
 		return $row;
 	}
 	
+	/*
+	* Funcion Privada loop_tables.
+	*/
 	private function loop_tables(){
 		$file_names = Array("turnos");
 		$arrlength = count($file_names);
@@ -596,6 +680,10 @@ class import extends main{
 			mysql_query($sql);
 		}
 	}
+
+	/*
+	* Funcion Privada import_colonias.
+	*/
 	private function import_colonias(){
 		$handle = $this->open_file('escuelas.txt');
 		$colonia = new colonia();
@@ -643,6 +731,10 @@ class import extends main{
 			}
 
 	}
+
+	/*
+	* Funcion Privada import_no_confiables.
+	*/
 	private function import_no_confiables(){
 		$handle = $this->open_file('escuelasNoConfiables.csv');
 		if($handle){
@@ -670,6 +762,10 @@ class import extends main{
 			echo $i.'<br />';
 		}
 	}
+
+	/*
+	* Funcion Privada update_pruebas_totales_enlace.
+	*/
 	private function update_pruebas_totales_enlace(){
 		//secundarias y preparatorias
 		$enlace = new enlace();

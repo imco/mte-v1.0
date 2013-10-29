@@ -1,7 +1,12 @@
 <?php
+/**
+* Clase escuelas Extiende main
+* Controlador: /escuelas/*
+* Contiene todo lo usado en los perfiles de las escuelas.
+*/
 class escuelas extends main{
-	/* Controlador: /escuelas/*
-	   Contiene todo lo usado en los perfiles de las escuelas.
+	/**
+	* Funcion Publica index.
 	*/
 	public function index(){
 		if($this->escuela_info()){			
@@ -49,9 +54,13 @@ class escuelas extends main{
 			header('HTTP/1.0 404 Not Found');
 		}
 	}
+
+	/**
+	* Funcion Publica escuela_info.
+	* Lee la información de la escuela con CCT en la url: host/escuelas/index/CCT, sí la información de esta escuela esta 
+	* en la base de datos el atributo 'escuela' contendrá los datos de esta y un booleano verdadero es devuelto en caso contrario se devuelve un falso.
+	*/
 	public function escuela_info(){
-		/* Lee la información de la escuela con CCT en la url: host/escuelas/index/CCT, sí la información de esta escuela esta en la base de datos el atributo 'escuela' contendrá los datos de esta y un booleano verdadero es devuelto en caso contrario se devuelve un falso.
-		*/
 		$this->escuela = new escuela($this->get('id'));
 		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
@@ -83,9 +92,12 @@ class escuelas extends main{
 			return false;
 		}
 	}
+
+	/**
+	* Funcion Publica calificar.
+	* Obtienen la calificación brindada por el usuario y se guarda en la tabla calificaciones
+	*/
 	public function calificar(){
-		/* Obtienen la calificación brindada por el usuario y se guarda en la tabla calificaciones
-		*/
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		if($captcha->check_answer($this->config->http_address,
 					  $this->post('recaptcha_challenge_field'),
@@ -115,8 +127,12 @@ class escuelas extends main{
 		//}
 
 	}
+
+	/**
+	* Funcion Publica like_calificacion.
+	* Obtienen metadatos del usuario que se almacenan en la tabla calificación_like e incrementa en uno el campo 'like' de la calificación elegida
+	*/
 	public function like_calificacion(){
-		/* Obtienen metadatos del usuario que se almacenan en la tabla calificación_like e incrementa en uno el campo 'like' de la calificación elegida */
 		$calif = new calificacion($this->get('id'));
 		$calif->read('id,cct=>cct,likes=>id,likes=>ip');
 		$calif->update('likes',array(count($calif->likes)+1));
@@ -128,8 +144,12 @@ class escuelas extends main{
 		));
 		header('location: /escuelas/index/'.$calif->cct->cct.'#calificaciones');
 	}
+
+	/**
+	* Funcion Publica reportar.
+	* Obtienen el reporte brindado por el usuario y se guarda en la tabla reportes_ciudadanos
+	*/
 	public function reportar(){
-		/*Obtienen el reporte brindado por el usuario y se guarda en la tabla reportes_ciudadanos */
 		$denuncia = strip_tags($this->post('denuncia'));
 		$reporte_ciudadano = new reporte_ciudadano();
 		$reporte_ciudadano->create('nombre_input,email_input,denuncia,ocupacion,categoria,publicar,cct,user_agent',array(
@@ -145,8 +165,12 @@ class escuelas extends main{
 		$location = $reporte_ciudadano->id ? "/escuelas/index/".$this->post('cct')."#reportes_ciudadanos" : "/escuelas/index/".$this->post('cct')."/e=ce#reportes_ciudadanos"; 
 		header("location: $location");
 	}
+
+	/**
+	* Funcion Publica like_reportar.
+	* Obtienen la calificación brindada por el usuario y se guarda en la tabla reportes_ciudadanos
+	*/
 	public function like_reportar(){
-		/*Obtienen la calificación brindada por el usuario y se guarda en la tabla reportes_ciudadanos */
 		$reporte = new reporte_ciudadano($this->get('id'));
 		$reporte->read('id,cct=>cct,likes=>id,likes=>ip');
 		$reporte->update('likes',array(count($reporte->likes)+1));
@@ -159,8 +183,14 @@ class escuelas extends main{
 		header('location: /escuelas/index/'.$reporte->cct->cct.'#reportes_ciudadanos');
 	}
 
+	/**
+	* Funcion Publica str_limit.
+	* Recibe como parametros: $str una cadena de caracteres, $limit el tamaño máximo de cada palabra contenida en la cadena 
+	* $str. una cadena con el espacio aplicado cada $limit es regresada
+	* \param $str string
+	* \param $limit integer
+	*/
 	public function str_limit($str,$limit){
-		/* recibe como parametros: $str una cadena de caracteres, $limit el tamaño máximo de cada palabra contenida en la cadena $str. una cadena con el espacio aplicado cada $limit es regresada */
 		$length = strlen($str)/$limit;
 		$newStr = "";
 		$temp = 0;
@@ -170,8 +200,12 @@ class escuelas extends main{
 		}
 		return $newStr;
 	}
+
+	/**
+	* Funcion Publica get_metada.
+	* Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador
+	*/
 	public function get_metadata(){
-		/* Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador */
 		if(isset($this->escuela->rank_nacional)){
 			$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
 			if($this->escuela->rank_entidad<=10){
@@ -194,8 +228,6 @@ class escuelas extends main{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-		
 	}
-
 }
 ?>
