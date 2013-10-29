@@ -1,4 +1,13 @@
 <?php
+
+/**
+* Clase stats Exrtiende main.
+* Controlador: host/stats
+* Se encarga de actualizar los resultados de:
+* Promedio general, por estado y a nivel nacional.
+* Rank por estado.
+* Numero de escuelas a nivel estatal y nacional.
+*/
 class stats extends main{
 	/* Controlador: host/stats/*
 	   Se encarga de actualizar los resultados de:
@@ -10,6 +19,11 @@ class stats extends main{
 	public function index(){
 		//$this->histogram(12);
 	}
+
+	/**
+	* Funcion Publica rank_states.
+	* Actualiza los datos del rank para cada entidad
+	*/
 	public function rank_states(){
 		/* Actualiza los datos del rank para cada entidad. */
 		$q = new entidad();
@@ -22,8 +36,11 @@ class stats extends main{
 			$entidad->debug = true;
 			$entidad->update('rank',array($i++));
 		}
-
 	}
+
+	/*
+	* Funcion Publica histogram.
+	*/
 	public function histogram(){
 		set_time_limit(100000);
 		$nivel = $this->get('id') ? $this->get('id') : 12;
@@ -41,6 +58,11 @@ class stats extends main{
 		}
 		$this->include_template('index','stats');
 	}
+
+	/**
+	* Funcion Publica entidad_promedios.
+	* Actualiza los datos del promedio a nivel estatal para cada estado estado
+	*/
 	public function entidad_promedios(){
 		/* Actualiza los datos del promedio a nivel estatal para cada estado estado. */
 		$calificaciones = array('matematicas','espaniol','general');
@@ -61,6 +83,10 @@ class stats extends main{
 		}
 	}
 
+	/**
+	* Funcion Publica nacional_promedios.
+	* Actualiza los datos del promedio a nivel nacional para cada entidad
+	*/
 	public function nacional_promedios(){
 		/* Actualiza los datos del promedio a nivel nacional para cada entidad. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
@@ -83,6 +109,10 @@ class stats extends main{
 		}
 	}
 
+	/**
+	* Funcion Publica entidad_totales.
+	* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel estatal
+	*/
 	public function entidad_totales(){
 		/* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel estatal. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
@@ -119,6 +149,10 @@ class stats extends main{
 		}
 	}
 
+	/**
+	* Funcion Publica nacional_totales.
+	* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel nacional
+	*/
 	public function nacional_totales(){
 		/* Actualiza los datos del numero de escuelas pertenecientes a cada uno de los niveles (primaria, secundaria y bachillerato) a nivel nacional. */
 		$niveles = array(12 => 'primaria', 13 => 'secundaria', 22 => 'bachillerato');
@@ -133,8 +167,6 @@ class stats extends main{
 				
 			}
 		}
-
-	
 	}
 }
 ?>

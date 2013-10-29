@@ -1,8 +1,15 @@
 <?php
+/**
+* Clase api Exitende main
+* Controlador: host/api
+* Brinda la interfaz de programación de aplicaciones.
+*/
 class api extends main{
 
-	/* Controlador: host/api/*
-	   Brinda la interfaz de programación de aplicaciones.
+	/**
+	* Funcion Publica escuelas.
+	* Obtiene y presenta información relevante de cien escuelas ya se en formato csv o json dependiendo 
+	* del valor de la variable 'formato' en los datos procedentes ya sea de POST o GET.
 	*/
 	public function escuelas(){
 		/* Obtiene y presenta información relevante de cien escuelas ya se en formato csv o json dependiendo del valor de la variable 'formato' en los datos procedentes ya sea de POST o GET. */
@@ -16,6 +23,11 @@ class api extends main{
 			echo json_encode($this->escuelas_digest->escuelas);
 		}
 	}
+
+	/**
+	* Funcion Publica municipios.
+	* Obtiene y presenta información relevante de los municipios en formato json
+	*/
 	public function municipios(){
 		/* Obtiene y presenta información relevante de los municipios en formato json */
 		$this->load_municipios();
@@ -29,6 +41,11 @@ class api extends main{
 		}
 		echo json_encode($digest);
 	}
+
+	/**
+	* Funcion Publica entidades.
+	* Obtiene y presenta información relevante de los estados en formato json
+	*/
 	public function entidades(){
 		/* Obtiene y presenta información relevante de los estados en formato json */
 		$this->load_entidades();
@@ -42,6 +59,11 @@ class api extends main{
 		}
 		echo json_encode($digest);
 	}
+
+	/**
+	* Funcion Privada get_csv.
+	* A partir de un arreglo asociativo presenta la información de este en formato csv
+	*/
 	private function get_csv(array &$array){		
 		/* A partir de un arreglo asociativo presenta la información de este en formato csv*/
 		if (count($array) == 0) {
@@ -56,10 +78,13 @@ class api extends main{
 		fclose($df);
 		return ob_get_clean();
 	}
+
+	/** 
+	* Funcion Privada format_csv.
+	* Lee la información de las escuelas que se encuentran en el atributo de tipo arreglo del mismo nombre y crea un atributo 'escuelas_csv' de tipo arreglo que contiene un arreglo asociativo por cada escuela, donde la llave de este es el nombre del dato y es asociado a su valor.
+	*/
 	private function format_csv(){
 		$this->escuelas_csv = array();
-
-		/* Lee la información de las escuelas que se encuentran en el atributo de tipo arreglo del mismo nombre y crea un atributo 'escuelas_csv' de tipo arreglo que contiene un arreglo asociativo por cada escuela, donde la llave de este es el nombre del dato y es asociado a su valor. */
 		$this->escuelas_csv = array();
 		foreach($this->escuelas as $escuela){
 			$this->escuelas_csv[] = array(

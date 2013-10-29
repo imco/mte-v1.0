@@ -1,10 +1,20 @@
 <?php
+/**
+* Clase comments Extiende main
+* Controlador: host/comments
+*/
 class comments extends main{
+	/**
+	* Funcion Publica index
+	*/
 	public function index(){
 		#$this->search('/test/i');
 		$this->search('/(http|https|ftp|www)/i');
 	}
 
+	/**
+	* Funcion Publica search.
+	*/
 	public function search($patron){
 		$calificacion = new calificacion();
 		$calificacion->search_clause .= ' 1 ';
@@ -20,8 +30,7 @@ class comments extends main{
 				echo "id: ".$ca->id." CCT: ".$ca->cct->cct."<br />",
 				$ca->comentario." <br /><br />";
 				$total++;
-			}
-				
+			}	
 		}
 		echo "Total: {$total}";
 	}
