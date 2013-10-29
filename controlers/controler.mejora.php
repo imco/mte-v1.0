@@ -1,6 +1,13 @@
 <?php
+
+/**
+* Clase mejora Extiende main.
+* Controlador: host/mejora
+*/
 class mejora extends main{
-	/* Controlador: host/mejora/*
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
@@ -11,6 +18,5 @@ class mejora extends main{
 		$this->meta_description = "Tú puedes ayudar a tus hijos a hacer sus tareas y formar hábitos de lectura. En Mejora tu escuela tenemos tips para papás y niños que les ayudarán a aprender mejor.";
 		$this->include_theme('index','index');
 	}
-
 }
 ?>
