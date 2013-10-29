@@ -104,6 +104,7 @@ class main extends controler{
 				$response[$key]->id = $municipio->id;
 				$response[$key]->nombre = $this->capitalize($municipio->nombre).", ".$this->capitalize($municipio->entidad->nombre);
 			}
+			if($this->request('json')) echo json_encode($response);
 		}
 		
 	}
