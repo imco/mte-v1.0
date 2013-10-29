@@ -26,7 +26,7 @@ class localidad extends table{
 class enlace extends table{
 	function info(){
 		$this->table_name = 'enlaces';
-		$this->objects['escuelas'] = 'cct';
+		$this->objects['escuelas'] = 'id_cct';
 	}
 
 }
