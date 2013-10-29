@@ -1,9 +1,16 @@
 <?php
+
+/**
+* Clase quienes_somos Extiende main.
+* Controlador: host/quienes_somos
+*/
 class quienes_somos extends main{
-	/* Controlador: host/quienes_somos/*
+	
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
-		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->title_header = '¿Quiénes somos?';
 		$this->header_folder = 'compara';
 		$this->breadcrumb = array('#'=>'¿Quiénes somos?');

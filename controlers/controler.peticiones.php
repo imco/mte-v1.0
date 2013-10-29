@@ -1,9 +1,16 @@
 <?php
+
+/**
+* Clase peticiones Extiende main.
+* Controlador: host/peticiones
+*/
 class peticiones extends main{
-	/* Controlador: host/peticiones/*
+	
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
-		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->read_peticion();
 		$this->breadcrumb = array('#'=>'Peticiones');
 		$this->header_folder = 'compara';
@@ -11,8 +18,12 @@ class peticiones extends main{
 		$this->subtitle_header = 'En esta sección encontrarás peticiones de ciudadanos y de la sociedad civil <br /> para mejorar la educación en México. Entre más personas firmemos, <br /> más fuerza tendrán. ¡Ayúdanos firmando y compartiéndolas con <br />tus familiares y amigos!'; 
 		$this->include_theme('index','index');
 	}
+
+	/**
+	* Funcion Privada read_peticion.
+	* Guarda en el atributo 'petition_url' la información de las peticiones procedentes de http://www.change.org/
+	*/
 	private function read_peticion(){
-		/* Guarda en el atributo 'petition_url' la información de las peticiones procedentes de http://www.change.org/  */
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$this->petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -21,8 +32,12 @@ class peticiones extends main{
 		$this->petition_info[] = $change->regresa_info_peticion($this->petition_url);
 
 	}
+
+	/**
+	* Funcion Publica firmar.
+	* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org
+	*/
 	public function firmar(){
-		/* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org */
 		$petition_url = $this->post('petition_url');
 		$petition_auth_keys = array();
 		$petition_auth_keys[] = 'uno';
