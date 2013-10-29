@@ -1,8 +1,12 @@
 <?php
+
+/**
+* Clase resultados_nacionales Extiende main.
+* Controlador: /resultados_nacionales
+* Muestra los resultados de las pruebas enlace clasificados por estados
+*/
 class resultados_nacionales extends main{
-	/* Controlador: /resultados_nacionales/*
-	   Muestra los resultados de las pruebas enlace clasificados por estados.
-	*/
+	
 	public function index(){		
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->load_entidades('rank ASC');	
@@ -12,8 +16,12 @@ class resultados_nacionales extends main{
 		$this->subtitle_header = 'Revisa los resultados educativos de tu estado y cómo se comparan con el<br />promedio nacional.  En el perfil de tu estado también podrás <br />encontrar tablas de las mejores escuelas primarias, <br />secundarias y bachilleratos.';
 		$this->include_theme('index','index');
 	}
+
+	/**
+	* Funcion Publica entidad.
+	* Lee de la tabla entidades los campos para mostrar la información de este en la vista
+	*/
 	public function entidad(){
-		/* Lee de la tabla entidades los campos para mostrar la información de este en la vista. */
 		$this->draw_charts = false;
 		if($this->get('id')){
 			$this->load_entidades();
@@ -33,8 +41,11 @@ class resultados_nacionales extends main{
 		}
 	}
 
+	/**
+	* Funcion Privada load_escuelas.
+	* Guarda en el atributo 'mejores_escuelas' los resultados de las 5 mejores escuelas pertenecientes al estado que se esta revisando
+	*/
 	private function load_escuelas(){
-		/* Guarda en el atributo 'mejores_escuelas' los resultados de las 5 mejores escuelas pertenecientes al estado que se esta revisando. */
 		$niveles = array(12,13,22);
 		$this->mejores_escuelas = array();
 		for($i=0;$i<count($niveles);$i++){
@@ -49,6 +60,9 @@ class resultados_nacionales extends main{
 		}
 	}
 
+	/*
+	* Funcion Privada initialize_histograms.
+	*/
 	private function initialize_histograms(){
 		//primarias
 		if($this->entidad->distribucion_primarias == ''){
@@ -69,6 +83,10 @@ class resultados_nacionales extends main{
 			$this->entidad->distribucion_bachilleratos = $data;
 		}
 	}
+
+	/*
+	* Funcion Privada histogram.
+	*/
 	private function histogram($entidad,$nivel){
 		set_time_limit(100000);
 		$sql = "SELECT cct,nombre,promedio_general FROM escuelas WHERE nivel = '$nivel' AND entidad = '$entidad' AND promedio_general IS NOT NULL";//" OR nivel = '13' or nivel = '22' or nivel = '21'";

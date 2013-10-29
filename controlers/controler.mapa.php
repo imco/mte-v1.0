@@ -1,6 +1,14 @@
 <?php
+
+/**
+* Clase mapa extiende main.
+* Controlador: host/mapa
+*/
 class mapa extends main{
-	/* Controlador: host/mapa/*
+
+	/**
+	* Funcion Publica index.
+	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
 		/* Se encarga de mostrar la vista adecuada al usuario. */
@@ -14,9 +22,5 @@ class mapa extends main{
 		$this->draw_map = true;
 		$this->include_theme('index','index');
 	}
-	
-	
-   
-
 }
 ?>
