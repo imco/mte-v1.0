@@ -1,8 +1,18 @@
 <?php
+
+/*
+* Clase busqueda Extiende main.
+*/
 class busqueda extends main{
+
+
 	public function index(){
 		
 	}
+
+	/*
+	* Funcion Publica rank_entidades.
+	*/
 	public function rank_entidades(){
 		$escuela = new escuela();
 		$entidades = range(1,32);
@@ -14,6 +24,9 @@ class busqueda extends main{
 		}
 	}
 
+	/*
+	* Funcion Publica rank_municipios.
+	*/
 	public function rank_municipios(){
 		$escuela = new escuela();
 		$q = new municipio();
