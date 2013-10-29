@@ -21,6 +21,11 @@ class git_config extends default_config{
 		$this->db_name = '***REMOVED***';
 		$this->db_user = '***REMOVED***';
 		$this->db_pass = '***REMOVED***';
+
+		$this->db_host = '***REMOVED***';
+		$this->db_name = 'cte_optimizada';
+		$this->db_user = 'root';
+		$this->db_pass = '***REMOVED***';
 		
 		//MXNPHP
 		$this->dev_mode = true;
