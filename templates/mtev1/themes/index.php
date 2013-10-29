@@ -40,6 +40,7 @@
 			//$js_scripts[] = 'infobox_packed.js';
 			//$js_scripts[] = 'map.js';
 		}
+		//var_dump($js_scripts);
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");
 		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte");
 		$cssmin->tag('css');
@@ -63,6 +64,7 @@
 		</div>
 		<div id='content'><?php $this->include_template($this->template,$this->location);?></div>
 	</div></div></div>	
+	que pedo
 	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
 	<?php $jsmin->tag('js'); ?>
  </body>
