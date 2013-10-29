@@ -55,6 +55,8 @@ class escuelas extends main{
 		$this->escuela = new escuela($this->get('id'));
 		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
+		$this->escuela->key = 'cct';
+		$this->escuela->fields['cct'] = $this->get('id');
 		$this->escuela->read("
 			cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,pct_reprobados,grados,
 			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
@@ -66,6 +68,7 @@ class escuelas extends main{
 			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
 			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 		");
+		var_dump($this->escuela->nivel->nombre);
 		if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
