@@ -17,10 +17,10 @@ class escuela extends memcached_table{
 		$this->objects['status'] = 'status';
 
 		$this->has_many['enlaces'] = 'enlace';
-		$this->has_many_keys['enlaces'] = 'id_cct';
+		$this->has_many_keys['enlaces'] = 'cct';
 
 		$this->has_many['calificaciones'] = 'calificacion';
-		$this->has_many_keys['calificaciones'] = 'id_cct';
+		$this->has_many_keys['calificaciones'] = 'cct';
 
 		$this->has_many['reportes_ciudadanos'] = 'reporte_ciudadano';
 		$this->has_many_keys['reportes_ciudadanos'] = 'id_cct';
