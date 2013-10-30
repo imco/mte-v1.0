@@ -89,7 +89,7 @@ class colonia extends table{
 class calificacion extends table{
 	function info(){
 		$this->table_name = 'calificaciones';
-		$this->objects['cct'] = 'escuela';
+		#$this->objects['cct'] = 'escuela';
 
 		$this->has_many['likes'] = 'calificacion_like';
 		$this->has_many_keys['likes'] = 'calificacion';
