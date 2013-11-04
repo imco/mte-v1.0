@@ -83,6 +83,8 @@ class califica_tu_escuela extends main{
 	*/
 	public function escuela_info(){
 		$this->escuela = new escuela($this->get('id'));
+		$this->escuela->key = 'cct';
+		$this->escuela->fields['cct'] = $this->get('id');
 		$this->escuela->read("cct,nombre,nivel=>nombre,turno=>nombre,entidad=>nombre");
 		if(isset($this->escuela->cct)){
 			return true;
