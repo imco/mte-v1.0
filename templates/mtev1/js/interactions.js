@@ -14,11 +14,13 @@ $(document).ready(function(){
 	  itemSelector: '.white-box.column',
 	  gutter: 16
 	});
-
-	$('.mejora.container').masonry({
-	  itemSelector: '.mejorar',
-	  gutter: 16
+	$('.mejora.container').imagesLoaded( function() {
+	    $('.mejora.container').masonry({
+		  itemSelector: '.mejorar',
+		  gutter: 16
+		});
 	});
+	
 
 	$('.comments.container').masonry({
 	  itemSelector: '.comment',
