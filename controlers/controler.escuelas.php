@@ -66,18 +66,21 @@ class escuelas extends main{
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $this->get('id');
-		$this->escuela->read("
-			id,cct,nombre,colonia,domicilio,paginaweb,entrecalle,ycalle,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,rank_municipio,poco_confiables,total_evaluados,pct_reprobados,grados,
-			entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
-			codigopostal,telefono,telextension,fax,faxextension,correoelectronico,
-			turno=>nombre,latitud,longitud,
-			nivel=>nombre,nivel=>id,
-			control=>id,control=>nombre,
-			enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-			calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
-			reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
-		");
+		$this->escuela->read("cct");
 		if(isset($this->escuela->cct)){
+			$this->escuela->read("
+				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,grados,
+				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
+				telefono,correoelectronico,
+				turno=>nombre,latitud,longitud,
+				nivel=>nombre,nivel=>id,
+				control=>id,control=>nombre,
+				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
+				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
+				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
+			");
+
+		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
@@ -134,7 +137,7 @@ class escuelas extends main{
 	*/
 	public function like_calificacion(){
 		$calif = new calificacion($this->get('id'));
-		$calif->read('id,cct=>cct,likes=>id,likes=>ip');
+		$calif->read('id,cct,likes=>id,likes=>ip');
 		$calif->update('likes',array(count($calif->likes)+1));
 		$like = new calificacion_like();
 		$like->create('calificacion,ip,user_agent',array(
@@ -142,7 +145,7 @@ class escuelas extends main{
 			$_SERVER['REMOTE_ADDR'],
 			$_SERVER['HTTP_USER_AGENT']
 		));
-		header('location: /escuelas/index/'.$calif->cct->cct.'#calificaciones');
+		header('location: /escuelas/index/'.$calif->cct.'#calificaciones');
 	}
 
 	/**
