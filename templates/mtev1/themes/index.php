@@ -24,6 +24,7 @@
 			'school-charts.js',
 			'masonry.pkgd.min.js',
 			'infobox_packed.js',
+			'imagesloaded.pkgd.min.js'
 			'map.js'
 		);
 		if($this->location == 'escuelas'){
