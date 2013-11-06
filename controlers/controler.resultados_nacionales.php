@@ -8,7 +8,7 @@
 class resultados_nacionales extends main{
 	public function index(){		
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
-		$this->load_entidades('rank ASC');	
+		//$this->load_entidades('rank ASC');	
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
 		$this->title_header = 'Resultados por estado';
