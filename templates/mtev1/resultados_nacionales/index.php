@@ -6,7 +6,9 @@
 		</a>
 		<select class='custom-select' name='estado' >
 			<option value=''>Busca tu estado</option>
-			<?php foreach($this->entidades as $entidad){ 
+			<?php
+			$this->load_entidades('nombre');
+			foreach($this->entidades as $entidad){ 
 				echo "<option value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
 			}
 			?>
@@ -19,6 +21,7 @@
 		<h1 class='full-blue'>Resultados Nacionales Por Estado</h1>
 		<?php
 		$rank = 1;
+		$this->load_entidades('rank ASC');
 		foreach($this->entidades as $entidad){
 			echo "<a href='/resultados-nacionales/entidad/{$entidad->id}' class='state-box'>";
 			$this->print_img_tag('entidades/'.$entidad->id.'.jpg');
