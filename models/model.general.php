@@ -1,5 +1,5 @@
 <?php
-class entidad extends table{
+class entidad extends memcached_table{
 	function info(){
 		$this->table_name = "entidades";
 		$this->has_many['municipios'] = 'municipio';
