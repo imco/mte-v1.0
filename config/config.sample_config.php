@@ -4,7 +4,7 @@ class sample_config extends default_config{
 		parent::__construct();
 		//Site
 		$this->http_address = 'http://comparatuescuela/';
-		$this->mxnphp_dir = "/var/www/mxnphp/";
+		$this->mxnphp_dir = "/var/www/mxnphp";
 
 		$this->blog_address = 'http://blog.mejoratuescuela.org/';
 		
