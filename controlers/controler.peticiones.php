@@ -30,6 +30,8 @@ class peticiones extends main{
 		//escuela cuautitla
 		$this->petition_url = 'http://www.change.org/peticiones/autoridades-educativas-del-gobierno-del-estado-de-m%C3%A9xico-exigimos-saber-como-se-gastan-nuestras-cuotas-en-la-escuela-%C3%A1ngel-maria-garibay-kintana';
 		$this->petition_info[] = $change->regresa_info_peticion($this->petition_url);
+		$this->petition_url = 'https://www.change.org/es-LA/peticiones/autoridades-educativas-del-gobierno-del-estado-de-campeche-no-nos-abandonen-los-necesitamos';
+		$this->petition_info[] = $change->regresa_info_peticion($this->petition_url);
 
 	}
 
