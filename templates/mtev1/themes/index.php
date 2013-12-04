@@ -49,11 +49,17 @@
 		if(isset($this->meta_description)) echo "<meta name='description' content='{$this->meta_description}' />";
 	?>
 	<title><?=$this->page_title;?></title>
-	<link rel="canonical" href="<?=$this->config->http_address.
-					(isset($_GET['controler'])?$_GET['controler']:'').
-					(isset($_GET['action'])?"/".$_GET['action']:'').
-					(isset($_GET['id'])?"/".$_GET['id']:'')
-					?>" />
+
+	<meta property='og:image:type' content='image/png'>
+	<meta property='og:image' content='http://www.mejoratuescuela.org/templates/mtev1/img/home/logo.png' />
+	<meta property='og:description' content='MejoraTuEscuela.org es una plataforma que busca promover la participación ciudadana para transformar la educación en México' />
+	
+<?php
+$canonical = $this->config->http_address.(isset($_GET['controler'])?$_GET['controler']:'').(isset($_GET['action'])?"/".$_GET['action']:'').(isset($_GET['id'])?"/".$_GET['id']:'');					
+?>
+	<meta property='og:title' content='Mejora tu escuela'>
+	<meta property='og:url' content='<?=$canonical?>'>
+	<link rel="canonical" href="<?=$canonical?>" />
  </head>
  <body>
  	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
@@ -67,6 +73,10 @@
 	</div></div></div>	
 	que pedo
 	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
-	<?php $jsmin->tag('js'); ?>
+
+	<?php 
+	$jsmin->tag('js'); 
+	if(isset($this->config->tynt) && $this->config->tynt) $this->include_template('tynt','global');
+	?>
  </body>
  </html>
