@@ -38,7 +38,7 @@
 				<td class='rank'><span>".$rank_entidad."</span>
 					<span>de ".number_format($escuela->entidad_cct_count,0)."</span>
 				</td>
-				<td class='semaforo sem{$escuela->semaforo}'><span></span>
+				<td class='semaforo sem{$escuela->semaforo}'><span class='sprit2'></span>
 					<div class='icon'><span class='icon-popup'>
 						<p class='infor I'>i</p>
 						<p class='title_semaforo'>

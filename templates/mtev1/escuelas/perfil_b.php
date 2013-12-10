@@ -20,7 +20,7 @@
 				</p>
 
 				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					Dirección
 					<span class='title'>
 						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
@@ -40,14 +40,14 @@
 				<p class='contacto'>CONTACTO</p>
 				<p class='tel'>
 					Teléfonos
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					<span itemprop="telephone" class='title'>
 						<?=$this->escuela->telefono?>
 					</span>
 				<div class='clear'></div>
 				</p>
 				<p class='email'>
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					Mail
 					<span itemprop="email" class='title'>
 						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
@@ -69,22 +69,22 @@
 				<li></li>
 
 				<li><a href='#'  class='infor'>
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
 					Más información
 				</a></li>
 				<li><a href='#' class='reportes'>
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
 					Presupuestos asignados
 				</a></li>
 				<li><a href='#' class='result'>
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
 					Resultados educativos
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
-					<span class='icon'></span>
+					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
 					Comentarios con calificación
 				</a></li>
@@ -260,7 +260,8 @@ EOD;
 	<div class='column right'>
 		<div class='rank'>
 			<div class='posicion'>
-				<?php $this->print_img_tag('home/posicion.png');?>
+				<?php //$this->print_img_tag('home/posicion.png');?>
+				<span class="icon sprit2"></span>
 				<p>Posición estatal</p>
 				<h2>
 					<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
@@ -272,28 +273,28 @@ EOD;
 			<h2>Semáforo educativo</h2>
 			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 				<p>Excelente</p>
-				<span class='icon'></span>
+				<span class='icon sprit2'></span>
 				<div class='clear'></div>
 			</div>
 			<div class='level bien<?= $on=='Bien'?' on':''?>'>
 				<p>Bien</p>
-				<span class='icon'></span>
+				<span class='icon sprit2'></span>
 				<div class='clear'></div>
 			</div>
 			<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
 				<p>De panzazo</p>
-				<span class='icon'></span>
+				<span class='icon sprit2'></span>
 				<div class='clear'></div>
 			</div>
 			<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
 				<p>Reprobado</p>
-				<span class='icon'></span>
+				<span class='icon sprit2'></span>
 				<div class='clear'></div>
 			</div>
 			<?php
 				if($this->escuela->semaforo >= 4){
 					$semaforos = array('Escuela que no tomó prueba ENLACE','Escuela no Confiable','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
-					echo "<div class='sem-overlay'><div class='icon icon{$this->escuela->semaforo}'></div><div class='clear'></div>
+					echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
 					<p>".
 					$semaforos[$this->escuela->semaforo-4]."</p></div>";
 				}
@@ -320,7 +321,8 @@ EOD;
 				</p>
 			</div>
 			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
-				<?php $this->print_img_tag('home/califica.png');?>
+				<?php //$this->print_img_tag('home/califica.png');?>
+				<span class="icon sprit2"></span>
 				<p>Califica tu escuela</p>
 				
 			</a>
