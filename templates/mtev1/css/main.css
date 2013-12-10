@@ -353,15 +353,16 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar.resultados table.general td.turno{font-size:14px;}
 #content .comparar .general td{font-size:15px;}
 #content .perfil + form + a + .resultados table .turno{display:none;}
+#content .sprit2{background-image:url(../img/perfil/pngs.png);}
 #content .resultados table td.semaforo span{display:block;width:34px;height:34px;margin:0 auto;}
-#content .resultados table td.semaforo.sem0 span{background-image:url(../img/perfil/reprobado.png);}
-#content .resultados table td.semaforo.sem1 span{background-image:url(../img/perfil/depanzazo.png);}
-#content .resultados table td.semaforo.sem2 span{background-image:url(../img/perfil/bien.png);}
-#content .resultados table td.semaforo.sem3 span{background-image:url(../img/perfil/excelente.png);}
-#content .resultados table td.semaforo.sem4 span{background-image:url(../img/perfil/negro_s.png);width:23px;height:20px;}
-#content .resultados table td.semaforo.sem5 span{background-image:url(../img/perfil/rojo_s.png);;width:23px;height:20px;}
-#content .resultados table td.semaforo.sem6 span{background:url(../img/perfil/gris_s.png) center no-repeat;}
-#content .resultados table td.semaforo.sem7 span{background:url(../img/perfil/azul.png) center no-repeat;}
+#content .resultados table td.semaforo.sem0 span.sprit2{background-position:-4px 93px;}
+#content .resultados table td.semaforo.sem1 span.sprit2{background-position:-3px 880px;}
+#content .resultados table td.semaforo.sem2 span.sprit2{background-position:-4px 53px;}
+#content .resultados table td.semaforo.sem3 span.sprit2{background-position:-2px -164px;}
+#content .resultados table td.semaforo.sem4 span.sprit2{background-position:-26px 0;width:23px;height:20px;background-size:26px;}
+#content .resultados table td.semaforo.sem5 span.sprit2{;width:23px;height:20px;background-position:0 770px;background-size:26px;}
+#content .resultados table td.semaforo.sem6 span.sprit2{background-position:-30px -48px;}
+#content .resultados table td.semaforo.sem7 span.sprit2{background:url(../img/perfil/azul.png) center no-repeat;}
 #content .resultados table td.semaforo.sem5 .icon-popup .title_semaforo{font-size:14px;}
 #content .resultados table td.semaforo.sem6 .icon-popup .title_semaforo{font-size:13px;padding-top:0!important;margin-top:7px;}
 #content .resultados table td.semaforo.sem7 .icon-popup{left:48px;width:149px;height:130px;background-size:163px;top:-86px;padding-left:29px;}
@@ -800,10 +801,10 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
 #content .perfil.B .info_B .tel{line-height:25px;margin-left:2px;}
 #content .perfil.B .info_B .address{margin-top:5px;line-height:21px;}
-#content .perfil.B .info_B .address .icon{background-image:url(../img/perfil/direccion.png);background-repeat:no-repeat;background-size:15px;height:19px;width:20px;}
+#content .perfil.B .info_B .address .icon{background-position:0 -259px;background-repeat:no-repeat;height:19px;width:20px;background-size:41px;}
 #content .perfil.B .info_B .tel .icon{background-image:url(../img/perfil/telefono.png);background-size:12px;}
 #content .perfil.B .info_B .email{margin-top:6px;line-height:12px;}
-#content .perfil.B .info_B .email .icon{background-image:url(../img/perfil/correo.png);height:24px;margin-right:4px;background-size:21px;}
+#content .perfil.B .info_B .email .icon{background-position:-32px -390px;height:24px;}
 #content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
 #content .perfil.B .info_B .column.right{width:35%;}
 #content .perfil.B #mapa{margin:7px 0;width:100%;height:354px;}
@@ -812,6 +813,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tab{width:645px;}
 #content .perfil.B .rank{background-color:#888;}
 #content .perfil.B .rank .posicion{width:167px;margin:0 auto;text-align:center;padding:15px 0 9px 0;min-height:109px;}
+#content .perfil.B .rank .posicion .icon.sprit2{background-position:-3px 545px;display:block;width:40px;height:38px;margin:0 auto;}
 #content .perfil.B .rank .posicion p{font-size:22px;color:white;line-height:16px;padding-top:11px;}
 #content .perfil.B .rank .posicion p + p{line-height:16px;}
 #content .perfil.B .rank .posicion h2{color:white;font-size:30px;line-height:40px;margin-top:5px;}
@@ -842,15 +844,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .semaforo .level.reprobado.on p:after{border-left-color:#E86F7D;}
 
 #content .perfil.B .semaforo .icon{float:right;background-repeat:no-repeat;width:37px;height:37px;margin:8px 10px 1px 0;}
-#content .perfil.B .semaforo .reprobado .icon{background-image:url(../img/perfil/reprobado.png);}
-#content .perfil.B .semaforo .panzazo .icon{background-image:url(../img/perfil/depanzazo.png);}
-#content .perfil.B .semaforo .bien .icon{background-image:url(../img/perfil/bien.png);}
-#content .perfil.B .semaforo .excelente .icon{background-image:url(../img/perfil/excelente.png);}
+#content .perfil.B .semaforo .reprobado .icon{background-position:-3px -995px;}
+#content .perfil.B .semaforo .panzazo .icon{background-position:-3px -206px;}
+#content .perfil.B .semaforo .bien .icon{background-position:-3px -1034px;}
+#content .perfil.B .semaforo .excelente .icon{background-position:-3px -164px;}
 
 #content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
-#content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-image:url(../img/perfil/rojo_s.png);margin:0 auto;float:none;margin-bottom:5px;}
-#content .perfil.B .semaforo .sem-overlay .icon.icon6{background-image:url(../img/perfil/gris_s.png);}
-#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-image:url(../img/perfil/negro_s.png);}
+#content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-position:-38px -304px;margin:0 auto;float:none;margin-bottom:5px;}
+#content .perfil.B .semaforo .sem-overlay .icon.icon6{background-position:-36px -56px;}
+#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-position:-3px -56px;}
 #content .perfil.B .semaforo .sem-overlay .icon.icon7{background-image:url(../img/perfil/azul.png);}
 
 
@@ -861,7 +863,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .califica .title.petitions ul li a{color:#DCDCDC;}
 #content .perfil.B .califica .title.petitions ul li{margin-bottom:11px;border-bottom:1px solid white;line-height:normal;}
 #content .perfil.B .califica .title.petitions ul li:last-child{border:none;}
-#content .perfil.B .califica .title img{height:46px;width:40px;margin-top:4px;}
+#content .perfil.B .califica .title span.sprit2{height:45px;width:34px;margin:0 auto 13px;display:block;background-position:-33px -234px;}
 #content .perfil.B .califica .title p{font-size:18px;line-height:normal;}
 #content .perfil.B .califica .title p + p{line-height:29px;}
 #content .perfil.B .califica .rater{width:174px;padding-top:6px;}
@@ -884,15 +886,15 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tabs li.on:after{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;bottom:-6px;}
 #content .perfil.B .tabs li a{color:#b1b1b1;font-weight:bold;width:100%;height:87px;padding:0;margin:17px auto;text-align:center;line-height:16px;}
 #content .perfil.B .tabs .icon{display:block;width:98px;height:43px;background-repeat:no-repeat;background-position:center 1px;width:100%}
-#content .perfil.B .tabs .comentarios .icon{background-image:url(../img/perfil/contarios_calif.png);background-position:66px -43px;}
-#content .perfil.B .tabs li.on .comentarios .icon{background-position:66px 0;}
+#content .perfil.B .tabs .comentarios .icon{background-position:63px -291px; width:100px;}
+#content .perfil.B .tabs li.on .comentarios .icon{background-position:63px -248px;}
 #content .perfil.B .tabs .reportes{width:60%;}
-#content .perfil.B .tabs .reportes .icon{background-image:url(../img/perfil/presupuestos.png);height:47px;margin-top:-6px;background-position:24px -45px;}
-#content .perfil.B .tabs li.on .reportes .icon{background-position:24px 2px;}
-#content .perfil.B .tabs .infor .icon{background-image:url(../img/perfil/info.png);background-position:62px -44px;}
-#content .perfil.B .tabs li.on .infor .icon{background-position:62px 0;}
-#content .perfil.B .tabs .result .icon{background-image:url(../img/perfil/resultados.png);background-position:67px -42px;}
-#content .perfil.B .tabs li.on .result .icon{background-position:67px 1px;}
+#content .perfil.B .tabs .reportes .icon{height:47px;margin-top:-6px;background-position:19px -763px;}
+#content .perfil.B .tabs li.on .reportes .icon{background-position:19px -716px;}
+#content .perfil.B .tabs li .infor .icon{background-position:58px -670px;}
+#content .perfil.B .tabs li.on .infor .icon{background-position:58px -626px;}
+#content .perfil.B .tabs .result .icon{background-position:63px -860px;}
+#content .perfil.B .tabs li.on .result .icon{background-position:63px -817px;}
 #content .perfil.B .tabs li a img{display:block;margin:0 auto;width:38px;height:50px;margin-top:2px;}
 #content .perfil.B .mas-info .left{width:42%;}
 #content .perfil.B .mas-info .right{width:51%;}
@@ -1037,7 +1039,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .map-wrap .lateral .tel .icon{margin-right:-5px;}
 #content .perfil.B .map-wrap .lateral .email{margin-top:4px;}
 #content .perfil.B .map-wrap .lateral .email .title{margin-top:9px;}
-#content .perfil.B .map-wrap .lateral .email .icon{margin-right:-4px;}
+#content .perfil.B .map-wrap .lateral .email .icon{margin-right:2px;}
 #content .perfil.B .map-wrap .lateral .director{margin-top:8px;}
 #content .perfil.B .map-wrap .lateral .director .title{margin-top:6px;}
 #content .perfil.B .map-wrap .lateral .director .icon{margin-right:-4px;}

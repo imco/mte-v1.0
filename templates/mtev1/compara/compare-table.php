@@ -40,7 +40,7 @@
 		echo "<td>".$controles[$escuela->control->id]."</td>";
 		echo "<td class='rank'><span>".$espaniol."</span></td>";
 		echo "<td class='rank'><span>".$matematicas."</span></td>";
-		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span>
+		echo "<td class='semaforo sem{$escuela->semaforo}'><span class='sprit2'></span>
 				<div class='icon'><span class='icon-popup'>
 						<p class='infor I'>i</p>
 						<p class='title_semaforo'>
