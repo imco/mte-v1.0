@@ -20,12 +20,12 @@
 			'jquery.customSelect.min.js',
 			'jquery.validate.min.js',
 			'jquery.cookie.js',
-			'interactions.js',
 			'school-charts.js',
 			'masonry.pkgd.min.js',
 			'infobox_packed.js',
 			'imagesloaded.pkgd.min.js',
-			'map.js'
+			'map.js',
+			'interactions.js'
 		);
 		if($this->location == 'escuelas'){
 			//$js_scripts[] = 'school-charts.js'; // si no hay cambios en el js no renderizara 
@@ -71,7 +71,6 @@ $canonical = $this->config->http_address.(isset($_GET['controler'])?$_GET['contr
 		</div>
 		<div id='content'><?php $this->include_template($this->template,$this->location);?></div>
 	</div></div></div>	
-	que pedo
 	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
 
 	<?php 

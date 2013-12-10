@@ -21,7 +21,6 @@ $(document).ready(function(){
 		});
 	});
 	
-
 	$('.comments.container').masonry({
 	  itemSelector: '.comment',
 	  gutter: 16
@@ -58,27 +57,6 @@ $(document).ready(function(){
 		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
 		if($(this).html() == 'Resultados Educativos' ) drawCharts();
 	})
-	/*$('#rank-bar').mousemove(function(e){
-		set_rank_bar(e.pageX - $(this).offset().left);
-	});*/
-	/*$('#rank-bar').click(function(e){
-		var rank = set_rank_bar(e.pageX - $(this).offset().left);
-		$('#rank-value').val(rank);
-	});*/
-	/*$('#rank-bar').mouseout(function(e){
-		var max = $('.container').hasClass('B')?173:336;
-		var x = e.pageX - $(this).offset().left;
-		var y = e.pageY - $(this).offset().top;
-		if((y >= 10 || y < 0) || (x < 0 || x > max)){
-			var val = $('#rank-value').val();
-			if(val != ''){
-				set_rank_bar(Math.round(val/100*max));
-			}else{
-				$('#rank-bar .bar').hide();
-				$('#rank-label').hide();
-			}
-		}
-	});*/
 	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
   		source: function(request,response){
@@ -391,7 +369,7 @@ function twitterIni(){
 			heightX5Tweets += 18;//border padding margin
 		}
 		$('#tweets ul').css('height',heightX5Tweets);
-		console.log(heightX5Tweets);
+		//console.log(heightX5Tweets);
 		$('#tweets ul').jScrollPane();
 	})
 }
