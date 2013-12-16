@@ -15,7 +15,7 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 	$('.mejora.container').imagesLoaded( function() {
-	    $('.mejora.container').masonry({
+	    $('.mejora.container .wrap').masonry({
 		  itemSelector: '.mejorar',
 		  gutter: 16
 		});
