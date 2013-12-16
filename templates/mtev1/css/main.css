@@ -1151,7 +1151,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 
 /*mejora*/
-#content .container.mejora{margin:44px auto;}
+#content .container.mejora{margin:39px auto;}
 #content .mejora .column{width:initial;margin-left:0;}
 #content .mejora .column.center{margin:0 17px 0 19px;}
 #content .mejora .mejorar{background-color:#DEE0DF;width:289px;padding:14px;width:260px;margin-bottom:17px;position:relative;float:left;}
@@ -1251,3 +1251,21 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .blog.container .post .info + .content-post .alignleft{float:left} 
 #content .blog.container .post .info + .content-post .alignright{float:right;}
 #content .blog.container .post .info + .content-post .aligncenter{display:block;margin:0 auto;}
+
+/*new mejora*/
+#content .mejora .column{float:left;width:596px;}
+#content .mejora .column h1.banner{font-size:25px;padding:15px;}
+#content .mejora .column h2.banner{font-size:25px;padding:15px 21px 16px;border-bottom:1px solid white;margin-bottom:0;}
+#content .mejora .column ul{background-color:#9D9D9D;}
+#content .mejora .column li{font-size:16px;line-height:42px;border-bottom:1px solid #CACACA;height:40px;}
+#content .mejora .column li a{color:#FCFCFC;display:block;} 
+#content .mejora .column li:last-child{border:none;}
+#content .mejora .column li .icon{display:block;float:left;width:56px;height:34px;margin:0 1px 0 16px;}
+#content .mejora .column li:hover{background-color:rgba(0,0,0,.5);}
+#content .mejora .column + .column{float:left;width:286px;margin-left:15px;}
+#content .mejora .column .gray-box{margin-top:17px;}
+#content .mejora .column .gray-box p{font-size:17px;padding:4px 11px;line-height:16px;color:#BCBCBC;}
+#content .mejora .column .gray-box p span{display:block;margin-top:5px;color:#F3F3F3;}
+#content .mejora .column form textarea{width:196px;margin:0 auto;display:block;height:55px;background-color:rgba(130,130,130,.9);color:#D7D7D7;}
+#content .mejora .column form input[type='text']{width:196px;margin:0 auto; display:block;margin-top:2px;margin-bottom:3px;background-color:rgba(130,130,130,.9);color:#D7D7D7;}
+#content .mejora .column form input[type='submit']{width:220px;height:33px;background-color:#0AA14A;}
