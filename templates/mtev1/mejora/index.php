@@ -1,8 +1,14 @@
+<?php 
+$infografias = array('entorno-social'=>'Entorno Social',
+		'infraestructura'=>'Infraestructura',
+		'aprendizaje'=>'Mejora tu aprendizaje'
+	);
+?>
 <div class='container mejora'>
 	<div class="column">
-		<h1 class='banner green'>Infografías más recientes</h1>
+		<h1 class='banner green'><?=$this->get('id')?$infografias[$this->get('id')]:'Infografías más recientes' ?></h1>
 		<div class="wrap">
-			<?=file_get_contents($this->config->blog_address."mejora") ?>
+			<?=file_get_contents($this->config->blog_address."mejora".($this->get('id')?'/?mejora='.$this->get('id'):'')) ?>
 
 			<div class="share-bt bl left" style='position:absolute;left:0;bottom:0;'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
@@ -18,9 +24,9 @@
 	<div class="column">
 		<h2 class='banner green'>Mejora tu...</h2>
 		<ul>
-			<li><a href=""><span class="icon"></span>Entorno social</a></li>
-			<li><a href=""><span class="icon"></span>Infraestructura</a></li>
-			<li><a href=""><span class="icon"></span>Mejora tu aprendizaje</a></li>
+			<li><a href="/mejora/index/entorno-social"><span class="icon"></span>Entorno social</a></li>
+			<li><a href="/mejora/index/infraestructura"><span class="icon"></span>Infraestructura</a></li>
+			<li><a href="/mejora/index/aprendizaje"><span class="icon"></span>Mejora tu aprendizaje</a></li>
 
 		</ul>
 
@@ -42,4 +48,3 @@
 
 	<div class='clear'></div>
 </div>
-
