@@ -409,13 +409,13 @@ class main extends controler{
     }
 
     /**
-    * Funcion Protegida load_estado_petitions
+    * Funcion Publica load_estado_petitions
     * Obtiene las peticiones que se encuentran en http://www.change.org/ del usuario mejora_tu_escuela y regresa un arreglo con
     * las peticiones que contengan en el titulo el valor del parámetro $estado.
     * \param $estado string
 	*/
-    protected function load_estado_petitions($estado){
-    	
+    public function load_estado_petitions($estado){
+    		$estado = $this->get('estado_petition')?$this->get('estado_petition'):$estado;
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -429,7 +429,10 @@ class main extends controler{
 			}else
 				$i++;
 		}
-		return $petition_data;	
+		if($this->get('estado_petition'))
+			echo  json_encode($petition_data);
+		else
+			return $petition_data;	
     }
 
     /**
@@ -470,15 +473,19 @@ class main extends controler{
     }
 
     /**
-    * Funcion Protegida shorten_url.
+    * Funcion Publica shorten_url.
     * Regresa la url generada por http://ow.ly/url/shorten-url.
     * \param $url string 
 	*/
-    protected function shorten_url($url){
-    		
+    public function shorten_url($url){
+    		$url = $this->get('url')?$this->get('url'):$url;
 		$hootSuite = new ApiHootSuite($this->config->hootSuite_api_key);
 		$shortUrl = $hootSuite->shorten($url);
-		return $shortUrl['results']['shortUrl'];
+		if($this->get('url')){
+			if(strpos($this->get('url'),$this->config->http_address)!==False)
+				echo  json_encode($shortUrl['results']['shortUrl']);
+		}else
+			return $shortUrl['results']['shortUrl'];
     
     }
 
