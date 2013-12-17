@@ -1,0 +1,25 @@
+<files *.js.gz>
+  AddType "text/javascript" .gz
+  AddEncoding gzip .gz
+</files>
+<files *.css.gz>
+  AddType "text/css" .gz
+  AddEncoding gzip .gz
+</files>
+
+
+php_value magic_quotes_gpc Off
+php_value max_execution_time 200
+php_value max_input_time 200
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteBase /
+#RewriteRule ^califica-tu-escuela/?$ ?controler=compara [QSA,L]
+RewriteRule ^([-_\w]+)/?$ ?controler=$1 [QSA,L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2 [QSA,L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/?$ ?controler=$1&action=$2&id=$3 [L]
+RewriteRule ^([-_\w]+)/([-_\w]+)/([-_\w]+)/e=(\w)+/?$ ?controler=$1&action=$2&id=$3&error=$4 [L]
