@@ -325,26 +325,10 @@ EOD;
 				<span class="icon sprit2"></span>
 				<p>Califica tu escuela</p>
 				
-			</a>
-
-			<?php
-			if($this->petition_data){
-			?>
+			</a>			
 			<div class='title petitions'>
-				<h2>Peticiones </h2>
-				<ul>
-				<?php 
-				foreach($this->petition_data as $petition){
-					$count = $petition['count'];
-					echo "<li><a href=".$this->config->http_address."peticiones/index/$count >"
-						.$petition['title']."
-					</a></li>";
-				
-				}?>
-				</ul>
+
 			</div>
-			<?php } ?>
-			
 		</div>
 	</div>
 	<div class='clear'></div>
