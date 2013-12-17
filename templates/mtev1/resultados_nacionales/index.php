@@ -20,12 +20,16 @@
 	<div class="wrap_resultados">
 		<h1 class='full-blue'>Resultados Nacionales Por Estado</h1>
 		<?php
-		$rank = 1;
+		$rank = 0;
 		$this->load_entidades('rank ASC');
 		foreach($this->entidades as $entidad){
-			echo "<a href='/resultados-nacionales/entidad/{$entidad->id}' class='state-box'>";
-			$this->print_img_tag('entidades/'.$entidad->id.'.jpg');
-			echo "<span class='h2'>".$this->capitalize($entidad->nombre)."</span><span class='hover'>Ver Resultados</span><span class='rank'>".$rank++."º</a>";
+			if($rank){
+				echo "<a href='/resultados-nacionales/entidad/{$entidad->id}' class='state-box'>";
+				$this->print_img_tag('entidades/'.$entidad->id.'.jpg');
+				echo "<span class='h2'>".$this->capitalize($entidad->nombre)."</span><span class='hover'>Ver Resultados</span><span class='rank'>".$rank++."º</a>";
+			}else{
+				$rank++;
+			}
 		}
 		?>
 	</div>
