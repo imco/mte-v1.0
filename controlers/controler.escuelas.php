@@ -89,7 +89,7 @@ class escuelas extends main{
 			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
-			$this->petition_data = $this->load_estado_petitions($this->escuela->entidad->nombre);
+			//$this->petition_data = $this->load_estado_petitions($this->escuela->entidad->nombre);
 			return true;
 		}else{
 			return false;
