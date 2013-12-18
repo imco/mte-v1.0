@@ -26,19 +26,27 @@
 
 			}
 			
-			$urlFb = $this->shorten_url($url."#facebook");
+			/*$urlFb = $this->shorten_url($url."#facebook");
 			$urlTwitter = $this->shorten_url($url."#twitter");
 			$urlMail = $this->shorten_url($url."#mail");
+			*/
+			$urlFb = $url."#facebook";
+			$urlTwitter = $url."#twitter";
+			$urlMail = $url."#mail";
+
 			?>
+			<span class="hidden sharing share-face"><?=$urlFb?></span>
+			<span class="hidden sharing share-twitter"><?=$urlTwitter?></span>
+			<span class="hidden sharing share-mail"><?=str_replace('#','%23',$urlMail)?></span>
 			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<?=$urlFb?>&p[images][0]=<?=$url_logo?>&p[title]=<?=$title?>&p[summary]=<?=$description?>" class='share-face' target='_blank' >
 				  </a>
 
 				<div class="tweet">
-				<a href="http://twitter.com/home?status=<?=$title." ".$urlTwitter," por @mejoratuescuela"?> " target='_blank' >
+				<a class='share-twitter' href="http://twitter.com/home?status=<?=$title." ".$urlTwitter," por @mejoratuescuela"?> " target='_blank' >
 				  <span class="twitter-icon"></span>
 				</a>
 				</div>
-			<a href="mailto:?subject=<?=$title?>&amp;body=<?=$description.": ".$urlMail?>" class='share-face mail'  target='_blank' ></a>
+			<a class='share-mail' href="mailto:?subject=<?=$title?>&amp;body=<?=$description.": ".$urlMail?>" target='_blank' ></a>
 
 		</div>
 	</div>

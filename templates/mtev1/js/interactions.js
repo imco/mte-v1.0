@@ -15,7 +15,7 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 	$('.mejora.container').imagesLoaded( function() {
-	    $('.mejora.container').masonry({
+	    $('.mejora.container .wrap').masonry({
 		  itemSelector: '.mejorar',
 		  gutter: 16
 		});
@@ -292,6 +292,30 @@ $(document).ready(function(){
 	$('form[action="/escuelas/calificar/"] select').change(function(e){
 		$(this).parent().find('.customSelect.custom-select').css('background-color','white');
 	});
+
+	if($('.container').hasClass('perfil')){
+		$.get('/main/load_estado_petitions/',{estado_petition:$('span[itemprop="addressRegion"]').html()},function(data){
+			var template = '<h2>Peticiones</h2><ul>',
+			petition;
+			console.log(data);
+			for(var i in data){
+				petition = data[i];
+				template += '<li><a href="/peticiones/index/'+petition.count+'" >'+petition.title+'"</a></li>';
+			}
+
+			if(data.length){
+				template +='</ul>'
+				$('.petitions').append(template);
+			}
+		},'json');
+	}
+
+	$('.share-bt .social .btns a').each(function(i,val){
+		$.get('/main/shorten_url/',{url:val.href},function(data){
+			val.href = val.href.replace($('span.'+val.className).html(),data);
+			console.log('ya')
+		},'json',val)
+	})
 
 });
 
