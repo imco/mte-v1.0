@@ -1270,3 +1270,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .column form textarea{width:196px;margin:0 auto;display:block;height:55px;background-color:rgba(130,130,130,.9);color:#D7D7D7;}
 #content .mejora .column form input[type='text']{width:196px;margin:0 auto; display:block;margin-top:2px;margin-bottom:3px;background-color:rgba(130,130,130,.9);color:#D7D7D7;}
 #content .mejora .column form input[type='submit']{width:220px;height:33px;background-color:#0AA14A;}
+#content .mejora .column + .column li:nth-child(1) .icon{background:url(../img/mejora/social.png) no-repeat center;}
+#content .mejora .column + .column li:nth-child(2) .icon{background:url(../img/mejora/infraestructura.png) no-repeat center;}
+#content .mejora .column + .column li:nth-child(3) .icon{background:url(../img/mejora/aprendizaje.png) no-repeat center;}
