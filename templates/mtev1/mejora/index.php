@@ -5,6 +5,29 @@ $infografias = array('entorno-social'=>'Entorno Social',
 	);
 ?>
 <div class='container mejora'>
+	<div class="display">
+		<span class="close"></span>
+		<div class="column left">
+			<a class='move' href="#back"><</a>
+			<?php $this->print_img_tag('mejora/1.jpg');?>
+			<a class='move' href="#next">></a>
+		</div>
+		<div class="column right">
+			<div class="header">
+				<span class="icon"></span>
+				<p>3 temas para platicar con el maestro de tus hijos</p>
+				<a class="download" href="">Descargar PDF</a>
+			</div>
+			<div class="wrap_content">
+				<p>¿Para que servira?
+				Conocer las condiciones en las que se imparte la educación basica y especial en el pais.
+				Mejorar la distribucion de lso recursos destinados a la infraestructura y mobiliario de las escuelas
+				</p>
+				<a href="">Leer nota completa</a>
+				
+			</div>
+		</div>
+	</div>
 	<div class="column">
 		<h1 class='banner green'><?=$this->get('id')?$infografias[$this->get('id')]:'Infografías más recientes' ?></h1>
 		<div class="wrap">

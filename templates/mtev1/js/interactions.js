@@ -297,7 +297,6 @@ $(document).ready(function(){
 		$.get('/main/load_estado_petitions/',{estado_petition:$('span[itemprop="addressRegion"]').html()},function(data){
 			var template = '<h2>Peticiones</h2><ul>',
 			petition;
-			console.log(data);
 			for(var i in data){
 				petition = data[i];
 				template += '<li><a href="/peticiones/index/'+petition.count+'" >'+petition.title+'"</a></li>';
@@ -313,10 +312,45 @@ $(document).ready(function(){
 	$('.share-bt .social .btns a').each(function(i,val){
 		$.get('/main/shorten_url/',{url:val.href},function(data){
 			val.href = val.href.replace($('span.'+val.className).html(),data);
-			console.log('ya')
 		},'json',val)
 	})
 
+	//mejora view
+	$('.mejorar').click(function(){
+		input_data_view_mejora(this);
+		$('.display').show('slow');
+		$('body').animate({scrollTop:213},200);
+	});
+
+	$('.display .move').click(function(e){
+		e.preventDefault();
+		var index = $('.mejorar.on'),
+		next;
+		if(this.href.split('#')[1]=='next'){
+			if((next = index.next('.mejorar')).length){
+				console.log(next);
+				input_data_view_mejora(next);
+			}else{
+				input_data_view_mejora($('.mejorar:first-child'));
+			}
+		}else{
+			if((next = index.prev('.mejorar')).length){
+				input_data_view_mejora(next);
+			}else{
+				input_data_view_mejora($('.mejorar').last('.mejorar'));
+			}
+		
+		}
+
+	});
+
+	$('.mejorar h1 a').click(function(e){
+		e.preventDefault();
+	});
+
+	$('.mejorar h1 + a').click(function(e){
+		e.stopPropagation();
+	});
 });
 
 function load_location_options(input,directive,options,name){
@@ -427,4 +461,15 @@ function add_escuelas_cookie(){
 	if(escuelas.length){
 		$.cookie('escuelas',escuelas.join('-'));
 	}
+}
+
+function input_data_view_mejora(mejorar){
+	var index = $('.wrap .mejorar').removeClass('on').index(mejorar),
+	display = $('.display');
+	mejorar = $(mejorar);
+	mejorar.addClass('on');
+	display.find('.header p').html(mejorar.find('h2').html());
+	display.find('.left img')[0].src = mejorar.find('h1 img')[0].src;
+	display.find('.wrap_content p + a')[0].href = mejorar.find('h1 + a')[0].href;
+	
 }
