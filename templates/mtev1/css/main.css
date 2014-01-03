@@ -378,6 +378,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
 #content .resultados .pagination a.on{background-color:#0BA14A;color:white;text-shadow:none;}
 #content .resultados .pagination a.on:hover{padding:6px 9px;border:none;}
+.comparador_select .button-frame,
 #content .button-frame,
 #content .share-bt .button-frame
 {display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
@@ -789,6 +790,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt .social .twitter-share-button #b.btn{height:54px;}
 #content .share-bt .button-frame{width:183px;}
 #content .share-bt .button-frame .bt-share .icon{background-image:url(../img/compartir/compartir.png);}
+.comparador_select .bt-share,
 #content .share-bt .button-frame .bt-share{background-color:#f6921c;text-align:center;border-radius:7px;display:block;margin:6px;font-size:19px;font-weight:bold;box-shadow:0 3px 1px #d78017;height:31px;}
 #content .share-bt.escuelas_index{margin:-16px 0;}
 
@@ -1289,3 +1291,30 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 #content .mejora .display .column .wrap_content{padding:32px;background-color:#4B4B4B;}
 #content .mejora .display .column .wrap_content p{color:#A9A9A9}
 #content .mejora .display .column .wrap_content p + a{margin-top:13px;display:block;font-size:15px;color:#4ABC84;}
+
+/*comparador select*/
+.comparador_select .open_wrap{display:none;}
+/*.comparador_select.on .open_wrap{display:block;}*/
+.comparador_select{position:fixed;top:0;right:0;z-index:5;background-color:#444;width:177px;border-top:5px solid #00ADF3;border-bottom:5px solid #00ADF3;}
+.comparador_select:not(.on){cursor:pointer;}
+.comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 12px 12px 0 12px;border-color:#00ADF3 transparent transparent transparent;bottom:-17px;position:absolute;left:43%;}
+.comparador_select .icon.fs{display:block;margin:14px auto 8px;background:url(../img/select/regla.png) center no-repeat;width:53px;height:14px;}
+.comparador_select p{text-align:center;font-size:14px;margin-top:8px;line-height:normal;color:#00ADF3;}
+.comparador_select p span{color:white;}
+.comparador_select .selected{margin-top:3px;}
+.comparador_select .selected ul li{color:white;}
+.comparador_select div .icon{display:inline-block;border-radius:50%;width:15px;height:15px;border:2px solid #00ADF3;vertical-align:top;margin-top:-3px;margin-right:4px;}
+.comparador_select .visited p{color:#00A644;}
+.comparador_select .visited ul li .icon{border-color:#00A644;}
+.comparador_select .selected .icon{background:url(../img/select/palomita.png) center no-repeat;}
+.comparador_select .selected .uncheck .icon{background:url(../img/select/cruz.png) center no-repeat;}
+.comparador_select ul{padding:10px 0;}
+.comparador_select ul li{font-size:15px;line-height:normal;padding:6px 16px 4px;border-bottom:1px solid #545454;cursor:pointer;}
+.comparador_select .selected .button-frame{width:148px;height:35px;margin:0 auto;display:block;margin-top:7px;}
+.comparador_select .selected .button-frame span.bt-share{font-size:17px;width:137px;height:24px;line-height:normal;}
+.comparador_select .visited{padding:1px 0 0;margin-top:17px;border-top:5px solid #00A644;}
+.comparador_select .visited ul{padding:6px 0;}
+.comparador_select .visited ul li{color:#747474;}
+.comparador_select .visited ul li.tick{color:white;}
+.comparador_select .visited ul li.tick .icon{background:url(../img/select/palomita_green.png) center no-repeat;}
+.comparador_select .visited img{display:block;margin:0 auto;cursor:pointer;}

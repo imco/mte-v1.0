@@ -21,6 +21,7 @@ class main extends controler{
 		$this->breadcrumb = false; 
 		$this->draw_map = false; 
 		$this->draw_charts = false; 
+		$this->get_data_compara_float();
 	}
 
 	/** 
@@ -497,6 +498,31 @@ class main extends controler{
     		
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		return $captcha->form();
+    }
+
+    public function get_data_compara_float(){
+	$this->load_compara_cookie();
+	if($this->compara_cookie){
+		$params->ccts = $this->compara_cookie;
+		$this->get_escuelas($params);
+		//$this->escuelas
+	}
+	$this->school_to_compare = $this->escuelas?$this->escuelas:array();
+	$this->school_view = array();
+	$elimate = array();
+	if(($cookie = $this->cookie('escuelas_vistas'))){
+		//no en ambos;
+		$cookie= explode('-',$cookie);
+		for($i=0;$i<count($cookie);$i++){
+			if(in_array($cookie[$i],$params->ccts)){
+				unset($cookie[$i]);
+			}
+		}
+		$cookie = array_values($cookie);
+		$params->ccts = $cookie;
+		$this->get_escuelas($params);
+		$this->school_view = $this->escuelas;
+	}
     }
 }
 ?>

@@ -187,13 +187,14 @@ $(document).ready(function(){
 	}
 
 	if($('.container').hasClass('perfil')){
+		//este agrega la escuela 'vista'
 		var cct = $('span.CCT').html();
-		var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
+		var escuelas = $.cookie('escuelas_vistas') && $.cookie('escuelas_vistas').split('-') || [];
 		if(escuelas.indexOf(cct)==-1){
 			escuelas.push(cct);
 			escuelas.sort();
-			$.cookie('escuelas',escuelas.join('-'));
-			$('a[href="'+cct+'"]').parent().parent().addClass('on');
+			$.cookie('escuelas_vistas',escuelas.join('-'));
+			//$('a[href="'+cct+'"]').parent().parent().addClass('on');
 		}
 		/*if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
 			$('a[href="'+cct+'"]').trigger('click');	
@@ -350,6 +351,22 @@ $(document).ready(function(){
 
 	$('.mejorar h1 + a').click(function(e){
 		e.stopPropagation();
+	});
+
+	$('.comparador_select').not('.on').click(function(){
+		$(this).toggleClass('on').find('.open_wrap').toggle('slow');
+
+	});
+
+	$('.comparador_select .selected ul li').click(function(e){
+		e.stopPropagation();
+		$(this).toggleClass('uncheck');
+		$.cookie();
+	});
+
+	$('.comparador_select .visited ul li').click(function(e){
+		e.stopPropagation();
+		$(this).toggleClass('tick');
 	});
 });
 
