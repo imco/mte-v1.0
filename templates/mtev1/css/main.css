@@ -1315,6 +1315,6 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 .comparador_select .visited{padding:1px 0 0;margin-top:17px;border-top:5px solid #00A644;}
 .comparador_select .visited ul{padding:6px 0;}
 .comparador_select .visited ul li{color:#747474;}
-.comparador_select .visited ul li.tick{color:white;}
-.comparador_select .visited ul li.tick .icon{background:url(../img/select/palomita_green.png) center no-repeat;}
+.comparador_select .visited ul li.uncheck{color:white;}
+.comparador_select .visited ul li.uncheck .icon{background:url(../img/select/palomita_green.png) center no-repeat;}
 .comparador_select .visited img{display:block;margin:0 auto;cursor:pointer;}
