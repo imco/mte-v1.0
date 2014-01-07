@@ -513,15 +513,18 @@ class main extends controler{
 	if(($cookie = $this->cookie('escuelas_vistas'))){
 		//no en ambos;
 		$cookie= explode('-',$cookie);
-		for($i=0;$i<count($cookie);$i++){
-			if(in_array($cookie[$i],$params->ccts)){
+		for($i=count($cookie)-1;$i>=0;$i--){
+			if(in_array($cookie[$i],$this->compara_cookie)){
 				unset($cookie[$i]);
 			}
 		}
 		$cookie = array_values($cookie);
-		$params->ccts = $cookie;
-		$this->get_escuelas($params);
-		$this->school_view = $this->escuelas;
+		if(count($cookie)){
+			$params->ccts = $cookie;
+			$this->get_escuelas($params);
+			$this->school_view = $this->escuelas?$this->escuelas:array();	
+		}
+
 	}
     }
 }

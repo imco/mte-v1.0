@@ -358,16 +358,21 @@ $(document).ready(function(){
 
 	});
 
-	$('.comparador_select .selected ul li').click(function(e){
+	$('.comparador_select ul li').click(function(e){
+		e.preventDefault();
 		e.stopPropagation();
 		$(this).toggleClass('uncheck');
-		$.cookie();
+		var cct = $(this).find('.hidden').html();
+		if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
+			toggle_escuela(cct);
+		}
 	});
-
+	/*
 	$('.comparador_select .visited ul li').click(function(e){
 		e.stopPropagation();
-		$(this).toggleClass('tick');
+		$(this).toggleClass('uncheck');
 	});
+	*/
 });
 
 function load_location_options(input,directive,options,name){
@@ -396,11 +401,13 @@ function load_location_options(input,directive,options,name){
 function toggle_escuela(cct){
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
-	if((index = escuelas.indexOf(cct)) != -1){
+	if((index = escuelas.indexOf(cct)) !== -1){
 		escuelas.splice(index,1);
+	}else{
+		escuelas.push(cct);
 		escuelas.sort();
-		$.cookie('escuelas',escuelas.join('-'));
 	}
+	$.cookie('escuelas',escuelas.join('-'));
 	//$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-') || '');
 	/*
 	if(typeof($.cookie('escuelas')) == 'undefined'){		

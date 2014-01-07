@@ -10,7 +10,7 @@
 				}?>
 
 			</ul>
-			<a class="button-frame" href="">
+			<a class="button-frame" href="" id="compara-main-button">
 				<span class="bt-share">Comparar</span>
 			</a>
 		</div>
