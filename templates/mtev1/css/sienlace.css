@@ -1,0 +1,179 @@
+/*
+Theme Name: Iyh
+Theme URI: http://www.spaceshiplabs.com
+Description: Custom Theme for Iyh
+Author: spaceshiplabs
+Author URI: http://spaceshiplabs.com/
+Version: 1.0
+Text Domain: Iyh
+*/
+@import url('reset.css');
+@import url('stickyFooter.css');
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+
+html{width:100%;height:100%;}
+body{width:100%;height:100%;padding: 0!important;}
+a{text-decoration:none;}
+a,p,h1,h2,h3,h4,a[href],input,textarea,span{color:black;font-family: 'Bitter', serif;}
+.clear{clear:both}
+.container{position:relative;width:960px;margin:0 auto;font-family: 'Bitter', serif;}
+.hidden{display:none;}
+strong{font-weight: bold;}
+.animate-opacity{
+	-webkit-transition: opacity .2s;
+	-moz-transition: opacity .2s;
+	-o-transition: opacity .2s;
+	-ms-transition: opacity .2s;
+	transition: opacity .2s;
+}
+.animate-BG{
+    -webkit-transition: background .2s;
+    -moz-transition: background .2s;
+    -o-transition: background .2s;
+    -ms-transition: background .2s;
+    transition: background .2s;
+}
+.animate-all{
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    -ms-transition: all .4s;
+    transition: all .4s;
+}
+.animate-height{
+    -webkit-transition: height .4s;
+    -moz-transition: height .4s;
+    -o-transition: height .4s;
+    -ms-transition: height .4s;
+    transition: height .4s;
+}
+/*General designs*/
+
+
+/*Header*/
+#header{}
+#header .container{text-align: center;}
+#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;}
+#header .label:before{content: '';width: 0px;height: 0px;border-style: solid;border-width: 34px 0 0 72px;border-color: transparent transparent transparent white;position: absolute;left: 0;bottom: 0;}
+#header .label:after{content: '';width: 0px;height: 0px;border-style: solid;border-width: 0 0 34px 72px;border-color: transparent transparent white transparent;position: absolute;right: 0;bottom: 0;}
+#header .label a{display: block;color: white;text-decoration: none;font-size: 22px;line-height: 27px;}
+#header .label .icon{background: transparent url(../img/sienlace/ya_somos.png) no-repeat center;height: 45px;}
+#header .logo{padding-top: 40px;display: block;}
+#header .logo img{max-width: 641px;width: 60%;}
+#header .social{position: absolute;right: 0;top:7px;}
+#header .social a{float: left;width: 29px;height: 29px;border-radius: 50%;}
+#header .social a + a{margin-left: 8px;}
+#header .social a.in{background: #212121 url(../img/sienlace/in.png) no-repeat center center;}
+#header .social a.fb{background: #212121 url(../img/sienlace/face.png) no-repeat center center;}
+#header .social a.tw{background: #212121 url(../img/sienlace/tw.png) no-repeat center center;}
+#header .social a.yt{background: #212121 url(../img/sienlace/yt.png) no-repeat center center;}
+#header .social a:hover{background-color: #7D9C00;}
+
+/*Footer*/
+#footer{height: 200px;padding-top: 30px;background: #F1F1F1;}
+#footer h4{text-align: center;position: relative;font-size: 20px;margin-bottom: 15px;}
+#footer h4 a{padding: 0 10px;background: #F1F1F1;z-index: 1;position: relative;}
+#footer h4:before{content: '';position: absolute;width: 100%;height: 1px;z-index: 0;border-top: 1px solid #DADADA;left: 0;top: 10px;}
+#footer .allies{margin-bottom: 20px;}
+#footer .row-fluid .span2-5{width: 19%;margin-left: 1%;background: #CCCCCC;margin-bottom: 10px;text-transform: uppercase;text-align: center;padding: 10px;}
+#footer .bottom{border-top: 1px solid #B3ACA5;}
+#footer .bottom a,
+#footer .bottom p{color: #B3ACA5;font-size: 12px;}
+
+/*Content*/
+#content{background: #F1F1F1;}
+/*Black section*/
+#content .singin{background: #212121;margin-top: 50px;padding-top: 30px;padding-bottom: 10px;margin-bottom: 25px;box-shadow: 0 26px 40px 7px #c1c1c1;}
+#content .singin .span8{margin-top: 10px;}
+#content .singin h4{color: #EBEBEB;font-size: 15px;text-align: justify;font-weight: normal;}
+#content .singin h3{font-size: 19px;line-height: 24px;color: #7C9D00;text-align: justify;}
+#content .singin h2{color: #EBEBEB;}
+#content .singin h2 span{color:#797979;}
+#content .singin form{background: #EBEBEB;padding: 28px;box-sizing: border-box;}
+#content .singin form label{font-weight: bold;line-height: 15px;}
+#content .singin form input[type='text']{width: 100%;box-sizing: border-box;height: 35px;}
+#content .singin form textarea{width: 100%;box-sizing: border-box;height: 75px;}
+#content .singin form .submit{width: 50%;border: 0 none;background: #7D9C00;color: white;box-sizing: border-box;padding: 5px;font-weight: bold;border-radius: 3px;float: right;}
+#content .singin .message{color: white;font-weight: bold;font-size: 19px;text-align: center;}
+#content .singin .message a{color: #7D9C00;}
+#content .singin .whytext{margin-top: 15px;}
+#content .singin .whytext ol{color: #797979;list-style: decimal;list-style-position: inside;margin: 0;font-size: 14px;}
+#content .singin .whytext ol li{padding-bottom: 17px;padding-left: 60px;background: transparent url(../img/sienlace/1.png) no-repeat left top;min-height: 50px;}
+#content .singin .whytext ol li:nth-child(2){background: transparent url(../img/sienlace/2.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(3){background: transparent url(../img/sienlace/3.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(4){background: transparent url(../img/sienlace/4.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(5){background: transparent url(../img/sienlace/5.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(6){background: transparent url(../img/sienlace/6.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(7){background: transparent url(../img/sienlace/7.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(8){background: transparent url(../img/sienlace/8.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(9){background: transparent url(../img/sienlace/9.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(10){background: transparent url(../img/sienlace/10.png) no-repeat left top;}
+#content .singin .whytext ol li a{color: white;}
+#content .singin .whytext ol li.no{display: none;}
+#content .singin .seemore{color: #7D9C00;text-align: center;margin: 0 auto;display: block;}
+#content .singin .whytext.on{position: relative;}
+#content .singin .whytext.on .screen{position: relative;width: 100%;height: 100%;overflow: hidden;}
+#content .singin .whytext.on ol li.no{display: block;}
+
+#content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 40px;}
+#content .singin .span4 h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
+#content .singin .span4 .share{text-align: center;}
+#content .container.center h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 40px;}
+
+#content .container .uploadphoto{background: #212121;padding: 10px 40px 70px 40px;}
+#content .container .uploadphoto h2{text-align: left;font-size: 32px;font-weight: normal;margin: 0;margin-bottom: 20px;}
+#content .container .uploadphoto form .span4{margin-bottom:10px; }
+#content .container .uploadphoto form a.fakefile,
+#content .container .uploadphoto form .submit,
+#content .container .uploadphoto form input[type='text']{background: #8F8F8F;border: 0 none;color: white;box-shadow: none;border-radius: 3px;margin: 0;box-sizing: border-box;width: 100%;padding: 20px;display: block;height: 60px;}
+#content .container .uploadphoto form input[type='file']{display: none;}/*display: none;*/
+#content .container .uploadphoto form .submit{background: #7C9D00;}
+
+/*Placeholder modify*/
+input::-webkit-input-placeholder{color:    white;}
+input:-moz-placeholder{color:    white;}
+input::-moz-placeholder{color:    white;}
+input:-ms-input-placeholder{color:    white;}
+
+@media screen and (min-width:2100px){
+	
+}
+@media screen and (min-width:1600px){
+	
+}
+@media screen and (min-width:1024px){
+
+}
+@media screen and (min-width:480px) and (max-width:768px){
+	
+}
+@media screen and (min-width:280px) and (max-width:1024px) {
+    #header .container{width:95%;}
+}
+/*tablets*/
+@media only screen and (min-width : 480px) and (max-width : 1024px){
+	
+}
+@media screen and (max-width:768px) {
+	
+}
+@media screen and (min-width:480px) and (max-width:550px){
+	
+}
+/*CEL*/
+@media screen and (min-device-width : 300px) and (max-device-width : 767px), (max-width:767px) {
+	.container{width:100%;}
+    #header .logo img{width: 90%;}
+    #header .label{position: relative;}
+    #content .singin .container{padding: 10px;box-sizing: border-box;}
+    #content .singin .seemore{margin-bottom: 30px;padding: 10px;font-size: 20px;}
+    #content .singin form{width: 95%;margin: 0 auto;margin-bottom: 20px;}
+    #footer .row-fluid .span2-5{float: left;width: 32%;}
+}
+@media screen and (max-width:340px) {
+	
+}
+@media screen and (min-device-width : 767px) and (max-device-width : 980px), (max-width:980px) {
+    .container{width:95%;}
+}

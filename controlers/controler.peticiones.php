@@ -73,5 +73,17 @@ class peticiones extends main{
 		$this->include_theme('index','index');
 
 	}
+
+	public function sienlace(){
+		$firma = new firma();
+		$this->firmas = number_format($firma->count());
+		$this->include_template('sienlace','peticiones');
+	}
+	public function sign(){
+		$firma = new firma();
+		$firma->create('nombre,apellido,email,cp,comentario');
+		$count = $firma->count();
+		echo number_format($count);
+	}
 }
 ?>
