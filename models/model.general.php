@@ -129,4 +129,19 @@ class user_search extends table{
 		$this->table_name = 'user_search';
 	}
 }
+class firma extends table{
+	function info(){
+		$this->table_name = "firmas";
+	}
+	public function count(){
+		$sql = "SELECT COUNT(*) FROM firmas WHERE 1";
+		$result = $this->execute_sql($sql);
+		if($result){
+			$row = mysql_fetch_row($result);
+			return $row[0];
+		}else{
+			return false;
+		}
+	}
+}
 ?>
