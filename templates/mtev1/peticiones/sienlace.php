@@ -4,8 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 " />
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
-        $css_scripts = array('bootstrap-fileupload.min.css','main.css');
-        js_scripts = array(
+        $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
+        $js_scripts = array(
             'jquery.js',
             'enlace/jquery-migrate-1.1.1.min.js',
             'enlace/jquery-ui-1.9.2.min.js',
