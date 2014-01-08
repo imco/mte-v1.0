@@ -187,13 +187,14 @@ $(document).ready(function(){
 	}
 
 	if($('.container').hasClass('perfil')){
+		//este agrega la escuela 'vista'
 		var cct = $('span.CCT').html();
-		var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
+		var escuelas = $.cookie('escuelas_vistas') && $.cookie('escuelas_vistas').split('-') || [];
 		if(escuelas.indexOf(cct)==-1){
 			escuelas.push(cct);
 			escuelas.sort();
-			$.cookie('escuelas',escuelas.join('-'));
-			$('a[href="'+cct+'"]').parent().parent().addClass('on');
+			$.cookie('escuelas_vistas',escuelas.join('-'));
+			//$('a[href="'+cct+'"]').parent().parent().addClass('on');
 		}
 		/*if(!($.cookie('escuelas')) || $.cookie('escuelas').split('-').indexOf(cct)==-1){
 			$('a[href="'+cct+'"]').trigger('click');	
@@ -297,7 +298,6 @@ $(document).ready(function(){
 		$.get('/main/load_estado_petitions/',{estado_petition:$('span[itemprop="addressRegion"]').html()},function(data){
 			var template = '<h2>Peticiones</h2><ul>',
 			petition;
-			console.log(data);
 			for(var i in data){
 				petition = data[i];
 				template += '<li><a href="/peticiones/index/'+petition.count+'" >'+petition.title+'"</a></li>';
@@ -313,10 +313,66 @@ $(document).ready(function(){
 	$('.share-bt .social .btns a').each(function(i,val){
 		$.get('/main/shorten_url/',{url:val.href},function(data){
 			val.href = val.href.replace($('span.'+val.className).html(),data);
-			console.log('ya')
 		},'json',val)
 	})
 
+	//mejora view
+	$('.mejorar').click(function(){
+		input_data_view_mejora(this);
+		$('.display').show('slow');
+		$('body').animate({scrollTop:213},200);
+	});
+
+	$('.display .move').click(function(e){
+		e.preventDefault();
+		var index = $('.mejorar.on'),
+		next;
+		if(this.href.split('#')[1]=='next'){
+			if((next = index.next('.mejorar')).length){
+				console.log(next);
+				input_data_view_mejora(next);
+			}else{
+				input_data_view_mejora($('.mejorar:first-child'));
+			}
+		}else{
+			if((next = index.prev('.mejorar')).length){
+				input_data_view_mejora(next);
+			}else{
+				input_data_view_mejora($('.mejorar').last('.mejorar'));
+			}
+		
+		}
+
+	});
+
+	$('.mejorar h1 a').click(function(e){
+		e.preventDefault();
+	});
+
+	$('.mejorar h1 + a').click(function(e){
+		e.stopPropagation();
+	});
+
+	$('.comparador_select').not('.on').click(function(){
+		$(this).toggleClass('on').find('.open_wrap').toggle('slow');
+
+	});
+
+	$('.comparador_select ul li').click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$(this).toggleClass('uncheck');
+		var cct = $(this).find('.hidden').html();
+		if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
+			toggle_escuela(cct);
+		}
+	});
+	/*
+	$('.comparador_select .visited ul li').click(function(e){
+		e.stopPropagation();
+		$(this).toggleClass('uncheck');
+	});
+	*/
 });
 
 function load_location_options(input,directive,options,name){
@@ -345,11 +401,13 @@ function load_location_options(input,directive,options,name){
 function toggle_escuela(cct){
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
-	if((index = escuelas.indexOf(cct)) != -1){
+	if((index = escuelas.indexOf(cct)) !== -1){
 		escuelas.splice(index,1);
+	}else{
+		escuelas.push(cct);
 		escuelas.sort();
-		$.cookie('escuelas',escuelas.join('-'));
 	}
+	$.cookie('escuelas',escuelas.join('-'));
 	//$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-') || '');
 	/*
 	if(typeof($.cookie('escuelas')) == 'undefined'){		
@@ -427,4 +485,15 @@ function add_escuelas_cookie(){
 	if(escuelas.length){
 		$.cookie('escuelas',escuelas.join('-'));
 	}
+}
+
+function input_data_view_mejora(mejorar){
+	var index = $('.wrap .mejorar').removeClass('on').index(mejorar),
+	display = $('.display');
+	mejorar = $(mejorar);
+	mejorar.addClass('on');
+	display.find('.header p').html(mejorar.find('h2').html());
+	display.find('.left img')[0].src = mejorar.find('h1 img')[0].src;
+	display.find('.wrap_content p + a')[0].href = mejorar.find('h1 + a')[0].href;
+	
 }
