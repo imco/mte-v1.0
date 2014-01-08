@@ -75,8 +75,10 @@ strong{font-weight: bold;}
 #footer h4{text-align: center;position: relative;font-size: 20px;margin-bottom: 15px;}
 #footer h4 a{padding: 0 10px;background: #F1F1F1;z-index: 1;position: relative;}
 #footer h4:before{content: '';position: absolute;width: 100%;height: 1px;z-index: 0;border-top: 1px solid #DADADA;left: 0;top: 10px;}
-#footer .allies{margin-bottom: 20px;}
-#footer .row-fluid .span2-5{width: 19%;margin-left: 1%;background: #CCCCCC;margin-bottom: 10px;text-transform: uppercase;text-align: center;padding: 10px;}
+#footer .allies{margin-bottom: 20px;text-align: center;}
+#footer .row-fluid .span2-5{width: 19%;margin-left: 1%;margin-bottom: 10px;text-transform: uppercase;text-align: center;
+	float: none;
+    display: inline-block;}/*padding: 10px;background: #CCCCCC;*/
 #footer .bottom{border-top: 1px solid #B3ACA5;}
 #footer .bottom a,
 #footer .bottom p{color: #B3ACA5;font-size: 12px;}
@@ -85,8 +87,8 @@ strong{font-weight: bold;}
 #content{background: #F1F1F1;}
 /*Black section*/
 #content .singin{background: #212121;margin-top: 50px;padding-top: 30px;padding-bottom: 10px;margin-bottom: 25px;box-shadow: 0 26px 40px 7px #c1c1c1;}
-#content .singin .span8{margin-top: 10px;}
-#content .singin h4{color: #EBEBEB;font-size: 15px;text-align: justify;font-weight: normal;}
+#content .singin .span8{margin:0;margin-top: 10px;}
+#content .singin h4{color: #797979;font-size: 15px;text-align: justify;font-weight: normal;}
 #content .singin h3{font-size: 19px;line-height: 24px;color: #7C9D00;text-align: justify;}
 #content .singin h2{color: #EBEBEB;}
 #content .singin h2 span{color:#797979;}
@@ -95,10 +97,10 @@ strong{font-weight: bold;}
 #content .singin form input[type='text']{width: 100%;box-sizing: border-box;height: 35px;}
 #content .singin form textarea{width: 100%;box-sizing: border-box;height: 75px;}
 #content .singin form .submit{width: 50%;border: 0 none;background: #7D9C00;color: white;box-sizing: border-box;padding: 5px;font-weight: bold;border-radius: 3px;float: right;}
-#content .singin .message{color: white;font-weight: bold;font-size: 19px;text-align: center;}
+#content .singin .message{color: white;font-weight: bold;font-size: 19px;text-align: center;line-height: 29px;}
 #content .singin .message a{color: #7D9C00;}
 #content .singin .whytext{margin-top: 15px;}
-#content .singin .whytext ol{color: #797979;list-style: decimal;list-style-position: inside;margin: 0;font-size: 14px;}
+#content .singin .whytext ol{color: white;list-style: decimal;list-style-position: inside;margin: 0;font-size: 14px;}
 #content .singin .whytext ol li{padding-bottom: 17px;padding-left: 60px;background: transparent url(../img/sienlace/1.png) no-repeat left top;min-height: 50px;}
 #content .singin .whytext ol li:nth-child(2){background: transparent url(../img/sienlace/2.png) no-repeat left top;}
 #content .singin .whytext ol li:nth-child(3){background: transparent url(../img/sienlace/3.png) no-repeat left top;}
@@ -115,10 +117,12 @@ strong{font-weight: bold;}
 #content .singin .whytext.on{position: relative;}
 #content .singin .whytext.on .screen{position: relative;width: 100%;height: 100%;overflow: hidden;}
 #content .singin .whytext.on ol li.no{display: block;}
+#content .singin .share .rstab{float: left;margin-right: 20px;}
 
-#content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 40px;}
+#content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 20px;}
 #content .singin .span4 h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
 #content .singin .span4 .share{text-align: center;}
+#content .container.center h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
 #content .container.center h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 40px;}
 
 #content .container .uploadphoto{background: #212121;padding: 10px 40px 70px 40px;}
