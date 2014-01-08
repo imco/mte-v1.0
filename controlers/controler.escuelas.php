@@ -27,6 +27,7 @@ class escuelas extends main{
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
+			$this->escuelas = array_unique($this->escuelas);
 
 			$this->process_escuelas();
 			$this->cct_count_entidad();
