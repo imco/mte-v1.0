@@ -59,13 +59,15 @@ class peticiones extends main{
 		$parameters['country_code'] = $this->post('pais');
 		$parameters['hidden'] = $hidden;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$petition_auth_key = $change->get_auth_key($petition_url);
+		//$petition_auth_key = $change->get_auth_key($petition_url);
+		$petition_auth_key = '91df846373856cf420575fd332dd6b0420a54dbdfad44dd9ac879d67e677cc84';
 		$this->sign_result = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
 		
-
+		/*
 		$this->header_folder = 'escuelas';
 		$this->read_peticion();
 		$this->include_theme('index','index');
+		*/
 
 	}
 
