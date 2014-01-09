@@ -94,8 +94,9 @@ class ApiChange{
 		    'source_description' => 'API en sitio del IMCO',
 		    'source' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/index/1',
 		    'requester_email' => 'Contacto@mejoratuescuela.org',
-		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys',
-		    'timestamp' => gmdate("Y-m-d\TH:i:s\Z")
+		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys/',
+		    'timestamp' => gmdate("Y-m-d\TH:i:s\Z"),
+		    'endpoint' => $endpoint 
 		);
 
 		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
