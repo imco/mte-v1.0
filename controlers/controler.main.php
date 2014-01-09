@@ -501,6 +501,10 @@ class main extends controler{
     }
 
     public function get_data_compara_float(){
+	$cookie = explode('-',$this->cookie('escuelas_vistas'));
+    	if($this->get('controler') == 'escuelas'){
+		$cookie[] = $this->get('id');
+	}
 	$this->load_compara_cookie();
 	if($this->compara_cookie){
 		$params->ccts = $this->compara_cookie;
@@ -509,10 +513,8 @@ class main extends controler{
 	}
 	$this->school_to_compare = $this->escuelas?$this->escuelas:array();
 	$this->school_view = array();
-	$elimate = array();
-	if(($cookie = $this->cookie('escuelas_vistas'))){
+	if($cookie){
 		//no en ambos;
-		$cookie= explode('-',$cookie);
 		for($i=count($cookie)-1;$i>=0;$i--){
 			if(in_array($cookie[$i],$this->compara_cookie)){
 				unset($cookie[$i]);
