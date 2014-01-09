@@ -42,21 +42,15 @@ class peticiones extends main{
 	public function firmar(){
 		/* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org */
 		$petition_url = $this->post('petition_url');
-		$petition_auth_keys = array();
-		$petition_auth_keys[] = 'uno';
-		$petition_auth_keys[] = 'dos';
-		$petition_auth_keys[] = 'tres';
-		$petition_auth_key = $petition_auth_keys[$this->post('number')-1];
-
 		//$petition_auth_key = '3d123d2998aa55899a372ac09aef99f166e74c854df7ec877497533ee996103b';
 
 		$names = explode(' ',$this->post('nombre'));
 		$name = $names[0];
 		unset($names[0]);
 		$hidden = $this->post('public') ? 'false' : 'true';
-		$last_name = isset($names[1]) ? implode(' ',$names) : '';
+		$last_name = isset($names[1]) ? implode(' ',$names) : $name;
 
-		$parameters['source'] = 'www.mejoratuescuela.org/peticiones';
+		$parameters['source'] = $petition_url;
 		$parameters['email'] = $this->post('email');
 		$parameters['first_name'] = $name;
 		$parameters['last_name'] = $last_name;
@@ -65,9 +59,10 @@ class peticiones extends main{
 		$parameters['country_code'] = $this->post('pais');
 		$parameters['hidden'] = $hidden;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$this->sign_result = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
-		
-
+		$petition_auth_key = $change->get_auth_key($petition_url,$petition_url);
+		//$petition_auth_key = '91df846373856cf420575fd332dd6b0420a54dbdfad44dd9ac879d67e677cc84';
+		$this->sign_result['status'] = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
+		$this->sign_result_number = $this->post('number');
 		$this->header_folder = 'escuelas';
 		$this->read_peticion();
 		$this->include_theme('index','index');
@@ -115,6 +110,19 @@ class peticiones extends main{
 			$extra = "";
 		}
 		header( "location: /peticiones/sienlace" . $extra );
+	}
+
+	public function receive_auth_keys(){
+		$status = $this->post('status');
+		$petition_id = $this->post('petition_id');
+		$source_description = $this->post('source_description');
+		$source = $this->post('source');
+		$source = $this->post('requester_email');
+		$auth_key = $this->post('auth_key');
+		//var_dump($status,$this->config->document_root);
+		$fp = fopen($this->config->document_root."ejemplo.txt",'w');
+		fwrite($fp,$status."\n".$petition_id."\n".$auth_key."\n\n\n"."alog");
+		fclose($fp);
 	}
 }
 ?>
