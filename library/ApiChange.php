@@ -113,7 +113,7 @@ class ApiChange{
 		));
 
 		//$result = curl_exec($curl_session);
-		var_dump('->',curl_exec($curl_session));
+		//var_dump('->',curl_exec($curl_session));
 	
 	}
 
