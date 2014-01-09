@@ -33,29 +33,12 @@ function moveGalCustom(){
 }
 function moveElement( item ){
 	reel = $('.container .gallery .reel');
-	/*reel.animate( { left: '-156px', } , 1500, { complete: function(){
-		reel.append(item);
-		reel.css('left','0');
-		setTimeout(function(){
-			moveElement( $('.container .gallery .reel a').first() );
-		},4000);
-	} } );
-	reel.animate({
-		left: "-156px",
-	  }, {
-		duration: 1500,
-		complete: function() {
-			$item = item.detach();
-			reel.css('left','0');
-			reel.append($item);
-			setTimeout(function(){
-				moveElement( $('.container .gallery .reel a').first() );
-			},2000);
-		}
-	  });*/
 	var left_value = parseInt(reel.css("left"));
-	var time = left_value != 0 ? ( (-156 - left_value) * 4500 ) / ( - 156) : 4500;
-	reel.animate({left:"-156px"},time,'linear',function(){
+	var w = $("#content .container .gallery .reel a").eq(1).find('img').width();
+	//console.log('img: ' + );
+	console.log('width: ' + w);
+	var time = left_value != 0 ? ( (- w - left_value) * 4500 ) / ( - w) : 4500;
+	reel.animate({left:"-"+w+"px"},time,'linear',function(){
 		var first_logo = $("#content .container .gallery .reel a").eq(0).detach();
 		reel.css("left","0px");
 		reel.append(first_logo);

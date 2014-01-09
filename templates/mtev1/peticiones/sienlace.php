@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 " />
+    <meta property="og:description" content="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela" />
+    <meta property="og:title" content="#SiENLACE2014" />
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
         $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
@@ -31,10 +33,10 @@
 					<div class='container'>
                         <div class="label">
                             <a class="icon"></a>
-                            <a class="text">ya somos</a>
+                            <a class="text">Ya somos</a>
                             <a class="number firma-count"><?=$this->firmas?></a>
                         </div>
-						<a class="logo" href="/"><?php $this->print_img_tag('sienlace/logo.jpg');?></a>
+						<a class="logo" href="<?=$this->config->http_address?>/peticiones/sienlace"><?php $this->print_img_tag('sienlace/logo.jpg');?></a>
                         <div class="social">
                             <a href="https://twitter.com/MejoraTuEscuela" class="icon animate-BG tw"></a>
                             <a href="https://www.facebook.com/MejoraTuEscuela" class="icon animate-BG fb"></a>
@@ -43,43 +45,12 @@
 				</div>
 				<div id='content'>
                     <div class="singin">
-						<div class="container row-fluid">
-                            <div class="share">
-                                <div class="rstab fb">
-                                    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=691236920892168";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-                                    <div class="fb-like" data-href="http://www.mejoratuescuela.org/peticiones/sienlace" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-                                </div>
-                                <div class="rstab gplus">
-                                    <div class="g-plusone" data-size="medium"></div>
-                                    <script type="text/javascript">
-                                        window.___gcfg = {lang: 'es-419'};
-
-                                        (function() {
-                                            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                                            po.src = 'https://apis.google.com/js/platform.js';
-                                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                                        })();
-                                    </script>
-                                </div>
-                                <div class="rstab tw">
-                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?=$this->config->http_address?>/peticiones/sienlace" data-hashtags="SíEnlace2014">Tweet</a>
-                                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                </div>
-                            </div>
-                        </div>
                         <div class='container row-fluid'>
                             <div class="span12">
-                                <h4>La evaluación de desempeño es un mecanismo fundamental para mejorar la calidad del sistema educativo mexicano. Como resultado de la Reforma Educativa, el Instituto Nacional para la Evaluación de la Educación (INEE) quedó como institución responsable de llevar a cabo estas evaluaciones.</h4>
+                                <h4>La evaluación de desempeño es un mecanismo fundamental para mejorar la calidad del sistema educativo mexicano.  Como resultado de la Reforma Educativa, el Instituto Nacional para la Evaluación de la Educación (INEE) quedó como institución responsable de llevar a cabo estas evaluaciones.</h4>
                                 <h4>Desde el año 2006, la prueba ENLACE permitía medir el desempeño de más de quince millones de alumnos de primaria, secundaria y bachillerato. Esta prueba era el único termómetro que permitía realizar un diagnóstico nacional de las herramientas educativas que reciben las niñas y niños mexicanos.</h4>
                                 <h4>El INEE anunció en diciembre pasado que sus pruebas de evaluación para educación primaria y secundaria estarán listas hasta el 2015. Como consecuencia, NO SE APLICARÁ LA PRUEBA ENLACE EN 2014 en estos niveles. La pregunta clave para la SEP y el INEE es: ¿por qué no esperar a que la nueva prueba esté lista antes de cancelar ENLACE?</h4>
-                                <h4>Como resultado de la Reforma Educativa, la responsabilidad de llevar a cabo las evaluaciones nacionales de alumnos estará a cargo del INEE. Sin embargo, recientemente el INEE anunció que sus pruebas, para educación primaria y secundaria, no estarán listas hasta el 2015.</h4>
+                                <!--<h4>Como resultado de la Reforma Educativa, la responsabilidad de llevar a cabo las evaluaciones nacionales de alumnos estará a cargo del INEE. Sin embargo, recientemente el INEE anunció que sus pruebas, para educación primaria y secundaria, no estarán listas hasta el 2015.</h4>-->
                                 <h3>La prueba ENLACE es imperfecta, puede y debe mejorarse, pero no podemos perder la única medición que existe hoy sobre el estado de la educación en México.</h3>
                             </div>
 							<div class="span8 nomargin">
@@ -122,14 +93,16 @@
                         <h2> <a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
                         <div class="gallery">
                             <div class="screen">
-                                <div class="reel" style="width:<?php echo count($this->photos)*156*2 ?>px">
+                                <div class="reel" style="width:<?php echo count($this->photos)*156*12 ?>px">
 									<?php
 										if( $this->thephoto ){
 											echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$this->thephoto->filename}' /></a>";
 										}
+										//for( $i=0;$i<10;$i++ ){
 										if( $this->photos ){foreach( $this->photos as $photo ){
 											echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$photo->filename}' /></a>";
 										}}
+										//}
 									?>
                                 </div>
                             </div>
@@ -137,13 +110,22 @@
 						<div class="row-fluid">
                             <div class="share">
                                 <div class="rstab fb">
+                                    <script>(function(d, s, id) {
+                                      var js, fjs = d.getElementsByTagName(s)[0];
+                                      if (d.getElementById(id)) return;
+                                      js = d.createElement(s); js.id = id;
+                                      js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=691236920892168";
+                                      fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="fb-like" data-href="http://www.mejoratuescuela.org/peticiones/sienlace" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
                                 </div>
                                 <div class="rstab gplus">
                                     <div class="g-plusone" data-size="medium"></div>
                                 </div>
                                 <div class="rstab tw">
-                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?=$this->config->http_address?>/peticiones/sienlace" data-hashtags="SíEnlace2014">Tweet</a>
+                                    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?=$this->config->http_address?>/peticiones/sienlace" data-hashtags="SíEnlace2014" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela">Tweet</a>-->
+                                    <a href="https://twitter.com/share?url=http%3A%2F%2Fow.ly%2FspTvS" class="twitter-share-button" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: " data-via="Mejoratuescuela">Tweet</a>
+                                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                                 </div>
                             </div>
                         </div>
@@ -192,14 +174,14 @@
                 <?php for($i=0;$i<0;$i++){ ?>
                     <a href="" class="span2-5">Sponsor Logo</a>
                 <?php } ?>
-				<a class="ally span2-5" href="/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
-                <a class="ally span2-5" href="/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
+				<a class="ally span2-5" href="http://imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
+                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
             </div>
             <div class="bottom">
                 <p>
                     2014. Instituto Mexicano para la Competitividad A.C. <a href="http://mejoratuescuela.org/">www.MejoraTuEscuela.org</a>
-                    <a class="icon fb"></a>
-                    <a class="icon tw"></a>
+                    <a href='/aviso-de-privacidad' class="link">Aviso legal y de privacidad</a>
+                    <a href='/contacto' class="link">Contáctanos</a>
                 </p>
             </div>
 		</div>
