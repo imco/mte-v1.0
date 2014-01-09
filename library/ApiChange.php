@@ -114,7 +114,7 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		$json_response = json_decode($response, true);
+		$json_response = json_decode($result, true);
 		$auth_key = $json_response['auth_key'];
 		var_dump($auth_key);
 	
