@@ -92,10 +92,15 @@ class ApiChange{
 		    'api_key' => $this->api_key,
 		    'petition_id' => $petition_id,
 		    'source_description' => 'API en sitio del IMCO',
-		    'source' => 'http://comparatuescuela.projects.spaceshiplabs.com/',
+		    'source' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/index/1',
 		    'requester_email' => 'Contacto@mejoratuescuela.org',
-		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys'
+		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys',
+		    'timestamp' => gmdate("Y-m-d\TH:i:s\Z")
 		);
+
+		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
+
+		$parameters['rsig'] = hash('sha256', $query_string_with_secret_and_auth_key);
 
 		$data = http_build_query($parameters);
 
@@ -107,7 +112,7 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		var_dump($result);
+		var_dump('->',$result);
 	
 	}
 
