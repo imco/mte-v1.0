@@ -7,6 +7,7 @@
 	<?php 
 	$this->petition_number = 1;
 	$on = $this->get('id')?$this->get('id'):1;
+	$on = isset($this->sign_result_number)?$this->sign_result_number:$on;
 	foreach($this->petition_info as $this->petition){ 
 	?>
 	<h1><?=$this->petition['title'] ?><span class='shadow'></span></h1>
