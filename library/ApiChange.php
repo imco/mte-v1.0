@@ -84,6 +84,43 @@ class ApiChange{
 		return $json_response;
 	}
 
+	function get_auth_key($petition_url,$source){
+		$petition_id = $this->regresa_id_peticion( $petition_url );
+		$endpoint = "/v1/petitions/$petition_id/auth_keys";
+		$url = $this->base_url . $endpoint;
+		$parameters = array(
+		    'api_key' => $this->api_key,
+		    'petition_id' => $petition_id,
+		    'source_description' => 'API en sitio del IMCO',
+		    'source' => $source,
+		    'requester_email' => 'Contacto@mejoratuescuela.org',
+		    'callback_endpoint' => "$petition_url/receive_auth_keys/",
+		    'timestamp' => gmdate("Y-m-d\TH:i:s\Z"),
+		    'endpoint' => $endpoint 
+		);
+
+		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
+
+		$parameters['rsig'] = hash('sha256', $query_string_with_secret_and_auth_key);
+
+		$data = http_build_query($parameters);
+
+		$curl_session = curl_init();
+		curl_setopt_array($curl_session, array(
+		    CURLOPT_POST => 1,
+		    CURLOPT_RETURNTRANSFER => 1,
+		    CURLOPT_URL => $url,
+		    CURLOPT_POSTFIELDS => $data
+		));
+
+		$result = curl_exec($curl_session);
+		$json_response = json_decode($result, true);
+		$auth_key = $json_response['auth_key'];
+		//var_dump($auth_key);
+		return $auth_key;
+	
+	}
+
 	#Esta función sigue en desarrollo
 	function pedir_auth_key_peticion( $petition_url ){
 		$petition_id = $this->regresa_id_peticion($petition_url);
@@ -188,6 +225,7 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
+		//var_dump($result);
 		return $result;
 	}
 

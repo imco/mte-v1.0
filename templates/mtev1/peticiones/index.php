@@ -7,6 +7,7 @@
 	<?php 
 	$this->petition_number = 1;
 	$on = $this->get('id')?$this->get('id'):1;
+	$on = isset($this->sign_result_number)?$this->sign_result_number:$on;
 	foreach($this->petition_info as $this->petition){ 
 	?>
 	<h1><?=$this->petition['title'] ?><span class='shadow'></span></h1>
@@ -20,10 +21,10 @@
 		</div>
 		<form action='/peticiones/firmar' method='post' class='petition-form' accept-charset='utf-8'>
 			<?php 
-			if(isset($this->sign_result) && $this->sign_result->result != 'failure'){
+			if(isset($this->sign_result) && $this->sign_result->result != 'failure' && $this->sign_result_number == $this->petition_number ){
 				echo "<h2>Gracias por firmar la peticion</h2>";
 			}else{
-				if(isset($this->sign_result) && $this->sign_result->result == 'failure'){
+				if(isset($this->sign_result) && $this->sign_result->result == 'failure' && $this->sign_result_number == $this->petition_number){
 					echo "<h2>Error</h2>";
 					echo "<p>".$this->sign_result->messages[0].'</p>';
 				}else{
