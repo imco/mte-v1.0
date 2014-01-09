@@ -144,4 +144,9 @@ class firma extends table{
 		}
 	}
 }
+class firma_img extends table{
+	function info(){
+		$this->table_name = "firmas_images";
+	}
+}
 ?>

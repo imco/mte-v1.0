@@ -2,6 +2,7 @@
 class erick_config extends default_config{
 	public function erick_config(){
 		parent::__construct();
+		error_reporting(0);
 		//Site
 		$this->http_address = 'http://mte.local/';
 		$this->mxnphp_dir = "c:/wamp/www/mxnphp/";
