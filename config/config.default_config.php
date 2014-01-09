@@ -39,6 +39,12 @@ class default_config{
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->tynt = false;
+		
+		//signs sizes
+		$this->icon_sizes = json_decode('[
+			{"width":"50","height":"50","slug":"tiny"},
+			{"width":"156","height":"112","slug":"signs"}
+		]');
 	}
 }
 ?>

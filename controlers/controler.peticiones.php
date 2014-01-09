@@ -77,6 +77,11 @@ class peticiones extends main{
 	public function sienlace(){
 		$firma = new firma();
 		$this->firmas = number_format($firma->count());
+		$this->photos = $this->searchPhotos();
+		if( $this->get('img') ){
+			$this->thephoto = new firma_img($this->get('img'));
+			$this->thephoto->read('id,filename');
+		}
 		$this->include_template('sienlace','peticiones');
 	}
 	public function sign(){
@@ -84,6 +89,31 @@ class peticiones extends main{
 		$firma->create('nombre,apellido,email,cp,comentario');
 		$count = $firma->count();
 		echo number_format($count);
+	}
+	private function searchPhotos(){
+		$result = new firma_img();
+		$result->search_clause = " activo = '1' ";
+		$result = $result->read('id,filename,email,activo');
+		return $result;
+	}
+	public function uphoto(){
+		$firma = new firma_img();
+		$this->add_component("mxnphp_gallery");
+		//var_dump($_POST);
+		//var_dump($_FILES);
+		$nid = $firma->next_id();
+		$image = $this->components['mxnphp_gallery']->save_image( $_FILES['profile_input'] , $nid , "/signs/" , $this->config->icon_sizes );
+		$firma->debug = true;
+		//var_dump($image);
+		if( $image ){
+			$firma->create( 'email,filename,activo' , array( $_POST['email'] , $image->filename , '0' ) );
+			//echo "<img alt='' src='" . $this->config->document_root . '/signs/signs/'. $image->signs . "' />";
+			$extra = "?img=" . $nid;
+		}else{
+			echo false;
+			$extra = "";
+		}
+		header( "location: /peticiones/sienlace" . $extra );
 	}
 }
 ?>
