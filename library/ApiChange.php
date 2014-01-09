@@ -112,8 +112,8 @@ class ApiChange{
 		    CURLOPT_POSTFIELDS => $data
 		));
 
-		$result = curl_exec($curl_session);
-		var_dump('->',$result);
+		//$result = curl_exec($curl_session);
+		var_dump('->',curl_exec($curl_session));
 	
 	}
 
