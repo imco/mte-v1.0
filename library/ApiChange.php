@@ -84,8 +84,8 @@ class ApiChange{
 		return $json_response;
 	}
 
-	function get_auth_key($petition_url){
-		$petition_id = $this->regresa_id_peticion( $petition_url );
+	function get_auth_key($petition_id){
+		//$petition_id = $this->regresa_id_peticion( $petition_url );
 		$endpoint = "/v1/petitions/$petition_id/auth_keys";
 		$url = $this->base_url . $endpoint;
 		$parameters = array(
@@ -200,11 +200,10 @@ class ApiChange{
 		$endpoint = "/v1/petitions/$petition_id/signatures";
 		$url = $this->base_url . $endpoint;
 		//echo $url;exit();
-
+		$parameters['petition_id'] = $petition_id;
 		$parameters['api_key'] = $this->api_key;
-
-		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC
-		
+		$parameters['auth_key'] = $this->get_auth_key($petition_id);
+		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC	
 		$parameters['endpoint'] = $endpoint;
 
 		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
