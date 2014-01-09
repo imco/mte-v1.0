@@ -84,6 +84,33 @@ class ApiChange{
 		return $json_response;
 	}
 
+	function get_auth_key($petition_url){
+		$petition_id = $this->regresa_id_peticion( $petition_url );
+		$endpoint = "/v1/petitions/$petition_id/auth_keys";
+		$url = $this->base_url . $endpoint;
+		$parameters = array(
+		    'api_key' => $this->api_key,
+		    'petition_id' => $petition_id,
+		    'source_description' => 'API en sitio del IMCO',
+		    'source' => 'http://comparatuescuela.projects.spaceshiplabs.com/',
+		    'requester_email' => 'Contacto@mejoratuescuela.org',
+		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys'
+		);
+
+		$data = http_build_query($parameters);
+
+		$curl_session = curl_init();
+		curl_setopt_array($curl_session, array(
+		    CURLOPT_POST => 1,
+		    CURLOPT_URL => $url,
+		    CURLOPT_POSTFIELDS => $data
+		));
+
+		$result = curl_exec($curl_session);
+		var_dump($result);
+	
+	}
+
 	#Esta función sigue en desarrollo
 	function pedir_auth_key_peticion( $petition_url ){
 		$petition_id = $this->regresa_id_peticion($petition_url);

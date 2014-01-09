@@ -65,12 +65,15 @@ class peticiones extends main{
 		$parameters['country_code'] = $this->post('pais');
 		$parameters['hidden'] = $hidden;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+		//asd
+		$change->get_auth_key($petition_url);
+		/*
 		$this->sign_result = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
 		
 
 		$this->header_folder = 'escuelas';
 		$this->read_peticion();
-		$this->include_theme('index','index');
+		$this->include_theme('index','index');*/
 
 	}
 
@@ -115,6 +118,19 @@ class peticiones extends main{
 			$extra = "";
 		}
 		header( "location: /peticiones/sienlace" . $extra );
+	}
+
+	public function receive_auth_keys(){
+		$status = $this->post('status');
+		$petition_id = $this->post('petition_id');
+		$source_description = $this->post('source_description');
+		$source = $this->post('source');
+		$source = $this->post('requester_email');
+		$auth_key = $this->post('auth_key');
+		//var_dump($status,$this->config->document_root);
+		$fp = fopen($this->config->document_root."ejemplo.txt",'w');
+		fwrite($fp,$status."\n".$petition_id."\n".$auth_key."\n\n\n"."alog");
+		fclose($fp);
 	}
 }
 ?>
