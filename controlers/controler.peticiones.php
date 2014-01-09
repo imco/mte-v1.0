@@ -113,16 +113,6 @@ class peticiones extends main{
 	}
 
 	public function receive_auth_keys(){
-		$status = $this->post('status');
-		$petition_id = $this->post('petition_id');
-		$source_description = $this->post('source_description');
-		$source = $this->post('source');
-		$source = $this->post('requester_email');
-		$auth_key = $this->post('auth_key');
-		//var_dump($status,$this->config->document_root);
-		$fp = fopen($this->config->document_root."ejemplo.txt",'w');
-		fwrite($fp,$status."\n".$petition_id."\n".$auth_key."\n\n\n"."alog");
-		fclose($fp);
 	}
 }
 ?>
