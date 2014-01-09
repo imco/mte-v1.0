@@ -43,7 +43,7 @@ class default_config{
 		//signs sizes
 		$this->icon_sizes = json_decode('[
 			{"width":"50","height":"50","slug":"tiny"},
-			{"width":"156","height":"112","slug":"signs"}
+			{"width":"156","height":"112","slug":"signs" , "resize_type":"best fit"}
 		]');
 	}
 }

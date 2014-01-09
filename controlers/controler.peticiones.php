@@ -93,6 +93,7 @@ class peticiones extends main{
 	private function searchPhotos(){
 		$result = new firma_img();
 		$result->search_clause = " activo = '1' ";
+		$result->order_by = " id DESC ";
 		$result = $result->read('id,filename,email,activo');
 		return $result;
 	}
