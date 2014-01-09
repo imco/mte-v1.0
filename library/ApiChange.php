@@ -116,7 +116,7 @@ class ApiChange{
 		$result = curl_exec($curl_session);
 		$json_response = json_decode($result, true);
 		$auth_key = $json_response['auth_key'];
-		//var_dump($auth_key);
+		var_dump($auth_key);
 		return $auth_key;	
 	}
 
@@ -202,7 +202,7 @@ class ApiChange{
 		//echo $url;exit();
 		$parameters['petition_id'] = $petition_id;
 		$parameters['api_key'] = $this->api_key;
-		$parameters['auth_key'] = $this->get_auth_key($petition_id);
+		$parameters['auth_key'] = '91df846373856cf420575fd332dd6b0420a54dbdfad44dd9ac879d67e677cc84';
 		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC	
 		$parameters['endpoint'] = $endpoint;
 
