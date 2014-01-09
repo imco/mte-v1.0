@@ -84,17 +84,17 @@ class ApiChange{
 		return $json_response;
 	}
 
-	function get_auth_key($petition_id){
-		//$petition_id = $this->regresa_id_peticion( $petition_url );
+	function get_auth_key($petition_url,$source){
+		$petition_id = $this->regresa_id_peticion( $petition_url );
 		$endpoint = "/v1/petitions/$petition_id/auth_keys";
 		$url = $this->base_url . $endpoint;
 		$parameters = array(
 		    'api_key' => $this->api_key,
 		    'petition_id' => $petition_id,
 		    'source_description' => 'API en sitio del IMCO',
-		    'source' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/index/1',
+		    'source' => $source,
 		    'requester_email' => 'Contacto@mejoratuescuela.org',
-		    'callback_endpoint' => 'http://comparatuescuela.projects.spaceshiplabs.com/peticiones/receive_auth_keys/',
+		    'callback_endpoint' => "$petition_url/receive_auth_keys/",
 		    'timestamp' => gmdate("Y-m-d\TH:i:s\Z"),
 		    'endpoint' => $endpoint 
 		);
@@ -116,8 +116,9 @@ class ApiChange{
 		$result = curl_exec($curl_session);
 		$json_response = json_decode($result, true);
 		$auth_key = $json_response['auth_key'];
-		var_dump($auth_key);
-		return $auth_key;	
+		//var_dump($auth_key);
+		return $auth_key;
+	
 	}
 
 	#Esta función sigue en desarrollo
@@ -200,10 +201,11 @@ class ApiChange{
 		$endpoint = "/v1/petitions/$petition_id/signatures";
 		$url = $this->base_url . $endpoint;
 		//echo $url;exit();
-		$parameters['petition_id'] = $petition_id;
+
 		$parameters['api_key'] = $this->api_key;
-		$parameters['auth_key'] = '91df846373856cf420575fd332dd6b0420a54dbdfad44dd9ac879d67e677cc84';
-		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC	
+
+		$parameters['timestamp'] = gmdate("Y-m-d\TH:i:s\Z"); // ISO-8601-formtted timestamp at UTC
+		
 		$parameters['endpoint'] = $endpoint;
 
 		$query_string_with_secret_and_auth_key = http_build_query($parameters) . $this->secret_token . $petition_auth_key;
@@ -221,6 +223,7 @@ class ApiChange{
 		    CURLOPT_POSTFIELDS => $data,
 		    CURLOPT_RETURNTRANSFER => TRUE
 		));
+
 		$result = curl_exec($curl_session);
 		var_dump($result);
 		return $result;
