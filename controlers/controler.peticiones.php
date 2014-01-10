@@ -76,6 +76,8 @@ class peticiones extends main{
 		if( $this->get('img') ){
 			$this->thephoto = new firma_img($this->get('img'));
 			$this->thephoto->read('id,filename');
+		}else{
+			$this->thephoto = false;
 		}
 		$this->include_template('sienlace','peticiones');
 	}
@@ -88,7 +90,7 @@ class peticiones extends main{
 	private function searchPhotos(){
 		$result = new firma_img();
 		$result->search_clause = " activo = '1' ";
-		$result->order_by = " id DESC ";
+		$result->order_by = " rand() ";
 		$result = $result->read('id,filename,email,activo');
 		return $result;
 	}
