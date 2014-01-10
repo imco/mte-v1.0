@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 " />
     <meta property="og:description" content="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela" />
     <meta property="og:title" content="#SiENLACE2014" />
+	<link rel="shortcut icon" href="<?=$this->config->http_address?>templates/<?=$this->config->theme?>/img/sienlace/favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
         $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
