@@ -9,7 +9,8 @@ class escuelas extends main{
 	* Funcion Publica index.
 	*/
 	public function index(){
-		if($this->escuela_info()){			
+		if($this->escuela_info()){
+			$params = new stdClass();
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;		
@@ -23,6 +24,7 @@ class escuelas extends main{
 		
 			if($this->compara_cookie){
 				$temp = $this->escuelas;
+				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);

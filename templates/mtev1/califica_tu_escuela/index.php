@@ -32,10 +32,12 @@
 		-->
 		<?php
 		$turnos = array(100 => 'Matutino', 200 => 'Vespertino', 500 => 'Continuo (tiempo completo)', 400 => 'Discontinuo', 300 => 'Nocturno', 120 => 'Matutino y vespertino');
+		$this->cookie_vistas = $this->cookie_vistas?$this->cookie_vistas:array();
+		$this->compara_cookie = $this->compara_cookie?$this->compara_cookie:array();
 		foreach($this->escuelas as $escuela){
 			$on = '';
-			if($this->compara_cookie && in_array($escuela->cct,$this->compara_cookie)){
-				$on = "class='on'";
+			if((isset($this->cookie_vistas) || $this->compara_cookie) && (in_array($escuela->cct,$this->compara_cookie) ||  in_array($escuela->cct,$this->cookie_vistas) ) && isset($escuela->localidad)){
+				$on =  in_array($escuela->cct,$this->compara_cookie)?"class='on'":'';
 				$escuela->nom_localidad = $escuela->localidad->nombre;
 				$escuela->nom_entidad = $escuela->entidad->nombre;
 				$turno = $this->capitalize($escuela->turno->nombre);

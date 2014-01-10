@@ -58,6 +58,7 @@
 	<div class="clear"></div>
 	<div class='pagination'><?php
 	if(isset($this->pagination)){
+		$labels = new stdClass();
 		$labels->prev_page = "<< primeras";
 		$labels->prev = "<<";
 		$labels->next_page = "últimas >>";

@@ -172,7 +172,8 @@ $(document).ready(function(){
 	if($('#content .container').hasClass('perfil')){
 		$('.menu a.logo + a + a + a').click(function(e){
 			e.preventDefault();
-			location.href = $('.califica a.title').attr('href');
+			//location.href = $('.califica a.title').attr('href');
+			window.location =$('.califica a.title').attr('href'); 
 		});
 
 		$('.tabs a.result').click(function(){
@@ -231,7 +232,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		add_escuelas_cookie();
 		$(window).off();
-		location.href = '/califica-tu-escuela/califica/' + $.cookie('escuelas');
+		if(!$('#content .container').hasClass('perfil'))
+			location.href = '/califica-tu-escuela/califica/' + $.cookie('escuelas');
 	});
 
 	$('#content .comparar.resultados table tr.on .compara-escuela').click(function(e){
