@@ -148,10 +148,10 @@
 												<span class="fileupload-preview"></span>
 											</div>
 											<span class="btn btn-file"><span class="fileupload-new">Seleccionar Archivo</span>
-												<span class="fileupload-exists">Change</span>
+												<span class="fileupload-exists">Cambiar</span>
 												<input type="file" name="profile_input" />
 											</span>
-											<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+											<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Quitar</a>
 										</div>
 									</div>
                                 </div>

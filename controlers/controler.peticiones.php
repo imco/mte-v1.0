@@ -70,7 +70,6 @@ class peticiones extends main{
 	}
 
 	public function sienlace(){
-
 		$firma = new firma();
 		$this->firmas = number_format($firma->count());
 		$this->photos = $this->searchPhotos();
@@ -81,7 +80,6 @@ class peticiones extends main{
 			$this->thephoto = false;
 		}
 		$this->include_template('sienlace','peticiones');
-
 	}
 	public function sign(){
 		$firma = new firma();
@@ -109,18 +107,30 @@ class peticiones extends main{
 			$firma->create( 'email,filename,activo' , array( $_POST['email'] , $image->filename , '0' ) );
 			//echo "<img alt='' src='" . $this->config->document_root . '/signs/signs/'. $image->signs . "' />";
 			$extra = "?img=" . $nid;
+			if($this->post('email')){
+				$subject = 'Nueva Foto SiENLACE';
+				$from = 'system@mejoratuescuela.org';
+				$from_name = 'Sistema Mejoratuescuela'
+				$message = <<<EOD
+Alguien ha subido una nueva foto en la petición SiENLACE:
+http://www.mejoratuescuela.org/signs/{$image->filename}
+Haz clic en el siguiente vinculo para aprobar:
+http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}
+Para denegar no es necesario tomar acción.
+EOD;
+				$this->send_email($this->config->image_email,$subject,$message,$from,$from_name);
+				echo $message;
+			}
 		}else{
 			echo false;
 			$extra = "";
 		}
-		if($this->post(''))
-		$this->contact_email = 'sonny@spaceshiplabs.com';
-
-		$this->send_email($to,$subject,$message,$from,$from_name);
-		header( "location: /peticiones/sienlace" . $extra );
+		
+		//header( "location: /peticiones/sienlace" . $extra );
 	}
 
 	public function receive_auth_keys(){
+
 	}
 }
 ?>
