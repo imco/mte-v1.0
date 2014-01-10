@@ -46,6 +46,7 @@ class main extends controler{
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
 				$escuela->get_semaforo();
+				$escuelas[$escuela->cct] = new stdClass();
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
 				$escuelas[$escuela->cct]->latitud = $escuela->latitud;
 				$escuelas[$escuela->cct]->longitud = $escuela->longitud;
@@ -74,6 +75,7 @@ class main extends controler{
 				$zoom = $key;
 				if($size >= $max) break;
 			}
+			$response = new stdClass();
 			$response->zoom = $zoom+1;
 			$response->centerlat = $minlat + (($maxlat - $minlat) / 2);
 			$response->centerlong = $minlong + (($maxlong - $minlong) / 2);
@@ -125,6 +127,7 @@ class main extends controler{
 		if($this->request('json') || true){
 			$response = array();
 			foreach($this->municipios as $key => $municipio){
+				$response[$key] = new stdClass();
 				$response[$key]->id = $municipio->id;
 				$response[$key]->nombre = $this->capitalize($municipio->nombre).", ".$this->capitalize($municipio->entidad->nombre);
 			}
@@ -150,6 +153,7 @@ class main extends controler{
 			if($this->request('json')){
 				$response = array();
 				foreach($this->localidades as $key => $localidad){
+					$response[$key] = new StdClass();
 					$response[$key]->id = $localidad->id;
 					$response[$key]->nombre = $this->capitalize($localidad->nombre);
 				}
@@ -226,6 +230,7 @@ class main extends controler{
 			$response = array();
 			if($this->escuelas){
 				foreach($this->escuelas as $key => $escuela){
+					$response[$key] = new stdClass();
 					$response[$key]->label = $this->capitalize($escuela->nombre)." (".$this->capitalize($escuela->nivel->nombre).") ";
 					$response[$key]->address = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
 					$response[$key]->value = $this->capitalize($escuela->nombre);
@@ -501,32 +506,36 @@ class main extends controler{
     }
 
     public function get_data_compara_float(){
-	$cookie = explode('-',$this->cookie('escuelas_vistas'));
-    	if($this->get('controler') == 'escuelas'){
-		$cookie[] = $this->get('id');
-	}
-	$this->load_compara_cookie();
-	if($this->compara_cookie){
-		$params->ccts = $this->compara_cookie;
-		$this->get_escuelas($params);
-		//$this->escuelas
-	}
-	$this->school_to_compare = $this->escuelas?$this->escuelas:array();
-	$this->school_view = array();
-	if($cookie){
-		//no en ambos;
-		for($i=count($cookie)-1;$i>=0;$i--){
-			if(in_array($cookie[$i],$this->compara_cookie)){
-				unset($cookie[$i]);
-			}
+	if(!$this->request('json')){
+		$cookie = explode('-',$this->cookie('escuelas_vistas'));
+	    	if($this->get('controler') == 'escuelas'){
+			$cookie[] = $this->get('id');
 		}
-		$cookie = array_values($cookie);
-		if(count($cookie)){
-			$params->ccts = $cookie;
+		$this->load_compara_cookie();
+		$params = new stdClass();
+		if($this->compara_cookie){
+			$params->ccts = $this->compara_cookie;
 			$this->get_escuelas($params);
-			$this->school_view = $this->escuelas?$this->escuelas:array();	
+			//$this->escuelas
 		}
-
+		$this->school_to_compare = isset($this->escuelas)?$this->escuelas:array();
+		$this->school_view = array();
+		$compare_cookie = $this->compara_cookie?$this->compara_cookie:array();
+		if($cookie){
+			//no en ambos;
+			for($i=count($cookie)-1;$i>=0;$i--){
+				if(in_array($cookie[$i],$compare_cookie)){
+					unset($cookie[$i]);
+				}
+			}
+			$cookie = array_values($cookie);
+			if(count($cookie)){
+				$params->ccts = $cookie;
+				$this->get_escuelas($params);
+				$this->school_view = $this->escuelas?$this->escuelas:array();	
+			}
+	
+		}
 	}
     }
 }

@@ -39,9 +39,11 @@ class califica_tu_escuela extends main{
 		}else{
 			#header("location: /compara/");
 			$this->breadcrumb = array('#'=>'Califica');
-			$this->load_compara_cookie();
+			//$this->load_compara_cookie();
+			$cookie = explode('-',$this->cookie('escuelas_vistas'));
 			if($this->get('term')){
 				$this->instruction = 'Selecciona una escuela';
+				$params = new stdClass();
 				$params->term = $this->get('term');
 				$params->control = $this->get('control');
 				$params->nivel = $this->get('nivel');
@@ -62,13 +64,15 @@ class califica_tu_escuela extends main{
 				$this->process_escuelas();
 				*/
 				
-			}else if($this->compara_cookie){
+			}else if($cookie && $this->get('id') != "undefined"){
 				$this->instruction = 'Selecciona la escuela que quieres calificar';
 				$this->instruction2 = 'Éstas son escuelas que has revisado recientemente:';
-				$temp = isset($this->escuelas)?$this->escuelas:array();
-				$params2->ccts = $this->compara_cookie;
+				//$temp = isset($this->escuelas)?$this->escuelas:array();
+				$params2 = new stdClass();
+				$params2->ccts = $cookie;
 				$this->get_escuelas($params2);
-				$this->escuelas = array_merge($temp,$this->escuelas);
+				$this->escuelas = array_unique($this->escuelas);
+				$this->cookie_vistas = $cookie;
 			}else{
 				$this->instruction = '¿Qué escuela quieres calificar?';
 				$this->instruction2 = 'Búscala aquí';
@@ -85,7 +89,8 @@ class califica_tu_escuela extends main{
 		$this->escuela = new escuela($this->get('id'));
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $this->get('id');
-		$this->escuela->read("cct,nombre,nivel=>nombre,turno=>nombre,entidad=>nombre");
+		//$this->escuela->control->id
+		$this->escuela->read("cct,nombre,nivel=>nombre,turno=>nombre,entidad=>nombre,control=>id");
 		if(isset($this->escuela->cct)){
 			return true;
 		}else{
