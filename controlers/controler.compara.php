@@ -24,13 +24,14 @@ class compara extends main{
 		$this->title_header = 'Conoce tu escuela';
 		if(!$this->get('search')){ 
 			$this->get_location();
+			$params = new stdClass();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
 			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
 		}else{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}
 		if($this->get('term') && isset($this->config->solr_server)){
-			//$params = new new StdClass();
+			$params = new StdClass();
 			$params->term = $this->get('term');
 			$params->control = $this->get('control');
 			$params->nivel = $this->get('nivel');
@@ -45,6 +46,7 @@ class compara extends main{
 			$this->set_info_user_search($this->num_results);
 			$this->include_theme('index','resultados');
 		}else{
+			$params = new stdClass();
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 
@@ -68,6 +70,7 @@ class compara extends main{
 		$this->load_compara_cookie();
 		$this->user_location = false;
 		$this->draw_map = true;
+		$params = new stdClass();
 		if(!$this->request('search')){
 			$params->entidad = $this->user_location ? $this->user_location : 9 ;
 		}
@@ -94,6 +97,7 @@ class compara extends main{
 		$this->subtitle_header = 'Esta herramienta te ayuda a comparar la calidad <br />educativa de tu escuela con la de otras <br />similares o cercanas.';
 		$this->draw_map = true;
 		$this->load_compara_cookie();
+		$params = new stdClass();
 		$params->ccts = explode('-',$this->get('id'));
 		$params->order_by = 'escuelas.promedio_general DESC';
 		$params->limit =  '0,100';

@@ -13,6 +13,7 @@ class api extends main{
 	*/
 	public function escuelas(){
 		/* Obtiene y presenta información relevante de cien escuelas ya se en formato csv o json dependiendo del valor de la variable 'formato' en los datos procedentes ya sea de POST o GET. */
+		$params = new stdClass();
 		$params->limit = "0 ,100";
 		$this->get_escuelas($params);
 		$this->process_escuelas();
