@@ -26,6 +26,7 @@
 	foreach($this->escuelas as $escuela){
 		$scores = array();
 		for($i = 2006;$i<2013;$i++){
+			$scores[$i] = new stdClass();
 			$scores[$i]->mat = array_fill(0,4,0);
 			$scores[$i]->esp = array_fill(0,4,0);
 			$scores[$i]->alumnos = 0;

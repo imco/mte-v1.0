@@ -13,6 +13,7 @@
 	<div class='compara-tab-container'>
 		<div class='tab on'>
 			<?php 
+			$this->current_rank = new stdClass();
 			$this->current_rank->name = 'Estatal';
 			$this->current_rank->slug = 'rank_entidad';
 			$this->include_template('compare-table','compara');
@@ -80,6 +81,7 @@
 
 	<?php 
 		if($this->get('term')){
+			$params = new stdClass();
 			$params->term = $this->get('term');
 			$params->control = $this->get('control');
 			$params->nivel = $this->get('nivel');
@@ -91,6 +93,7 @@
 			$this->set_info_user_search($this->num_results);
 			$this->include_template('resultados','compara');
 		}else if($this->get('search')){
+			$params = new stdClass();
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 			$this->get_escuelas($params);
