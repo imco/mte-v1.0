@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 " />
     <meta property="og:description" content="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela" />
     <meta property="og:title" content="#SiENLACE2014" />
+    <meta property='og:image' content='http://www.mejoratuescuela.org/templates/mtev1/img/sienlace/logo.jpg' />   
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
         $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
@@ -90,7 +91,6 @@
                         </div>
                     </div>
 					<div class='container center'>
-                        <h2> <a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
                         <div class="gallery">
                             <div class="screen">
                                 <div class="reel" style="width:<?php echo count($this->photos)*156*12 ?>px">
@@ -107,6 +107,7 @@
                                 </div>
                             </div>
                         </div>
+                         <h2> <a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
 						<div class="row-fluid">
                             <div class="share">
                                 <div class="rstab fb">
@@ -180,7 +181,7 @@
             <div class="bottom">
                 <p>
                     2014. Instituto Mexicano para la Competitividad A.C. <a href="http://mejoratuescuela.org/">www.MejoraTuEscuela.org</a>
-                    <a href='/aviso-de-privacidad' class="link">Aviso legal y de privacidad</a>
+                    <a href='/aviso-de-privacidad' class="link">Aviso legal y de privacidad</a> 
                     <a href='/contacto' class="link">Contáctanos</a>
                 </p>
             </div>

@@ -54,12 +54,12 @@ strong{font-weight: bold;}
 /*Header*/
 #header{}
 #header .container{text-align: center;}
-#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;}
+#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;display:none;}
 #header .label:before{content: '';width: 0px;height: 0px;border-style: solid;border-width: 34px 0 0 72px;border-color: transparent transparent transparent white;position: absolute;left: 0;bottom: 0;}
 #header .label:after{content: '';width: 0px;height: 0px;border-style: solid;border-width: 0 0 34px 72px;border-color: transparent transparent white transparent;position: absolute;right: 0;bottom: 0;}
 #header .label a{display: block;color: white;text-decoration: none;font-size: 22px;line-height: 27px;}
 #header .label .icon{background: transparent url(../img/sienlace/ya_somos.png) no-repeat center;height: 45px;}
-#header .logo{padding-top: 40px;display: block;}
+#header .logo{padding-top: 30px;display: block;}
 #header .logo img{max-width: 641px;width: 60%;}
 #header .social{position: absolute;right: 0;top:7px;}
 #header .social a{float: left;width: 29px;height: 29px;border-radius: 50%;}
@@ -83,12 +83,12 @@ strong{font-weight: bold;}
 #footer .bottom a,
 #footer .bottom p{color: #B3ACA5;font-size: 12px;}
 #footer .bottom a{color: gray;}
-#footer .bottom .link{float:right;margin-left: 6px;}
+#footer .bottom .link{float:right;margin-left:47px;}
 
 /*Content*/
 #content{background: #F1F1F1;}
 /*Black section*/
-#content .singin{background: #212121;margin-top: 50px;padding-top: 30px;padding-bottom: 10px;margin-bottom: 25px;box-shadow: 0 26px 40px 7px #c1c1c1;}
+#content .singin{background: #212121;margin-top:30px;padding-top: 30px;padding-bottom: 10px;margin-bottom: 25px;box-shadow: 0 26px 40px 7px #c1c1c1;}
 #content .singin .span8{margin:0;margin-top: 10px;}
 #content .singin h4{color: #909090;font-size: 15px;text-align: justify;font-weight: normal;}
 #content .singin h3{font-size: 19px;line-height: 24px;color: #7C9D00;text-align: justify;}
@@ -120,7 +120,7 @@ strong{font-weight: bold;}
 #content .singin .whytext.on .screen{position: relative;width: 100%;height: 100%;overflow: hidden;}
 #content .singin .whytext.on ol li.no{display: block;}
 #content .container .row-fluid .share{text-align:center;}
-#content .container .row-fluid .share .rstab{float: none;margin-right: 20px;display:inline-block;}
+#content .container .row-fluid .share .rstab{float: none;margin-right:0px;display:inline-block;}
 #content .singin .share .rstab{float: left;margin-right: 20px;}
 
 #content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 20px;}
@@ -134,7 +134,7 @@ strong{font-weight: bold;}
 #content .container .gallery .screen .reel{position: absolute;width: 100%;height: 100%;left:0;}
 #content .container .gallery .screen .reel a img{float:left;}
 
-#content .container .uploadphoto{background: #212121;padding: 10px 40px 70px 40px;}
+#content .container .uploadphoto{background: #212121;padding: 10px 40px 10px 40px;}
 #content .container .uploadphoto h2{text-align: left;font-size: 32px;font-weight: normal;margin: 0;margin-bottom: 20px;}
 #content .container .uploadphoto form .span4{margin-bottom:10px; }
 #content .container .uploadphoto form a.fakefile,
