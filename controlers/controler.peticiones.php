@@ -101,7 +101,7 @@ class peticiones extends main{
 		//var_dump($_FILES);
 		$nid = $firma->next_id();
 		$image = $this->components['mxnphp_gallery']->save_image( $_FILES['profile_input'] , $nid , "/signs/" , $this->config->icon_sizes );
-		$firma->debug = true;
+		$firma->debug = false;
 		//var_dump($image);
 		if( $image ){
 			$firma->create( 'email,filename,activo' , array( $_POST['email'] , $image->filename , '0' ) );
@@ -110,7 +110,7 @@ class peticiones extends main{
 			if($this->post('email')){
 				$subject = 'Nueva Foto SiENLACE';
 				$from = 'system@mejoratuescuela.org';
-				$from_name = 'Sistema Mejoratuescuela'
+				$from_name = 'Sistema Mejoratuescuela';
 				$message = <<<EOD
 Alguien ha subido una nueva foto en la petición SiENLACE:
 http://www.mejoratuescuela.org/signs/{$image->filename}
@@ -119,14 +119,14 @@ http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}
 Para denegar no es necesario tomar acción.
 EOD;
 				$this->send_email($this->config->image_email,$subject,$message,$from,$from_name);
-				echo $message;
+				//echo $message;
 			}
 		}else{
 			echo false;
 			$extra = "";
 		}
 		
-		//header( "location: /peticiones/sienlace" . $extra );
+		header( "location: /peticiones/sienlace" . $extra );
 	}
 
 	public function receive_auth_keys(){
