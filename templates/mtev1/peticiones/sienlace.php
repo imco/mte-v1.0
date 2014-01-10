@@ -177,11 +177,11 @@
                 <?php for($i=0;$i<0;$i++){ ?>
                     <a href="" class="span2-5">Sponsor Logo</a>
                 <?php } ?>
-				<a class="ally span2-5" href="http://imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
+				<a class="ally span2-5" href="http://www.imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
+                <a class="ally span2-5" href="http://www.mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
+                <a class="ally span2-5" href="http://www.masciudadania.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
+                <a class="ally span2-5" href="http://www.ifie.edu.mx/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
+                <a class="ally span2-5" href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
             </div>
             <div class="bottom">
                 <p>
