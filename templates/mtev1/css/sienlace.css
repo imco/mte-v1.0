@@ -122,12 +122,13 @@ strong{font-weight: bold;}
 #content .container .row-fluid .share{text-align:center;}
 #content .container .row-fluid .share .rstab{float: none;margin-right:0px;display:inline-block;}
 #content .singin .share .rstab{float: left;margin-right: 20px;}
+#content .share .rstab.email a{display:block;width:93px;height:22px;background-image:url(../img/sienlace/compartir.png);margin:-1px 0;}
 
 #content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 20px;}
 #content .singin .span4 h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
 #content .singin .span4 .share{text-align: center;}
 #content .container.center h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
-#content .container.center h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 40px;}
+#content .container.center h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 10px;}
 
 #content .container .gallery{margin: 25px 0;}
 #content .container .gallery .screen{position: relative;width: 100%;height: 112px;overflow: hidden;}

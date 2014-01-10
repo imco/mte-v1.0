@@ -5,7 +5,6 @@
     <meta property="og:description" content="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela" />
     <meta property="og:title" content="#SiENLACE2014" />
     <meta property='og:image' content='http://www.mejoratuescuela.org/templates/mtev1/img/sienlace/logo.jpg' />   
-	<link rel="shortcut icon" href="<?=$this->config->http_address?>templates/<?=$this->config->theme?>/img/sienlace/favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
         $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
@@ -55,7 +54,7 @@
                                 <!--<h4>Como resultado de la Reforma Educativa, la responsabilidad de llevar a cabo las evaluaciones nacionales de alumnos estará a cargo del INEE. Sin embargo, recientemente el INEE anunció que sus pruebas, para educación primaria y secundaria, no estarán listas hasta el 2015.</h4>-->
                                 <h3>La prueba ENLACE es imperfecta, puede y debe mejorarse, pero no podemos perder la medición más significativa que existe hoy sobre el estado de la educación en México.</h3>
                             </div>
-                            <div class="span8 nomargin">
+							<div class="span8 nomargin">
                                 <h2>Hacemos un llamado a la acción #SíEnlace2014 <span>porque:</span> </h2>
                                 <div class="whytext animate-height">
                                     <div class="screen">
@@ -108,10 +107,9 @@
                                 </div>
                             </div>
                         </div>
-                         <h2><a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
+                         <h2> <a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
 						<div class="row-fluid">
-                            <div class="share" r>                               
-                                <div class='rstab email'><a href='mailto:?subject=#SiENLACE2014&amp;body=Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela'></a></div>
+                            <div class="share">
                                 <div class="rstab fb">
                                     <script>(function(d, s, id) {
                                       var js, fjs = d.getElementsByTagName(s)[0];
@@ -179,9 +177,6 @@
                 <?php } ?>
 				<a class="ally span2-5" href="http://imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
                 <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
-                <a class="ally span2-5" href="http://mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
             </div>
             <div class="bottom">
                 <p>

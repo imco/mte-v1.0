@@ -36,7 +36,6 @@ function moveElement( item ){
 	var left_value = parseInt(reel.css("left"));
 	var w = $("#content .container .gallery .reel a").eq(1).find('img').width();
 	//console.log('img: ' + );
-	console.log('width: ' + w);
 	var time = left_value != 0 ? ( (- w - left_value) * 4500 ) / ( - w) : 4500;
 	reel.animate({left:"-"+w+"px"},time,'linear',function(){
 		var first_logo = $("#content .container .gallery .reel a").eq(0).detach();
