@@ -70,6 +70,7 @@ class peticiones extends main{
 	}
 
 	public function sienlace(){
+
 		$firma = new firma();
 		$this->firmas = number_format($firma->count());
 		$this->photos = $this->searchPhotos();
@@ -80,6 +81,7 @@ class peticiones extends main{
 			$this->thephoto = false;
 		}
 		$this->include_template('sienlace','peticiones');
+
 	}
 	public function sign(){
 		$firma = new firma();
@@ -111,6 +113,10 @@ class peticiones extends main{
 			echo false;
 			$extra = "";
 		}
+		if($this->post(''))
+		$this->contact_email = 'sonny@spaceshiplabs.com';
+
+		$this->send_email($to,$subject,$message,$from,$from_name);
 		header( "location: /peticiones/sienlace" . $extra );
 	}
 

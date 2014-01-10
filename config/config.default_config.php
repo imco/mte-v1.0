@@ -38,6 +38,7 @@ class default_config{
 		$this->recaptcha_private_key = '***REMOVED***';
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
+		$this->image_email = 'sonny@spaceshiplabs.com';
 		$this->tynt = false;
 		
 		//signs sizes
