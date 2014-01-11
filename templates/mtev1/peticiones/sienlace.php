@@ -182,6 +182,8 @@
                 <a class="ally span2-5" href="http://www.masciudadania.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
                 <a class="ally span2-5" href="http://www.ifie.edu.mx/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
                 <a class="ally span2-5" href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
+                <a class="ally span2-5" href="http://proeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_proed.png');?></a>
+                <a class="ally span2-5" href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png');?></a>
             </div>
             <div class="bottom">
                 <p>
