@@ -21,7 +21,7 @@ class main extends controler{
 		$this->breadcrumb = false; 
 		$this->draw_map = false; 
 		$this->draw_charts = false; 
-		//$this->get_data_compara_float();
+		$this->get_data_compara_float();
 	}
 
 	/** 
