@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="<?=$this->config->http_address?>templates/<?=$this->config->theme?>/img/sienlace/favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css' />
     <?php
-        $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');
+        $css_scripts = array('bootstrap-fileupload.min.css','sienlace.css');  
         $js_scripts = array(
             'jquery.js',
             'enlace/jquery-migrate-1.1.1.min.js',
