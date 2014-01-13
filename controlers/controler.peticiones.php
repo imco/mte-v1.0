@@ -94,6 +94,19 @@ class peticiones extends main{
 		}	
 		$count = $firma->count();
 		echo number_format($count);
+
+		$parameters['source'] = "www.mejoratuescuela.org/peticiones/sienlace/";
+		$parameters['email'] = $this->post('email_input');
+		$parameters['first_name'] = $this->post('nombre');
+		$parameters['last_name'] = $this->post('nombre');
+		$parameters['city'] = "Cancun";
+		$parameters['postal_code'] = "7500";
+		$parameters['country_code'] = "MX";
+		$parameters['hidden'] = True;
+		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+		$petition_auth_key = $change->get_auth_key("http://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014","www.mejoratuescuela.org/peticiones/sienlace/");
+	$change->suma_firma_peticion("www.mejoratuescuela.org/peticiones/sienlace/",$petition_auth_key,$parameters);
+
 	}
 	private function searchPhotos(){
 		$result = new firma_img();
