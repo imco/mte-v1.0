@@ -94,12 +94,13 @@ class peticiones extends main{
 		}	
 		$count = $firma->count();
 		echo number_format($count);
+		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014"
 
 		$parameters['source'] = "www.mejoratuescuela.org/peticiones/sienlace/";
 		$parameters['email'] = $this->post('email_input');
-		$parameters['first_name'] = $this->post('nombre');
-		$parameters['last_name'] = $this->post('nombre');
-		$parameters['city'] = "Cancun";
+		$parameters['first_name'] = $this->post('nombre_input');
+		$parameters['last_name'] = $this->post('apellido_input');
+		$parameters['city'] = "México DF";
 		$parameters['postal_code'] = "7500";
 		$parameters['country_code'] = "MX";
 		$parameters['hidden'] = True;
