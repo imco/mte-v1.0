@@ -109,7 +109,7 @@ class peticiones extends main{
 		$petition_auth_key = $change->get_auth_key("http://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014","www.mejoratuescuela.org/peticiones/sienlace/");
 		
 		$change->suma_firma_peticion("www.mejoratuescuela.org/peticiones/sienlace/",$petition_auth_key,$parameters);
-
+		exit;
 	}
 	private function searchPhotos(){
 		$result = new firma_img();
