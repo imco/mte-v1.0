@@ -48,6 +48,7 @@
 				<div id='content'>
                     <div class="singin">
                         <div class='container row-fluid'>
+                            <?php $this->include_template('sienlace-share','peticiones');?>
                             <div class="span12">
                                 <h4>La evaluación de desempeño es un mecanismo fundamental para mejorar la calidad del sistema educativo mexicano.  Como resultado de la Reforma Educativa, el Instituto Nacional para la Evaluación de la Educación (INEE) quedó como institución responsable, junto con las autoridades educativas, de llevar a cabo estas evaluaciones.</h4>
                                 <h4>Desde el año 2006, la prueba ENLACE permitía medir el desempeño de más de quince millones de alumnos de primaria, secundaria y bachillerato. Esta prueba era de los únicos termómetros que permitía realizar un diagnóstico nacional de los avances educativos de cada niña y niño mexicano.</h4>
@@ -109,29 +110,7 @@
                             </div>
                         </div>
                          <h2><a class="icon-helpus"></a> ¡Ayúdanos a difundir esta petición! </h2>
-						<div class="row-fluid">
-                            <div class="share" r>                               
-                                <div class='rstab email'><a href='mailto:?subject=#SiENLACE2014&amp;body=Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela'></a></div>
-                                <div class="rstab fb">
-                                    <script>(function(d, s, id) {
-                                      var js, fjs = d.getElementsByTagName(s)[0];
-                                      if (d.getElementById(id)) return;
-                                      js = d.createElement(s); js.id = id;
-                                      js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=691236920892168";
-                                      fjs.parentNode.insertBefore(js, fjs);
-                                    }(document, 'script', 'facebook-jssdk'));</script>
-                                    <div class="fb-like" data-href="http://www.mejoratuescuela.org/peticiones/sienlace" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-                                </div>
-                                <div class="rstab gplus">
-                                    <div class="g-plusone" data-size="medium"></div>
-                                </div>
-                                <div class="rstab tw">
-                                    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?=$this->config->http_address?>peticiones/sienlace" data-hashtags="SíEnlace2014" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS @Mejoratuescuela">Tweet</a>-->
-                                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: " data-via="Mejoratuescuela" data-url="<?=$this->config->http_address?>peticiones/sienlace">Tweet</a>
-                                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                </div>
-                            </div>
-                        </div>
+						
                         <div class="uploadphoto">
                             <h2>¿Ya firmaste? <br />
                             Ahora sube tu foto aquí:</h2>
