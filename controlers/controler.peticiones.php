@@ -87,6 +87,7 @@ class peticiones extends main{
 		$this->include_template('sienlace','peticiones');
 	}
 	public function sign(){
+		error_reporting(1);
 		$firma = new firma();
 		if(filter_var($this->post('email_input'),FILTER_VALIDATE_EMAIL)){
 			$firma->create('nombre,apellido,email,cp,comentario');
