@@ -98,7 +98,14 @@ class peticiones extends main{
 		return $result;
 	}
 	private function send_sign_email($email){
-		
+		$subject = '¡Gracias por sumarte a la campaña #SíENLACE2014!';
+		$message = <<<EOD
+Gracias por sumarte a la campaña #SíENLACE2014! /n
+Ayúdanos a difundir esta petición para lograr una mayor transparencia, rendición de cuentas y educación de calidad en nuestro país, compartiendo la siguiente la liga: <a href='http://ow.ly/spTvS'>http://ow.ly/spTvS</a>  y el hashtag <a href='https://twitter.com/search?q=%23S%C3%ADEnlace2014&src=typd'>#SíENLACE2014</a>.		
+EOD;
+		$from = 'system@mejoratuescuela.org';
+		$from_name = 'Mejoratuescuela.org';
+		$this->send_email($email,$subject,$message,$from,$from_name);
 	}
 	public function uphoto(){
 		$firma = new firma_img();
@@ -118,11 +125,11 @@ class peticiones extends main{
 				$from = 'system@mejoratuescuela.org';
 				$from_name = 'Sistema Mejoratuescuela';
 				$message = <<<EOD
-Alguien ha subido una nueva foto en la petición SiENLACE:
-http://www.mejoratuescuela.org/signs/{$image->filename}
-Haz clic en el siguiente vinculo para aprobar:
-http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}
-Para denegar no es necesario tomar acción.
+Alguien ha subido una nueva foto en la petición SiENLACE:/n
+http://www.mejoratuescuela.org/signs/{$image->filename}/n
+Haz clic en el siguiente vinculo para aprobar:/n
+http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}/n
+Para denegar no es necesario tomar acción./n
 EOD;
 				$this->send_email($this->config->image_email,$subject,$message,$from,$from_name);
 				//echo $message;
