@@ -214,7 +214,7 @@ class ApiChange{
 		$data = http_build_query($parameters);
 
 		//echo $data;exit;
-		var_dump($data);
+		//var_dump($data);
 		$curl_session = curl_init();
 		curl_setopt_array($curl_session, array(
 		    CURLOPT_POST => 1,
