@@ -69,11 +69,10 @@ class peticiones extends main{
 
 	}
 	public function aprobar_imagen(){
-		$img = new firma_img($this->post('id'));
+		$img = new firma_img($this->get('id'));
 		$img->update('activo',array(1));
 		$img->debug = true;
 		$img->read('id,filename,email,activo');
-		var_dump($img);
 		echo "<img src='http://www.mejoratuescuela.org/sign/sign/{$img->filename}' />";
 	}
 	public function sienlace(){
