@@ -38,13 +38,13 @@ class default_config{
 		$this->recaptcha_private_key = '***REMOVED***';
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
-		$this->image_email = 'sonny@spaceshiplabs.com';
+		$this->image_email = 'ariadna.camargo@imco.org.mx';
 		$this->tynt = false;
 		
 		//signs sizes
 		$this->icon_sizes = json_decode('[
 			{"width":"50","height":"50","slug":"tiny"},
-			{"width":"156","height":"112","slug":"signs" , "resize_type":"best fit"}
+			{"width":"156","height":"112","slug":"signs" ,"resize_type":"best fit"}
 		]');
 	}
 }
