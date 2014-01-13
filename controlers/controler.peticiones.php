@@ -100,7 +100,7 @@ class peticiones extends main{
 	private function send_sign_email($email){
 		$subject = '¡Gracias por sumarte a la campaña #SíENLACE2014!';
 		$message = <<<EOD
-Gracias por sumarte a la campaña #SíENLACE2014! /n
+Gracias por sumarte a la campaña #SíENLACE2014! <br/>
 Ayúdanos a difundir esta petición para lograr una mayor transparencia, rendición de cuentas y educación de calidad en nuestro país, compartiendo la siguiente la liga: <a href='http://ow.ly/spTvS'>http://ow.ly/spTvS</a>  y el hashtag <a href='https://twitter.com/search?q=%23S%C3%ADEnlace2014&src=typd'>#SíENLACE2014</a>.		
 EOD;
 		$from = 'system@mejoratuescuela.org';
@@ -125,11 +125,11 @@ EOD;
 				$from = 'system@mejoratuescuela.org';
 				$from_name = 'Sistema Mejoratuescuela';
 				$message = <<<EOD
-Alguien ha subido una nueva foto en la petición SiENLACE:/n
-http://www.mejoratuescuela.org/signs/{$image->filename}/n
-Haz clic en el siguiente vinculo para aprobar:/n
-http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}/n
-Para denegar no es necesario tomar acción./n
+Alguien ha subido una nueva foto en la petición SiENLACE:<br/>
+http://www.mejoratuescuela.org/signs/{$image->filename}<br/>
+Haz clic en el siguiente vinculo para aprobar:<br/>
+http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}<br/>
+Para denegar no es necesario tomar acción.<br/>
 EOD;
 				$this->send_email($this->config->image_email,$subject,$message,$from,$from_name);
 				//echo $message;
