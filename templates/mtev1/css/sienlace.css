@@ -20,6 +20,7 @@ a,p,h1,h2,h3,h4,a[href],input,textarea,span{color:black;font-family: 'Bitter', s
 .container{position:relative;width:960px;margin:0 auto;font-family: 'Bitter', serif;}
 .hidden{display:none;}
 strong{font-weight: bold;}
+.white{color:white;}
 .animate-opacity{
 	-webkit-transition: opacity .2s;
 	-moz-transition: opacity .2s;

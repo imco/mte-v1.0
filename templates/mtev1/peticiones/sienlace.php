@@ -24,7 +24,7 @@
         $cssmin->tag('css');
         $jsmin->tag('js');
     ?>
-	<title>#SiENLACE2014</title>
+	<title>#SíENLACE2014</title>
 </head>
 <body>
 	<div id="overlay"></div>	
@@ -51,7 +51,7 @@
                             <div class="span12">
                                 <h4>La evaluación de desempeño es un mecanismo fundamental para mejorar la calidad del sistema educativo mexicano.  Como resultado de la Reforma Educativa, el Instituto Nacional para la Evaluación de la Educación (INEE) quedó como institución responsable, junto con las autoridades educativas, de llevar a cabo estas evaluaciones.</h4>
                                 <h4>Desde el año 2006, la prueba ENLACE permitía medir el desempeño de más de quince millones de alumnos de primaria, secundaria y bachillerato. Esta prueba era de los únicos termómetros que permitía realizar un diagnóstico nacional de los avances educativos de cada niña y niño mexicano.</h4>
-                                <h4>El INEE y la SEP anunciaron, el diciembre pasado, que sus pruebas de evaluación para educación primaria y secundaria estarán listas hasta el 2015. Como consecuencia, NO SE APLICARÁ LA PRUEBA ENLACE EN 2014 en estos niveles. La pregunta clave para la SEP y el INEE es: ¿por qué no esperar a que la nueva prueba esté lista antes de cancelar ENLACE?</h4>
+                                <h4>El INEE y la SEP anunciaron, el diciembre pasado, que sus pruebas de evaluación para educación primaria y secundaria estarán listas hasta el 2015. Como consecuencia, <span class='white'>NO SE APLICARÁ LA PRUEBA ENLACE EN 2014 </span>en estos niveles. La pregunta clave para la SEP y el INEE es: ¿por qué no esperar a que la nueva prueba esté lista antes de cancelar ENLACE?</h4>
                                 <!--<h4>Como resultado de la Reforma Educativa, la responsabilidad de llevar a cabo las evaluaciones nacionales de alumnos estará a cargo del INEE. Sin embargo, recientemente el INEE anunció que sus pruebas, para educación primaria y secundaria, no estarán listas hasta el 2015.</h4>-->
                                 <h3>La prueba ENLACE es imperfecta, puede y debe mejorarse, pero no podemos perder la medición más significativa que existe hoy sobre el estado de la educación en México.</h3>
                             </div>
@@ -76,7 +76,7 @@
                                     <label>Apellido:</label>
                                     <input type="text" name="apellido_input" value="" required="required" />
                                     <label>Correo electrónico:</label>
-                                    <input type="text" name="email_input" value="" required="required" />
+                                    <input type="text" name="email_input" value="" required="email" />
                                     <!--<label>País:</label>
                                     <input type="text" name="pais_input" value="" required="required" />-->
                                     <label>Código Postal:</label>

@@ -83,7 +83,10 @@ class peticiones extends main{
 	}
 	public function sign(){
 		$firma = new firma();
-		$firma->create('nombre,apellido,email,cp,comentario');
+		if(filter_var($this->post('email_input'),FILTER_VALIDATE_EMAIL)){
+			$firma->create('nombre,apellido,email,cp,comentario');
+			$this->send_sign_email($this->post('email_input'));
+		}	
 		$count = $firma->count();
 		echo number_format($count);
 	}
@@ -93,6 +96,9 @@ class peticiones extends main{
 		$result->order_by = " rand() ";
 		$result = $result->read('id,filename,email,activo');
 		return $result;
+	}
+	private function send_sign_email($email){
+		
 	}
 	public function uphoto(){
 		$firma = new firma_img();
