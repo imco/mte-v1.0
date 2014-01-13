@@ -224,7 +224,7 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		setcookie('days', json_encode($result), time() * 3600);
+		var_dump($result);
 		return $result;
 	}
 
