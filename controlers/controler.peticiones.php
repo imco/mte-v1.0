@@ -97,7 +97,7 @@ class peticiones extends main{
 		echo number_format($count);
 		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014";
 
-		$parameters['source'] = "www.mejoratuescuela.org/peticiones/sienlace/";
+		$parameters['source'] = $petition_url;
 		$parameters['email'] = $this->post('email_input');
 		$parameters['first_name'] = $this->post('nombre_input');
 		$parameters['last_name'] = $this->post('apellido_input');
@@ -106,10 +106,9 @@ class peticiones extends main{
 		$parameters['country_code'] = "MX";
 		$parameters['hidden'] = True;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$petition_auth_key = $change->get_auth_key("http://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014","www.mejoratuescuela.org/peticiones/sienlace/");
+		$petition_auth_key = $change->get_auth_key($petition_url,$petition_url);
 		
-		$change->suma_firma_peticion("www.mejoratuescuela.org/peticiones/sienlace/",$petition_auth_key,$parameters);
-		exit;
+		$change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
 	}
 	private function searchPhotos(){
 		$result = new firma_img();
