@@ -14,7 +14,8 @@
         <div class="g-plusone" data-size="medium"></div>
     </div>
     <div class="rstab tw">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: http://ow.ly/spTvS " data-via="Mejoratuescuela" data-url="<?=$this->config->http_address?>peticiones/sienlace">Tweet</a>
+       <!--  <?=$this->config->http_address?>peticiones/sienlace-->
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Yo ya firmé la petición #SíENLACE2014 porque la evaluación es nuestro derecho. Súmate hoy en: " data-via="Mejoratuescuela" data-url="http://ow.ly/spTvS">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
     <div class='clear'></div>
