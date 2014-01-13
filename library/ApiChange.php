@@ -224,7 +224,6 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		var_dump($result);
 		return $result;
 	}
 
