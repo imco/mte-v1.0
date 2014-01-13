@@ -26,10 +26,11 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
+	/*
 	var actualURL = document.URL;
 	if(actualURL.indexOf("/escuelas/index") != -1)
 		 $(".comparador_select").fadeTo(100, 0.1).fadeTo(300, 1.0);
-	
+	*/
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
@@ -315,6 +316,11 @@ $(document).ready(function(){
 				$('.petitions').append(template);
 			}
 		},'json');
+		setTimeout(function(){
+			$('.comparador_select').fadeTo('slow',0.23).fadeTo('slow',1);
+		},270);
+
+		$('.comparador_select').data('indica',true);
 	}
 
 	$('.share-bt .social .btns a').each(function(i,val){
@@ -370,19 +376,39 @@ $(document).ready(function(){
 	});
 
 	$('.comparador_select').not('.on').click(function(){
-		$(this).toggleClass('on').find('.open_wrap').toggle('slow');
+		var $this = $(this);
+		$this.toggleClass('on').find('.open_wrap').toggle('slow');
+		if($this.data('indica')){
+			var cct = $('span.CCT').html();
+			console.log(true);
+			$this.data('indica',false);
+			$this.find('.hidden:contains("'+cct+'")').parent().fadeTo('slow',0.23).fadeTo('slow',1);
+		}
 
 	});
 
-	$('.comparador_select ul li').click(function(e){
+	$('.comparador_select ul').on('click','li',function(e){
 		e.preventDefault();
 		e.stopPropagation();
-		$(this).toggleClass('uncheck');
-		var cct = $(this).find('.hidden').html();
+		var $this = $(this),
+		cct = $this.find('.hidden').html();
+		$this.toggleClass('uncheck');
 		if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
 			toggle_escuela(cct);
 		}
+		$this.hide('slow',function(){
+			var contents = {selected:'visited',visited:'selected'},
+			content = $this.parent().parent().attr('class');
+			$('.'+contents[content]+' ul').append(this);
+			$this.removeClass().show('slow');
+			var contentCountActual = $('.N'+content+' span'),
+			contentCount = $('.N'+contents[content] +' span');
+			contentCountActual.html(+(contentCountActual.html())-1);
+			contentCount.html(+(contentCount.html())+1);
+		});
+
 	});
+	
 	/*
 	$('.comparador_select .visited ul li').click(function(e){
 		e.stopPropagation();

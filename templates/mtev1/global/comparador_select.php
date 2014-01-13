@@ -1,6 +1,6 @@
 <div class="comparador_select ">
 	<span class="icon fs"></span>
-	<p>Escuelas seleccionadas para comparar (<span><?=count($this->school_to_compare) ?></span>)</p>
+	<p class='Nselected'>Escuelas seleccionadas para comparar (<span><?=count($this->school_to_compare) ?></span>)</p>
 	<div class="open_wrap">
 		<div class="selected">
 			<ul>
@@ -15,7 +15,7 @@
 			</a>
 		</div>
 		<div class="visited">
-			<p>Escuelas visitadas (<span><?=count($this->school_view)?></span>)</p>
+			<p class='Nvisited'>Escuelas visitadas (<span><?=count($this->school_view)?></span>)</p>
 			<ul>
 				<?php foreach($this->school_view as $school) {
 					echo "<li><span class='icon'></span>$school->nombre
