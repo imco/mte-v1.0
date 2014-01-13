@@ -159,7 +159,7 @@ class ApiChange{
 		));
 
 		$result = curl_exec($curl_session);
-		var_dump($result);
+		//var_dump($result);
 		exit('asa');
 //		return $result;
 //		echo "\n Se ha solicitado la auth_key";

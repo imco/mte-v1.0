@@ -11,13 +11,13 @@ $(document).ready(function(){
             container.css('height', container.find('ol').height() + 'px').addClass('ready');
         }
     });*/
-    /*$('#singForm').submit(function(e){
+    $('#singForm').submit(function(e){
         e.preventDefault();
         $.post('/peticiones/sign/', $(this).serialize(),function(data){
             $('.firma-count').html(data);
         });
         $(this).slideUp(300);
-    });*/
+    });
 	moveGalCustom();
 });
 /*$( window ).resize(function() {  setWhyText();  });*/
