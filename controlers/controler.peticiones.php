@@ -105,9 +105,8 @@ class peticiones extends main{
 		$parameters['country_code'] = "MX";
 		$parameters['hidden'] = True;
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
-		$petition_auth_key = $change->get_auth_key("www.mejoratuescuela.org/peticiones/sienlace/",$petition_url);
-		//$petition_auth_key = '91df846373856cf420575fd332dd6b0420a54dbdfad44dd9ac879d67e677cc84';
-		$this->sign_result['status'] = $change->suma_firma_peticion($petition_url,$petition_auth_key,$parameters);
+		$petition_auth_key = $change->get_auth_key("http://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014","www.mejoratuescuela.org/peticiones/sienlace/");
+	$change->suma_firma_peticion("www.mejoratuescuela.org/peticiones/sienlace/",$petition_auth_key,$parameters);
 
 	}
 	private function searchPhotos(){
