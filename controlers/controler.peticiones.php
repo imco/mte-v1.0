@@ -94,7 +94,7 @@ class peticiones extends main{
 		}	
 		$count = $firma->count();
 		echo number_format($count);
-		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014"
+		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014";
 
 		$parameters['source'] = "www.mejoratuescuela.org/peticiones/sienlace/";
 		$parameters['email'] = $this->post('email_input');
