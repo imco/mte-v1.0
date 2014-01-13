@@ -160,7 +160,7 @@ class ApiChange{
 
 		$result = curl_exec($curl_session);
 		//var_dump($result);
-		exit('asa');
+		//exit('asa');
 //		return $result;
 //		echo "\n Se ha solicitado la auth_key";
 		$json_response = json_decode($response, true);
