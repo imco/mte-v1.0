@@ -73,7 +73,7 @@ class peticiones extends main{
 		$img->update('activo',array(1));
 		$img->debug = true;
 		$img->read('id,filename,email,activo');
-		echo "<img src='http://www.mejoratuescuela.org/sign/sign/{$img->filename}' />";
+		echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
 	}
 	public function sienlace(){
 		$firma = new firma();
