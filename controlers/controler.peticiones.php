@@ -32,7 +32,7 @@ class peticiones extends main{
 		$this->petition_info[] = $change->regresa_info_peticion($this->petition_url);
 		$this->petition_url = 'https://www.change.org/es-LA/peticiones/autoridades-educativas-del-gobierno-del-estado-de-campeche-no-nos-abandonen-los-necesitamos';
 		$this->petition_info[] = $change->regresa_info_peticion($this->petition_url);
-
+		
 	}
 
 	/**
@@ -71,7 +71,6 @@ class peticiones extends main{
 	public function aprobar_imagen(){
 		$img = new firma_img($this->get('id'));
 		$img->update('activo',array(1));
-		$img->debug = true;
 		$img->read('id,filename,email,activo');
 		echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
 	}
