@@ -39,17 +39,18 @@
                             <a class="number firma-count"><?=$this->firmas?></a>
                         </div>
 						<a class="logo" href="<?=$this->config->http_address?>/peticiones/sienlace"><?php $this->print_img_tag('sienlace/logo.jpg');?></a>
-                        <div class="social">
+                        <!--<div class="social">
                             <a href="https://twitter.com/MejoraTuEscuela" class="icon animate-BG tw"></a>
                             <a href="https://www.facebook.com/MejoraTuEscuela" class="icon animate-BG fb"></a>
-                        </div>
+                        </div>-->
+
 					</div>
 				</div>
 				<div id='content'>
                     <div class="singin">
                         <div class='container row-fluid'>
-                            <?php $this->include_template('sienlace-share','peticiones');?>
                             <div class="span12">
+                                <?php $this->include_template('sienlace-share','peticiones');?>
                                 <h4>La evaluación de desempeño es un mecanismo fundamental para mejorar la calidad del sistema educativo mexicano.  Como resultado de la Reforma Educativa, el Instituto Nacional para la Evaluación de la Educación (INEE) quedó como institución responsable, junto con las autoridades educativas, de llevar a cabo estas evaluaciones.</h4>
                                 <h4>Desde el año 2006, la prueba ENLACE permitía medir el desempeño de más de quince millones de alumnos de primaria, secundaria y bachillerato. Esta prueba era de los únicos termómetros que permitía realizar un diagnóstico nacional de los avances educativos de cada niña y niño mexicano.</h4>
                                 <h4>El INEE y la SEP anunciaron, el diciembre pasado, que sus pruebas de evaluación para educación primaria y secundaria estarán listas hasta el 2015. Como consecuencia, <span class='white'>NO SE APLICARÁ LA PRUEBA ENLACE EN 2014 </span>en estos niveles. La pregunta clave para la SEP y el INEE es: ¿por qué no esperar a que la nueva prueba esté lista antes de cancelar ENLACE?</h4>
