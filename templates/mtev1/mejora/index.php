@@ -4,7 +4,19 @@ $infografias = array('entorno-social'=>'Entorno Social',
 		'aprendizaje'=>'Mejora tu aprendizaje'
 	);
 ?>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=1391573024393890";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div class='container mejora'>
+	<div class="overlay-transparent"></div>
 	<div class="display">
 		<span class="close"></span>
 		<div class="column left">
@@ -24,15 +36,15 @@ $infografias = array('entorno-social'=>'Entorno Social',
 				Mejorar la distribucion de lso recursos destinados a la infraestructura y mobiliario de las escuelas
 				</p>
 				<a href="">Leer nota completa</a>
-				
+				<div class="fb-comments" data-href="http://www.mejoratuescuela.org/" data-width="340" data-numposts="5" data-colorscheme="dark"></div>
 			</div>
 		</div>
+
 	</div>
 	<div class="column">
 		<h1 class='banner green'><?=$this->get('id')?$infografias[$this->get('id')]:'Infografías más recientes' ?></h1>
 		<div class="wrap">
 			<?=file_get_contents($this->config->blog_address."mejora".($this->get('id')?'/?mejora='.$this->get('id'):'')) ?>
-
 			<div class="share-bt bl left" style='position:absolute;left:0;bottom:0;'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
 					<span class="bt-share button-efect">		

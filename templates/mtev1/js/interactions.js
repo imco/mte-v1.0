@@ -26,6 +26,11 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
+	var actualURL = document.URL;
+	if(actualURL.indexOf("/escuelas/index") != -1)
+		 $(".comparador_select").fadeTo(100, 0.1).fadeTo(300, 1.0);
+	
+
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
 		$('#general-search').attr('action',$(this).attr('href'));
@@ -321,9 +326,18 @@ $(document).ready(function(){
 	//mejora view
 	$('.mejorar').click(function(){
 		input_data_view_mejora(this);
+		console.log("altura de mejora "+ $('.mejora').outerHeight(true));
+		var displayTop = ($('.mejora').height() / 2) ;
+		$('.display').css('top',displayTop+'px');	
 		$('.display').show('slow');
-		$('body').animate({scrollTop:213},200);
+		var displayoffset = $('.display').offset();
+		$('body').animate({scrollTop:displayoffset.top-20},200);//scroll 213
+		$('.mejora .overlay-transparent').show();
 	});
+	$('.mejora .overlay-transparent').click(function(){
+		$(this).hide();
+		$('.display').hide();
+	})
 
 	$('.display .move').click(function(e){
 		e.preventDefault();
