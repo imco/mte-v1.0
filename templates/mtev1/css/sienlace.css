@@ -72,7 +72,7 @@ strong{font-weight: bold;}
 #header .social a:hover{background-color: #7D9C00;}
 
 /*Footer*/
-#footer{height: 260px;padding-top: 30px;background: #F1F1F1;}
+#footer{height:294px;padding-top: 30px;background: #F1F1F1;}
 #footer h4{text-align: center;position: relative;font-size: 20px;margin-bottom: 15px;}
 #footer h4 a{padding: 0 10px;background: #F1F1F1;z-index: 1;position: relative;}
 #footer h4:before{content: '';position: absolute;width: 100%;height: 1px;z-index: 0;border-top: 1px solid #DADADA;left: 0;top: 10px;}
