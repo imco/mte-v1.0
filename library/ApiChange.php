@@ -160,7 +160,7 @@ class ApiChange{
 
 		$result = curl_exec($curl_session);
 		//var_dump($result);
-		exit('asa');
+		//exit('asa');
 //		return $result;
 //		echo "\n Se ha solicitado la auth_key";
 		$json_response = json_decode($response, true);
@@ -214,7 +214,7 @@ class ApiChange{
 		$data = http_build_query($parameters);
 
 		//echo $data;exit;
-		var_dump($data);
+		//var_dump($data);
 		$curl_session = curl_init();
 		curl_setopt_array($curl_session, array(
 		    CURLOPT_POST => 1,
