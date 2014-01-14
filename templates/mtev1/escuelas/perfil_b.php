@@ -1,24 +1,35 @@
 <div class='perfil container B'>
+	<div class='head'>
+		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
+		<a href="#" class="button-frame"><span class="compara-button">Comparar</span></a>
+		<div class="clear"></div>
+	</div>
+	<div class='info_B top'>
+			<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+			<ul class="data">
+				<li>Clave <?=$this->escuela->cct?></li>
+				<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
+				<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
+				<li><?=$controles[$this->escuela->control->id]?></li>
+				<div class="clear"></div>
+			</ul>
+	</div>
 	<div class='column left'>
-		<div class='head'>
-			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-		</div>
-		<div class='info_B'>
-			<h2>
-				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
-				<?=$this->capitalize($this->escuela->nivel->nombre)?> | <?=$this->capitalize($this->escuela->turno->nombre)?> | <?=$controles[$this->escuela->control->id]?>
-			</h2>
-
-		</div>
 		<div class='map-wrap'>	
 			<div class='info_B lateral' itemscope itemtype="http://schema.org/LocalBusiness">
+				<div class="top-info">
+					<div class='rank'>
+						<div class='posicion'>
+							<?php $this->print_img_tag('home/posicion.png');?>
+							<p>Posición estatal</p>
+							<h2>
+								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
+							</h2>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
 				<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
-				<p class='cct'>
-					CCT 
-					<span class="CCT"><?=$this->escuela->cct?></span>
-					<div class='clear'></div>
-				</p>
-
 				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<span class='icon sprit2'></span>
 					Dirección
@@ -258,16 +269,6 @@ EOD;
 		</div>	
 	</div>
 	<div class='column right'>
-		<div class='rank'>
-			<div class='posicion'>
-				<?php //$this->print_img_tag('home/posicion.png');?>
-				<span class="icon sprit2"></span>
-				<p>Posición estatal</p>
-				<h2>
-					<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
-				</h2>
-			</div>
-		</div>
 		<div class='semaforo'>
 			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
 			<h2>Semáforo educativo</h2>
