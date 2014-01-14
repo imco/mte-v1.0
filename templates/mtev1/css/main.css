@@ -1300,7 +1300,7 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 .comparador_select:not(.on){cursor:pointer;}
 .comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 12px 12px 0 12px;border-color:#00ADF3 transparent transparent transparent;bottom:-17px;position:absolute;left:43%;}
 .comparador_select .icon.fs{display:block;margin:14px auto 8px;background:url(../img/select/regla.png) center no-repeat;width:53px;height:14px;}
-.comparador_select p{text-align:center;font-size:14px;margin-top:8px;margin-bottom:8px;line-height:normal;color:#00ADF3;}
+.comparador_select p{text-align:center;font-size:13px;margin-top:8px;margin-bottom:8px;line-height:normal;padding: 0 8px;color:#00ADF3;}
 .comparador_select p span{color:white;}
 .comparador_select .selected{margin-top:3px;}
 .comparador_select .selected ul li{color:white;}
@@ -1310,7 +1310,7 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 .comparador_select .selected .icon{background:url(../img/select/palomita.png) center no-repeat;}
 .comparador_select .selected .uncheck .icon{background:url(../img/select/cruz.png) center no-repeat;}
 .comparador_select ul{padding:10px 0;}
-.comparador_select ul li{font-size:12px;line-height:normal;padding:6px 16px 4px;border-bottom:1px solid #545454;cursor:pointer;}
+.comparador_select ul li{font-size:11px;line-height:normal;padding:6px 16px 4px;border-bottom:1px solid #545454;cursor:pointer;}
 .comparador_select .selected .button-frame{width:148px;height:35px;margin:0 auto;display:block;margin-top:7px;}
 .comparador_select .selected .button-frame span.bt-share{font-size:17px;width:137px;height:24px;line-height:normal;margin-top: 4.5px}
 .comparador_select .visited{padding:1px 0 0;margin-top:17px;border-top:5px solid #00A644;}
