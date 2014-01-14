@@ -55,9 +55,10 @@ strong{font-weight: bold;}
 /*Header*/
 #header{}
 #header .container{text-align: center;}
-#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;display:none;}
-#header .label:before{content: '';width: 0px;height: 0px;border-style: solid;border-width: 34px 0 0 72px;border-color: transparent transparent transparent white;position: absolute;left: 0;bottom: 0;}
-#header .label:after{content: '';width: 0px;height: 0px;border-style: solid;border-width: 0 0 34px 72px;border-color: transparent transparent white transparent;position: absolute;right: 0;bottom: 0;}
+#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;display:block;
+background: transparent url(../img/sienlace/label.png) no-repeat 0 -10px;}
+/*#header .label:before{content: '';width: 0px;height: 0px;border-style: solid;border-width: 34px 0 0 72px;border-color: transparent transparent transparent white;position: absolute;left: 0;bottom: 0;}
+#header .label:after{content: '';width: 0px;height: 0px;border-style: solid;border-width: 0 0 34px 72px;border-color: transparent transparent white transparent;position: absolute;right: 0;bottom: 0;}*/
 #header .label a{display: block;color: white;text-decoration: none;font-size: 22px;line-height: 27px;}
 #header .label .icon{background: transparent url(../img/sienlace/ya_somos.png) no-repeat center;height: 45px;}
 #header .logo{padding-top: 30px;display: block;}
@@ -72,7 +73,7 @@ strong{font-weight: bold;}
 #header .social a:hover{background-color: #7D9C00;}
 
 /*Footer*/
-#footer{height:294px;padding-top: 30px;background: #F1F1F1;}
+#footer{height:294px;padding-top: 30px;background: #F1F1F1;height: auto;}
 #footer h4{text-align: center;position: relative;font-size: 20px;margin-bottom: 15px;}
 #footer h4 a{padding: 0 10px;background: #F1F1F1;z-index: 1;position: relative;}
 #footer h4:before{content: '';position: absolute;width: 100%;height: 1px;z-index: 0;border-top: 1px solid #DADADA;left: 0;top: 10px;}
