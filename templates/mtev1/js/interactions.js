@@ -371,7 +371,7 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 
-	$('.mejorar h1 + a').click(function(e){
+	$('.mejorar a.more, .mejorar a.download').click(function(e){
 		e.stopPropagation();
 	});
 
