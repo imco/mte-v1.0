@@ -371,7 +371,7 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 
-	$('.mejorar h1 + a').click(function(e){
+	$('.mejorar a.more, .mejorar a.download').click(function(e){
 		e.stopPropagation();
 	});
 
@@ -484,7 +484,7 @@ function twitterIni(){
 			var x = data[d];
 			console.log(x);
 			var text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(x.text)));
-			if(x.user.screen_name != 'clocsc') $("#tweets ul").append('<li><a href="http://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
+			if(x.user.screen_name != 'clocsc') $("#tweets ul").append('<li><a href="https://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
 		}
 		var heightX5Tweets = 0,
 		tweets = $("#tweets ul li");
