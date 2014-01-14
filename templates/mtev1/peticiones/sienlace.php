@@ -168,6 +168,7 @@
                 <a class="ally span2-5" href="http://www.cemefi.org/rededucacion/"><?php $this->print_img_tag('sienlace/logo3.png');?></a>
                 <a class="ally span2-5" href="http://ccaemexico.wordpress.com/"><?php $this->print_img_tag('sienlace/logo2.png');?></a>
                 <a class="ally span2-5" href="http://www.mexicanosprimero.org/"><?php $this->print_img_tag('sienlace/logo1.png');?></a>
+                <a class="ally span2-5" href="http://ensenapormexico.org/site/"><?php $this->print_img_tag('sienlace/ensenapormexico.png');?></a>
             </div>
             <div class="bottom">
                 <p>
