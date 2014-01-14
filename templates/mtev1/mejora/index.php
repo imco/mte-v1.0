@@ -36,7 +36,10 @@ $infografias = array('entorno-social'=>'Entorno Social',
 				Conocer las condiciones en las que se imparte la educación basica y especial en el pais.
 				Mejorar la distribucion de lso recursos destinados a la infraestructura y mobiliario de las escuelas
 				</p>
-				<a href="">Leer nota completa</a>
+				<a href="" class='nota_completa'>
+					<span class="icon"></span>
+					Leer nota completa
+				</a>
 				<div class="info_share">
 
 				</div>
