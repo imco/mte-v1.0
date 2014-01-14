@@ -13,6 +13,7 @@ $infografias = array('entorno-social'=>'Entorno Social',
 		js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=1391573024393890";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 </script>
 
 <div class='container mejora'>
@@ -36,7 +37,9 @@ $infografias = array('entorno-social'=>'Entorno Social',
 				Mejorar la distribucion de lso recursos destinados a la infraestructura y mobiliario de las escuelas
 				</p>
 				<a href="">Leer nota completa</a>
-				<div class="fb-comments" data-href="http://www.mejoratuescuela.org/" data-width="340" data-numposts="5" data-colorscheme="dark"></div>
+				<div class="info_share">
+
+				</div>
 			</div>
 		</div>
 
