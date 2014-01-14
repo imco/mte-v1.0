@@ -164,6 +164,10 @@
                 <a class="ally span2-5" href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
                 <a class="ally span2-5" href="http://proeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_proed.png');?></a>
                 <a class="ally span2-5" href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png');?></a>
+
+                <a class="ally span2-5" href="http://www.cemefi.org/rededucacion/"><?php $this->print_img_tag('sienlace/logo3.png');?></a>
+                <a class="ally span2-5" href="http://ccaemexico.wordpress.com/"><?php $this->print_img_tag('sienlace/logo2.png');?></a>
+                <a class="ally span2-5" href="http://www.mexicanosprimero.org/"><?php $this->print_img_tag('sienlace/logo1.png');?></a>
             </div>
             <div class="bottom">
                 <p>
