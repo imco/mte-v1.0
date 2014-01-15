@@ -32,9 +32,7 @@ $infografias = array('entorno-social'=>'Entorno Social',
 				<a class="download" href="">Descargar PDF</a>
 			</div>
 			<div class="wrap_content">
-				<p>¿Para que servira?
-				Conocer las condiciones en las que se imparte la educación basica y especial en el pais.
-				Mejorar la distribucion de lso recursos destinados a la infraestructura y mobiliario de las escuelas
+				<p>
 				</p>
 				<a href="" class='nota_completa'>
 					<span class="icon"></span>

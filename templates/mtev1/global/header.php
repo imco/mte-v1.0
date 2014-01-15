@@ -1,24 +1,20 @@
 <div class='menu <?= ($this->get('action')=='escuelas')?' resultados':($this->location=='escuelas' && $this->get('action')=='index'?'compara':$this->location)?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
 	<a href='/compara/'>CONOCE
-		<span class='icon sprites'></span>
+		<span class='icon'></span>
+		<!--
 		<span class='circle'></span>
-		<span class='decor'>1</span>
+		<span class='decor'>1</span>-->
 	</a>
 	<a href='/compara/escuelas/'>COMPARA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>2</span>
+		<span class='icon'></span>
+
 	</a>
 	<a href='/califica-tu-escuela/califica/'>CALIFICA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>3</span>
+		<span class='icon'></span>
 	</a>
 	<a href='/mejora'>MEJORA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>4</span>
+		<span class='icon'></span>
 	</a>
 	<!--
 	<a href='/resultados-nacionales'>Resultados Nacionales</a>
