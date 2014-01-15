@@ -347,7 +347,6 @@ $(document).ready(function(){
 		next;
 		if(this.href.split('#')[1]=='next'){
 			if((next = index.next('.mejorar')).length){
-				console.log(next);
 				input_data_view_mejora(next);
 			}else{
 				input_data_view_mejora($('.mejorar:first-child'));
@@ -557,7 +556,7 @@ function add_escuelas_cookie(){
 function input_data_view_mejora(mejorar){
 	mejorar = $(mejorar);
 	var index = $('.wrap .mejorar').removeClass('on').index(mejorar),
-	url = mejorar.find('h1 + a')[0].href,
+	url = mejorar.find('a.more')[0].href,
 	title = mejorar.find('h2').html()
 	display = $('.display');
 	mejorar.addClass('on');
