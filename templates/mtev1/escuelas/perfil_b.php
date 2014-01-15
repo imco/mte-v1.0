@@ -27,48 +27,52 @@
 							</h2>
 						</div>
 					</div>
+					<div class="cal-escuela">
+						<a href="#" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
+					</div>
 					<div class="clear"></div>
 				</div>
-				<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
-				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span class='icon sprit2'></span>
-					Dirección
-					<span class='title'>
-						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
-						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
-						<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
-						<span itemprop="addressCountry" content="MX"></span>
-					</span>
-				</p>
-				<!--<p class='director'>
-					<span class='icon'></span>
-					Director/Directora
-					<span class='title'>
-						
-					</span>
+				<div class="box">
+					<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
+					<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						<span class='icon sprit2'></span>
+						Dirección:
+						<span class='title'>
+							<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
+							<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
+							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
+							<span itemprop="addressCountry" content="MX"></span>
+						</span>
+					</p>
+					<!--<p class='director'>
+						<span class='icon'></span>
+						Director/Directora
+						<span class='title'>
+							
+						</span>
+						<div class='clear'></div>
+					</p>-->
+					<p class='tel'>
+						Teléfonos:
+						<span class='icon sprit2'></span>
+						<span itemprop="telephone" class='title'>
+							<?=$this->escuela->telefono?>
+						</span>
 					<div class='clear'></div>
-				</p>-->
-				<p class='contacto'>CONTACTO</p>
-				<p class='tel'>
-					Teléfonos
-					<span class='icon sprit2'></span>
-					<span itemprop="telephone" class='title'>
-						<?=$this->escuela->telefono?>
-					</span>
-				<div class='clear'></div>
-				</p>
-				<p class='email'>
-					<span class='icon sprit2'></span>
-					Mail
-					<span itemprop="email" class='title'>
-						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
-					</span>
-					<div class='clear'></div>
-				</p>
+					</p>
+					<p class='email'>
+						<span class='icon sprit2'></span>
+						Mail:
+						<span itemprop="email" class='title'>
+							<?=$this->str_limit($this->escuela->correoelectronico,20);?>
+						</span>
+						<div class='clear'></div>
+					</p>
 
-				<p class='web'>
-					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-				</p>
+					<p class='web'>
+						<?=$this->str_limit($this->escuela->paginaweb,21) ?>
+					</p>					
+				</div>
 			</div>
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>

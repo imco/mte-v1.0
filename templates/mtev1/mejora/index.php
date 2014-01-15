@@ -21,9 +21,9 @@ $infografias = array('entorno-social'=>'Entorno Social',
 	<div class="display">
 		<span class="close"></span>
 		<div class="column left">
-			<a class='move' href="#back"><</a>
+			<a class='move to-left' href="#back"></a>
 			<?php $this->print_img_tag('mejora/1.jpg');?>
-			<a class='move' href="#next">></a>
+			<a class='move to-right' href="#next"></a>
 		</div>
 		<div class="column right">
 			<div class="header">
