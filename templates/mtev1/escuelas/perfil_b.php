@@ -28,7 +28,7 @@
 						</div>
 					</div>
 					<div class="cal-escuela">
-						<a href="#" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
+						<a href="/califica_tu_escuela/califica/<?=$this->escuela->cct?>" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
 					</div>
 					<div class="clear"></div>
 				</div>

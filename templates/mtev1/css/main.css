@@ -799,6 +799,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*Perfil B*/
 #content .perfil.B{margin:17px auto 20px;padding:0;background-color:transparent;}
+#content .perfil.B .head.fixed{position: fixed;top: 0;width: 900px;z-index: 99}
 #content .perfil.B .head h1.main-name{float: left;line-height:2.1;padding-left:14px;width: 70%}
 
 #content .perfil.B .head .button-frame{float: right;margin: 10px 17px 5px;width: 150px;}
@@ -822,6 +823,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 #content .perfil.B .column.left{width:682px;}
 #content .perfil.B .column.right{width:202px;margin-left:12px;}
+#content .perfil.B .column.right.fixed{position: fixed;right: 228px;top: 60px;z-index: 99}
 #content .perfil.B .info_B{background-color:#888;color:white;padding:7px 0;}
 #content .perfil.B .info_B .column.left{width:57%;padding-left:23px;padding-top:2px;}
 #content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
