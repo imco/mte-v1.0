@@ -1339,7 +1339,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 	-moz-transition: all .6s;
 	-o-transition: all .6s;
 	-ms-transition: all .6s;
-	transition: all .6s;}
+	transition: all .6s;
+}
 #content .mejora .display .column .download:hover{background:#d3d3d3;box-shadow: none;}
 #content .mejora .display .column .wrap_content{padding:32px;background-color:#4B4B4B;}
 #content .mejora .display .column .wrap_content p{color:#A9A9A9}
