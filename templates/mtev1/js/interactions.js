@@ -26,11 +26,7 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
-	/*
-	var actualURL = document.URL;
-	if(actualURL.indexOf("/escuelas/index") != -1)
-		 $(".comparador_select").fadeTo(100, 0.1).fadeTo(300, 1.0);
-	*/
+
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
@@ -416,6 +412,37 @@ $(document).ready(function(){
 	});
 	*/
 });
+
+
+
+$(window).scroll(function(){
+	windowOffset 	= $(window).scrollTop();
+	containeroffset = $('.perfil.B.container.B').offset().top;
+	headtitle		= $('.perfil.B .head');
+	columnoffset 	= $('.perfil.B .column.left').offset().top;
+	columnright		= $('.perfil.B .column.right');
+	semaforo		= $('.perfil.B .column.right .semaforo .level');
+	if(windowOffset >= columnoffset){
+			if(!columnright.hasClass('fixed'))
+				semaforo.slideToggle();
+			columnright.addClass('fixed');
+			headtitle.addClass('fixed');
+			console.log("windowOffset: "+ windowOffset);
+			console.log("columnoffset: "+columnoffset);
+			console.log("pegado");
+
+	}else{
+			if(columnright.hasClass('fixed'))
+				semaforo.slideToggle();
+			columnright.removeClass('fixed');
+			headtitle.removeClass('fixed');
+			console.log("windowOffset: "+ windowOffset);
+			console.log("columnoffset: "+columnoffset);
+
+			console.log("normal");
+	}
+});
+
 
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
