@@ -411,36 +411,34 @@ $(document).ready(function(){
 		$(this).toggleClass('uncheck');
 	});
 	*/
-});
 
+	$('.box .semaforo h2').click(function(e){
+		$('.perfil.B .column.right .semaforo .level').slideToggle();
+		console.log("clickeado");
+	});
 
-
-$(window).scroll(function(){
-	windowOffset 	= $(window).scrollTop();
-	containeroffset = $('.perfil.B.container.B').offset().top;
-	headtitle		= $('.perfil.B .head');
-	columnoffset 	= $('.perfil.B .column.left').offset().top;
-	columnright		= $('.perfil.B .column.right');
-	semaforo		= $('.perfil.B .column.right .semaforo .level');
-	if(windowOffset >= columnoffset){
+	$(window).scroll(function(){
+		windowOffset 	= $(window).scrollTop();
+		containeroffset = $('.perfil.B.container.B').offset().top;
+		headtitle		= $('.perfil.B .box-head');
+		columnoffset 	= $('.perfil.B .column.left').offset().top;
+		columnright		= $('.perfil.B .column.right .box');
+		semaforo		= $('.perfil.B .column.right .semaforo .level');
+		if(windowOffset >= containeroffset){
+			headtitle.addClass('fixed');
 			if(!columnright.hasClass('fixed'))
 				semaforo.slideToggle();
 			columnright.addClass('fixed');
-			headtitle.addClass('fixed');
-			console.log("windowOffset: "+ windowOffset);
-			console.log("columnoffset: "+columnoffset);
-			console.log("pegado");
-
-	}else{
+		}
+		else{
+			headtitle.removeClass('fixed');
 			if(columnright.hasClass('fixed'))
 				semaforo.slideToggle();
 			columnright.removeClass('fixed');
-			headtitle.removeClass('fixed');
-			console.log("windowOffset: "+ windowOffset);
-			console.log("columnoffset: "+columnoffset);
+		}
+	});
 
-			console.log("normal");
-	}
+
 });
 
 

@@ -1,18 +1,20 @@
 <div class='perfil container B'>
-	<div class='head'>
-		<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-		<a href="#" class="button-frame"><span class="compara-button">Comparar</span></a>
-		<div class="clear"></div>
-	</div>
-	<div class='info_B top'>
-			<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
-			<ul class="data">
-				<li>Clave <?=$this->escuela->cct?></li>
-				<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
-				<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
-				<li><?=$controles[$this->escuela->control->id]?></li>
-				<div class="clear"></div>
-			</ul>
+	<div class="box-head">
+		<div class='head'>
+			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
+			<a href="#" class="button-frame"><span class="compara-button">Comparar</span></a>
+			<div class="clear"></div>
+		</div>
+		<div class='info_B top'>
+				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+				<ul class="data">
+					<li>Clave <?=$this->escuela->cct?></li>
+					<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
+					<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
+					<li><?=$controles[$this->escuela->control->id]?></li>
+					<div class="clear"></div>
+				</ul>
+		</div>		
 	</div>
 	<div class='column left'>
 		<div class='map-wrap'>	
@@ -273,66 +275,65 @@ EOD;
 		</div>	
 	</div>
 	<div class='column right'>
-		<div class='semaforo'>
-			<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
-			<h2>Semáforo educativo</h2>
-			<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
-				<p>Excelente</p>
-				<span class='icon sprit2'></span>
-				<div class='clear'></div>
+		<div class="box">
+			<div class='semaforo'>
+				<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
+				<h2>Semáforo educativo</h2>
+				<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
+					<p>Excelente</p>
+					<span class='icon sprit2'></span>
+					<div class='clear'></div>
+				</div>
+				<div class='level bien<?= $on=='Bien'?' on':''?>'>
+					<p>Bien</p>
+					<span class='icon sprit2'></span>
+					<div class='clear'></div>
+				</div>
+				<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
+					<p>De panzazo</p>
+					<span class='icon sprit2'></span>
+					<div class='clear'></div>
+				</div>
+				<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
+					<p>Reprobado</p>
+					<span class='icon sprit2'></span>
+					<div class='clear'></div>
+				</div>
+				<?php
+					if($this->escuela->semaforo >= 4){
+						$semaforos = array('Escuela que no tomó prueba ENLACE','Escuela no Confiable','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
+						echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
+						<p>".
+						$semaforos[$this->escuela->semaforo-4]."</p></div>";
+					}
+				?>
 			</div>
-			<div class='level bien<?= $on=='Bien'?' on':''?>'>
-				<p>Bien</p>
-				<span class='icon sprit2'></span>
-				<div class='clear'></div>
-			</div>
-			<div class='level panzazo<?= $on=='De panzazo'?' on':''?>'>
-				<p>De panzazo</p>
-				<span class='icon sprit2'></span>
-				<div class='clear'></div>
-			</div>
-			<div class='level reprobado<?= $on=='Reprobado'?' on':''?>'>
-				<p>Reprobado</p>
-				<span class='icon sprit2'></span>
-				<div class='clear'></div>
-			</div>
-			<?php
-				if($this->escuela->semaforo >= 4){
-					$semaforos = array('Escuela que no tomó prueba ENLACE','Escuela no Confiable','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
-					echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
-					<p>".
-					$semaforos[$this->escuela->semaforo-4]."</p></div>";
-				}
-			?>
-		</div>
-		<div class='clear'></div>
-		<p class='total_alumnos'>
-			Número de alumnos <br />
-			evaluados <br />
-			<span>
-			<?=number_format($this->escuela->total_evaluados)?>
-			</span>
-		</p>
-		<div class='clear'></div>
-		<div class='califica'>	
-			<div class='title'>
-				<p>Porcentaje de 
-				<br />
-				alumnos en 
-				<br />
-				nivel "Reprobado"
-				<br />
-				<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
-				</p>
-			</div>
-			<a href='/califica_tu_escuela/califica/<?=$this->escuela->cct?>' class='title'>
-				<?php //$this->print_img_tag('home/califica.png');?>
-				<span class="icon sprit2"></span>
-				<p>Califica tu escuela</p>
-				
-			</a>			
-			<div class='title petitions'>
-
+			<div class='clear'></div>
+			<!--<p class='total_alumnos'>
+				Número de alumnos <br />
+				evaluados <br />
+				<span>
+				<?=number_format($this->escuela->total_evaluados)?>
+				</span>
+			</p>-->
+			<div class='clear'></div>
+			<div class='califica'>	
+				<div class='title'>
+					<p>Porcentaje de 
+					<br />
+					alumnos en 
+					<br />
+					nivel "Reprobado"
+					<br />
+					<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
+					</p>
+				</div>	
+				<!--<div class='title petitions'>
+				</div>-->
+				<div class="title blue">
+					<a href="javascript:window.print()" class="print"><span class="icon"></span>Imprimir</a>
+					<a href="#" class="share"><span class="icon"></span></span>Compartir</a>	
+				</div>
 			</div>
 		</div>
 	</div>
