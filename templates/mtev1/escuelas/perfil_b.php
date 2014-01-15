@@ -82,6 +82,35 @@
 			<?php $this->include_template('map-infobox','global'); ?>
 			<div class='clear'></div>
 		</div>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
+			<fieldset>
+				<!--<p>Deja aquí un comentario sobre esta escuela</p>-->
+				<textarea placeholder='Deja un comentario aqui' name='comentario' class='required'></textarea>
+				
+				<div class="box-hidden">
+					<input type='text' placeholder='Nombre' name='nombre' />
+					<input type='text' class='required email' placeholder='Email (obligatorio)' name='email' />
+					<select class='custom-select required' name='ocupacion' >
+						<option value=''>¿Quién eres?</option>
+						<option value='alumno'>Alumno</option>
+						<option value='exalumno'>Exalumno</option>
+						<option value='padredefamilia'>Padre de familia</option>
+						<option value='maestro'>Maestro</option>
+						<option value='director'>Director</option>
+						<option value='ciudadano'>Ciudadano</option>
+					</select>
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
+					<?=$this->get_captcha();?>
+					<p><input type='submit' value='Enviar' /></p>
+					<p>Aviso de privacidad.
+						<span>
+						En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
+						</span>
+					</p>
+				</div>
+
+			</fieldset>		
+		</form>
 			<ul class='tabs'>
 				<li></li>
 
@@ -339,30 +368,5 @@ EOD;
 	</div>
 	<div class='clear'></div>
 </div>
-<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B container'>
-	<fieldset>
-		<p>Deja aquí un comentario sobre esta escuela</p>
-		<input type='text' placeholder='Nombre' name='nombre' />
-		<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
-		<select class='custom-select required' name='ocupacion' >
-			<option value=''>¿Quién eres?</option>
-			<option value='alumno'>Alumno</option>
-			<option value='exalumno'>Exalumno</option>
-			<option value='padredefamilia'>Padre de familia</option>
-			<option value='maestro'>Maestro</option>
-			<option value='director'>Director</option>
-			<option value='ciudadano'>Ciudadano</option>
-		</select>
-		<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
-		<p>Aviso de privacidad.
-			<span>
-			En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
-			</span>
-		</p>
-			<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
-			<?=$this->get_captcha();?>
-		<p><input type='submit' value='Enviar' /></p>
-	</fieldset>		
-</form>
 
 <?php $this->include_template('resultados-escuela','compara')?>

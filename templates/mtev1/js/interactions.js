@@ -413,7 +413,14 @@ $(document).ready(function(){
 
 	$('.box .semaforo h2').click(function(e){
 		$('.perfil.B .column.right .semaforo .level').slideToggle();
-		console.log("clickeado");
+	});
+
+	$('#.calificacion-form.B fieldset textarea').click(function(e){
+		if(!$(this).hasClass('open')){
+			$(this).addClass('on');
+			$('#.calificacion-form.B fieldset .box-hidden').slideToggle();
+			$(this).addClass('open');
+		}
 	});
 
 	$(window).scroll(function(){

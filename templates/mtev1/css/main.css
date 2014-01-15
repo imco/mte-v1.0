@@ -1101,28 +1101,38 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .map-wrap .lateral .web{margin-top:5px;font-size:11px;}
 #content .perfil.B .head + .info_B{height:24px;margin-bottom:6px;}
 #content .perfil.B .head + .info_B h2{text-indent:24px;line-height:32px;}
-#content .perfil.B .tabs{margin-top:4px;}
-#content .perfil.B .tabs .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:8px 9px 0;position:absolute;top:0;left:74px;display:none;}
-#content .perfil.B .tabs li.on .triangle{display:block;}
-#content .perfil.B .tabs li:hover .triangle{display:block;}
 
-#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;height:409px;position:relative;}
+#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;position:relative;}
 #content .calificacion-form.B:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
-#content .calificacion-form.B fieldset{padding:14px 30px 0 37px;}
+#content .calificacion-form.B fieldset{padding:14px 30px}
 #content .calificacion-form.B fieldset p:first-child{margin-bottom:12px;font-size:19px;}
-#content .calificacion-form.B textarea{margin-top:5px;width:805px;height:79px;}
+#content .calificacion-form.B fieldset .box-hidden{display: none;}
+#content .calificacion-form.B textarea{margin-top:5px;width:605px;height: 45px;	
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+	-o-transition: all .6s;
+	-ms-transition: all .6s;
+	transition: all .6s;}
+#content .calificacion-form.B textarea.on{height:79px;}
 #content .calificacion-form.B textarea + p{font-size:15px;margin-top:7px;}
 #content .calificacion-form.B textarea + p span{font-size:12px;}
-#content .calificacion-form.B input[type='submit']{background-color:#FF8900;margin:14px 216px;width:386px;font-size:20px;text-indent:-19px;}
+#content .calificacion-form.B input[type='submit']{background-color:#329ECF;margin:10px 0;width:325px;font-size:20px;text-indent:-19px;}
 #content .califica .calificacion-form.B input[type='submit']{background-color:#2DB4E4;}
-#content .calificacion-form.B input[type='text']{width:249px;margin:0;margin-right:3px;padding:8px 12px;}
-#content .calificacion-form.B .custom-select{width:257px;margin:0;padding:7px 7px;z-index:10}
-#content .calificacion-form.B .customSelect:before{content:'';position:absolute;width:35px;height:32px;background:orange url(../img/quienes_somos/flechadropd.png) no-repeat center 15px;display:block;right:32px;top:42px;}
+#content .calificacion-form.B input[type='text']{width:152px;margin:0;margin-right:3px;padding:8px 12px;}
+#content .calificacion-form.B .custom-select{width:252px;margin:0;padding:7px 7px;z-index:10}
+#content .calificacion-form.B .customSelect:before{display: none;content:'';position:absolute;width:35px;height:32px;background:#329ECF url(../img/quienes_somos/flechadropd.png) no-repeat center 12px;display:block;right:22px;top:122px;}
 #content .califica .calificacion-form.B .customSelect{background-size:27px;}
 #content .califica .calificacion-form.B .customSelect:before{background:transparent;}
 #content .califica .calificacion-form.B {margin:18px auto;}
 #content .calificacion-form.B p{color:#858786;}
 #content .calificacion-form.B p span{color:#8D908F;}
+
+
+#content .perfil.B .tabs{margin-top:4px;}
+#content .perfil.B .tabs .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:8px 9px 0;position:absolute;top:0;left:74px;display:none;}
+#content .perfil.B .tabs li.on .triangle{display:block;}
+#content .perfil.B .tabs li:hover .triangle{display:block;}
+
 
 #content .perfil.B .califica .title:nth-child(2){height:77px;margin-bottom:20px;border-radius:7px;box-shadow:2px 2px 4px #B36B12, 3px 3px 4px #FAC382 inset;background-color:#F6921A;display:block;}
 #content .perfil.B .califica .title:nth-child(2) p{line-height:0px;text-indent:-4px;}
