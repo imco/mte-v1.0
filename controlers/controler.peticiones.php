@@ -23,7 +23,6 @@ class peticiones extends main{
 	* Guarda en el atributo 'petition_url' la información de las peticiones procedentes de http://www.change.org/
 	*/
 	private function read_peticion(){
-		/* Guarda en el atributo 'petition_url' la información de las peticiones procedentes de http://www.change.org/  */
 		date_default_timezone_set('America/Mexico_City');
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$this->petition_info = $change->regresa_info_peticiones_organizacion('http://www.change.org/organizaciones/mejora_tu_escuela');
@@ -40,10 +39,8 @@ class peticiones extends main{
 	* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org
 	*/
 	public function firmar(){
-		/* Obtiene los datos del formulario de la petición y realiza la firma de este en http://www.change.org */
 		$petition_url = $this->post('petition_url');
 		//$petition_auth_key = '3d123d2998aa55899a372ac09aef99f166e74c854df7ec877497533ee996103b';
-
 		$names = explode(' ',$this->post('nombre'));
 		$name = $names[0];
 		unset($names[0]);
@@ -67,6 +64,13 @@ class peticiones extends main{
 		$this->read_peticion();
 		$this->include_theme('index','index');
 
+	}
+	public function sienlace_firmas(){
+		date_default_timezone_set('America/Mexico_City');
+		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
+		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014";
+		$petition_info = $change->regresa_info_peticion($petition_url);
+		echo $petition_info['signature_count'];
 	}
 	public function aprobar_imagen(){
 		$img = new firma_img($this->get('id'));
