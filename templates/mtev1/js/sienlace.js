@@ -1,15 +1,15 @@
 $(document).ready(function(){
     $('#singForm').submit(function(e){
         e.preventDefault();
-        $.post('/peticiones/sign/', $(this).serialize(),function(data){
-            $('.firma-count').html(data);
-        });
+        count = parseInt($('.firma-count').html())+1;
+        $('.firma-count').html(count)
+        $.post('/peticiones/sign/', $(this).serialize());
         $(this).slideUp(300);
     });
 	moveGalCustom();
     $.get('/peticiones/sienlace_firmas',function(data){
-        $('#header .label .firma-count').html(data);
-        $('#firma-count2').html(data).show().css('visibility','visible');
+        $('.firma-count').html(data);
+        $('#firma-count2').show().css('visibility','visible');
         $('#header .label').slideDown(400);
     });
 
