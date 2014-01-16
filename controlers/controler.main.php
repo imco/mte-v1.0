@@ -501,8 +501,17 @@ class main extends controler{
 	*/
     public function get_captcha(){
     		
-		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-		return $captcha->form();
+		//$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		//return $captcha->form();
+
+		$sweetcaptcha = new Sweetcaptcha(
+		  $this->config->SWEETCAPTCHA_APP_ID, 
+		  $this->config->SWEETCAPTCHA_KEY, 
+		  $this->config->SWEETCAPTCHA_SECRET, 
+		  $this->config->SWEETCAPTCHA_PUBLIC_URL
+		);
+
+		echo $sweetcaptcha->get_html();
     }
 
     public function get_data_compara_float(){

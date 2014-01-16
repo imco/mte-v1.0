@@ -131,6 +131,8 @@ a{text-decoration:none;}
 #content .column .banner{display:block;background-image:url(../img/home/texture_pink.png);color:white;font-size:25px;position:relative;margin:3px 0 6px;padding:23px 49px 22px 100px;line-height:28px;}
 #content .column .banner img{position:absolute;top:26px;left:39px;}
 #content .column .banner.orange{background-image:url(../img/home/texture_orange.png);}
+#content .column .banner.blue{background-image:url(../img/home/texture_blue.png);padding: 14px 55px 12px 93px;text-align: center;}
+#content .column .banner.blue img{left: 98px;top:12px}
 #content .column .banner.green{background-image:url(../img/home/texture_green.png);}
 #content .column .banner.compara{padding:8px 75px;}
 #content .column .banner.compara span{background-image:url(../img/home/compara_blanco.png);width:114px;height:76px;display:block;margin:5px auto;}
@@ -1019,8 +1021,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*home*/
 #content .home .video{height:361px;margin-bottom:16px;display:none;}
 #content .home .gray-box.twitter .icon{width:102px;height:51px;float:left;background:url(../img/home/twitter_logo.png) no-repeat #31a4e3 center;margin-right:24px;}
+#content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
-#content .home .banner.orange.peticiones img{top:6px;left:60px;}
+#content .home .banner.orange.peticiones img{top:6px;left:67px;}
 #content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:10px;}
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
@@ -1102,17 +1105,19 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .head + .info_B{height:24px;margin-bottom:6px;}
 #content .perfil.B .head + .info_B h2{text-indent:24px;line-height:32px;}
 
-#content .calificacion-form.B{background-color:rgba(175,176,179,.4);margin:26px auto;position:relative;}
+#content .calificacion-form.B{background-color:#B4B6B5;margin:26px auto;position:relative;}
 #content .calificacion-form.B:before{content:'';background:transparent url(../img/home/sombra_header.png) no-repeat center center;width:100%;height:51px;display:block;position:absolute;bottom:-44px;}
 #content .calificacion-form.B fieldset{padding:14px 30px}
 #content .calificacion-form.B fieldset p:first-child{margin-bottom:12px;font-size:19px;}
 #content .calificacion-form.B fieldset .box-hidden{display: none;}
-#content .calificacion-form.B textarea{margin-top:5px;width:605px;height: 45px;	
+#content .calificacion-form.B .comment-cloud{background:transparent url(../img/perfil/iconos-mejora-perfil.png) -40px -248px;left: 30px;top: 19px;position: absolute;height: 32px;width: 30px;}
+#content .calificacion-form.B textarea{margin-top:5px;width:586px;height: 35px;font-size: 14px;padding-left: 32px;	
 	-webkit-transition: all .6s;
 	-moz-transition: all .6s;
 	-o-transition: all .6s;
 	-ms-transition: all .6s;
 	transition: all .6s;}
+#content .calificacion-form.B fieldset .sweetcaptcha{margin: 15px 0}
 #content .calificacion-form.B textarea.on{height:79px;}
 #content .calificacion-form.B textarea + p{font-size:15px;margin-top:7px;}
 #content .calificacion-form.B textarea + p span{font-size:12px;}
