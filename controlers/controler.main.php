@@ -511,7 +511,7 @@ class main extends controler{
 		  $this->config->SWEETCAPTCHA_PUBLIC_URL
 		);
 
-		echo $sweetcaptcha->get_html();
+		//echo $sweetcaptcha->get_html();
     }
 
     public function get_data_compara_float(){
