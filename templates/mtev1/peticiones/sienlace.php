@@ -170,6 +170,7 @@
                 <a class="ally span2-5" href="http://proeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_proed.png');?></a>
                 <a class="ally span2-5" href="http://www.mexicanosprimero.org/"><?php $this->print_img_tag('sienlace/logo1.png');?></a>
                 <a class="ally span2-5" href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
+                <a class="ally span2-5" href="http://http://www.senm.org/"><?php $this->print_img_tag('sienlace/sociedadenmovimiento.png');?></a>
             </div>
             <div class="bottom">
                 <p>
