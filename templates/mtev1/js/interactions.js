@@ -415,6 +415,16 @@ $(document).ready(function(){
 		$(this).toggleClass('uncheck');
 	});
 	*/
+
+	$(document).keyup(function(e){
+		if(e.keyCode == $.ui.keyCode.ESCAPE){
+			$('.overlay-transparent').trigger('click');
+		}
+	});
+
+	$('.display .close').click(function(){
+		$('.overlay-transparent').trigger('click');
+	});
 });
 
 function load_location_options(input,directive,options,name){
@@ -532,7 +542,7 @@ function add_escuelas_cookie(){
 function input_data_view_mejora(mejorar){
 	mejorar = $(mejorar);
 	var index = $('.wrap .mejorar').removeClass('on').index(mejorar),
-	url = mejorar.find('h1 + a')[0].href,
+	url = mejorar.find('a.more')[0].href,
 	title = mejorar.find('h2').html()
 	display = $('.display');
 	mejorar.addClass('on');
