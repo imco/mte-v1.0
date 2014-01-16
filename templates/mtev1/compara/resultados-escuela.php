@@ -77,12 +77,12 @@
 	}
 	?></div>
 	<?php
-	if($this->location == 'escuelas' && $this->get('action')=='index')
+	if($this->location != 'escuelas' && $this->get('action')=='index')
 		$this->include_template('share_buttons','global');
 	?>
 
 	<?php $sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : ''; ?>
 	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
-		<span class="button button-efect green">Compara</span>
+		<span class="button button-efect orange-effect">Comparar</span>
 	</a>
 </div>

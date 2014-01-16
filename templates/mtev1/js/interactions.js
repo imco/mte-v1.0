@@ -121,10 +121,10 @@ $(document).ready(function(){
 			$(this).parent().find('.line2').css('display','none');	
 	});
 
-	$('#content .share-bt a.button-frame').click(function(e){
+	$('#content .share-bt a.button-frame , #content .perfil.B .option.share').click(function(e){
 		if(!$(this).hasClass('static')){
 			e.preventDefault();
-			$('#content .share-bt .social').toggleClass('on');
+			$('#content .share-bt .social , #content .perfil.B .social ').toggleClass('on');
 		}
 	});
 
@@ -411,6 +411,13 @@ $(document).ready(function(){
 	});
 	*/
 
+
+	if($('.perfil.B .head .button-frame').length > 0){
+		var buttonComparar = $('.resultados #compara-main-button');
+		var compararurl = buttonComparar.attr("href");
+		$('.perfil.B .head .button-frame').attr('href', compararurl);
+	}
+	
 	$('.box .semaforo h2').click(function(e){
 		$('.perfil.B .column.right .semaforo .level').slideToggle();
 	});
@@ -430,26 +437,28 @@ $(document).ready(function(){
 		columnoffset 	= $('.perfil.B .column.left').offset().top;
 		columnright		= $('.perfil.B .column.right .box');
 		semaforo		= $('.perfil.B .column.right .semaforo .level');
+		semOverlay		= $('.perfil.B .semaforo .sem-overlay');
 		resultadosoffset= $('.resultados.container').offset().top;
 		if(windowOffset >= containeroffset){
-			console.log("windowOffset: " + (windowOffset+280));
-			console.log("resultadosoffset: " + resultadosoffset);
 			if(windowOffset+280 >= resultadosoffset){
 				columnright.removeClass('fixed');
 				columnright.show();
-				console.log('rebaso la tabla');
 			}
 			else{
 				headtitle.addClass('fixed');
-				if(!columnright.hasClass('fixed'))
+				if(!columnright.hasClass('fixed')){
 					semaforo.slideToggle();
+					semOverlay.slideToggle();
+				}				
 				columnright.addClass('fixed');
 			}
 		}
 		else{
 			headtitle.removeClass('fixed');
-			if(columnright.hasClass('fixed'))
+			if(columnright.hasClass('fixed')){
 				semaforo.show();
+				semOverlay.show();
+			}
 			columnright.removeClass('fixed');
 		}
 	});

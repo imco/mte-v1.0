@@ -2,7 +2,7 @@
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-			<a href="/compara/escuelas" class="button-frame"><span class="compara-button">Comparar</span></a>
+			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
@@ -361,8 +361,12 @@ EOD;
 				<!--<div class='title petitions'>
 				</div>-->
 				<div class="title blue">
-					<a href="javascript:window.print()" class="print"><span class="icon"></span>Imprimir</a>
-					<a href="#" class="share"><span class="icon"></span></span>Compartir</a>	
+					<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>
+					<a href="#" class="option share"><span class="icon"></span></span>Compartir</a>	
+					<?php
+					if($this->location == 'escuelas' && $this->get('action')=='index')
+						$this->include_template('share_buttons_simple','global');
+					?>
 				</div>
 			</div>
 		</div>
