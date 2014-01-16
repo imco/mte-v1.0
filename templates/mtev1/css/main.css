@@ -1297,6 +1297,7 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 #content .mejora .display .column .wrap_content p{color:#A9A9A9}
 #content .mejora .display .column .wrap_content p + a{margin-top:13px;display:block;font-size:15px;color:#4ABC84;}
 #content .mejora .display .column .nota_completa .icon{background:url(../img/mejora/leer_pop.png) no-repeat;display: inline-block;width:14px;height: 12px;background-repeat:no-repeat;vertical-align:top;margin-top:8px;}
+#content .mejora .display .close{background:url(../img/mejora/cerrar.png) no-repeat center;display:block;width:25px;height:25px;position:absolute;z-index:1;right:7px;top:7px;cursor:pointer;}
 
 /*comparador select*/
 .comparador_select .open_wrap{display:none;}
