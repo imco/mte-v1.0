@@ -88,7 +88,7 @@
                                     <input type="submit" value="Firma" class="submit" />
                                     <div class="clear"></div>
                                 </form>
-                                <p class="message">Gracias a ti ya somos <br /> <a class='firma-count'><?=$this->firmas?></a></p>
+                                <p class="message">Gracias a ti ya somos <br /> <a id='firma-count2' class='hidden firma-count'><?=$this->firmas?></a></p>
                             </div>
                             <div class="clear"></div>
                         </div>
