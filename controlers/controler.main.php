@@ -122,6 +122,7 @@ class main extends controler{
 		$q = new municipio();
 		//$q->debug = true;
 		$q->search_clause = $this->request('entidad') ? 'municipios.entidad = "'.$this->request('entidad').'"' : '1';
+		$q->search_clause .= ' AND municipios.entidad > 0';
 		$q->order_by = 'municipios.nombre';
 		$this->municipios = $q->read('id,nombre,entidad=>nombre,entidad=>id');
 		if($this->request('json') || true){
