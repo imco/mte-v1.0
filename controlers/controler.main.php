@@ -287,7 +287,7 @@ class main extends controler{
 	public function load_entidades($order_by = false){
 		
 		$q = new entidad();
-		$q->search_clause = '1';
+		$q->search_clause = 'rank > 0';
 		if($order_by) $q->order_by = $order_by;
 		$this->entidades = $q->read('id,nombre,cct_count,promedio_general,rank');
 	}
