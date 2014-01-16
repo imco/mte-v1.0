@@ -430,16 +430,26 @@ $(document).ready(function(){
 		columnoffset 	= $('.perfil.B .column.left').offset().top;
 		columnright		= $('.perfil.B .column.right .box');
 		semaforo		= $('.perfil.B .column.right .semaforo .level');
+		resultadosoffset= $('.resultados.container').offset().top;
 		if(windowOffset >= containeroffset){
-			headtitle.addClass('fixed');
-			if(!columnright.hasClass('fixed'))
-				semaforo.slideToggle();
-			columnright.addClass('fixed');
+			console.log("windowOffset: " + (windowOffset+280));
+			console.log("resultadosoffset: " + resultadosoffset);
+			if(windowOffset+280 >= resultadosoffset){
+				columnright.removeClass('fixed');
+				columnright.show();
+				console.log('rebaso la tabla');
+			}
+			else{
+				headtitle.addClass('fixed');
+				if(!columnright.hasClass('fixed'))
+					semaforo.slideToggle();
+				columnright.addClass('fixed');
+			}
 		}
 		else{
 			headtitle.removeClass('fixed');
 			if(columnright.hasClass('fixed'))
-				semaforo.slideToggle();
+				semaforo.show();
 			columnright.removeClass('fixed');
 		}
 	});

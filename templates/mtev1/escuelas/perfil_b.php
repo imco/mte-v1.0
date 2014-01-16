@@ -2,7 +2,7 @@
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-			<a href="#" class="button-frame"><span class="compara-button">Comparar</span></a>
+			<a href="/compara/escuelas" class="button-frame"><span class="compara-button">Comparar</span></a>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
@@ -85,6 +85,7 @@
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquí un comentario sobre esta escuela</p>-->
+				<div class="comment-cloud"></div>
 				<textarea placeholder='Deja un comentario aqui' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">

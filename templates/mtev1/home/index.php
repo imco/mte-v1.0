@@ -68,6 +68,10 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 			<?php $this->print_img_tag('home/peticiones.png');?>
 			Peticiones
 		</a>
+		<a href='http://blog.mejoratuescuela.org/' class='banner blue'>
+			<?php $this->print_img_tag('home/blog2.png');?>
+			Blog
+		</a>
 		<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>
 
 		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box' target='_blank' >
