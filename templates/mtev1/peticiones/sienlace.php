@@ -157,20 +157,20 @@
                 <?php for($i=0;$i<0;$i++){ ?>
                     <a href="" class="span2-5">Sponsor Logo</a>
                 <?php } ?>
-				<a class="ally span2-5" href="http://www.imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
-                <a class="ally span2-5" href="http://www.mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
-                <a class="ally span2-5" href="http://www.masciudadania.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
-                <a class="ally span2-5" href="http://ccaemexico.wordpress.com/"><?php $this->print_img_tag('sienlace/logo2.png');?></a>
-                
-                <a class="ally span2-5" href="http://www.cemefi.org/rededucacion/"><?php $this->print_img_tag('sienlace/logo3.png');?></a>
-                <a class="ally span2-5" href="http://www.ifie.edu.mx/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
-                <a class="ally span2-5" href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png');?></a>
-                <a class="ally span2-5" href="http://ensenapormexico.org/site/"><?php $this->print_img_tag('sienlace/ensenapormexico.png');?></a>
-
-                <a class="ally span2-5" href="http://proeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_proed.png');?></a>
-                <a class="ally span2-5" href="http://www.mexicanosprimero.org/"><?php $this->print_img_tag('sienlace/logo1.png');?></a>
                 <a class="ally span2-5" href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png');?></a>
+                <a class="ally span2-5" href="http://ccaemexico.wordpress.com/"><?php $this->print_img_tag('sienlace/logo2.png');?></a>
+                <a class="ally span2-5" href="http://ensenapormexico.org/site/"><?php $this->print_img_tag('sienlace/ensenapormexico.png');?></a>
+                <a class="ally span2-5" href="http://www.ifie.edu.mx/"><?php $this->print_img_tag('sienlace/ifie.png');?></a>
+
+                <a class="ally span2-5" href="http://www.imco.org.mx/"><?php $this->print_img_tag('sienlace/imco.jpg');?></a>
+                <a class="ally span2-5" href="http://www.masciudadania.org/"><?php $this->print_img_tag('sienlace/masciudadania.png');?></a>
+                <a class="ally span2-5" href="http://www.mejoratuescuela.org/"><?php $this->print_img_tag('sienlace/mte.jpg');?></a>
+                <a class="ally span2-5" href="http://www.mexicanosprimero.org/"><?php $this->print_img_tag('sienlace/logo1.png');?></a>
+                
+                <a class="ally span2-5" href="http://proeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_proed.png');?></a>
+                <a class="ally span2-5" href="http://www.cemefi.org/rededucacion/"><?php $this->print_img_tag('sienlace/logo3.png');?></a>
                 <a class="ally span2-5" href="http://http://www.senm.org/"><?php $this->print_img_tag('sienlace/sociedadenmovimiento.png');?></a>
+                <a class="ally span2-5" href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png');?></a>
             </div>
             <div class="bottom">
                 <p>
