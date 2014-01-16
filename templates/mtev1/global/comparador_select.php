@@ -18,7 +18,7 @@
 			<p class='Nvisited'>Escuelas visitadas (<span><?=count($this->school_view)?></span>)</p>
 			<ul>
 				<?php foreach($this->school_view as $school) {
-					var_dump($school->nombre);
+					//var_dump($school->nombre);
 					echo "<li><span class='icon'></span>$school->nombre
 					<span class='hidden'>$school->cct</span></li>";
 				}?>
