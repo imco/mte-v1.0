@@ -37,7 +37,7 @@ class default_config{
 		$this->recaptcha_public_key = '***REMOVED***';
 		$this->recaptcha_private_key = '***REMOVED***';
 
-		$this->contact_email = 'francisco.mekler@imco.org.mx';
+		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->image_email = 'ariadna.camargo@imco.org.mx';
 		$this->tynt = false;
 		
