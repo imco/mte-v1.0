@@ -103,7 +103,9 @@
 										}
 										//for( $i=0;$i<10;$i++ ){
 										if( $this->photos ){foreach( $this->photos as $photo ){
-											echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$photo->filename}' /></a>";
+                                            if(file_exists("{$this->config->http_address}signs/signs/{$photo->filename}")){
+											    echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$photo->filename}' /></a>";
+                                            }
 										}}
 										//}
 									?>
