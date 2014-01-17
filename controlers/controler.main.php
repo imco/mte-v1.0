@@ -11,6 +11,11 @@ class main extends controler{
 	* Constructor main recive el parametro $config
 	* \param $config 
 	*/
+
+	
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+
 	public function main($config){
 
 		$this->config = $config; 
@@ -504,8 +509,6 @@ class main extends controler{
 		//$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		//return $captcha->form();
 
-    	error_reporting(E_ALL);
-		ini_set('display_errors', '1');
 
 		$sweetcaptcha = new Sweetcaptcha(
 		  $this->config->SWEETCAPTCHA_APP_ID, 
