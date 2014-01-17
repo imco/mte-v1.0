@@ -1346,9 +1346,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.programas .column .info{margin: 15px 0}
 #content .container.programas .column table{width: 100%}
 #content .container.programas .column table tr{color: #489062;font-size: 14px;margin: 1px 0;}
-#content .container.programas .column table tr + tr{border-top: 2px solid rgba(255,255,255,0.2)}
+#content .container.programas .column table tr + tr{}
 #content .container.programas .column table tr:hover{background-color: #84C6A0;color: #fff;}
-#content .container.programas .column table tr td{background-color: rgba(132,198,160,0.4);padding: 6px 10px}
+#content .container.programas .column table tr td{background-color: rgba(132,198,160,0.4);;border-top: 2px solid rgba(255,255,255,0.2);padding: 6px 10px}
 #content .container.programas .column table tr td + td{text-align: right;}
 #content .container.programas .column table tr td .button-frame{display: inline-block;width: 160px}
 #content .container.programas .column table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
