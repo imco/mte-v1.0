@@ -114,7 +114,7 @@
 						
                         <div class="uploadphoto">
                             <h2>¿Ya firmaste? <br />
-                            Ahora sube tu foto aquí:</h2>
+                            Ahora escribe #SíENLACE2014, tómate una foto y súbela aquí:</h2>
                             <form action="/peticiones/uphoto/" method="post" accept-charset="utf-8" class="uploadYP row-fluid" id="uploadYP" enctype="multipart/form-data" >
                                 <div class="span4">
                                     <input type="text" name="email" class="" placeholder="Correo electrónico" />
