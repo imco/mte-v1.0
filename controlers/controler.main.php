@@ -12,11 +12,11 @@ class main extends controler{
 	* \param $config 
 	*/
 
-	
-	error_reporting(E_ALL);
-	ini_set('display_errors', '1');
-
 	public function main($config){
+
+	
+		error_reporting(E_ALL);
+		ini_set('display_errors', '1');
 
 		$this->config = $config; 
 		$this->dbConnect(); 
