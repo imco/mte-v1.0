@@ -510,7 +510,7 @@ class main extends controler{
 		//return $captcha->form();
 
 
-		$sweetcaptcha = new Sweetcaptcha(
+		$sweetcaptcha = new sweetcaptcha(
 		  $this->config->SWEETCAPTCHA_APP_ID, 
 		  $this->config->SWEETCAPTCHA_KEY, 
 		  $this->config->SWEETCAPTCHA_SECRET, 

@@ -1339,7 +1339,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.programas .column .title{background:url(../img/home/texture_blue.png) center;color: #fff;font-size: 17px;padding:6px 18px 6px 27px;line-height:27px;}
 #content .container.programas .column .title.green{background:url(../img/home/texture_green.png) center;}
 #content .container.programas .column h1.title{font-size: 30px;padding: 12px 27px}
-#content .container.programas .column .white-box{background-color: #fff;line-height: 16px;padding: 7px 27px;}
+#content .container.programas .column .white-box{background-color: #fff;line-height: 16px;padding: 12px 27px;}
 #content .container.programas .column .white-box.map{background-color: rgba(255,255,255,0.3)}
 #content .container.programas .column .white-box h3 , #content .container.programas .column .white-box span , #content .container.programas .column .white-box a{font-size: 14px;color: #00AFF2}
 #content .container.programas .column .white-box p{font-size: 14px;}

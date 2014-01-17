@@ -1,5 +1,5 @@
 <?php 
-class Sweetcaptcha {
+class sweetcaptcha {
   
   private $appid;
   private $key;
