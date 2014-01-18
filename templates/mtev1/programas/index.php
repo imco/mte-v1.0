@@ -23,9 +23,8 @@
 			</table>
 		</div>
 
-		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
+		<!--<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
-				<!--<p>Deja aquí un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
 				<textarea placeholder='Deja un comentario aqui' name='comentario' class='required'></textarea>
 				
@@ -51,7 +50,7 @@
 				</div>
 
 			</fieldset>		
-		</form>
+		</form>-->
 
 		<div class="info">
 			<h2 class="title">¿Que debe hacer una escuela que esta interesada en participar en el proyecto?</h2>
