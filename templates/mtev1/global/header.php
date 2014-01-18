@@ -5,16 +5,19 @@
 		<!--
 		<span class='circle'></span>
 		<span class='decor'>1</span>-->
+		<span class="number">1</span>
 	</a>
 	<a href='/compara/escuelas/'>COMPARA
 		<span class='icon'></span>
-
+		<span class="number">2</span>
 	</a>
 	<a href='/califica-tu-escuela/califica/'>CALIFICA
 		<span class='icon'></span>
+		<span class="number">3</span>
 	</a>
 	<a href='/mejora'>MEJORA
 		<span class='icon'></span>
+		<span class="number">4</span>
 	</a>
 	<!--
 	<a href='/resultados-nacionales'>Resultados Nacionales</a>

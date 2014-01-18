@@ -29,9 +29,9 @@ a{text-decoration:none;}
 #header h3{text-align:center;font-size:14px;line-height:25px;}
 #header hr{display:block;border:none;height:2px;background:white;/*width:440px*/}
 #header a{color:white;}
-#header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:87px;overflow:hidden;}
+#header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:101px;overflow:hidden;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:59px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:14px;background-color:rgba(255,255,255,.5);}
+#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:74px 8px 16px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);}
 #header .menu a:before{content:"";position:absolute;width:1px;display:block;height:90%;background:#F2F2F2;top:0;left:0;}
 #header .menu a:first-child{border:none;}
 #header .menu a:hover{color:white;}
@@ -39,12 +39,12 @@ a{text-decoration:none;}
 #header .menu .submenu a:before{background:white;}
 #header .menu .submenu:before{content:"";position:absolute;width:1px;display:block;height:90%;background:#F2F2F2;top:0;left:0;}
 #header .menu .icon{display:block;position:absolute;}
-#header .menu a[href$='/compara/']{width:94px;}
+#header .menu a[href$='/compara/']{width:113px;}
 #header .menu a[href$='/compara/escuelas/']{width:115px;}
-#header .menu a[href$='/califica/']{width:101px;}
-#header .menu a[href$='/mejora']{width:98px;padding-left:6px;}
-#header .menu a[href$='/compara/'] .icon{background:url(../img/header/conoce.png) no-repeat center;width:40px;height:43px;top:12px;left:35px;}
-#header .menu a[href$='/compara/escuelas/'] .icon{background:url(../img/header/compara.png) no-repeat center;width:90px;height:29px;top:18px;left:21px;}
+#header .menu a[href$='/califica/']{width:114px;}
+#header .menu a[href$='/mejora']{width:114px;padding-left:6px;}
+#header .menu a[href$='/compara/'] .icon{background:url(../img/header/conoce.png) no-repeat center;width:40px;height:43px;top:26px;left:45px;}
+#header .menu a[href$='/compara/escuelas/'] .icon{background:url(../img/header/compara.png) no-repeat center;width:90px;height:29px;top:34px;left:21px;}
 #header .menu a[href$='/califica/'] .icon{background:url(../img/header/califica.png) no-repeat center;width:34px;height:41px;top:14px;left:42px;}
 #header .menu a[href$='/mejora'] .icon{background:url(../img/header/mejora.png) no-repeat center;width:40px;height:40px;top:15px;left:35px;}
 #header .menu a + a + a{margin-left:2px;}
@@ -56,10 +56,10 @@ a{text-decoration:none;}
 #header .menu.califica_tu_escuela a[href$='/califica/'] .decor,
 #header .menu.resultados a[href$='/peticiones'] .decor,
 #header .menu a:hover{background-color:#0a9e48;color:white;}
-#header .menu a.logo{width:auto;margin:7px 20px 0;padding:0;background-color:transparent;}
+#header .menu a.logo{width:auto;margin:13px 0px 0;padding:0;background-color:transparent;}
 #header .menu a.logo img{width:210px;}
 #header .menu a.logo:hover{background-color:transparent;}
-#header .menu a[href$='/compara/']{margin-left:27px;}
+#header .menu a[href$='/compara/']{margin-left:21px;}
 /*sin form en menu
 #header .menu form{display:block;margin-top:22px;}
 #header .menu form input[type='text']{width:86px;float:left;color:gray;font-size:16px;text-indent:0;padding:11px 11px 0}
@@ -95,7 +95,7 @@ a{text-decoration:none;}
 #general-search.general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;background-repeat:no-repeat;}
 #general-search.general-search .adv-search a .icon{background-position:-273px 0;width:33px;height:33px;top:10px;left:27px;}
-#header .container{position:relative;z-index:0;}
+#header .container{position:relative;z-index:0;width:1030px;}
 
 
 #content{color:#474747;padding:0 0 8px;min-height:79px;}
@@ -1475,3 +1475,5 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*mtv5*/
 #header .home.container .titles h1{float:right;margin-top:4px;width:547px;font-size:16px;text-align:left;}
+#header .menu .number{position:absolute;top:0;left:1px;background-color:#17B9F3;width:100%;color:white;height:20px;}
+
