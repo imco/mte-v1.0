@@ -1,5 +1,5 @@
 <div class="container programas">
-	<div class="column">
+	<div class="column left">
 		<h1 class="title">Programa Escuela Segura</h1>
 		<div class="white-box">
 			<h3>Objetivo del programa</h3>
@@ -68,5 +68,37 @@
 			</div>
 		</div>
 	</div>
-	<div class="column"></div>
+	<div class="column right">
+		<h1>Otros programas</h1>
+		<div class="lista-programas">
+			<h2>Programas federales</h2>
+			<ul>
+				<li><a href="#">Programa escuelas de calidad</a></li>
+				<li><a href="#">Programa escuela segura</a></li>
+				<li><a href="#">Programa escuelas tiempo completo</a></li>
+			</ul>			
+		</div>
+
+		<div class="lista-programas">
+		<h2>Programas OSC´s</h2>
+		<ul>
+			<li><a href="#">Escuela siempre Abierta</a></li>
+			<li><a href="#">Programa escuela segura</a></li>
+			<li><a href="#">Programa escuelas tiempo completo</a></li>
+			<li><a href="#">Programa escuelas de calidad</a></li>
+			<li><a href="#">Programa nacional de lectura</a></li>
+			<li><a href="#">Escuela de Jornada Amplia</a></li>
+
+		</ul>			
+		</div>
+
+		<div class="share-blue">
+			<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>
+			<a href="#" class="option share"><span class="icon"></span></span>Compartir</a>	
+			<?php
+			//if($this->location == 'escuelas' && $this->get('action')=='index')
+				$this->include_template('share_buttons_simple','global');
+			?>
+		</div>
+	</div>
 </div>

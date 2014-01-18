@@ -360,7 +360,7 @@ EOD;
 				</div>	
 				<!--<div class='title petitions'>
 				</div>-->
-				<div class="title blue">
+				<div class="share-blue">
 					<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>
 					<a href="#" class="option share"><span class="icon"></span></span>Compartir</a>	
 					<?php
