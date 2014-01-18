@@ -121,10 +121,10 @@ $(document).ready(function(){
 			$(this).parent().find('.line2').css('display','none');	
 	});
 
-	$('#content .share-bt a.button-frame , #content .perfil.B .option.share').click(function(e){
+	$('#content .share-bt a.button-frame , #content .perfil.B .option.share , #content .programas .share-blue').click(function(e){
 		if(!$(this).hasClass('static')){
 			e.preventDefault();
-			$('#content .share-bt .social , #content .perfil.B .social ').toggleClass('on');
+			$('#content .share-bt .social , #content .perfil.B .social , .programas .social ').toggleClass('on');
 		}
 	});
 
