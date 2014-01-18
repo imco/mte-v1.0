@@ -11,7 +11,12 @@ class main extends controler{
 	* Constructor main recive el parametro $config
 	* \param $config 
 	*/
+
 	public function main($config){
+
+	
+		error_reporting(1);
+		ini_set('display_errors', '1');
 
 		$this->config = $config; 
 		$this->dbConnect(); 
@@ -504,7 +509,8 @@ class main extends controler{
 		//$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		//return $captcha->form();
 
-		/*$sweetcaptcha = new Sweetcaptcha(
+
+		$sweetcaptcha = new sweetcaptcha(
 		  $this->config->SWEETCAPTCHA_APP_ID, 
 		  $this->config->SWEETCAPTCHA_KEY, 
 		  $this->config->SWEETCAPTCHA_SECRET, 
@@ -512,7 +518,7 @@ class main extends controler{
 		);
 
 		echo $sweetcaptcha->get_html();
-		*/
+		
     }
 
     public function get_data_compara_float(){

@@ -51,7 +51,7 @@ $infografias = array('entorno-social'=>'Entorno Social',
 			<?=file_get_contents($this->config->blog_address."mejora".($this->get('id')?'/?mejora='.$this->get('id'):'')) ?>
 			<div class="share-bt bl left" style='position:absolute;left:0;bottom:0;'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
-					<span class="bt-share button-efect">		
+					<span class="bt-share button-efect orange-effect">		
 						Más notas
 					</span>
 				</a>
