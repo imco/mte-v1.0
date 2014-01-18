@@ -22,6 +22,7 @@ class main extends controler{
 		$this->draw_map = false; 
 		$this->draw_charts = false; 
 		$this->get_data_compara_float();
+		#$this->testMail();
 	}
 
 	/** 
@@ -538,6 +539,35 @@ class main extends controler{
 			}
 	
 		}
+	}
+    }
+
+    public function send_email($to,$subject,$message,$from,$from_name){
+	$url = 'http://sendgrid.com/';
+	$params = array(
+	    'api_user'  => $this->config->send_grid_user,
+	    'api_key'   => $this->config->send_grid_key,
+	    'to'        => $to,
+	    'subject'   => $subject,
+	    'html'      => '',
+	    'text'      => $message,
+	    'from'      => $from,
+	  );
+
+
+	$request =  $url.'api/mail.send.json';
+
+	$session = curl_init($request);
+	curl_setopt ($session, CURLOPT_POST, true);
+	curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+	curl_setopt($session, CURLOPT_HEADER, false);
+	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+	
+	$response = json_decode(curl_exec($session));
+	curl_close($session);
+	
+	if($response->message!="success"){
+		parent::send_email($to,$subject,$message,$from,$from_name);
 	}
     }
 }

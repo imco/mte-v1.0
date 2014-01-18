@@ -46,6 +46,10 @@ class default_config{
 			{"width":"50","height":"50","slug":"tiny"},
 			{"width":"156","height":"112","slug":"signs" ,"resize_type":"best fit"}
 		]');
+
+		//sendGrid
+		$this->send_grid_user ="***REMOVED***";
+		$this->send_grid_key  = "***REMOVED***";
 	}
 }
 ?>
