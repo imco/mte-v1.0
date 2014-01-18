@@ -1334,7 +1334,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 
 /*Programas perfil*/
-#content .container.programas{}
+#content .container.programas{margin: 25px auto 40px}
 #content .container.programas .column{width: 680px}
 #content .container.programas .column .title{background:url(../img/home/texture_blue.png) center;color: #fff;font-size: 17px;padding:6px 18px 6px 27px;line-height:27px;}
 #content .container.programas .column .title.green{background:url(../img/home/texture_green.png) center;}
