@@ -22,7 +22,7 @@ a{text-decoration:none;}
 }
 .orange-effect:hover{background: #e5711c!important;box-shadow:none!important;}
 
-#header{width:100%;margin-bottom:10px;background:url(../img/home/img_fondo.jpg) center top #E9EEF4;color:white;box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;position:relative;overflow:hidden;}
+#header{width:100%;margin-bottom:10px;background:url(../img/header/pizarron.jpg) center 85px #E9EEF4;color:white;box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;position:relative;overflow:hidden;height:296px;}
 #header h1{text-align:center;font-size:41px;line-height:77px;}
 #header h2{text-align:center;font-size:13px;line-height:27px;}
 #header h3{text-align:center;font-size:14px;line-height:25px;}
@@ -66,18 +66,18 @@ a{text-decoration:none;}
 #header .menu input{border:none;background-color:rgba(255,255,255,.4);padding:8px 11px 0;color:white;text-shadow:1px 1px #999;font-size:19px;line-height:20px;font-family:Varela Round;width:110px;text-indent:-3px;}
 #header .menu input[placeholder]{color:white;font-size:19px;}
 #header .menu ::-webkit-input-placeholder{color:white;}*/
-#header .menu .social{position:absolute;right:52px;top:88px;width:55px;}
-#header .menu .submenu .social a{float:right;;display: block;width:23px;height:23px;margin:0 2px;padding:0;background-position:-25px 0;background-color:transparent;}
-#header .menu .social a.fb{background-position:-245px 0;}
-#header .menu .social a.fb:hover{background-position:-220px 0;}
-#header .menu .social a.twitter{background-position:-246px -26px;}
-#header .menu .social a.twitter:hover{background-position:-221px -26px;}
-#header .menu .submenu{float:left;width:147px;padding:7px 0 0 5px;position:relative;}
+#header .menu .social{width:100%;margin-top:25px;}
+#header .menu .submenu .social a{float:left;display: block;width:26px;height:23px;margin:0 2px;padding:0;background-position:-25px 0;background-color:transparent;}
+#header .menu .social a.fb{background:url(../img/header/face_1.png) no-repeat center;}
+#header .menu .social a.fb:hover{background:url(../img/header/face.png) no-repeat center;}
+#header .menu .social a.twitter{background:url(../img/header/tw_1.png) no-repeat center;margin-left:51px;}
+#header .menu .social a.twitter:hover{background:url(../img/header/tw.png) no-repeat center;}
+#header .menu .submenu{float:left;width:147px;padding:7px 0 0 5px;position:relative;height:77px;}
 #header .menu .submenu a{float:none;background-color:rgba(255,255,255,.24);line-height:27px;font-size:12px;padding:0;margin:1px 0;height:30px;width:143px;border:none;}
 #header .menu .submenu a + a{margin:5px 0;height:28px;}
 
 #header .titles{margin:31px auto 18px;width:450px;}
-#header .home.container .titles{width:503px;}
+#header .home.container .titles{width:100%;}
 #header .home.container .titles hr{position:absolute;width:564px;left:241px;top:78px;height:1px;}
 #header .home.container .titles hr + hr{left:0;width:228px;}
 #header .home.container .titles h1,
@@ -1396,7 +1396,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*comparador select*/
 .comparador_select .open_wrap{display:none;}
 /*.comparador_select.on .open_wrap{display:block;}*/
-.comparador_select{position:fixed;top:0;right:0;z-index:5;background-color:#444;width:177px;border-top:5px solid #00ADF3;border-bottom:5px solid #00ADF3;}
+.comparador_select{position:fixed;top:0;right:0;z-index:5;background-color:#444;width:171px;border-top:5px solid #00ADF3;border-bottom:5px solid #00ADF3;}
 .comparador_select:not(.on){cursor:pointer;}
 .comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 12px 12px 0 12px;border-color:#00ADF3 transparent transparent transparent;bottom:-17px;position:absolute;left:43%;}
 .comparador_select .icon.fs{display:block;margin:14px auto 8px;background:url(../img/select/regla.png) center no-repeat;width:53px;height:14px;}
@@ -1423,3 +1423,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 .comparador_select .visited img{display:block;margin:0 auto;cursor:pointer;}
 
 .mejora .fb-like{margin-right:5px;}
+
+/*mtv5*/
+#header .home.container .titles h1{float:right;margin-top:4px;width:547px;font-size:16px;text-align:left;}
