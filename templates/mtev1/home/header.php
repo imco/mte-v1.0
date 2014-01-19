@@ -1,4 +1,5 @@
 <div class=' home  container'>
+	<?php $this->print_img_tag('header/ninio.jpg',false,'img','ninio') ?>
 	<div class='titles'>
 		<h1>
 			MejoraTuEscuela.org es una plataforma de participación ciudadana <br />
