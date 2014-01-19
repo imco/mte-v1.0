@@ -431,35 +431,37 @@ $(document).ready(function(){
 	});
 
 	$(window).scroll(function(){
-		windowOffset 	= $(window).scrollTop();
-		containeroffset = $('.perfil.B.container.B').offset().top;
-		headtitle		= $('.perfil.B .box-head');
-		columnoffset 	= $('.perfil.B .column.left').offset().top;
-		columnright		= $('.perfil.B .column.right .box');
-		semaforo		= $('.perfil.B .column.right .semaforo .level');
-		semOverlay		= $('.perfil.B .semaforo .sem-overlay');
-		resultadosoffset= $('.resultados.container').offset().top;
-		if(windowOffset >= containeroffset){
-			if(windowOffset+280 >= resultadosoffset){
-				columnright.removeClass('fixed');
-				columnright.show();
+		if($('.perfil.B').length > 0){
+			windowOffset 	= $(window).scrollTop();
+			containeroffset = $('.perfil.B.container.B').offset().top;
+			headtitle		= $('.perfil.B .box-head');
+			columnoffset 	= $('.perfil.B .column.left').offset().top;
+			columnright		= $('.perfil.B .column.right .box');
+			semaforo		= $('.perfil.B .column.right .semaforo .level');
+			semOverlay		= $('.perfil.B .semaforo .sem-overlay');
+			resultadosoffset= $('.resultados.container').offset().top;
+			if(windowOffset >= containeroffset){
+				if(windowOffset+280 >= resultadosoffset){
+					columnright.removeClass('fixed');
+					columnright.show();
+				}
+				else{
+					headtitle.addClass('fixed');
+					if(!columnright.hasClass('fixed')){
+						semaforo.slideToggle();
+						semOverlay.slideToggle();
+					}				
+					columnright.addClass('fixed');
+				}
 			}
 			else{
-				headtitle.addClass('fixed');
-				if(!columnright.hasClass('fixed')){
-					semaforo.slideToggle();
-					semOverlay.slideToggle();
-				}				
-				columnright.addClass('fixed');
+				headtitle.removeClass('fixed');
+				if(columnright.hasClass('fixed')){
+					semaforo.show();
+					semOverlay.show();
+				}
+				columnright.removeClass('fixed');
 			}
-		}
-		else{
-			headtitle.removeClass('fixed');
-			if(columnright.hasClass('fixed')){
-				semaforo.show();
-				semOverlay.show();
-			}
-			columnright.removeClass('fixed');
 		}
 	});
 

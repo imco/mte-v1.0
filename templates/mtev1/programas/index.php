@@ -66,6 +66,55 @@
 				<p>33 01 600(Ciudad de Mexico) o desde los Estados al 01 800 767 8368 o via correo electronico: <a href="#">quejas@sep.gob.mx</a> con copia para <a href="#">escuelasegura@sep.gob.mx</a></p>
 			</div>
 		</div>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/topojson.v0.min.js"></script>
+		<script>
+		var x = d3.scale.linear()
+		    .domain([0, width])
+		    .range([0, width]);
+		 
+		var y = d3.scale.linear()
+		    .domain([0, height])
+		    .range([height, 0]);
+		 
+		var width = 680,
+		    height = 500;
+		 
+		var projection = d3.geo.mercator()
+		    .scale(1200)
+		    .center([-94.34034978813841, 24.012062015793]);
+		 
+		var svg = d3.select(".container.programas .column.left").append("svg")
+		    .attr("width", width)
+		    .attr("height", height);
+		 
+		var g = svg.append("g");
+		 
+		d3.json("mx_tj.json", function(error, mx) {
+		  /*svg.selectAll("path")
+		    .data(topojson.object(mx, mx.objects.municipios2).geometries)
+		    .enter().append("path")
+		    .attr("d", d3.geo.path().projection(projection))
+		    .attr("fill", "transparent")
+		    .style("stroke", "#333")
+		    .style("stroke-width", ".2px")
+		    .attr("class", "muns");*/
+
+		  g.selectAll("path")
+		    .data(topojson.object(mx, mx.objects.estados2).geometries)
+		    .enter().append("path")
+		    .attr("d", d3.geo.path().projection(projection))
+		    .attr("fill", "#C4EAD1")
+		    .style("stroke", "#6ACA8A");
+
+
+		 
+		});
+
+
+		 
+		</script>
+
 	</div>
 	<div class="column right">
 		<h1>Otros programas</h1>
