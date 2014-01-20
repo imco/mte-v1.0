@@ -167,7 +167,7 @@ EOD;
 		header( "location: /peticiones/sienlace" . $extra );
 	}
 
-	public function upload_rackspace($filename){
+	private function upload_rackspace($filename){
 		require_once $this->config->document_root."/library/cloudfiles.php";
 		$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
 		$auth->authenticate();
@@ -184,7 +184,7 @@ EOD;
 		}
 	}
 
-	public function get_photo_cdn(){
+	private function get_photo_cdn(){
 		require_once $this->config->document_root."/library/cloudfiles.php";
 		$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
 		$auth->authenticate();
