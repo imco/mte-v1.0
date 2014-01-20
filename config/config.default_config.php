@@ -39,6 +39,7 @@ class default_config{
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->image_email = 'ariadna.camargo@imco.org.mx';
+		$this->image_email = 'sonny@spaceshiplabs.com';
 		$this->tynt = false;
 		
 		//signs sizes
