@@ -38,8 +38,8 @@ class default_config{
 		$this->recaptcha_private_key = '***REMOVED***';
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
-		$this->image_email = 'ariadna.camargo@imco.org.mx';
 		$this->image_email = 'sonny@spaceshiplabs.com';
+		$this->image_email = 'ariadna.camargo@imco.org.mx';
 		$this->tynt = false;
 		
 		//signs sizes
