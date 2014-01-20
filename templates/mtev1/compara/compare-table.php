@@ -41,7 +41,7 @@
 		echo "<td class='rank'><span>".$espaniol."</span></td>";
 		echo "<td class='rank'><span>".$matematicas."</span></td>";
 		echo "<td class='semaforo sem{$escuela->semaforo}'><span class='sprit2'></span>
-				<div class='icon'><span class='icon-popup'>
+				<div class='icon'><span class='triangle'></span><span class='icon-popup'>
 						<p class='infor I'>i</p>
 						<p class='title_semaforo'>
 							".$this->config->semaforos[$escuela->semaforo]."

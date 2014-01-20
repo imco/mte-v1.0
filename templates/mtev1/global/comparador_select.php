@@ -22,7 +22,7 @@
 					<span class='hidden'>$school->cct</span></li>";
 				}?>
 			</ul>
-			<?php $this->print_img_tag('select/flechita_carrar.png') ?>
+			<?php //$this->print_img_tag('select/flechita_carrar.png') ?>
 		</div>
 	</div>
 
