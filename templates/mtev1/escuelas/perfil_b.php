@@ -382,7 +382,6 @@ EOD;
 					<div class="clear"></div>
 				</div>
 
-				<h1 class="title-sidebar">Otros programas</h1>
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
 					<ul>
