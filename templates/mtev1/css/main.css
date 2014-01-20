@@ -35,7 +35,7 @@ a{text-decoration:none;}
 #header .menu a:before{content:"";position:absolute;width:1px;display:block;height:100%;background:#F2F2F2;top:0;left:0;}
 #header .menu a:first-child{border:none;}
 #header .menu a:hover{color:white;}
-#header .menu .submenu a{color:white;text-shadow:1px 1px 2px #999;font-weight:normal;}
+#header .menu .submenu a{color:white;font-weight:normal;}
 #header .menu .submenu a:before{background:white;}
 #header .menu .submenu:before{content:"";position:absolute;width:1px;display:block;height:121%;background:#F2F2F2;top:0;left:0;}
 #header .menu .icon{display:block;position:absolute;}
@@ -1492,13 +1492,17 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 
 /*mtv5*/
 #header .home.container .titles h1{float:right;margin-top:4px;width:542px;font-size:16px;text-align:left;}
-#header .menu .submenu a:nth-child(1){background-color:#0099D6;}
-#header .menu .submenu a:nth-child(2){background-color:#00ADF3;}
+#header .menu .submenu a{background-color:#00ADF3;}
+#header .menu .submenu a:hover{background-color:#0099D6;}
 #header .menu .submenu .social a{background-color:transparent;}
-#header .menu a[href$='/compara/']:hover{}
-#header .menu a[href$='/compara/escuelas/']:hover{}
-#header .menu a[href$='/califica/']:hover{}
-#header .menu a[href$='/mejora']:hover{}
+#header .menu.compara a[href$='/compara/'] .icon,
+#header .menu a[href$='/compara/']:hover .icon{background:url(../img/header/conoce_2.png) no-repeat center;}
+#header .menu.resultados a.logo + a + a .icon,
+#header .menu a[href$='/compara/escuelas/']:hover .icon{background:url(../img/header/compara_2.png) no-repeat center;}
+#header .menu.califica_tu_escuela a[href$='/califica/'] .icon,
+#header .menu a[href$='/califica/']:hover .icon{background:url(../img/header/califica_2.png) no-repeat center;}
+#header .menu.mejora a[href$='/mejora'] .icon,
+#header .menu a[href$='/mejora']:hover .icon{background:url(../img/header/mejora_2.png) no-repeat center;}
 #header .ninio{position:absolute;top:-5px;left:13px;}
 #header .container{overflow:hidden;}
 #general-search p.button-frame.search-adv{margin:-4px 0;width:250px;}
