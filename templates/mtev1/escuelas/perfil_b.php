@@ -7,13 +7,13 @@
 		</div>
 		<div class='info_B top'>
 				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
-				<ul class="data">
+				<!--<ul class="data">
 					<li>Clave <?=$this->escuela->cct?></li>
 					<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
 					<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
 					<li><?=$controles[$this->escuela->control->id]?></li>
 					<div class="clear"></div>
-				</ul>
+				</ul>-->
 		</div>		
 	</div>
 	<div class='column left'>
@@ -36,57 +36,69 @@
 				</div>
 				<div class="box">
 					<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
-					<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						<span class='icon sprit2'></span>
-						Dirección:
-						<span class='title'>
-							<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
-							<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
-							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
-							<span itemprop="addressCountry" content="MX"></span>
-						</span>
-					</p>
-					<!--<p class='director'>
-						<span class='icon'></span>
-						Director/Directora
-						<span class='title'>
-							
-						</span>
-						<div class='clear'></div>
-					</p>-->
-					<p class='tel'>
-						Teléfonos:
-						<span class='icon sprit2'></span>
-						<span itemprop="telephone" class='title'>
-							<?=$this->escuela->telefono?>
-						</span>
-					<div class='clear'></div>
-					</p>
-					<p class='email'>
-						<span class='icon sprit2'></span>
-						Mail:
-						<span itemprop="email" class='title'>
-							<?=$this->str_limit($this->escuela->correoelectronico,20);?>
-						</span>
-						<div class='clear'></div>
-					</p>
-
-					<p class='web'>
-						<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-					</p>					
+					<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
+					<ul class="data">
+						<li>Clave <?=$this->escuela->cct?></li>
+						<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
+						<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
+						<li><?=$controles[$this->escuela->control->id]?></li>
+						<li>Entidad: <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
+						<li>Municipio: <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
+						<li>Localidad: <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
+						<div class="clear"></div>
+					</ul>				
 				</div>
 			</div>
+
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
 			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
 			<div id='mapa' class='map'></div>
 			<?php $this->include_template('map-infobox','global'); ?>
 			<div class='clear'></div>
 		</div>
+		<div class="info_B bottom">
+			<div class="box_info">
+				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span class='icon sprit2'></span>
+					Dirección:
+					<span class='title'>
+						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
+						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
+						<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
+						<span itemprop="addressCountry" content="MX"></span>
+					</span>
+				</p>
+				<p class='tel'>
+					Teléfonos:
+					<span class='icon sprit2'></span>
+					<span itemprop="telephone" class='title'>
+						<?=$this->escuela->telefono?>
+					</span>
+				<div class='clear'></div>
+				</p>
+
+			</div>
+			<div class="box_info">
+				<p class='email'>
+					<span class='icon sprit2'></span>
+					Mail:
+					<span itemprop="email" class='title'>
+						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
+					</span>
+					<div class='clear'></div>
+				</p>
+
+				<p class='web'>
+					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
+				</p>				
+			</div>
+			<div class="clear"></div>
+		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquí un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja un comentario aqui' name='comentario' class='required'></textarea>
+				<textarea placeholder='Deja aqui un comentario sobre esta escuela' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
