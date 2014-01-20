@@ -48,8 +48,12 @@ class default_config{
 		]');
 
 		//sendGrid
-		$this->send_grid_user ="***REMOVED***";
+		$this->send_grid_user = "***REMOVED***";
 		$this->send_grid_key  = "***REMOVED***";
+
+		//rack space
+		$this->rack_space_user = "***REMOVED***";
+		$this->rack_space_key = "***REMOVED***";
 	}
 }
 ?>

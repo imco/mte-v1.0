@@ -97,18 +97,29 @@
                         <div class="gallery">
                             <div class="screen">
                                 <div class="reel" style="width:<?php echo count($this->photos)*156*12 ?>px">
-									<?php
-										if( $this->thephoto ){
-											echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$this->thephoto->filename}' /></a>";
-										}
+					<?php
+					if( $this->thephoto ){
+						if(in_array($this->thephoto->filename,$this->cdn_photos)){
+							echo "<a><img alt='SiEnlace2014' src='".$this->cdn_url."/".$this->thephoto->filename."' /></a>";
+						
+						}else
+							echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$this->thephoto->filename}' /></a>";
+					}
 										//for( $i=0;$i<10;$i++ ){
-										if( $this->photos ){foreach( $this->photos as $photo ){
-                                            if(file_exists("{$this->config->document_root}signs/signs/{$photo->filename}")){
-											    echo "<a><img alt='SiEnlace2014' src='{$this->config->http_address}signs/signs/{$photo->filename}' /></a>";
-                                            }
-										}}
+					if( $this->photos ){foreach( $this->photos as $photo ){
+						$filePath = false;
+						if(in_array($photo->filename,$this->cdn_photos)){
+							$filePath = $this->cdn_url."/".$photo->filename;	
+						}else if(file_exists("{$this->config->document_root}signs/signs/{$photo->filename}")){
+							$filePath = "{$this->config->http_address}signs/signs/{$photo->filename}";
+						}
+
+						if($filePath && $photo->filename!=""){
+							echo "<a><img alt='SiEnlace2014' src='$filePath' /></a>";
+						}
+					}}
 										//}
-									?>
+					?>
                                 </div>
                             </div>
                         </div>

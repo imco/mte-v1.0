@@ -549,9 +549,9 @@ class main extends controler{
 	    'api_key'   => $this->config->send_grid_key,
 	    'to'        => $to,
 	    'subject'   => $subject,
-	    'html'      => '',
-	    'text'      => $message,
-	    'from'      => $from,
+	    'html'      => $message,
+	    'text'      => '',
+	    'from'      => $from
 	  );
 
 
