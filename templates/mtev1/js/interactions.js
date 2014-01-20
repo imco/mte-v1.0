@@ -422,6 +422,11 @@ $(document).ready(function(){
 		$('.perfil.B .column.right .semaforo .level').slideToggle();
 	});
 
+	$('.perfil.B .column.right .lista-programas h2').click(function(e){
+		$(this).next('ul').slideToggle();
+
+	});
+
 	$('#.calificacion-form.B fieldset textarea').click(function(e){
 		if(!$(this).hasClass('open')){
 			$(this).addClass('on');
@@ -439,6 +444,8 @@ $(document).ready(function(){
 			columnright		= $('.perfil.B .column.right .box');
 			semaforo		= $('.perfil.B .column.right .semaforo .level');
 			semOverlay		= $('.perfil.B .semaforo .sem-overlay');
+			listaprogramasfed  = $('.perfil.B .column.right .lista-programas.federales ul');
+			listaprogramasosc  = $('.perfil.B .column.right .lista-programas.osc ul');
 			resultadosoffset= $('.resultados.container').offset().top;
 			if(windowOffset >= containeroffset){
 				if(windowOffset+280 >= resultadosoffset){
@@ -450,6 +457,9 @@ $(document).ready(function(){
 					if(!columnright.hasClass('fixed')){
 						semaforo.slideToggle();
 						semOverlay.slideToggle();
+						listaprogramasosc.slideToggle();
+						listaprogramasfed.slideToggle();
+
 					}				
 					columnright.addClass('fixed');
 				}
@@ -459,6 +469,8 @@ $(document).ready(function(){
 				if(columnright.hasClass('fixed')){
 					semaforo.show();
 					semOverlay.show();
+					listaprogramasosc.show();
+					listaprogramasfed.show();
 				}
 				columnright.removeClass('fixed');
 			}

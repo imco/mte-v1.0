@@ -379,7 +379,32 @@ EOD;
 					if($this->location == 'escuelas' && $this->get('action')=='index')
 						$this->include_template('share_buttons_simple','global');
 					?>
+					<div class="clear"></div>
 				</div>
+
+				<h1 class="title-sidebar">Otros programas</h1>
+				<div class="lista-programas federales">
+					<h2>Programas federales</h2>
+					<ul>
+						<li><a href="#">Programa escuelas de calidad</a></li>
+						<li><a href="#">Programa escuela segura</a></li>
+						<li><a href="#">Programa escuelas tiempo completo</a></li>
+					</ul>			
+				</div>
+
+				<div class="lista-programas osc">
+					<h2>Programas OSC´s</h2>
+					<ul>
+						<li><a href="#">Escuela siempre Abierta</a></li>
+						<li><a href="#">Programa escuela segura</a></li>
+						<li><a href="#">Programa escuelas tiempo completo</a></li>
+						<li><a href="#">Programa escuelas de calidad</a></li>
+						<li><a href="#">Programa nacional de lectura</a></li>
+						<li><a href="#">Escuela de Jornada Amplia</a></li>
+
+					</ul>			
+				</div>
+
 			</div>
 		</div>
 	</div>
