@@ -1304,7 +1304,7 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 /*.comparador_select.on .open_wrap{display:block;}*/
 .comparador_select{position:fixed;top:0;right:0;z-index:5;background-color:#444;width:177px;border-top:5px solid #00ADF3;border-bottom:5px solid #00ADF3;}
 .comparador_select:not(.on){cursor:pointer;}
-.comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 12px 12px 0 12px;border-color:#00ADF3 transparent transparent transparent;bottom:-17px;position:absolute;left:43%;}
+.comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 12px 12px 0 12px;border-color:#00ADF3 transparent transparent transparent;bottom:-16px;position:absolute;left:43%;}
 .comparador_select .icon.fs{display:block;margin:14px auto 8px;background:url(../img/select/regla.png) center no-repeat;width:53px;height:14px;}
 .comparador_select p{text-align:center;font-size:13px;margin-top:8px;margin-bottom:8px;line-height:normal;padding: 0 8px;color:#00ADF3;}
 .comparador_select p span{color:white;}
