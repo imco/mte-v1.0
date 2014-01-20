@@ -89,6 +89,9 @@
 		    .attr("height", height);
 		 
 		var g = svg.append("g");
+
+		var path = d3.geo.path()
+    		.projection(projection);
 		 
 		d3.json("mx_tj.json", function(error, mx) {
 		  /*svg.selectAll("path")
@@ -105,8 +108,8 @@
 		    .enter().append("path")
 		    .attr("d", d3.geo.path().projection(projection))
 		    .attr("fill", "#C4EAD1")
-		    .style("stroke", "#6ACA8A");
-
+		    .attr("name",d3.geometries)
+		    .style("stroke", "#40AA6C");
 
 		 
 		});
