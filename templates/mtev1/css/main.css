@@ -852,18 +852,18 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .column.left{width:57%;padding-left:23px;padding-top:2px;}
 #content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
 #content .perfil.B .info_B ul{line-height: 1.4;margin-top: 8px}
-#content .perfil.B .info_B ul li{font-size: 13px}
+#content .perfil.B .info_B ul li{color: #B4B4B4;font-size: 13px}
 #content .perfil.B .info_B ul li:before{content: "";display: inline-block;width: 7px;height: 7px;margin-right: 4px;background: #00AFF0;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 #content .perfil.B .info_B.bottom{padding: 7px 15px}
 #content .perfil.B .info_B.bottom .box_info{border: 1px solid gray;float: left;padding: 7px;width: 46%;}
 #content .perfil.B .info_B.bottom .box_info + .box_info{float: right;margin-right: 6px}
-#content .perfil.B .info_B.bottom .box_info p{font-size: 14px}
+#content .perfil.B .info_B.bottom .box_info p{color: #B4B4B4;font-size: 14px}
 #content .perfil.B .info_B .tel{line-height:30px;}
 #content .perfil.B .info_B .tel .icon{background:url(../img/perfil/iconos-mejora-perfil.png) -56px -35px;}
 #content .perfil.B .info_B .address{line-height:21px;}
 #content .perfil.B .info_B .address .icon{background-position:0 -259px;background-repeat:no-repeat;height:19px;width:20px;background-size:41px;}
 #content .perfil.B .info_B .email{line-height:12px;}
-#content .perfil.B .info_B .email .icon{background:url(../img/perfil/iconos-mejora-perfil.png)-56px -62px;}
+#content .perfil.B .info_B .email .icon{background:url(../img/perfil/iconos-mejora-perfil.png)-56px -63px;}
 #content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
 #content .perfil.B .info_B .column.right{width:35%;}
 #content .perfil.B #mapa{margin:7px 0;width:100%;height:285px;}
@@ -927,8 +927,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .semaforo .sem-overlay .icon.icon4{background-position:-3px -56px;}
 #content .perfil.B .semaforo .sem-overlay .icon.icon7{background-image:url(../img/perfil/azul.png);}
 
+#content .perfil.B .lista-programas h2{cursor: pointer;}
 
-#content .perfil.B .califica{margin-top:4px;}
+#content .perfil.B .califica{margin-top:4px;width: 202px}
 #content .perfil.B .califica .title{background-color:#888;text-align:center;color:white;height:99px;}
 #content .perfil.B .califica .title.petitions{height:auto;margin-top:10px;}
 #content .perfil.B .califica .title.petitions h2{background-color:#888;}
@@ -1136,8 +1137,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 	-o-transition: all .6s;
 	-ms-transition: all .6s;
 	transition: all .6s;}
-#content .calificacion-form.B fieldset .sweetcaptcha{margin: 15px 0}
 #content .calificacion-form.B textarea.on{height:79px;}
+#content .calificacion-form.B fieldset .sweetcaptcha{margin: 15px 0}
 #content .calificacion-form.B textarea + p{font-size:15px;margin-top:7px;}
 #content .calificacion-form.B textarea + p span{font-size:12px;}
 #content .calificacion-form.B input[type='submit']{background-color:#329ECF;margin:10px 0;width:325px;font-size:20px;text-indent:-19px;}
@@ -1221,7 +1222,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 /*califica*/
 #content .container.califica{margin:25px auto;}
 #content .califica h1{color:#515152;text-align:center;line-height:normal;margin-bottom:6px;}
-#content .califica h2{background-color:#8B9091;color:white;padding:15px 36px 14px;font-size:18px;line-height:19px;}
+#content .califica h2{background-color:#8B9091;color:white;padding:15px 12px 14px;font-size:18px;line-height:19px;}
 #content .califica .calificacion{margin-top:15px;background-color:#DCDDDF;position:relative;margin-bottom:2px;}
 #content .califica .calificacion:before{content:'';background:transparent url(../img/peticiones/sombra_columna.png) no-repeat center center;width:100%;height:8px;display:block;position:absolute;bottom:-7px;}
 #content .califica .calificacion:nth-child(2n + 1){float:right;width:429px;}
@@ -1368,31 +1369,32 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
 
-
+/*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}
-#content .container.programas .column.right h1{background-color: #339DD1;color: #fff;padding: 8px 0;text-align: center;}
-#content .container.programas .column.right .lista-programas + .lista-programas{margin-top: 10px}
-#content .container.programas .column.right .lista-programas h2{font-size:18px;line-height:35px;background-color:#888;color:white;height:32px;text-align: center;}
-#content .container.programas .column.right .lista-programas h2 + h2{margin-top: 10px}
-#content .container.programas .column.right .lista-programas ul li{background-color: rgba(255,255,255,0.5);font-size: 13px;padding: 6px;text-align: center;}
-#content .container.programas .column.right .lista-programas ul li + li{border-top: 2px solid #fff}
-#content .container.programas .column.right .lista-programas ul li a{color: #8C8C8C;}
-#content .container.programas .column.right .lista-programas ul li a:hover{color: #57A9D1}
+#content .container .column.right h1{background-color: #339DD1;color: #fff;padding: 8px 0;text-align: center;}
+#content .container .column.right h1.title-sidebar{margin-top: 10px}
+#content .container .column.right .lista-programas + .lista-programas{margin-top: 10px}
+#content .container .column.right .lista-programas h2{font-size:18px;line-height:35px;background-color:#888;color:white;height:32px;text-align: center;}
+#content .container .column.right .lista-programas h2 + h2{margin-top: 10px}
+#content .container .column.right .lista-programas ul li{background-color: rgba(255,255,255,0.5);font-size: 13px;padding: 6px;text-align: center;}
+#content .container .column.right .lista-programas ul li + li{border-top: 2px solid #fff}
+#content .container .column.right .lista-programas ul li a{color: #8C8C8C;}
+#content .container .column.right .lista-programas ul li a:hover{color: #57A9D1}
 
-#content .container.programas .column.right .share-blue{height: auto;margin-top: 10px;position: relative;}
-#content .container.programas .column.right .share-blue a.option{display: block;width: 49%;
+#content .container .column.right .share-blue{height: auto;margin-top: 10px;position: relative;}
+#content .container .column.right .share-blue a.option{display: block;width: 49%;
 	background: #339DD1;box-shadow: 3px -5px 10px #2b8fbf inset,-3px 6px 6px #48a7d6 inset,0px -15px 20px #2b8fbf inset;color: #fff;font-size:13px;line-height:1.7;text-align: center;
 	float: left;
 	display: block;
 	padding: 22px 0 15px;
 	border-radius: 5px 0 0 5px;}
-#content .container.programas .column.right .share-blue a.option + a.option{border-left: 1px solid #2B8AB8;border-radius: 0px 5px 5px 0px}
-#content .container.programas .column.right .share-blue a.option span.icon{background: url(../img/perfil/iconos-mejora-perfil.png) no-repeat -4px -210px;display: block;height: 30px;margin: 0 auto;width: 40px}
-#content .container.programas .column.right .share-blue a.option + a.option span.icon{background-position: -40px -210px}
-#content .container.programas .column.right .share-blue a.option:hover{color: #2079A5}
-#content .container.programas .column.right .share-blue a.option:hover .icon{background-position: -4px -175px}
-#content .container.programas .column.right .share-blue a.option + a.option:hover .icon{background-position: -40px -175px}
-#content .container.programas .column.right .social{top: 102px}
+#content .container .column.right .share-blue a.option + a.option{border-left: 1px solid #2B8AB8;border-radius: 0px 5px 5px 0px}
+#content .container .column.right .share-blue a.option span.icon{background: url(../img/perfil/iconos-mejora-perfil.png) no-repeat -4px -210px;display: block;height: 30px;margin: 0 auto;width: 40px}
+#content .container .column.right .share-blue a.option + a.option span.icon{background-position: -40px -210px}
+#content .container .column.right .share-blue a.option:hover{color: #2079A5}
+#content .container .column.right .share-blue a.option:hover .icon{background-position: -4px -175px}
+#content .container .column.right .share-blue a.option + a.option:hover .icon{background-position: -40px -175px}
+#content .container .column.right .social{top: 102px}
 
 
 /*Wp style*/

@@ -131,16 +131,16 @@
 		</div>
 
 		<div class="lista-programas">
-		<h2>Programas OSC´s</h2>
-		<ul>
-			<li><a href="#">Escuela siempre Abierta</a></li>
-			<li><a href="#">Programa escuela segura</a></li>
-			<li><a href="#">Programa escuelas tiempo completo</a></li>
-			<li><a href="#">Programa escuelas de calidad</a></li>
-			<li><a href="#">Programa nacional de lectura</a></li>
-			<li><a href="#">Escuela de Jornada Amplia</a></li>
+			<h2>Programas OSC´s</h2>
+			<ul>
+				<li><a href="#">Escuela siempre Abierta</a></li>
+				<li><a href="#">Programa escuela segura</a></li>
+				<li><a href="#">Programa escuelas tiempo completo</a></li>
+				<li><a href="#">Programa escuelas de calidad</a></li>
+				<li><a href="#">Programa nacional de lectura</a></li>
+				<li><a href="#">Escuela de Jornada Amplia</a></li>
 
-		</ul>			
+			</ul>			
 		</div>
 
 		<div class="share-blue">
