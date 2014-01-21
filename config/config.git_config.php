@@ -27,6 +27,8 @@ class git_config extends default_config{
 		$this->db_name = 'cte_optimizada';
 		$this->db_user = 'root';
 		$this->db_pass = '***REMOVED***';
+
+		$this->contact_email = 'aero.urie@gmail.com';
 		
 		//MXNPHP
 		$this->dev_mode = true;
