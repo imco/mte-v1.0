@@ -76,7 +76,11 @@ class peticiones extends main{
 		$img = new firma_img($this->get('id'));
 		$img->update('activo',array(1));
 		$img->read('id,filename,email,activo');
-		echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
+		$this->get_photo_cdn();
+		if(in_array($img->filename,$this->cdn_photos)){
+			echo "<img src='".$this->cdn_url."/".$img->filename."' />";
+		}else
+			echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
 	}
 	public function sienlace(){
 		$firma = new firma();
@@ -145,19 +149,23 @@ EOD;
 			//echo "<img alt='' src='" . $this->config->document_root . '/signs/signs/'. $image->signs . "' />";
 			$extra = "?img=" . $nid;
 			if($this->post('email')){
+				if(($pathFile = $this->upload_rackspace($image->filename)))
+					$pathFile .= "/".$image->filename;
+				else
+					$pathFile = "http://www.mejoratuescuela.org/signs/{$image->filename}";
+
 				$subject = 'Nueva Foto SiENLACE';
 				$from = 'system@mejoratuescuela.org';
 				$from_name = 'Sistema Mejoratuescuela';
 				$message = <<<EOD
 Alguien ha subido una nueva foto en la petición SiENLACE:<br/>
-http://www.mejoratuescuela.org/signs/{$image->filename}<br/>
+{$pathFile}<br/>
 Haz clic en el siguiente vinculo para aprobar:<br/>
 http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}<br/>
 Para denegar no es necesario tomar acción.<br/>
 EOD;
 				$this->send_email($this->config->image_email,$subject,$message,$from,$from_name);
 				//echo $message;
-				$this->upload_rackspace($image->filename);
 			}
 		}else{
 			echo false;
@@ -179,9 +187,11 @@ EOD;
 			if($status){
 				$this->add_component("mxnphp_gallery");
 				$this->components['mxnphp_gallery']->delete_images($filename,"/signs/" , $this->config->icon_sizes);
+				return $container->cdn_uri;
 			
 			}
 		}
+		return false;
 	}
 
 	private function get_photo_cdn(){
