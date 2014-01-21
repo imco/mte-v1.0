@@ -22,7 +22,7 @@
 				<div class="top-info">
 					<div class='rank'>
 						<div class='posicion'>
-							<?php $this->print_img_tag('home/posicion.png');?>
+							<?php $this->print_img_tag('perfil/blue/posicion.png');?>
 							<p>Posición estatal</p>
 							<h2>
 								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
