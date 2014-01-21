@@ -7,7 +7,9 @@ class git_config extends default_config{
 		$this->blog_address = 'http://comparatuescuelablog.projects.spaceshiplabs.com/';
 		//$this->blog_address = 'http://blog.mejoratuescuela.org/';
 		$this->mxnphp_dir = "/var/www/mxnphp/";
+
 		$this->contact_email = 'aero.uriel@gmail.com';
+		$this->image_email = $this->contact_email;
 
 		$this->solr_server = 'http://busquedas.mejoratuescuela.org/solr/mte/';
 		
@@ -32,6 +34,7 @@ class git_config extends default_config{
 		*/
 		//MXNPHP
 		$this->dev_mode = true;
+		error_reporting(-1);
 		
 	}
 }
