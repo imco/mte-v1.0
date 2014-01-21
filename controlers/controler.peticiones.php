@@ -87,7 +87,7 @@ class peticiones extends main{
 		$this->firmas = number_format($firma->count());
 		$this->photos = $this->searchPhotos();
 		$this->get_photo_cdn();
-		var_dump($this->get('img'),$this->request('img'))
+		var_dump($this->get('img'),$this->request('img'));
 		if( $this->get('img') ){
 			$this->thephoto = new firma_img($this->get('img'));
 			$this->thephoto->read('id,filename');
