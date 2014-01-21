@@ -98,8 +98,8 @@
                             <div class="screen">
                                 <div class="reel" style="width:<?php echo count($this->photos)*156*12 ?>px">
 					<?php
+					var_dump($this->thephoto);
 					if( $this->thephoto ){
-						var_dump(in_array($this->thephoto->filename,$this->cdn_photos));
 						if(in_array($this->thephoto->filename,$this->cdn_photos)){
 							echo "<a><img alt='SiEnlace2014' src='".$this->cdn_url."/".$this->thephoto->filename."' /></a>";
 						
