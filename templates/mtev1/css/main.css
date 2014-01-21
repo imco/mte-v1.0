@@ -1270,7 +1270,6 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .mejorar p a .icon{display: inline-block;width: 19px;height: 14px;vertical-align:top;}
 #content .mejora .mejorar p a.more .icon{background:url(../img/mejora/leermas.png) no-repeat;margin-top:6px;}
 #content .mejora .mejorar p a.download .icon{background:url(../img/mejora/descargar-mini.png) no-repeat;width:21px;height:18px;margin-left:2px;margin-top:2px;}
-
 /*peticiones*/
 #content .peticion h1{margin-top:36px;cursor:pointer;}
 #content .peticion h1:first-child{margin-top:0;}
@@ -1457,6 +1456,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .display .column .wrap_content p{color:#A9A9A9}
 #content .mejora .display .column .wrap_content p + a{margin-top:13px;display:block;font-size:15px;color:#4ABC84;}
 #content .mejora .display .column .nota_completa .icon{background:url(../img/mejora/leer_pop.png) no-repeat;display: inline-block;width:14px;height: 12px;background-repeat:no-repeat;vertical-align:top;margin-top:8px;}
+#content .mejora .display .column.right .fb-comments{background: #fff!important}
+#content .mejora .display .column.right .fb-comments .postToProfile{top: -64px!important}
 
 /*comparador select*/
 .comparador_select .open_wrap{display:none;}

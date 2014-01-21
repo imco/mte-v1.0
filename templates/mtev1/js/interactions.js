@@ -604,7 +604,7 @@ function input_data_view_mejora(mejorar){
 	display.find('.left img')[0].src = mejorar.find('h1 a')[0].href;
 	display.find('.wrap_content p + a')[0].href = url; 
 	var tweet = "<a href='https://twitter.com/share' class='twitter-share-button' data-url='"+url+"' data-text='"+title+"'>Tweet</a>",
-	template_share = '<div class="fb-like" data-href="'+url+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>'+tweet+'<div class="fb-comments" data-href="'+url+'" data-width="340" data-numposts="5" data-colorscheme="dark"></div>';
+	template_share = '<div class="fb-like" data-href="'+url+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>'+tweet+'<div class="fb-comments" data-href="'+url+'" data-width="340" data-numposts="5" ></div>';
 	$('.info_share').html(template_share);
 	FB.XFBML.parse(display[0]);
 	twttr.widgets.load();
