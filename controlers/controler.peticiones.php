@@ -76,12 +76,17 @@ class peticiones extends main{
 		$img = new firma_img($this->get('id'));
 		$img->update('activo',array(1));
 		$img->read('id,filename,email,activo');
-		echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
+		$this->get_photo_cdn();
+		if(in_array($img->filename,$this->cdn_photos)){
+			echo "<img src='".$this->cdn_url."/".$img->filename."' />";
+		}else
+			echo "<img src='http://www.mejoratuescuela.org/signs/signs/{$img->filename}' />";
 	}
 	public function sienlace(){
 		$firma = new firma();
 		$this->firmas = number_format($firma->count());
 		$this->photos = $this->searchPhotos();
+		$this->get_photo_cdn();
 		if( $this->get('img') ){
 			$this->thephoto = new firma_img($this->get('img'));
 			$this->thephoto->read('id,filename');
@@ -144,12 +149,17 @@ EOD;
 			//echo "<img alt='' src='" . $this->config->document_root . '/signs/signs/'. $image->signs . "' />";
 			$extra = "?img=" . $nid;
 			if($this->post('email')){
+				if(($pathFile = $this->upload_rackspace($image->filename)))
+					$pathFile .= "/".$image->filename;
+				else
+					$pathFile = "http://www.mejoratuescuela.org/signs/{$image->filename}";
+
 				$subject = 'Nueva Foto SiENLACE';
 				$from = 'system@mejoratuescuela.org';
 				$from_name = 'Sistema Mejoratuescuela';
 				$message = <<<EOD
 Alguien ha subido una nueva foto en la petición SiENLACE:<br/>
-http://www.mejoratuescuela.org/signs/{$image->filename}<br/>
+{$pathFile}<br/>
 Haz clic en el siguiente vinculo para aprobar:<br/>
 http://www.mejoratuescuela.org/peticiones/aprobar_imagen/{$nid}<br/>
 Para denegar no es necesario tomar acción.<br/>
@@ -163,6 +173,40 @@ EOD;
 		}
 		
 		header( "location: /peticiones/sienlace" . $extra );
+	}
+
+	private function upload_rackspace($filename){
+		require_once $this->config->document_root."/library/cloudfiles.php";
+		$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
+		$auth->authenticate();
+		if($auth->authenticated()){
+			$connection = new CF_Connection($auth);
+			$container = $connection->get_container("sienlace");
+			$object = $container->create_object($filename);
+			$status = $object->load_from_filename($this->config->document_root."signs/signs/$filename");
+			if($status){
+				$this->add_component("mxnphp_gallery");
+				$this->components['mxnphp_gallery']->delete_images($filename,"/signs/" , $this->config->icon_sizes);
+				return $container->cdn_uri;
+			
+			}
+		}
+		return false;
+	}
+
+	private function get_photo_cdn(){
+		require_once $this->config->document_root."/library/cloudfiles.php";
+		$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
+		$auth->authenticate();
+		if($auth->authenticated()){
+			$connection = new CF_Connection($auth);
+			$container = $connection->get_container("sienlace");
+			$imgs = $container->list_objects();
+			$imgs = explode("\n",$imgs[0]);
+			$this->cdn_photos = $imgs;
+			$this->cdn_url = $container->cdn_uri;
+		}
+	
 	}
 
 	public function receive_auth_keys(){
