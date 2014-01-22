@@ -108,7 +108,7 @@ class home extends main{
 	* "Mantente informado" y notifica a este si fue o no registrado correctamente.
 	*/
 	public function newsletter(){
-		$location = "/tome/";
+		$location = "/home/";
 		if($this->post('aviso')){
 			$correo = $this->post('correo');
 			$news = new newsletters();
