@@ -125,34 +125,177 @@
 			</fieldset>		
 		</form>
 			<ul class='tabs'>
-				<li></li>
-
-				<li><a href='#'  class='infor'>
-					<span class='icon sprit2'></span>
-					<span class='triangle'></span>
-					Más información
-				</a></li>
 				<li><a href='#' class='reportes'>
-					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
-					Presupuestos asignados
+					Comentarios 
+					y reportes
 				</a></li>
 				<li><a href='#' class='result'>
-					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
-					Resultados educativos
+					Infraestructura escolar
 				</a></li>
 				<li class='on'><a href='#' class='long comentarios'>
-					<span class='icon sprit2'></span>
 					<span class='triangle'></span>
-					Comentarios con calificación
+					Desempeño académico
 				</a></li>
 				<div class='clear'></div>
 			</ul>
+		<div class='head t-tabs'>
+				<p class='title-tabs'>Desempeño académico</p>
+		</div>
 
 		<div class='tab-container'>
-			<div class='tab jscrollpane on calificacion-tab'>
+
+			<div class='tab jscrollpane charts'><div class='chart-box'>
+				<div class="n_alumnos">
+					<p>Número de alumnos evaluados</p>
+					<span class="number">8,287</span>
+				</div>
+				<div class="n_alumnos">
+					<p>Porcentaje de alumnos en nivel reprobado</p>
+					<span class="number">21%</span>
+				</div>
+				<div class="wrap_chart">
+					<div class="info_chart">
+						<span class="icon"></span>
+						<p>Resultados enlace <span>matemáticas</span></p>
+					
+					</div>
+					<div class="chart_content">
+					<?php if($this->escuela->line_chart_espaniol ){
+						echo "<h2>Resultados ENLACE matematicas</h2>";
+						echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
+					} ?>				
+					</div>
+				</div>
+				<div class="wrap_chart">
+					<div class="info_chart">
+						<span class="icon"></span>
+						<p>Resultados enlace <span>español</span></p>
+					
+					</div>
+					<div class="chart_content">
+					<?php if($this->escuela->line_chart_espaniol ){
+						echo "<h2>Resultados ENLACE español</h2>";
+						echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
+				}
+				?>
+					</div>
+				</div>
+
+			</div></div>
+			<div class='tab jscrollpane infraestructura-tab on'>
+				<h2>Inforimacion disponible corresponde al ciclo xxx</h2>
+				<p class="border_b">Total de Aulas en uso 35</p>
+				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
+				<p class="head_t">Instalaciones</p>
+				<p class="head_t">esta escuela</p>
+				<table>
+					<tbody>
+						<tr>
+							<th>Instalaciones</th>
+							<th>esta escuela</th>
+						</tr>
+						<tr>
+							<td>Agua entubada</td>
+							<td><span class='not'></span></td>
+						</tr>
+						<tr>
+							<td>Luz</td>
+							<td><span class='not'></span></td>
+						</tr>
+						<tr>
+							<td>Barda o cercado perimetral</td>
+							<td><span class='true'></span></td>
+						</tr>
+						<tr>
+							<td>Canchas deportivas</td>
+							<td><span class='true'></span></td>
+						</tr>
+						<tr>
+							<td>Patio de la escuela</td>
+							<td><span class='not'></span></td>
+						</tr>
+						<tr>
+							<td>Baños</td>
+							<td><span class='not'></span></td>
+						</tr>
+						<tr>
+							<td>Sala de cómputo</td>
+							<td><span class='true'></span></td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+			</div>
+
+
+			<div class='tab jscrollpane calificacion-tab'>
 				<a name='calificaciones'></a>
+				<p class="gray_text start"><span class="icon">Calificación global de la escuela según usuarios</span></p>
+				<p class="border_b">Calificació global 8.6</p>
+
+				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunta</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td>Asistencia de los maestros</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>Preparación de los maestros</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>Infraestructura de la escuela</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>Relación con padres de familia</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>Honestidad y transparencia</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>Participación de padres de familia</td>
+							<td>8</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p class="gray_text comm"><span class="icon"></span>Comentarios</p>
+
+				<div class="wrap_comments">
+					<div class="comment">
+						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
+						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
+					</div>
+
+					<div class="comment">
+						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
+						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
+					</div>
+
+					<div class="comment">
+						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
+						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
+					</div>
+
+					<div class="comment">
+						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
+						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
+					</div>
+
+
+				
+				</div>
+
+				<!--
+
 				<?php if(isset($this->escuela->calificaciones)) {?>
 				<a href='top' class="sort recientes"><span class="triangle"></span> Más recientes</a>
 				<a href='bottom' class="sort populares on"><span class="triangle"></span>Más populares</a>
@@ -191,27 +334,17 @@ EOD;
 						</span>
 						";
 				}
-				?>
+				?>-->
 			</div>
 			<!---->
-			<div class='tab jscrollpane charts'><div class='chart-box'>
-				<?php 
-				if($this->escuela->line_chart_espaniol ){
-					echo "<h2>Resultados ENLACE español</h2>";
-					echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
-					echo "<h2>Resultados ENLACE matematicas</h2>";
-					echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
-				}else{
 
-				} 
-				?>
-			</div></div>
+			<!--
 			<div class='tab jscrollpane'>
 				<a name='reportes_ciudadanos'></a>
 				<div class='gray-box presupuestos'>
-					<!-- <h2>Promedio nacional</h2> -->
+					 <h2>Promedio nacional</h2>
 					<h2>Esta escuela no tiene información de presupuesto disponible.</h2>
-					<!--
+					
 					<div class='column left'>
 						<h3 class='gray'>
 							Presupuesto anual para la Escuela
@@ -258,12 +391,13 @@ EOD;
 						</div>
 
 					</div>
-					-->
+					
 				</div>
-			</div>
+			</div>-->
+			<!--
 			<div class='tab jscrollpane'>
 				<h2>En construcción.</h2>
-				<!--<div class='mas-info'>
+				<div class='mas-info'>
 					<div class='left'>	
 						<h2>Servicio</h2>
 						<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
@@ -309,12 +443,12 @@ EOD;
 							<h2>Promedio general</h2>
 						</div>					
 					</div>
-				</div>-->
+				</div>
 			</div>
-
+			
 			<div class='tab jscrollpane'>
 				
-			</div>
+			</div>-->
 		</div>	
 	</div>
 	<div class='column right'>
