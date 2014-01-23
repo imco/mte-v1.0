@@ -548,8 +548,8 @@ class main extends controler{
 	    'api_user'  => $this->config->send_grid_user,
 	    'api_key'   => $this->config->send_grid_key,
 	    'to'        => $to,
-	    'subject'   => $subject,
-	    'html'      => $message,
+		'subject'   => $subject,
+		'html'      => $message,
 	    //'text'      => '',
 	    'from'      => $from
 	  );
