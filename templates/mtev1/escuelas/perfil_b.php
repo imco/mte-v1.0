@@ -145,17 +145,17 @@
 		</div>
 
 		<div class='tab-container'>
-
-			<div class='tab jscrollpane charts'><div class='chart-box'>
-				<div class="n_alumnos">
+			<!--  jscrollpane-->
+			<div class='tab charts on'><div class='chart-box'>
+				<div class="n_alumnos border_b">
 					<p>Número de alumnos evaluados</p>
 					<span class="number">8,287</span>
 				</div>
-				<div class="n_alumnos">
+				<div class="n_alumnos border_b">
 					<p>Porcentaje de alumnos en nivel reprobado</p>
 					<span class="number">21%</span>
 				</div>
-				<div class="wrap_chart">
+				<div class="wrap_chart border_b">
 					<div class="info_chart">
 						<span class="icon"></span>
 						<p>Resultados enlace <span>matemáticas</span></p>
@@ -163,12 +163,19 @@
 					</div>
 					<div class="chart_content">
 					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<h2>Resultados ENLACE matematicas</h2>";
 						echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
 					} ?>				
 					</div>
+					<div class="legend_chart">
+						<p><span class="circle"></span>3</p>
+						<p><span class="circle"></span>4</p>
+						<p><span class="circle"></span>5</p>
+						<p><span class="circle"></span>6</p>
+						<p class="under">_ _ _ _</p>
+						<p>Promedio nacional</p>
+					</div>
 				</div>
-				<div class="wrap_chart">
+				<div class="wrap_chart border_b">
 					<div class="info_chart">
 						<span class="icon"></span>
 						<p>Resultados enlace <span>español</span></p>
@@ -176,15 +183,23 @@
 					</div>
 					<div class="chart_content">
 					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<h2>Resultados ENLACE español</h2>";
 						echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
 				}
 				?>
 					</div>
+
+					<div class="legend_chart">
+						<p><span class="circle"></span>3</p>
+						<p><span class="circle"></span>4</p>
+						<p><span class="circle"></span>5</p>
+						<p><span class="circle"></span>6</p>
+						<p class="under">_ _ _ _</p>
+						<p>Promedio nacional</p>
+					</div>
 				</div>
 
 			</div></div>
-			<div class='tab jscrollpane infraestructura-tab on'>
+			<div class='tab jscrollpane infraestructura-tab'>
 				<h2>Inforimacion disponible corresponde al ciclo xxx</h2>
 				<p class="border_b">Total de Aulas en uso 35</p>
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
@@ -234,7 +249,7 @@
 			<div class='tab jscrollpane calificacion-tab'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon">Calificación global de la escuela según usuarios</span></p>
-				<p class="border_b">Calificació global 8.6</p>
+				<p class="border_b">Calificación global 8.6</p>
 
 				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunta</p>
 
@@ -334,7 +349,8 @@ EOD;
 						</span>
 						";
 				}
-				?>-->
+				?>
+				-->
 			</div>
 			<!---->
 

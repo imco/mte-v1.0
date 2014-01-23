@@ -335,7 +335,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .gray-box.reportar fieldset{margin:5px 0;}
 #content .perfil .gray-box.reportar .column{height:auto;}
 #content .perfil .gray-box.reportar .strong{text-align:center;font-size:14px;line-height:33px;}
-#content .perfil .chart-box{height:542px;}
+#content .perfil .chart-box{margin-bottom:16px;}
 #content .perfil .chart{width:797px;height:247px;position:relative;}
 
 #content .perfil .total_alumnos{height:67px;background-color:#329dd1;text-align:center;font-size:17px;padding-top:12px;margin-top:3px;color:white;}
@@ -874,7 +874,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .column.right{width:35%;}
 #content .perfil.B #mapa{margin:7px 0 0;width:100%;height:285px;}
 #content .perfil.B .tabs{margin:0;}
-#content .perfil.B .tab-container{margin:0;width:643px;}
+#content .perfil.B .tab-container{margin:0;width:645px;}
 #content .perfil.B .tab{width:645px;}
 #content .perfil.B .top-info{background-color: #fff;border-bottom: 2px solid #DADADA}
 #content .perfil.B .top-info .rank{border-right: 2px solid #DADADA;width: 44%;float: left;}
@@ -972,7 +972,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tabs li a img{display:block;margin:0 auto;width:38px;height:50px;margin-top:2px;}
 #content .perfil.B .mas-info .left{width:42%;}
 #content .perfil.B .mas-info .right{width:51%;}
-#content .perfil.B .tab-container{background-color:#e0e1e3;padding:31px 19px 0 18px;height:270px;overflow:hidden;}
+#content .perfil.B .tab-container{background-color:#e0e1e3;padding:7px 19px 0 17px;height:270px;overflow:hidden;}
 #content .perfil.B .presupuestos{background-color:#e0e1e3;padding:0;margin:0;}
 #content .perfil.B .presupuestos .column.left{margin:0;width:315px;}
 #content .perfil.B .presupuestos .column.right{width:321px;margin:0 0 0 9px;}
@@ -1535,3 +1535,25 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #header .compara_search #general-search .adv-search.mapa{margin-top:2px;}
 
 #content .perfil.B .head.t-tabs{margin-top:12px;font-size:18px;padding:9px 18px 10px;}
+#content .perfil.B .tab-container{background-color:white;height:auto;} 
+#content .perfil.B .tab-container .tab{overflow:hidden;height:auto;}
+#content .perfil.B .tab-container .border_b{border:1px solid #C9C9C9;}
+#content .perfil.B .tab-container .charts .n_alumnos{display:inline-block;vertical-align:top;width:318px;height:57px;margin-right:2px;}
+#content .perfil.B .tab-container .charts .n_alumnos + .n_alumnos{margin:0;}
+#content .perfil.B .tab-container .charts .n_alumnos p{font-size:15px;width:150px;margin:11px 0 0 12px;display:inline-block;}
+
+#content .perfil.B .tab-container .charts .n_alumnos .number{background-color:#339DD1;vertical-align:top;margin:8px 0 0 35px;display:inline-block;width:101px;height:41px;border-radius:5px;color:white;text-align:center;font-size:15px;line-height:44px;}
+#content .perfil.B .tab-container .charts .n_alumnos + .n_alumnos .number{margin:7px 0 0 15px;}
+#content .perfil.B .tab-container .charts .n_alumnos + .n_alumnos p{margin:12px 0 0 21px;width:170px;}
+#content .perfil.B .tab-container .charts .wrap_chart{margin-top:13px;height:183px;}
+#content .perfil.B .tab-container .charts .wrap_chart + .wrap_chart{margin-top:10px;padding-top:5px;height:180px;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart{display:inline-block;vertical-align:top;width:204px;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart .icon{width:54px;height:55px;background:#339DD1;display:block;margin:36px 0 0 70px;border-radius:5px;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart p{font-size:19px;margin:14px;color:#A0A0A0;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart p span{display:block;margin-top:4px;color:#379FD2;width:96%;text-align:center;}
+#content .perfil.B .tab-container .charts .wrap_chart .chart_content{width:346px;display:inline-block;overflow:hidden;height:180px;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart{display:inline-block;vertical-align:top;margin-top:19px;background:#ECECEC;width:80px;height:127px;padding-top:15px;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart p{margin-left:23px;font-size:15px;line-height:14px;margin-bottom:5px;color:#A7A7A7;} 
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart p .circle{width:13px;height:13px;display:inline-block;vertical-align:top;background:white;border-radius:50%;margin-right:6px;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart .under{margin:-8px 0 9px 8px;font-size:21px;color:#919191;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart .under + p{margin:0 0 0 0px;font-size:14px;text-align:center;}
