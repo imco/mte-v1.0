@@ -82,7 +82,6 @@ class escuelas extends main{
 				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>calificaciones,
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 			");
-			var_dump($this->escuela->calificaciones->likes);
 
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
