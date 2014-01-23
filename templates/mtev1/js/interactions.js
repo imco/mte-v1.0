@@ -52,12 +52,21 @@ $(document).ready(function(){
 
 	$('#content .perfil .tabs li a').click(function(e){
 		e.preventDefault();
-		var index = 4 - $(this).parent().index();
+		var index = 2 - $(this).parent().index();
+		console.log(index);
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
 		$('#content .perfil .tab-container .tab.on').removeClass('on');
 		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
-		if($(this).html() == 'Resultados Educativos' ) drawCharts();
+		if(index==0 ) 
+			drawCharts();
+		else if(index==2) 
+			$('.container.comments').masonry({
+	  			itemSelector: '.comment',
+	  			gutter: 16
+			});;
+
+			
 	})
 	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
