@@ -202,7 +202,8 @@ EOD;
 			$connection = new CF_Connection($auth);
 			$container = $connection->get_container("sienlace");
 			$imgs = $container->list_objects();
-			$imgs = explode("\n",$imgs[0]);
+			if(is_array($imgs))
+				$imgs = explode("\n",$imgs[0]);
 			$this->cdn_photos = $imgs;
 			$this->cdn_url = $container->cdn_uri;
 		}
