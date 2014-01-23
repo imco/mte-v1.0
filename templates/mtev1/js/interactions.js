@@ -142,6 +142,14 @@ $(document).ready(function(){
 		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
 		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
+
+		var numP = [1,0,3,2,5,4],
+		calificaciones = [];
+		$('.calificacion').each(function(i,val){
+			console.log($(val).find('h2').html());
+			calificaciones[numP[i]]=$(val).find('span.on').size();
+		});
+		$('#rank-question').val(JSON.stringify(calificaciones));
 	});
 
 	$('.menu a.logo + a + a').click(function(e){

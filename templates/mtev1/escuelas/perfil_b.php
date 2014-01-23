@@ -168,6 +168,7 @@
 						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
 						$cali = $calificacion->calificacion;
 						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
+						//var_dump(json_decode($calificacion->calificaciones));
 						echo <<<EOD
 						<div class='comment'>
 							<p class='rating'>{$text_calificacion} {$cali}<span class='likes'>{$calificacion->likes}</span><a href='/escuelas/like_calificacion/{$calificacion->id}/'></a></p>

@@ -79,9 +79,10 @@ class escuelas extends main{
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
+				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>calificaciones,
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 			");
+			var_dump($this->escuela->calificaciones->likes);
 
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
@@ -108,17 +109,17 @@ class escuelas extends main{
 					  $this->post('recaptcha_challenge_field'),
 					  $this->post('recaptcha_response_field'))){		
 			$comment = strip_tags($this->post('comentario'));
-			//if($this->post('calificacion')){
 			$calificacion = new calificacion();
 			//$calificacion->debug = true;
-			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
+			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent,calificaciones',array(
 				$this->post('nombre'),
 				$this->post('email'),
 				$this->post('cct'),
 				$comment,
 				$this->post('ocupacion'),
 				stripslashes($this->post('calificacion')),
-				$_SERVER['HTTP_USER_AGENT']
+				$_SERVER['HTTP_USER_AGENT'],
+				$this->post('calificaciones')
 			)); 
 			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";	
 		
