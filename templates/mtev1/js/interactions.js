@@ -10,8 +10,8 @@ $(document).ready(function(){
 	$('.contacto-form').validate();
 	$('form.newsletter').validate();
 	//Sienlace special banner
-	$('#sienlace-banner a').click(function(e){
-		e.preventDefault();
+	$('#sienlace-banner span').click(function(e){
+		e.stopPropagation();
 		$(this).parent().hide();
 	});
 	//Masonry Home
