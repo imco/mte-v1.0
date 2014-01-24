@@ -1330,4 +1330,5 @@ background-color:rgba(121,122,122,.8);width:45px;height:57px;font-size:64px;colo
 
 /*Banner especial para sienlace*/
 #sienlace-banner{display:block;background-image:url(../img/sienlace/banner_mejora.png);width:900px;height:122px;position:absolute;top:136px;left:50%;margin-left:-450px;z-index:100;}
-#sienlace-banner span{display:block;width:24px;height:24px;position:absolute;top:6px;right:10px;background-image:url(../img/sienlace/cerrar.png);}
+#sienlace-banner a{width:100%;height:100%;display:block}
+#sienlace-banner span{display:block;width:24px;height:24px;position:absolute;top:6px;right:10px;background-image:url(../img/sienlace/cerrar.png);cursor:pointer;}

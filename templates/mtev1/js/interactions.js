@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$('form.newsletter').validate();
 	//Sienlace special banner
 	$('#sienlace-banner span').click(function(e){
-		e.stopPropagation();
+		e.stopImmediatePropagation();
 		$(this).parent().hide();
 	});
 	//Masonry Home

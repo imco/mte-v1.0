@@ -64,4 +64,4 @@
 <?php	} ?>	
 	</ul>
 </div>
-<a href='/peticiones/sienlace' id='sienlace-banner'><span></span></a>
+<div id='sienlace-banner' ><a href='/peticiones/sienlace' ></a><span></span></div>
