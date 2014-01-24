@@ -170,10 +170,10 @@
                 <?php for($i=0;$i<0;$i++){ ?>
                     <a href="" class="span2-5">Sponsor Logo</a>
                 <?php } ?>
-                <a class="ally span2-5" target='_blank' href="http://http://www.amnu.org.mx/"><?php $this->print_img_tag('sienlace/logo-2-75-pixeles.png','ANMU');?></a>
+                <!--<a class="ally span2-5" target='_blank' href="http://http://www.amnu.org.mx/"><?php $this->print_img_tag('sienlace/logo-2-75-pixeles.png','ANMU');?></a>-->
                 <a class="ally span2-5" target='_blank' href="http://www.afavordelomejor.org/"><?php $this->print_img_tag('sienlace/afavor.png','A favor de lo mejor');?></a>
                 <a class="ally span2-5" target='_blank' href="http://ccaemexico.wordpress.com/"><?php $this->print_img_tag('sienlace/logo2.png','Consejo Ciudadano Autónomo por la Educación');?></a>
-                <a class="ally span2-5" target='_blank' href="http://http://deportesparacompartir.org.mx/"><?php $this->print_img_tag('sienlace/logo-1-75-pixeles.png','Deportes para compartir');?></a>
+                <!--<a class="ally span2-5" target='_blank' href="http://http://deportesparacompartir.org.mx/"><?php $this->print_img_tag('sienlace/logo-1-75-pixeles.png','Deportes para compartir');?></a>-->
 
                 <a class="ally span2-5" target='_blank' href="http://ensenapormexico.org/site/"><?php $this->print_img_tag('sienlace/ensenapormexico.png','Enseña por México');?></a>
                 <a class="ally span2-5" target='_blank' href="http://www.ifie.edu.mx/"><?php $this->print_img_tag('sienlace/ifie.png','IFIE');?></a>
