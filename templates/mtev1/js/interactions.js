@@ -9,6 +9,11 @@ $(document).ready(function(){
 	$('.petition-form').validate();
 	$('.contacto-form').validate();
 	$('form.newsletter').validate();
+	//Sienlace special banner
+	$('#sienlace-banner a').click(function(e){
+		e.preventDefault();
+		$(this).parent().hide();
+	});
 	//Masonry Home
 	$('#notas-container').masonry({
 	  itemSelector: '.white-box.column',
