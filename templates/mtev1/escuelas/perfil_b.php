@@ -149,15 +149,15 @@
 			<div class='tab charts on'><div class='chart-box'>
 				<div class="n_alumnos border_b">
 					<p>Número de alumnos evaluados</p>
-					<span class="number">8,287</span>
+					<span class="number"><?=$this->escuela->total_evaluados?></span>
 				</div>
 				<div class="n_alumnos border_b">
 					<p>Porcentaje de alumnos en nivel reprobado</p>
-					<span class="number">21%</span>
+					<span class="number"><?=$this->escuela->pct_reprobados."%"?></span>
 				</div>
 				<div class="wrap_chart border_b">
 					<div class="info_chart">
-						<span class="icon"></span>
+						<span class="icon "></span>
 						<p>Resultados enlace <span>matemáticas</span></p>
 					
 					</div>
@@ -167,10 +167,13 @@
 					} ?>				
 					</div>
 					<div class="legend_chart">
-						<p><span class="circle"></span>3</p>
-						<p><span class="circle"></span>4</p>
-						<p><span class="circle"></span>5</p>
-						<p><span class="circle"></span>6</p>
+						<div class="wrap_lc">
+							<p><span class="circle"></span>3</p>
+							<p><span class="circle"></span>4</p>
+							<p><span class="circle"></span>5</p>
+							<p><span class="circle"></span>6</p>					
+						</div>
+
 						<p class="under">_ _ _ _</p>
 						<p>Promedio nacional</p>
 					</div>
@@ -189,23 +192,23 @@
 					</div>
 
 					<div class="legend_chart">
-						<p><span class="circle"></span>3</p>
-						<p><span class="circle"></span>4</p>
-						<p><span class="circle"></span>5</p>
-						<p><span class="circle"></span>6</p>
+						<div class="wrap_lc">
+							<p><span class="circle"></span>3</p>
+							<p><span class="circle"></span>4</p>
+							<p><span class="circle"></span>5</p>
+							<p><span class="circle"></span>6</p>
+						</div>
 						<p class="under">_ _ _ _</p>
 						<p>Promedio nacional</p>
 					</div>
 				</div>
 
 			</div></div>
-			<div class='tab jscrollpane infraestructura-tab'>
-				<h2>Inforimacion disponible corresponde al ciclo xxx</h2>
+			<div class='tab infraestructura-tab'>
+				<h2>Informacion disponible corresponde al ciclo xxx</h2>
 				<p class="border_b">Total de Aulas en uso 35</p>
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
-				<p class="head_t">Instalaciones</p>
-				<p class="head_t">esta escuela</p>
-				<table>
+				<table class='info_table'>
 					<tbody>
 						<tr>
 							<th>Instalaciones</th>
@@ -213,31 +216,31 @@
 						</tr>
 						<tr>
 							<td>Agua entubada</td>
-							<td><span class='not'></span></td>
+							<td><span class='not cel'></span></td>
 						</tr>
 						<tr>
 							<td>Luz</td>
-							<td><span class='not'></span></td>
+							<td><span class='not cel'></span></td>
 						</tr>
 						<tr>
 							<td>Barda o cercado perimetral</td>
-							<td><span class='true'></span></td>
+							<td><span class='true cel'></span></td>
 						</tr>
 						<tr>
 							<td>Canchas deportivas</td>
-							<td><span class='true'></span></td>
+							<td><span class='true cel'></span></td>
 						</tr>
 						<tr>
 							<td>Patio de la escuela</td>
-							<td><span class='not'></span></td>
+							<td><span class='not cel'></span></td>
 						</tr>
 						<tr>
 							<td>Baños</td>
-							<td><span class='not'></span></td>
+							<td><span class='not cel'></span></td>
 						</tr>
 						<tr>
 							<td>Sala de cómputo</td>
-							<td><span class='true'></span></td>
+							<td><span class='true cel'></span></td>
 						</tr>
 					
 					</tbody>
@@ -246,38 +249,50 @@
 			</div>
 
 
-			<div class='tab jscrollpane calificacion-tab'>
+			<div class='tab calificacion-tab'>
 				<a name='calificaciones'></a>
-				<p class="gray_text start"><span class="icon">Calificación global de la escuela según usuarios</span></p>
+				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios</p>
 				<p class="border_b">Calificación global 8.6</p>
 
 				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunta</p>
 
-				<table>
+				<table class='info_table'>
 					<tbody>
 						<tr>
 							<td>Asistencia de los maestros</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 						<tr>
 							<td>Preparación de los maestros</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 						<tr>
 							<td>Infraestructura de la escuela</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 						<tr>
 							<td>Relación con padres de familia</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 						<tr>
 							<td>Honestidad y transparencia</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 						<tr>
 							<td>Participación de padres de familia</td>
-							<td>8</td>
+							<td>
+								<span class="cel">8</span>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -286,27 +301,30 @@
 
 				<div class="wrap_comments">
 					<div class="comment">
-						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
+						<p><span class="icon"></span>Calificacion: 10 <span>| 10. Enero. 2014</span></p>
 						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
 					</div>
-
+					<?php if($this->escuela->calificaciones){ 
+					foreach($this->escuela->calificaciones as $calificacion){
+						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
+                        $coment = stripslashes($coment);
+						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
+						
+						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
+						$cali = $calificacion->calificacion;
+						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
+						//var_dump(json_decode($calificacion->calificaciones));
+						date_default_timezone_set('America/Mexico_City');
+						$time = date("d M Y",strtotime($calificacion->timestamp));
+						echo <<<EOD
 					<div class="comment">
-						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
-						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
+						<p><span class="icon"></span>Calificacion: {$cali} <span>| {$time}</span></p>
+						<p>{$calificacion->nombre} ({$ocupacion}).- {$calificacion->comentario}
+						</p>
 					</div>
-
-					<div class="comment">
-						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
-						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
-					</div>
-
-					<div class="comment">
-						<p><span class="icon"></span>Calificacion:10 <span>| 10.enero.2014</span></p>
-						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
-					</div>
-
-
-				
+EOD;
+						}
+					} ?>
 				</div>
 
 				<!--

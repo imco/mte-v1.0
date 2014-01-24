@@ -289,7 +289,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil .tab.charts{height:555px;}
 #content .perfil .tab.on{display:block}
 #content .perfil .tab .container.comments{background-color: #fff;width: 100%}
-#content .perfil .tab .comment{/*width:288px*/;width: auto;min-height:60px;float:left;/*background:#EAEAEA*/;background-color: #fff;margin:0 12px 6px 0;padding:9px;overflow:hidden;}
+/*#content .perfil .tab .comment{width: auto;min-height:60px;float:left;background-color: #fff;margin:0 12px 6px 0;padding:9px;overflow:hidden;}*/
 #content .perfil .tab .comment:nth-child(even){margin:0 9px 6px 0}
 #content .perfil .tab .comment h2{font-size:18px;color:#339DD1;line-height:18px;margin:0 0 4px 5px;}
 #content .perfil .tab .comment p{margin:0 5px;line-height:13px;}
@@ -1548,7 +1548,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tab-container .charts .wrap_chart{margin-top:13px;height:183px;}
 #content .perfil.B .tab-container .charts .wrap_chart + .wrap_chart{margin-top:10px;padding-top:5px;height:180px;}
 #content .perfil.B .tab-container .charts .wrap_chart .info_chart{display:inline-block;vertical-align:top;width:204px;}
-#content .perfil.B .tab-container .charts .wrap_chart .info_chart .icon{width:54px;height:55px;background:#339DD1;display:block;margin:36px 0 0 70px;border-radius:5px;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart .icon{width:54px;height:55px;display:block;margin:36px 0 0 70px;border-radius:5px;}
+#content .perfil.B .tab-container .charts .wrap_chart .info_chart .icon{background:url(../img/perfil/iconos-mejora-perfil.png) #339DD1 2px 4px;}
+#content .perfil.B .tab-container .charts .wrap_chart + .wrap_chart .info_chart .icon{background:url(../img/perfil/iconos-mejora-perfil.png) #339DD1 2px -40px;}
 #content .perfil.B .tab-container .charts .wrap_chart .info_chart p{font-size:19px;margin:14px;color:#A0A0A0;}
 #content .perfil.B .tab-container .charts .wrap_chart .info_chart p span{display:block;margin-top:4px;color:#379FD2;width:96%;text-align:center;}
 #content .perfil.B .tab-container .charts .wrap_chart .chart_content{width:346px;display:inline-block;overflow:hidden;height:180px;}
@@ -1557,3 +1559,34 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .tab-container .charts .wrap_chart .legend_chart p .circle{width:13px;height:13px;display:inline-block;vertical-align:top;background:white;border-radius:50%;margin-right:6px;}
 #content .perfil.B .tab-container .charts .wrap_chart .legend_chart .under{margin:-8px 0 9px 8px;font-size:21px;color:#919191;}
 #content .perfil.B .tab-container .charts .wrap_chart .legend_chart .under + p{margin:0 0 0 0px;font-size:14px;text-align:center;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart .circle.orange{background-color:#FF9900;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart .circle.red{background-color:#DC3912;}
+#content .perfil.B .tab-container .charts .wrap_chart .legend_chart .circle.blue{background-color:#3366CC;}
+
+#content .perfil.B .tab-container .infraestructura-tab{margin-bottom:7px;width:646px;}
+#content .perfil.B .tab-container .infraestructura-tab h2{background-color:#339DD1;background-color:#339DD1;height:42px;font-size:17px;text-align:center;color:white;padding-top:14px;margin-bottom:7px;}
+#content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
+#content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;}
+#content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;padding-top:4px;}
+#content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
+#content .perfil.B .tab-container .info_table th:first-child{font-size:16px;padding-left:8px;width:513px;display:block;margin-right:8px;}
+#content .perfil.B .tab-container .info_table th + th{text-indent:18px;font-size:13px;}
+#content .perfil.B .tab-container .info_table td:first-child{display:block;width:518px;}
+#content .perfil.B .tab-container .info_table td + td{border:none;position:relative;}
+#content .perfil.B .tab-container .info_table td + td .cel{width:115px;height:26px;position:absolute;top:4px;border:1px solid #C9C9C9;}
+
+#content .perfil.B .tab-container .calificacion-tab{padding-top:8px;width:648px;}
+#content .perfil.B .tab-container .calificacion-tab .gray_text{background:#ECECEC;font-size:14px;line-height:53px;color:#4CA3D4;}
+#content .perfil.B .tab-container .calificacion-tab .gray_text .icon{display:inline-block;width:61px;height:56px;background:blue;vertical-align:top;}
+#content .perfil.B .tab-container .calificacion-tab .gray_text + p{margin-top:4px;font-size:14px;padding:6px;}
+#content .perfil.B .tab-container .calificacion-tab .gray_text.list{margin-top:4px;}
+#content .perfil.B .tab-container .calificacion-tab .info_table{margin-top:1px;}
+#content .perfil.B .tab-container .calificacion-tab .info_table td:first-child{margin-right:8px;}
+#content .perfil.B .tab-container .calificacion-tab .info_table .cel{width:117px;text-align:center;line-height:30px;text-indent:0;}
+#content .perfil.B .tab-container .calificacion-tab .comm{margin-top:4px;}
+#content .perfil.B .calificacion-tab .wrap_comments{margin-top:12px;height:328px;overflow:hidden;}
+#content .perfil.B .calificacion-tab .wrap_comments .comment{border-bottom:1px solid #CBCBCB;padding-bottom:1px;margin-bottom:12px;}
+#content .perfil.B .calificacion-tab .wrap_comments .comment p:first-child{font-size:19px;line-height:31px;color:#2E96D0;}
+#content .perfil.B .calificacion-tab .wrap_comments .comment p .icon{width:25px;height:30px;display:inline-block;vertical-align:top;background:grey;margin-right:8px;}
+#content .perfil.B .calificacion-tab .wrap_comments .comment p span:last-child{margin-left:3px;font-size:18px;color:#A1A1A1;}
+#content .perfil.B .calificacion-tab .wrap_comments .comment p + p{margin:3px 0;font-size:14px;line-height:normal}
