@@ -57,14 +57,11 @@ $(document).ready(function(){
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
 		$('#content .perfil .tab-container .tab.on').removeClass('on');
-		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
+		$('#content .perfil .tab-container .tab').eq(index).addClass('on');//.jScrollPane();
 		if(index==0 ) 
 			drawCharts();
 		else if(index==2) 
-			$('.container.comments').masonry({
-	  			itemSelector: '.comment',
-	  			gutter: 16
-			});;
+			$('.wrap_comments').jScrollPane();
 
 			
 	})
