@@ -23,34 +23,6 @@
 			</table>
 		</div>
 
-		<!--<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
-			<fieldset>
-				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja un comentario aqui' name='comentario' class='required'></textarea>
-				
-				<div class="box-hidden">
-					<input type='text' placeholder='Nombre' name='nombre' />
-					<input type='text' class='required email' placeholder='Email (obligatorio)' name='email' />
-					<select class='custom-select required' name='ocupacion' >
-						<option value=''>¿Quién eres?</option>
-						<option value='alumno'>Alumno</option>
-						<option value='exalumno'>Exalumno</option>
-						<option value='padredefamilia'>Padre de familia</option>
-						<option value='maestro'>Maestro</option>
-						<option value='director'>Director</option>
-						<option value='ciudadano'>Ciudadano</option>
-					</select>
-					<?=$this->get_captcha();?>
-					<p><input type='submit' value='Enviar' /></p>
-					<p>Aviso de privacidad.
-						<span>
-						En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
-						</span>
-					</p>
-				</div>
-
-			</fieldset>		
-		</form>-->
 
 		<div class="info">
 			<h2 class="title">¿Que debe hacer una escuela que esta interesada en participar en el proyecto?</h2>
@@ -102,14 +74,13 @@
 		    .attr("fill", "transparent")
 		    .style("stroke", "#333")
 		    .style("stroke-width", ".2px")
-		    .attr("class", "muns");*/
-
+		    .attr("class", "muns");
+			*/
 		  g.selectAll("path")
 		    .data(topojson.object(mx, mx.objects.estados2).geometries)
 		    .enter().append("path")
 		    .attr("d", d3.geo.path().projection(projection))
 		    .attr("fill", "#C4EAD1")
-		    .attr("name",d3.geometries)
 		    .style("stroke", "#40AA6C");
 
 		 
