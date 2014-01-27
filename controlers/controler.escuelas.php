@@ -234,5 +234,15 @@ class escuelas extends main{
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
 	}
+	public function mongo(){
+		//$this->nonfunc();
+		$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion"); // connect
+		$db = $m->selectDB("mte_produccion");
+		$collections = $db->getCollectionNames();
+		$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
+		$record = $c->find(array('anio'=>2011));
+		var_dump(iterator_to_array($record));
+
+	}
 }
 ?>
