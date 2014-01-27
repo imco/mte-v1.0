@@ -31,11 +31,7 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
-	/*
-	var actualURL = document.URL;
-	if(actualURL.indexOf("/escuelas/index") != -1)
-		 $(".comparador_select").fadeTo(100, 0.1).fadeTo(300, 1.0);
-	*/
+
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
@@ -61,12 +57,18 @@ $(document).ready(function(){
 
 	$('#content .perfil .tabs li a').click(function(e){
 		e.preventDefault();
-		var index = 4 - $(this).parent().index();
+		var index = 2 - $(this).parent().index();
+		console.log(index);
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
 		$('#content .perfil .tab-container .tab.on').removeClass('on');
-		$('#content .perfil .tab-container .tab').eq(index).addClass('on').jScrollPane();
-		if($(this).html() == 'Resultados Educativos' ) drawCharts();
+		$('#content .perfil .tab-container .tab').eq(index).addClass('on');//.jScrollPane();
+		if(index==0 ) 
+			drawCharts();
+		else if(index==2) 
+			$('.wrap_comments').jScrollPane();
+
+			
 	})
 	if($("#name-input") .length)
 	$( "#name-input" ).autocomplete({
@@ -130,10 +132,10 @@ $(document).ready(function(){
 			$(this).parent().find('.line2').css('display','none');	
 	});
 
-	$('#content .share-bt a.button-frame').click(function(e){
+	$('#content .share-bt a.button-frame , #content .perfil.B .option.share , #content .programas .share-blue').click(function(e){
 		if(!$(this).hasClass('static')){
 			e.preventDefault();
-			$('#content .share-bt .social').toggleClass('on');
+			$('#content .share-bt .social , #content .perfil.B .social , .programas .social ').toggleClass('on');
 		}
 	});
 
@@ -151,6 +153,14 @@ $(document).ready(function(){
 		promedio = promedio.toString().length>3?promedio.toFixed(1):promedio;
 		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
+
+		var numP = [1,0,3,2,5,4],
+		calificaciones = [];
+		$('.calificacion').each(function(i,val){
+			console.log($(val).find('h2').html());
+			calificaciones[numP[i]]=$(val).find('span.on').size();
+		});
+		$('#rank-question').val(JSON.stringify(calificaciones));
 	});
 
 	$('.menu a.logo + a + a').click(function(e){
@@ -356,7 +366,6 @@ $(document).ready(function(){
 		next;
 		if(this.href.split('#')[1]=='next'){
 			if((next = index.next('.mejorar')).length){
-				console.log(next);
 				input_data_view_mejora(next);
 			}else{
 				input_data_view_mejora($('.mejorar:first-child'));
@@ -430,7 +439,75 @@ $(document).ready(function(){
 	$('.display .close').click(function(){
 		$('.overlay-transparent').trigger('click');
 	});
+
+	if($('.perfil.B .head .button-frame').length > 0){
+		var buttonComparar = $('.resultados #compara-main-button');
+		var compararurl = buttonComparar.attr("href");
+		$('.perfil.B .head .button-frame').attr('href', compararurl);
+	}
+	
+	$('.box .semaforo h2').click(function(e){
+		$('.perfil.B .column.right .semaforo .level').slideToggle();
+	});
+
+	$('.perfil.B .column.right .lista-programas h2').click(function(e){
+		$(this).next('ul').slideToggle();
+
+	});
+
+	$('#.calificacion-form.B fieldset textarea').click(function(e){
+		if(!$(this).hasClass('open')){
+			$(this).addClass('on');
+			$('#.calificacion-form.B fieldset .box-hidden').slideToggle();
+			$(this).addClass('open');
+		}
+	});
+
+	$(window).scroll(function(){
+		if($('.perfil.B').length > 0){
+			windowOffset 	= $(window).scrollTop();
+			containeroffset = $('.perfil.B.container.B').offset().top;
+			headtitle		= $('.perfil.B .box-head');
+			columnoffset 	= $('.perfil.B .column.left').offset().top;
+			columnright		= $('.perfil.B .column.right .box');
+			semaforo		= $('.perfil.B .column.right .semaforo .level');
+			semOverlay		= $('.perfil.B .semaforo .sem-overlay');
+			listaprogramasfed  = $('.perfil.B .column.right .lista-programas.federales ul');
+			listaprogramasosc  = $('.perfil.B .column.right .lista-programas.osc ul');
+			resultadosoffset= $('.resultados.container').offset().top;
+			if(windowOffset >= containeroffset){
+				if(windowOffset+280 >= resultadosoffset){
+					columnright.removeClass('fixed');
+					columnright.show();
+				}
+				else{
+					headtitle.addClass('fixed');
+					if(!columnright.hasClass('fixed')){
+						semaforo.slideToggle();
+						semOverlay.slideToggle();
+						listaprogramasosc.slideToggle();
+						listaprogramasfed.slideToggle();
+
+					}				
+					columnright.addClass('fixed');
+				}
+			}
+			else{
+				headtitle.removeClass('fixed');
+				if(columnright.hasClass('fixed')){
+					semaforo.show();
+					semOverlay.show();
+					listaprogramasosc.show();
+					listaprogramasfed.show();
+				}
+				columnright.removeClass('fixed');
+			}
+		}
+	});
+
+
 });
+
 
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
@@ -555,7 +632,7 @@ function input_data_view_mejora(mejorar){
 	display.find('.left img')[0].src = mejorar.find('h1 a')[0].href;
 	display.find('.wrap_content p + a')[0].href = url; 
 	var tweet = "<a href='https://twitter.com/share' class='twitter-share-button' data-url='"+url+"' data-text='"+title+"'>Tweet</a>",
-	template_share = '<div class="fb-like" data-href="'+url+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>'+tweet+'<div class="fb-comments" data-href="'+url+'" data-width="340" data-numposts="5" data-colorscheme="dark"></div>';
+	template_share = '<div class="fb-like" data-href="'+url+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>'+tweet+'<div class="fb-comments" data-href="'+url+'" data-width="340" data-numposts="5" ></div>';
 	$('.info_share').html(template_share);
 	FB.XFBML.parse(display[0]);
 	twttr.widgets.load();

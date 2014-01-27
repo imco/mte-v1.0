@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<a href="#" class="button-frame">
-		<span class="bt-share button-efect">
+		<span class="bt-share button-efect orange-effect">
 			<?php $this->print_img_tag('compartir/compartir.png');?>
 			Compartir
 		</span>

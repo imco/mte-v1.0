@@ -1,40 +1,14 @@
 <div class=' home  container'>
+	<?php $this->print_img_tag('header/ninio.jpg',false,'img','ninio') ?>
 	<div class='titles'>
 		<h1>
-			MejoraTuEscuela.org es una plataforma que busca <br />
-			promover la participación ciudadana para transformar <br />
-			la educación en México.
+			MejoraTuEscuela.org es una plataforma de participación ciudadana <br />
+			que busca promover cambios positivos en la educación en México.
 		</h1>
-		<hr />
-		<hr />	
 	</div>
 	<!--
 	<a href='/compara/' class='button-frame'><span class='button'>Compara tu escuela</span></a>
 	-->
 	<div class='clear'></div>
 	<?php $this->include_template('simple_search','global'); ?>
-
-	<div class='decorations'>
-		<div class='triangle1'></div>
-		<div class='triangle2'></div>
-		<div class='circle'></div>
-		<div class='circle'></div>
-		<div class='circle'></div>
-		<div class='circle'></div>
-		<hr /><hr /><hr /><hr />
-		<hr /><hr />
-		<hr />
-		<hr />
-		<hr />
-		
-		<?php $this->print_img_tag('home/palomita.png');?>
-		<?php $this->print_img_tag('home/birrete_small.png');?>
-		<?php $this->print_img_tag('home/birrete_small.png');?>
-		<?php $this->print_img_tag('home/palomita.png');?>
-		<?php $this->print_img_tag('home/palomita.png');?>
-		<?php $this->print_img_tag('home/birrete_small.png');?>
-	</div>
-</div>
-<div class='decorations'>
-	<hr /><hr /><hr /><hr />
 </div>

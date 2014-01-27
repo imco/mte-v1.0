@@ -2,7 +2,8 @@
 var markers = [];
 var infoboxes = [];
 $().ready(function(){
-	if(typeof google != 'undefined')
+	//Only if school profile
+	if(typeof google != 'undefined' && $('.perfil.B').length > 0)
 		initialize_map();
 	$('#compare-map-tab').click(function(e){
 		if($('#map-initialized').val() == 'false'){

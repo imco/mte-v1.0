@@ -11,20 +11,21 @@
 
 			</ul>
 			<a class="button-frame" href="" id="compara-main-button">
-				<span class="bt-share">Comparar</span>
+				<span class="bt-share orange-effect">Comparar</span>
 			</a>
 		</div>
-		<div class="visited">
-			<p class='Nvisited'>Escuelas visitadas (<span><?=count($this->school_view)?></span>)</p>
+	</div>
+	<div class="visited">
+		<p class='Nvisited'>Escuelas visitadas (<span><?=count($this->school_view)?></span>)</p>
+		<div class="open_wrap">
 			<ul>
 				<?php foreach($this->school_view as $school) {
-					//var_dump($school->nombre);
 					echo "<li><span class='icon'></span>$school->nombre
 					<span class='hidden'>$school->cct</span></li>";
 				}?>
-			</ul>
-			<?php $this->print_img_tag('select/flechita_carrar.png') ?>
+			</ul>			
 		</div>
+
 	</div>
 
 </div>

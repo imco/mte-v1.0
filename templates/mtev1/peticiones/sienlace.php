@@ -85,8 +85,6 @@
                                     <input type="text" name="cp_input" value="" required="required" />
                                     <label>¿Por qué es importante para ti? (Opcional):</label>
                                     <textarea name='comentario_input'></textarea>
-                                    <label></label>
-                                    <input type='checkbox' name='' />
                                     <input type="submit" value="Firma" class="submit" />
                                     <div class="clear"></div>
                                 </form>

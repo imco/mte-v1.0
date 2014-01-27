@@ -41,6 +41,13 @@ class default_config{
 		$this->image_email = 'sonny@spaceshiplabs.com';
 		$this->image_email = 'ariadna.camargo@imco.org.mx';
 		$this->tynt = false;
+
+
+		//sweetcaptcha
+		$this->SWEETCAPTCHA_APP_ID = 40218; // your application id (change me)
+		$this->SWEETCAPTCHA_KEY = '***REMOVED***'; // your application key (change me)
+		$this->SWEETCAPTCHA_SECRET = '***REMOVED***'; // your application secret (change me)
+		$this->SWEETCAPTCHA_PUBLIC_URL ='sweetcaptcha.php'; // public http url to this file
 		
 		//signs sizes
 		$this->icon_sizes = json_decode('[
