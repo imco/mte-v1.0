@@ -21,9 +21,9 @@ class contacto extends main{
 	public function enviar(){
 		$this->contact_status = $this->send_email(
 			$this->config->contact_email,
-			'Correo electronico desde Mejora tu escuela',
+			'Correo electronico desde Mejora tu escuela de: '.$this->post('email'),
 			$this->post('mensaje'),
-			$this->post('email'),
+			'system@mejoratuescuela.org',
 			$this->post('nombre')
 		);
 		$this->header_folder ='contacto';

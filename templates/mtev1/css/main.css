@@ -1458,6 +1458,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .mejora .display .column .wrap_content p{color:#A9A9A9}
 #content .mejora .display .column .wrap_content p + a{margin-top:13px;display:block;font-size:15px;color:#4ABC84;}
 #content .mejora .display .column .nota_completa .icon{background:url(../img/mejora/leer_pop.png) no-repeat;display: inline-block;width:14px;height: 12px;background-repeat:no-repeat;vertical-align:top;margin-top:8px;}
+#content .mejora .display .close{background:url(../img/mejora/cerrar.png) no-repeat center;display:block;width:25px;height:25px;position:absolute;z-index:1;right:7px;top:7px;cursor:pointer;}
 #content .mejora .display .column.right .fb-comments{background: #fff!important}
 #content .mejora .display .column.right .fb-comments .postToProfile{top: -64px!important}
 
@@ -1492,6 +1493,12 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 .comparador_select .visited img{display:block;margin:0 auto;cursor:pointer;}
 
 .mejora .fb-like{margin-right:5px;}
+
+/*Banner especial para sienlace*/
+#sienlace-banner{display:block;background-image:url(../img/sienlace/banner_mejora.png);width:900px;height:122px;position:absolute;top:136px;left:50%;margin-left:-450px;z-index:100;}
+#sienlace-banner a{width:100%;height:100%;display:block}
+#sienlace-banner span{display:block;width:24px;height:24px;position:absolute;top:6px;right:10px;background-image:url(../img/sienlace/cerrar.png);cursor:pointer;}
+
 
 /*mtv5*/
 #header .home.container .titles h1{float:right;margin-top:4px;width:542px;font-size:16px;text-align:left;}

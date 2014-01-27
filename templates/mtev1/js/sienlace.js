@@ -1,24 +1,18 @@
 $(document).ready(function(){
-    //setWhyText();
-    //$('.uniform-file').uniform();
-    /*$('.singin .seemore').click(function(e){
-        e.preventDefault();
-        var container = $('.singin .whytext');
-        if( container.hasClass('ready') ){
-            first = container.find('li.no').first();
-            container.css('height', first.position().top + 'px').removeClass('ready');
-        }else{
-            container.css('height', container.find('ol').height() + 'px').addClass('ready');
-        }
-    });*/
     $('#singForm').submit(function(e){
         e.preventDefault();
-        $.post('/peticiones/sign/', $(this).serialize(),function(data){
-            $('.firma-count').html(data);
-        });
+        count = parseInt($('.firma-count').html())+1;
+        $('.firma-count').html(count)
+        $.post('/peticiones/sign/', $(this).serialize());
         $(this).slideUp(300);
     });
 	moveGalCustom();
+    $.get('/peticiones/sienlace_firmas',function(data){
+        $('.firma-count').html(data);
+        $('#firma-count2').show().css('visibility','visible');
+        $('#header .label').slideDown(400);
+    });
+
 });
 /*$( window ).resize(function() {  setWhyText();  });*/
 function setWhyText(){

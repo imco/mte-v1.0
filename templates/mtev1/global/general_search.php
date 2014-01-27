@@ -33,7 +33,7 @@
 		</p>
 		<p class='button-frame'>
 			<select name='entidad' id='state-input' class='custom-select'>
-				<option value=''>Estado</option>
+				<option value='' <?= !$this->request('entidad') ? "selected='selected'" : '' ?>>Estado</option>
 				<?php 
 				foreach($this->entidades as $entidad){
 					$selected = $this->request('entidad') == $entidad->id ? "selected='selected'" : '';
@@ -44,7 +44,7 @@
 		</p>
 		<p class='button-frame'>
 			<select name='municipio' id='municipio-input' class='custom-select'>
-				<option value=''>Municipio</option>
+				<option value='' <?= !$this->request('municipio') ? "selected='selected'" : '' ?>>Municipio</option>
 				<?php 
 				foreach($this->municipios as $municipio){
 				$selected = $this->request('municipio') == $municipio->id ? "selected='selected'" : '';
@@ -55,7 +55,7 @@
 		</p>
 		<p class='button-frame'>
 			<?php $disabled = !$this->localidades ? "disabled='disabled'" : ''; ?>
-			<select name='localidad' id='localidad-input' <?=$disabled?> class='custom-select'>
+			<select name='localidad' id='localidad-input' <?=$disabled?> <?= !$this->request('localidad') ? "selected='selected'" : '' ?> class='custom-select'>
 				<option value=''>Localidad</option>
 				<?php
 				if($this->localidades){

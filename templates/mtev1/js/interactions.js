@@ -9,6 +9,11 @@ $(document).ready(function(){
 	$('.petition-form').validate();
 	$('.contacto-form').validate();
 	$('form.newsletter').validate();
+	//Sienlace special banner
+	$('#sienlace-banner span').click(function(e){
+		e.stopImmediatePropagation();
+		$(this).parent().hide();
+	});
 	//Masonry Home
 	$('#notas-container').masonry({
 	  itemSelector: '.white-box.column',
@@ -425,6 +430,15 @@ $(document).ready(function(){
 	});
 	*/
 
+	$(document).keyup(function(e){
+		if(e.keyCode == $.ui.keyCode.ESCAPE){
+			$('.overlay-transparent').trigger('click');
+		}
+	});
+
+	$('.display .close').click(function(){
+		$('.overlay-transparent').trigger('click');
+	});
 
 	if($('.perfil.B .head .button-frame').length > 0){
 		var buttonComparar = $('.resultados #compara-main-button');
