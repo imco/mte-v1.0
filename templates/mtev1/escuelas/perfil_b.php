@@ -30,6 +30,7 @@
 						</div>
 					</div>
 					<div class="cal-escuela">
+						<span class="hidden CCT"><?=$this->escuela->cct?></span>
 						<a href="/califica_tu_escuela/califica/<?=$this->escuela->cct?>" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
 					</div>
 					<div class="clear"></div>
@@ -251,46 +252,73 @@
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios</p>
-				<p class="border_b">Calificación global 8.6</p>
+				<?php if($this->escuela->calificaciones){
+					$cp = 0;
+					$pt = 0;
+					$otp = array(0,0,0,0,0,0);
+					foreach($this->escuela->calificaciones as $calificacion){
+						if(isset($calificacion->calificacion)){
+							$cp++;
+							$pt += $calificacion->calificacion;
+						}
+						$other = json_decode($calificacion->calificaciones);
+						for($i=0;$i<count($otp);$i++){
+							$otp[$i] += $other[$i];
+						}
+
+					}
+				
+					$pro = $pt/$cp;
+					$cali = "Calificación global {$pro}";
+					
+					for($i=0;$i<count($otp);$i++){
+						$otp[$i] /= $cp;
+					}
+					$ci = 0;
+				}
+
+				?>
+				<p class="border_b"><?=$cali?></p>
 
 				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunta</p>
 
 				<table class='info_table'>
+
 					<tbody>
 						<tr>
 							<td>Asistencia de los maestros</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Preparación de los maestros</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Infraestructura de la escuela</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Relación con padres de familia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Honestidad y transparencia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Participación de padres de familia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 					</tbody>
