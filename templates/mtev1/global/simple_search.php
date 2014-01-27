@@ -5,17 +5,13 @@
 		<span class='icon sprites'></span>
 		<input type='hidden' name='search' value='true' />
 	</p>
+	<!--
 	<p class='adv-search'><a href='/compara/' >Búsqueda avanzada
 		<span class='icon sprites'></span>
 	</a></p>
+	-->
+	<p class='button-frame search-adv'>
+		<a href="/compara/">Búsqueda avanzada</a>
+	</p>
  </form>
-<div class="decorations simple">
-	<hr />
-	<hr />
-	<hr />
-	<hr />
-	<hr />	
-	<?php $this->print_img_tag('home/palomita.png');?>
-	<?php $this->print_img_tag('home/birrete_small.png');?>
-</div>
 

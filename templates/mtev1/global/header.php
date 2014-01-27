@@ -1,32 +1,29 @@
 <div class='menu <?= ($this->get('action')=='escuelas')?' resultados':($this->location=='escuelas' && $this->get('action')=='index'?'compara':$this->location)?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
-	<a href='/compara/'>CONOCE
-		<span class='icon sprites'></span>
+	<a href='/compara/'>1 CONOCE
+		<span class='icon'></span>
+		<!--
 		<span class='circle'></span>
-		<span class='decor'>1</span>
+		<span class='decor'>1</span>-->
 	</a>
-	<a href='/compara/escuelas/'>COMPARA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>2</span>
+	<a href='/compara/escuelas/'>2 COMPARA
+		<span class='icon'></span>
 	</a>
-	<a href='/califica-tu-escuela/califica/'>CALIFICA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>3</span>
+	<a href='/califica-tu-escuela/califica/'>3 CALIFICA
+		<span class='icon'></span>
 	</a>
-	<a href='/mejora'>MEJORA
-		<span class='icon sprites'></span>
-		<span class='circle'></span>
-		<span class='decor'>4</span>
+	<a href='/mejora'>4 MEJORA
+		<span class='icon'></span>
 	</a>
 	<!--
 	<a href='/resultados-nacionales'>Resultados Nacionales</a>
 	<a href='/peticiones'>Peticiones</a>
 	-->
 	<div class='submenu'>
+		<a href='/quienes-somos'>¿Quiénes somos?</a>
+		<a href='/preguntas-frecuentes'>Preguntas frecuentes</a>
 		<div class='social'>
-			<a href='https://twitter.com/mejoratuescuela' class='twitter sprites' target='_blank' >
+			<a href='https://twitter.com/mejoratuescuela' class='twitter' target='_blank' >
 			</a>
 			<a href='https://www.facebook.com/MejoraTuEscuela' class='fb sprites' target='_blank' ></a>
 			<div class='clear'></div>
@@ -35,8 +32,7 @@
 			<input type='submit' value='' />
 			<div class='clear'></div>
 		</form>-->
-		<a href='/quienes-somos'>¿Quiénes somos?</a>
-		<a href='/preguntas-frecuentes'>Preguntas frecuentes</a>
+
 
 	</div>
 

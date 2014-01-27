@@ -31,10 +31,10 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 		<div id='notas-container' class='notas'>
 			<?=file_get_contents($this->config->blog_address."notas")?>
 			<div class='clear'></div>
-			<div class="share-bt bl" style='position:absolute;right:0;bottom:30px'>
+			<div class="share-bt bl home" style='position:absolute;right:0;bottom:30px'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
-					<span class="bt-share button-efect">		
-						Más notas
+					<span class="bt-share">		
+						Consulta más información en nuestro blog
 					</span>
 				</a>
 			</div>
@@ -67,6 +67,10 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 		<a href='/peticiones/' class='banner orange peticiones'>
 			<?php $this->print_img_tag('home/peticiones.png');?>
 			Peticiones
+		</a>
+		<a href='http://blog.mejoratuescuela.org/' class='banner blue'>
+			<?php $this->print_img_tag('home/blog2.png');?>
+			Blog
 		</a>
 		<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>
 

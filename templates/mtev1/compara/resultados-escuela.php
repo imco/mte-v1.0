@@ -39,8 +39,8 @@
 					<span>de ".number_format($escuela->entidad_cct_count,0)."</span>
 				</td>
 				<td class='semaforo sem{$escuela->semaforo}'><span class='sprit2'></span>
-					<div class='icon'><span class='icon-popup'>
-						<p class='infor I'>i</p>
+					<div class='icon'><span class='triangle'></span><span class='icon-popup'>
+						<!--<p class='infor I'>i</p>-->
 						<p class='title_semaforo'>
 							".$this->config->semaforos[$escuela->semaforo]."
 						</p>
@@ -77,12 +77,12 @@
 	}
 	?></div>
 	<?php
-	if($this->location == 'escuelas' && $this->get('action')=='index')
+	if($this->location != 'escuelas' && $this->get('action')=='index')
 		$this->include_template('share_buttons','global');
 	?>
 
 	<?php $sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : ''; ?>
 	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
-		<span class="button button-efect green">Compara</span>
+		<span class="button button-efect orange-effect">Comparar</span>
 	</a>
 </div>

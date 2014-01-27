@@ -21,9 +21,9 @@ $infografias = array('entorno-social'=>'Entorno Social',
 	<div class="display">
 		<span class="close"></span>
 		<div class="column left">
-			<a class='move' href="#back"><</a>
+			<a class='move to-left' href="#back"></a>
 			<?php $this->print_img_tag('mejora/1.jpg');?>
-			<a class='move' href="#next">></a>
+			<a class='move to-right' href="#next"></a>
 		</div>
 		<div class="column right">
 			<div class="header">
@@ -51,7 +51,7 @@ $infografias = array('entorno-social'=>'Entorno Social',
 			<?=file_get_contents($this->config->blog_address."mejora".($this->get('id')?'/?mejora='.$this->get('id'):'')) ?>
 			<div class="share-bt bl left" style='position:absolute;left:0;bottom:0;'>
 				<a class="button-frame static" href="<?=$this->config->blog_address?>">
-					<span class="bt-share button-efect">		
+					<span class="bt-share button-efect orange-effect">		
 						Más notas
 					</span>
 				</a>

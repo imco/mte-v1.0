@@ -187,6 +187,7 @@
 				</span>
 			</p>
 			<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
+			<input type="hidden" id="rank-question" name="calificaciones" value="" class="required">
 			<input type='hidden' id='cct' name='cct' value='<?=$this->get('id')?>' class='required' />
 			<?=$this->get_captcha();?>
 			<p class='button-frame' >
