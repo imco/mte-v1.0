@@ -1,6 +1,6 @@
 <?php
 class escuela extends memcached_table{
-	function info(){
+	public function info(){
 		$this->table_name = "escuelas";
 		$this->key = 'id';
 		$this->objects['localidad'] = 'localidad';
@@ -33,7 +33,7 @@ class escuela extends memcached_table{
 		$this->semaforo_poco_confiable = 10;
 
 	}
-	function get_semaforo(){
+	public function get_semaforo(){
 		$this->semaforo = 4;
 		$porcentaje_poco_confiable = $this->poco_confiables > 0 && $this->total_evaluados > 0?($this->poco_confiables * 100) / $this->total_evaluados:0;
 		$this->porcentaje_poco_confiable = number_format($porcentaje_poco_confiable,2);
@@ -80,7 +80,7 @@ class escuela extends memcached_table{
 		}*/
 		}
 	}
-	function rank($nivel,$entidad = false,$municipio = false){
+	public function rank($nivel,$entidad = false,$municipio = false){
 		$entidad_clause = $entidad ? " AND entidad LIKE '$entidad'" : '';
 		$sql = "SET @rownum = 0, @rank = 0, @prev_val = NULL; ";
 		mysql_query($sql);
@@ -97,7 +97,7 @@ class escuela extends memcached_table{
 				SET t1.rank_entidad=t2.rank;";
 		return mysql_query($sql);		
 	}
-	function get_chart($materia){
+	public function get_chart($materia){
 		$grados = array();
 		$enlaces = array();
 		$puntaje_name = 'puntaje_'.$materia;
@@ -126,6 +126,21 @@ class escuela extends memcached_table{
 			$variable = false;
 		}
 		return $variable;
+	}
+	public function get_mongo_info(){
+		//$this->nonfunc();
+		$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion"); // connect
+		$db = $m->selectDB("mte_produccion");
+		$collections = $db->getCollectionNames();
+		$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
+		$this->pec = $c->find(array('cct'=>$this->cct));
+		$c = $db->selectCollection('jornada_amplia');
+		$this->ja = $c->find(array('cct'=>$this->cct));
+		$c = $db->selectCollection('siat');
+		$this->siat = $c->find(array('cct'=>$this->cct));
+		$c = $db->selectCollection('censo_2013');
+		$this->censo = $c->find(array('cct'=>$this->cct.'1'));
+		//var_dump(iterator_to_array($this->censo));
 	}
 }
 ?>

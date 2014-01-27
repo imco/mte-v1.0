@@ -85,6 +85,7 @@ class escuelas extends main{
 
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
+			$this->escuela->get_mongo_info();
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
@@ -233,16 +234,6 @@ class escuelas extends main{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-	}
-	public function mongo(){
-		//$this->nonfunc();
-		$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion"); // connect
-		$db = $m->selectDB("mte_produccion");
-		$collections = $db->getCollectionNames();
-		$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
-		$record = $c->find(array('anio'=>2011));
-		var_dump(iterator_to_array($record));
-
 	}
 }
 ?>
