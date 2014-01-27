@@ -127,7 +127,7 @@ a{text-decoration:none;}
 #content .white-box{background-color:rgba(255,255,255,.3);color:#636363;padding:14px 16px 15px;}
 #content .white-box.column{width:260px;}
 #content .white-box a{color:#373938;}
-#content .white-box h2{color:#3a5a95;line-height:21px;margin-top: 4px;}
+#content .white-box h2{color:#3a5a95;line-height:21px;}/*margin-top: 4px;*/
 #content .white-box hr{background:#3a5a95;height:3px;}
 #content .white-box p{line-height:14px;font-size:13px;}
 #content .white-box a .icon{background:url(../img/mejora/leermas.png) no-repeat center;width:13px;height:17px;display:inline-block;margin:0 5px 0 3px;}
@@ -1062,7 +1062,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .home .video + h1 + .gray-box .title .location{margin-left:228px;color:white;}
 #content .resultados-entidad .gray-box .title .location{margin-left:280px;}
 #content .home .notas .white-box{padding:13px 13px 15px;}
-#content .home .notas .white-box img{width:100%;}
+#content .home .notas .white-box img{width:100%;margin-bottom: 5px;}
 #content .home .notas .white-box hr{margin-top:5px;}
 #content .home .notas .white-box p{text-align:justify;}
 /*compara*/
