@@ -125,28 +125,26 @@
 			</fieldset>		
 		</form>
 			<ul class='tabs'>
-				<li><a href='#' class='reportes'>
+				<li><a href='#tab-calificacion' class='reportes'>
 					<span class='triangle'></span>
 					Comentarios 
 					y reportes
 				</a></li>
-				<li><a href='#' class='result'>
+				<li><a href='#tab-calificacion' class='result'>
 					<span class='triangle'></span>
 					Infraestructura escolar
 				</a></li>
-				<li class='on'><a href='#' class='long comentarios'>
+				<li class='on'><a href='#tab-charts' class='long comentarios'>
 					<span class='triangle'></span>
 					Desempeño académico
 				</a></li>
 				<div class='clear'></div>
 			</ul>
-		<div class='head t-tabs'>
-				<p class='title-tabs'>Desempeño académico</p>
-		</div>
 
 		<div class='tab-container'>
 			<!--  jscrollpane-->
-			<div class='tab charts on'><div class='chart-box'>
+			<div class='head t-tabs'><p class='title-tabs'>Desempeño académico</p></div>
+			<div class='tab charts on' id='tab-charts'><div class='chart-box'>
 				<div class="n_alumnos border_b">
 					<p>Número de alumnos evaluados</p>
 					<span class="number"><?=$this->escuela->total_evaluados?></span>
@@ -204,7 +202,8 @@
 				</div>
 
 			</div></div>
-			<div class='tab infraestructura-tab'>
+			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
+			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 				<h2>Informacion disponible corresponde al ciclo xxx</h2>
 				<p class="border_b">Total de Aulas en uso 35</p>
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
@@ -248,8 +247,8 @@
 				
 			</div>
 
-
-			<div class='tab calificacion-tab'>
+			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
+			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios</p>
 				<p class="border_b">Calificación global 8.6</p>

@@ -57,7 +57,9 @@ $(document).ready(function(){
 
 	$('#content .perfil .tabs li a').click(function(e){
 		e.preventDefault();
-		var index = 2 - $(this).parent().index();
+		var target = $( $(this).attr('href') );
+		$('html, body').animate({ scrollTop: target.offset().top - 90 }, 1000);
+		/*var index = 2 - $(this).parent().index();
 		console.log(index);
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
@@ -67,7 +69,7 @@ $(document).ready(function(){
 			drawCharts();
 		else if(index==2) 
 			$('.wrap_comments').jScrollPane();
-
+		*/
 			
 	})
 	if($("#name-input") .length)
@@ -466,11 +468,20 @@ $(document).ready(function(){
 			$(this).addClass('open');
 		}
 	});
+	$(document).click(function (e){
+        e.stopPropagation();
+		$('#.calificacion-form.B fieldset textarea').removeClass('on open');
+        $('#.calificacion-form.B fieldset .box-hidden').slideUp();
+    });
+	$('#.calificacion-form.B').click(function(e){
+		e.stopPropagation();
+	});
 
-
+	if( $('.container.programas svg').length ){
 	$('.overlay-map').outerHeight($('.container.programas svg').height());
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
 	$('.overlay-map').css('top',$('.container.programas svg').offset().top);
+
 
 	$('.container.programas svg path').each(function(){
 		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
@@ -509,7 +520,7 @@ $(document).ready(function(){
 			listaprogramasosc  = $('.perfil.B .column.right .lista-programas.osc ul');
 			resultadosoffset= $('.resultados.container').offset().top;
 			if(windowOffset >= containeroffset){
-				if(windowOffset+280 >= resultadosoffset){
+				if(windowOffset+300 >= resultadosoffset){
 					columnright.removeClass('fixed');
 					columnright.show();
 				}
