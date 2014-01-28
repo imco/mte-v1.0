@@ -6,7 +6,7 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 		<div class='video'>
 		
 		</div>
-		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> 5 mejores <?=$niveles[$this->nivel_5]?> en <?=$this->get_abreviatura_estado($this->user_location->nombre)?>
+		<h1 class='cap subtitle blue'><?php $this->print_img_tag('home/posicion.png');?> <span class='title_smaller'>5 mejores <?=$niveles[$this->nivel_5]?> en</span> <?=$this->get_abreviatura_estado($this->user_location->nombre)?>
 			<span><a href='/resultados-nacionales/'>+Ver más estados</a></span>
 		</h1>
 		<div class='gray-box'>

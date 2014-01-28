@@ -71,6 +71,7 @@ $canonical = $this->config->http_address.(isset($_GET['controler'])?$_GET['contr
 			$this->include_template('header',$this->header_folder); 
 			?>
 		</div>
+		<div class='header_shadow'></div>
 		<div id='content'><?php $this->include_template($this->template,$this->location);?></div>
 	</div></div></div>	
 	<div id='footer'><?php $this->include_template('footer','global'); ?></div>	 
