@@ -15,8 +15,8 @@ class main extends controler{
 	public function main($config){
 
 	
-		error_reporting(1);
-		ini_set('display_errors', '1');
+		//error_reporting(1);
+		//ini_set('display_errors', '1');
 
 		$this->config = $config; 
 		$this->dbConnect(); 
@@ -27,6 +27,7 @@ class main extends controler{
 		$this->draw_map = false; 
 		$this->draw_charts = false; 
 		$this->get_data_compara_float();
+		$this->load_entidades();
 		#$this->testMail();
 	}
 

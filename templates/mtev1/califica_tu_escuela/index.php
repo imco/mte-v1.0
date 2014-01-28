@@ -46,19 +46,22 @@
 				$turno = $turnos[$escuela->turno];
 			}
 			//$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
-			
+			//<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 			echo "
 			<tr $on>
-				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
-				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
+				
+				<td class='school'>
+				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
+				<a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)." | ".$turno."</span>".
-				"</a></td>
-				<td class='calificar'><a class='calificar-school' href='/califica-tu-escuela/califica/{$escuela->cct}'> <span class='icon'></span> Calificar </a></td>
+				"</a>
+				<div class='calificar'><a class='calificar-school' href='/califica-tu-escuela/califica/{$escuela->cct}'> <span class='icon'></span> Calificar </a></div>
+				</td>
 
 
 			</tr>
-			";
+			";//<td class='calificar'><a class='calificar-school' href='/califica-tu-escuela/califica/{$escuela->cct}'> <span class='icon'></span> Calificar </a></td>
 		}
 	}	
 	?>

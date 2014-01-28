@@ -140,15 +140,15 @@ class escuela extends memcached_table{
 			$c = $db->selectCollection('siat');
 			$this->siat = $c->find(array('cct'=>$this->cct));
 			$c = $db->selectCollection('censo_2013');
-			$this->censo = $c->find(array('cct'=>$this->cct.'1'));
+			$this->censo = $c->find(array('cct'=>$this->cct));
+			$m->close();
 		}catch(Exception $e){
-			var_dump($e->getMessage());
+			//var_dump($e->getMessage());
 			$this->pec = false;
 			$this->ja = false;
 			$this->siat = false;
 			$this->censo = false;
 		}
-		
 		//var_dump(iterator_to_array($this->censo));
 	}
 }
