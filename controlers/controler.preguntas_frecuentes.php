@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
 * Clase preguntas_frecuentes Extiende main.
