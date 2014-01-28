@@ -1,13 +1,13 @@
 {"type":"Topology","transform":{"scale":[0.003170041432225456,0.0018188374050718856],"translate":[-118.40764955087901,14.532098361948284]},"objects":{"estados2":{"type":"GeometryCollection",
       "properties":[
-          {"id":1,"name":"Ciudad de Mexico"},
+          {"id":1,"name":"Ciudad-de-Mexico"},
           {"id":2,"name":"Guerrero"},
-          {"id":3,"name":"Estado de Mexico"},
+          {"id":3,"name":"Estado-de-Mexico"},
           {"id":4,"name":"Morelos"},
           {"id":5,"name":"Sinaloa"},
-          {"id":6,"name":"Baja California"},
+          {"id":6,"name":"Baja-California"},
           {"id":7,"name":"Sonora"},
-          {"id":8,"name":"Baja California Sur"},
+          {"id":8,"name":"Baja-California-Sur"},
           {"id":9,"name":"Zacatecas"},
           {"id":10,"name":"Durango"},
           {"id":11,"name":"Chihuaha"},
@@ -26,12 +26,12 @@
           {"id":24,"name":"Puebla"},
           {"id":25,"name":"Hidalgo"},
           {"id":26,"name":"Veracruz"},
-          {"id":27,"name":"Nuevo Leon"},
+          {"id":27,"name":"Nuevo-Leon"},
           {"id":28,"name":"Coahuila"},
           {"id":29,"name":"Tamaulipas"},
           {"id":30, "name":"Yucatan"},
           {"id":31 ,"name":"Campeche"},
-          {"id":32,"name":"Quintana Roo"}
+          {"id":32,"name":"Quintana-Roo"}
           
           
         ],
