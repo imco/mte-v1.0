@@ -1416,7 +1416,45 @@ line-height: 45px;}
 #content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
 #content .container.programas .column.left svg path:hover{fill:#359044;}
 #content .container.programas .column.left .overlay-map{position: absolute;}
-#content .container.programas .column.left .overlay-map img{position: absolute;}
+.overlay-map .statemarker.e1{left: 292px;top:224px;}
+.overlay-map .statemarker.e2{left: 49px;top: 64px}
+.overlay-map .statemarker.e3{left: 93px;top: 165px}
+.overlay-map .statemarker.e4{left: 535px;top: 295px}
+.overlay-map .statemarker.e5{top: 100px;left: 300px}
+.overlay-map .statemarker.e6{left: 260px;top: 291px}
+.overlay-map .statemarker.e7{left: 525px;top: 340px}
+.overlay-map .statemarker.e8{}
+.overlay-map .statemarker.e9{}
+.overlay-map .statemarker.e10{}
+.overlay-map .statemarker.e11{}
+.overlay-map .statemarker.e12{}
+.overlay-map .statemarker.e13{}
+.overlay-map .statemarker.e14{}
+.overlay-map .statemarker.e15{}
+.overlay-map .statemarker.e16{}
+.overlay-map .statemarker.e17{}
+.overlay-map .statemarker.e18{}
+.overlay-map .statemarker.e19{}
+.overlay-map .statemarker.e20{}
+.overlay-map .statemarker.e21{}
+.overlay-map .statemarker.e22{}
+.overlay-map .statemarker.e23{}
+.overlay-map .statemarker.e24{}
+.overlay-map .statemarker.e25{}
+.overlay-map .statemarker.e26{}
+.overlay-map .statemarker.e27{}
+.overlay-map .statemarker.e28{}
+.overlay-map .statemarker.e29{}
+.overlay-map .statemarker.e30{}
+.overlay-map .statemarker.e31{}
+.overlay-map .statemarker.e32{left: 269px;top: 188px}
+#content .container.programas .column.left .overlay-map .statemarker{padding-top: 20px;position: absolute;}
+#content .container.programas .column.left .overlay-map .statemarker .info{background-color: #5D5D5D;display: none;left: -75px;position: absolute;top:-110px;width: 200px;z-index: 5}
+#content .container.programas .column.left .overlay-map .statemarker .info:after{content: "";position: absolute;left: 41%;border-width: 12px 12.5px 0 12.5px;border-style: solid;border-color: #5D5D5D transparent transparent transparent;width: 0px;height: 0px;}
+#content .container.programas .column.left .overlay-map .statemarker .info h4{background-color: #0BA14A;color: #fff;padding: 10px 10px 5px}
+#content .container.programas .column.left .overlay-map .statemarker .info p{background-color: #5D5D5D;color: #fff;padding: 10px 10px 20px}
+#content .container.programas .column.left .overlay-map .statemarker .info p a{color: #53C482}
+#content .container.programas .column.left .overlay-map .statemarker:hover .info{display: block;}
 
 /*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}

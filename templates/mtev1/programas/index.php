@@ -125,12 +125,21 @@
 		</script>
 
 		<div class="overlay-map">
-			<script>
-				<?php $arrayEstados = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,31); ?>
-				<?php foreach ($arr as $item) : ?>
-	   				arr.push('<?php echo $item?>');
-			   <?php endforeach; ?>
-			</script>
+		<?php
+		//var_dump($this->entidades);
+		foreach ($this->entidades as $key => $estado) : 
+			if($estado->id == 2 || $estado->id== 32):?>
+			<div class='statemarker e<?=$estado->id?>'>
+				<div class="info">
+					<h4><?=$estado->nombre?></h4>
+					<p>Participa en (10) Escuelas <br><a href="#">Ver lista de escuelas</a></p>
+				</div>
+				<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'/>
+			</div>
+		<?php
+			endif;
+		endforeach;
+		?>
 		</div>
 
 	</div>
