@@ -149,4 +149,9 @@ class firma_img extends table{
 		$this->table_name = "firmas_images";
 	}
 }
+class programa extends table{
+	function info(){
+		$this->table_name = "programas";
+	}
+} 
 ?>

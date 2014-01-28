@@ -1,14 +1,15 @@
 <div class="container programas">
 	<div class="column left">
-		<h1 class="title">Programa Escuela Segura</h1>
+		<h1 class="title"><?php echo $this->programa->nombre; ?></h1>
 		<div class="white-box">
-			<h3>Objetivo del programa</h3>
+			<!--<h3>Objetivo del programa</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic consectetur quam odio. Necessitatibus, voluptatibus optio facilis ullam quas amet quidem nobis pariatur maxime sit magni reiciendis inventore nemo. Corporis, fugit.</p>
-			<p><span class="blue">Tema especifico que atiende el prgrama</span> Seguridad escolar</p>
+			-->
+			<p><span class="blue">Tema especifico que atiende el prgrama</span> <?php echo $this->programa->nombre; ?></p>
 		</div>
 		<h2 class="title">Descripcion del programa</h2>
 		<div class="white-box">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, fugiat, illum repellat facilis laborum ducimus voluptatem doloribus odit amet deleniti similique deserunt dolor laboriosam eos qui enim perspiciatis maxime architecto.</p>
+			<p><?php echo $this->programa->descripcion; ?></p>
 		</div>
 		<h2 class="title green">Clave CCT de las escuelas en las que se trabaja(2013/2014)</h2>
 		<div class="white-box map">
@@ -27,15 +28,19 @@
 		<div class="info">
 			<h2 class="title">¿Que debe hacer una escuela que esta interesada en participar en el proyecto?</h2>
 			<div class="white-box">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, corporis consequuntur esse quasi debitis voluptates dolores sapiente error libero architecto veniam non accusantium. Sunt, labore ex ea tempora. Culpa, saepe.</p>
+				<p><?php echo $this->programa->requisitos; ?></p>
 			</div>
 			<h2 class="title">Pagina web del programa</h2>
 			<div class="white-box">
-				<a href="#" >http://basica.sep.gob.mx/escuelasegura</a>
+				<a href="http://<?=$this->programa->sitio_web;?>" ><?php echo $this->programa->sitio_web; ?></a>
 			</div>
 			<h2 class="title">Contácto</h2>
 			<div class="white-box">
-				<p>33 01 600(Ciudad de Mexico) o desde los Estados al 01 800 767 8368 o via correo electronico: <a href="#">quejas@sep.gob.mx</a> con copia para <a href="#">escuelasegura@sep.gob.mx</a></p>
+				<p>
+					<?php echo $this->programa->telefono; ?>
+					|<?php echo $this->programa->telefono_contacto; ?>
+					|<?php echo $this->programa->mail; ?>
+				</p>
 			</div>
 		</div>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
@@ -66,7 +71,7 @@
 		var path = d3.geo.path()
     		.projection(projection);
 		 
-		d3.json("mx_tj.json", function(error, mx) {
+		d3.json("/mx_tj.json", function(error, mx) {
 		  /*svg.selectAll("path")
 		    .data(topojson.object(mx, mx.objects.municipios2).geometries)
 		    .enter().append("path")

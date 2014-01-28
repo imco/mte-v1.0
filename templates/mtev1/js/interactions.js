@@ -495,7 +495,7 @@ $(document).ready(function(){
 			console.log("estado:"+actualState.attr('class'));
 			$('.container.programas .overlay-map img').each(function(){
 				if($(this).hasClass(stateName)){
-					actualState.css('fill',"#000");
+					actualState.css('fill',"#3E9B65");
 					var posY = actualState.offset().top;
 					var posX = actualState.offset().left;
 					var centroX = posX - (actualState.width()/2);
