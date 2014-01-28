@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
 * Clase stats Exrtiende main.
