@@ -76,6 +76,7 @@
 		    .style("stroke-width", ".2px")
 		    .attr("class", "muns");
 			*/
+		
 		  g.selectAll("path")
 		    .data(topojson.object(mx, mx.objects.estados2).geometries)
 		    .enter().append("path")
@@ -83,12 +84,40 @@
 		    .attr("fill", "#C4EAD1")
 		    .style("stroke", "#40AA6C");
 
+		   g.selectAll("path")
+		    .data(topojson.object(mx, mx.objects.estados2).properties)
+		    //.enter().append("path")
+		    .attr("class",function(d) { return d.name; })
+		    .text(function(d) { return d.id; });
+
+		    /*svg.selectAll(".place-label")
+			    .data(topojson.object(mx, mx.objects.estados2).properties)
+			  .enter().append("text")
+			    .attr("class", "place-label")
+			    .attr("transform", function(d) { return "translate(" + d3.geo.path().projection(projection) + ")"; })
+			    .attr("dy", ".35em")
+			    .text(function(d) { return d.id; });
+
+			svg.selectAll(".place-label")
+		    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
+		    .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
+		    
+
 		 
 		});
+		
+		/*$('body').css('background-color','#fff');
 
+		$('.container.programas svg path').each(function(){
+		if($(this).hasClass('4') || $(this).hasClass('6')){
+			$(this).append("<? $this->print_img_tag('COMPARADOR/pinmap.png'); ?>");
+			console.log("encontro");
+		}
+		});*/
 
-		 
 		</script>
+
+		<div class="overlay-map"></div>
 
 	</div>
 	<div class="column right">

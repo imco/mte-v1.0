@@ -1377,6 +1377,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
 #content .container.programas .column.left svg path:hover{fill:#359044;}
+#content .container.programas .column.left .overlay-map{position: absolute;}
 
 /*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}
@@ -1633,7 +1634,9 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .calificacion-tab .info_table td:first-child{margin-right:8px;}
 #content .perfil.B .tab-container .calificacion-tab .info_table .cel{width:117px;text-align:center;line-height:30px;text-indent:0;}
 #content .perfil.B .tab-container .calificacion-tab .comm{margin-top:4px;}
-#content .perfil.B .calificacion-tab .wrap_comments{margin-top:12px;height:328px;overflow:hidden;}
+#content .perfil.B .calificacion-tab .wrap_comments{margin-top:12px;height:328px;overflow:hidden;
+margin-bottom: 10px;
+height: auto;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment{border-bottom:1px solid #CBCBCB;padding-bottom:1px;margin-bottom:12px;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p:first-child{font-size:19px;line-height:31px;color:#2E96D0;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p .icon{width:25px;height:30px;display:inline-block;vertical-align:top;background:transparent url(../img/perfil/blue/calif.png) no-repeat center center;margin-right:8px;}

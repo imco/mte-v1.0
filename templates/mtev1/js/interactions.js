@@ -432,6 +432,10 @@ $(document).ready(function(){
 	});
 	*/
 
+	$('.container.programas svg path').hover(function(){
+		console.log($(this).text());
+	});
+
 	$(document).keyup(function(e){
 		if(e.keyCode == $.ui.keyCode.ESCAPE){
 			$('.overlay-transparent').trigger('click');
@@ -473,6 +477,30 @@ $(document).ready(function(){
 		e.stopPropagation();
 	});
 
+	if( $('.container.programas svg').length ){
+	$('.overlay-map').outerHeight($('.container.programas svg').height());
+	$('.overlay-map').outerWidth($('.container.programas svg').width());
+	$('.overlay-map').css('top',$('.container.programas svg').offset().top+35);
+	}
+
+	$('.container.programas svg path').each(function(){
+		if($(this).text()=="4" || $(this).text()=="6"){
+			$('.overlay-map').append("<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+$(this).attr('class')+"' />");
+			console.log("encontro");
+			var stateIndex = $(this).attr();
+			var actualState = $(this);
+			console.log("indice:"+stateIndex);
+			console.log("estado:"+actualState);
+			$('.container.programas svg path .overlay-map img').each(function(){
+				if($(this).hasClass(stateIndex))
+				{
+					actualState.css('fill',"#000");
+				}
+			});
+		}
+	});
+
+
 	$(window).scroll(function(){
 		if($('.perfil.B').length > 0){
 			windowOffset 	= $(window).scrollTop();
@@ -486,7 +514,7 @@ $(document).ready(function(){
 			listaprogramasosc  = $('.perfil.B .column.right .lista-programas.osc ul');
 			resultadosoffset= $('.resultados.container').offset().top;
 			if(windowOffset >= containeroffset){
-				if(windowOffset+280 >= resultadosoffset){
+				if(windowOffset+300 >= resultadosoffset){
 					columnright.removeClass('fixed');
 					columnright.show();
 				}
