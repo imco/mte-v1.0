@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
-		var tr = $(this).parent().parent().toggleClass('on');
+		var tr = $(this).parent().parent().parent().toggleClass('on');
 		var cct = $(this).attr('href');
 		toggle_escuela(cct);
 	});
@@ -137,6 +137,7 @@ $(document).ready(function(){
 	$('#content .share-bt a.button-frame , #content .perfil.B .option.share , #content .programas .share-blue').click(function(e){
 		if(!$(this).hasClass('static')){
 			e.preventDefault();
+			e.stopPropagation();
 			$('#content .share-bt .social , #content .perfil.B .social , .programas .social ').toggleClass('on');
 		}
 	});
@@ -472,8 +473,9 @@ $(document).ready(function(){
         e.stopPropagation();
 		$('#.calificacion-form.B fieldset textarea').removeClass('on open');
         $('#.calificacion-form.B fieldset .box-hidden').slideUp();
+		$('#content .perfil.B .social').removeClass('on');
     });
-	$('#.calificacion-form.B').click(function(e){
+	$('#.calificacion-form.B,#content .perfil.B .social').click(function(e){
 		e.stopPropagation();
 	});
 
@@ -517,26 +519,25 @@ $(document).ready(function(){
 				if(windowOffset+300 >= resultadosoffset){
 					columnright.removeClass('fixed');
 					columnright.show();
-				}
-				else{
+				}else{
 					headtitle.addClass('fixed');
 					if(!columnright.hasClass('fixed')){
-						semaforo.slideToggle();
+						//semaforo.slideToggle();
+						semaforo.slideUp();
 						semOverlay.slideToggle();
-						listaprogramasosc.slideToggle();
-						listaprogramasfed.slideToggle();
+						listaprogramasosc.slideUp();
+						listaprogramasfed.slideUp();
 
 					}				
 					columnright.addClass('fixed');
 				}
-			}
-			else{
+			}else{
 				headtitle.removeClass('fixed');
 				if(columnright.hasClass('fixed')){
-					semaforo.show();
+					semaforo.slideDown();
 					semOverlay.show();
-					listaprogramasosc.show();
-					listaprogramasfed.show();
+					listaprogramasosc.slideDown();
+					listaprogramasfed.slideDown();
 				}
 				columnright.removeClass('fixed');
 			}

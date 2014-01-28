@@ -373,14 +373,18 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:12px 5px;vertical-align:middle;font-size:13px;}
 #content .resultados table th.checkbox{background:#00AFF0  url(../img/compara/esc_comparadas_vertical.png) no-repeat center;width:42px;padding:0 4px;}
 #content .resultados table th.school{background:#00AFF0 url(../img/compara/comparar.png) no-repeat center 14px ;width:70px;position: relative;color:white;font-size: 16px;line-height:15px;padding: 30px 0px 12px}
-#content .resultados table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px}
+#content .resultados table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px;z-index: 1;}
 #content .resultados table th.rank{width:74px;line-height:16px;}
 #content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.4);}
 #content .resultados table td.school{background-color:#424242;text-align:left;}
+#content .resultados table tr + tr td.school{padding-left: 30px;position:relative;}
 #content .resultados table td.school a{color:#fff;display:block;padding:10px 13px;font-size:14px;width:295px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:#424242;}
-#content .resultados table td.checkbox a{display:block;border:2px solid #00AFF0 ;width:18px;height:18px;border-radius:50%;position:relative;margin:0 auto;}
+#content .resultados table div.checkbox{width: 30px;height: 100%;position: absolute;left: 0;background: transparent!important}
+#content .resultados table div.checkbox a{position: absolute;padding: 0;top: 50%;margin-top: -7px!important;left: 5px;padding: 0!important;}
+#content .resultados table div.checkbox a,
+#content .resultados table td.checkbox a{display:block;border:2px solid #00AFF0 ;width:18px!important;height:18px!important;border-radius:50%;position:relative;margin:0 auto;}
 #content .resultados table td.rank span{display:block;background-image:url(../img/compara/posicion.png);width:33px;height:32px;text-align:center;line-height:32px;margin:0 auto;font-size:12px;}
 #content .resultados table td.rank span + span{background:transparent;width:100%;line-height:normal;text-align:center;margin:5px 0 0 0;height:auto;}
 #content .resultados table th.matematicas,
@@ -409,7 +413,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table tr.on .school a{color:white;}
 #content .resultados table tr.on .checkbox{background-color: #424242;}
 #content .resultados table tr.on .checkbox a{border:2px solid #00AFF0;position:relative;}
-#content .resultados table tr.on .checkbox a:before{content:'';background: url(../img/select/palomita.png);position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;}
+#content .resultados table tr.on .checkbox a:before{content:'';background: url(../img/select/palomita.png) no-repeat center center;position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;}
+#content .resultados table tr.on td.checkbox a:before{width:100%!important;height:100%!important;}
 #content .resultados .pagination{text-align:center;margin:16px auto 19px;}
 #content .resultados .pagination a{color:black;text-shadow:1px 1px white;background-color:#DFDFDF;padding:6px 9px;font-size:12px;border-radius:3px;margin:0 1px;}
 #content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
@@ -419,7 +424,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .button-frame,
 #content .share-bt .button-frame
 {display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:298px;border-radius:7px;position:relative;}
-#content .button-frame .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;}
+#content .button-frame .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:32px;line-height:55px;text-align:center;
+font-size: 26px;
+line-height: 45px;}
 /*#content .button-frame .button:before{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;left:8px;position:absolute;}
 #content .button-frame .button:after{content:'';display:block;background-color:#3AB36E;height:1px;box-shadow:0 1px 2px #0BA14A;width:47px;top:28px;right:8px;position:absolute;}*/
 
@@ -814,7 +821,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem6 span.icon-popup{background-size:150px;width:138px;height:135px;top:-91px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup .infor.I{width:159px;}
 #content .resultados table td.semaforo.sem6 span.icon-popup .title_semaforo{margin-left:17px;padding:20px 4px 0;}
-#content  #compara-main-button span.button:before{content: "";background: url(../img/compara/regla.png) no-repeat center;display: block;height: 43px;margin: 0 auto -10px;width: 115px;}
+/*#content  #compara-main-button span.button:before{content: "";background: url(../img/compara/regla.png) no-repeat center;display: block;height: 43px;margin: 0 auto -10px;width: 115px;}*/
 
 /*Popup compartir*/
 #content .share-bt{float:right;position:relative;margin:8px 0 -35px;z-index:10;}
@@ -825,6 +832,8 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .share-bt .social:after , #content .share-blue .social:after{left:88px;}
 /*#content .share-bt .social{position:absolute;top:55px;background-color:#dcdcdc;width:203px;right:-38px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset}*/
 #content .share-bt .social , #content .share-blue .social{position:absolute;top:55px;background-color:#dcdcdc;width:150px;right:13px;border-radius:3px;display:none;padding:17px 28px;border-radius:10px;box-shadow:0 -35px 40px #c7c7c7 inset;height:49px;left:0;}
+#content .share-blue .social{border: 2px solid white;left: -4px;}
+#content .share-blue .social:before{content:""; width:0;height: 0;border-left: 16px solid transparent;border-right: 18px solid transparent;border-bottom: 16px solid white;position:absolute;display:block;top:-16px;left:87px;}
 #content .share-bt .social .btns , #content .share-blue .social .btns{width:160px;margin:0 auto;}
 #content .share-bt .social.on , #content .share-blue .social.on{display:block;z-index:10;}
 #content .share-bt .social .share-face , .share-blue .social .share-face{float:left;height:62px;background-image:url(../img/compartir/facebook.png);background-repeat:no-repeat;width:50px;background-size:55px;}
@@ -1380,7 +1389,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .container .column.right .lista-programas + .lista-programas{margin-top: 10px}
 #content .container .column.right .lista-programas h2{font-size:18px;line-height:35px;background-color:#888;color:white;height:32px;text-align: center;}
 #content .container .column.right .lista-programas h2 + h2{margin-top: 10px}
-#content .container .column.right .lista-programas ul li{background-color: rgba(255,255,255,0.5);font-size: 13px;padding: 6px;text-align: center;}
+#content .container .column.right .lista-programas ul li{background-color: rgba(255,255,255,0.5);font-size: 13px;padding: 6px;text-align: left;padding-left: 30px;position:relative;}
+#content .container .column.right .lista-programas ul li:before{content:'';position: absolute;width:14px;height:14px;border:2px solid #16B4EE;left:6px;top:50%;margin-top:-7px;border-radius: 50%;}
+#content .container .column.right .lista-programas ul li.on:before{background:transparent url(../img/perfil/iconos-mejora-perfil.png) no-repeat -56px -158px;}
 #content .container .column.right .lista-programas ul li + li{border-top: 2px solid #fff}
 #content .container .column.right .lista-programas ul li a{color: #8C8C8C;}
 #content .container .column.right .lista-programas ul li a:hover{color: #57A9D1}
