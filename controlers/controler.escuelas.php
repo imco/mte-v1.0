@@ -104,33 +104,32 @@ class escuelas extends main{
 	* Obtienen la calificación brindada por el usuario y se guarda en la tabla calificaciones
 	*/
 	public function calificar(){
-		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-		if($captcha->check_answer($this->config->http_address,
-					  $this->post('recaptcha_challenge_field'),
-					  $this->post('recaptcha_response_field'))){		
+//		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+//		if($captcha->check_answer($this->config->http_address,
+//					  $this->post('recaptcha_challenge_field'),
+//					  $this->post('recaptcha_response_field'))){
 			$comment = strip_tags($this->post('comentario'));
 			$calificacion = new calificacion();
 			//$calificacion->debug = true;
-			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent,calificaciones',array(
+			$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent',array(
 				$this->post('nombre'),
 				$this->post('email'),
 				$this->post('cct'),
 				$comment,
 				$this->post('ocupacion'),
 				stripslashes($this->post('calificacion')),
-				$_SERVER['HTTP_USER_AGENT'],
-				$this->post('calificaciones')
-			)); 
-			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";	
-		
-		}else{
-			$location = "/escuelas/index/".$this->post('cct')."/e=captcha#calificaciones";	
-		}
+				$_SERVER['HTTP_USER_AGENT']
+			));
 
-		header("location: $location");
-		//}else{
-		//	header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
-		//}
+            $calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
+
+			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
+
+		    header("location: $location");
+//		}else{
+//            var_dump($captcha);
+//			//header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
+//		}
 
 	}
 
