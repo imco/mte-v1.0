@@ -129,17 +129,25 @@ class escuela extends memcached_table{
 	}
 	public function get_mongo_info(){
 		//$this->nonfunc();
-		$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion"); // connect
-		$db = $m->selectDB("mte_produccion");
-		$collections = $db->getCollectionNames();
-		$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
-		$this->pec = $c->find(array('cct'=>$this->cct));
-		$c = $db->selectCollection('jornada_amplia');
-		$this->ja = $c->find(array('cct'=>$this->cct));
-		$c = $db->selectCollection('siat');
-		$this->siat = $c->find(array('cct'=>$this->cct));
-		$c = $db->selectCollection('censo_2013');
-		$this->censo = $c->find(array('cct'=>$this->cct.'1'));
+		try{
+			$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion");
+			$db = $m->selectDB("mte_produccion");
+			$collections = $db->getCollectionNames();
+			$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
+			$this->pec = $c->find(array('cct'=>$this->cct));
+			$c = $db->selectCollection('jornada_amplia');
+			$this->ja = $c->find(array('cct'=>$this->cct));
+			$c = $db->selectCollection('siat');
+			$this->siat = $c->find(array('cct'=>$this->cct));
+			$c = $db->selectCollection('censo_2013');
+			$this->censo = $c->find(array('cct'=>$this->cct.'1'));
+		}catch(Exception $e){
+			$this->pec = false;
+			$this->ja = false;
+			$this->siat = false;
+			$this->censo = false;
+		}
+		
 		//var_dump(iterator_to_array($this->censo));
 	}
 }
