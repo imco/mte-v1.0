@@ -558,7 +558,7 @@ class main extends controler{
 	}
     }
 
-    public function send_email($to,$subject,$message,$from,$from_name){
+    public function send_email($to,$subject,$message,$from,$from_name,$attachment_path = false, $attachment_name = false, $logo_path = false, $logo_name = false, $isHtml = true){
 	$url = 'http://sendgrid.com/';
 	$params = array(
 	    'api_user'  => $this->config->send_grid_user,
