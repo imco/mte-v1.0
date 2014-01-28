@@ -90,6 +90,8 @@
 		    .attr("class",function(d) { return d.name; })
 		    .text(function(d) { return d.id; });
 
+
+
 		    /*svg.selectAll(".place-label")
 			    .data(topojson.object(mx, mx.objects.estados2).properties)
 			  .enter().append("text")
