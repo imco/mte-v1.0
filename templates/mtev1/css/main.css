@@ -1079,7 +1079,7 @@ line-height: 45px;}
 #header .menu .submenu a:hover{background-color:#00ADF3;}
 #header .menu .submenu .social a:hover{background-color:transparent;}
 /*home*/
-#content .home .video{height:361px;margin-bottom:16px;display:none;}
+#content .home .video{height:335px;margin-bottom:16px;}/*display:none;*/
 #content .home .gray-box.twitter .icon{width:102px;height:51px;float:left;background:url(../img/home/twitter_logo.png) no-repeat #31a4e3 center;margin-right:24px;}
 #content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
