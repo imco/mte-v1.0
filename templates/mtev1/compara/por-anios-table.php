@@ -9,7 +9,7 @@
 		<th class='calificacion'>2011</th>
 		<th class='calificacion'>2012</th>
 		<th class='calificacion'>2013</th>
-		<th class='semaforos'>Semaforo Educativo</th>
+		<th class='semaforos'>Semáforo Educativo</th>
 	</tr>
 	<?php 
 	if($this->escuelas!=null)
