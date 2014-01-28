@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		if($('.container').hasClass('califica_select'))
-			$(this).parent().parent().toggleClass('on');
+			$(this).parent().parent().parent().toggleClass('on');
 		else
 			$(this).parent().parent().parent().toggleClass('on');
 		//var tr = $(this).parent().parent().parent().toggleClass('on');
@@ -535,7 +535,8 @@ $(document).ready(function(){
 					if(!columnright.hasClass('fixed')){
 						//semaforo.slideToggle();
 						semaforo.slideUp();
-						semOverlay.slideToggle();
+						//semOverlay.slideToggle();
+						semOverlay.slideUp();
 						listaprogramasosc.slideUp();
 						listaprogramasfed.slideUp();
 
@@ -546,7 +547,8 @@ $(document).ready(function(){
 				headtitle.removeClass('fixed');
 				if(columnright.hasClass('fixed')){
 					semaforo.slideDown();
-					semOverlay.show();
+					//semOverlay.show();
+					semOverlay.slideDown();
 					listaprogramasosc.slideDown();
 					listaprogramasfed.slideDown();
 				}

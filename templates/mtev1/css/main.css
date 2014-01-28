@@ -401,9 +401,9 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px;z-index: 1;}
 #content .resultados table th.rank{width:74px;line-height:16px;}
 #content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.4);}
-#content .resultados table td.school{background-color:#424242;text-align:left;}
+#content .resultados table td.school{background-color:#424242;text-align:left;display: block;}
 #content .resultados table tr + tr td.school{padding-left: 30px;position:relative;}
-#content .resultados table td.school a{color:#fff;display:block;padding:10px 13px;font-size:14px;width:295px;}
+#content .resultados table td.school a{color:#fff;display:block;padding:10px 13px;font-size:14px;width:295px;width: 168px;padding:15px 13px;}
 #content .resultados table td.school a span{font-size:12px;}
 #content .resultados table td.checkbox{background-color:#424242;}
 #content .resultados table div.checkbox{width: 30px;height: 100%;position: absolute;left: 0;background: transparent!important}
@@ -478,7 +478,7 @@ line-height: 45px;}
 #content .comparar table{margin:11px 9px;border-spacing:1px;}
 #content .comparar table th{line-height:16px;padding:10px 3px;width:130px;border-top:3px solid #0CA14D;}
 #content .comparar table th.school{text-align:center;padding:35px 74px 12px;/*padding:19px 35px 0 79px*/;position: relative;background:#00AFF0 url(../img/compara/comparar.png) no-repeat center 14px;border-top:none;font-size: 16px}
-#content .comparar table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px}
+#content .comparar table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px;position:relative;margin-bottom:-11px;}
 #content .comparar table th.checkbox.compara_table{border:none;background: #00AFF0;}
 #content .comparar table th.calificacion{width:86px;font-size:12px;}
 #content .comparar table th.rank{width:90px;}
@@ -1079,7 +1079,7 @@ line-height: 45px;}
 #header .menu .submenu a:hover{background-color:#00ADF3;}
 #header .menu .submenu .social a:hover{background-color:transparent;}
 /*home*/
-#content .home .video{height:361px;margin-bottom:16px;display:none;}
+#content .home .video{height:335px;margin-bottom:16px;}/*display:none;*/
 #content .home .gray-box.twitter .icon{width:102px;height:51px;float:left;background:url(../img/home/twitter_logo.png) no-repeat #31a4e3 center;margin-right:24px;}
 #content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
@@ -1361,7 +1361,9 @@ line-height: 45px;}
 #content .califica_select.container{margin:9px auto;}
 #content .califica_select .circle{display:block;border-radius:50%;background-color:#E7A455;width:81px;height:81px;margin:0 auto; border:2px solid white;}
 #content .califica_select .circle img{display:block;margin:0 auto;padding:19px 0;}
-#content .califica_select h1{text-align:center;background-color:#AFB1B0;margin-top:10px;border:2px solid white;font-size:26px;line-height:29px;padding:16px 0 14px;color:#515152;vertical-align:top;}
+#content .califica_select h1{text-align:left;background-color:#AFB1B0;margin-top:10px;border:2px solid white;font-size:26px;line-height:29px;padding:16px 0 14px;color:#515152;vertical-align:top;
+background-image:url(../img/home/texture_blue.png);color:white;border:0 none;padding-left: 40px;}
+#content .califica_select h1:before{content:'';float:left;width:30px;height:40px;background: url(../img/perfil/iconos-mejora-perfil.png) 35px -108px;position: relative;top: -6px;margin-right: 10px;}
 #content .califica_select h2{font-size:25px;margin-top:7px;}
 .califica_select_search{position:relative;margin:0 auto;width:900px;}
 .califica_select_search #general-search.general-search{margin:10px auto 0;width:381px;}
@@ -1378,18 +1380,45 @@ line-height: 45px;}
 .califica_select_search .decorations.simple img:nth-child(7){top:47px;left:163px;}
 .califica_select_search #general-search p.button-frame.search-adv{margin:12px 0 0 10px;}
 .califica_select_search #general-search.general-search .button-frame{margin:20px 8px 0 0;}
-.select_search_wrap{position:relative;}
+.select_search_wrap{position:relative;overflow: hidden;}
 #content .select_search_wrap .decorations_out hr{position:absolute;height:1px;background:white;border:none;}
-#content .select_search_wrap .decorations_out hr:nth-child(1){top:53px;width:56%;left:-460px;}
-#content .select_search_wrap .decorations_out hr:nth-child(2){width:56%;top:53px;left:48%;margin-left:460px;}
+#content .select_search_wrap .decorations_out hr:nth-child(1){top:53px;width:56%;left:-460px;top:63px;}
+#content .select_search_wrap .decorations_out hr:nth-child(2){width:56%;top:53px;left:48%;margin-left:460px;top:63px;}
 #content .califica_select .resultados{margin-top:12px;}
+#content .califica_select .resultados tr{background-color: #424242;}
+#content .califica_select .resultados tr .checkbox{background:transparent!important;}
+#content .califica_select .resultados tr.on,
+#content .califica_select .resultados tr:hover{background-color: #2a2a2a;}
 #content .califica_select .resultados p{font-size:20px;margin-bottom:9px;}
 #content .califica_select .resultados .checkbox{width:38px;}
-#content .califica_select .resultados .school{width:732px;}
-#content .califica_select .resultados table td.school a{width:100%;}
-#content .califica_select .resultados .calificar{width:135px;background-color:#9c9c9c;box-shadow:0px -3px 6px #A9A8A8 inset;}
-#content .califica_select .resultados .calificar:hover{ background-color:#F6921A;box-shadow:0px -3px 6px #E17F0A inset;}
-#content .califica_select .resultados .calificar .icon{background-image:url(../img/header/califica.png);display:block;width:22px;height:26px;position:absolute;left:19px;background-size:24px;top:5px;}
+#content .califica_select .resultados .school{width:732px;padding-left:30px;width:700px;position: relative;display: block;width: 870px;}
+#content .califica_select .resultados table td.school a{width:100%;padding: 13px;}
+#content .califica_select .resultados .calificar{width:135px;background-color:#9c9c9c;box-shadow:0px -3px 6px #A9A8A8 inset;
+background: #339DD1;
+box-shadow: 3px -5px 10px #2b8fbf inset,-3px 6px 6px #48a7d6 inset,0px -15px 20px #2b8fbf inset;
+-webkit-transition: all .6s;
+-moz-transition: all .6s;
+-o-transition: all .6s;
+-ms-transition: all .6s;
+transition: all .6s;
+text-align: left;
+float: right;
+position: absolute;
+right: 5px;
+top: 5px;
+border-radius: 7px;}
+#content .califica_select .resultados table td.school .calificar a{padding:8px;}
+#content .califica_select .resultados .calificar:hover{ background-color:#F6921A;box-shadow:0px -3px 6px #E17F0A inset;
+background: #267fab;
+box-shadow: none;}
+#content .califica_select .resultados .calificar .icon{background-image:url(../img/header/califica.png);display:block;width:22px;height:26px;position:absolute;left:19px;background-size:24px;top:5px;
+background: url(../img/perfil/iconos-mejora-perfil.png) 35px -108px;
+float: left;
+position: relative;
+left: -3px;
+height: 40px;
+width: 27px;
+margin-top: -12px;}
 #content .califica_select .resultados .calificar-school{color:white;width:100%;display:block;position:relative;padding-left:13px;}
 #content .buscaOtra{width:900px;margin:0 auto;}
 
@@ -1634,7 +1663,7 @@ text-align: left;
 margin-right: 98px;}
 #header .breadcrumb.compara_breadcrumb + .std_header .titles{margin-right:161px;}
 #header .std_header{min-height:206px;}
-#header .std_header .sb-title{text-align:left;font-size:17px;margin-top:27px;line-height:normal;margin-right:22px;float:right;color:#A8A8A7;
+#header .std_header .sb-title{text-align:left;font-size:16px;margin-top:27px;line-height:normal;margin-right:22px;float:right;color:#A8A8A7;
 width: 525px;
 margin-top: 20px;
 color: #535353;}
@@ -1737,4 +1766,4 @@ height: auto;}
 #header .breadcrumb.califica_tu_escuela_breadcrumb + .std_header .sb-title{margin-top:23px;}
 #header .decorations.simple{display:none;}
 
-#content .container.califica_select table tr.on .checkbox a:before{margin:1px;}
+#content .container.califica_select table tr.on .checkbox a:before{margin:4px;}
