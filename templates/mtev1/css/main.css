@@ -32,7 +32,12 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:90px;overflow:hidden;z-index: 2;position: relative;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:57px 6px 18px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);}
+#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:57px 6px 18px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);position:relative;z-index: 1;
+-webkit-transition: color .2s;
+	-moz-transition: color .2s;
+	-o-transition: color .2s;
+	-ms-transition: color .2s;
+	transition: color .2s;}
 #header .menu a:before{content:"";position:absolute;width:1px;display:block;height:100%;background:#F2F2F2;top:0;left:0;}
 #header .menu a:first-child{border:none;}
 #header .menu a:hover{color:white;}
@@ -56,7 +61,17 @@ a{text-decoration:none;}
 #header .menu.compara a[href$='/compara/'] .decor,
 #header .menu.califica_tu_escuela a[href$='/califica/'] .decor,
 #header .menu.resultados a[href$='/peticiones'] .decor,
-#header .menu a:hover{background-color:#00ADF3;color:white;}
+#header .menu a:hover{color:white;}/*background-color:#00ADF3;*/
+#header .menu a.prncipal:after{content:'';width:100%;position:absolute;top:0;left:0;height:0;background:#00ADF3;z-index:-1;
+-webkit-transition: height .2s;
+	-moz-transition: height .2s;
+	-o-transition: height .2s;
+	-ms-transition: height .2s;
+	transition: height .2s;}
+#header .menu.compara a[href$='/compara/']:after,
+#header .menu.califica_tu_escuela a[href$='/califica/']:after,
+#header .menu.mejora a[href$='/mejora']:after,
+#header .menu a.prncipal:hover:after{height:90px;}
 #header .menu a.logo{width:auto;margin:8px 25px 0;padding:0;background-color:transparent;}
 #header .menu a.logo:before{background-color:transparent;}
 #header .menu a.logo img{width:210px;}

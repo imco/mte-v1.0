@@ -1,18 +1,18 @@
 <div class='menu <?= ($this->get('action')=='escuelas')?' resultados':($this->location=='escuelas' && $this->get('action')=='index'?'compara':$this->location)?>'><div class='container'>
 	<a href='/' class='logo'><?php $this->print_img_tag('home/logo.png'); ?></a>
-	<a href='/compara/'>1 CONOCE
+	<a class='prncipal' href='/compara/'>1 CONOCE
 		<span class='icon'></span>
 		<!--
 		<span class='circle'></span>
 		<span class='decor'>1</span>-->
 	</a>
-	<a href='/compara/escuelas/'>2 COMPARA
+	<a class='prncipal' href='/compara/escuelas/'>2 COMPARA
 		<span class='icon'></span>
 	</a>
-	<a href='/califica-tu-escuela/califica/'>3 CALIFICA
+	<a class='prncipal' href='/califica-tu-escuela/califica/'>3 CALIFICA
 		<span class='icon'></span>
 	</a>
-	<a href='/mejora'>4 MEJORA
+	<a class='prncipal' href='/mejora'>4 MEJORA
 		<span class='icon'></span>
 	</a>
 	<!--
