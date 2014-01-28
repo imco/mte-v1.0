@@ -57,7 +57,9 @@ $(document).ready(function(){
 
 	$('#content .perfil .tabs li a').click(function(e){
 		e.preventDefault();
-		var index = 2 - $(this).parent().index();
+		var target = $( $(this).attr('href') );
+		$('html, body').animate({ scrollTop: target.offset().top - 90 }, 1000);
+		/*var index = 2 - $(this).parent().index();
 		console.log(index);
 		$('#content .perfil .tabs li.on').removeClass('on');
 		$(this).parent().addClass('on');
@@ -67,7 +69,7 @@ $(document).ready(function(){
 			drawCharts();
 		else if(index==2) 
 			$('.wrap_comments').jScrollPane();
-
+		*/
 			
 	})
 	if($("#name-input") .length)
@@ -461,6 +463,14 @@ $(document).ready(function(){
 			$('#.calificacion-form.B fieldset .box-hidden').slideToggle();
 			$(this).addClass('open');
 		}
+	});
+	$(document).click(function (e){
+        e.stopPropagation();
+		$('#.calificacion-form.B fieldset textarea').removeClass('on open');
+        $('#.calificacion-form.B fieldset .box-hidden').slideUp();
+    });
+	$('#.calificacion-form.B').click(function(e){
+		e.stopPropagation();
 	});
 
 	$(window).scroll(function(){
