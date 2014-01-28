@@ -11,9 +11,9 @@ class erick_config extends default_config{
 		
 		//Database
 		$this->db_host = '***REMOVED***';
-		$this->db_name = 'enlace';//mejoratuescuela
+		$this->db_name = 'cte_optimizada';
 		$this->db_user = 'root';
-		$this->db_pass = '';
+		$this->db_pass = '***REMOVED***';
 
 		//MXNPHP
 		$this->dev_mode = true;
