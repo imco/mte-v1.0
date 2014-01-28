@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
 * Clase aviso_de_privacidad Extiende main. 
 * Controlador: host/aviso_de_privacidad/*

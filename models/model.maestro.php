@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class egreso_nomina extends table{
 	public function info(){
 		$this->table_name = 'egresos_nomina';
