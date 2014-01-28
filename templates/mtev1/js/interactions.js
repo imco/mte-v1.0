@@ -161,12 +161,17 @@ $(document).ready(function(){
 		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
 
-		var numP = [1,0,3,2,5,4],
-		calificaciones = [];
+		var numP = [1,0,3,2,5,4];//TODO this is not good , deberia leerlo directo
+		var calificaciones = [];
 		$('.calificacion').each(function(i,val){
 			calificaciones[numP[i]]=$(val).find('span.on').size();
 		});
+        var preguntas = [];
+        $('.pregunta').each(function(i){
+            preguntas[numP[i]]= parseInt($(this).val(),10);
+        });
 		$('#rank-question').val(JSON.stringify(calificaciones));
+        $('#rank-question-id').val(JSON.stringify(preguntas));
 	});
 
 	$('.menu a.logo + a + a').click(function(e){
@@ -490,7 +495,7 @@ $(document).ready(function(){
 	}
 
 
-	$('.container.programas svg path').each(function(){
+	/*$('.container.programas svg path').each(function(){
 		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
 			var stateName = $(this).attr('class');
 			var actualState = $(this);
@@ -511,7 +516,7 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});
+	});*/
 
 
 	$(window).scroll(function(){
@@ -535,7 +540,8 @@ $(document).ready(function(){
 					if(!columnright.hasClass('fixed')){
 						//semaforo.slideToggle();
 						semaforo.slideUp();
-						semOverlay.slideToggle();
+						//semOverlay.slideToggle();
+						semOverlay.slideUp();
 						listaprogramasosc.slideUp();
 						listaprogramasfed.slideUp();
 
@@ -546,7 +552,8 @@ $(document).ready(function(){
 				headtitle.removeClass('fixed');
 				if(columnright.hasClass('fixed')){
 					semaforo.slideDown();
-					semOverlay.show();
+					//semOverlay.show();
+					semOverlay.slideDown();
 					listaprogramasosc.slideDown();
 					listaprogramasfed.slideDown();
 				}
