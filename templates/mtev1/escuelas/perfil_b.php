@@ -30,6 +30,7 @@
 						</div>
 					</div>
 					<div class="cal-escuela">
+						<span class="hidden CCT"><?=$this->escuela->cct?></span>
 						<a href="/califica_tu_escuela/califica/<?=$this->escuela->cct?>" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
 					</div>
 					<div class="clear"></div>
@@ -81,7 +82,7 @@
 			<div class="box_info">
 				<p class='email'>
 					<span class='icon sprit2'></span>
-					Mail:
+					Correo electr�nico:
 					<span itemprop="email" class='title'>
 						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
 					</span>
@@ -98,7 +99,7 @@
 			<fieldset>
 				<!--<p>Deja aquí un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja aqui un comentario sobre esta escuela' name='comentario' class='required'></textarea>
+				<textarea placeholder='Deja aquí un comentario sobre esta escuela' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
@@ -156,7 +157,7 @@
 				<div class="wrap_chart border_b">
 					<div class="info_chart">
 						<span class="icon "></span>
-						<p>Resultados enlace <span>matemáticas</span></p>
+						<p>Resultados ENLACE <span>matemáticas</span></p>
 					
 					</div>
 					<div class="chart_content">
@@ -179,7 +180,7 @@
 				<div class="wrap_chart border_b">
 					<div class="info_chart">
 						<span class="icon"></span>
-						<p>Resultados enlace <span>español</span></p>
+						<p>Resultados ENLACE <span>español</span></p>
 					
 					</div>
 					<div class="chart_content">
@@ -204,14 +205,14 @@
 			</div></div>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
-				<h2>Informacion disponible corresponde al ciclo xxx</h2>
-				<p class="border_b">Total de Aulas en uso 35</p>
+				<h2>Información disponible corresponde al ciclo xxx</h2>
+				<p class="border_b">Total de aulas en uso 35</p>
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
 				<table class='info_table'>
 					<tbody>
 						<tr>
 							<th>Instalaciones</th>
-							<th>esta escuela</th>
+							<th>s�,no</th>
 						</tr>
 						<tr>
 							<td>Agua entubada</td>
@@ -250,47 +251,74 @@
 			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
-				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios</p>
-				<p class="border_b">Calificación global 8.6</p>
+				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuari:</p>
+				<?php if($this->escuela->calificaciones){
+					$cp = 0;
+					$pt = 0;
+					$otp = array(0,0,0,0,0,0);
+					foreach($this->escuela->calificaciones as $calificacion){
+						if(isset($calificacion->calificacion)){
+							$cp++;
+							$pt += $calificacion->calificacion;
+						}
+						$other = json_decode($calificacion->calificaciones);
+						for($i=0;$i<count($otp);$i++){
+							$otp[$i] += $other[$i];
+						}
 
-				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunta</p>
+					}
+				
+					$pro = $pt/$cp;
+					$cali = "Calificación global {$pro}";
+					
+					for($i=0;$i<count($otp);$i++){
+						$otp[$i] /= $cp;
+					}
+					$ci = 0;
+				}
+
+				?>
+				<p class="border_b"><?=$cali?></p>
+
+				<p class="gray_text list"><span class="icon"></span>Calificación promedio por pregunt:</p>
 
 				<table class='info_table'>
+
 					<tbody>
 						<tr>
 							<td>Asistencia de los maestros</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Preparación de los maestros</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Infraestructura de la escuela</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Relación con padres de familia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Honestidad y transparencia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Participación de padres de familia</td>
 							<td>
-								<span class="cel">8</span>
+								<span class="cel"><?=$otp[$ci++]?></span>
 							</td>
 						</tr>
 					</tbody>
@@ -300,7 +328,7 @@
 
 				<div class="wrap_comments">
 					<div class="comment">
-						<p><span class="icon"></span>Calificacion: 10 <span>| 10. Enero. 2014</span></p>
+						<p><span class="icon"></span>Calificación: 10 <span>| 10. Enero. 2014</span></p>
 						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
 					</div>
 					<?php if($this->escuela->calificaciones){ 

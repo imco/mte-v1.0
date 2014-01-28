@@ -41,6 +41,8 @@ class califica_tu_escuela extends main{
 			$this->breadcrumb = array('#'=>'Califica');
 			//$this->load_compara_cookie();
 			$cookie = explode('-',$this->cookie('escuelas_vistas'));
+			$cookie = array_merge($cookie,explode('-',$this->cookie('escuelas')));
+			$cookie = array_unique($cookie);
 			if($this->get('term')){
 				$this->instruction = 'Selecciona una escuela';
 				$params = new stdClass();
