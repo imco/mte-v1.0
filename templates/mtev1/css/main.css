@@ -22,15 +22,15 @@ a{text-decoration:none;}
 }
 .orange-effect:hover{background: #e5711c!important;box-shadow:none!important;}
 
-#header{width:100%;margin-bottom:0px;background:url(../img/header/pizarron.jpg) center 85px #E9EEF4;color:white;position:relative;overflow:hidden;min-height:296px;}/*box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;*/
-.header_shadow{position:relative;width:100%;height:40px;background:transparent url(../img/home/sombra_header.png) no-repeat center -2px;margin-bottom:-30px;}
+#header{width:100%;margin-bottom:0px;background:url(../img/header/pizarron.jpg) center 85px #E9EEF4;color:white;position:relative;min-height:296px;}/*box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;*/
+.header_shadow{position:relative;width:100%;height:40px;background:transparent url(../img/home/sombra_header.png) no-repeat center -2px;margin-bottom:-18px;}
 
 #header h1{text-align:center;font-size:41px;line-height:77px;}
 #header h2{text-align:center;font-size:13px;line-height:27px;}
 #header h3{text-align:center;font-size:14px;line-height:25px;}
 #header hr{display:block;border:none;height:2px;background:white;/*width:440px*/}
 #header a{color:white;}
-#header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:90px;overflow:hidden;z-index: 2;position: relative;}
+#header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:90px;z-index: 2;position: relative;}
 #header .menu .container{position:relative;}
 #header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:57px 6px 18px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);position:relative;z-index: 1;
 -webkit-transition: color .2s;
@@ -48,7 +48,7 @@ a{text-decoration:none;}
 #header .menu a[href$='/compara/']{width:114px;}
 #header .menu a[href$='/compara/escuelas/']{width:115px;}
 #header .menu a[href$='/califica/']{width:116px;}
-#header .menu a[href$='/mejora']{width:114px;padding-left:6px;padding-top:59px;}
+#header .menu a[href$='/mejora']{width:114px;padding-left:6px;padding-top:57px;}
 #header .menu a[href$='/compara/'] .icon{background:url(../img/header/conoce.png) no-repeat center;width:40px;height:43px;top:10px;left:43px;}
 #header .menu a[href$='/compara/escuelas/'] .icon{background:url(../img/header/compara.png) no-repeat center;width:90px;height:29px;top:17px;left:21px;}
 #header .menu a[href$='/califica/'] .icon{background:url(../img/header/califica.png) no-repeat center;width:34px;height:41px;top:12px;left:46px;}
@@ -69,8 +69,10 @@ a{text-decoration:none;}
 	-ms-transition: height .2s;
 	transition: height .2s;}
 #header .menu.compara a[href$='/compara/']:after,
+#header .menu.resultados a[href$='/compara/escuelas/']:after,
 #header .menu.califica_tu_escuela a[href$='/califica/']:after,
 #header .menu.mejora a[href$='/mejora']:after,
+#header .menu.resultados a.logo + a + a:after,
 #header .menu a.prncipal:hover:after{height:90px;}
 #header .menu a.logo{width:auto;margin:8px 25px 0;padding:0;background-color:transparent;}
 #header .menu a.logo:before{background-color:transparent;}
@@ -101,6 +103,7 @@ a{text-decoration:none;}
 #header .home.container .titles h1,
 #header .titles h2{font-size:18px;line-height:21px;margin-top:1px;}
 #header .home.container .decorations .triangle2{display:none;}
+
 #header .button-frame{display:block;background-color:rgba(255,255,255,0.3);color:white;border:1px solid white;font-size:15px;margin:0 auto;width:239px;border-radius:7px;position:relative;}
 #header .button{background:#0BA14A;margin:8px 9px;border-radius:7px;display:block;padding:0 30px;box-shadow:inset -1px -1px 2px #555,inset 1px 1px 2px #aaa;position: relative;font-size:17px;line-height:41px;text-align:center;}
 #header .button:before{content:'';display:block;background-color:#24AB5F;height:1px;box-shadow:0 1px 2px #0BA14A;width:18px;top:20px;left:8px;position:absolute;}
@@ -108,6 +111,11 @@ a{text-decoration:none;}
 #general-search.general-search{text-align:center;font-size:12px;margin:23px auto 20px;}
 #general-search.general-search input[type='text']{font-size:14px;font-family:Varela Round;background-color:rgba(255,255,255,.68);border-radius:3px;padding:9px 11px;line-height:29px;border:none;margin:9px auto;width:227px;color:#858482;height:29px;}
 #general-search.general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:38px;height:40px;position:absolute;right:22px;top:13px;display:block;}
+#general-search.general-search ::-webkit-input-placeholder{color:#686868;}
+#general-search.general-search :-ms-input-placeholder{color:#686868;}
+#general-search.general-search input[placeholder]{color:#686868;}
+#general-search.general-search :-moz-placeholder{color:#686868;}
+#general-search.general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:38px;height:40px;position:absolute;right:13px;top:13px;display:block;}
 #general-search.general-search .button-frame{float:left;margin:-3px 8px 0 369px;width:280px;height:64px;float:right;margin-left:0;}
 #general-search.general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;background-repeat:no-repeat;}
@@ -450,9 +458,9 @@ line-height: 45px;}
 
 
 /*Comparador*/
-#content .comparar{margin:11px auto;width:904px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar{margin:11px auto;width:920px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
-#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:224px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
+#content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:228px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}
 #content .comparar .compara-tabs a.on{background:transparent url(../img/home/texture_green.png);color:white;}
 #content .comparar .compara-tabs a span{display:block;}
@@ -794,7 +802,7 @@ line-height: 45px;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
 /*Breadcrumb*/
-#header .breadcrumb{position:absolute;top:313px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;display:none;}
+#header .breadcrumb{position:absolute;top:300px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;}
 #header .breadcrumb.blog_breadcrumb{top:275px;}
 #header .breadcrumb ul{position:relative;width:100%;}
 #header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
@@ -808,12 +816,12 @@ line-height: 45px;}
 #header .breadcrumb ul li:first-child{background:none;text-align:left;}
 #header .breadcrumb ul li:nth-child(2) a{margin:0 0 0 2px;}
 
-#header .breadcrumb.escuelas_breadcrumb{top:140px;}
+#header .breadcrumb.escuelas_breadcrumb{}
 #header .breadcrumb.preguntas_frecuentes_breadcrumb,
 #header .breadcrumb.metodologia_breadcrumb,
 #header .breadcrumb.aviso_de_privacidad_breadcrumb,
-#header .breadcrumb.contacto_breadcrumb{top:138px;}
-#header .breadcrumb.compara_breadcrumb{top:297px;}
+#header .breadcrumb.contacto_breadcrumb{}
+#header .menu.compara + .breadcrumb.compara_breadcrumb{top:491px;}
 
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
@@ -1339,7 +1347,9 @@ line-height: 45px;}
 */
 #content .califica .calificacion-form.B input[type='submit']{margin:7px auto;}
 #content .califica .calificacion-form.B .button-frame{width:403px;margin:12px auto;}
-#content .califica .calificacion-form.B{height:465px;}
+#content .califica .calificacion-form.B{}
+#content .califica .calificacion-form.B .other_info{height:0;overflow:hidden;}
+
 
 /*ordena comentarios*/
 #content .sort{display:inline-block;width:310px;text-align:center;color:black;border-radius:6px;margin:0 0 5px 0;background-color:rgba(255,255,255,.3);}
@@ -1354,16 +1364,20 @@ line-height: 45px;}
 #content .califica_select h1{text-align:center;background-color:#AFB1B0;margin-top:10px;border:2px solid white;font-size:26px;line-height:29px;padding:16px 0 14px;color:#515152;vertical-align:top;}
 #content .califica_select h2{font-size:25px;margin-top:7px;}
 .califica_select_search{position:relative;margin:0 auto;width:900px;}
-.califica_select_search #general-search.general-search{margin:10px auto 0;}
-.califica_select_search #general-search.general-search .button-frame{margin:18px 28px 0 252px;}
+.califica_select_search #general-search.general-search{margin:10px auto 0;width:381px;}
+.califica_select_search #general-search.general-search .button-frame{/*margin:18px 28px 0 252px;*/position:relative;}
+.califica_select_search #general-search.general-search .button-frame a{color:white;}
+.califica_select_search .decorations.simple{display:block;}
 .califica_select_search .decorations.simple hr:nth-child(1){width:160px;top:53px;}
 .califica_select_search .decorations.simple hr:nth-child(2){width:72px;left:182px;top:53px;}
-.califica_select_search .decorations.simple hr:nth-child(3){width:33px;left:521px;top:53px;}
+.califica_select_search .decorations.simple hr:nth-child(3){width:20px;left:542px;top:53px;}
 .califica_select_search .decorations.simple hr:nth-child(4){width:92px;left:652px;top:53px;}
 .califica_select_search .decorations.simple hr:nth-child(5){right:0;width:136px;top:53px;}
 .califica_select_search .decorations.simple img{position:absolute;}
 .califica_select_search .decorations.simple img:nth-child(6){top:49px;right:141px;}
 .califica_select_search .decorations.simple img:nth-child(7){top:47px;left:163px;}
+.califica_select_search #general-search p.button-frame.search-adv{margin:12px 0 0 10px;}
+.califica_select_search #general-search.general-search .button-frame{margin:20px 8px 0 0;}
 .select_search_wrap{position:relative;}
 #content .select_search_wrap .decorations_out hr{position:absolute;height:1px;background:white;border:none;}
 #content .select_search_wrap .decorations_out hr:nth-child(1){top:53px;width:56%;left:-460px;}
@@ -1502,6 +1516,7 @@ line-height: 45px;}
 /*comparador select*/
 .comparador_select .open_wrap{display:none;}
 /*.comparador_select.on .open_wrap{display:block;}*/
+.comparador_select.on:before{content: "";width: 0;height: 0;display: block;border-style: solid;border-width: 12px 12px 0 12px;border-color: #00ADF3 transparent transparent transparent;top:-2px;position: absolute;left: 43%;}
 .comparador_select{position:fixed;bottom:0;right:0;z-index:5;background-color:#444;width:171px;border-top:5px solid #00ADF3;border-bottom:5px solid #00ADF3;}
 .comparador_select:not(.on){cursor:pointer;}
 .comparador_select:not(.on):before{content:"";width:0;height:0;display:block;border-style:solid;border-width: 0 12px 12px 12px;border-color: transparent transparent #00ADF3 transparent;;top:-17px;position:absolute;left:43%;}
@@ -1575,11 +1590,18 @@ padding: 0;
 box-sizing: border-box;
 padding-top: 25px;}
 #general-search p.button-frame.search-adv a:after{content:'+';position:absolute;font-weight:bold;font-size:25px;top: 9px;left: 26px;}
-#header .std_header .titles{color:white;font-size:41px;text-align:right;margin:14px 187px;float:right;}
+#header .std_header .titles{color:white;font-size:41px;text-align:right;margin:14px 187px;float:right;position: relative;
+margin: 14px;
+text-align: left;
+margin-right: 98px;}
+#header .breadcrumb.compara_breadcrumb + .std_header .titles{margin-right:161px;}
 #header .std_header{min-height:206px;}
-#header .std_header .sb-title{text-align:left;font-size:17px;margin-top:27px;line-height:normal;margin-right:22px;float:right;color:#A8A8A7;}
+#header .std_header .sb-title{text-align:left;font-size:17px;margin-top:27px;line-height:normal;margin-right:22px;float:right;color:#A8A8A7;
+width: 525px;
+margin-top: 20px;
+color: #535353;}
 
-#header .compara_search{background-color:#00A551;margin-top:-23px;}
+#header .compara_search{background-color:#007642;margin-top:-23px;}
 #header .compara_search #general-search .busqueda-avanzada{width:783px;}
 #header .compara_search .titles{margin:35px auto -5px;width:528px;}
 #header .compara_search .titles h1{text-align:center;font-size:52px;line-height:normal;text-indent:17px;}
@@ -1670,3 +1692,11 @@ height: auto;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p .icon{width:25px;height:30px;display:inline-block;vertical-align:top;background:transparent url(../img/perfil/blue/calif.png) no-repeat center center;margin-right:8px;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p span:last-child{margin-left:3px;font-size:18px;color:#A1A1A1;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p + p{margin:3px 0;font-size:14px;line-height:normal}
+
+#content .container.comparar.resultados + .add-escuela-wrap{height:82px;overflow:hidden;}
+#content .container.comparar.resultados + .add-escuela-wrap.on{height:auto}
+
+#header .breadcrumb.califica_tu_escuela_breadcrumb + .std_header .sb-title{margin-top:23px;}
+#header .decorations.simple{display:none;}
+
+#content .container.califica_select table tr.on .checkbox a:before{margin:1px;}
