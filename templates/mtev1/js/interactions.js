@@ -481,6 +481,7 @@ $(document).ready(function(){
 	$('.overlay-map').outerHeight($('.container.programas svg').height());
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
 	$('.overlay-map').css('top',$('.container.programas svg').offset().top);
+	}
 
 
 	$('.container.programas svg path').each(function(){
