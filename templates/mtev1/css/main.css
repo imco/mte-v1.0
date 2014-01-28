@@ -874,7 +874,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .perfil.B .info_B .email .icon{background:url(../img/perfil/blue/mail.png) center 0 no-repeat}
 #content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
 #content .perfil.B .info_B .column.right{width:35%;}
-#content .perfil.B #mapa{margin:7px 0 0;width:100%;height:285px;}
+#content .perfil.B #mapa{margin:7px 0 0;width:376px;height:285px;}
 #content .perfil.B .tabs{margin:0;}
 #content .perfil.B .tab-container{margin:0;width:645px;}
 #content .perfil.B .tab{width:645px;}
