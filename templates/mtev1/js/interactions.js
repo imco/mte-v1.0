@@ -490,7 +490,7 @@ $(document).ready(function(){
 	}
 
 
-	$('.container.programas svg path').each(function(){
+	/*$('.container.programas svg path').each(function(){
 		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
 			var stateName = $(this).attr('class');
 			var actualState = $(this);
@@ -511,7 +511,7 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});
+	});*/
 
 
 	$(window).scroll(function(){
