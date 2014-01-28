@@ -25,7 +25,8 @@
 							<?php $this->print_img_tag('perfil/blue/posicion.png');?>
 							<p>Posición estatal</p>
 							<h2>
-								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
+								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> <span>de</span> <?=number_format($this->entidad_cct_count,0)?>
+								<!--46 <span>de</span> 345-->
 							</h2>
 						</div>
 					</div>
@@ -61,7 +62,7 @@
 			<div class="box_info">
 				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<span class='icon sprit2'></span>
-					DirecciÃ³n:
+					Dirección:
 					<span class='title'>
 						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
 						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
@@ -252,10 +253,11 @@
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios:</p>
-				<?php if($this->escuela->calificaciones){
-					$cp = 0;
-					$pt = 0;
-					$otp = array(0,0,0,0,0,0);
+				<?php 
+				$cp = 0;
+				$pt = 0;
+				$otp = array(0,0,0,0,0,0);
+				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
 						if(isset($calificacion->calificacion)){
 							$cp++;
@@ -275,6 +277,8 @@
 						$otp[$i] /= $cp;
 					}
 					$ci = 0;
+				}else{
+					$cali = "Calificación global n/a";
 				}
 
 				?>
@@ -539,7 +543,7 @@ EOD;
 				</div>
 				<?php
 					if($this->escuela->semaforo >= 4){
-						$semaforos = array('Escuela que no tomÃ³ prueba ENLACE','Escuela no Confiable','Esta escuela no tomÃ³ la prueba ENLACE para todos los aÃ±os','La prueba ENLACE no esta disponible para este nivel escolar');
+						$semaforos = array('Escuela que no tomá prueba ENLACE','Escuela no Confiable','Esta escuela no tomá la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
 						echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
 						<p>".
 						$semaforos[$this->escuela->semaforo-4]."</p></div>";

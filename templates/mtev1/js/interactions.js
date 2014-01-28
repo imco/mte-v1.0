@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		if($('.container').hasClass('califica_select'))
-			$(this).parent().parent().toggleClass('on');
+			$(this).parent().parent().parent().toggleClass('on');
 		else
 			$(this).parent().parent().parent().toggleClass('on');
 		//var tr = $(this).parent().parent().parent().toggleClass('on');
@@ -494,12 +494,12 @@ $(document).ready(function(){
 		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
 			var stateName = $(this).attr('class');
 			var actualState = $(this);
-			$('.overlay-map').append("<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' />");
+			$('.overlay-map').append("<div class='statemarker "+stateName+"'><img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' /></div>");
 			console.log("encontro");
 
 			console.log("indice:"+stateName);
 			console.log("estado:"+actualState.attr('class'));
-			$('.container.programas .overlay-map img').each(function(){
+			$('.container.programas .overlay-map .statemarker').each(function(){
 				if($(this).hasClass(stateName)){
 					actualState.css('fill',"#3E9B65");
 					var posY = actualState.offset().top;
