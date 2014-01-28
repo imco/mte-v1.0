@@ -482,21 +482,28 @@ $(document).ready(function(){
 	if( $('.container.programas svg').length ){
 	$('.overlay-map').outerHeight($('.container.programas svg').height());
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
-	$('.overlay-map').css('top',$('.container.programas svg').offset().top+35);
+	$('.overlay-map').css('top',$('.container.programas svg').offset().top);
 	}
 
+
 	$('.container.programas svg path').each(function(){
-		if($(this).text()=="4" || $(this).text()=="6"){
-			$('.overlay-map').append("<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+$(this).attr('class')+"' />");
-			console.log("encontro");
-			var stateIndex = $(this).attr();
+		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
+			var stateName = $(this).attr('class');
 			var actualState = $(this);
-			console.log("indice:"+stateIndex);
-			console.log("estado:"+actualState);
-			$('.container.programas svg path .overlay-map img').each(function(){
-				if($(this).hasClass(stateIndex))
-				{
-					actualState.css('fill',"#000");
+			$('.overlay-map').append("<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' />");
+			console.log("encontro");
+
+			console.log("indice:"+stateName);
+			console.log("estado:"+actualState.attr('class'));
+			$('.container.programas .overlay-map img').each(function(){
+				if($(this).hasClass(stateName)){
+					actualState.css('fill',"#3E9B65");
+					var posY = actualState.offset().top;
+					var posX = actualState.offset().left;
+					var centroX = posX - (actualState.width()/2);
+					var centroY = posY - (actualState.height()/2);
+
+					$(this).offset({ top: centroY-40, left: centroX + 20 });	
 				}
 			});
 		}
