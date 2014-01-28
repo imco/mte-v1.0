@@ -22,7 +22,7 @@ a{text-decoration:none;}
 }
 .orange-effect:hover{background: #e5711c!important;box-shadow:none!important;}
 
-#header{width:100%;margin-bottom:0px;background:url(../img/header/pizarron.jpg) center 85px #E9EEF4;color:white;position:relative;min-height:296px;}/*box-shadow:0 -10px 20px rgba(0,0,0,0.45) inset;*/
+#header{width:100%;margin-bottom:0px;background:url(../img/header/pizarron.jpg) center bottom #E9EEF4;color:white;position:relative;min-height:285px;}
 .header_shadow{position:relative;width:100%;height:40px;background:transparent url(../img/home/sombra_header.png) no-repeat center -2px;margin-bottom:-18px;}
 
 #header h1{text-align:center;font-size:41px;line-height:77px;}
@@ -32,7 +32,7 @@ a{text-decoration:none;}
 #header a{color:white;}
 #header .menu{background-color:white;box-shadow:0 0 10px rgba(0,0,0,.6);height:90px;z-index: 2;position: relative;}
 #header .menu .container{position:relative;}
-#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;/*text-shadow:1px 1px 2px #999*/font-weight:bold;font-size:16px;padding:57px 6px 18px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);position:relative;z-index: 1;
+#header .menu a{display:block;float:left;text-align:center;color:#17B9F3;font-size:16px;padding:57px 6px 18px;background-position:center 14px;background-repeat:no-repeat;height:15px;width:94px;line-height:17px;font-size:17px;background-color:rgba(255,255,255,.5);position:relative;z-index: 1;
 -webkit-transition: color .2s;
 	-moz-transition: color .2s;
 	-o-transition: color .2s;
@@ -53,7 +53,7 @@ a{text-decoration:none;}
 #header .menu a[href$='/compara/escuelas/'] .icon{background:url(../img/header/compara.png) no-repeat center;width:90px;height:29px;top:17px;left:21px;}
 #header .menu a[href$='/califica/'] .icon{background:url(../img/header/califica.png) no-repeat center;width:34px;height:41px;top:12px;left:46px;}
 #header .menu a[href$='/mejora'] .icon{background:url(../img/header/mejora.png) no-repeat center;width:40px;height:40px;top:11px;left:42px;}
-#header .menu a + a + a{margin-left:2px;}
+#header .menu a + a + a{margin-left:1px;}
 #header .menu.compara a[href$='/compara/'],
 #header .menu.califica_tu_escuela a[href$='/califica/'],
 #header .menu.mejora a[href$='/mejora'],
@@ -74,11 +74,10 @@ a{text-decoration:none;}
 #header .menu.mejora a[href$='/mejora']:after,
 #header .menu.resultados a.logo + a + a:after,
 #header .menu a.prncipal:hover:after{height:90px;}
-#header .menu a.logo{width:auto;margin:8px 25px 0;padding:0;background-color:transparent;}
+#header .menu a.logo{width:auto;margin:6px 18px 0 14px;padding:0;background-color:transparent;}
 #header .menu a.logo:before{background-color:transparent;}
-#header .menu a.logo img{width:210px;}
 #header .menu a.logo:hover{background-color:transparent;}
-#header .menu a[href$='/compara/']{margin-left:-5px;}
+#header .menu a[href$='/compara/']{margin-left:-4px;}
 /*sin form en menu
 #header .menu form{display:block;margin-top:22px;}
 #header .menu form input[type='text']{width:86px;float:left;color:gray;font-size:16px;text-indent:0;padding:11px 11px 0}
@@ -120,11 +119,11 @@ a{text-decoration:none;}
 #general-search.general-search .adv-search{font-size:10px;display:block;float:left;width:98px;height:98px;border-radius:50%;border:1px solid white;background-color:rgba(255,255,255,.3);margin:3px 0 14px;}
 #general-search.general-search .adv-search a{width:87px;height:40px;margin:5px;display:block;background-color:#00AFF0;box-shadow:inset -1px -1px 2px #333,inset 1px 1px 2px white;border-radius:50%;line-height:12px;padding-top:47px;font-size:12px;color:white;position:relative;background-repeat:no-repeat;}
 #general-search.general-search .adv-search a .icon{background-position:-273px 0;width:33px;height:33px;top:10px;left:27px;}
-#header .container{position:relative;z-index:0;width:916px;}
+#header .container{position:relative;z-index:0;width:924px;}
 
 
 #content{color:#474747;padding:0 0 8px;min-height:79px;}
-#content .container{width:900px;margin:25px auto;}
+#content .container{width:897px;margin:25px auto;}
 #content a{color:#EC018E;}
 #content p{line-height:16px;}
 #content h1{color:white;font-size:22px}
@@ -802,11 +801,11 @@ line-height: 45px;}
 #content .perfil .presupuestos .column.right .salarios p span a{margin-left:14px;color:#46a2d1;padding-left:9px;font-size:9px;}
 
 /*Breadcrumb*/
-#header .breadcrumb{position:absolute;top:300px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;}
+#header .breadcrumb{position:absolute;top:297px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;}
 #header .breadcrumb.blog_breadcrumb{top:275px;}
 #header .breadcrumb ul{position:relative;width:100%;}
 #header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
-#header .breadcrumb ul li a{color:white;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}
+#header .breadcrumb ul li a{color:#01723E;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}
 #header .breadcrumb ul li a.current{color:black;}
 #header .breadcrumb ul li a:before{content:"";background-image:url(../img/breadcrumb/bread_izq.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;left:-10px;background-size:10px;}
 #header .breadcrumb ul li a:after{content:"";background-image:url(../img/breadcrumb/bread_derecha.png);background-repeat:no-repeat;width:25px;height:25px;display:block;position:absolute;top:0px;right:-25px;background-size:12px;}
@@ -877,12 +876,12 @@ line-height: 45px;}
 #content .share-bt.escuelas_index{margin:-16px 0;}
 
 /*Perfil B*/
-#content .perfil.B{margin:17px auto 20px;padding:0;background-color:transparent;}
+#content .perfil.B{margin:23px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .box-head.fixed{position: fixed;top: 0;width: 900px;z-index: 99}
-#content .perfil.B .head h1.main-name{float: left;line-height:2.1;padding-left:14px;width: 70%}
+#content .perfil.B .head h1.main-name{float:left;padding-left:6px;width:680px;line-height:30px;padding:16px 6px;}
 
-#content .perfil.B .head .button-frame{float: right;margin: 10px 17px 5px;width: 150px;}
-#content .perfil.B .head .compara-button{font-size:16px;width:137px;height:26px;line-height:1.7;margin-top: 5px;display: block;margin: 6px;}
+#content .perfil.B .head .button-frame{float: right;margin:9px 18px 5px;width: 156px;}
+#content .perfil.B .head .compara-button{font-size:19px;width:145px;height:31px;line-height:1.7;margin-top: 5px;display: block;margin: 6px;}
 
 #content .perfil.B .info_B.top{height: auto!important;padding: 0!important}
 #content .perfil.B .info_B.top .data{height: 100%;}
@@ -1565,7 +1564,7 @@ line-height: 45px;}
 #header .menu a[href$='/califica/']:hover .icon{background:url(../img/header/califica_2.png) no-repeat center;}
 #header .menu.mejora a[href$='/mejora'] .icon,
 #header .menu a[href$='/mejora']:hover .icon{background:url(../img/header/mejora_2.png) no-repeat center;}
-#header .ninio{position:absolute;top:-5px;left:13px;}
+#header .ninio{position:absolute;top:-16px;left:10px;}
 #header .container{overflow:hidden;}
 #general-search p.button-frame.search-adv{margin:-4px 0;width:250px;
 margin:-11px 0 0 10px;
@@ -1590,16 +1589,10 @@ padding: 0;
 box-sizing: border-box;
 padding-top: 25px;}
 #general-search p.button-frame.search-adv a:after{content:'+';position:absolute;font-weight:bold;font-size:25px;top: 9px;left: 26px;}
-#header .std_header .titles{color:white;font-size:41px;text-align:right;margin:14px 187px;float:right;position: relative;
-margin: 14px;
-text-align: left;
-margin-right: 98px;}
+#header .std_header .titles{color:white;font-size:41px;text-align:right;margin:15px 106px 0 0;float:right;position: relative;text-align: left;}
 #header .breadcrumb.compara_breadcrumb + .std_header .titles{margin-right:161px;}
-#header .std_header{min-height:206px;}
-#header .std_header .sb-title{text-align:left;font-size:17px;margin-top:27px;line-height:normal;margin-right:22px;float:right;color:#A8A8A7;
-width: 525px;
-margin-top: 20px;
-color: #535353;}
+#header .std_header{min-height:195px;}
+#header .std_header .sb-title{text-align:left;font-size:17px;margin:39px 0 0 0;line-height:20px;float:right;width:554px;color: #535353;}
 
 #header .compara_search{background-color:#007642;margin-top:-23px;}
 #header .compara_search #general-search .busqueda-avanzada{width:783px;}
