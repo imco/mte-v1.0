@@ -11,6 +11,7 @@ class programas extends main{
 	*/
 	public function index(){
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
+		$this->programa_info();
 		$this->title_header = 'Programas';
 		$this->header_folder = 'compara';
 		$this->breadcrumb = array('#'=>'Programas');
@@ -19,6 +20,11 @@ class programas extends main{
 			promover la participación ciudadana para transformar <br />
 			la educación en México.';
 		$this->include_theme('index','index');
+	}
+
+	public function programa_info(){
+		$this->programa = new programa($this->get('id'));
+		$this->programa->read("id,nombre,tema,descripcion,zonas,requisitos,direccion,telefono,mail,telefono_contacto,sitio_web");
 	}
 }
 
