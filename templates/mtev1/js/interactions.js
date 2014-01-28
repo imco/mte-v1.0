@@ -161,12 +161,17 @@ $(document).ready(function(){
 		$('.promedio span').html(promedio);
 		$('#rank-value').val(promedio);
 
-		var numP = [1,0,3,2,5,4],
-		calificaciones = [];
+		var numP = [1,0,3,2,5,4];//TODO this is not good , deberia leerlo directo
+		var calificaciones = [];
 		$('.calificacion').each(function(i,val){
 			calificaciones[numP[i]]=$(val).find('span.on').size();
 		});
+        var preguntas = [];
+        $('.pregunta').each(function(i){
+            preguntas[numP[i]]= parseInt($(this).val(),10);
+        });
 		$('#rank-question').val(JSON.stringify(calificaciones));
+        $('#rank-question-id').val(JSON.stringify(preguntas));
 	});
 
 	$('.menu a.logo + a + a').click(function(e){
