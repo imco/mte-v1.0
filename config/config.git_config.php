@@ -34,7 +34,7 @@ class git_config extends default_config{
 		*/
 		//MXNPHP
 		$this->dev_mode = true;
-		error_reporting(-1);
+		error_reporting(0);
 		
 	}
 }

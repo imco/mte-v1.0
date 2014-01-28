@@ -15,4 +15,13 @@
 	-->
 	<div class='clear'></div>
  </form>
-
+<div class="decorations simple">
+	<hr>
+	<hr>
+	<hr>
+	<hr>
+	<hr>	
+	<?php $this->print_img_tag('/home/palomita.png');
+	$this->print_img_tag('/home/birrete_small.png');
+	?>
+</div>
