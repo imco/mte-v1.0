@@ -124,7 +124,23 @@
 
 		</script>
 
-		<div class="overlay-map"></div>
+		<div class="overlay-map">
+		<?php
+		//var_dump($this->entidades);
+		foreach ($this->entidades as $key => $estado) : 
+			if($estado->id == 2 || $estado->id== 32):?>
+			<div class='statemarker e<?=$estado->id?>'>
+				<div class="info">
+					<h4><?=$estado->nombre?></h4>
+					<p>Participa en (10) Escuelas <br><a href="#">Ver lista de escuelas</a></p>
+				</div>
+				<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'/>
+			</div>
+		<?php
+			endif;
+		endforeach;
+		?>
+		</div>
 
 	</div>
 	<div class="column right">

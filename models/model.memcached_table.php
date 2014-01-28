@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class memcached_table extends table{
 	function read($fields){
 		//$time_start = microtime(true);

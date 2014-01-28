@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class mxnphp_gallery extends component{
 	public function init($params){
 		if($params){

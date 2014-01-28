@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 * Clase comments Extiende main
 * Controlador: host/comments

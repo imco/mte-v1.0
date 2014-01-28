@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class twitter_component extends component{
 
 	public function init($params){

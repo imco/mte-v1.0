@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		if($('.container').hasClass('califica_select'))
-			$(this).parent().parent().toggleClass('on');
+			$(this).parent().parent().parent().toggleClass('on');
 		else
 			$(this).parent().parent().parent().toggleClass('on');
 		//var tr = $(this).parent().parent().parent().toggleClass('on');
@@ -495,16 +495,16 @@ $(document).ready(function(){
 	}
 
 
-	$('.container.programas svg path').each(function(){
+	/*$('.container.programas svg path').each(function(){
 		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
 			var stateName = $(this).attr('class');
 			var actualState = $(this);
-			$('.overlay-map').append("<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' />");
+			$('.overlay-map').append("<div class='statemarker "+stateName+"'><img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' /></div>");
 			console.log("encontro");
 
 			console.log("indice:"+stateName);
 			console.log("estado:"+actualState.attr('class'));
-			$('.container.programas .overlay-map img').each(function(){
+			$('.container.programas .overlay-map .statemarker').each(function(){
 				if($(this).hasClass(stateName)){
 					actualState.css('fill',"#3E9B65");
 					var posY = actualState.offset().top;
@@ -516,7 +516,7 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});
+	});*/
 
 
 	$(window).scroll(function(){
@@ -540,7 +540,8 @@ $(document).ready(function(){
 					if(!columnright.hasClass('fixed')){
 						//semaforo.slideToggle();
 						semaforo.slideUp();
-						semOverlay.slideToggle();
+						//semOverlay.slideToggle();
+						semOverlay.slideUp();
 						listaprogramasosc.slideUp();
 						listaprogramasfed.slideUp();
 
@@ -551,7 +552,8 @@ $(document).ready(function(){
 				headtitle.removeClass('fixed');
 				if(columnright.hasClass('fixed')){
 					semaforo.slideDown();
-					semOverlay.show();
+					//semOverlay.show();
+					semOverlay.slideDown();
 					listaprogramasosc.slideDown();
 					listaprogramasfed.slideDown();
 				}

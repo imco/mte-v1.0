@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 * Clase califica Extiende main.
 * Controlador: host/califica
