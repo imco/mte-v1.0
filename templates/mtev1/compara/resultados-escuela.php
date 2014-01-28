@@ -4,7 +4,7 @@
 	<hr/>
 	<table>
 		<tr>
-			<th class='checkbox'></th>
+			<!--<th class='checkbox'></th>-->
 			<th class='school'>Escuelas</th>
 			<th class='matematicas'>Calificación ENLACE de matemáticas</th>
 			<th class='espanol'>Calificación ENLACE de español</th>
@@ -23,10 +23,12 @@
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
+			//<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 			echo "
 			<tr $on>
-				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
-				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
+				<td class='school'>
+				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
+				<a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)." | ".$this->capitalize($escuela->turno->nombre)."</span>".
 				"</a></td>

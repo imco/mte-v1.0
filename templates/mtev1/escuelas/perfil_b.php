@@ -130,7 +130,7 @@
 					Comentarios 
 					y reportes
 				</a></li>
-				<li><a href='#tab-calificacion' class='result'>
+				<li><a href='#tab-infraescructura' class='result'>
 					<span class='triangle'></span>
 					Infraestructura escolar
 				</a></li>
@@ -553,9 +553,9 @@ EOD;
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
 					<ul>
-						<li><a href="#">Programa escuelas de calidad</a></li>
-						<li><a href="#">Programa escuela segura</a></li>
-						<li><a href="#">Programa escuelas tiempo completo</a></li>
+						<li class='on'><a href="#">Programa escuelas de calidad 2008, 2009, 2010</a></li>
+						<li><a href="#">Programa escuela segura 2008, 2009</a></li>
+						<li><a href="#">Programa escuelas tiempo completo 2007</a></li>
 					</ul>			
 				</div>
 
