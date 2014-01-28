@@ -883,7 +883,7 @@ line-height: 45px;}
 #content .perfil.B .info_B .email .icon{background:url(../img/perfil/blue/mail.png) center 0 no-repeat}
 #content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
 #content .perfil.B .info_B .column.right{width:35%;}
-#content .perfil.B #mapa{margin:7px 0 0;width:100%;height:285px;}
+#content .perfil.B #mapa{margin:7px 0 0;width:376px;height:285px;}
 #content .perfil.B .tabs{margin:0;}
 #content .perfil.B .tab-container{margin:0;width:645px;}
 #content .perfil.B .tab{width:645px;}
@@ -1382,6 +1382,8 @@ line-height: 45px;}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
 #content .container.programas .column.left svg path:hover{fill:#359044;}
+#content .container.programas .column.left .overlay-map{position: absolute;}
+#content .container.programas .column.left .overlay-map img{position: absolute;}
 
 /*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}

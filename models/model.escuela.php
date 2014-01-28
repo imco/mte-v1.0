@@ -130,7 +130,7 @@ class escuela extends memcached_table{
 	public function get_mongo_info(){
 		//$this->nonfunc();
 		try{
-			$m = new MongoClient("mongodb://***REMOVED***:27017/mte_produccion");
+			$m = new MongoClient("mongodb://***REMOVED***:***REMOVED***@***REMOVED***:27017/mte_produccion");
 			$db = $m->selectDB("mte_produccion");
 			$collections = $db->getCollectionNames();
 			$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
@@ -142,6 +142,7 @@ class escuela extends memcached_table{
 			$c = $db->selectCollection('censo_2013');
 			$this->censo = $c->find(array('cct'=>$this->cct.'1'));
 		}catch(Exception $e){
+			var_dump($e->getMessage());
 			$this->pec = false;
 			$this->ja = false;
 			$this->siat = false;
