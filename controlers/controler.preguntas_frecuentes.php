@@ -10,7 +10,7 @@ class preguntas_frecuentes extends main{
 	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
-		$this->header_folder ='escuelas';
+		$this->header_folder ='home';
 		$this->breadcrumb = array('#'=>'Preguntas Frecuentes');
 		$this->include_theme('index','index');		
 	}
