@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
 * Clase ayuda Extiende main.
 * Controlador: host/ayuda

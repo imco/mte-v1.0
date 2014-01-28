@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
 * Clase mapa extiende main.
