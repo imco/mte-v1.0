@@ -109,7 +109,7 @@ a{text-decoration:none;}
 #header .button:before{content:'';display:block;background-color:#24AB5F;height:1px;box-shadow:0 1px 2px #0BA14A;width:18px;top:20px;left:8px;position:absolute;}
 #header .button:after{content:'';display:block;background-color:#24AB5F;height:1px;box-shadow:0 1px 2px #0BA14A;width:18px;top:20px;right:8px;position:absolute;}
 #general-search.general-search{text-align:center;font-size:12px;margin:23px auto 20px;}
-#general-search.general-search input[type='text']{font-size:14px;font-family:Varela Round;background-color:rgba(255,255,255,.68);border-radius:3px;padding:9px 11px;line-height:29px;border:none;margin:9px auto;width:227px;color:#858482;height:29px;}
+#general-search.general-search input[type='text']{font-size:13px;font-family:Varela Round;background-color:rgba(255,255,255,.68);border-radius:3px;padding:9px 11px;line-height:29px;border:none;margin:9px auto;width:227px;color:#858482;height:29px;}
 #general-search.general-search input.integrated[type='submit']{border:none;background:transparent url(../img/home/cajabuscar.png);width:38px;height:40px;position:absolute;right:22px;top:13px;display:block;}
 #general-search.general-search ::-webkit-input-placeholder{color:#686868;}
 #general-search.general-search :-ms-input-placeholder{color:#686868;}
@@ -1389,7 +1389,7 @@ line-height: 45px;}
 #content .califica_select .resultados table td.school a{width:100%;}
 #content .califica_select .resultados .calificar{width:135px;background-color:#9c9c9c;box-shadow:0px -3px 6px #A9A8A8 inset;}
 #content .califica_select .resultados .calificar:hover{ background-color:#F6921A;box-shadow:0px -3px 6px #E17F0A inset;}
-#content .califica_select .resultados .calificar .icon{background-image:url(../img/header/califica.png);display:block;width:22px;height:26px;position:absolute;left:19px;background-size:24px;top:5px;}
+#content .califica_select .resultados .calificar .icon{background-image:url(../img/header/califica_2.png);display:block;width:22px;height:26px;position:absolute;left:19px;background-size:24px;top:5px;}
 #content .califica_select .resultados .calificar-school{color:white;width:100%;display:block;position:relative;padding-left:13px;}
 #content .buscaOtra{width:900px;margin:0 auto;}
 
