@@ -3,13 +3,15 @@
 	<p class='Nselected'>Escuelas seleccionadas para comparar (<span><?=count($this->school_to_compare) ?></span>)</p>
 	<div class="open_wrap">
 		<div class="selected">
-			<ul>
+			<div class="dumpdiv">
+				<ul>
 				<?php foreach($this->school_to_compare as $school) {
 					echo "<li><span class='icon'></span>$school->nombre
 						<span class='hidden'>$school->cct</span></li>";
 				}?>
 
-			</ul>
+				</ul>
+			</div>
 			<a class="button-frame" href="" id="compara-main-button">
 				<span class="bt-share orange-effect">Comparar</span>
 			</a>

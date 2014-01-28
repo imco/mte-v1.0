@@ -50,7 +50,11 @@ $(document).ready(function(){
 
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
-		var tr = $(this).parent().parent().parent().toggleClass('on');
+		if($('.container').hasClass('califica_select'))
+			$(this).parent().parent().toggleClass('on');
+		else
+			$(this).parent().parent().parent().toggleClass('on');
+		//var tr = $(this).parent().parent().parent().toggleClass('on');
 		var cct = $(this).attr('href');
 		toggle_escuela(cct);
 	});
@@ -160,7 +164,6 @@ $(document).ready(function(){
 		var numP = [1,0,3,2,5,4],
 		calificaciones = [];
 		$('.calificacion').each(function(i,val){
-			console.log($(val).find('h2').html());
 			calificaciones[numP[i]]=$(val).find('span.on').size();
 		});
 		$('#rank-question').val(JSON.stringify(calificaciones));
@@ -197,7 +200,7 @@ $(document).ready(function(){
 		$('.menu a.logo + a + a + a').click(function(e){
 			e.preventDefault();
 			//location.href = $('.califica a.title').attr('href');
-			window.location =$('.califica a.title').attr('href'); 
+			window.location =$('.cal-escuela a').attr('href'); 
 		});
 
 		$('.tabs a.result').click(function(){
@@ -256,8 +259,9 @@ $(document).ready(function(){
 		e.preventDefault();
 		add_escuelas_cookie();
 		$(window).off();
+		var vistasComparadas = ($.cookie('escuelas')?$.cookie('escuelas'):'') + '-' + ($.cookie('escuelas_vistas')?$.cookie('escuelas_vistas'):'')
 		if(!$('#content .container').hasClass('perfil'))
-			location.href = '/califica-tu-escuela/califica/' + $.cookie('escuelas');
+			location.href = '/califica-tu-escuela/califica/' + vistasComparadas;
 	});
 
 	$('#content .comparar.resultados table tr.on .compara-escuela').click(function(e){
@@ -415,7 +419,7 @@ $(document).ready(function(){
 		}
 		$this.hide('slow',function(){
 			var contents = {selected:'visited',visited:'selected'},
-			content = $this.parent().parent().attr('class');
+			content = $this.parent().parent().parent().attr('class');
 			$('.'+contents[content]+' ul').append(this);
 			$this.removeClass().show('slow');
 			var contentCountActual = $('.N'+content+' span'),
@@ -551,6 +555,16 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.add-escuela-wrap a[href="/compara/"]').click(function(e){
+		e.preventDefault();
+		$('.add-escuela-wrap').animate({height:475}, 1000);
+
+	});
+
+	$('.califica form').click(function(){
+		$(this).find('.other_info').animate({height:400}, 1000);;
+		
+	});
 
 });
 
