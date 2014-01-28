@@ -180,19 +180,22 @@
 				<option value='director'>Director</option>
 				<option value='ciudadano'>Ciudadano</option>
 			</select>
-			<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
-			<p>Aviso de privacidad.
-				<span>
-				En ningún momento haremos público tu correo electrónico con tu reporte o comentario
-				</span>
-			</p>
-			<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
-			<input type="hidden" id="rank-question" name="calificaciones" value="" class="required">
-			<input type='hidden' id='cct' name='cct' value='<?=$this->get('id')?>' class='required' />
-			<?=$this->get_captcha();?>
-			<p class='button-frame' >
-				<input type='submit' value='Enviar calificación y comentario' class='button button-efect blue' />
-			</p>
+			<div class="other_info">			
+				<textarea placeholder='Escribe aquí' name='comentario' class='required'></textarea>
+				<p>Aviso de privacidad.
+					<span>
+					En ningún momento haremos público tu correo electrónico con tu reporte o comentario
+					</span>
+				</p>
+				<input type="hidden" id="rank-value" name="calificacion" value="" class="required">
+				<input type="hidden" id="rank-question" name="calificaciones" value="" class="required">
+				<input type='hidden' id='cct' name='cct' value='<?=$this->get('id')?>' class='required' />
+				<?=$this->get_captcha();?>
+				<p class='button-frame' >
+					<input type='submit' value='Enviar calificación y comentario' class='button button-efect blue' />
+				</p>
+
+			</div>
 		</fieldset>		
 	</form>
 
