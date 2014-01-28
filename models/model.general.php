@@ -93,7 +93,25 @@ class calificacion extends table{
 
 		$this->has_many['likes'] = 'calificacion_like';
 		$this->has_many_keys['likes'] = 'calificacion';
+        $this->has_many['calificaciones'] = 'calificacion_pregunta';
+        $this->has_many_keys['preguntas'] = 'calificacion';
 	}
+
+    function setCalificaciones($preguntas,$calificaciones){
+        $calicacion_list = json_decode($calificaciones);
+        $preguntas_list = json_decode($preguntas);
+
+        $sql = "insert into calificaciones_preguntas (pregunta,calificacion,calificacion_pregunta) values ";
+
+        foreach ($calicacion_list as $key => $calificacion) {
+            $pregunta = $preguntas_list[$key];
+            $sql .= "({$pregunta},{$this->id},$calificacion),";
+        }
+        $sql = rtrim($sql,",");
+
+        mysql_query($sql);
+    }
+
 }
 class calificacion_like extends table{
 	function info(){
@@ -101,6 +119,11 @@ class calificacion_like extends table{
 		$this->objects['calificacion'] = 'calificacion';
 
 	}
+}
+class pregunta extends table {
+    function info() {
+        $this->table_name = 'preguntas';
+    }
 }
 class reporte_ciudadano extends table{
 	function info(){

@@ -2,7 +2,7 @@
 	<!--<div class="circle">
 	</div>-->
 	<h1>
-	<?php //$this->print_img_tag('header/califica.png')?>
+	<?php $this->print_img_tag('header/califica_2.png')?>
 	<?=$this->instruction?></h1>
 	<h2><?=$this->instruction2 ?></h2>
 </div>	
