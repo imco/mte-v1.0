@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
 * Clase blog Extiende main.
 * Controlador: host/blog
