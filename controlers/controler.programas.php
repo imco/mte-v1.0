@@ -43,14 +43,18 @@ class programas extends main{
 
             $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
             $aux = $max_aux->getNext();
-            $max_anio = $aux['anio'];
+            $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
 
             for($i=1;$i<=32;$i++) {
                 $aux = $i;
                 if ($i < 10) {
                     $aux = '0'.$i;
                 }
-                $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                if ($max_anio) {
+                    $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                } else {
+                    $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                }
             }
 
             $m->close();
@@ -78,9 +82,12 @@ class programas extends main{
 
             $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
             $aux = $max_aux->getNext();
-            $max_anio = $aux['anio'];
-
-            $escuelasaux = $c->find(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$estado_id.'.*') ))->limit(20);
+            $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+            if ($max_anio) {
+                $escuelasaux = $c->find(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$estado_id.'.*') ))->limit(20);
+            } else {
+                $escuelasaux = $c->find(array( "cct" => array('$regex' => '\A'.$estado_id.'.*') ))->limit(20);
+            }
 
             $i = 0;
             while($escuelasaux->hasNext()) {
@@ -102,10 +109,12 @@ class programas extends main{
     public function estado_escuelas(){
         $programa = $this->post('id');
         $estado = $this->post('es');
+        if ($estado < 10) $estado = '0'.$estado;
         $ccts = $this->get_estado_escuelascct($programa,$estado);
         $params = new stdClass();
         $params->ccts = $ccts;
         $params->limit = 20;
+        $params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC";
         $this->get_escuelas($params);
         $this->include_template("estado_escuelas","programas/partial");
     }
