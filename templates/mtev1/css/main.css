@@ -898,16 +898,17 @@ line-height: 45px;}
 #content .perfil.B .info_B ul li{color: #B4B4B4;font-size:15px}
 #content .perfil.B .info_B ul li:before{content: "";display: inline-block;width: 6px;height: 6px;margin-right: 4px;background: #00AFF0;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 #content .perfil.B .info_B.bottom{padding: 5px 17px}
-#content .perfil.B .info_B.bottom .box_info{border: 1px solid #B4B4B4;float: left;padding: 7px;width: 46%;}
-#content .perfil.B .info_B.bottom .box_info + .box_info{float: right;margin-right: 6px}
-#content .perfil.B .info_B.bottom .box_info p{color: #B4B4B4;font-size: 14px;padding:6px 0 0;}
-#content .perfil.B .info_B .tel{line-height:30px;}
-#content .perfil.B .info_B .tel .icon{background:url(../img/perfil/blue/tel.png) center no-repeat}
+#content .perfil.B .info_B.bottom .box_info{border: 1px solid #B4B4B4;float: left;padding:7px 7px 12px;width:305px;}
+#content .perfil.B .info_B.bottom .box_info + .box_info{float: right;width:306px;margin-right:1px;}
+#content .perfil.B .info_B.bottom .box_info p{color: #B4B4B4;font-size: 16px;padding:6px 0 5px;line-height:21px;}
+#content .perfil.B .info_B .tel{padding:0 0 10px!important;}
+#content .perfil.B .info_B .tel .icon{background:url(../img/perfil/blue/tel.png) center no-repeat;margin:-2px 4px;}
 #content .perfil.B .info_B .address{line-height:21px;}
 #content .perfil.B .info_B .address .icon{background:url(../img/perfil/blue/direccion.png) center no-repeat;height:19px;width:20px;margin:0 6px 5px 2px;}
+#content .perfil.B .info_B .director .icon{background:url(../img/perfil/blue/director.png) center no-repeat;height:19px;width:20px;margin:0 6px 5px 2px;}
 #content .perfil.B .info_B .email{line-height:12px;}
-#content .perfil.B .info_B .email .icon{background:url(../img/perfil/blue/mail.png) center 0 no-repeat}
-#content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/director.png);height:24px;margin-right:4px;background-size:21px}
+#content .perfil.B .info_B .email .icon{background:url(../img/perfil/blue/mail.png) center 0 no-repeat;margin:1px 4px;}
+#content .perfil.B .info_B .director .icon{background-image:url(../img/perfil/blue/director.png);height:14px;width:16px;margin:0 6px;}
 #content .perfil.B .info_B .column.right{width:35%;}
 #content .perfil.B #mapa{margin:7px 0 0;width:340px;height:242px;}
 #content .perfil.B .tabs{margin:0;}
@@ -1753,6 +1754,12 @@ height: auto;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p .icon{width:25px;height:30px;display:inline-block;vertical-align:top;background:transparent url(../img/perfil/blue/calif.png) no-repeat center center;margin-right:8px;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p span:last-child{margin-left:3px;font-size:18px;color:#A1A1A1;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p + p{margin:3px 0;font-size:14px;line-height:normal}
+
+#content .perfil.B .censo-box{border:1px solid #b4b4b4;color:#b4b4b4;font-size:14px;float:left;width:191px;height:35px;margin:3px 4px 7px 0;padding:5px 8px 0px 12px;}
+#content .perfil.B .censo-box:nth-child(6){margin:3px 0 5px 0;}
+#content .perfil.B .censo-box .text{width:110px;float:left;line-height:14px;}
+#content .perfil.B .censo-box .num{color:white;background-color:#339DD1;text-align:center;width:77px;line-height:30px;display:block;float:right;border-radius:5px;}
+
 
 #content .container.comparar.resultados + .add-escuela-wrap{height:82px;overflow:hidden;}
 #content .container.comparar.resultados + .add-escuela-wrap.on{height:auto}
