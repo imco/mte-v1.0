@@ -143,7 +143,7 @@ class escuela extends memcached_table{
 			$this->censo = $c->find(array('cct'=>$this->cct));
 			$m->close();
 		}catch(Exception $e){
-			//var_dump($e->getMessage());
+			var_dump($e->getMessage());
 			$this->pec = false;
 			$this->ja = false;
 			$this->siat = false;
