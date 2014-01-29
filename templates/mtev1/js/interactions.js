@@ -650,7 +650,8 @@ function twitterIni(){
 	page_proxy = '/home/twitter';	
 	$("#tweets .tweet p").html("cargando tweets...");
 	$.getJSON(page_proxy, function(data){
-		data = data.statuses;
+		console.log(data);
+		//data = data.statuses;
 		$("#tweets .tweet").css('display','none');
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
