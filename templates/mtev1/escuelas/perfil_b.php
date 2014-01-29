@@ -440,9 +440,21 @@ EOD;
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
 					<ul>
-						<li class='on'><a href="#">Programa escuelas de calidad 2008, 2009, 2010</a></li>
-						<li><a href="#">Programa escuela segura 2008, 2009</a></li>
-						<li><a href="#">Programa escuelas tiempo completo 2007</a></li>
+						<?php
+						$programas = array('pec'=>'Programa escuelas de calidad','pes'=>'Programa escuelas seguras','petc'=>'Programa escuelas tiempo completo');
+						foreach($programas as $key => $programa){
+						?>
+						<li class='<?=$this->escuela->$key && iterator_count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+							<?=$programa?>
+							<?php
+							if($this->escuela->$key){
+								$anios = array();
+								foreach($this->escuela->$key as $p) $anios[] = $p['anio'];
+								echo implode(",",$anios);
+							}
+							?>
+						</a></li>
+						<?} ?>
 					</ul>			
 				</div>
 

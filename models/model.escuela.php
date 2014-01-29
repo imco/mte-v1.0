@@ -128,8 +128,7 @@ class escuela extends memcached_table{
 		return $variable;
 	}
 	public function get_mongo_info($client){
-		if($client){
-			
+		if($client){			
 			//Produccion
 			$db = $client->selectDB("mte_produccion");
 			$c = $db->selectCollection('censo_2013');
@@ -150,11 +149,10 @@ class escuela extends memcached_table{
 			$db = $client->selectDB("mte_programas");
 			$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
 			$this->pec = $c->find(array('cct'=>$this->cct));
-			$c = $db->selectCollection('jornada_amplia');
-			$this->ja = $c->find(array('cct'=>$this->cct));
-			#$c = $db->selectCollection('siat');
-			#$this->siat = $c->find(array('cct'=>$this->cct));
-			
+			$c = $db->selectCollection('pes');
+			$this->pes = $c->find(array('cct'=>$this->cct));
+			$c = $db->selectCollection('petc');
+			$this->petc = $c->find(array('cct'=>$this->cct));
 
 
 			$client->close();
