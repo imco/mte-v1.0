@@ -235,7 +235,7 @@
 			?>
 				<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 				<div class='tab on infraestructura-tab' id='tab-infraescructura'>
-					<h2>Información disponible corresponde al ciclo xxx</h2>
+					<!--<h2>Información disponible corresponde al ciclo xxx</h2>-->
 					<?php if($aulas){ ?><p class="border_b">Total de aulas en uso <?=$aulas?></p><?}?>
 					<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
 					<table class='info_table'>
@@ -416,22 +416,46 @@ EOD;
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
 					<ul>
-						<li class='on'><a href="#">Programa escuelas de calidad 2008, 2009, 2010</a></li>
-						<li><a href="#">Programa escuela segura 2008, 2009</a></li>
-						<li><a href="#">Programa escuelas tiempo completo 2007</a></li>
+						<?php
+						$programas = array('pec'=>'Programa escuelas de calidad','pes'=>'Programa escuelas seguras','petc'=>'Programa escuelas tiempo completo');
+						foreach($programas as $key => $programa){
+						?>
+						<li class='<?=$this->escuela->$key && count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+							<?=$programa?>
+							<?php
+							if($this->escuela->$key){
+								$anios = array();
+								foreach($this->escuela->$key as $p) $anios[] = $p['anio'];
+								echo implode(",",$anios);
+							}
+							?>
+						</a></li>
+						<?} ?>
 					</ul>			
 				</div>
 
 				<div class="lista-programas osc">
 					<h2>Programas OSC's</h2>
 					<ul>
-						<li><a href="#">Escuela siempre Abierta</a></li>
-						<li><a href="#">Programa escuela segura</a></li>
-						<li><a href="#">Programa escuelas tiempo completo</a></li>
-						<li><a href="#">Programa escuelas de calidad</a></li>
-						<li><a href="#">Programa nacional de lectura</a></li>
-						<li><a href="#">Escuela de Jornada Amplia</a></li>
-
+						<?php
+						$programas = array(
+							'proeducacion'=>'Programa de Escuela Integral de Proeducación, I.A.P',
+							'tarahumara'=>'Programa Educación Benéame Promesa de Fundación Tarahumara José A. Llaguno',
+							'teach_mexico'=>'Programa Enseña por México | Teach for All México, A.C.',
+							'mexprim'=>'Programa Fortalecimiento e Inversión Directa a las Escuelas (PEC-FIDE) de Mexicanos Primero',
+							'naciones_unidas'=>'Programa Deport-es para Compartir de Asociación Mexicana para las Naciones Unidas',
+							'empresa_impulsa'=>'Programa Plan Empresa Escuela de Impulsa',
+							'emprender_impulsa'=>'Programa Emprender con valores de Impulsa',
+							'emprendedores_impulsa'=>'Programa Emprendedores climáticos de Impulsa',
+							'dinero_impulsa'=>'Programa Más allá del dinero de Impulsa',
+							'fundacion_televisa'=>'Calendario de Valores de Fundación Televisa'
+						);
+						foreach($programas as $key => $programa){
+						?>
+						<li class='<?=$this->escuela->$key && count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+							<?=$programa?>
+						</a></li>
+						<? } ?>
 					</ul>			
 				</div>
 
