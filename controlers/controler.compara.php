@@ -51,7 +51,7 @@ class compara extends main{
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 
 			$this->get_escuelas($params);
-			$this->set_info_user_search($this->pagination->total_results);
+			$this->set_info_user_search(isset($this->pagination->total_results) ? $this->pagination->total_results : 0);
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 			$this->include_theme('index','resultados-escuela');
@@ -128,5 +128,6 @@ class compara extends main{
 	public function get_metadata(){
 		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
 	}
+
 }
 ?>
