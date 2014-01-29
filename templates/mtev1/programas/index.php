@@ -110,9 +110,10 @@
                 <div class='statemarker e<?=$estado->id?>'>
                     <div class="info">
                         <h4><?=$estado->nombre?></h4>
-                        <p>Participa en (<?= $this->programa->entidad_escuelas_count[$estado->id]?>) Escuelas <br><a class='estado_escuela_link' href='<?= $this->config->http_address ?>programas/estado_escuelas/<?=$this->programa->id ?>?es=<?=$estado->id?>'>Ver lista de escuelas</a></p>
+                        <p>Participa en (<?= $this->programa->entidad_escuelas_count[$estado->id]?>) Escuelas <br><a class='estado_escuela_link' href='<?= $this->config->http_address ?>programas/estado_escuelas?id=<?=$this->programa->id ?>&es=<?=$estado->id?>'>Ver lista de escuelas</a></p>
 
                     </div>
+                    <img src='/templates/mtev1/img/COMPARADOR/pinmap.png'/>
                 </div>
             <?php
                 }
