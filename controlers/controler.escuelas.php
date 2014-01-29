@@ -103,10 +103,14 @@ class escuelas extends main{
 	* Obtienen la calificación brindada por el usuario y se guarda en la tabla calificaciones
 	*/
 	public function calificar(){
-//		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-//		if($captcha->check_answer($this->config->http_address,
-//					  $this->post('recaptcha_challenge_field'),
-//					  $this->post('recaptcha_response_field'))){
+//        $sweetcaptcha = new sweetcaptcha(
+//            $this->config->SWEETCAPTCHA_APP_ID,
+//            $this->config->SWEETCAPTCHA_KEY,
+//            $this->config->SWEETCAPTCHA_SECRET,
+//            $this->config->SWEETCAPTCHA_PUBLIC_URL
+//        );
+//
+//		if((isset($_POST['sckey']) && isset($_POST['scvalue']) && $sweetcaptcha->check(array('sckey' => $_POST['sckey'], 'scvalue' => $_POST['scvalue'])) == "true")){
 			$comment = strip_tags($this->post('comentario'));
 			$calificacion = new calificacion();
 			//$calificacion->debug = true;
@@ -124,12 +128,11 @@ class escuelas extends main{
 
 			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
 
-		    header("location: $location");
 //		}else{
-//            var_dump($captcha);
-//			//header("location: /escuelas/index/".$this->post('cct')."/e=ce#calificaciones");
+//			$location = "/escuelas/index/".$this->post('cct')."/e=captcha#calificaciones";
 //		}
-
+//
+        header("location: $location");
 	}
 
 	/**

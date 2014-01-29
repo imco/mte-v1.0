@@ -37,6 +37,8 @@ class califica_tu_escuela extends main{
             $aux = new pregunta();
             $aux->search_clause = "1 = 1";
             $this->preguntas = $aux->read('id,titulo,pregunta,descripcion_valor_minimo,descripcion_valor_maximo');
+            //$this->escuela = new escuela($this->get('id'));
+            //$this->escuela->read('');
 			$this->include_theme('index','califica');
 		
 		}else{
