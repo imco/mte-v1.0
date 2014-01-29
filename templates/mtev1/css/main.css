@@ -1780,3 +1780,5 @@ height: auto;}
 #header .decorations.simple{display:none;}
 
 #content .container.califica_select table tr.on .checkbox a:before{margin:4px;}
+
+#content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
