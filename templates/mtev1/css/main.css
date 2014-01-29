@@ -1641,7 +1641,7 @@ margin-top: -12px;}
 #header .menu a[href$='/califica/']:hover .icon{background:url(../img/header/califica_2.png) no-repeat center;}
 #header .menu.mejora a[href$='/mejora'] .icon,
 #header .menu a[href$='/mejora']:hover .icon{background:url(../img/header/mejora_2.png) no-repeat center;}
-#header .ninio{position:absolute;top:-16px;left:10px;}
+#header .ninio{position:absolute;left:10px;bottom:0;}/*top:-16px;*/
 #header .container{overflow:hidden;}
 #general-search p.button-frame.search-adv{margin:-4px 0;width:250px;
 margin:-11px 0 0 10px;
