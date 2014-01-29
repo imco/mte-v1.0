@@ -11,18 +11,6 @@
 		<div class="white-box">
 			<p><?php echo $this->programa->descripcion; ?></p>
 		</div>
-		<h2 class="title green">Clave CCT de las escuelas en las que se trabaja(2013/2014)</h2>
-		<div class="white-box map">
-			<table>
-				<?php for($countT=0;$countT<3;$countT++): ?>
-				<tr>
-					<td>CCT 873420 | Colegio Alexandre</td>
-					<td><a href="#" class="button-frame"><span class="button">Ver escuela</span></a></td>
-					<div class="clear"></div>
-				</tr>
-				<?php endfor; ?>
-			</table>
-		</div>
 
 
 		<div class="info">
@@ -111,29 +99,28 @@
 				svg.selectAll(".place-label")
 			    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
 			    .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
-			    
 
-			 
-			});
-			</script>
 
-			<div class="overlay-map">
-			<?php
-			foreach ($this->entidades as $key => $estado) : 
-				if($estado->id == 1 || $estado->id == 5 || $estado->id == 31):?>
-				<div class='statemarker e<?=$estado->id?>'>
-					<div class="info">
-						<h4><?=$estado->nombre?></h4>
-						<p>Participa en (10) Escuelas <br><a href="#">Ver lista de escuelas</a></p>
-					</div>
-					<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'/>
+            });
+            </script>
+		<div class="overlay-map">
+		<?php
+		//var_dump($this->programa->entidad_escuelas_count);
+		foreach ($this->entidades as $key => $estado) {
+			if(isset($this->programa->entidad_escuelas_count[$estado->id]) && $this->programa->entidad_escuelas_count[$estado->id] > 0){?>
+			<div class='statemarker e<?=$estado->id?>'>
+				<div class="info">
+					<h4><?=$estado->nombre?></h4>
+					<p>Participa en (<?= $this->programa->entidad_escuelas_count[$estado->id]?>) Escuelas <br><a class='estado_escuela_link' href='<?= $this->config->http_address ?>programas/estado_escuelas/<?=$this->programa->id ?>?es=<?=$estado->id?>'>Ver lista de escuelas</a></p>
+
 				</div>
-			<?php
-				endif;
-			endforeach;
-			?>
-			</div>
+		<?php
+            }
+        }
+		?>
 		</div>
+
+        <div id='escuelas_estado_list'></div>
 
 	</div>
 	<div class="column right">

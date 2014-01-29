@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class entidad extends memcached_table{
 	function info(){
 		$this->table_name = "entidades";
