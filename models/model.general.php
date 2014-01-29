@@ -125,8 +125,8 @@ class pregunta extends table {
         $this->table_name = 'preguntas';
     }
 
-    function getPreguntasConPromedio($escuela){
-        $sql = "select p.id,p.titulo,case when  SUM(cp.calificacion_pregunta)/COUNT(cp.calificacion_pregunta) as promedio from preguntas p
+    function getPreguntasConPromedio($escuela = false){
+        $sql = "select p.id,p.titulo,SUM(cp.calificacion_pregunta)/COUNT(cp.calificacion_pregunta) as promedio from preguntas p
                 left join calificaciones_preguntas cp on cp.pregunta = p.id
                 left join calificaciones c on c.id = cp.calificacion
                 where c.cct = '$escuela'
@@ -139,8 +139,8 @@ class pregunta extends table {
         if($result && mysql_num_rows($result)){
             while($row = mysql_fetch_row($result)){
                 $pregunta = new pregunta($row[0]);
-                $pregunta->titulo = $row['titulo'];
-                $pregunta->promedio = $row['promedio'];
+                $pregunta->titulo = $row[1];
+                $pregunta->promedio = number_format($row[2], 1, '.', ',');
                 $preguntas[$i++] = $pregunta;
             }
         }

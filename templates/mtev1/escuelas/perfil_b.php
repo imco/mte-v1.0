@@ -252,7 +252,9 @@
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios:</p>
-				<?php 
+				<?php
+                $cp = 0;
+                $pt = 0;
 				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
 						if(isset($calificacion->calificacion)){
@@ -279,9 +281,7 @@
                             foreach($this->preguntas as $pregunta) {
                                 echo "<tr>
                                         <td>{$pregunta->titulo}</td>
-                                        <td>
-                                            <span class='not cel'></span>
-                                        </td>
+                                        <td class='cel'>".(isset($pregunta->promedio) ? $pregunta->promedio:"n/a")."</td>
                                     </tr>";
                             }
                         }
