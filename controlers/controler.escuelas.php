@@ -78,13 +78,11 @@ class escuelas extends main{
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>calificaciones,
+				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 			");
 
-            if (isset($this->escuela->calificaciones) && count($this->escuela->calificaciones)) {
 
-            }
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
 			$this->escuela->get_mongo_info($this->mongo_connect());
@@ -95,8 +93,16 @@ class escuelas extends main{
 			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
+
             $aux = new pregunta();
-            $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->id);
+            if (isset($this->escuela->calificaciones) && $this->escuela->calificaciones) {
+                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->cct);
+            } else {
+                $aux->search_clause = " 1 = 1 ";
+                $this->preguntas = $aux->read('id,titulo');
+            }
+
+
 			return true;
 		}else{
 			return false;
