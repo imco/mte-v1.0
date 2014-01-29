@@ -271,13 +271,15 @@ $(document).ready(function(){
 
 	$('#content .comparar.resultados table tr.on .compara-escuela').click(function(e){
 		e.preventDefault();
+		e.stopPropagation();
 		var cct = $(this).attr('href'),
 		url=document.URL.replace(new RegExp('-*'+cct),''),
 		escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [];
 		escuelas.splice(escuelas.indexOf(cct),1);
 		$.cookie('escuelas',escuelas.join('-'));
+		$(window).unload(add_escuelas_cookie);
 		if(document.URL != url)
-			location.href = url;
+			window.location = url;
 
 	
 	});
@@ -610,6 +612,8 @@ function load_location_options(input,directive,options,name){
 	return rank;
 }*/
 function toggle_escuela(cct){
+	if($('.container').hasClass('comparar resultados'))
+		return 0;
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
 	if((index = escuelas.indexOf(cct)) !== -1){
@@ -682,6 +686,8 @@ function replaceMentions(text) {
 
 function add_escuelas_cookie(){
 	//var selector_table = $('.resultados.container table'),
+	if($('.container').hasClass('comparar resultados'))
+		return 0;
 	var selector_table = $('.resultados table'),
 	on = selector_table.find('tr.on'),
 	cookie = $.cookie('escuelas'),

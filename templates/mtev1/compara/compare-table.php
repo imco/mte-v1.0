@@ -25,7 +25,9 @@
 		echo "<tr class='on'>";
 		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
 			<div class='icon'>
-			<span class='icon-popup'>Dejar de comparar</span>
+			<span class='icon-popup'>
+				<span class='triangle remove'></span>
+			Dejar de comparar</span>
 			</div>
 		</td>";
 		$c = "<div class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
