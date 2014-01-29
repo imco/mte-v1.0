@@ -128,8 +128,7 @@ class escuela extends memcached_table{
 		return $variable;
 	}
 	public function get_mongo_info($client){
-		if($client){
-			
+		if($client){			
 			//Produccion
 			$db = $client->selectDB("mte_produccion");
 			$c = $db->selectCollection('censo_2013');
@@ -146,25 +145,27 @@ class escuela extends memcached_table{
 				}
 				$this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
 			}
-			//Programas
+			//Programas Federales
 			$db = $client->selectDB("mte_programas");
-			$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
-			$this->pec = $c->find(array('cct'=>$this->cct));
-			$c = $db->selectCollection('jornada_amplia');
-			$this->ja = $c->find(array('cct'=>$this->cct));
-			#$c = $db->selectCollection('siat');
-			#$this->siat = $c->find(array('cct'=>$this->cct));
-			
-
+			$programas = array('pec','pes','petc');
+			$this->load_programas($programas,$db);
+			//OSCs
+			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
+			$this->load_programas($programas,$db);
 
 			$client->close();
 		}else{
-			$this->pec = false;
-			$this->ja = false;
-			$this->siat = false;
-			$this->censo = false;
-			$this->snie = false;
-			$this->infraestructura = false;
+			$programas = array('censo_2013','snie','infraestructura', 'pec','pes','petc','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
+			foreach($programas as $programa){
+				$this->$programa = false;
+			}
+		}
+	}
+	private function load_programas($programas,$db){
+		foreach($programas as $programa){
+			$c = $db->selectCollection($programa);
+			$this->$programa = $c->find(array('cct'=>$this->cct));
+			$this->$programa = iterator_to_array($this->$programa);
 		}
 	}
 }

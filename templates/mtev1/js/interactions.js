@@ -529,33 +529,33 @@ $(document).ready(function(){
 			resultadosoffset= $('.resultados.container').offset().top;
 			if(windowOffset >= containeroffset){
 				if(windowOffset+300 >= resultadosoffset){
-					columnright.removeClass('fixed');
-					columnright.show();
+					//columnright.removeClass('fixed');
+					//columnright.show();
 				}else{
 					headtitle.addClass('fixed');
 					if( windowOffset >= containeroffset + 400 ){
-						if(!columnright.hasClass('fixed')){
+						if(columnright.hasClass('fixed')){
 							//semaforo.slideToggle();
-							semaforo.slideUp();
+							//semaforo.slideUp();
 							//semOverlay.slideToggle();
-							semOverlay.slideUp();
-							listaprogramasosc.slideUp();
-							listaprogramasfed.slideUp();
+							//semOverlay.slideUp();
+							//listaprogramasosc.slideUp();
+							//listaprogramasfed.slideUp();
 
 						}				
-						columnright.addClass('fixed');
+						//columnright.addClass('fixed');
 					}
 				}
 			}else{
 				headtitle.removeClass('fixed');
 				if(columnright.hasClass('fixed')){
-					semaforo.slideDown();
+					//semaforo.slideDown();
 					//semOverlay.show();
-					semOverlay.slideDown();
-					listaprogramasosc.slideDown();
-					listaprogramasfed.slideDown();
+					//semOverlay.slideDown();
+					//listaprogramasosc.slideDown();
+					//listaprogramasfed.slideDown();
 				}
-				columnright.removeClass('fixed');
+				//columnright.removeClass('fixed');
 			}
 		}
 	});
