@@ -532,16 +532,18 @@ $(document).ready(function(){
 					columnright.show();
 				}else{
 					headtitle.addClass('fixed');
-					if(!columnright.hasClass('fixed')){
-						//semaforo.slideToggle();
-						semaforo.slideUp();
-						//semOverlay.slideToggle();
-						semOverlay.slideUp();
-						listaprogramasosc.slideUp();
-						listaprogramasfed.slideUp();
+					if( windowOffset >= containeroffset + 400 ){
+						if(!columnright.hasClass('fixed')){
+							//semaforo.slideToggle();
+							semaforo.slideUp();
+							//semOverlay.slideToggle();
+							semOverlay.slideUp();
+							listaprogramasosc.slideUp();
+							listaprogramasfed.slideUp();
 
-					}				
-					columnright.addClass('fixed');
+						}				
+						columnright.addClass('fixed');
+					}
 				}
 			}else{
 				headtitle.removeClass('fixed');

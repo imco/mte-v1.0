@@ -28,6 +28,11 @@
 			<span class='icon-popup'>Dejar de comparar</span>
 			</div>
 		</td>";
+		$c = "<div class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
+			<div class='icon'>
+			<span class='icon-popup'>Dejar de comparar</span>
+			</div>
+		</div>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		echo "<td>".$this->capitalize($escuela->nivel->nombre)."</td>";
 		echo "<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>";

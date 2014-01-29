@@ -61,7 +61,7 @@
 			<div class="box_info">
 				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<span class='icon sprit2'></span>
-					DirecciÃ³n:
+					Dirección:
 					<span class='title'>
 						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
 						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
