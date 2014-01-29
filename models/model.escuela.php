@@ -144,6 +144,14 @@ class escuela extends memcached_table{
 			$m->close();
 			$c = $db->selectCollection('snie');
 			$this->snie = $c->find(array('cct'=>$this->cct));
+			if($this->snie){
+				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
+				foreach($this->snie as $e){
+					$this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
+					break;
+				}
+				$this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
+			}
 			$m->close();
 		}catch(Exception $e){
 			var_dump($e->getMessage());
@@ -152,6 +160,7 @@ class escuela extends memcached_table{
 			$this->siat = false;
 			$this->censo = false;
 			$this->snie = false;
+			$this->infraestructura = false;
 		}
 	}
 }

@@ -154,7 +154,7 @@
 					Comentarios 
 					y reportes
 				</a></li>
-				<?php if($this->escuela->snie){ ?>
+				<?php if($this->escuela->infraestructura){ ?>
 					<li><a href='#tab-infraescructura' class='result'>
 						<span class='triangle'></span>
 						Infraestructura escolar
@@ -228,22 +228,20 @@
 				</div>
 
 			</div></div>
-			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
-			<?php if($this->escuela->snie){foreach($this->escuela->snie as $e){
-				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'');
-				$infraestructura = json_decode($e[$keys[$this->escuela->nivel->id]]);
-				$fields = '';
-				$aulas = false;
-				foreach($infraestructura as $key => $item){
-					if(isset($item[1]) && $key > 2){
-						$val = strtolower($item[1]);
-						$k = trim(preg_replace('/  1\z/i','',$item[0]));
-						//var_dump($k);
-						if($k == 'Total de aulas') $aulas = $val;
-						else $fields .= "<tr><td>{$k}</td><td><span class='not cel'>{$val}</span></td></tr>";
+			<?php 
+			if($this->escuela->infraestructura){
+					$fields = '';
+					foreach($this->escuela->infraestructura as $key => $item){
+						if(isset($item[1]) && $key > 2){
+							$val = strtolower($item[1]);
+							$k = trim(preg_replace('/  1\z/i','',$item[0]));
+							//var_dump($k);
+							if($k == 'Total de aulas') $aulas = $val;
+							else $fields .= "<tr><td>{$k}</td><td><span class='not cel'>{$val}</span></td></tr>";
+						}
 					}
-				}
-			 ?>
+			?>
+				<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 				<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 					<h2>Información disponible corresponde al ciclo xxx</h2>
 					<?php if($aulas){ ?><p class="border_b">Total de aulas en uso <?=$aulas?></p><?}?>
@@ -255,40 +253,10 @@
 								<th>sí,no</th>
 							</tr>
 							<?=$fields?>
-							<!--<tr>
-								<td>Agua entubada</td>
-								<td><span class='not cel'></span></td>
-							</tr>
-							<tr>
-								<td>Luz</td>
-								<td><span class='not cel'></span></td>
-							</tr>
-							<tr>
-								<td>Barda o cercado perimetral</td>
-								<td><span class='true cel'></span></td>
-							</tr>
-							<tr>
-								<td>Canchas deportivas</td>
-								<td><span class='true cel'></span></td>
-							</tr>
-							<tr>
-								<td>Patio de la escuela</td>
-								<td><span class='not cel'></span></td>
-							</tr>
-							<tr>
-								<td>Baños</td>
-								<td><span class='not cel'></span></td>
-							</tr>
-							<tr>
-								<td>Sala de cómputo</td>
-								<td><span class='true cel'></span></td>
-							</tr>-->
-						
 						</tbody>
 					</table>
-					
 				</div>
-			<?php break; }} ?>
+			<?php } ?>
 			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
