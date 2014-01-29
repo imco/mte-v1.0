@@ -77,7 +77,7 @@ class programas extends main{
 
         if (!$this->programa->m_collection) return $estado_escuelas;
         try {
-            $m = new MongoClient("mongodb://***REMOVED***:***REMOVED***@***REMOVED***:27017/mte_produccion");
+            $m = $this->mongo_connect();
             $db = $m->selectDB("mte_programas");
             $c = $db->selectCollection($this->programa->m_collection);//pec,jornada_amplia,siat,censo_2013
 
