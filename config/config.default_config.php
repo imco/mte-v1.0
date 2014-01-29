@@ -62,6 +62,9 @@ class default_config{
 		//rack space
 		$this->rack_space_user = "***REMOVED***";
 		$this->rack_space_key = "***REMOVED***";
+
+		$this->mongo_server = '***REMOVED***';
+        $this->mongo_user = '***REMOVED***:***REMOVED***';
 	}
 }
 ?>
