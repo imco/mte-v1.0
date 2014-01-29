@@ -461,13 +461,24 @@ EOD;
 				<div class="lista-programas osc">
 					<h2>Programas OSC's</h2>
 					<ul>
-						<li><a href="#">Escuela siempre Abierta</a></li>
-						<li><a href="#">Programa escuela segura</a></li>
-						<li><a href="#">Programa escuelas tiempo completo</a></li>
-						<li><a href="#">Programa escuelas de calidad</a></li>
-						<li><a href="#">Programa nacional de lectura</a></li>
-						<li><a href="#">Escuela de Jornada Amplia</a></li>
-
+						<?php
+						$programas = array(
+							'proeducacion'=>'Programa de Escuela Integral de Proeducación, I.A.P',
+							'tarahumara'=>'Programa Educación Benéame Promesa de Fundación Tarahumara José A. Llaguno',
+							'teach_mexico'=>'Programa Enseña por México | Teach for All México, A.C.',
+							'mexprim'=>'Programa Fortalecimiento e Inversión Directa a las Escuelas (PEC-FIDE) de Mexicanos Primero',
+							'empresa_impulsa'=>'Programa Plan Empresa Escuela de Impulsa',
+							'emprender_impulsa'=>'Programa Emprender con valores de Impulsa',
+							'emprendedores_impulsa'=>'Programa Emprendedores climáticos de Impulsa',
+							'dinero_impulsa'=>'Programa Más allá del dinero de Impulsa',
+							'fundacion_televisa'=>'Calendario de Valores de Fundación Televisa'
+						);
+						foreach($programas as $key => $programa){
+						?>
+						<li class='<?=$this->escuela->$key && iterator_count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+							<?=$programa?>
+						</a></li>
+						<? } ?>
 					</ul>			
 				</div>
 
