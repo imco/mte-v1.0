@@ -62,7 +62,20 @@ class twitter_component extends component{
 			header('Content-Length: '.$info['size_download']);
 		}
 
-		echo($result);
+		$vartemp = json_decode($result);
+		$vartemp = $vartemp->statuses;
+		$responce = array();
+		foreach($vartemp as $tweet){
+			$tweetData = new stdClass();
+			$tweetData->screen_name = $tweet->screen_name;
+			$tweetData->text  = $tweet->text;
+			$tweetData->user = new stdClass();
+			$tweetData->user->screen_name  =$tweet->user->screen_name;
+			$tweetData->user->profile_image_url = $tweet->user->profile_image_url;
+			$tweetData->id_str = $tweet->id_str;
+			$responce[] = $tweetData;
+		}
+		echo json_encode($responce);
 	}
 
 	function buildBaseString($baseURI, $method, $params) {
