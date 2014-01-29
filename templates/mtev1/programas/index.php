@@ -128,22 +128,24 @@
 		<div class="lista-programas">
 			<h2>Programas federales</h2>
 			<ul>
-				<li><a href="#">Programa escuelas de calidad</a></li>
-				<li><a href="#">Programa escuela segura</a></li>
-				<li><a href="#">Programa escuelas tiempo completo</a></li>
+                <?php 
+                foreach($this->programas_federales as $programa){
+                    $on = $programa->id == $this->programa->id ? 'class="on"' : '';
+                    echo "<li $on><a href='/programas/index/{$programa->id}'>{$programa->nombre}</a></li>";
+                }
+                ?>
 			</ul>			
 		</div>
 
 		<div class="lista-programas">
 			<h2>Programas OSC´s</h2>
 			<ul>
-				<li><a href="#">Escuela siempre Abierta</a></li>
-				<li><a href="#">Programa escuela segura</a></li>
-				<li><a href="#">Programa escuelas tiempo completo</a></li>
-				<li><a href="#">Programa escuelas de calidad</a></li>
-				<li><a href="#">Programa nacional de lectura</a></li>
-				<li><a href="#">Escuela de Jornada Amplia</a></li>
-
+				<?php 
+                foreach($this->programas_osc as $programa){
+                    $on = $programa->id == $this->programa->id ? 'class="on"' : '';
+                    echo "<li $on><a href='/programas/index/{$programa->id}'>{$programa->nombre}</a></li>";
+                }
+                ?>
 			</ul>			
 		</div>
 
