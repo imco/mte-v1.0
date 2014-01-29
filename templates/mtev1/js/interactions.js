@@ -573,6 +573,16 @@ $(document).ready(function(){
 		
 	});
 
+    $('.estado_escuela_link').live('click',function(e){
+        e.preventDefault();
+        var href = $(this).attr('href');
+        $.post(href,function(e){
+            $('#escuelas_estado_list').html('');
+            $('#escuelas_estado_list').html(e);
+        });
+
+    });
+
 });
 
 
