@@ -526,8 +526,8 @@ class main extends controler{
     }
     public function mongo_connect(){
     	try{
-    		//{$this->config->mongo_user}@
-    		$m = new MongoClient("mongodb://{$this->config->mongo_server}:27017/mte_produccion");
+    		//
+    		$m = new MongoClient("mongodb://{$this->config->mongo_user}@{$this->config->mongo_server}:27017/mte_produccion");
     		return $m;
     	}catch(Exception $e){
     		//$e->getMessage();
@@ -538,7 +538,7 @@ class main extends controler{
     	$q = new programa();
     	$q->search_clause =  'federal = "1"';
     	$this->programas_federales = $q->read('id,nombre,m_collection');
-    	$q->search_clause =  'federal = "0"';
+    	$q->search_clause = 'federal = "0"';
     	$this->programas_osc = $q->read('id,nombre,m_collection');
     }
     public function get_data_compara_float(){
