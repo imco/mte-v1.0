@@ -84,7 +84,7 @@ class escuelas extends main{
 
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
-			$this->escuela->get_mongo_info($this->mongomongo_connect());
+			$this->escuela->get_mongo_info($this->mongo_connect());
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
