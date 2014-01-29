@@ -81,9 +81,9 @@
 				</p>
 				<p class='email'>
 					<span class='icon sprit2'></span>
-					email:<!--Correo electrónico:-->
+					Correo electrónico:<!--Correo electrónico:-->
 					<span itemprop="email" class='title'>
-						email@escuela.com<!--<?=$this->str_limit($this->escuela->correoelectronico,20);?>-->
+						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
 					</span>
 					<span class='clear'></span>
 				</p>

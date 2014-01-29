@@ -5,24 +5,24 @@
 			<!--<h3>Objetivo del programa</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic consectetur quam odio. Necessitatibus, voluptatibus optio facilis ullam quas amet quidem nobis pariatur maxime sit magni reiciendis inventore nemo. Corporis, fugit.</p>
 			-->
-			<p><span class="blue">Tema especifico que atiende el prgrama</span> <?php echo $this->programa->nombre; ?></p>
+			<p><span class="blue">Tema específico que atiende el programa</span> <?php echo $this->programa->tema_especifico; ?></p>
 		</div>
-		<h2 class="title">Descripcion del programa</h2>
+		<h2 class="title">Descripción del programa</h2>
 		<div class="white-box">
 			<p><?php echo $this->programa->descripcion; ?></p>
 		</div>
 
 
 		<div class="info">
-			<h2 class="title">¿Que debe hacer una escuela que esta interesada en participar en el proyecto?</h2>
+			<h2 class="title">¿Qué debe hacer una escuela que está interesada en participar en el proyecto?</h2>
 			<div class="white-box">
 				<p><?php echo $this->programa->requisitos; ?></p>
 			</div>
-			<h2 class="title">Pagina web del programa</h2>
+			<h2 class="title">Página web del programa</h2>
 			<div class="white-box">
 				<a href="http://<?=$this->programa->sitio_web;?>" ><?php echo $this->programa->sitio_web; ?></a>
 			</div>
-			<h2 class="title">Contácto</h2>
+			<h2 class="title">Contacto</h2>
 			<div class="white-box">
 				<p>
 					<?php echo $this->programa->telefono; ?>
