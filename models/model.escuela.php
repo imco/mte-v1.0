@@ -155,12 +155,10 @@ class escuela extends memcached_table{
 
 			$client->close();
 		}else{
-			$this->pec = false;
-			$this->ja = false;
-			$this->siat = false;
-			$this->censo = false;
-			$this->snie = false;
-			$this->infraestructura = false;
+			$programas = array('pec','pes','petc','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
+			foreach($this->programas as $programa){
+				$this->$programa = false;
+			}
 		}
 	}
 	private function load_programas($programas,$db){
