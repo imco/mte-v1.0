@@ -528,8 +528,8 @@ class main extends controler{
     	try{
     		$m = new MongoClient("mongodb://{$this->config->mongo_user}@{$this->config->mongo_server}:27017/mte_produccion");
     		return $m;
-    	}catch($e error){
-    		$e->getMessage();
+    	}catch(Exception $e){
+    		//$e->getMessage();
     		return false;
     	}
     }
