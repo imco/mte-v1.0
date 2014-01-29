@@ -100,21 +100,22 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<div class="clear"></div>
-			<div class='censo-box'>
-				<span class='text'>Número de Alumnos:</span>
-				<span class='num'>34</span>
-			</div>
-			<div class='censo-box'>
-				<span class='text'>Total de personal:</span>
-				<span class='num'>34</span>
-			</div>
-			<div class='censo-box'>
-				<span class='text'>Grupos:</span>
-				<span class='num'>34</span>
-			</div>
-			<div class='clear'></div>
-
+			<?php if($this->escuela->censo){?>
+				<div class="clear"></div>
+				<div class='censo-box'>
+					<span class='text'>Número de Alumnos:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Total de personal:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Grupos:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='clear'></div>
+			<?php } ?>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
