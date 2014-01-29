@@ -458,7 +458,7 @@ line-height: 45px;}
 
 
 /*Comparador*/
-#content .comparar{margin:11px auto;width:920px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
+#content .comparar{margin:24px auto;width:920px;background-color:rgba(255,255,255,.5);padding:0 0 5px;}
 #content .comparar .compara-tabs{position:relative;}
 #content .comparar .compara-tabs a{display:block;float:left;color:#0AA049;width:228px;height:103px;padding-top:26px;margin:0 2px 0 0;text-align:center;background-color:rgba(255,255,255,.35);font-size:13px;}
 #content .comparar .compara-tabs a:nth-child(5){margin:0;}

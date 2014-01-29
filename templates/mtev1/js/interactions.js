@@ -521,7 +521,7 @@ $(document).ready(function(){
 			containeroffset = $('.perfil.B.container.B').offset().top;
 			headtitle		= $('.perfil.B .box-head');
 			columnoffset 	= $('.perfil.B .column.left').offset().top;
-			columnright		= $('.perfil.B .column.right .box');
+			//columnright		= $('.perfil.B .column.right .box');
 			semaforo		= $('.perfil.B .column.right .semaforo .level');
 			semOverlay		= $('.perfil.B .semaforo .sem-overlay');
 			listaprogramasfed  = $('.perfil.B .column.right .lista-programas.federales ul');
@@ -529,12 +529,12 @@ $(document).ready(function(){
 			resultadosoffset= $('.resultados.container').offset().top;
 			if(windowOffset >= containeroffset){
 				if(windowOffset+300 >= resultadosoffset){
-					columnright.removeClass('fixed');
-					columnright.show();
+					//columnright.removeClass('fixed');
+					//columnright.show();
 				}else{
 					headtitle.addClass('fixed');
 					if( windowOffset >= containeroffset + 400 ){
-						if(!columnright.hasClass('fixed')){
+						if(!//columnright.hasClass('fixed')){
 							//semaforo.slideToggle();
 							semaforo.slideUp();
 							//semOverlay.slideToggle();
@@ -543,19 +543,19 @@ $(document).ready(function(){
 							listaprogramasfed.slideUp();
 
 						}				
-						columnright.addClass('fixed');
+						//columnright.addClass('fixed');
 					}
 				}
 			}else{
 				headtitle.removeClass('fixed');
-				if(columnright.hasClass('fixed')){
+				if(//columnright.hasClass('fixed')){
 					semaforo.slideDown();
 					//semOverlay.show();
 					semOverlay.slideDown();
 					listaprogramasosc.slideDown();
 					listaprogramasfed.slideDown();
 				}
-				columnright.removeClass('fixed');
+				//columnright.removeClass('fixed');
 			}
 		}
 	});
