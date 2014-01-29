@@ -275,42 +275,18 @@
 				<table class='info_table'>
 
 					<tbody>
-						<tr>
-							<td>Asistencia de los maestros</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>Preparación de los maestros</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>Infraestructura de la escuela</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>Relación con padres de familia</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>Honestidad y transparencia</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>Participación de padres de familia</td>
-							<td>
-								<span class="not cel"></span>
-							</td>
-						</tr>
+                        <?php
+                        if ($this->preguntas) {
+                            foreach($this->preguntas as $pregunta) {
+                                echo "<tr>
+                                        <td>{$pregunta->titulo}</td>
+                                        <td>
+                                            <span class='not cel'></span>
+                                        </td>
+                                    </tr>";
+                            }
+                        }
+                        ?>
 					</tbody>
 				</table>
 				<div class="wrap_comments">
