@@ -548,7 +548,7 @@ $(document).ready(function(){
 				}
 			}else{
 				headtitle.removeClass('fixed');
-				if(//columnright.hasClass('fixed')){
+				if(columnright.hasClass('fixed')){
 					//semaforo.slideDown();
 					//semOverlay.show();
 					//semOverlay.slideDown();
