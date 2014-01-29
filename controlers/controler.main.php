@@ -526,8 +526,8 @@ class main extends controler{
     }
     public function mongo_connect(){
     	try{
-    		//
-    		$m = new MongoClient("mongodb://{$this->config->mongo_user}@{$this->config->mongo_server}:27017/mte_produccion");
+    		//{$this->config->mongo_user}@
+    		$m = new MongoClient("mongodb://{$this->config->mongo_server}:27017/mte_produccion");
     		return $m;
     	}catch(Exception $e){
     		//$e->getMessage();
