@@ -524,6 +524,15 @@ class main extends controler{
 		echo $sweetcaptcha->get_html();
 		
     }
+    public function mongo_connect(){
+    	try{
+    		$m = new MongoClient("mongodb://{$this->config->mongo_user}@{$this->config->mongo_server}:27017/mte_produccion");
+    		return $m;
+    	}catch($e error){
+    		$e->getMessage();
+    		return false;
+    	}
+    }
 
     public function get_data_compara_float(){
 	if(!$this->request('json')){
