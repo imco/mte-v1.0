@@ -43,94 +43,96 @@
 				</p>
 			</div>
 		</div>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-		<script src="http://d3js.org/topojson.v0.min.js"></script>
-		<script>
-		
-		var x = d3.scale.linear()
-		    .domain([0, width])
-		    .range([0, width]);
-		 
-		var y = d3.scale.linear()
-		    .domain([0, height])
-		    .range([height, 0]);
-		 
-		var width = 680,
-		    height = 500;
-		 
-		var projection = d3.geo.mercator()
-		    .scale(1200)
-		    .center([-94.34034978813841, 24.012062015793]);
-		 
-		var svg = d3.select(".container.programas .column.left").append("svg")
-		    .attr("width", width)
-		    .attr("height", height);
-		 
-		var g = svg.append("g");
 
-		var path = d3.geo.path()
-    		.projection(projection);
-		 
-		d3.json("/mx_tj.json", function(error, mx) {
-		  /*svg.selectAll("path")
-		    .data(topojson.object(mx, mx.objects.municipios2).geometries)
-		    .enter().append("path")
-		    .attr("d", d3.geo.path().projection(projection))
-		    .attr("fill", "transparent")
-		    .style("stroke", "#333")
-		    .style("stroke-width", ".2px")
-		    .attr("class", "muns");
-			*/
-		
-		  g.selectAll("path")
-		    .data(topojson.object(mx, mx.objects.estados2).geometries)
-		    .enter().append("path")
-		    .attr("d", d3.geo.path().projection(projection))
-		    .attr("fill", "#C4EAD1")
-		    .style("stroke", "#40AA6C");
-
-		   g.selectAll("path")
-		    .data(topojson.object(mx, mx.objects.estados2).properties)
-		    //.enter().append("path")
-		    .attr("class",function(d) { return d.name; })
-		    .text(function(d) { return d.id; });
-
-
-
-		    /*svg.selectAll(".place-label")
-			    .data(topojson.object(mx, mx.objects.estados2).properties)
-			  .enter().append("text")
-			    .attr("class", "place-label")
-			    .attr("transform", function(d) { return "translate(" + d3.geo.path().projection(projection) + ")"; })
-			    .attr("dy", ".35em")
-			    .text(function(d) { return d.id; });
-
-			svg.selectAll(".place-label")
-		    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
-		    .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
-		    
-
-		 
-		});
-		
-		/*$('body').css('background-color','#fff');
-
-		$('.container.programas svg path').each(function(){
-		if($(this).hasClass('4') || $(this).hasClass('6')){
-			$(this).append("<? $this->print_img_tag('COMPARADOR/pinmap.png'); ?>");
-			console.log("encontro");
-		}
-		});*/
-
-		</script>
-
-		<div class="overlay-map">
+		<div id="map-programas">
+				
+			<script src="http://d3js.org/d3.v3.min.js"></script>
+			<script src="http://d3js.org/topojson.v0.min.js"></script>
 			<script>
-				<?php $arrayEstados = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,31); ?>
-				<?php foreach ($arr as $item) : ?>
-	   				arr.push('<?php echo $item?>');
-			   <?php endforeach; ?>
+			
+			var x = d3.scale.linear()
+			    .domain([0, width])
+			    .range([0, width]);
+			 
+			var y = d3.scale.linear()
+			    .domain([0, height])
+			    .range([height, 0]);
+			 
+			var width = 680,
+			    height = 500;
+			 
+			var projection = d3.geo.mercator()
+			    .scale(1200)
+			    .center([-94.34034978813841, 24.012062015793]);
+			 
+			var svg = d3.select(".container.programas .column.left #map-programas").append("svg")
+			    .attr("width", width)
+			    .attr("height", height);
+			 
+			var g = svg.append("g");
+
+			var path = d3.geo.path()
+	    		.projection(projection);
+			 
+			d3.json("/mx_tj.json", function(error, mx) {
+			  /*svg.selectAll("path")
+			    .data(topojson.object(mx, mx.objects.municipios2).geometries)
+			    .enter().append("path")
+			    .attr("d", d3.geo.path().projection(projection))
+			    .attr("fill", "transparent")
+			    .style("stroke", "#333")
+			    .style("stroke-width", ".2px")
+			    .attr("class", "muns");
+				*/
+			
+			  g.selectAll("path")
+			    .data(topojson.object(mx, mx.objects.estados2).geometries)
+			    .enter().append("path")
+			    .attr("d", d3.geo.path().projection(projection))
+			    .attr("fill", "#C4EAD1")
+			    .style("stroke", "#40AA6C");
+
+			   g.selectAll("path")
+			    .data(topojson.object(mx, mx.objects.estados2).properties)
+			    //.enter().append("path")
+			    .attr("class",function(d) { return "e"+d.id; })
+			    .text(function(d) { return "e"+d.id; });
+
+
+
+			    /*svg.selectAll(".place-label")
+				    .data(topojson.object(mx, mx.objects.estados2).properties)
+				  .enter().append("text")
+				    .attr("class", "place-label")
+				    .attr("transform", function(d) { return "translate(" + d3.geo.path().projection(projection) + ")"; })
+				    .attr("dy", ".35em")
+				    .text(function(d) { return d.id; });
+
+				svg.selectAll(".place-label")
+			    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
+			    .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
+			    
+
+			 
+			});
 			</script>
+
+			<div class="overlay-map">
+			<?php
+			foreach ($this->entidades as $key => $estado) : 
+				if($estado->id == 1 || $estado->id == 5 || $estado->id == 31):?>
+				<div class='statemarker e<?=$estado->id?>'>
+					<div class="info">
+						<h4><?=$estado->nombre?></h4>
+						<p>Participa en (10) Escuelas <br><a href="#">Ver lista de escuelas</a></p>
+					</div>
+					<img src='/templates/mtev1/img/COMPARADOR/pinmap.png'/>
+				</div>
+			<?php
+				endif;
+			endforeach;
+			?>
+			</div>
 		</div>
 
 	</div>

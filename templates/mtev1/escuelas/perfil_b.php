@@ -25,7 +25,8 @@
 							<?php $this->print_img_tag('perfil/blue/posicion.png');?>
 							<p>Posición estatal</p>
 							<h2>
-								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
+								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> <span>de</span> <?=number_format($this->entidad_cct_count,0)?>
+								<!--46 <span>de</span> 345-->
 							</h2>
 						</div>
 					</div>
@@ -69,37 +70,58 @@
 						<span itemprop="addressCountry" content="MX"></span>
 					</span>
 				</p>
+				
+				<p class='director'>
+					<!--<span class='icon sprit2'></span>
+					Nombre del Director
+					<span class='title'></span>-->
+				</p>
+
+			</div>
+			<div class="box_info">
 				<p class='tel'>
 					Teléfonos:
 					<span class='icon sprit2'></span>
 					<span itemprop="telephone" class='title'>
 						<?=$this->escuela->telefono?>
 					</span>
-				<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
-
-			</div>
-			<div class="box_info">
 				<p class='email'>
 					<span class='icon sprit2'></span>
-					Correo electrónico:
+					email:<!--Correo electrónico:-->
 					<span itemprop="email" class='title'>
-						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
+						email@escuela.com<!--<?=$this->str_limit($this->escuela->correoelectronico,20);?>-->
 					</span>
-					<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
 
-				<p class='web'>
+				<!--<p class='web'>
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-				</p>				
+				</p>-->				
 			</div>
-			<div class="clear"></div>
+			<?php if($this->escuela->censo){?>
+				<div class="clear"></div>
+				<div class='censo-box'>
+					<span class='text'>Número de Alumnos:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Total de personal:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Grupos:</span>
+					<span class='num'>34</span>
+				</div>
+				<div class='clear'></div>
+			<?php } ?>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquÃ­ un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja aquÃ­ un comentario sobre esta escuela' name='comentario' class='required'></textarea>
+				<textarea placeholder='Deja aquí un comentario sobre esta escuela' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
@@ -252,10 +274,11 @@
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios:</p>
-				<?php if($this->escuela->calificaciones){
-					$cp = 0;
-					$pt = 0;
-					$otp = array(0,0,0,0,0,0);
+				<?php 
+				$cp = 0;
+				$pt = 0;
+				$otp = array(0,0,0,0,0,0);
+				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
 						if(isset($calificacion->calificacion)){
 							$cp++;
@@ -275,6 +298,8 @@
 						$otp[$i] /= $cp;
 					}
 					$ci = 0;
+				}else{
+					$cali = "Calificación global n/a";
 				}
 
 				?>
