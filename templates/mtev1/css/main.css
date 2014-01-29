@@ -22,7 +22,7 @@ a{text-decoration:none;}
 }
 .orange-effect:hover{background: #e5711c!important;box-shadow:none!important;}
 
-#header{width:100%;margin-bottom:0px;background:url(../img/header/pizarron.jpg) center bottom #E9EEF4;color:white;position:relative;min-height:285px;}
+#header{width:100%;margin-bottom:0px;background:#017943 url(../img/header/pizarron.jpg) repeat-x center bottom;color:white;position:relative;min-height:285px;}
 .header_shadow{position:relative;width:100%;height:40px;background:transparent url(../img/home/sombra_header.png) no-repeat center -2px;margin-bottom:-18px;}
 
 #header h1{text-align:center;font-size:41px;line-height:77px;}

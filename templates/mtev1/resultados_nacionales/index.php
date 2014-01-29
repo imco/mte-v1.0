@@ -20,7 +20,7 @@
 	<div class="wrap_resultados">
 		<h1 class='full-blue'>Resultados Nacionales Por Estado</h1>
 		<?php
-		$rank = 0;
+		$rank = 1;
 		$this->load_entidades('rank ASC');
 		foreach($this->entidades as $entidad){
 			if($rank){

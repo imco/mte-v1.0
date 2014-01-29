@@ -12,7 +12,7 @@ class resultados_nacionales extends main{
 		$this->breadcrumb = array('#'=>'Resultados Nacionales');
 		$this->header_folder = 'compara';
 		$this->title_header = 'Resultados por estado';
-		$this->subtitle_header = 'Revisa los resultados educativos de tu estado y cómo se comparan con el<br />promedio nacional.  En el perfil de tu estado también podrás <br />encontrar tablas de las mejores escuelas primarias, <br />secundarias y bachilleratos.';
+		$this->subtitle_header = 'Revisa los resultados educativos de tu estado y cómo se comparan con el promedio nacional.  En el perfil de tu estado también podrás encontrar tablas de las mejores escuelas primarias, secundarias y bachilleratos.';
 		$this->include_theme('index','index');
 	}
 
