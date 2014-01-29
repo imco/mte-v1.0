@@ -32,97 +32,96 @@
 			</div>
 		</div>
 
-		<div id="map-programas">
-				
-			<script src="http://d3js.org/d3.v3.min.js"></script>
-			<script src="http://d3js.org/topojson.v0.min.js"></script>
-			<script>
-			
-			var x = d3.scale.linear()
-			    .domain([0, width])
-			    .range([0, width]);
-			 
-			var y = d3.scale.linear()
-			    .domain([0, height])
-			    .range([height, 0]);
-			 
-			var width = 680,
-			    height = 500;
-			 
-			var projection = d3.geo.mercator()
-			    .scale(1200)
-			    .center([-94.34034978813841, 24.012062015793]);
-			 
-			var svg = d3.select(".container.programas .column.left #map-programas").append("svg")
-			    .attr("width", width)
-			    .attr("height", height);
-			 
-			var g = svg.append("g");
+        <div id="map-programas">
+            <script src="http://d3js.org/d3.v3.min.js"></script>
+            <script src="http://d3js.org/topojson.v0.min.js"></script>
+            <script>
 
-			var path = d3.geo.path()
-	    		.projection(projection);
-			 
-			d3.json("/mx_tj.json", function(error, mx) {
-			  /*svg.selectAll("path")
-			    .data(topojson.object(mx, mx.objects.municipios2).geometries)
-			    .enter().append("path")
-			    .attr("d", d3.geo.path().projection(projection))
-			    .attr("fill", "transparent")
-			    .style("stroke", "#333")
-			    .style("stroke-width", ".2px")
-			    .attr("class", "muns");
-				*/
-			
-			  g.selectAll("path")
-			    .data(topojson.object(mx, mx.objects.estados2).geometries)
-			    .enter().append("path")
-			    .attr("d", d3.geo.path().projection(projection))
-			    .attr("fill", "#C4EAD1")
-			    .style("stroke", "#40AA6C");
+            var x = d3.scale.linear()
+                .domain([0, width])
+                .range([0, width]);
 
-			   g.selectAll("path")
-			    .data(topojson.object(mx, mx.objects.estados2).properties)
-			    //.enter().append("path")
-			    .attr("class",function(d) { return "e"+d.id; })
-			    .text(function(d) { return "e"+d.id; });
+            var y = d3.scale.linear()
+                .domain([0, height])
+                .range([height, 0]);
 
+            var width = 680,
+                height = 500;
+
+            var projection = d3.geo.mercator()
+                .scale(1200)
+                .center([-94.34034978813841, 24.012062015793]);
+
+            var svg = d3.select(".container.programas .column.left #map-programas").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            var g = svg.append("g");
+
+            var path = d3.geo.path()
+                .projection(projection);
+
+            d3.json("/mx_tj.json", function(error, mx) {
+              /*svg.selectAll("path")
+                .data(topojson.object(mx, mx.objects.municipios2).geometries)
+                .enter().append("path")
+                .attr("d", d3.geo.path().projection(projection))
+                .attr("fill", "transparent")
+                .style("stroke", "#333")
+                .style("stroke-width", ".2px")
+                .attr("class", "muns");
+                */
+
+              g.selectAll("path")
+                .data(topojson.object(mx, mx.objects.estados2).geometries)
+                .enter().append("path")
+                .attr("d", d3.geo.path().projection(projection))
+                .attr("fill", "#C4EAD1")
+                .style("stroke", "#40AA6C");
+
+               g.selectAll("path")
+                .data(topojson.object(mx, mx.objects.estados2).properties)
+                //.enter().append("path")
+                .attr("class",function(d) { return "e"+d.id; })
+                .text(function(d) { return "e"+d.id; });
 
 
-			    /*svg.selectAll(".place-label")
-				    .data(topojson.object(mx, mx.objects.estados2).properties)
-				  .enter().append("text")
-				    .attr("class", "place-label")
-				    .attr("transform", function(d) { return "translate(" + d3.geo.path().projection(projection) + ")"; })
-				    .attr("dy", ".35em")
-				    .text(function(d) { return d.id; });
 
-				svg.selectAll(".place-label")
-			    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
-			    .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
+                /*svg.selectAll(".place-label")
+                    .data(topojson.object(mx, mx.objects.estados2).properties)
+                  .enter().append("text")
+                    .attr("class", "place-label")
+                    .attr("transform", function(d) { return "translate(" + d3.geo.path().projection(projection) + ")"; })
+                    .attr("dy", ".35em")
+                    .text(function(d) { return d.id; });
+
+                svg.selectAll(".place-label")
+                .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
+                .style("text-anchor", function(d) { return d.geometries.coordinates[0] > -1 ? "start" : "end"; });*/
 
 
             });
             </script>
-		<div class="overlay-map">
-		<?php
-		//var_dump($this->programa->entidad_escuelas_count);
-		foreach ($this->entidades as $key => $estado) {
-			if(isset($this->programa->entidad_escuelas_count[$estado->id]) && $this->programa->entidad_escuelas_count[$estado->id] > 0){?>
-			<div class='statemarker e<?=$estado->id?>'>
-				<div class="info">
-					<h4><?=$estado->nombre?></h4>
-					<p>Participa en (<?= $this->programa->entidad_escuelas_count[$estado->id]?>) Escuelas <br><a class='estado_escuela_link' href='<?= $this->config->http_address ?>programas/estado_escuelas/<?=$this->programa->id ?>?es=<?=$estado->id?>'>Ver lista de escuelas</a></p>
+            <div class="overlay-map">
+            <?php
+            //var_dump($this->programa->entidad_escuelas_count);
+            foreach ($this->entidades as $key => $estado) {
+                if(isset($this->programa->entidad_escuelas_count[$estado->id]) && $this->programa->entidad_escuelas_count[$estado->id] > 0){?>
+                <div class='statemarker e<?=$estado->id?>'>
+                    <div class="info">
+                        <h4><?=$estado->nombre?></h4>
+                        <p>Participa en (<?= $this->programa->entidad_escuelas_count[$estado->id]?>) Escuelas <br><a class='estado_escuela_link' href='<?= $this->config->http_address ?>programas/estado_escuelas/<?=$this->programa->id ?>?es=<?=$estado->id?>'>Ver lista de escuelas</a></p>
 
-				</div>
-		<?php
+                    </div>
+                </div>
+            <?php
+                }
             }
-        }
-		?>
-		</div>
-
-        <div id='escuelas_estado_list'></div>
-
-	</div>
+            ?>
+            </div>
+            <div id='escuelas_estado_list'></div>
+        </div>
+    </div>
 	<div class="column right">
 		<h1>Otros programas</h1>
 		<div class="lista-programas">
