@@ -167,7 +167,7 @@ class escuela extends memcached_table{
 		foreach($programas as $programa){
 			$c = $db->selectCollection($programa);
 			$this->$programa = $c->find(array('cct'=>$this->cct));
-			$this->$programa = iterator_to_array($this->programa);
+			$this->$programa = iterator_to_array($this->$programa);
 		}
 	}
 }
