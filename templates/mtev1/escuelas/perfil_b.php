@@ -6,14 +6,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
-				<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
-				<!--<ul class="data">
-					<li>Clave <?=$this->escuela->cct?></li>
-					<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
-					<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
-					<li><?=$controles[$this->escuela->control->id]?></li>
-					<div class="clear"></div>
-				</ul>-->
+			<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
 		</div>		
 	</div>
 	<div class='column left'>
@@ -25,7 +18,7 @@
 							<?php $this->print_img_tag('perfil/blue/posicion.png');?>
 							<p>Posición estatal</p>
 							<h2>
-								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> de <?=number_format($this->entidad_cct_count,0)?>
+								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> <span>de</span> <?=number_format($this->entidad_cct_count,0)?>
 							</h2>
 						</div>
 					</div>
@@ -52,7 +45,7 @@
 			</div>
 
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
-			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
+			<div id='map-data' class='hidden'><?=json_encode($this->escuelas_digest)?></div>
 			<div id='mapa' class='map'></div>
 			<?php $this->include_template('map-infobox','global'); ?>
 			<div class='clear'></div>
@@ -61,7 +54,7 @@
 			<div class="box_info">
 				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<span class='icon sprit2'></span>
-					DirecciÃ³n:
+					Dirección:
 					<span class='title'>
 						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
 						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
@@ -69,37 +62,59 @@
 						<span itemprop="addressCountry" content="MX"></span>
 					</span>
 				</p>
+				
+				<p class='director'>
+					<!--<span class='icon sprit2'></span>
+					Nombre del Director
+					<span class='title'></span>-->
+				</p>
+
+			</div>
+			<div class="box_info">
 				<p class='tel'>
 					Teléfonos:
 					<span class='icon sprit2'></span>
 					<span itemprop="telephone" class='title'>
 						<?=$this->escuela->telefono?>
 					</span>
-				<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
-
-			</div>
-			<div class="box_info">
 				<p class='email'>
 					<span class='icon sprit2'></span>
-					Correo electrónico:
+					email:<!--Correo electrónico:-->
 					<span itemprop="email" class='title'>
-						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
+						email@escuela.com<!--<?=$this->str_limit($this->escuela->correoelectronico,20);?>-->
 					</span>
-					<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
 
-				<p class='web'>
+				<!--<p class='web'>
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-				</p>				
+				</p>-->				
 			</div>
-			<div class="clear"></div>
+			<?php if($this->escuela->censo){foreach($this->escuela->censo as $e){
+			?>
+				<div class="clear"></div>
+				<div class='censo-box'>
+					<span class='text'>Número de Alumnos:</span>
+					<span class='num'><?= $e['num_alumnos'] ?></span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Total de personal:</span>
+					<span class='num'><?= $e['num_personal'] ?></span>
+				</div>
+				<div class='censo-box'>
+					<span class='text'>Grupos:</span>
+					<span class='num'><?= $e['num_grupos'] ?></span>
+				</div>
+			<?php break;}} ?>
+			<div class='clear'></div>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquÃ­ un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja aquÃ­ un comentario sobre esta escuela' name='comentario' class='required'></textarea>
+				<textarea placeholder='Deja aquí un comentario sobre esta escuela' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
@@ -125,16 +140,18 @@
 
 			</fieldset>		
 		</form>
-			<ul class='tabs'>
+			<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>
 				<li><a href='#tab-calificacion' class='reportes'>
 					<span class='triangle'></span>
 					Comentarios 
 					y reportes
 				</a></li>
-				<li><a href='#tab-infraescructura' class='result'>
-					<span class='triangle'></span>
-					Infraestructura escolar
-				</a></li>
+				<?php if($this->escuela->infraestructura){ ?>
+					<li><a href='#tab-infraescructura' class='result'>
+						<span class='triangle'></span>
+						Infraestructura escolar
+					</a></li>
+				<? } ?>
 				<li class='on'><a href='#tab-charts' class='long comentarios'>
 					<span class='triangle'></span>
 					Desempeño académico
@@ -203,78 +220,51 @@
 				</div>
 
 			</div></div>
-			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
-			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
-				<h2>Información disponible corresponde al ciclo xxx</h2>
-				<p class="border_b">Total de aulas en uso 35</p>
-				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
-				<table class='info_table'>
-					<tbody>
-						<tr>
-							<th>Instalaciones</th>
-							<th>sí,no</th>
-						</tr>
-						<tr>
-							<td>Agua entubada</td>
-							<td><span class='not cel'></span></td>
-						</tr>
-						<tr>
-							<td>Luz</td>
-							<td><span class='not cel'></span></td>
-						</tr>
-						<tr>
-							<td>Barda o cercado perimetral</td>
-							<td><span class='true cel'></span></td>
-						</tr>
-						<tr>
-							<td>Canchas deportivas</td>
-							<td><span class='true cel'></span></td>
-						</tr>
-						<tr>
-							<td>Patio de la escuela</td>
-							<td><span class='not cel'></span></td>
-						</tr>
-						<tr>
-							<td>Baños</td>
-							<td><span class='not cel'></span></td>
-						</tr>
-						<tr>
-							<td>Sala de cómputo</td>
-							<td><span class='true cel'></span></td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-			</div>
-
+			<?php 
+			if($this->escuela->infraestructura){
+					$fields = '';
+					foreach($this->escuela->infraestructura as $key => $item){
+						if(isset($item[1]) && $key > 2){
+							$val = strtolower($item[1]);
+							$k = trim(preg_replace('/  1\z/i','',$item[0]));
+							//var_dump($k);
+							if($k == 'Total de aulas') $aulas = $val;
+							else $fields .= "<tr><td>{$k}</td><td><span class='not cel'>{$val}</span></td></tr>";
+						}
+					}
+			?>
+				<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
+				<div class='tab on infraestructura-tab' id='tab-infraescructura'>
+					<h2>Información disponible corresponde al ciclo xxx</h2>
+					<?php if($aulas){ ?><p class="border_b">Total de aulas en uso <?=$aulas?></p><?}?>
+					<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
+					<table class='info_table'>
+						<tbody>
+							<tr>
+								<th>Instalaciones</th>
+								<th>sí,no</th>
+							</tr>
+							<?=$fields?>
+						</tbody>
+					</table>
+				</div>
+			<?php } ?>
 			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
 				<p class="gray_text start"><span class="icon"></span>Calificación global de la escuela según usuarios:</p>
-				<?php if($this->escuela->calificaciones){
-					$cp = 0;
-					$pt = 0;
-					$otp = array(0,0,0,0,0,0);
+				<?php 
+				if($this->escuela->calificaciones){
 					foreach($this->escuela->calificaciones as $calificacion){
 						if(isset($calificacion->calificacion)){
 							$cp++;
 							$pt += $calificacion->calificacion;
 						}
-						$other = json_decode($calificacion->calificaciones);
-						for($i=0;$i<count($otp);$i++){
-							$otp[$i] += $other[$i];
-						}
-
 					}
-				
 					$pro = $pt/$cp;
 					$cali = "Calificación global {$pro}";
-					
-					for($i=0;$i<count($otp);$i++){
-						$otp[$i] /= $cp;
-					}
-					$ci = 0;
+				}else{
+					$cali = "Calificación global n/a";
 				}
 
 				?>
@@ -288,59 +278,51 @@
 						<tr>
 							<td>Asistencia de los maestros</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Preparación de los maestros</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Infraestructura de la escuela</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Relación con padres de familia</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Honestidad y transparencia</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>Participación de padres de familia</td>
 							<td>
-								<span class="cel"><?=$otp[$ci++]?></span>
+								<span class="not cel"></span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
-
-				<p class="gray_text comm"><span class="icon"></span>Comentarios</p>
-
 				<div class="wrap_comments">
-					<div class="comment">
-						<p><span class="icon"></span>Calificación: 10 <span>| 10. Enero. 2014</span></p>
-						<p>Nombre.- Este es el formato de comentario para "Comentarios y calificaciones ciudadanas". Este es el formato de comentario para "comentarios y calificaciones ciudadanas"."</p>
-					</div>
 					<?php if($this->escuela->calificaciones){ 
+					echo '<p class="gray_text comm"><span class="icon"></span>Comentarios</p>';
 					foreach($this->escuela->calificaciones as $calificacion){
 						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
                         $coment = stripslashes($coment);
-						$text_calificacion = isset($calificacion->calificacion)?'<span>CalificaciÃ³n <br /> otorgada</span>':'';
-						
+						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
 						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
 						$cali = $calificacion->calificacion;
 						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
-						//var_dump(json_decode($calificacion->calificaciones));
 						date_default_timezone_set('America/Mexico_City');
 						$time = date("d M Y",strtotime($calificacion->timestamp));
 						echo <<<EOD
@@ -397,119 +379,6 @@ EOD;
 				?>
 				-->
 			</div>
-			<!---->
-
-			<!--
-			<div class='tab jscrollpane'>
-				<a name='reportes_ciudadanos'></a>
-				<div class='gray-box presupuestos'>
-					 <h2>Promedio nacional</h2>
-					<h2>Esta escuela no tiene informaciÃ³n de presupuesto disponible.</h2>
-					
-					<div class='column left'>
-						<h3 class='gray'>
-							Presupuesto anual para la Escuela
-							<span>$89,000</span>
-						</h3>
-						<h3 class='blue'>Presupuesto para esta Escuela</h3>
-						<p>Presupuesto anual $97,000</p>
-					</div>
-					<div class='column right'>
-						<h3 class='gray'>
-							Salario mensual por maestro
-							<span>$89,000</span>
-						</h3>
-						<h3 class='blue'>Salario mensual por maestro</h3>
-						<div class="salarios">
-							<p>Maria Martinez
-								<span>$7564
-									<a href="">REPORTAR
-										<span class="icon"></span>
-									</a>
-								</span>
-							</p>
-							<p>presupuesto anual 
-								<span>$7564
-									<a href="">REPORTAR
-										<span class="icon"></span>
-									</a>
-								</span>
-							</p>
-							<p>presupuesto anual 
-								<span>$7564
-									<a href="">REPORTAR
-										<span class="icon"></span>
-									</a>
-								</span>
-							</p>
-							<p>presupuesto anual 
-								<span>$7564
-									<a href="">REPORTAR
-										<span class="icon"></span>
-									</a>
-								</span>
-							</p>
-						</div>
-
-					</div>
-					
-				</div>
-			</div>-->
-			<!--
-			<div class='tab jscrollpane'>
-				<h2>En construcciÃ³n.</h2>
-				<div class='mas-info'>
-					<div class='left'>	
-						<h2>Servicio</h2>
-						<h3><?=$this->capitalize($this->escuela->servicio->nombre)?></h3>
-						<p>Clave del servicio educativo.</p>
-						
-						<h2>Subnivel</h2>
-						<h3><?=$this->capitalize($this->escuela->subnivel->nombre)?></h3>
-						<p>Clave del subnivel educativo.</p>
-						
-						<h2>Subcontrol</h2>
-						<h3><?=$this->capitalize($this->escuela->subcontrol->nombre)?></h3>
-						<p>Clave del subcontrol administrativo.</p>
-						
-						<h2>Sostenimiento</h2>
-						<h3><?=$this->capitalize($this->escuela->sostenimiento->nombre)?></h3>
-						<p>Clave de sostenimiento.</p>
-
-						<h2>Tipo</h2>
-						<h3><?=$this->capitalize($this->escuela->tipo->nombre)?></h3>
-						<p>Clave del tipo educativo.</p>
-					</div>
-					<div class='right'>
-						<div class='comment-info'>
-							<p class='rating'><?=round($this->escuela->total_evaluados,2)?><a href='#'></a></p>
-							<h2>NÃºmero de alumnos evaluados</h2>
-						</div>
-						<?php if($this->escuela->nivel->id == 12){ ?>
-							<div class='comment-info'>
-								<p class='rating'><?=round($this->escuela->poco_confiables,2)?><a href='#'></a></p>
-								<h2>Resultados no confiables</h2>
-							</div>					
-						<?php } ?>
-						<div class='comment-info'>
-							<p class='rating'><?=round($this->escuela->promedio_espaniol,2)?><a href='#'></a></p>
-							<h2>Promedio de EspaÃ±ol</h2>
-						</div>					
-						<div class='comment-info'>
-							<p class='rating'><?=round($this->escuela->promedio_matematicas,2)?><a href='#'></a></p>
-							<h2>Promedio de MatemÃ¡ticas</h2>
-						</div>					
-						<div class='comment-info'>
-							<p class='rating'><?=round($this->escuela->promedio_general,2)?><a href='#'></a></p>
-							<h2>Promedio general</h2>
-						</div>					
-					</div>
-				</div>
-			</div>
-			
-			<div class='tab jscrollpane'>
-				
-			</div>-->
 		</div>	
 	</div>
 	<div class='column right'>
@@ -547,14 +416,6 @@ EOD;
 				?>
 			</div>
 			<div class='clear'></div>
-			<!--<p class='total_alumnos'>
-				NÃºmero de alumnos <br />
-				evaluados <br />
-				<span>
-				<?=number_format($this->escuela->total_evaluados)?>
-				</span>
-			</p>-->
-			<div class='clear'></div>
 			<div class='califica'>	
 				<div class='title'>
 					<p>Porcentaje de 
@@ -566,8 +427,6 @@ EOD;
 					<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
 					</p>
 				</div>	
-				<!--<div class='title petitions'>
-				</div>-->
 				<div class="share-blue">
 					<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>
 					<a href="#" class="option share"><span class="icon"></span></span>Compartir</a>	
