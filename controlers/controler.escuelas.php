@@ -49,8 +49,7 @@ class escuelas extends main{
 			);
 			//$this->include_theme('index','index');
 			$this->title_header = 'Conoce tu escuela';
-			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber <br />
-			cómo está. Te invitamos a que conozcas y compartas esta<br />información.';
+			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
 			$this->include_theme('index','perfil_b');
 		}else{
@@ -85,7 +84,7 @@ class escuelas extends main{
 
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
-			$this->escuela->get_mongo_info();
+			$this->escuela->get_mongo_info($this->mongo_connect());
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
 			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);

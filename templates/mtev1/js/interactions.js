@@ -491,32 +491,28 @@ $(document).ready(function(){
 	if( $('.container.programas svg').length ){
 	$('.overlay-map').outerHeight($('.container.programas svg').height());
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
-	$('.overlay-map').css('top',$('.container.programas svg').offset().top);
 	}
 
-
-	/*$('.container.programas svg path').each(function(){
-		if($(this).text()=="4" || $(this).text()=="6" || $(this).text()=="31" || $(this).text()=="31"){
-			var stateName = $(this).attr('class');
-			var actualState = $(this);
-			$('.overlay-map').append("<div class='statemarker "+stateName+"'><img src='/templates/mtev1/img/COMPARADOR/pinmap.png'  class='"+stateName+"' /></div>");
-			console.log("encontro");
-
-			console.log("indice:"+stateName);
-			console.log("estado:"+actualState.attr('class'));
-			$('.container.programas .overlay-map .statemarker').each(function(){
-				if($(this).hasClass(stateName)){
-					actualState.css('fill',"#3E9B65");
-					var posY = actualState.offset().top;
-					var posX = actualState.offset().left;
-					var centroX = posX - (actualState.width()/2);
-					var centroY = posY - (actualState.height()/2);
-
-					$(this).offset({ top: centroY-40, left: centroX + 20 });	
-				}
+	var myarr,eClass;
+	$('.container.programas .overlay-map .statemarker').hover(
+		function(){
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				if($(this).text()==eClass)
+					$(this).css("fill","#359044");
+			});
+		},
+		function(){
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				if($(this).text()==eClass)
+					$(this).css("fill","#C4EAD1");
 			});
 		}
-	});*/
+	);
+
 
 
 	$(window).scroll(function(){
@@ -537,16 +533,18 @@ $(document).ready(function(){
 					columnright.show();
 				}else{
 					headtitle.addClass('fixed');
-					if(!columnright.hasClass('fixed')){
-						//semaforo.slideToggle();
-						semaforo.slideUp();
-						//semOverlay.slideToggle();
-						semOverlay.slideUp();
-						listaprogramasosc.slideUp();
-						listaprogramasfed.slideUp();
+					if( windowOffset >= containeroffset + 400 ){
+						if(!columnright.hasClass('fixed')){
+							//semaforo.slideToggle();
+							semaforo.slideUp();
+							//semOverlay.slideToggle();
+							semOverlay.slideUp();
+							listaprogramasosc.slideUp();
+							listaprogramasfed.slideUp();
 
-					}				
-					columnright.addClass('fixed');
+						}				
+						columnright.addClass('fixed');
+					}
 				}
 			}else{
 				headtitle.removeClass('fixed');

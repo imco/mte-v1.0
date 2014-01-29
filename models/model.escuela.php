@@ -127,29 +127,45 @@ class escuela extends memcached_table{
 		}
 		return $variable;
 	}
-	public function get_mongo_info(){
-		//$this->nonfunc();
-		try{
-			$m = new MongoClient("mongodb://***REMOVED***:***REMOVED***@***REMOVED***:27017/mte_produccion");
-			$db = $m->selectDB("mte_produccion");
-			$collections = $db->getCollectionNames();
+	public function get_mongo_info($client){
+		if($client){
+			
+			//Produccion
+			$db = $client->selectDB("mte_produccion");
+			$c = $db->selectCollection('censo_2013');
+			$this->censo = $c->find(array('cct'=>$this->cct));
+			$c = $db->selectCollection('snie');
+			$this->snie = $c->find(array('cct'=>$this->cct));
+			$this->infraestructura = false;
+			if($this->snie){
+				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
+
+				foreach($this->snie as $e){
+					$this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
+					break;
+				}
+				$this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
+			}
+			//Programas
+			$db = $client->selectDB("mte_programas");
 			$c = $db->selectCollection('pec');//pec,jornada_amplia,siat,censo_2013
 			$this->pec = $c->find(array('cct'=>$this->cct));
 			$c = $db->selectCollection('jornada_amplia');
 			$this->ja = $c->find(array('cct'=>$this->cct));
-			$c = $db->selectCollection('siat');
-			$this->siat = $c->find(array('cct'=>$this->cct));
-			$c = $db->selectCollection('censo_2013');
-			$this->censo = $c->find(array('cct'=>$this->cct));
-			$m->close();
-		}catch(Exception $e){
-			//var_dump($e->getMessage());
+			#$c = $db->selectCollection('siat');
+			#$this->siat = $c->find(array('cct'=>$this->cct));
+			
+
+
+			$client->close();
+		}else{
 			$this->pec = false;
 			$this->ja = false;
 			$this->siat = false;
 			$this->censo = false;
+			$this->snie = false;
+			$this->infraestructura = false;
 		}
-		//var_dump(iterator_to_array($this->censo));
 	}
 }
 ?>
