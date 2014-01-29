@@ -53,7 +53,7 @@
 			</div>
 
 			<input type='hidden' id='map-selected' value='<?=$this->escuela->cct?>' name='map-selected'/>
-			<div id='map-data' class='hidden'><?= json_encode($this->escuelas_digest)?></div>
+			<div id='map-data' class='hidden'><?=json_encode($this->escuelas_digest)?></div>
 			<div id='mapa' class='map'></div>
 			<?php $this->include_template('map-infobox','global'); ?>
 			<div class='clear'></div>
@@ -115,8 +115,8 @@
 					<span class='text'>Grupos:</span>
 					<span class='num'><?= $e['num_grupos'] ?></span>
 				</div>
-				<div class='clear'></div>
 			<?php break;}} ?>
+			<div class='clear'></div>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
@@ -148,7 +148,7 @@
 
 			</fieldset>		
 		</form>
-			<ul class='tabs'>
+			<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>
 				<li><a href='#tab-calificacion' class='reportes'>
 					<span class='triangle'></span>
 					Comentarios 

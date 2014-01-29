@@ -889,7 +889,6 @@ line-height: 45px;}
 #content .perfil.B .info_B.top .data{height: 100%;}
 #content .perfil.B .info_B.top .data li{color: #BCBCBC;height: 100%;float: left;font-size: 17px;padding: 4px 17px}
 #content .perfil.B .info_B.top .data li + li{border-left: 2px solid #7C7C7C}
-
 #content .perfil.B .column.left{width:682px;}
 #content .perfil.B .column.right{width:202px;margin-left:12px;}
 #content .perfil.B .column.right .box.fixed{position: fixed;top: 80px;z-index: 99}
@@ -900,13 +899,8 @@ line-height: 45px;}
 #content .perfil.B .info_B ul li{color: #B4B4B4;font-size:15px}
 #content .perfil.B .info_B ul li:before{content: "";display: inline-block;width: 6px;height: 6px;margin-right: 4px;background: #00AFF0;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 #content .perfil.B .info_B.bottom{padding: 5px 17px}
-#content .perfil.B .info_B.bottom .box_info{border: 1px solid #B4B4B4;float: left;padding:7px 7px 12px;width:305px;border:0 none;border-right: 1px solid #B4B4B4;}
-#content .perfil.B .info_B.bottom .box_info + .box_info{float: right;width:306px;margin-right:1px;
-float: left;
-margin-left: -1px;
-padding-left: 25px;
-border: 0 none;
-border-left: 1px solid #B4B4B4;}
+#content .perfil.B .info_B.bottom .box_info{border: 1px solid #B4B4B4;float: left;padding:7px 7px 12px;width:305px;}
+#content .perfil.B .info_B.bottom .box_info + .box_info{float: right;width:306px;margin-right:1px;float:right]== ;}
 #content .perfil.B .info_B.bottom .box_info p{color: #B4B4B4;font-size: 16px;padding:6px 0 5px;line-height:21px;}
 #content .perfil.B .info_B .tel{padding:0 0 10px!important;}
 #content .perfil.B .info_B .tel .icon{background:url(../img/perfil/blue/tel.png) center no-repeat;margin:-2px 4px;}
@@ -1002,7 +996,9 @@ border-left: 1px solid #B4B4B4;}
 #content .perfil.B .califica input[type="submit"]{width:170px;height:25px;font-size:16px;}
 #content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;color:#888;}
 #content .perfil.B .califica textarea{height:68px;}
+#content .perfil.B .tabs.no-infra li{width:339px;}
 #content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 0;height:55px;border:1px solid #c3c9c9;width:225px;border-top:none;}
+
 #content .perfil.B .tabs:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:1px;}
 #content .perfil.B .tabs li a{color:#797979;width:118px;height:87px;padding:0;margin:13px auto;text-align:center;line-height:16px;font-size:17px;}
 #content .perfil.B .tabs li:hover a,
@@ -1202,7 +1198,7 @@ border-left: 1px solid #B4B4B4;}
 
 
 #content .perfil.B .tabs{margin-top:4px;position:relative;margin-bottom: 11px;}
-#content .perfil.B .tabs .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:10px 9px 0;position:absolute;top:-1px;left:104px;display:none;}
+#content .perfil.B .tabs .triangle{border:7px solid #329dd1;border-right-color:transparent;border-left-color:transparent;border-width:10px 9px 0;position:absolute;top:-1px;left:50%;display:none;margin-left:-7px;}
 #content .perfil.B .tabs li.on .triangle{display:block;}
 #content .perfil.B .tabs li:hover .triangle{display:block;}
 
