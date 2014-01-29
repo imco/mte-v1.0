@@ -124,6 +124,29 @@ class pregunta extends table {
     function info() {
         $this->table_name = 'preguntas';
     }
+
+    function getPreguntasConPromedio($escuela){
+        $sql = "select p.id,p.titulo,case when  SUM(cp.calificacion_pregunta)/COUNT(cp.calificacion_pregunta) as promedio from preguntas p
+                left join calificaciones_preguntas cp on cp.pregunta = p.id
+                left join calificaciones c on c.id = cp.calificacion
+                where c.cct = '$escuela'
+                group by  p.id,p.titulo";
+
+        $result = mysql_query($sql);
+
+        $preguntas = array();
+        $i = 0;
+        if($result && mysql_num_rows($result)){
+            while($row = mysql_fetch_row($result)){
+                $pregunta = new pregunta($row[0]);
+                $pregunta->titulo = $row['titulo'];
+                $pregunta->promedio = $row['promedio'];
+                $preguntas[$i++] = $pregunta;
+            }
+        }
+
+        return count($preguntas) ? $preguntas:false;
+    }
 }
 class reporte_ciudadano extends table{
 	function info(){

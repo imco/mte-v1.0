@@ -100,8 +100,8 @@ class programas extends main{
     }
 
     public function estado_escuelas(){
-        $programa = $this->get('id');
-        $estado = $this->get('es');
+        $programa = $this->post('id');
+        $estado = $this->post('es');
         $ccts = $this->get_estado_escuelascct($programa,$estado);
         $params = new stdClass();
         $params->ccts = $ccts;

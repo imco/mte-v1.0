@@ -82,6 +82,9 @@ class escuelas extends main{
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 			");
 
+            if (isset($this->escuela->calificaciones) && count($this->escuela->calificaciones)) {
+
+            }
 		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
 			$this->escuela->get_mongo_info($this->mongo_connect());
@@ -92,6 +95,8 @@ class escuelas extends main{
 			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
+            $aux = new pregunta();
+            $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->id);
 			return true;
 		}else{
 			return false;
