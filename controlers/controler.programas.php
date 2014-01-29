@@ -105,6 +105,7 @@ class programas extends main{
         $ccts = $this->get_estado_escuelascct($programa,$estado);
         $params = new stdClass();
         $params->ccts = $ccts;
+        $params->limit = 20;
         $this->get_escuelas($params);
         $this->include_template("estado_escuelas","programas/partial");
     }

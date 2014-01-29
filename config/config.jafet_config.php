@@ -17,6 +17,9 @@ class jafet_config extends default_config{
 
 		//MXNPHP
 		$this->dev_mode = true;
+
+        $this->mongo_server = '***REMOVED***';
+        $this->mongo_user = '***REMOVED***:***REMOVED***';
 		
 	}
 }
