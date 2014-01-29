@@ -12,6 +12,7 @@ class programas extends main{
 	public function index(){
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
 		$this->programa_info();
+        $this->load_programas();
 		$this->title_header = 'Programas';
 		$this->header_folder = 'compara';
 		$this->breadcrumb = array('#'=>'Programas');
