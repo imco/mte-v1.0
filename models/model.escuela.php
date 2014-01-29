@@ -132,7 +132,7 @@ class escuela extends memcached_table{
 			//Produccion
 			$db = $client->selectDB("mte_produccion");
 			$c = $db->selectCollection('censo_2013');
-			$this->censo = $c->find(array('cct'=>$this->cct));
+			$this->censo_2013 = $c->find(array('cct'=>$this->cct));
 			$c = $db->selectCollection('snie');
 			$this->snie = $c->find(array('cct'=>$this->cct));
 			$this->infraestructura = false;
