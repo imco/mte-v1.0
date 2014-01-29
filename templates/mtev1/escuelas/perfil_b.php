@@ -70,37 +70,57 @@
 						<span itemprop="addressCountry" content="MX"></span>
 					</span>
 				</p>
+				
+				<p class='director'>
+					<!--<span class='icon sprit2'></span>
+					Nombre del Director
+					<span class='title'></span>-->
+				</p>
+
+			</div>
+			<div class="box_info">
 				<p class='tel'>
 					Teléfonos:
 					<span class='icon sprit2'></span>
 					<span itemprop="telephone" class='title'>
 						<?=$this->escuela->telefono?>
 					</span>
-				<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
-
-			</div>
-			<div class="box_info">
 				<p class='email'>
 					<span class='icon sprit2'></span>
-					Correo electrónico:
+					email:<!--Correo electrónico:-->
 					<span itemprop="email" class='title'>
-						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
+						email@escuela.com<!--<?=$this->str_limit($this->escuela->correoelectronico,20);?>-->
 					</span>
-					<div class='clear'></div>
+					<span class='clear'></span>
 				</p>
 
-				<p class='web'>
+				<!--<p class='web'>
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-				</p>				
+				</p>-->				
 			</div>
 			<div class="clear"></div>
+			<div class='censo-box'>
+				<span class='text'>Número de Alumnos:</span>
+				<span class='num'>34</span>
+			</div>
+			<div class='censo-box'>
+				<span class='text'>Total de personal:</span>
+				<span class='num'>34</span>
+			</div>
+			<div class='censo-box'>
+				<span class='text'>Grupos:</span>
+				<span class='num'>34</span>
+			</div>
+			<div class='clear'></div>
+
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquÃ­ un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
-				<textarea placeholder='Deja aquÃ­ un comentario sobre esta escuela' name='comentario' class='required'></textarea>
+				<textarea placeholder='Deja aquí un comentario sobre esta escuela' name='comentario' class='required'></textarea>
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
