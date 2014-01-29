@@ -150,7 +150,7 @@ class escuela extends memcached_table{
 			$programas = array('pec','pes','petc');
 			$this->load_programas($programas,$db);
 			//OSCs
-			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa');
+			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
 			$this->load_programas($programas,$db);
 
 			$client->close();
