@@ -34,6 +34,7 @@ class escuelas extends main{
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 			$this->get_metadata();
+			$this->load_programas();
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
@@ -232,7 +233,7 @@ class escuelas extends main{
 			$description = $description.".";
 
 		}else{
-			$semaforosd = array("MALO", "ACEPTABLE", "BUENO", "EXCELENTE");
+			$semaforosd = array("MALO", "ACEPTABLE", "BUENO", "EXCELENTE",'','','');
 			$description = $description."tiene un aprovechamiento académico ".$semaforosd[$this->escuela->semaforo]." en comparación con otras escuelas que presentaron la prueba ENLACE 2013.";
 		}
 

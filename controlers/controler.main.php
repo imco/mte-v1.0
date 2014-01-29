@@ -534,7 +534,13 @@ class main extends controler{
     		return false;
     	}
     }
-
+    protected function load_programas(){
+    	$q = new programa();
+    	$q->search_clause =  'federal = "1"';
+    	$this->programas_federales = $q->read('id,nombre,m_collection');
+    	$q->search_clause =  'federal = "0"';
+    	$this->programas_osc = $q->read('id,nombre,m_collection');
+    }
     public function get_data_compara_float(){
 	if(!$this->request('json')){
 		$cookie = explode('-',$this->cookie('escuelas_vistas'));
