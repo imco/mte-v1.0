@@ -396,7 +396,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table{border-spacing:2px;border-collapse:separate;margin-top:-2px;}
 #content .resultados table th{background-color:rgba(26,164,86,.2);text-align:center;width:137px;padding:12px 5px;vertical-align:middle;font-size:13px;}
 #content .resultados table th.checkbox{background:#00AFF0  url(../img/compara/esc_comparadas_vertical.png) no-repeat center;width:42px;padding:0 4px;}
-#content .resultados table th.school{background:#00AFF0 url(../img/compara/comparar.png) no-repeat center 14px ;width:70px;position: relative;color:white;font-size: 16px;line-height:15px;padding: 30px 0px 12px}
+#content .resultados table th.school{background:#00AFF0 url(../img/compara/comparar.png) no-repeat center 14px ;width:70px;position: relative;color:white;font-size: 16px;line-height:15px;padding: 30px 0px 12px;display:block;width:auto;height:28px;}
 #content .resultados table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px;z-index: 1;}
 #content .resultados table th.rank{width:74px;line-height:16px;}
 #content .resultados table td{color:white;font-size:18px;text-align:center;vertical-align:middle;background-color:rgba(0,0,0,.4);}
@@ -1735,13 +1735,13 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .infraestructura-tab h2{background-color:#339DD1;background-color:#339DD1;height:42px;font-size:17px;text-align:center;color:white;padding-top:14px;margin-bottom:7px;}
 #content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
 #content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;}
-#content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;padding-top:4px;}
+#content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
 #content .perfil.B .tab-container .info_table th:first-child{font-size:16px;padding-left:8px;width:513px;display:block;margin-right:8px;}
 #content .perfil.B .tab-container .info_table th + th{text-indent:18px;font-size:13px;}
 #content .perfil.B .tab-container .info_table td:first-child{display:block;width:518px;}
 #content .perfil.B .tab-container .info_table td + td{border:none;position:relative;}
-#content .perfil.B .tab-container .info_table td + td .cel{width:115px;height:26px;position:absolute;top:4px;border:1px solid #C9C9C9;}
+#content .perfil.B .tab-container .info_table td + td .cel{width:115px;height:23px;position:relative;border:1px solid #C9C9C9;display:block;}
 
 #content .perfil.B .tab-container .calificacion-tab{padding-top:8px;width:648px;width: 100%;}
 #content .perfil.B .tab-container .calificacion-tab .gray_text{background:#ECECEC;font-size:14px;line-height:53px;color:#4CA3D4;}
@@ -1754,7 +1754,7 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .calificacion-tab .info_table{margin-top:1px;}
 #content .perfil.B .tab-container .infraestructura-tab .info_table td:first-child,
 #content .perfil.B .tab-container .calificacion-tab .info_table td:first-child{margin-right:8px;}
-#content .perfil.B .tab-container .calificacion-tab .info_table .cel{width:117px;text-align:center;line-height:30px;text-indent:0;}
+#content .perfil.B .tab-container .calificacion-tab .info_table .cel{width:117px;text-align:center;line-height:30px;text-indent:0;position:relative;top:9px;height:24px;}
 #content .perfil.B .tab-container .calificacion-tab .comm{margin-top:4px;}
 #content .perfil.B .calificacion-tab .wrap_comments{margin-top:12px;height:328px;overflow:hidden;
 margin-bottom: 10px;

@@ -136,8 +136,10 @@ class escuela extends memcached_table{
 			$this->censo = $c->find(array('cct'=>$this->cct));
 			$c = $db->selectCollection('snie');
 			$this->snie = $c->find(array('cct'=>$this->cct));
+			$this->infraestructura = false;
 			if($this->snie){
 				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
+
 				foreach($this->snie as $e){
 					$this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
 					break;
