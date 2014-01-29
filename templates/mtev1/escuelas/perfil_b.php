@@ -444,7 +444,7 @@ EOD;
 						$programas = array('pec'=>'Programa escuelas de calidad','pes'=>'Programa escuelas seguras','petc'=>'Programa escuelas tiempo completo');
 						foreach($programas as $key => $programa){
 						?>
-						<li class='<?=$this->escuela->$key && iterator_count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+						<li class='<?=$this->escuela->$key && count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
 							<?=$programa?>
 							<?php
 							if($this->escuela->$key){
@@ -476,7 +476,7 @@ EOD;
 						);
 						foreach($programas as $key => $programa){
 						?>
-						<li class='<?=$this->escuela->$key && iterator_count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
+						<li class='<?=$this->escuela->$key && count($this->escuela->$key)?"on":""?>'><a href="/programas/index/1">
 							<?=$programa?>
 						</a></li>
 						<? } ?>
