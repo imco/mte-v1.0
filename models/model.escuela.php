@@ -156,7 +156,7 @@ class escuela extends memcached_table{
 			$client->close();
 		}else{
 			$programas = array('pec','pes','petc','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
-			foreach($this->programas as $programa){
+			foreach($programas as $programa){
 				$this->$programa = false;
 			}
 		}
