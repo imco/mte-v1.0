@@ -521,7 +521,7 @@ $(document).ready(function(){
 			containeroffset = $('.perfil.B.container.B').offset().top;
 			headtitle		= $('.perfil.B .box-head');
 			columnoffset 	= $('.perfil.B .column.left').offset().top;
-			//columnright		= $('.perfil.B .column.right .box');
+			columnright		= $('.perfil.B .column.right .box');
 			semaforo		= $('.perfil.B .column.right .semaforo .level');
 			semOverlay		= $('.perfil.B .semaforo .sem-overlay');
 			listaprogramasfed  = $('.perfil.B .column.right .lista-programas.federales ul');
