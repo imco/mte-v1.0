@@ -1,7 +1,7 @@
 <?php 
-$infografias = array('entorno-social'=>'Entorno Social',
-		'infraestructura'=>'Infraestructura',
-		'aprendizaje'=>'Mejora tu aprendizaje'
+$infografias = array('entorno'=>'Entorno',
+		'participacion'=>'Participación',
+		'aprendizaje'=>'Aprendizaje'
 	);
 ?>
 
@@ -63,9 +63,9 @@ $infografias = array('entorno-social'=>'Entorno Social',
 	<div class="column">
 		<h2 class='banner green'>Mejora tu...</h2>
 		<ul>
-			<li><a href="/mejora/index/entorno-social"><span class="icon"></span>Entorno social</a></li>
-			<li><a href="/mejora/index/infraestructura"><span class="icon"></span>Infraestructura</a></li>
-			<li><a href="/mejora/index/aprendizaje"><span class="icon"></span>Mejora tu aprendizaje</a></li>
+			<li><a href="/mejora/index/entorno"><span class="icon"></span>Entorno</a></li>
+			<li><a href="/mejora/index/participacion"><span class="icon"></span>Participación</a></li>
+			<li><a href="/mejora/index/aprendizaje"><span class="icon"></span>Aprendizaje</a></li>
 
 		</ul>
 
