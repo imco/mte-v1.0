@@ -478,6 +478,7 @@ line-height: 45px;}
 #content .comparar table{margin:11px 9px;border-spacing:1px;}
 #content .comparar table th{line-height:16px;padding:10px 3px;width:130px;border-top:3px solid #0CA14D;}
 #content .comparar table th.school{text-align:center;padding:35px 74px 12px;/*padding:19px 35px 0 79px*/;position: relative;background:#00AFF0 url(../img/compara/comparar.png) no-repeat center 14px;border-top:none;font-size: 16px}
+#content .comparar table.desemp th.school{display:table-cell;}
 #content .comparar table th.school:after{content: "";display: block;position: absolute;width: 0px;height: 0px;left: 46%;border-style: solid;border-width: 12px 10px 0 10px;border-color: #00b0f0 transparent transparent transparent;bottom: -11px;position:relative;margin-bottom:-11px;}
 #content .comparar table th.checkbox.compara_table{border:none;background: #00AFF0;}
 #content .comparar table th.calificacion{width:86px;font-size:12px;}
@@ -820,8 +821,8 @@ line-height: 45px;}
 #header .breadcrumb.escuelas_breadcrumb{}
 #header .breadcrumb.preguntas_frecuentes_breadcrumb,
 #header .breadcrumb.metodologia_breadcrumb,
-#header .breadcrumb.aviso_de_privacidad_breadcrumb,
-#header .breadcrumb.contacto_breadcrumb{}
+#header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
+#header .breadcrumb.contacto_breadcrumb{top:130px;}
 #header .menu.compara + .breadcrumb.compara_breadcrumb{top:491px;}
 
 /*Popup perfil Comparar*/
@@ -1089,7 +1090,7 @@ line-height: 45px;}
 #content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
 #content .home .banner.orange.peticiones img{top:6px;left:67px;}
-#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:10px;}
+#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:6px;}
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
 #content .home .banner.resultados + .gray-box img{margin:0 26px 0 0;width:103px;height:51px;}
@@ -1627,7 +1628,7 @@ margin-top: -12px;}
 
 
 /*mtv5*/
-#header .home.container .titles h1{float:right;margin-top:4px;width:542px;font-size:16px;text-align:left;}
+#header .home.container .titles h1{float:right;margin-top:4px;width:542px;font-size:16px;text-align:center;}
 #header .menu .submenu a{background-color:#00ADF3;}
 #header .menu .submenu a:hover{background-color:#0099D6;}
 #header .menu .submenu .social a{background-color:transparent;}

@@ -10,7 +10,6 @@ class metodologia extends main{
 	* Obtiene los datos necesarios para el correcto funcionamiento de las vistas.
 	*/
 	public function index(){
-		$this->header_folder ='escuelas';
 		$this->breadcrumb = array('#'=>'Metodología');
 		$this->include_theme('index','index');		
 	}

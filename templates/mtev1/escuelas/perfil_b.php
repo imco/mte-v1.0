@@ -223,7 +223,7 @@
 			if($this->escuela->infraestructura){
 					$aulas = $fields = '';
 					foreach($this->escuela->infraestructura as $key => $item){
-						if(isset($item[1]) && $key > 2){
+						if(isset($item[1]) && $key > 1 && $key!=8 && $key<11){
 							$val = strtolower($item[1]);
 							$k = trim(preg_replace('/  1\z/i','',$item[0]));
 							//var_dump($k);
