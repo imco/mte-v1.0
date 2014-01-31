@@ -82,9 +82,6 @@ class escuelas extends main{
 				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
 			");
-
-
-		//if(isset($this->escuela->cct)){
 			$this->escuela->get_semaforo();
 			$this->escuela->get_mongo_info($this->mongo_connect());
 			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
@@ -94,7 +91,6 @@ class escuelas extends main{
 			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
 			$this->entidad_cct_count = $entidad_info->$nivel;
-
             $aux = new pregunta();
             if (isset($this->escuela->calificaciones) && $this->escuela->calificaciones) {
                 $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->cct);
@@ -102,8 +98,6 @@ class escuelas extends main{
                 $aux->search_clause = " 1 = 1 ";
                 $this->preguntas = $aux->read('id,titulo');
             }
-
-
 			return true;
 		}else{
 			return false;

@@ -1,0 +1,25 @@
+@import url('reset.css');
+
+body{font-family:'Varela Round',Arial, Helvetica, sans-serif;background:white;color:#646665;}
+a{text-decoration:none;color:#359B37;}
+.hidden{display:none;}
+.clear{clear:both;}
+
+#container{max-width:261px;margin:0 auto;background-image:url(../img/widget/fondogris.jpg);background-color:#CACCCB;position:relative;text-align:center;}
+#container h1{font-size:16px;line-height:16px;padding:5px 10px 0;}
+#container h2{font-size:10px;line-height:15px;padding:0 10px 5px;}
+#container .head{width:100%;height:50px;background:white;border-bottom:2px solid #91B9C5;box-shadow:0 1px 3px #555;padding:4px 0 5px;position:relative}
+#container .blue-box{background-image:url(../img/home/texture_blue.png);color:white;position:relative;}
+#container .blue-box.medal span{position:absolute;background-image:url(../img/widget/estrellita.png);width:35px;height:51px;top:0;left:6px;display:block;}
+#container .blue-box.medal h1{padding:5px 10px 0 45px;}
+#container .blue-box.medal h2{padding:0 10px 5px 45px;}
+#container .rank-box{border-radius:50%;background:#E8E8E8 url(../img/widget/posicion.png) no-repeat center 17px;width:104px;height:64px;margin:4px auto;padding:40px 0 0;color:#349ED2;font-size:12px;}
+#container .rank-box .large{font-size:23px;line-height:21px;}
+#container .rank-box .gray{color:#989898;line-height:11px;font-size:11px}
+#container .button{position:relative;margin:9px 56px 12px;color:white;background-color:#0B9947;border-radius:4px;box-shadow:inset -1px -1px 2px #555;display:block;line-height:27px;
+	background:linear-gradient(top,#25A85C,#09813A);
+	background:-moz-linear-gradient(top,#25A85C,#09813A);
+
+}
+#container .footer{background-image:url(../img/home/texture-footer.jpg);border-top:2px solid #535353;padding:7px;}
+#container .footer a{color:#929292;}
