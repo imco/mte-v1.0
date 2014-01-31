@@ -15,7 +15,7 @@
  		<div class='head'>
 	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><?php $this->print_img_tag('/widget/mejora.png','Meoratuescuela.org') ?></a>
  		</div>
- 		<div class='blue-box medal'>
+ 		<div class='blue-box <?=$this->escuela->rank_entidad <= 10 ? 'medal':''?>'>
  			<span></span>
  			<h1><?=$this->capitalize($this->escuela->nombre)?></h1>
  			<h2><?=$this->capitalize($this->escuela->localidad->nombre)?>, <?=$this->capitalize($this->escuela->entidad->nombre)?> | <?=$this->capitalize($this->escuela->control->nombre)?></h2>			
