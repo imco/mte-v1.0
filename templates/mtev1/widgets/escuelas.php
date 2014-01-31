@@ -5,9 +5,19 @@
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<?php
 		$css_scripts = array("widget-escuelas.css");		
-		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min--mte-widget-2");
+		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min--mte-widget-3");
 		$cssmin->tag('css');
+		$js_scripts = array("jquery.js");		
+		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min--mte-widget-3");
+		$jsmin->tag('js');
 	?>
+	<script type="text/javascript">
+		$().ready(function(){
+			var iframe = window.parent.document.getElementById('mte-escuela-widget-iframe');
+			var container = document.getElementById('container');
+			iframe.style.height = container.offsetHeight+'px';
+		});
+	</script>
 	<title><?=$this->page_title;?></title>
  </head>
  <body>
