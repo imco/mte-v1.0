@@ -228,7 +228,7 @@
 							$k = trim(preg_replace('/  1\z/i','',$item[0]));
 							//var_dump($k);
 							if($k == 'Total de aulas') $aulas = $val;
-							else $fields .= "<tr><td>{$k}</td><td><span class='not cel'>{$val}</span></td></tr>";
+							else $fields .= "<tr><td>{$k}</td><td><span class='{$val} cel'>{$val}</span></td></tr>";
 						}
 					}
 			?>

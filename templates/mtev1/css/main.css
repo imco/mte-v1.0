@@ -1449,7 +1449,7 @@ margin-top: -12px;}
 #content .container.programas .column.left table tr td .button-frame{display: inline-block;width: 160px}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left #map-programas{position: relative;}
-#content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
+#content .container.programas .column.left svg{background-color: #C6DEFA;border-radius: 2px 2px 0px 0px}
 #content .container.programas .column.left svg path:hover{fill:#359044;}
 #content .container.programas .column.left .overlay-map{position: absolute;top: 35px}
 .overlay-map .statemarker.e1{left: 292px;top:190px;}
@@ -1738,6 +1738,8 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .infraestructura-tab h2{background-color:#339DD1;background-color:#339DD1;height:42px;font-size:17px;text-align:center;color:white;padding-top:14px;margin-bottom:7px;}
 #content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
 #content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.no{background:url(../img/perfil/cruz.png) center no-repeat;color:white;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(../img/perfil/palomita.png) center no-repeat;color:white;}
 #content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
 #content .perfil.B .tab-container .info_table th:first-child{font-size:16px;padding-left:8px;width:513px;display:block;margin-right:8px;}
