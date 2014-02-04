@@ -585,6 +585,18 @@ $(document).ready(function(){
 
     });
 
+	$('#escuelas_estado_list').on('click','.more_cct',function(e){
+		e.preventDefault();
+		var href = this.href.split('?'),
+		url = href[0],
+		params = href[1];
+		$.post('/programas/estado_escuelas',params,function(data){
+			$('.white-box.map').css('padding-bottom',0);
+			$('#escuelas_estado_list').append(data);
+		});
+		$(this).toggle('slow');
+	})
+
 });
 
 

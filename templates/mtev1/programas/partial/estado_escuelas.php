@@ -1,4 +1,7 @@
-<h2 class="title green">Clave CCT de las escuelas en las que se trabaja(2013/2014)</h2>
+<?php if(!$this->request('skip')){ ?>
+	<h2 class="title green">Clave CCT de las escuelas en las que se trabaja(2013/2014)</h2>
+<?php } ?>
+
         <div class="white-box map">
             <table>
                 <?php foreach($this->escuelas as $escuela){ ?>
@@ -9,4 +12,7 @@
                 </tr>
                 <?php }?>
 </table>
+<a class="more_cct" href="?<?=$this->url_more_cct?>">
+	Ver más
+</a>
 </div>
