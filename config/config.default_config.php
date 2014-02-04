@@ -25,8 +25,8 @@ class default_config{
 		$this->change_secret_token = '***REMOVED***';
 
 		//twitter
-		$this->twitter_access_token ='599751421-kgIYMkGn9Qf8YxanUJvEA8oaUCqaR0xMFJh6gQ1S';
-		$this->twitter_access_token_secret = 'xA2osI7KtxKA1WG6pTwVduDM1Avnw2Umw94fJoNxo';
+		$this->twitter_access_token ='***REMOVED***';
+		$this->twitter_access_token_secret = '***REMOVED***';
 		$this->twitter_consumer_key = '***REMOVED***';
 		$this->twitter_consumer_secret = '***REMOVED***';
 
