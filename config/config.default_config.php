@@ -37,6 +37,7 @@ class default_config{
 		$this->recaptcha_public_key = false;
 		$this->recaptcha_private_key = false;
 
+
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->image_email = 'sonny@spaceshiplabs.com';
 		$this->image_email = 'ariadna.camargo@imco.org.mx';
