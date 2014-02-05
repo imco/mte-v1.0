@@ -25,17 +25,17 @@ class default_config{
 		$this->change_secret_token = '***REMOVED***';
 
 		//twitter
-		$this->twitter_access_token ='***REMOVED***';
-		$this->twitter_access_token_secret = '***REMOVED***';
-		$this->twitter_consumer_key = '***REMOVED***';
-		$this->twitter_consumer_secret = '***REMOVED***';
+		$this->twitter_access_token = false;
+		$this->twitter_access_token_secret = false;
+		$this->twitter_consumer_key = false;
+		$this->twitter_consumer_secret = false;
 
 		//hoot suite
-		$this->hootSuite_api_key = '***REMOVED***';
+		$this->hootSuite_api_key = false;
 
 		//recapcha
-		$this->recaptcha_public_key = '***REMOVED***';
-		$this->recaptcha_private_key = '***REMOVED***';
+		$this->recaptcha_public_key = false;
+		$this->recaptcha_private_key = false;
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->image_email = 'sonny@spaceshiplabs.com';
@@ -45,8 +45,8 @@ class default_config{
 
 		//sweetcaptcha
 		$this->SWEETCAPTCHA_APP_ID = 40218; // your application id (change me)
-		$this->SWEETCAPTCHA_KEY = '***REMOVED***'; // your application key (change me)
-		$this->SWEETCAPTCHA_SECRET = '***REMOVED***'; // your application secret (change me)
+		$this->SWEETCAPTCHA_KEY = false;
+		$this->SWEETCAPTCHA_SECRET = false;
 		$this->SWEETCAPTCHA_PUBLIC_URL ='sweetcaptcha.php'; // public http url to this file
 		
 		//signs sizes
