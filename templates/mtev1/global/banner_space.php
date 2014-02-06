@@ -1,0 +1,1 @@
+<div id='main-banner' ><a href='/peticiones/sienlace' ><?php $this->print_img_tag('/sienlace/banner_mejora.png','Sienlace'); ?></a></div>

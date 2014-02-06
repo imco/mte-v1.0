@@ -1,4 +1,5 @@
 <div class='perfil container B'>
+	<?php $this->include_template('banner_space','global'); ?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
@@ -411,7 +412,7 @@ EOD;
 					?>
 					<div class="clear"></div>
 				</div>
-				
+				<!--
 				<div class="influencia">
 					<a class="button" href="#">
 						<span class="icon">!</span>
@@ -434,7 +435,7 @@ EOD;
 						<input type="submit" value="ENVIAR" />
 	
 					</form>
-				</div>
+				</div>-->
 
 
 				<div class="lista-programas federales">
