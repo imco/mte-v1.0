@@ -583,6 +583,11 @@ $(document).ready(function(){
 
     });
 
+	$('.influencia .button').click(function(e){
+		e.preventDefault();
+		$(this).next().toggle('slow');
+	});
+
 	$('#escuelas_estado_list').on('click','.more_cct',function(e){
 		e.preventDefault();
 		var href = this.href.split('?'),

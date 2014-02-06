@@ -821,18 +821,10 @@ line-height: 45px;}
 #header .breadcrumb.escuelas_breadcrumb{}
 #header .breadcrumb.preguntas_frecuentes_breadcrumb,
 #header .breadcrumb.metodologia_breadcrumb,
-<<<<<<< HEAD
-#header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
-#header .breadcrumb.contacto_breadcrumb{top:130px;}
-=======
-<<<<<<< HEAD
 #header .breadcrumb.aviso_de_privacidad_breadcrumb,
 #header .breadcrumb.contacto_breadcrumb{}
-=======
 #header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
 #header .breadcrumb.contacto_breadcrumb{top:130px;}
->>>>>>> d234c8a755cb28827f02101a870038c159001d46
->>>>>>> dev
 #header .menu.compara + .breadcrumb.compara_breadcrumb{top:491px;}
 
 /*Popup perfil Comparar*/
@@ -1100,15 +1092,8 @@ line-height: 45px;}
 #content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
 #content .home .banner.orange.peticiones img{top:6px;left:67px;}
-<<<<<<< HEAD
+
 #content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:6px;}
-=======
-<<<<<<< HEAD
-#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:10px;}
-=======
-#content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:6px;}
->>>>>>> d234c8a755cb28827f02101a870038c159001d46
->>>>>>> dev
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
 #content .home .banner.resultados + .gray-box img{margin:0 26px 0 0;width:103px;height:51px;}
@@ -1513,6 +1498,7 @@ margin-top: -12px;}
 
 #content .container.programas .column .wrap_title{background:white;width:679px;}
 #content .container.programas .column .wrap_title .wr_img{float:left;width:161px;display:block;text-align:center;}
+#content .container.programas .column .wrap_title .wr_img img{width:100%;}
 #content .container.programas .column .wrap_title .title_with_img{float:left;width:518px;}
 
 /*Perfil programas y perfil escuela sidebar*/
@@ -1806,10 +1792,17 @@ height: auto;}
 #header .decorations.simple{display:none;}
 
 #content .container.califica_select table tr.on .checkbox a:before{margin:4px;}
-<<<<<<< HEAD
 
 #content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
-=======
+
+#content .perfil.B .influencia{background:#00AD4E;margin-top:8px;font-size:17px;color:white;padding-top:24px;height:57px;position:relative;}
+#content .perfil.B .influencia .button{color:white;line-height:normal;display:block;font-size:16px;vertical-align:top;margin-left:19px;}
+#content .perfil.B .influencia .button .icon{border-radius:50%;display:block;background:white;width:34px;height:36px;font-size:33px;color:red;text-align:center;line-height:38px;font-weight:bold;display:inline-block;vertical-align:top;color:#00AC4C;}
+#content .perfil.B .influencia .button .txt{display:inline-block;vertical-align:top;width:140px;margin-left:5px;font-size:15px;}
+#content .perfil.B .influencia form{position:absolute;background-color:#00AD4E;z-index:10;left:-220px;top:73px;width:422px;height:60px;display:none;}
+#content .perfil.B .influencia form textarea{margin:0;margin-top:-14px;padding:0;width:380px;margin-left:14px;margin-bottom:-4px;padding:8px;height:29px;}
+#content .perfil.B .influencia form select.custom-select{left:0;top:63px;}
+#content .perfil.B .influencia form .custom-select{display:inline-block;margin-left:15px;width:186px!important;height:23px;background:white url(../img/perfil/flechita.png) no-repeat 173px 13px;}
+#content .perfil.B .influencia form input[type='submit']{display:inline-block;width:183px;vertical-align:top;margin-left:-12px;height:34px;}
 #content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
 #content .programas #map-programas .more_cct{text-align:center;display:block;color:#1F734A;margin-top:8px;padding-bottom:5px;}
->>>>>>> dev

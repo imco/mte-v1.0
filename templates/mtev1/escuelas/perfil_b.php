@@ -411,6 +411,31 @@ EOD;
 					?>
 					<div class="clear"></div>
 				</div>
+				
+				<div class="influencia">
+					<a class="button" href="#">
+						<span class="icon">!</span>
+						<span class="txt">¿En mi escuela 
+						<br />
+						hay INFLUENCIA?</span>
+					</a>
+					<form class="influencia pop" action="">
+						<textarea id="" name="" placeholder="Comentario:"></textarea>
+						<select class='custom-select required' name='ocupacion' >
+							<option value=''>¿Quién eres?</option>
+							<option value='alumno'>Alumno</option>
+							<option value='exalumno'>Exalumno</option>
+							<option value='padredefamilia'>Padre de familia</option>
+							<option value='maestro'>Maestro</option>
+							<option value='director'>Director</option>
+							<option value='ciudadano'>Ciudadano</option>
+						</select>
+						<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
+						<input type="submit" value="ENVIAR" />
+	
+					</form>
+				</div>
+
 
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
