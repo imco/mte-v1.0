@@ -147,7 +147,7 @@ class escuela extends memcached_table{
 			}
 			//Programas Federales
 			$db = $client->selectDB("mte_programas");
-			$programas = array('pec','pes','petc');
+			$programas = array('pec','pes','petc','siat');
 			$this->load_programas($programas,$db);
 			//OSCs
 			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');

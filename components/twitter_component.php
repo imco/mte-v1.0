@@ -67,9 +67,9 @@ class twitter_component extends component{
 		$responce = array();
 		foreach($vartemp as $tweet){
 			$tweetData = new stdClass();
-			$tweetData->screen_name = $tweet->user->screen_name;
+			$tweetData->screen_name = $tweet->screen_name;
 			$tweetData->text  = $tweet->text;
-;			$tweetData->user = new stdClass();
+			$tweetData->user = new stdClass();
 			$tweetData->user->screen_name  =$tweet->user->screen_name;
 			$tweetData->user->profile_image_url = $tweet->user->profile_image_url;
 			$tweetData->id_str = $tweet->id_str;

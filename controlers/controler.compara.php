@@ -26,7 +26,8 @@ class compara extends main{
 			$this->get_location();
 			$params = new stdClass();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
-			//$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
+			if($this->config->search_location)
+				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
 		}else{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}

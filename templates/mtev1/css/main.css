@@ -821,6 +821,8 @@ line-height: 45px;}
 #header .breadcrumb.escuelas_breadcrumb{}
 #header .breadcrumb.preguntas_frecuentes_breadcrumb,
 #header .breadcrumb.metodologia_breadcrumb,
+#header .breadcrumb.aviso_de_privacidad_breadcrumb,
+#header .breadcrumb.contacto_breadcrumb{}
 #header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
 #header .breadcrumb.contacto_breadcrumb{top:130px;}
 #header .menu.compara + .breadcrumb.compara_breadcrumb{top:491px;}
@@ -1090,6 +1092,7 @@ line-height: 45px;}
 #content .home .banner.peticiones{text-align: center;}
 #content .home .banner.orange.peticiones{padding:14px 55px 12px 93px;font-size:26px;}
 #content .home .banner.orange.peticiones img{top:6px;left:67px;}
+
 #content .home .banner.resultados{padding:17px 0 19px 114px;line-height:21px;font-size:25px;margin-bottom:6px;}
 #content .home .banner.resultados img{top:18px;left:51px;}
 #content .home .banner.resultados + .gray-box{line-height:53px;font-size:14px;}
@@ -1437,6 +1440,7 @@ margin-top: -12px;}
 #content .container.programas .column h1.title{font-size: 30px;line-height: 29px;padding: 12px 27px}
 #content .container.programas .column .white-box{background-color: #fff;line-height: 16px;padding: 12px 27px;}
 #content .container.programas .column .white-box.map{background-color: rgba(255,255,255,0.3)}
+#content .container.programas .column .white-box.map + .white-box.map{padding-top:0;}
 #content .container.programas .column .white-box h3 , #content .container.programas .column .white-box span , #content .container.programas .column .white-box a{font-size: 14px;color: #00AFF2}
 #content .container.programas .column .white-box p{font-size: 14px;line-height: 17px;text-align: justify;}
 #content .container.programas .column .info{margin: 15px 0}
@@ -1743,6 +1747,8 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .infraestructura-tab h2{background-color:#339DD1;background-color:#339DD1;height:42px;font-size:17px;text-align:center;color:white;padding-top:14px;margin-bottom:7px;}
 #content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
 #content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.no{background:url(../img/perfil/cruz.png) center no-repeat;color:white;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(../img/perfil/palomita.png) center no-repeat;color:white;}
 #content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
 #content .perfil.B .tab-container .info_table th:first-child{font-size:16px;padding-left:8px;width:513px;display:block;margin-right:8px;}
@@ -1798,3 +1804,5 @@ height: auto;}
 #content .perfil.B .influencia form select.custom-select{left:0;top:63px;}
 #content .perfil.B .influencia form .custom-select{display:inline-block;margin-left:15px;width:186px!important;height:23px;background:white url(../img/perfil/flechita.png) no-repeat 173px 13px;}
 #content .perfil.B .influencia form input[type='submit']{display:inline-block;width:183px;vertical-align:top;margin-left:-12px;height:34px;}
+#content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
+#content .programas #map-programas .more_cct{text-align:center;display:block;color:#1F734A;margin-top:8px;padding-bottom:5px;}

@@ -62,6 +62,3 @@
 	}
 	?>
 </table>
-<?php	//if($this->location == 'compara' && $this->get('action') == 'escuelas' && $this->get('id'))
-		//$this->include_template('share_buttons','global');
-	

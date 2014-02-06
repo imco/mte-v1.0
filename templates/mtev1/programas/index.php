@@ -42,6 +42,7 @@
 			</div>
 		</div>
 
+	<h2 class="title">Zonas de cobertura</h2>
         <div id="map-programas">
             <script src="http://d3js.org/d3.v3.min.js"></script>
             <script src="http://d3js.org/topojson.v0.min.js"></script>

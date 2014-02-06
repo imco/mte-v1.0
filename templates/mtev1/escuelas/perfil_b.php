@@ -228,20 +228,20 @@
 							$k = trim(preg_replace('/  1\z/i','',$item[0]));
 							//var_dump($k);
 							if($k == 'Total de aulas') $aulas = $val;
-							else $fields .= "<tr><td>{$k}</td><td><span class='not cel'>{$val}</span></td></tr>";
+							else $fields .= "<tr><td>{$k}</td><td><span class='{$val} cel'>{$val}</span></td></tr>";
 						}
 					}
 			?>
 				<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 				<div class='tab on infraestructura-tab' id='tab-infraescructura'>
-					<!--<h2>Información disponible corresponde al ciclo xxx</h2>-->
+					<h2>Información disponible corresponde al ciclo 2007</h2>
 					<?php if($aulas){ ?><p class="border_b">Total de aulas en uso <?=$aulas?></p><?}?>
 					<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
 					<table class='info_table'>
 						<tbody>
 							<tr>
 								<th>Instalaciones</th>
-								<th>sí,no</th>
+								<th></th>
 							</tr>
 							<?=$fields?>
 						</tbody>
@@ -447,7 +447,7 @@ EOD;
 							<?=$programa->nombre?>
 							<?php
 							//var_dump($this->escuela->{$programa->m_collection});
-							if($this->escuela->{$programa->m_collection}){
+							if($this->escuela->{$programa->m_collection} && isset($this->escuela->{$programa->m_collection}[0]['anio'])){
 								$anios = array();
 								foreach($this->escuela->{$programa->m_collection} as $p) $anios[] = $p['anio'];
 								echo implode(",",$anios);
