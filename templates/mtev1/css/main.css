@@ -1787,3 +1787,13 @@ height: auto;}
 #content .container.califica_select table tr.on .checkbox a:before{margin:4px;}
 
 #content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
+
+#content .perfil.B .influencia{background:#00AD4E;margin-top:8px;font-size:17px;color:white;padding-top:24px;height:57px;position:relative;}
+#content .perfil.B .influencia .button{color:white;line-height:normal;display:block;font-size:16px;vertical-align:top;margin-left:19px;}
+#content .perfil.B .influencia .button .icon{border-radius:50%;display:block;background:white;width:34px;height:36px;font-size:33px;color:red;text-align:center;line-height:38px;font-weight:bold;display:inline-block;vertical-align:top;color:#00AC4C;}
+#content .perfil.B .influencia .button .txt{display:inline-block;vertical-align:top;width:140px;margin-left:5px;font-size:15px;}
+#content .perfil.B .influencia form{position:absolute;background-color:#00AD4E;z-index:10;left:-220px;top:73px;width:422px;height:60px;display:none;}
+#content .perfil.B .influencia form textarea{margin:0;margin-top:-14px;padding:0;width:380px;margin-left:14px;margin-bottom:-4px;padding:8px;height:29px;}
+#content .perfil.B .influencia form select.custom-select{left:0;top:63px;}
+#content .perfil.B .influencia form .custom-select{display:inline-block;margin-left:15px;width:186px!important;height:23px;background:white url(../img/perfil/flechita.png) no-repeat 173px 13px;}
+#content .perfil.B .influencia form input[type='submit']{display:inline-block;width:183px;vertical-align:top;margin-left:-12px;height:34px;}
