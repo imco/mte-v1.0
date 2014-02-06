@@ -30,6 +30,5 @@
 	</div>
 	
 	<?php $this->include_template('sidebar','home');?>
-
 	<div class='clear'></div>
 </div>

@@ -7,7 +7,6 @@
 		<th rowspan='2' class='calificacion'>Muestras poco confiables</th>
 	</tr>
 	<tr>
-		
 		<th class='calificacion'>Reprobado</th>
 		<th class='calificacion'>De panzazo</th>
 		<th class='calificacion'>Bien</th>

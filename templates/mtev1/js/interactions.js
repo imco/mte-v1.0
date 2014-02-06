@@ -279,9 +279,7 @@ $(document).ready(function(){
 		$.cookie('escuelas',escuelas.join('-'));
 		$(window).unload(add_escuelas_cookie);
 		if(document.URL != url)
-			window.location = url;
-
-	
+			window.location = url;	
 	});
 
 	$('.perfil .sort').click(function(e){
@@ -585,6 +583,17 @@ $(document).ready(function(){
 
     });
 
+	$('#escuelas_estado_list').on('click','.more_cct',function(e){
+		e.preventDefault();
+		var href = this.href.split('?'),
+		url = href[0],
+		params = href[1];
+		$.post('/programas/estado_escuelas',params,function(data){
+			$('.white-box.map').css('padding-bottom',0);
+			$('#escuelas_estado_list').append(data);
+		});
+		$(this).toggle('slow');
+	})
 });
 
 
@@ -650,8 +659,6 @@ function twitterIni(){
 	page_proxy = '/home/twitter';	
 	$("#tweets .tweet p").html("cargando tweets...");
 	$.getJSON(page_proxy, function(data){
-		console.log(data);
-		//data = data.statuses;
 		$("#tweets .tweet").css('display','none');
 		$("#tweets").append('<ul></ul>');
 		for(d in data){

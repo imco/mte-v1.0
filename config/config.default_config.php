@@ -45,8 +45,8 @@ class default_config{
 
 		//sweetcaptcha
 		$this->SWEETCAPTCHA_APP_ID = 40218; // your application id (change me)
-		$this->SWEETCAPTCHA_KEY = false;
-		$this->SWEETCAPTCHA_SECRET = false;
+		$this->SWEETCAPTCHA_KEY = '***REMOVED***'; // your application key (change me)
+		$this->SWEETCAPTCHA_SECRET = '***REMOVED***'; // your application secret (change me)
 		$this->SWEETCAPTCHA_PUBLIC_URL ='sweetcaptcha.php'; // public http url to this file
 		
 		//signs sizes

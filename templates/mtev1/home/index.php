@@ -44,6 +44,5 @@ $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 	</div>
 	<!--<div class='column right'>-->
 	<?php $this->include_template('sidebar','home');?>
-
 	<div class='clear'></div>
 </div>
