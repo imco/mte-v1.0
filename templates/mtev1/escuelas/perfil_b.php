@@ -422,7 +422,7 @@ EOD;
 							<?=$programa->nombre?>
 							<?php
 							//var_dump($this->escuela->{$programa->m_collection});
-							if($this->escuela->{$programa->m_collection}){
+							if($this->escuela->{$programa->m_collection} && isset($this->escuela->{$programa->m_collection}[0]['anio'])){
 								$anios = array();
 								foreach($this->escuela->{$programa->m_collection} as $p) $anios[] = $p['anio'];
 								echo implode(",",$anios);

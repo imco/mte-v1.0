@@ -39,26 +39,28 @@ class programas extends main{
         if (!$m_collection) return $estado_escuelas;
         try {
             $m = $this->mongo_connect();
-            $db = $m->selectDB("mte_programas");
-            $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
+            if($m){ 
+                $db = $m->selectDB("mte_programas");
+                $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
 
-            $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
-            $aux = $max_aux->getNext();
-            $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+                $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
+                $aux = $max_aux->getNext();
+                $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
 
-            for($i=1;$i<=32;$i++) {
-                $aux = $i;
-                if ($i < 10) {
-                    $aux = '0'.$i;
+                for($i=1;$i<=32;$i++) {
+                    $aux = $i;
+                    if ($i < 10) {
+                        $aux = '0'.$i;
+                    }
+                    if ($max_anio) {
+                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                    } else {
+                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                    }
                 }
-                if ($max_anio) {
-                    $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
-                } else {
-                    $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
-                }
+
+                $m->close();
             }
-
-            $m->close();
         } catch(Exception $ex) {
             if ($this->debug) {
                 var_dump($ex);
