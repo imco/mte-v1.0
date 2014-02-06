@@ -1,5 +1,14 @@
 <div class="container programas">
 	<div class="column left">
+		<?php $idImg = $this->get('id');
+		$existsImg = file_exists($this->config->document_root."templates/mtev1/img/programas/{$idImg}.jpg");
+		if($existsImg){ 
+			echo "<div class='wrap_title'><div class='wr_img'>";
+				$this->print_img_tag("programas/{$idImg}.jpg");
+			echo "</div>";
+		}?>
+
+		<?php if($existsImg) echo '<div class="title_with_img">'; ?>
 		<h1 class="title"><?php echo $this->programa->nombre; ?></h1>
 		<div class="white-box">
 			<!--<h3>Objetivo del programa</h3>
@@ -7,6 +16,7 @@
 			-->
 			<p><span class="blue">Tema específico que atiende el programa</span> <?php echo $this->programa->tema_especifico; ?></p>
 		</div>
+		<?php if($existsImg) echo "</div><div class='clear'></div></div>"; ?>
 		<h2 class="title">Descripción del programa</h2>
 		<div class="white-box">
 			<p><?php echo $this->programa->descripcion; ?></p>
