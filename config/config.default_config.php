@@ -65,7 +65,7 @@ class default_config{
 		$this->rack_space_key = false;
 
 		$this->mongo_server = false;
-        $this->mongo_user = false;
+        $this->mongo_user = false;z
 	}
 }
 ?>
