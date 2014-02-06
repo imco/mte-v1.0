@@ -61,13 +61,13 @@ class twitter_component extends component{
 			header('Content-Type: '.$info['content_type']);
 			header('Content-Length: '.$info['size_download']);
 		}
-
 		$vartemp = json_decode($result);
 		$vartemp = $vartemp->statuses;
 		$responce = array();
 		foreach($vartemp as $tweet){
+			//var_dump($tweet);
 			$tweetData = new stdClass();
-			$tweetData->screen_name = $tweet->screen_name;
+			$tweetData->screen_name = $tweet->user->screen_name;
 			$tweetData->text  = $tweet->text;
 			$tweetData->user = new stdClass();
 			$tweetData->user->screen_name  =$tweet->user->screen_name;
