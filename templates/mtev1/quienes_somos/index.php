@@ -28,44 +28,7 @@
 
 		</div>
 	</div>
-	<div class='column right'>
-		<div class='gray-box newsletter'>
-			<?php if($this->get('news') && $this->get('news')!='false'){ 
-						echo "<p>Registrado correctamente</p>";
-			}else{
-				if($this->get('news')=='false')
-					echo "<p>Error intentalo de nuevo</p>";
-				else
-					echo "<p>Mantente informado</p>";
-			
-			  ?>
-			<?php $this->print_img_tag('news.png');?>
-			<form method='post' action='/home/newsletter/' accept-charstet='utf-8' class='newsletter' >
-				<input name='correo' type='text' placeholder='Tu correo' class='required email' />
-				<p class='check'><input type='checkbox' name='aviso' class='required' />	
-					<a href='/aviso-de-privacidad'>Aceptar aviso de privacidad</a>
-				</p>
-
-				<input type='submit' value='Suscríbete' />
-			</form>
-			<?php } ?>
-		</div>
-		<a href='/peticiones/' class='banner orange peticiones'>
-			<?php $this->print_img_tag('home/peticiones.png');?>
-			Peticiones
-		</a>
-		<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>
-
-		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box'>
-			<?php $this->print_img_tag('home/facebook_banner.jpg'); ?>
-			/MejoraTuEscuela
-		</a>
-		<a href='https://twitter.com/mejoratuescuela' class='gray-box twitter'>
-			<span class='icon'></span>
-			@MejoraTuEscuela
-		</a>
-		<div class='clear'></div>
-		<ul id='tweets' class='gray-box tweets'></ul>
-	</div>
+	
+	<?php $this->include_template('sidebar','home');?>
 	<div class='clear'></div>
 </div>

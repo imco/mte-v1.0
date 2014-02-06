@@ -46,7 +46,7 @@ class default_config{
 		//sweetcaptcha
 		$this->SWEETCAPTCHA_APP_ID = 40218; // your application id (change me)
 		$this->SWEETCAPTCHA_KEY = '***REMOVED***'; // your application key (change me)
-		$this->SWEETCAPTCHA_SECRET = '***REMOVED***'; // your application secret (change me)
+	$this->SWEETCAPTCHA_SECRET = '***REMOVED***'; // your application secret (change me)
 		$this->SWEETCAPTCHA_PUBLIC_URL ='sweetcaptcha.php'; // public http url to this file
 		
 		//signs sizes
@@ -62,6 +62,9 @@ class default_config{
 		//rack space
 		$this->rack_space_user = "***REMOVED***";
 		$this->rack_space_key = "***REMOVED***";
+
+		$this->mongo_server = '***REMOVED***';
+        $this->mongo_user = '***REMOVED***:***REMOVED***';
 	}
 }
 ?>

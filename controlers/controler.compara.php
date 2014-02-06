@@ -26,7 +26,8 @@ class compara extends main{
 			$this->get_location();
 			$params = new stdClass();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
-			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
+			if($this->config->search_location)
+				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
 		}else{
 			$this->breadcrumb = array('/compara'=> 'Comparador','#'=> 'Busqueda');
 		}
@@ -46,7 +47,10 @@ class compara extends main{
 			$this->set_info_user_search($this->num_results);
 			$this->include_theme('index','resultados');
 		}else{
+<<<<<<< HEAD
 			$params = new stdClass();
+=======
+>>>>>>> d234c8a755cb28827f02101a870038c159001d46
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 

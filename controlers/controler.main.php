@@ -543,11 +543,17 @@ class main extends controler{
     }
     public function get_data_compara_float(){
 	if(!$this->request('json')){
+		$this->load_compara_cookie();
 		$cookie = explode('-',$this->cookie('escuelas_vistas'));
 	    	if($this->get('controler') == 'escuelas'){
 			$cookie[] = $this->get('id');
+		}else if($this->get('controler') == 'compara' && $this->get('action')=='escuelas'){
+			$forGet = explode('-',$this->get('id'));
+			//$forGet = array_merge($this->compara_cookie,$forGet);
+			$this->compara_cookie = array_unique($forGet);
+			$this->set_cookie('escuelas',implode("-",$this->compara_cookie));	
 		}
-		$this->load_compara_cookie();
+		//$this->load_compara_cookie();
 		$params = new stdClass();
 		if($this->compara_cookie){
 			$params->ccts = $this->compara_cookie;
