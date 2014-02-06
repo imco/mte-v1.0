@@ -21,8 +21,8 @@ class default_config{
 		$this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No tomó la <br /> prueba <br />ENLACE','Poco confiable','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
 
 		//Change.org
-		$this->change_api_key = false;
-		$this->change_secret_token = false;
+		$this->change_api_key = '***REMOVED***';
+		$this->change_secret_token = '***REMOVED***';
 
 		//twitter
 		$this->twitter_access_token = false;
@@ -36,7 +36,6 @@ class default_config{
 		//recapcha
 		$this->recaptcha_public_key = false;
 		$this->recaptcha_private_key = false;
-
 
 		$this->contact_email = 'contacto@mejoratuescuela.org';
 		$this->image_email = 'sonny@spaceshiplabs.com';
@@ -57,15 +56,15 @@ class default_config{
 		]');
 
 		//sendGrid
-		$this->send_grid_user = false;
-		$this->send_grid_key  = false;
+		$this->send_grid_user = "***REMOVED***";
+		$this->send_grid_key  = "***REMOVED***";
 
 		//rack space
-		$this->rack_space_user = false;
-		$this->rack_space_key = false;
+		$this->rack_space_user = "***REMOVED***";
+		$this->rack_space_key = "***REMOVED***";
 
-		$this->mongo_server = false;
-        $this->mongo_user = false;z
+		$this->mongo_server = '***REMOVED***';
+        $this->mongo_user = '***REMOVED***:***REMOVED***';
 	}
 }
 ?>
