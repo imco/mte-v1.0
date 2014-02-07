@@ -116,6 +116,9 @@ class programas extends main{
         if ($estado < 10) $estado = '0'.$estado;
         $ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
         $params = new stdClass();
+	if($skip!=0 && !$ccts){
+		exit;
+	}
         $params->ccts = $ccts;
         $params->limit = 20;
         $params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC";

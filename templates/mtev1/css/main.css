@@ -1683,7 +1683,7 @@ padding-top: 25px;
 #header .std_header .titles{color:white;font-size:41px;text-align:right;margin:15px 106px 0 0;float:right;position: relative;text-align: left;}
 #header .breadcrumb.compara_breadcrumb + .std_header .titles{margin-right:161px;}
 #header .std_header{min-height:195px;}
-#header .std_header .sb-title{text-align:left;font-size:17px;margin:39px 0 0 0;line-height:20px;float:right;width:554px;color: #535353;}
+#header .std_header .sb-title{text-align:center;font-size:17px;margin:39px 0 0 0;line-height:20px;float:right;width:554px;color: #535353;}
 
 #header .compara_search{background-color:#007642;margin-top:-23px;}
 #header .compara_search #general-search .busqueda-avanzada{width:783px;}
