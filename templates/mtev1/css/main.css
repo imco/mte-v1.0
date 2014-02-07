@@ -1,4 +1,4 @@
-@import url('reset.css');
+@import url('reset.css'); 
 @import url('stickyFooter.css');
 
 body{font-family:Varela Round, Arial;background:#C7CBCC url(../img/home/texture.jpg);}
