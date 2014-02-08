@@ -1,5 +1,5 @@
 <div class='perfil container B'>
-	<?php $this->include_template('banner_space','global'); ?>
+	<?php $this->include_template('banner_space','global');?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
@@ -65,9 +65,11 @@
 				</p>
 				
 				<p class='director'>
-					<!--<span class='icon sprit2'></span>
-					Nombre del Director
-					<span class='title'></span>-->
+				<?php if( isset($this->escuela->censo_2013['persona_responsable']) && strlen(trim($this->escuela->censo_2013['persona_responsable']))>0 ){ ?>
+					<span class='icon sprit2'></span>
+					Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?>
+					<span class='title'></span>
+				<?php } ?>
 				</p>
 
 			</div>
@@ -93,21 +95,21 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<?php if($this->escuela->censo_2013){foreach($this->escuela->censo_2013 as $e){ ?>
+			<?php if($this->escuela->censo_2013){ ?>
 				<div class="clear"></div>
 				<div class='censo-box'>
 					<span class='text'>Número de Alumnos:</span>
-					<span class='num'><?= $e['num_alumnos'] ?></span>
+					<span class='num'><?= $this->escuela->censo_2013['num_alumnos'] ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Total de personal:</span>
-					<span class='num'><?= $e['num_personal'] ?></span>
+					<span class='num'><?= $this->escuela->censo_2013['num_personal'] ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Grupos:</span>
-					<span class='num'><?= $e['num_grupos'] ?></span>
+					<span class='num'><?= $this->escuela->censo_2013['num_grupos'] ?></span>
 				</div>
-			<?php break;}} ?>
+			<?php } ?>
 			<div class='clear'></div>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>

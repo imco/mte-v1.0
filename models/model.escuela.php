@@ -132,10 +132,31 @@ class escuela extends memcached_table{
 			//Produccion
 			$db = $client->selectDB("mte_produccion");
 			$c = $db->selectCollection('censo_2013');
-			$this->censo_2013 = $c->find(array('cct'=>$this->cct));
+			$aux = $c->find(array('cct'=>$this->cct));
+			if(count($aux)>0){
+				foreach($aux as $e)
+					$this->censo_2013 = $e;
+				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
+				if( count($this->censo_2013)>0 ){
+					foreach( $variables as $key=>$val)
+						if(isset($this->censo_2013[$key]) && strlen(trim($this->censo_2013[$key]))>0)
+							$this->$val = $this->censo_2013[$key];
+
+					if(isset($this->censo_2013['calle'],$this->censo_2013['cp'],$this->censo_2013['numero_dir']) && strlen(trim($this->censo_2013['calle']))>0){
+						$cp = ctype_digit((string)$this->censo_2013['cp'])? ', CP '.$this->censo_2013['cp'].',':',';
+						$this->domicilio = $this->censo_2013['calle'].' '.$this->censo_2013['numero_dir'].$cp;
+					}
+
+				}
+			}
+			else
+				$this->censo_2013 == false;
+			
+			
 			$c = $db->selectCollection('snie');
 			$this->snie = $c->find(array('cct'=>$this->cct));
 			$this->infraestructura = false;
+
 			if($this->snie){
 				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
 
