@@ -359,12 +359,8 @@ $(document).ready(function(){
 	//mejora view
 	$('.mejorar').click(function(){
 		input_data_view_mejora(this);
-		console.log("altura de mejora "+ $('.mejora').outerHeight(true));
-		var displayTop = ($('.mejora').height() / 2) ;
-		$('.display').css('top',displayTop+'px');	
+		$('.display').css('top',($(window).scrollTop()-325)+'px');	
 		$('.display').show('slow');
-		var displayoffset = $('.display').offset();
-		$('body').animate({scrollTop:displayoffset.top-20},200);//scroll 213
 		$('.mejora .overlay-transparent').show();
 	});
 	$('.mejora .overlay-transparent').click(function(){
@@ -721,12 +717,13 @@ function input_data_view_mejora(mejorar){
 	mejorar = $(mejorar);
 	var index = $('.wrap .mejorar').removeClass('on').index(mejorar),
 	url = mejorar.find('a.more')[0].href,
-	title = mejorar.find('h2').html()
+	title = mejorar.find('h2').html(),
 	display = $('.display');
 	mejorar.addClass('on');
 	display.find('.header p').html(title);
 	display.find('.left img')[0].src = mejorar.find('h1 a')[0].href;
 	display.find('.wrap_content p + a')[0].href = url; 
+	display.find('.download')[0].href = mejorar.find('.hidden.download')[0].href;
 	var tweet = "<a href='https://twitter.com/share' class='twitter-share-button' data-url='"+url+"' data-text='"+title+"'>Tweet</a>",
 	template_share = '<div class="fb-like" data-href="'+url+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>'+tweet+'<div class="fb-comments" data-href="'+url+'" data-width="340" data-numposts="5" ></div>';
 	$('.info_share').html(template_share);
