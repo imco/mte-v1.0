@@ -8,8 +8,12 @@
 			echo "</div>";
 		}?>
 
-		<?php if($existsImg) echo '<div class="title_with_img">'; ?>
-		<h1 class="title"><?php echo $this->programa->nombre; ?></h1>
+		<?php if($existsImg) echo '<div class="title_with_img">'; 
+		$datoExtra = "";
+		if($this->programa->id==5)
+			$datoExtra = " (datos del 2012)";
+		?>
+		<h1 class="title"><?php echo $this->programa->nombre.$datoExtra; ?></h1>
 		<div class="white-box">
 			<!--<h3>Objetivo del programa</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic consectetur quam odio. Necessitatibus, voluptatibus optio facilis ullam quas amet quidem nobis pariatur maxime sit magni reiciendis inventore nemo. Corporis, fugit.</p>
@@ -154,7 +158,10 @@
 				<?php 
                 foreach($this->programas_osc as $programa){
                     $on = $programa->id == $this->programa->id ? 'class="on"' : '';
-                    echo "<li $on><a href='/programas/index/{$programa->id}'>{$programa->nombre}</a></li>";
+		    $datoExtra = "";
+		    if($programa->id==5)
+		    	$datoExtra = " (datos del 2012)";
+                    echo "<li $on><a href='/programas/index/{$programa->id}'>{$programa->nombre}{$datoExtra}</a></li>";
                 }
                 ?>
 			</ul>			

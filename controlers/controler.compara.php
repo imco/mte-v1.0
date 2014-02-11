@@ -107,15 +107,20 @@ class compara extends main{
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 		}
-		$this->resultados_title = 'Resultados';
 		$this->breadcrumb = array('#'=>'Comparador');
 
 		$this->resultados_title = 'Resultados de tu búsqueda';
 
-		if(!$this->post('search')){ 
+		if($this->get('search')){ 
 			$this->get_location();
 			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
-			$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
+			if($this->config->search_location)
+				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
+			else if(($entidad = $this->get('entidad'))){
+				$municipio = new entidad($entidad);
+				$municipio->read('nombre');
+				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($municipio->nombre);
+			}
 		}
 		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Conoce el semáforo educativo de preescolar, primarias, secundarias y bachilleratos de otras escuelas.";
 

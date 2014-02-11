@@ -466,9 +466,13 @@ EOD;
 					<ul>
 						<?php
 						foreach($this->programas_osc as $programa){
+						    $datoExtra = "";
+						    if($programa->id==5)
+						    	$datoExtra = " (datos del 2012)";
 						?>
+
 						<li class='<?=$this->escuela->{$programa->m_collection} && count($this->escuela->{$programa->m_collection})?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
-							<?=$programa->nombre?>
+							<?=$programa->nombre.$datoExtra?>
 						</a></li>
 						<? } ?>
 					</ul>			

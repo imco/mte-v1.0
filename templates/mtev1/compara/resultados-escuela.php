@@ -84,7 +84,7 @@
 	?>
 
 	<?php $sufix = $this->compara_cookie ? implode('-',$this->compara_cookie) : ''; ?>
-	<a id='compara-main-button' class="button-frame" href="/compara/escuelas/<?=$sufix?>">
+	<a id='' class="button-frame compara-main-button" href="/compara/escuelas/<?=$sufix?>">
 		<span class="button button-efect orange-effect">Comparar</span>
 	</a>
 </div>

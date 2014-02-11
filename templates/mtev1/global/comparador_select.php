@@ -12,7 +12,7 @@
 
 				</ul>
 			</div>
-			<a class="button-frame" href="" id="compara-main-button">
+			<a class="button-frame compara-main-button" href="" id="">
 				<span class="bt-share orange-effect">Comparar</span>
 			</a>
 		</div>
