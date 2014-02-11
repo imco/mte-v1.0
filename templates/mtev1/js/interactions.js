@@ -253,11 +253,13 @@ $(document).ready(function(){
 		$(window).unload(add_escuelas_cookie);
 	}
 
-	$('#compara-main-button').click(function(e){
+	$('.compara-main-button').click(function(e){
 		e.preventDefault();
 		add_escuelas_cookie();
 		$(window).off();
-		location.href = '/compara/escuelas/' + $.cookie('escuelas');
+		var url = $.cookie('escuelas') || '';
+		location.href = '/compara/escuelas/' + url;
+		console.log(url);
 	});
 
 	$('a[href="/califica-tu-escuela/califica/"]').click(function(e){
@@ -415,9 +417,12 @@ $(document).ready(function(){
 		var $this = $(this),
 		cct = $this.find('.hidden').html();
 		$this.toggleClass('uncheck');
-		if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
+		/*if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
 			toggle_escuela(cct);
-		}
+		}*/
+		$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click');
+		toggle_escuela(cct);
+
 		$this.hide('slow',function(){
 			var contents = {selected:'visited',visited:'selected'},
 			content = $this.parent().parent().parent().attr('class');
@@ -622,8 +627,8 @@ function load_location_options(input,directive,options,name){
 	return rank;
 }*/
 function toggle_escuela(cct){
-	if($('.container').hasClass('comparar resultados'))
-		return 0;
+	//if($('.container').hasClass('comparar resultados'))
+	//	return 0;
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
 	index;
 	if((index = escuelas.indexOf(cct)) !== -1){
