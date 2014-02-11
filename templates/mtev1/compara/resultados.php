@@ -4,7 +4,7 @@
 	<hr/>
 	<table>
 		<tr>
-			<th class='checkbox'></th>
+			<!--<th class='checkbox'></th>-->
 			<th class='school'>Escuelas</th>
 			<th class='matematicas'>Calificación ENLACE de matemáticas</th>
 			<th class='espanol'>Calificación ENLACE de español</th>
@@ -37,11 +37,13 @@
 
 			echo "
 			<tr $on>
-				<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
-				<td class='school'><a href='/escuelas/index/{$escuela->cct}'>".
+				<td class='school'>
+				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
+				<a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".
-					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)." | ".$turnos[$escuela->turno]."</span>".
+					"<span>".$this->capitalize($escuela->nom_localidad).", ".$this->capitalize($escuela->nom_entidad)." | ".$this->capitalize($escuela->turno)."</span>".
 				"</a></td>
+
 				<td class='rank matematicas'><span>".$matematicas."</span></td> 
      				<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nom_nivel)."</td>
