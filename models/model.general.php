@@ -200,4 +200,17 @@ class programa extends table{
 		$this->table_name = "programas";
 	}
 } 
+
+class banner extends table{
+	function info(){
+		$this->table_name = "banners";
+	}
+}
+
+class page_banner extends table{
+	function info(){
+		$this->table_name = "page_banners";
+		$this->objects['banner'] = 'banner';//este apunta a la clase no al de la db
+	}
+}
 ?>

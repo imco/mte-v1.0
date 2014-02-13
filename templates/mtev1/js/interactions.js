@@ -600,7 +600,18 @@ $(document).ready(function(){
 		});
 		$(this).toggle('slow');
 	})
+
+	if($('#main-banner').size()){
+		$('#main-banner .wrap_banner:gt(0)').hide();
+		setInterval(function(){
+			$('#main-banner .wrap_banner:first-child').fadeOut(0).next().fadeIn(1250).end().appendTo('#main-banner .wrap_banners');
+		}, 4250);
+
+	}
+
+
 });
+
 
 
 function load_location_options(input,directive,options,name){

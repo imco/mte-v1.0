@@ -1,8 +1,8 @@
 <?php
 $niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
 ?>
+
 <div class='container home'>
-	<?php $this->include_template('banner_space','global'); ?>
 	<div class='column'>
 		<div class='video'>
 		<iframe width="595" height="335" src="//www.youtube.com/embed/G4FOZyoB74Y" frameborder="0" allowfullscreen></iframe>

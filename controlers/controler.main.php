@@ -609,5 +609,68 @@ class main extends controler{
 		parent::send_email($to,$subject,$message,$from,$from_name);
 	}
     }
+
+    public function set_banners(){
+    	$banners = array("FACEBOOK.jpg"=>array("home","https://www.facebook.com/MejoraTuEscuela"),"mejora2.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=lectura"),"mejora4.jpg" => array("mejora","http://blog.mejoratuescuela.org/en-que-te-debes-fijar-de-la-infraestructura-de-la-escuela/"),"mejora1.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=programa+apoyo"), "mejora3.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=bullying"),"sienlace.png"=>array("home","http://www.mejoratuescuela.org/peticiones/sienlace"));
+	$pBanner = new page_banner();
+	$pBanner->search_clause = " 1";
+	$pBanners = $pBanner->read('pagina,banner=>imagen');
+	$pages = array();
+	$imgs = array();
+	if($pBanners!=NULL)
+		foreach($pBanners as $b){
+			$pages[] = $b->pagina;
+			$imgs[] = $b->banner->imagen;
+		}
+	foreach($banners as $banner_name=>$pageA){
+		$page = $pageA[0];
+		$url = $pageA[1];
+		$insert = true;
+		if(!in_array($banner_name,$imgs)){
+			$banner = new banner();
+			$banner->debug = false;
+			$banner->create('imagen,url',array($banner_name,$url));
+			$insert = true;
+			//
+			$id = $banner->id;
+		}else{
+			$b = new page_banner();
+		    	$b->search_clause = "pagina = '$page' "; 
+			$bs = $b->read('pagina,banner=>imagen');
+			if($bs!=NULL){
+				foreach($bs as $b){
+					if($b->pagina==$page && $b->banner->imagen==$banner_name){
+						$insert = false;
+						break;
+					}
+			
+				}
+			}
+			if($insert){
+				$banner = new banner();
+				$banner->search_clause = " imagen ='$banner_name'";
+				$banner = $banner->read('id');
+				$id = $banner[0]->id;		
+			}	
+		}
+		if($insert){
+			$pBanner = new page_banner();
+			$pBanner->create('pagina,banner',array($page,$id));
+		}
+	}
+    }
+
+    public function get_banners(){
+    	$page = $this->location;
+	$b = new page_banner();
+	$b->search_clause = "pagina = '$page' "; 
+	$bs = $b->read('pagina,banner=>imagen,banner=>url');
+	$imgs = array();
+	if($bs!=NULL)
+		foreach($bs as $b){
+			$imgs[$b->banner->imagen] = $b->banner->url;
+		}
+	return $imgs;
+    }
 }
 ?>
