@@ -1598,6 +1598,7 @@ margin-top: -12px;}
 #content .mejora .display .column.right .fb-comments .postToProfile{top: -64px!important}
 
 /*comparador select*/
+.comparador_select{display:none;}
 .comparador_select .open_wrap{display:none;}
 /*.comparador_select.on .open_wrap{display:block;}*/
 .comparador_select.on:before{content: "";width: 0;height: 0;display: block;border-style: solid;border-width: 12px 12px 0 12px;border-color: #00ADF3 transparent transparent transparent;top:-2px;position: absolute;left: 43%;}

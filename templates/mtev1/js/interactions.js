@@ -217,6 +217,8 @@ $(document).ready(function(){
 		}
 		});
 
+		sessionStorage['select_float'] = true;
+
 	}
 
 	if($('.container').hasClass('perfil')){
@@ -607,6 +609,10 @@ $(document).ready(function(){
 			$('#main-banner .wrap_banner:first-child').fadeOut(0).next().fadeIn(1250).end().appendTo('#main-banner .wrap_banners');
 		}, 4250);
 
+	}
+
+	if(sessionStorage['select_float']){
+		$('.comparador_select').css('display','block');
 	}
 
 

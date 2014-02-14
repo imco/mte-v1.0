@@ -2,7 +2,7 @@
 class memcached_table extends table{
 	function read($fields){
 		//$time_start = microtime(true);
-		if(class_exists('Memcache') && false){
+		if(class_exists('Memcache')){
 			$memcache = new Memcache;	
 			$memcache->connect('10.208.103.163', 11211) or die ("Could not connect memcache");
 			$this->execute = false;

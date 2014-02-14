@@ -210,7 +210,7 @@ class banner extends table{
 class page_banner extends table{
 	function info(){
 		$this->table_name = "page_banners";
-		$this->objects['banner'] = 'banner';//este apunta a la clase no al de la db
+		$this->objects['banner'] = 'banner';
 	}
 }
 ?>
