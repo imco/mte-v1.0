@@ -9,7 +9,6 @@
 		<th class='calificacion'>2011</th>
 		<th class='calificacion'>2012</th>
 		<th class='calificacion'>2013</th>
-		<th class='semaforos'>Semáforo Educativo</th>
 	</tr>
 	<?php 
 	if($this->escuelas!=null)
@@ -42,7 +41,6 @@
 			$avg = $score->count ? round($score->sum/($score->count*2)) : '--';
 			echo "<td class='rank'>$avg</td>";
 		}					
-		echo "<td class='semaforo sem{$escuela->semaforo}'><span></span></td>";
 		echo "</tr>";
 	}
 	?>
