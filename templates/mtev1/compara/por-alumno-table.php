@@ -1,3 +1,6 @@
+<div class="lineBlack"></div>
+<div class="lineBlack"></div>
+<div class="lineBlack"></div>
 <table class='desemp'>
 	<tr>
 		<th class='school' rowspan='2' >Escuelas comparadas</th>
