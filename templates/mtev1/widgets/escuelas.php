@@ -35,9 +35,9 @@
 			<p class='large'><?=$this->escuela->rank_entidad?></p>
 			<p class='gray'>de <?=$this->escuela->entidad_total?></p>
  		</div>
- 		<p><a class='button' href='<?=$this->config->http_address."escuelas/index/".$this->escuela->cct?>'>Ver perfil de la escuela</a></p>
+ 		<p><a target="_blank" class='button' href='<?=$this->config->http_address."escuelas/index/".$this->escuela->cct?>'>Ver perfil de la escuela</a></p>
  		<div class='footer'>
- 			<a href='<?=$this->config->http_address?>'>www.mejoratuescuela.org</a>
+ 			<a target="_blank" href='<?=$this->config->http_address?>'>www.mejoratuescuela.org</a>
  		</div>
  	</div>
 
