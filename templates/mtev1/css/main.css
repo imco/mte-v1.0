@@ -1814,3 +1814,6 @@ height: auto;}
 #main-banner img{margin-bottom:-2px;}
 #main-banner img+img{margin:-5px;}
 
+#content .lineBlack{position:absolute;background-color:#424242;height:99%;width:2px;left:509px;top:1px;;}
+#content .lineBlack + .lineBlack{left:770px;}
+#content .lineBlack + .lineBlack + .lineBlack{left:835px;}
