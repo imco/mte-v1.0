@@ -104,10 +104,17 @@ class escuela extends memcached_table{
 		if(isset($this->enlaces) && $this->enlaces){
 			$variable = array();
 			foreach($this->enlaces as $enlace){
-				$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;
+				if(isset($enlaces[$enlace->anio][$enlace->grado])){
+					$enlaces[$enlace->anio][$enlace->grado] = 
+					( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
+					/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1);
+				}else{
+					$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;	
+				}				
 				$grados[$enlace->grado] = $enlace->grado;
 			}
 			ksort($enlaces);
+			//var_dump($enlaces);
 			$grados = array_values($grados);
 			sort($grados);
 			$keys = array_flip($grados);
@@ -116,7 +123,6 @@ class escuela extends memcached_table{
 			foreach($enlaces as $anio => $grados){				
 				$row = array_fill(0,count($keys),0);
 				foreach($grados as $key => $puntaje){
-					//var_dump($keys[$key]);
 					$row[$keys[$key]] = intval($puntaje);
 				}
 				array_unshift($row,strval($anio));
@@ -137,7 +143,7 @@ class escuela extends memcached_table{
 				foreach($aux as $e)
 					$this->censo_2013 = $e;
 				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
-				if( count($this->censo_2013)>0 ){
+				if(isset($this->censo_2013) && count($this->censo_2013)>0 ){
 					foreach( $variables as $key=>$val)
 						if(isset($this->censo_2013[$key]) && strlen(trim($this->censo_2013[$key]))>0)
 							$this->$val = $this->censo_2013[$key];

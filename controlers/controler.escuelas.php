@@ -71,6 +71,7 @@ class escuelas extends main{
 		$this->escuela->fields['cct'] = $this->get('id');
 		$this->escuela->read("cct");
 		if(isset($this->escuela->cct)){
+			$this->escuela->debug;
 			$this->escuela->read("
 				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,grados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,

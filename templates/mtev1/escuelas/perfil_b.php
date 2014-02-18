@@ -95,7 +95,7 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<?php if($this->escuela->censo_2013){ ?>
+			<?php if(isset($this->escuela->censo_2013) && $this->escuela->censo_2013){ ?>
 				<div class="clear"></div>
 				<div class='censo-box'>
 					<span class='text'>Número de Alumnos:</span>
