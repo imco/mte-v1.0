@@ -105,9 +105,9 @@ class escuela extends memcached_table{
 			$variable = array();
 			foreach($this->enlaces as $enlace){
 				if(isset($enlaces[$enlace->anio][$enlace->grado])){
-					$enlaces[$enlace->anio][$enlace->grado] = 
+					$enlaces[$enlace->anio][$enlace->grado] = round(
 					( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
-					/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1);
+					/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1));
 				}else{
 					$enlaces[$enlace->anio][$enlace->grado] = $enlace->$puntaje_name;	
 				}				
