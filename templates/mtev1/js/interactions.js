@@ -424,25 +424,8 @@ $(document).ready(function(){
 			toggle_escuela(cct);
 		}
 
-		$this.hide('slow',function(){
-			var contents = {selected:'visited',visited:'selected'},
-			content = $this.parent().parent().parent().attr('class');
-			$('.'+contents[content]+' ul').append(this);
-			$this.removeClass().show('slow');
-			var contentCountActual = $('.N'+content+' span'),
-			contentCount = $('.N'+contents[content] +' span');
-			contentCountActual.html(+(contentCountActual.html())-1);
-			contentCount.html(+(contentCount.html())+1);
-		});
-
 	});
 	
-	/*
-	$('.comparador_select .visited ul li').click(function(e){
-		e.stopPropagation();
-		$(this).toggleClass('uncheck');
-	});
-	*/
 
 	$('.container.programas svg path').hover(function(){
 		console.log($(this).text());
@@ -646,13 +629,31 @@ function toggle_escuela(cct){
 	//if($('.container').hasClass('comparar resultados'))
 	//	return 0;
 	var escuelas = $.cookie('escuelas') && $.cookie('escuelas').split('-') || [],
+	escuelas_vistas = $.cookie('escuelas_vistas') && $.cookie('escuelas_vistas').split('-') || [],
+	li = $('.comparador_select ul li .hidden:contains("'+cct+'")'),
 	index;
 	if((index = escuelas.indexOf(cct)) !== -1){
 		escuelas.splice(index,1);
+		//li = li.parent();
+		//toggle_select_float.apply(li);
+
 	}else{
 		escuelas.push(cct);
 		escuelas.sort();
 	}
+	if(li.length){
+			li = li.parent();
+			toggle_select_float.apply(li);	
+	}else{
+		var schoolSelect = $('a[href="/escuelas/index/'+cct+'"]'),
+		template = $('<li class="hidden"><span class="icon"></span>'+schoolSelect.text().split('|')[0].toUpperCase()+'<span class="hidden">'+cct+'</span></li>');
+		$('.comparador_select .selected ul').append(template);
+		template.show('slow');
+		var Ncount = $('.comparador_select .Nselected span');
+		Ncount.html(+(Ncount.html())+1);
+	
+	}
+
 	$.cookie('escuelas',escuelas.join('-'));
 	//$('#compara-main-button').attr('href','/compara/escuelas/'+escuelas.join('-') || '');
 	/*
@@ -752,4 +753,17 @@ function input_data_view_mejora(mejorar){
 	twttr.widgets.load();
 }
 
+function toggle_select_float(){
+		var $this = $(this);
+		$this.hide('slow',function(){
+			var contents = {selected:'visited',visited:'selected'},
+			content = $this.parent().parent().parent().attr('class');
+			$('.'+contents[content]+' ul').append(this);
+			$this.removeClass().show('slow');
+			var contentCountActual = $('.N'+content+' span'),
+			contentCount = $('.N'+contents[content] +' span');
+			contentCountActual.html(+(contentCountActual.html())-1);
+			contentCount.html(+(contentCount.html())+1);
+		});
 
+}
