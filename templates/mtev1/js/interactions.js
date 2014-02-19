@@ -634,9 +634,10 @@ function toggle_escuela(cct){
 	index;
 	if((index = escuelas.indexOf(cct)) !== -1){
 		escuelas.splice(index,1);
-		//li = li.parent();
-		//toggle_select_float.apply(li);
-
+		if(escuelas_vistas.indexOf(cct)==-1){
+			escuelas_vistas.push(cct);
+			$.cookie('escuelas_vistas',escuelas_vistas.join('-'));
+		}
 	}else{
 		escuelas.push(cct);
 		escuelas.sort();
