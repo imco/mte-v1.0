@@ -50,6 +50,7 @@ $(document).ready(function(){
 
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
+		e.stopPropagation();
 		if($('.container').hasClass('califica_select'))
 			$(this).parent().parent().parent().toggleClass('on');
 		else
@@ -419,11 +420,9 @@ $(document).ready(function(){
 		var $this = $(this),
 		cct = $this.find('.hidden').html();
 		$this.toggleClass('uncheck');
-		/*if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
+		if(!$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click').length){
 			toggle_escuela(cct);
-		}*/
-		$($('.compara-escuela[href="'+ cct +'"]')[0]).trigger('click');
-		toggle_escuela(cct);
+		}
 
 		$this.hide('slow',function(){
 			var contents = {selected:'visited',visited:'selected'},
