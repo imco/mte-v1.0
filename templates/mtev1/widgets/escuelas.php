@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<?php
-		$css_scripts = array("widget-escuelas.css");		
+		$css_scripts = ($this->layout)=='small' ?  array("widget-escuelas2.css") : array("widget-escuelas.css");		
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min--mte-widget-3");
 		$cssmin->tag('css');
 		$js_scripts = array("jquery.js");		
@@ -22,8 +22,9 @@
  </head>
  <body>
  	<div id='container'>
- 		<div class='head'>
+ 		<div class='head  <?=$this->escuela->rank_entidad <= 10 ? 'medal':''?>'>
 	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><?php $this->print_img_tag('/widget/mejora.png','Meoratuescuela.org') ?></a>
+ 			<span></span>
  		</div>
  		<div class='blue-box <?=$this->escuela->rank_entidad <= 10 ? 'medal':''?>'>
  			<span></span>
@@ -35,7 +36,8 @@
 			<p class='large'><?=$this->escuela->rank_entidad?></p>
 			<p class='gray'>de <?=$this->escuela->entidad_total?></p>
  		</div>
- 		<p><a target="_blank" class='button' href='<?=$this->config->http_address."escuelas/index/".$this->escuela->cct?>'>Ver perfil de la escuela</a></p>
+ 		<p class="box-btn"><a target="_blank" class='button' href='<?=$this->config->http_address."escuelas/index/".$this->escuela->cct?>'>Ver perfil de la escuela</a></p>
+ 		<div class="clear"></div>
  		<div class='footer'>
  			<a target="_blank" href='<?=$this->config->http_address?>'>www.mejoratuescuela.org</a>
  		</div>

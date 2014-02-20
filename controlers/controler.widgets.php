@@ -50,6 +50,21 @@ class widgets extends main{
 		$this->escuela->read("cct,nombre,localidad=>nombre,nivel=>nombre,nivel=>id,sostenimiento=>nombre,rank_entidad,id,entidad=>nombre,control=>nombre,entidad=>numero_escuelas_primaria,entidad=>numero_escuelas_secundaria,entidad=>numero_escuelas_bachillerato");
 		$this->escuela->entidad_total = $this->escuela->entidad->$names[$this->escuela->nivel->id];
 
+		$this->layout = 'normal';
+		$this->include_template('escuelas','widgets');
+	}
+
+	public function escuelas_small(){
+		$this->page_title = 'Mejoratuescuela.org widget';
+		$this->escuela = new escuela($this->get('id'));
+		#$this->escuela->debug = true;
+		$names = array(12=>'numero_escuelas_primaria',13=>'numero_escuelas_secundaria',22=>'numero_escuelas_bachillerato');
+		$this->escuela->key = 'cct';
+		$this->escuela->fields['cct'] = $this->get('id');
+		$this->escuela->read("cct,nombre,localidad=>nombre,nivel=>nombre,nivel=>id,sostenimiento=>nombre,rank_entidad,id,entidad=>nombre,control=>nombre,entidad=>numero_escuelas_primaria,entidad=>numero_escuelas_secundaria,entidad=>numero_escuelas_bachillerato");
+		$this->escuela->entidad_total = $this->escuela->entidad->$names[$this->escuela->nivel->id];
+
+		$this->layout = 'small';
 		$this->include_template('escuelas','widgets');
 	}
 }
