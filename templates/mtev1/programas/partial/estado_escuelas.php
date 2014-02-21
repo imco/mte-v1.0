@@ -5,7 +5,7 @@
             <table>
                 <?php foreach($this->escuelas as $escuela){ ?>
                 <tr>
-                    <td>CCT <? echo $escuela->cct." | ".$this->capitalize($escuela->nombre)." | ".$this->capitalize($escuela->nivel->nombre)." | ".$this->capitalize($escuela->turno->nombre)." | ".$this->capitalize($escuela->municipio->nombre) ?></td>
+                    <td><?=$this->capitalize($escuela->nombre)." | ".$this->capitalize($escuela->nivel->nombre)." | ".$this->capitalize($escuela->turno->nombre)." | ".$this->capitalize($escuela->municipio->nombre)." | CCT ".$escuela->cct ?></td>
                     <td><a href="/escuelas/index/<?= $escuela->cct ?>" class="button-frame"><span class="button">Ver escuela</span></a></td>
                     <div class="clear"></div>
                 </tr>
