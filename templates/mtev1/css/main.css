@@ -1808,7 +1808,7 @@ height: auto;}
 #content .container.comparar.resultados table .triangle.remove{display:block;top:38%;right:-7px;left:initial;border-width:6px 1px 6px 6px;border-color:transparent transparent transparent #00AFF0;}
 #content .programas #map-programas .more_cct{text-align:center;display:block;color:#1F734A;margin-top:8px;padding-bottom:5px;}
 
-#main-banner{height:144px;overflow:hidden;}
+#main-banner{height:144px;overflow:hidden;margin:0 auto;width: 924px;}
 
 #main-banner{display:block;text-align:center;margin-top: 19px;margin-bottom: -33px;}
 #main-banner img{margin-bottom:-2px;}
