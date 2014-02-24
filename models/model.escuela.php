@@ -104,14 +104,14 @@ class escuela extends memcached_table{
 		if(isset($this->enlaces) && $this->enlaces){
 			$variable = array();
 			foreach($this->enlaces as $enlace){
-				if(isset($enlaces[$enlace->anio][$enlace->grado])){
-					echo 'mult';
-					$enlaces[$enlace->anio][$enlace->grado] = round(
-					( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
-					/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1));
-				}else{
+				#if(isset($enlaces[$enlace->anio][$enlace->grado])){
+				#	echo 'mult';
+				#	$enlaces[$enlace->anio][$enlace->grado] = round(
+				#		( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
+				#	/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1));
+				#}else{
 					$enlaces[$enlace->anio][$enlace->grado] = round($enlace->$puntaje_name);	
-				}				
+				#}				
 				$grados[$enlace->grado] = $enlace->grado;
 			}
 			ksort($enlaces);
