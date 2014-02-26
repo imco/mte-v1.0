@@ -806,6 +806,7 @@ line-height: 45px;}
 /*Breadcrumb*/
 #header .breadcrumb{position:absolute;top:297px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;}
 #header .breadcrumb.blog_breadcrumb{top:275px;}
+#header .breadcrumb.califica_tu_escuela_breadcrumb{top:289px;}
 #header .breadcrumb ul{position:relative;width:100%;}
 #header .breadcrumb ul li{float:left;text-align:center;font-size:15px;color:#737172;}
 #header .breadcrumb ul li a{color:#01723E;background-image:url(../img/breadcrumb/bread_centro.png);padding:4px 10px;position:relative;font-size:11px;line-height:17px;display:block;margin:0 0 0 13px;}

@@ -585,7 +585,7 @@ $(document).ready(function(){
 		$(this).toggle('slow');
 	})
 
-	if($('#main-banner').size()){
+	if($('#main-banner').size() && $('.wrap_banner img').size() > 2){
 		$('#main-banner .wrap_banner:gt(0)').hide();
 		setInterval(function(){
 			$('#main-banner .wrap_banner:first-child').fadeOut(0).next().fadeIn(1250).end().appendTo('#main-banner .wrap_banners');
