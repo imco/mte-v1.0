@@ -1,6 +1,6 @@
 <?php 
 $infografias = array('entorno'=>'Entorno',
-		'participacion'=>'Participación',
+		'participacion-mejora'=>'Participación',
 		'aprendizaje'=>'Aprendizaje'
 	);
 ?>
@@ -64,7 +64,7 @@ $infografias = array('entorno'=>'Entorno',
 		<h2 class='banner green'>Mejora tu...</h2>
 		<ul>
 			<li><a href="/mejora/index/entorno"><span class="icon"></span>Entorno</a></li>
-			<li><a href="/mejora/index/participacion"><span class="icon"></span>Participación</a></li>
+			<li><a href="/mejora/index/participacion-mejora"><span class="icon"></span>Participación</a></li>
 			<li><a href="/mejora/index/aprendizaje"><span class="icon"></span>Aprendizaje</a></li>
 
 		</ul>
