@@ -1,5 +1,4 @@
 <div class='perfil container B'>
-	<?php $this->include_template('banner_space','global');?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
