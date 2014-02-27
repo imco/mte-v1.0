@@ -86,7 +86,7 @@ class peticiones extends main{
 		$firma = new firma();
 		$this->firmas = number_format($firma->count());
 		$this->photos = $this->searchPhotos();
-		//$this->get_photo_cdn();
+		$this->get_photo_cdn();
 		if( $this->get('img') ){
 			$this->thephoto = new firma_img($this->get('img'));
 			$this->thephoto->read('id,filename');
@@ -195,19 +195,20 @@ EOD;
 	}
 
 	private function get_photo_cdn(){
-		require_once $this->config->document_root."/library/cloudfiles.php";
-		$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
-		$auth->authenticate();
-		if($auth->authenticated()){
-			$connection = new CF_Connection($auth);
-			$container = $connection->get_container("sienlace");
-			$imgs = $container->list_objects();
-			if(is_array($imgs))
-				$imgs = explode("\n",$imgs[0]);
-			$this->cdn_photos = $imgs;
-			$this->cdn_url = $container->cdn_uri;
+		if(isset($this->config->rack_space_user) && isset($this->config->rack_space_key)){
+			require_once $this->config->document_root."/library/cloudfiles.php";
+			$auth = new CF_Authentication($this->config->rack_space_user,$this->config->rack_space_key);
+			$auth->authenticate();
+			if($auth->authenticated()){
+				$connection = new CF_Connection($auth);
+				$container = $connection->get_container("sienlace");
+				$imgs = $container->list_objects();
+				if(is_array($imgs))
+					$imgs = explode("\n",$imgs[0]);
+				$this->cdn_photos = $imgs;
+				$this->cdn_url = $container->cdn_uri;
+			}		
 		}
-	
 	}
 
 	public function receive_auth_keys(){
