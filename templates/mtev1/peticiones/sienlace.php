@@ -186,7 +186,7 @@
                 <a class="ally span2-5" target='_blank' href="http://www.cemefi.org/rededucacion/"><?php $this->print_img_tag('sienlace/logo3.png','Red por la Educación');?></a>
                 
                 <a class="ally span2-5" target='_blank' href="http://http://www.senm.org/"><?php $this->print_img_tag('sienlace/sociedadenmovimiento.png','Sociedad en Movimiento');?></a>
-                <a class="ally span2-5" target='_blank' href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png','Suma x la educación');?></a>
+                <!--<a class="ally span2-5" target='_blank' href="http://www.sumaporlaeducacion.org.mx/"><?php $this->print_img_tag('sienlace/logo_suma_educacion.png','Suma x la educación');?></a>-->
             </div>
             <div class="bottom">
                 <p>
