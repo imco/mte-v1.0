@@ -197,3 +197,5 @@ input:-ms-input-placeholder{color:    white;}
 @media screen and (min-device-width : 767px) and (max-device-width : 980px), (max-width:980px) {
     .container{width:95%;}
 }
+
+#content .container .gallery .screen .reel a img{width:150px;height:112px;}
