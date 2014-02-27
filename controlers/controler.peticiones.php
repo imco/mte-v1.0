@@ -70,7 +70,7 @@ class peticiones extends main{
 		$change = new ApiChange($this->config->change_api_key,$this->config->change_secret_token);
 		$petition_url = "https://www.change.org/es-LA/peticiones/queremos-que-se-aplique-la-prueba-enlace-este-2014-s%C3%ADenlace2014";
 		$petition_info = $change->regresa_info_peticion($petition_url);
-		echo $petition_info['signature_count'];
+		echo number_format($petition_info['signature_count']);
 	}
 	public function aprobar_imagen(){
 		$img = new firma_img($this->get('id'));
