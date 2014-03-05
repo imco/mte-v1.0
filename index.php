@@ -1,7 +1,7 @@
 <?php
-error_reporting(0);
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+#error_reporting(0);
+#error_reporting(E_ALL);
+#ini_set('display_errors', '1');
 ini_set('post_max_size', '5M');
 ini_set('upload_max_filesize', '5M');
 $env = getenv('APPLICATION_ENV');
