@@ -68,20 +68,24 @@ $infografias = array('entorno'=>'Entorno',
 			<li><a href="/mejora/index/aprendizaje"><span class="icon"></span>Aprendizaje</a></li>
 
 		</ul>
-
 		<div class="gray-box">
-			<p>Si te interesa algún otro <br />
- tema que no aparezca en <br /> nuestra sección,
-			<br />
-			<span>ESCRÍBENOS:</span>
-			</p>
-			<form action="">
-				<textarea id="" name="" cols="30" rows="10" placeholder='Mensaje'></textarea>
-				<input type="text" placeholder='Tu correo'/>
-				<input type="submit" value='Envía al equipo de MTE'/>
-			</form>
+			<?php 
+			if(isset($this->contact_status) && $this->contact_status){
+				echo "<p>Gracias por tu mensaje.</p>";
+			}else{
+			?>
+				<p>Si te interesa algún otro <br />
+				tema que no aparezca en <br /> nuestra sección,
+				<br />
+				<span>ESCRÍBENOS:</span>
+				</p>
+				<form action="/mejora/enviar" method='post' accept-charset='utf-8' >
+					<textarea id="" name="message" cols="30" rows="10" placeholder='Mensaje'></textarea>
+					<input type="text" placeholder='Tu correo' name='email'/>
+					<input type="submit" value='Envía al equipo de MTE'/>
+				</form>
+			<?php } ?>
 		</div>
-	
 	</div>
 
 

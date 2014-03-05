@@ -18,5 +18,16 @@ class mejora extends main{
 		$this->meta_description = "Tú puedes ayudar a tus hijos a hacer sus tareas y formar hábitos de lectura. En Mejora tu escuela tenemos tips para papás y niños que les ayudarán a aprender mejor.";
 		$this->include_theme('index','index');
 	}
+
+	public function enviar(){
+		$this->contact_status = $this->send_email(
+			$this->config->contact_email,
+			'Correo electronico desde Mejora tu escuela desde sección "mejora": '.$this->post('email'),
+			$this->post('mensaje'),
+			'system@mejoratuescuela.org',
+			'sección mejora' 
+		);
+		$this->index();
+	}
 }
 ?>
