@@ -604,7 +604,7 @@ class main extends controler{
 		
 		$response = json_decode(curl_exec($session));
 		curl_close($session);
-		
+		var_dump($response);
 		if($response->message!="success"){
 			$response = parent::send_email($to,$subject,$message,$from,$from_name);
 		}
