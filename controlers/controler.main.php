@@ -582,95 +582,96 @@ class main extends controler{
     }
 
     public function send_email($to,$subject,$message,$from,$from_name,$attachment_path = false, $attachment_name = false, $logo_path = false, $logo_name = false, $isHtml = true){
-	$url = 'http://sendgrid.com/';
-	$params = array(
-	    'api_user'  => $this->config->send_grid_user,
-	    'api_key'   => $this->config->send_grid_key,
-	    'to'        => $to,
-		'subject'   => $subject,
-		'html'      => $message,
-	    //'text'      => '',
-	    'from'      => $from
-	  );
+		$url = 'http://sendgrid.com/';
+		$params = array(
+		    'api_user'  => $this->config->send_grid_user,
+		    'api_key'   => $this->config->send_grid_key,
+		    'to'        => $to,
+			'subject'   => $subject,
+			'html'      => $message,
+		    //'text'      => '',
+		    'from'      => $from
+		  );
 
 
-	$request =  $url.'api/mail.send.json';
+		$request =  $url.'api/mail.send.json';
 
-	$session = curl_init($request);
-	curl_setopt ($session, CURLOPT_POST, true);
-	curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
-	curl_setopt($session, CURLOPT_HEADER, false);
-	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-	
-	$response = json_decode(curl_exec($session));
-	curl_close($session);
-	
-	if($response->message!="success"){
-		parent::send_email($to,$subject,$message,$from,$from_name);
-	}
-    }
-
-    public function set_banners(){
-    	$banners = array("FACEBOOK.jpg"=>array("home","https://www.facebook.com/MejoraTuEscuela"),"mejora2.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=lectura"),"mejora4.jpg" => array("mejora","http://blog.mejoratuescuela.org/en-que-te-debes-fijar-de-la-infraestructura-de-la-escuela/"),"mejora1.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=programa+apoyo"), "mejora3.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=bullying"),"sienlace.png"=>array("home","http://www.mejoratuescuela.org/peticiones/sienlace"));
-	$pBanner = new page_banner();
-	$pBanner->search_clause = " 1";
-	$pBanners = $pBanner->read('pagina,banner=>imagen');
-	$pages = array();
-	$imgs = array();
-	if($pBanners!=NULL)
-		foreach($pBanners as $b){
-			$pages[] = $b->pagina;
-			$imgs[] = $b->banner->imagen;
+		$session = curl_init($request);
+		curl_setopt ($session, CURLOPT_POST, true);
+		curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+		curl_setopt($session, CURLOPT_HEADER, false);
+		curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+		
+		$response = json_decode(curl_exec($session));
+		curl_close($session);
+		
+		if($response->message!="success"){
+			$response = parent::send_email($to,$subject,$message,$from,$from_name);
 		}
-	foreach($banners as $banner_name=>$pageA){
-		$page = $pageA[0];
-		$url = $pageA[1];
-		$insert = true;
-		if(!in_array($banner_name,$imgs)){
-			$banner = new banner();
-			$banner->debug = false;
-			$banner->create('imagen,url',array($banner_name,$url));
+		return $response;
+	}
+
+	public function set_banners(){
+	    	$banners = array("FACEBOOK.jpg"=>array("home","https://www.facebook.com/MejoraTuEscuela"),"mejora2.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=lectura"),"mejora4.jpg" => array("mejora","http://blog.mejoratuescuela.org/en-que-te-debes-fijar-de-la-infraestructura-de-la-escuela/"),"mejora1.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=programa+apoyo"), "mejora3.jpg"=>array("mejora","http://blog.mejoratuescuela.org/?s=bullying"),"sienlace.png"=>array("home","http://www.mejoratuescuela.org/peticiones/sienlace"));
+		$pBanner = new page_banner();
+		$pBanner->search_clause = " 1";
+		$pBanners = $pBanner->read('pagina,banner=>imagen');
+		$pages = array();
+		$imgs = array();
+		if($pBanners!=NULL)
+			foreach($pBanners as $b){
+				$pages[] = $b->pagina;
+				$imgs[] = $b->banner->imagen;
+			}
+		foreach($banners as $banner_name=>$pageA){
+			$page = $pageA[0];
+			$url = $pageA[1];
 			$insert = true;
-			//
-			$id = $banner->id;
-		}else{
-			$b = new page_banner();
-		    	$b->search_clause = "pagina = '$page' "; 
-			$bs = $b->read('pagina,banner=>imagen');
-			if($bs!=NULL){
-				foreach($bs as $b){
-					if($b->pagina==$page && $b->banner->imagen==$banner_name){
-						$insert = false;
-						break;
+			if(!in_array($banner_name,$imgs)){
+				$banner = new banner();
+				$banner->debug = false;
+				$banner->create('imagen,url',array($banner_name,$url));
+				$insert = true;
+				//
+				$id = $banner->id;
+			}else{
+				$b = new page_banner();
+			    	$b->search_clause = "pagina = '$page' "; 
+				$bs = $b->read('pagina,banner=>imagen');
+				if($bs!=NULL){
+					foreach($bs as $b){
+						if($b->pagina==$page && $b->banner->imagen==$banner_name){
+							$insert = false;
+							break;
+						}
+				
 					}
-			
 				}
+				if($insert){
+					$banner = new banner();
+					$banner->search_clause = " imagen ='$banner_name'";
+					$banner = $banner->read('id');
+					$id = $banner[0]->id;		
+				}	
 			}
 			if($insert){
-				$banner = new banner();
-				$banner->search_clause = " imagen ='$banner_name'";
-				$banner = $banner->read('id');
-				$id = $banner[0]->id;		
-			}	
+				$pBanner = new page_banner();
+				$pBanner->create('pagina,banner',array($page,$id));
+			}
 		}
-		if($insert){
-			$pBanner = new page_banner();
-			$pBanner->create('pagina,banner',array($page,$id));
-		}
-	}
-    }
+	    }
 
-    public function get_banners(){
-    	$page = $this->location;
-	$b = new page_banner();
-	$b->search_clause = "pagina = '$page' "; 
-	$bs = $b->read('pagina,banner=>imagen,banner=>url');
-	$imgs = array();
-	if($bs!=NULL)
-		foreach($bs as $b){
-			$imgs[$b->banner->imagen] = $b->banner->url;
-		}
-	return $imgs;
+	    public function get_banners(){
+	    	$page = $this->location;
+		$b = new page_banner();
+		$b->search_clause = "pagina = '$page' "; 
+		$bs = $b->read('pagina,banner=>imagen,banner=>url');
+		$imgs = array();
+		if($bs!=NULL)
+			foreach($bs as $b){
+				$imgs[$b->banner->imagen] = $b->banner->url;
+			}
+		return $imgs;
     }
 }
 ?>
