@@ -80,7 +80,7 @@ $infografias = array('entorno'=>'Entorno',
 				<span>ESCRÍBENOS:</span>
 				</p>
 				<form action="/mejora/enviar" method='post' accept-charset='utf-8' >
-					<textarea id="" name="message" cols="30" rows="10" placeholder='Mensaje'></textarea>
+					<textarea name="message" cols="30" rows="10" placeholder='Mensaje'></textarea>
 					<input type="text" placeholder='Tu correo' name='email'/>
 					<input type="submit" value='Envía al equipo de MTE'/>
 				</form>

@@ -27,6 +27,7 @@ class mejora extends main{
 			'system@mejoratuescuela.org',
 			'sección mejora' 
 		);
+		var_dump($this->contact_status);
 		$this->index();
 	}
 }
