@@ -73,10 +73,11 @@ class compara extends main{
 		$this->draw_map = true;
 		$params = new stdClass();
 		//if(!$this->request('search')){
-		$params->entidad = $this->user_location ? $this->user_location : 9 ;
+		//$params->entidad = $this->user_location ? $this->user_location : 9 ;
 		//}
 		$params->pagination = 100;		
 		$params->order_by = 'escuelas.nombre ASC';		
+		$this->debug = false;
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->escuelas_digest->zoom += 1;
