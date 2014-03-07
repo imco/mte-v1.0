@@ -1818,3 +1818,5 @@ height: auto;}
 #content .lineBlack{position:absolute;background-color:#424242;height:99%;width:2px;left:509px;top:1px;;}
 #content .lineBlack + .lineBlack{left:770px;}
 #content .lineBlack + .lineBlack + .lineBlack{left:835px;}
+
+#content .search-map .resultados table tr.on .checkbox a:before{margin:1px;}

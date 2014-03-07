@@ -51,8 +51,8 @@ $(document).ready(function(){
 	$('.compara-escuela').on('click',function(e){
 		e.preventDefault();
 		e.stopPropagation();
-		if($('.container').hasClass('califica_select'))
-			$(this).parent().parent().parent().toggleClass('on');
+		if($('.container').hasClass('search-map'))
+			$(this).parent().parent().toggleClass('on');
 		else
 			$(this).parent().parent().parent().toggleClass('on');
 		//var tr = $(this).parent().parent().parent().toggleClass('on');
