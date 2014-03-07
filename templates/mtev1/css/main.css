@@ -1812,7 +1812,7 @@ height: auto;}
 
 #main-banner{height:144px;overflow:hidden;margin:0 auto;width: 924px;}
 
-#main-banner{display:block;text-align:center;margin-top: 19px;margin-bottom: -33px;}
+#main-banner{display:block;text-align:center;margin-top: 0px;margin-bottom: -33px;}
 #main-banner img{margin-bottom:-2px;}
 #main-banner img+img{margin:-5px;}
 
