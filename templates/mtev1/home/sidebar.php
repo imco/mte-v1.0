@@ -1,7 +1,7 @@
 	<div class='column right'>
 		<div class='gray-box newsletter'>
 			<?php if($this->get('news') && $this->get('news')!='false'){ 
-						echo "<p>Registrado correctamente</p>";
+						echo "<p class='news_register'>Registrado correctamente</p>";
 			}else{
 				if($this->get('news')=='false')
 					echo "<p>Error intentalo de nuevo</p>";

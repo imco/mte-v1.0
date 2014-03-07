@@ -563,8 +563,9 @@ line-height: 45px;}
 #content .container.home .newsletter form{margin-top:-8px;}
 #content .container.home .newsletter form a{font-size:14px;color:white;}
 #content .container.home .newsletter form .check{margin:5px 0;}
-#content .container.home .newsletter{text-align:center;color:white;height:194px;margin-bottom:11px;}
+#content .container.home .newsletter{text-align:center;color:white;max-height:194px;margin-bottom:11px;}
 #content .container.home .newsletter p{font-size:23px;text-align:center;margin-top:5px;}
+#content .container.home .newsletter p.news_register{line-height:normal;}
 #content .container.home .newsletter img{margin:25px 0 0 -10px;}
 #content .container.home .newsletter h1{font-size:13px;font-weight:bold;margin-top:-7px;}
 #content .column .banner.orange img{top:41px;}
