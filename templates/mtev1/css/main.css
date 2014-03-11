@@ -1102,6 +1102,8 @@ line-height: 45px;}
 #content .home .gray-box.twitter{margin-top:9px;font-size:15px;margin-bottom:0;}
 #content .resultados-entidad .gray-box,
 #content .home .video + h1 + .gray-box{padding:0;}
+#content .home  .changeAjax .gray-box{padding:0;}
+#content .home  .changeAjax .gray-box .title,
 #content .resultados-entidad .gray-box .title,
 #content .home .video + h1 + .gray-box .title{font-size:14px;background-color:gray;height:28px;margin-top:-1px;line-height:30px;font-weight:bold;padding:0 24px;color:white;}
 #content .resultados-entidad .gray-box .title .location,

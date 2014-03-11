@@ -597,7 +597,6 @@ $(document).ready(function(){
 		$('.comparador_select').css('display','block');
 	}
 
-
 });
 
 

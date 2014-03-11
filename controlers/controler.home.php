@@ -17,6 +17,7 @@ class home extends main{
 		$this->load_localidades();
 		$this->load_escuelas();
 		$this->get_metadata();
+		$this->draw_map = true;
 		$this->include_theme('index','index');
 	}
 
@@ -137,6 +138,20 @@ class home extends main{
 	*/
 	public function get_metadata(){
 		$this->meta_description = "Encuentra las mejores primarias, secundarias y bachilleratos públicos y privados en tu zona, según la prueba ENLACE 2013. Consulta la calificación de tu escuela en la prueba ENLACE de español y matemáticas.";
+	}
+
+	public function get_top5(){
+		$name_entidad = $this->request('name_entidad');
+		$params = new stdClass();
+		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+		$entidad = new entidad();
+		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
+		$en = $entidad->read('id');
+		$params->entidad = $en[0]->id;
+		$params->limit = '0,5';
+		$this->get_escuelas($params);
+		$this->process_escuelas();
+		$this->include_template("top5","home/single"); 
 	}
 }
 ?>
