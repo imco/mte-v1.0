@@ -1823,3 +1823,18 @@ height: auto;}
 #content .lineBlack + .lineBlack + .lineBlack{left:835px;}
 
 #content .search-map .resultados table tr.on .checkbox a:before{margin:1px;}
+
+/*mejora*/
+#content .mejora .tags p{background-color:#0BA14A;font-size:24px;text-align:center;height:35px;line-height:normal;padding-top:9px;color:white;}
+#content .mejora .tags .wp-tag-cloud{background-color:rgba(0,0,0,.5);padding:14px;line-height:normal;margin-bottom:11px;}
+#content .mejora .tags .wp-tag-cloud a{color:#DADADA;}
+#content .mejora .tags .wp-tag-cloud li{display:inline-block;vertical-align:top;border:none;background:transparent}
+#content .mejora .tags .wp-tag-cloud li:hover{background:transparent;}
+#content .mejora .tags .wp-tag-cloud li:hover a{color:#169C4E;background:transparent;}
+#content .mejora .tools{width:446px;height:74px;display:inline-block;font-size:25px;background-color:#E6E6E6;text-align:center;color:#26A95B;line-height:72px;text-indent:50px;}
+#content .mejora .support{width:446px;display:inline-block;background-color:#E6E6E6;vertical-align: top;margin-left:5px;height:75px;font-size: 25px;text-align:center;text-indent:46px;line-height:70px;color:#26A95B;}
+#content .mejora .support.select,
+#content .mejora .tools.select{background:url(../img/home/texture_green.png);color:white;}
+#content .mejora .gray-box.form{margin:0;padding:0;height:48px;}
+#content .mejora .gray-box.form input[type='text']{display:inline-block;vertical-align:top;background:transparent;color:white!important;width:191px;}
+#content .mejora .gray-box.form input[type='submit']{width:68px;display:inline-block;height:48px;}
