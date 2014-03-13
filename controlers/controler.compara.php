@@ -25,7 +25,7 @@ class compara extends main{
 		if(!$this->get('search')){ 
 			$this->get_location();
 			$params = new stdClass();
-			$params->entidad = $this->user_location ? $this->user_location->id : 9 ;
+			$params->entidad = $this->user_location->id; 
 			if($this->config->search_location)
 				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($this->user_location->nombre);
 		}else{
@@ -47,7 +47,7 @@ class compara extends main{
 			$this->set_info_user_search($this->num_results);
 			$this->include_theme('index','resultados');
 		}else{
-			$params = new stdClass();
+			$params = isset($params)?$params:new stdClass();
 			$params->pagination = 6;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 
@@ -55,6 +55,9 @@ class compara extends main{
 			$this->set_info_user_search(isset($this->pagination->total_results) ? $this->pagination->total_results : 0);
 			$this->process_escuelas();
 			$this->cct_count_entidad();
+			if(!$this->cookie('user_location')){
+				$this->draw_map = true;
+			}
 			$this->include_theme('index','resultados-escuela');
 		}
 	}
@@ -134,6 +137,23 @@ class compara extends main{
 	*/
 	public function get_metadata(){
 		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
+	}
+
+	public function get_data_table(){
+		$name_entidad = $this->request('name_entidad');
+		$name_entidad = 'quintana roo';
+		$entidad = new entidad();
+		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
+		$en = $entidad->read('id,nombre');
+		$params = new stdClass();
+		$params->entidad = $en[0]->id;
+		$params->pagination = 6;
+		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+		$this->get_escuelas($params);
+		$this->process_escuelas();
+		$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($en[0]->nombre);
+		$this->set_cookie('user_location',$en[0]->nombre."-".$en[0]->id);
+		$this->include_template("resultados-escuela","compara"); 
 	}
 
 }

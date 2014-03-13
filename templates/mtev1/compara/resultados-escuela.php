@@ -1,4 +1,4 @@
-<a name='resultados'></a>
+<div class='changeAjax'><a name='resultados'></a>
 <div class='resultados container'>
 	<h1><?=$this->resultados_title;?></h1>
 	<hr/>
@@ -87,4 +87,4 @@
 	<a id='' class="button-frame compara-main-button" href="/compara/escuelas/<?=$sufix?>">
 		<span class="button button-efect orange-effect">Comparar</span>
 	</a>
-</div>
+</div></div>

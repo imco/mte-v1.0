@@ -17,7 +17,8 @@ class home extends main{
 		$this->load_localidades();
 		$this->load_escuelas();
 		$this->get_metadata();
-		$this->draw_map = true;
+		if(!$this->cookie('user_location'))
+			$this->draw_map = true;
 		$this->include_theme('index','index');
 	}
 
@@ -146,11 +147,13 @@ class home extends main{
 		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 		$entidad = new entidad();
 		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
-		$en = $entidad->read('id');
+		$en = $entidad->read('id,nombre');
 		$params->entidad = $en[0]->id;
 		$params->limit = '0,5';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
+		$this->set_cookie('user_location',$en[0]->nombre."-".$en[0]->id);
+		$this->user_location->nombre = $this->capitalize($en[0]->nombre);
 		$this->include_template("top5","home/single"); 
 	}
 }

@@ -14,7 +14,7 @@ $().ready(function(){
 	});
 
 	//geolocation
-	if(navigator && navigator.geolocation)
+	if(navigator && navigator.geolocation && window['google'])
 		navigator.geolocation.getCurrentPosition(function(geo){
 			var latitude = geo.coords.latitude
 			, longitude = geo.coords.longitude
@@ -23,13 +23,18 @@ $().ready(function(){
 			g.geocode({latLng:latLng},function(r,s){
 				if(s=='OK'){
 					var state_name = r[2]['formatted_address'].split(',')[0]
-					, container = $('.container');
+					, container = $('.container')
+					, url;
 
 					if(container.hasClass('home')){
-						$.post('/home/get_top5/',{name_entidad:state_name},function(data){
-							$('.changeAjax').html(data);
-						});				
+						url = '/home/get_top5/';
+					}else if(container.hasClass('resultados')){
+						url = '/compara/get_data_table/';
 					}
+
+					$.post(url,{name_entidad:state_name},function(data){
+						$('.changeAjax').html(data);
+					});
 				}
 			});
 		})
