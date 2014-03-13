@@ -37,7 +37,29 @@ class mejora extends main{
 
 	public function programas(){
 		$this->common_data();
-		$this->load_programas();
+		if($id = $this->get('id')){
+			$ps = new programa();
+			$ps->search_clause = " 1";
+			$programas = $ps->read('id,nombre,m_collection,tema_especifico,federal');
+			$filtroF = array();
+			$filtro = array();
+			foreach($programas as $p){
+				$count_cct = $this->get_estado_escuelas_count($p->m_collection);
+				if($count_cct[$id]>0){
+					if($p->federal){
+						$filtroF[] = $p;
+					}else{
+						$filtro[] = $p;
+					}
+				}
+			
+			}
+		    	$this->programas_federales = $filtroF;
+			$this->programas_osc = $filtro;
+
+		}else{
+			$this->load_programas();
+		}
 		$this->include_theme('index','programas');
 	}
 }

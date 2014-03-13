@@ -597,6 +597,10 @@ $(document).ready(function(){
 		$('.comparador_select').css('display','block');
 	}
 
+	$('#content .mejora.programs .subject select').change(function(e){
+		window.location.href = '/mejora/programas/'+$(this).val();
+	});
+
 });
 
 

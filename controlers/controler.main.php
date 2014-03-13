@@ -536,10 +536,54 @@ class main extends controler{
     protected function load_programas(){
     	$q = new programa();
     	$q->search_clause =  'federal = "1"';
-    	$this->programas_federales = $q->read('id,nombre,m_collection');
+    	$this->programas_federales = $q->read('id,nombre,m_collection,tema_especifico');
     	$q->search_clause = 'federal = "0"';
-    	$this->programas_osc = $q->read('id,nombre,m_collection');
+    	$this->programas_osc = $q->read('id,nombre,m_collection,tema_especifico');
     }
+
+    /**
+     * requiere m_collection seteado
+     * setead escuelas y estado_escuelas
+     * */
+    protected function get_estado_escuelas_count($m_collection = false){
+        $estado_escuelas = array();
+
+        if (!$m_collection) return $estado_escuelas;
+        try {
+            $m = $this->mongo_connect();
+            if($m){ 
+                $db = $m->selectDB("mte_programas");
+                $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
+
+                $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
+                $aux = $max_aux->getNext();
+                $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+
+                for($i=1;$i<=32;$i++) {
+                    $aux = $i;
+                    if ($i < 10) {
+                        $aux = '0'.$i;
+                    }
+                    if ($max_anio) {
+                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                    } else {
+                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                    }
+                }
+
+                $m->close();
+            }
+        } catch(Exception $ex) {
+            if ($this->debug) {
+                var_dump($ex);
+                throw $ex;
+            }
+            return $estado_escuelas;
+        }
+
+        return $estado_escuelas;
+    }
+
     public function get_data_compara_float(){
 	if(!$this->request('json')){
 		$this->load_compara_cookie();

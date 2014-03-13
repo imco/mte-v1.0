@@ -14,16 +14,18 @@
 			<p>Programas federales</p>
 			<ul>
 		                <?php 
+				$temas = array();
 		                foreach($this->programas_federales as $programa){
 					echo "<li>";
 					$this->print_img_tag("programas/{$programa->id}.jpg");
 					echo "<a href='/programas/index/{$programa->id}'>{$programa->nombre}</a></li>";
+					$temas[$programa->id] = $programa->tema_especifico;
 		                }
 		                ?>
 			</ul>	
 		</div>
 		<div class="program">
-			<p>Programas federales</p>
+			<p>Programas de organizaciones de la sociedad civil</p>
 			<ul>
 				<?php 
 				foreach($this->programas_osc as $programa){
@@ -33,6 +35,7 @@
 					echo "<li>";
 					$this->print_img_tag("programas/{$programa->id}.jpg");
 					echo "<a href='/programas/index/{$programa->id}'>{$programa->nombre}{$datoExtra}</a></li>";
+					$temas[$programa->id] = $programa->tema_especifico;
 				}
                 ?>
 			</ul>	
@@ -40,16 +43,17 @@
 
 	</div>
 	<div class="column">
-		<div class="subject">
+		<div class="subject list">
 			<p>Tema de enfoque</p>
 			<ul>
-				<li>
-					<a href="">Tema1</a>
-				</li>
-				<li>
-					<a href="">Tema2</a>
-				</li>
+				<?php foreach($temas as $id => $name) 
+					echo "<li><a href='/programas/index/{$id}'>{$name}</a></li>";
+				
+				?>
+
 			</ul>
+			<?php 
+			?>
 		</div>	
 
 		<div class="subject">
@@ -72,7 +76,15 @@
 			<br />
 			zonas de impacto</p>
 			<select id="" name="" class='custom-select'>
-				<option value="">Quintana Roo</option>
+
+				<option value='0'> Estado</option>
+				<?php 
+				foreach($this->entidades as $entidad){
+					
+					$selected = $this->request('id') == $entidad->id ? "selected='selected'" : '';
+					echo "<option $selected value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
+				} 
+				?>
 			</select>
 
 		</div>
