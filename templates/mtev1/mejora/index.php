@@ -22,7 +22,7 @@ $infografias = array('entorno'=>'Entorno',
 		<span class="icon"></span>
 		Herramientas de mejora
 	</a>
-	<a class="support" href="#">
+	<a class="support" href="/mejora/programas/">
 		<span class="icon"></span>
 		Programas de apoyo
 	</a>
