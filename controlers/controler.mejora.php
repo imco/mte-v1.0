@@ -38,11 +38,12 @@ class mejora extends main{
 	public function programas(){
 		$this->common_data();
 		if($id = $this->get('id')){
+			$filtroF = array();
+			$filtro = array();
+		    if(is_numeric($id)){
 			$ps = new programa();
 			$ps->search_clause = " 1";
 			$programas = $ps->read('id,nombre,m_collection,tema_especifico,federal');
-			$filtroF = array();
-			$filtro = array();
 			foreach($programas as $p){
 				$count_cct = $this->get_estado_escuelas_count($p->m_collection);
 				if($count_cct[$id]>0){
@@ -53,9 +54,35 @@ class mejora extends main{
 					}
 				}
 			
+			}		    
+		    }else{
+			$paramas = new StdClass();
+			$id = strtoupper($id);
+			$programas_array = array();
+		    	for($i=2;$i<16;$i++){
+			    	$ccts = $this->get_estado_escuelascct($i,"",0,0);
+				$params->ccts = $ccts;
+		        	$this->get_escuelas($params);
+				foreach($this->escuelas as $es){
+					if(strtoupper($es->nivel->nombre) == $id){
+						$programas_array[$i] = 1;
+					}
+				}
 			}
-		    	$this->programas_federales = $filtroF;
-			$this->programas_osc = $filtro;
+
+		    }
+
+		    foreach($programas_array as $pr => $du){
+		    	$p = new programa($pr);
+			$p->read('id,nombre,m_collection,tema_especifico,federal');
+			if($p->federal){
+				$filtroF[] = $p;
+			}else{
+				$filtro[] = $p;
+			}
+		    }
+		    $this->programas_federales = $filtroF;
+		    $this->programas_osc = $filtro;
 
 		}else{
 			$this->load_programas();

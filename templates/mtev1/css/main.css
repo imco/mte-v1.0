@@ -1831,8 +1831,12 @@ height: auto;}
 #content .mejora .tags .wp-tag-cloud li{display:inline-block;vertical-align:top;border:none;background:transparent}
 #content .mejora .tags .wp-tag-cloud li:hover{background:transparent;}
 #content .mejora .tags .wp-tag-cloud li:hover a{color:#169C4E;background:transparent;}
-#content .mejora .tools{width:446px;height:74px;display:inline-block;font-size:25px;background-color:rgba(255,255,255,.6);text-align:center;color:#26A95B;line-height:72px;text-indent:50px;}
-#content .mejora .support{width:446px;display:inline-block;background-color:rgba(255,255,255,.6);vertical-align: top;margin-left:5px;height:75px;font-size: 25px;text-align:center;text-indent:46px;line-height:70px;color:#26A95B;}
+#content .mejora .tools{width:446px;height:74px;display:inline-block;font-size:25px;background-color:rgba(255,255,255,.6);text-align:center;color:#26A95B;line-height:72px;text-indent:50px;position:relative;}
+#content .mejora .tools .icon{background:url(../img/mejora/herramientas_a.png) no-repeat;display:block;position:absolute;width:37px;height:50px;top:16px;left:57px;}
+#content .mejora .support{width:446px;display:inline-block;background-color:rgba(255,255,255,.6);vertical-align: top;margin-left:5px;height:75px;font-size: 25px;text-align:center;text-indent:46px;line-height:70px;color:#26A95B;position:relative;}
+#content .mejora .support .icon{background:url(../img/mejora/programas_a.png) no-repeat;width:40px;display:block;position:absolute;height:47px;top:13px;left:71px;}
+#content .mejora .tools.select .icon{background:url(../img/mejora/herramientas.png) no-repeat;}
+#content .mejora .support.select .icon{background:url(../img/mejora/programas.png) no-repeat;}
 #content .mejora .support.select,
 #content .mejora .tools.select{background:url(../img/home/texture_green.png);color:white;}
 #content .mejora .gray-box.form{margin:0;padding:0;height:45px;}
