@@ -59,15 +59,19 @@
 		<div class="subject">
 			<p>Nivel escolar</p>
 			<ul>
-				<li>
-					<a href="">Primaria</a>
-				</li>
-				<li>
-					<a href="">Secundaria</a>
-				</li>
-				<li>
-					<a href="">Bachillerato</a>
-				</li>
+			<?php
+				$estado = $this->get('estado')? $this->get('estado'):false;
+				$n = $this->get('nivel')?$this->get('nivel'):false;
+				$nivel = array('preescolar','primaria','secundaria','bachillerato');
+				foreach($nivel as $name){
+					$on = $n == $name?'on':'';
+					echo "<li class='$on'>
+						<a href='/mejora/programas/?estado=$estado&nivel=$name'>{$this->capitalize($name)}</a>
+					</li>";
+				}
+				echo "<span class='hidden nivelE'>$n</span>"
+			?>
+
 			</ul>
 		</div>
 
@@ -81,7 +85,7 @@
 				<?php 
 				foreach($this->entidades as $entidad){
 					
-					$selected = $this->request('id') == $entidad->id ? "selected='selected'" : '';
+					$selected = $estado == $entidad->id ? "selected='selected'" : '';
 					echo "<option $selected value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
 				} 
 				?>

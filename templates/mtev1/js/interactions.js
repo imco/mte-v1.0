@@ -598,7 +598,8 @@ $(document).ready(function(){
 	}
 
 	$('#content .mejora.programs .subject select').change(function(e){
-		window.location.href = '/mejora/programas/'+$(this).val();
+		var url = $('.hidden.nivelE').html();
+		window.location.href = '/mejora/programas/?nivel='+url+'&estado='+$(this).val();
 	});
 
 });

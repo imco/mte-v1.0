@@ -1863,3 +1863,5 @@ height: auto;}
 #content .mejora.programs .subject .customSelect:before{content:'';width:4px;height:6px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid white;float:right;margin:10px 9px 0 0;}
 #content .mejora.programs .subject .customSelect .customSelectInner{font-size:16px;width:114px!important;padding:5px;}
 #content .mejora.programs .subject.list ul li{min-height:20px;height:auto;line-height:normal;padding:12px;}
+#content .mejora.programs .subject .on{background-color:rgba(0,0,0,.5);}
+#content .mejora.programs .subject .on a{color:white;}

@@ -37,57 +37,73 @@ class mejora extends main{
 
 	public function programas(){
 		$this->common_data();
-		if($id = $this->get('id')){
-			$filtroF = array();
-			$filtro = array();
-		    if(is_numeric($id)){
-			$ps = new programa();
-			$ps->search_clause = " 1";
-			$programas = $ps->read('id,nombre,m_collection,tema_especifico,federal');
-			foreach($programas as $p){
-				$count_cct = $this->get_estado_escuelas_count($p->m_collection);
-				if($count_cct[$id]>0){
-					if($p->federal){
-						$filtroF[] = $p;
-					}else{
-						$filtro[] = $p;
+		$nivel = array('primaria'=>'PR','secundaria'=> 'ES','bachillerato'=> 'BH','Preescolar'=>'JN');
+		$filtroF = array();
+		$filtro = array();
+		$estado = $this->get('estado');
+		$niv = $this->get('nivel');
+		if($estado || $niv){
+			if(is_numeric($estado) || array_key_exists($niv,$nivel)){
+			        if ($estado < 10) $estado = '0'.$estado;
+			    	for($i=2;$i<16;$i++){
+					$p = new programa($i);
+					$p->read('id,nombre,m_collection,tema_especifico,federal');
+					$regex1 = array('$regex'=> "^$estado");
+					$regex2 = array('$regex'=> "^[a-zA-Z0-9]{3}{$nivel[$niv]}");
+					$add = true;
+					if($niv && !$this->exist_cct_in($p->m_collection,$regex2)){
+						$add = false;
 					}
-				}
-			
-			}		    
-		    }else{
-			$paramas = new StdClass();
-			$id = strtoupper($id);
-			$programas_array = array();
-		    	for($i=2;$i<16;$i++){
-			    	$ccts = $this->get_estado_escuelascct($i,"",0,0);
-				$params->ccts = $ccts;
-		        	$this->get_escuelas($params);
-				foreach($this->escuelas as $es){
-					if(strtoupper($es->nivel->nombre) == $id){
-						$programas_array[$i] = 1;
+
+				    	if($add && $estado && !$this->exist_cct_in($p->m_collection,$regex1)){
+						$add = false;
+					}
+					if($add){
+						if($p->federal){
+							$filtroF[] = $p;
+						}else{
+							$filtro[] = $p;
+						}					
 					}
 				}
 			}
 
-		    }
-
-		    foreach($programas_array as $pr => $du){
-		    	$p = new programa($pr);
-			$p->read('id,nombre,m_collection,tema_especifico,federal');
-			if($p->federal){
-				$filtroF[] = $p;
-			}else{
-				$filtro[] = $p;
-			}
-		    }
-		    $this->programas_federales = $filtroF;
-		    $this->programas_osc = $filtro;
-
-		}else{
+		}
+		$this->programas_federales = $filtroF;
+		$this->programas_osc = $filtro;
+		if(!($this->get('nivel') || $this->get('estado') )){
 			$this->load_programas();
 		}
 		$this->include_theme('index','programas');
+	}
+
+	private function exist_cct_in($m_collection,$regex){
+		try {
+			$m = $this->mongo_connect();
+			$db = $m->selectDB("mte_programas");
+			$c = $db->selectCollection($m_collection);
+			$max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
+			$aux = $max_aux->getNext();
+			$max_anio = isset($aux['anio']) ? $aux['anio'] : false;
+			//$regex = array('$regex'=> "^[a-zA-Z0-9]{3}{$code}");
+
+			if ($max_anio) {
+				$find = array( "anio" => $max_anio , "cct" => $regex);
+			}else{
+				$find = array( "cct" => $regex);
+			}
+			$escuelasaux = $c->find($find)->limit(1);
+			return $escuelasaux->hasNext();
+ 
+		}catch(Exception $ex) {
+			if ($this->debug) {
+				var_dump($ex);
+		                throw $ex;
+			}
+		    return false;
+        	}
+
+	
 	}
 }
 ?>
