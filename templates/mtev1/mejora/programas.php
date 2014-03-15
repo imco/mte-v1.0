@@ -62,7 +62,7 @@
 			<?php
 				$estado = $this->get('estado')? $this->get('estado'):false;
 				$n = $this->get('nivel')?$this->get('nivel'):false;
-				$nivel = array('preescolar','primaria','secundaria','bachillerato');
+				$nivel = array('primaria','secundaria','bachillerato');
 				foreach($nivel as $name){
 					$on = $n == $name?'on':'';
 					echo "<li class='$on'>
