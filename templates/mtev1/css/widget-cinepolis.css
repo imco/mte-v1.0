@@ -1,0 +1,53 @@
+body{font-family:'Varela Round',Arial, Helvetica, sans-serif;background:transparent;color:#646665;}
+a{text-decoration:none;color:#359B37;}
+.hidden{display:none;}
+.clear{clear:both;}
+
+#container{overflow:hidden;border-radius:10px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/fondogris.jpg);margin:0 auto;width:637px;}
+#container h1{color:white;text-align:center;background-color:#18A451;font-size:14px;padding:5px 10px;position:relative;padding: 14px 71px 12px;line-height: 21px;font-family:'Varela Round';}
+#container h1:after{display:block;content:'';position:absolute;bottom:-13px;width:636px;height:13px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sombra.png);}
+
+#container .content{padding:19px 31px 11px;}
+#container .content form{margin:13px 0 0;}
+#container .content form p{display:block;float:left;}
+#container .content form p img{margin: -4px 0 0 25px}
+#container .content form p.button{border:1px solid white;background-color:rgba(255,255,255,.4);padding:7px;border-radius:3px;position:relative}
+#container .content form input[type='text']{background-color:#FFFFFF;color:#434343;font-size:14px;line-height:21px;padding:8px 40px 8px 14px;width:148px;border:none;border-radius:5px;font-family:'Varela Round';height:22px;}
+#container .content form input[type='submit']{border:none;background:transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/lupa-search.png);width:32px;height:34px;position:absolute;right:9px;top:9px;display:block;}
+
+/* Reset */ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+* {margin:0;padding:0;}
+
+:focus {
+	outline: 0;
+}
+body {line-height: 1.8;color:black;font-family:Verdana, Helvetica, "Lucida Grande", Arial, sans-serif; ;font-size:.75em;}
+ol, ul {list-style: none;}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+
+/* Finish browser styling defaults--------------- */
