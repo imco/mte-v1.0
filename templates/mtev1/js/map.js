@@ -20,6 +20,7 @@ $().ready(function(){
 			, longitude = geo.coords.longitude
 			, g = new google.maps.Geocoder()
 			, latLng = new google.maps.LatLng(latitude,longitude);
+			ga('send', 'event', 'button', 'click', 'geolocation');
 			g.geocode({latLng:latLng},function(r,s){
 				if(s=='OK'){
 					var state_name = r[2]['formatted_address'].split(',')[0]
