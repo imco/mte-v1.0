@@ -67,5 +67,9 @@ class widgets extends main{
 		$this->layout = 'small';
 		$this->include_template('escuelas','widgets');
 	}
+
+	public function cinepolis(){
+		$this->include_template('cinepolis','widgets');
+	}
 }
 ?>	
