@@ -691,7 +691,7 @@ function twitterIni(){
 		$("#tweets").append('<ul></ul>');
 		for(d in data){
 			var x = data[d];
-			console.log(x);
+			//console.log(x);
 			var text = replaceMentions(replaceHashTags(replaceURLWithHTMLLinks(x.text)));
 			if(x.user.screen_name != 'clocsc') $("#tweets ul").append('<li><a href="https://twitter.com/'+x.user.screen_name+'" target="_blank" ><img src="'+x.user.profile_image_url+'" alt="'+x.user.screen_name+'" /></a><p><a href="http://www.twitter.com/'+x.user.screen_name+'/status/'+x.id_str+'" class="user"  target="_blank" >@'+x.user.screen_name+'</a> '+text+'</p></li>');
 		}
