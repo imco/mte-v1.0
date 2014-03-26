@@ -678,7 +678,7 @@ class main extends controler{
 	public function print_img_tag($file,$alt=false,$folder="img",$class=false){
 		$url_cdn = "http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/";
 		$pref = explode("/",$file);
-		$file = $pref[0].(isset($pref[1])?"_".$pref[1]:"");
+		$file = $pref[0].(isset($pref[1])?"_".$pref[1]:"").(isset($pref[2])?"_".$pref[2]:"");
 		$img = $url_cdn.$file;
 		$alt = $alt?$alt:$file;
 		$class = $class?"class='$class'":"";

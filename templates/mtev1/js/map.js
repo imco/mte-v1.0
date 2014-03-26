@@ -57,12 +57,13 @@ function add_marker(escuela,map){
 		var icon = $('#map-selected').val() == escuela.cct ? escuela.semaforo : escuela.semaforo+'o';
 	}else{
 		var icon = escuela.semaforo;
-	} ;
-	var marker = new google.maps.Marker({
+	};
+	var urlCdn = "http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/pins_"
+	, marker = new google.maps.Marker({
 		position: position,
 		map: map,
 		title: escuela.nombre,
-		icon : '/templates/mtev1/img/pins/'+icon+'.png',
+		icon : urlCdn+icon+'.png',
   	});
   	var infobox = make_infobox(escuela,marker,map);
 

@@ -21,7 +21,7 @@
 	<hr>
 	<hr>
 	<hr>	
-	<?php $this->print_img_tag('/home/palomita.png');
-	$this->print_img_tag('/home/birrete_small.png');
+	<?php $this->print_img_tag('home/palomita.png');
+	$this->print_img_tag('home/birrete_small.png');
 	?>
 </div>

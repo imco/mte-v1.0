@@ -55,20 +55,20 @@ strong{font-weight: bold;}
 /*Header*/
 #header{}
 #header .container{text-align: center;}
-#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;display:none;background: transparent url(../img/sienlace/label.png) no-repeat 0 -10px;}
+#header .label{background: #7D9C00;height: 135px;text-align: center;border-radius: 0;width: 144px;position: relative;box-sizing: border-box;float: left;position: absolute;left: 0;display:none;background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_label.png) no-repeat 0 -10px;}
 /*#header .label:before{content: '';width: 0px;height: 0px;border-style: solid;border-width: 34px 0 0 72px;border-color: transparent transparent transparent white;position: absolute;left: 0;bottom: 0;}
 #header .label:after{content: '';width: 0px;height: 0px;border-style: solid;border-width: 0 0 34px 72px;border-color: transparent transparent white transparent;position: absolute;right: 0;bottom: 0;}*/
 #header .label a{display: block;color: white;text-decoration: none;font-size: 22px;line-height: 27px;}
-#header .label .icon{background: transparent url(../img/sienlace/ya_somos.png) no-repeat center;height: 45px;}
+#header .label .icon{background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_ya_somos.png) no-repeat center;height: 45px;}
 #header .logo{padding-top: 30px;display: block;}
 #header .logo img{max-width: 641px;width: 60%;}
 #header .social{position: absolute;right: 0;top:7px;}
 #header .social a{float: left;width: 29px;height: 29px;border-radius: 50%;}
 #header .social a + a{margin-left: 8px;}
-#header .social a.in{background: #212121 url(../img/sienlace/in.png) no-repeat center center;}
-#header .social a.fb{background: #212121 url(../img/sienlace/face.png) no-repeat center center;}
-#header .social a.tw{background: #212121 url(../img/sienlace/tw.png) no-repeat center center;}
-#header .social a.yt{background: #212121 url(../img/sienlace/yt.png) no-repeat center center;}
+#header .social a.in{background: #212121 url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_in.png) no-repeat center center;}
+#header .social a.fb{background: #212121 url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_face.png) no-repeat center center;}
+#header .social a.tw{background: #212121 url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_tw.png) no-repeat center center;}
+#header .social a.yt{background: #212121 url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_yt.png) no-repeat center center;}
 #header .social a:hover{background-color: #7D9C00;}
 
 /*Footer*/
@@ -104,16 +104,16 @@ strong{font-weight: bold;}
 #content .singin .message a{color: #7D9C00;}
 #content .singin .whytext{margin-top: 15px;}
 #content .singin .whytext ol{color: white;list-style: decimal;list-style-position: inside;margin: 0;font-size: 14px;}
-#content .singin .whytext ol li{padding-bottom: 17px;padding-left: 60px;background: transparent url(../img/sienlace/1.png) no-repeat left top;min-height: 50px;}
-#content .singin .whytext ol li:nth-child(2){background: transparent url(../img/sienlace/2.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(3){background: transparent url(../img/sienlace/3.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(4){background: transparent url(../img/sienlace/4.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(5){background: transparent url(../img/sienlace/5.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(6){background: transparent url(../img/sienlace/6.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(7){background: transparent url(../img/sienlace/7.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(8){background: transparent url(../img/sienlace/8.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(9){background: transparent url(../img/sienlace/9.png) no-repeat left top;}
-#content .singin .whytext ol li:nth-child(10){background: transparent url(../img/sienlace/10.png) no-repeat left top;}
+#content .singin .whytext ol li{padding-bottom: 17px;padding-left: 60px;background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_1.png) no-repeat left top;min-height: 50px;}
+#content .singin .whytext ol li:nth-child(2){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_2.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(3){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_3.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(4){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_4.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(5){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_5.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(6){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_6.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(7){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_7.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(8){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_8.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(9){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_9.png) no-repeat left top;}
+#content .singin .whytext ol li:nth-child(10){background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_10.png) no-repeat left top;}
 #content .singin .whytext ol li a{color: white;}
 #content .singin .whytext ol li.no{display: none;}
 #content .singin .seemore{color: #7D9C00;text-align: center;margin: 0 auto;display: block;}
@@ -123,12 +123,12 @@ strong{font-weight: bold;}
 #content .container .row-fluid .share{text-align:center;}
 #content .container .row-fluid .share .rstab{float: none;margin-right:0px;display:inline-block;}
 #content .singin .share .rstab{float: left;margin-right: 20px;}
-#content .share .rstab.email a{display:block;width:93px;height:22px;background-image:url(../img/sienlace/compartir.png);margin:-1px 0;}
+#content .share .rstab.email a{display:block;width:93px;height:22px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_compartir.png);margin:-1px 0;}
 
 #content .singin .span4 h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 20px;}
-#content .singin .span4 h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
+#content .singin .span4 h2 .icon-helpus{display: block;height:50px;background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_ayudanos.png) no-repeat center;width: 100%; }
 #content .singin .span4 .share{text-align: center;}
-#content .container.center h2 .icon-helpus{display: block;height:50px;background: transparent url(../img/sienlace/ayudanos.png) no-repeat center;width: 100%; }
+#content .container.center h2 .icon-helpus{display: block;height:50px;background: transparent url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/sienlace_ayudanos.png) no-repeat center;width: 100%; }
 #content .container.center h2{color: #7C9D00;text-align: center;font-size: 23px;margin-top: 10px;}
 
 #content .container .gallery{margin: 25px 0;}

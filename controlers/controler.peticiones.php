@@ -14,7 +14,7 @@ class peticiones extends main{
 		$this->breadcrumb = array('#'=>'Peticiones');
 		$this->header_folder = 'compara';
 		$this->title_header = 'Peticiones';
-		$this->subtitle_header = 'En esta sección encontrarás peticiones de ciudadanos y de la sociedad civil <br /> para mejorar la educación en México. Entre más personas firmemos, <br /> más fuerza tendrán. ¡Ayúdanos firmando y compartiéndolas con <br />tus familiares y amigos!'; 
+		$this->subtitle_header = 'En esta sección encontrarás peticiones de ciudadanos y de la sociedad civil para mejorar la educación en México. Entre más personas firmemos, más fuerza tendrán. ¡Ayúdanos firmando y compartiéndolas con tus familiares y amigos!'; 
 		$this->include_theme('index','index');
 	}
 

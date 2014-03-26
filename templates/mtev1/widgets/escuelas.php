@@ -23,7 +23,7 @@
  <body>
  	<div id='container'>
  		<div class='head  <?=$this->escuela->rank_entidad <= 10 ? 'medal':''?>'>
-	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><?php $this->print_img_tag('/widget/mejora.png','Meoratuescuela.org') ?></a>
+	 		<a href='http://www.mejoratuescuela.org' class='logo' title='Mejora tu Escuela'><?php $this->print_img_tag('widget/mejora.png','Meoratuescuela.org') ?></a>
  			<span></span>
  		</div>
  		<div class='blue-box <?=$this->escuela->rank_entidad <= 10 ? 'medal':''?>'>
