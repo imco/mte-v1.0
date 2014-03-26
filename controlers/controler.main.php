@@ -660,10 +660,10 @@ class main extends controler{
 				$pBanner->create('pagina,banner',array($page,$id));
 			}
 		}
-	    }
+	}
 
-	    public function get_banners(){
-	    	$page = $this->location;
+	public function get_banners(){
+		$page = $this->location;
 		$b = new page_banner();
 		$b->search_clause = "pagina = '$page' "; 
 		$bs = $b->read('pagina,banner=>imagen,banner=>url');
@@ -673,6 +673,19 @@ class main extends controler{
 				$imgs[$b->banner->imagen] = $b->banner->url;
 			}
 		return $imgs;
-    }
+	}
+
+	public function print_img_tag($file,$alt=false,$folder="img",$class=false){
+		$url_cdn = "http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/";
+		$pref = explode("/",$file);
+		$file = $pref[0].(isset($pref[1])?"_".$pref[1]:"");
+		$img = $url_cdn.$file;
+		$alt = $alt?$alt:$file;
+		$class = $class?"class='$class'":"";
+		echo "<img src='$img' alt='$alt' $class />";
+	}
+
+
+
 }
 ?>
