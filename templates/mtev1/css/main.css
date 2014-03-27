@@ -708,7 +708,7 @@ line-height: 45px;}
 #header .reportes-ciudadanos.contacto textarea{width:530px;height:101px;font-size:18px;margin-top:2px;font-family:Varela Round;border:none;padding:6px 15px;}
 #header .reportes-ciudadanos.contacto .box{margin-bottom:26px;}
 #header .reportes-ciudadanos.contacto .box .content{width:556px;padding-bottom:22px;}
-#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:17px;color:white;font-weight:bold;line-height:42px;}
+#header .reportes-ciudadanos.contacto input[type='submit']{width:100%;display:block;height:36px;background-color:#00adef;border:none;font-size:17px;color:white;font-weight:bold;line-height:42px;margin-top:-9px;}
 #header .reportes-ciudadanos.contacto p{margin-top:16px;font-size:13px;}
 #header .reportes-ciudadanos.contacto span.icon{display:block;float:left;width:35px;height:28px;background-image:url(../img/contacto/direccion.png);background-repeat:no-repeat;margin:1px -1px 0 25px;background-position:1px 4px;}
 #header .reportes-ciudadanos.contacto p.tel{margin-top:6px;}

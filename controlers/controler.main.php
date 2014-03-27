@@ -509,10 +509,10 @@ class main extends controler{
 	*/
     public function get_captcha(){
     		
-		//$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-		//return $captcha->form();
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		return $captcha->form();
 
-
+		/*
 		$sweetcaptcha = new sweetcaptcha(
 		  $this->config->SWEETCAPTCHA_APP_ID, 
 		  $this->config->SWEETCAPTCHA_KEY, 
@@ -521,6 +521,7 @@ class main extends controler{
 		);
 
 		echo $sweetcaptcha->get_html();
+		*/
 		
     }
     public function mongo_connect(){
