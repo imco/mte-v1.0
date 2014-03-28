@@ -1828,6 +1828,34 @@ margin: 0 !important;
 width: 200px !important;
 }
 .recaptchatable .recaptcha_r1_c1, .recaptchatable .recaptcha_r3_c1, .recaptchatable .recaptcha_r3_c2, .recaptchatable .recaptcha_r7_c1, .recaptchatable .recaptcha_r8_c1, .recaptchatable .recaptcha_r3_c3, .recaptchatable .recaptcha_r2_c1, .recaptchatable .recaptcha_r4_c1, .recaptchatable .recaptcha_r4_c2, .recaptchatable .recaptcha_r4_c4, .recaptchatable .recaptcha_image_cell {background: none !important;}
-#content form .recaptchatable #recaptcha_image #recaptcha_challenge_image{width:262px!important;}
-.mejora #recaptcha_widget_div{margin-left:-9px;}
+#header form .recaptchatable #recaptcha_image #recaptcha_challenge_image,
+#content form .recaptchatable #recaptcha_image #recaptcha_challenge_image{width:211px!important;height:46px;margin-top:-7px!important}
+ #recaptcha_widget_div{margin-top:12px;background:#7E7E7E;padding:0px 0px 0 6px;margin-left:7px;width:218px;height:99px;margin-bottom:11px;}
+#header #recaptcha_widget_div{display:block;margin:1px auto 9px;}
 form #recaptcha_area,form #recaptcha_table{width:190px !important;}
+
+#header .container input#recaptcha_response_field,
+#content .container input#recaptcha_response_field{margin-top:-20px!important;width:116px!important;margin-left:-7px!important;border-radius:5px;height:36px;}
+body #header .container input#recaptcha_response_field{margin-top:-10px!important;}
+#header .container #recaptcha_switch_audio_btn,
+#header .container #recaptcha_whatsthis_btn,
+#header .container #recaptcha_reload_btn,
+#content .container #recaptcha_switch_audio_btn,
+#content .container #recaptcha_whatsthis_btn,
+#content .container #recaptcha_reload_btn{margin-top:-14px!important;margin-left:-48px!important;display:block;}
+body #header .container #recaptcha_reload_btn,
+body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
+#header .container .recaptcha_input_area,
+#content .container .recaptcha_input_area{width:110px!important;margin-right:49px!important;}
+#recaptcha_area td{position:relative;}
+#header .container #recaptcha_switch_audio_btn,
+#content .container #recaptcha_switch_audio_btn{position:absolute;top:9px;}
+
+#header   form .recaptcha_input_area ::-webkit-input-placeholder,
+#content  .container form .recaptcha_input_area ::-webkit-input-placeholder{color:#787878!important;background-color:#D1D1D1;font-size:12px;text-align:center;}
+#header   form .recaptcha_input_area :-ms-input-placeholder,
+#content  .container form .recaptcha_input_area :-ms-input-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
+#header   form .recaptcha_input_area input[placeholder],
+#content  .container form .recaptcha_input_area input[placeholder]{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
+#header   form .recaptcha_input_area :-moz-placeholder,
+#content  .container form .recaptcha_input_area :-moz-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
