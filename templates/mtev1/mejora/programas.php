@@ -76,9 +76,7 @@
 		</div>
 
 		<div class="subject">
-			<p>Programas por 
-			<br />
-			zonas de impacto</p>
+			<p>Zonas de impacto</p>
 			<select id="" name="" class='custom-select'>
 
 				<option value='0'> Estado</option>

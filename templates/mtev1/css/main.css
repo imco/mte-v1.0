@@ -1832,6 +1832,7 @@ height: auto;}
 #content .mejora .tags .wp-tag-cloud li{display:inline-block;vertical-align:top;border:none;background:transparent}
 #content .mejora .tags .wp-tag-cloud li:hover{background:transparent;}
 #content .mejora .tags .wp-tag-cloud li:hover a{color:#169C4E;background:transparent;}
+#content .mejora .wrap_tools{width:901px;}
 #content .mejora .tools{width:446px;height:74px;display:inline-block;font-size:25px;background-color:rgba(255,255,255,.6);text-align:center;color:#26A95B;line-height:72px;text-indent:50px;position:relative;}
 #content .mejora .tools .icon{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/mejora_herramientas_a.png) no-repeat;display:block;position:absolute;width:37px;height:50px;top:16px;left:57px;}
 #content .mejora .support{width:446px;display:inline-block;background-color:rgba(255,255,255,.6);vertical-align: top;margin-left:5px;height:75px;font-size: 25px;text-align:center;text-indent:46px;line-height:70px;color:#26A95B;position:relative;}

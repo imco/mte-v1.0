@@ -17,16 +17,16 @@ $infografias = array('entorno'=>'Entorno',
 </script>
 
 <div class='container mejora'>
-
-	<a class="tools select" href="#">
-		<span class="icon"></span>
-		Herramientas de mejora
-	</a>
-	<a class="support" href="/mejora/programas/">
-		<span class="icon"></span>
-		Programas de apoyo
-	</a>
-
+	<div class="wrap_tools">
+		<a class="tools select" href="#">
+			<span class="icon"></span>
+			Herramientas de mejora
+		</a>
+		<a class="support" href="/mejora/programas/">
+			<span class="icon"></span>
+			Programas de apoyo
+		</a>	
+	</div>
 	<div class="overlay-transparent"></div>
 	<div class="display">
 		<span class="close"></span>
