@@ -1,14 +1,15 @@
 <div class='container mejora programs'>
-
-	<a class="tools" href="/mejora">
-		<span class="icon"></span>
-		Herramientas de mejora
-	</a>
-	<a class="support select" href="#">
-		<span class="icon"></span>
-		Programas de apoyo
-	</a>
-
+	<div class="wrap_tools">
+		<a class="tools" href="/mejora">
+			<span class="icon"></span>
+			Herramientas de mejora
+		</a>
+		<a class="support select" href="#">
+			<span class="icon"></span>
+			Programas de apoyo
+		</a>
+	
+	</div>
 	<div class="column">
 		<div class="program">
 			<p>Programas federales</p>
