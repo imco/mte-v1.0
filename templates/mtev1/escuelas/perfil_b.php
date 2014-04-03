@@ -130,7 +130,7 @@
 						<option value='ciudadano'>Ciudadano</option>
 					</select>
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
-<!--					--><?//=$this->get_captcha();?>
+					<?=$this->get_captcha();?>
 					<p><input type='submit' value='Enviar' /></p>
 					<p>Aviso de privacidad.
 						<span>

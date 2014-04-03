@@ -1831,6 +1831,7 @@ width: 200px !important;
 #header form .recaptchatable #recaptcha_image #recaptcha_challenge_image,
 #content form .recaptchatable #recaptcha_image #recaptcha_challenge_image{width:211px!important;height:46px;margin-top:-7px!important}
  #recaptcha_widget_div{margin-top:12px;background:#7E7E7E;padding:0px 0px 0 6px;margin-left:7px;width:218px;height:99px;margin-bottom:11px;}
+.califica #recaptcha_widget_div,
 #header #recaptcha_widget_div{display:block;margin:1px auto 9px;}
 form #recaptcha_area,form #recaptcha_table{width:190px !important;}
 

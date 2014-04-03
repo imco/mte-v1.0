@@ -70,7 +70,7 @@
 				<input type="hidden" id="rank-question" name="calificaciones" value="" class="required">
                 <input type='hidden' id='rank-question-id' name="preguntas" value="">
 				<input type='hidden' id='cct' name='cct' value='<?=$this->get('id')?>' class='required' />
-<!--				--><?//=$this->get_captcha();?>
+				<?=$this->get_captcha();?>
 				<p class='button-frame' >
 					<input type='submit' value='Enviar calificación y comentario' class='button button-efect blue' />
 				</p>
