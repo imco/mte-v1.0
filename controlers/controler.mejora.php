@@ -11,11 +11,11 @@ class mejora extends main{
 	*/
 	public function index(){
 		/* Obtiene los datos necesarios para el correcto funcionamiento de las vistas. */
+		$this->common_mejora();
 		$this->include_theme('index','index');
-		$this->common_data();
 	}
 
-	private function common_data(){
+	private function common_mejora(){
 		$this->title_header = 'Mejora tu escuela';
 		$this->subtitle_header = 'Aquí encontrarás herramientas para que actúes como agente <br />de cambio positivo en tu comunidad educativa. <br />¡Participa e involúcrate!';
 		$this->header_folder = 'compara';
@@ -36,7 +36,7 @@ class mejora extends main{
 	}
 
 	public function programas(){
-		$this->common_data();
+		$this->common_mejora();
 		$nivel = array('primaria'=>'PR','secundaria'=> 'ES','bachillerato'=> 'BH','Preescolar'=>'JN');
 		$filtroF = array();
 		$filtro = array();
