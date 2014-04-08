@@ -1850,7 +1850,11 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #content .container .recaptcha_input_area{width:110px!important;margin-right:49px!important;}
 #recaptcha_area td{position:relative;}
 #header .container #recaptcha_switch_audio_btn,
+.container #recaptcha_switch_img_btn,
 #content .container #recaptcha_switch_audio_btn{position:absolute;top:9px;}
+.container #recaptcha_switch_img_btn{top:-4px;left:-48px;}
+.container form a#recaptcha_audio_download,
+.container form a#recaptcha_audio_play_again{color:white;font-size:12px;}
 
 #header   form .recaptcha_input_area ::-webkit-input-placeholder,
 #content  .container form .recaptcha_input_area ::-webkit-input-placeholder{color:#787878!important;background-color:#D1D1D1;font-size:12px;text-align:center;}
