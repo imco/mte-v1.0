@@ -23,7 +23,8 @@
 		<?php if($existsImg) echo "</div><div class='clear'></div></div>"; ?>
 		<h2 class="title">Descripción del programa</h2>
 		<div class="white-box">
-			<p><?php echo $this->programa->descripcion; ?></p>
+			<?php $desc = $this->programa->descripcion;?>
+			<p><?=$this->programa->id==20?nl2br($desc):$desc; ?></p>
 		</div>
 
 
