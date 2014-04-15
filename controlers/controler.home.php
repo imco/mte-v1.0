@@ -59,11 +59,11 @@ class home extends main{
 	   }
 
 	/**
-	* Funcion Protegida get_abreviatura_estado.
+	* Funcion Publica get_abreviatura_estado.
 	* Recibe como parámetro el estado si encuentra abreviatura para este lo regresa sí no el valor del parámetro pasado es devuelto.
 	* \param $estado arreglo string
 	*/
-	protected function get_abreviatura_estado($estado){
+	public function get_abreviatura_estado($estado){
     		$estado = strtolower($estado);
 		$estados["aguascalientes"] = "Ags.";
 		$estados["baja california"] = "B.C.";
