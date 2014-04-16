@@ -301,14 +301,14 @@ class main extends controler{
 	}
 
 	/**
-	* Funcioin Protegida capitalize.
+	* Funcioin Publica capitalize.
 	* Regresa el valor del parámetro $string con la primera letra en mayúsculas.
 	* \param $string a capitalizar
 	*/
-	protected function capitalize($string){
+	public function capitalize($string){
 		
 		return $this->mb_ucwords(mb_strtolower($string,'UTF-8'));
-		return $string;
+		//return $string;
 	}
 
 	/**

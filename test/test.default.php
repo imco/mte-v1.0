@@ -5,8 +5,8 @@ class defaultTest extends PHPUnit_Framework_TestCase{
 	public function setUp(){
 		$path = __DIR__."/../"; 
 		//export APPLICATION_ENV="name_config"
-		$config_name = getenv('APPLICATION_ENV');
-		require_once $path."config/config.default_config.php"; 
+		//$config_name = getenv('APPLICATION_ENV');
+		$config_name = "test_config";
 		require_once $path."config/config.$config_name.php";
 		$config = new $config_name();
 		$this->config = $config;
