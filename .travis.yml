@@ -1,5 +1,11 @@
 language: php
-
-php:   
-    - 5.3
-    - 5.4
+php:
+- 5.3
+- 5.4
+install: git clone https://github.com/el-sonny/mxnphp.git
+env:
+  global:
+  - secure: LPcXH7qmWZwcfdDj87npw48LIH9rco4CZzkd/IARXsnwJIQHqq+SJZNJF5Fgo6V32mXH1e7RSWZXaknbAQjNPRz7T4tx3lfamqKSbP7fDCvEutK/15x7jFmt1WalCDUtQIPEf+neMUD3U2Sti+BN+A8WCkCf+iO1pibHJvg+0hM=
+  - secure: a6TwlKMRANAATOzrO1V/9kN1wTNZYM4C2Oc4gpYI2Ar4akFbU1CscvBXZK3LTI01qnHI2EgiyAjPdqxQe8X+ssSflgtFS8FPJsi6JY8qFwM0VkTV1nFyQGsUIWwdPf1jVLtY195NqNf+1sT7FvAY0LtGtrXpCwAhsOOOx/79zhI=
+  - secure: iqoK+HNn0Q9k1T6GGOqgLQVqN9HNj2whCeEXu189nZ2jF41RU7YuAvnqWq8hqdKrlwP7xnR8bc7An/ETdS0h4ggSBQf/2igKd1noCCA2jTP0Un95Mx2ZC4LIIivqLidUSw4kV6kYTm3C2piueqP5V+kqcLHjiY7X5SvduNXybBA=
+  - secure: EaNOUoce/I8oopZnsvf532KwK//FX8utAZr8ZCMd5sstcA3C2DbuAR9es6ScCLi7cQEDnolbXCJWpLU20D+7IUtlWKrtZ75+Q/6/U3RhYn02YUqMYvzsvCbzNRWclxdwZ9G5CmkVTE7tr5VLiWR22oZurr8oWK6vQaDWohcLLGI=

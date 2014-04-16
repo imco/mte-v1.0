@@ -4,7 +4,7 @@ require_once("test.default.php");
 class homeTest extends defaultTest{
 	public function setUp(){
 		parent::setUp();
-		$this->controler = $this->require_contoler("home");
+		$this->controler = new home($this->config);
 	}
 
 	public function testGet_abreviatura_estado(){
