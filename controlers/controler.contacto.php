@@ -20,7 +20,6 @@ class contacto extends main{
 	*/
 	public function enviar(){
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-		$this->contact_status = false;
 		if($captcha->check_answer($this->config->http_address,
 			$this->post('recaptcha_challenge_field'),
 			$this->post('recaptcha_response_field'))){
