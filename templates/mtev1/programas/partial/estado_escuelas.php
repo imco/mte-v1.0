@@ -1,5 +1,5 @@
 <?php if(!$this->request('skip')){ ?>
-	<h2 class="title green">Clave CCT de las escuelas en las que se trabaja(2013/2014)</h2>
+	<h2 class="title green">Escuelas en donde está este programa. (Ciclo escolar: 2013/2014)</h2>
 <?php } ?>
         <div class="white-box map">
             <table>
