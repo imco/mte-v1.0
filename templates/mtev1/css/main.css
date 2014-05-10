@@ -427,7 +427,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table td.semaforo.sem3 span.sprit2{background-position:-2px -164px;}
 #content .resultados table td.semaforo.sem4 span.sprit2{background-position:-26px 0;width:23px;height:20px;background-size:26px;}
 #content .resultados table td.semaforo.sem5 span.sprit2{;width:23px;height:20px;background-position:0 770px;background-size:26px;}
-#content .resultados table td.semaforo.sem6 span.sprit2{background-position:-30px -48px;}
+#content .resultados table td.semaforo.sem6 span.sprit2{background: url(../img/alerta-gris.png) center no-repeat;height: 49px;width: 56px}
 #content .resultados table td.semaforo.sem7 span.sprit2{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_azul.png) center no-repeat;}
 #content .resultados table td.semaforo.sem5 .icon-popup .title_semaforo{font-size:14px;}
 #content .resultados table td.semaforo.sem6 .icon-popup .title_semaforo{font-size:13px;padding-top:0!important;margin-top:7px;}
@@ -976,9 +976,15 @@ line-height: 45px;}
 
 #content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
 #content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-position:-38px -304px;margin:0 auto;float:none;margin-bottom:5px;}
-#content .perfil.B .semaforo .sem-overlay .icon.icon6{background-position:-36px -56px;}
-#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-position:-3px -56px;}
+#content .perfil.B .semaforo .sem-overlay .icon.icon5{background-position:1px -336px;height: 53px;margin-bottom: 0;width: 60px}
+#content .perfil.B .semaforo .sem-overlay .icon.icon6{background-position:4px -103px;height: 53px;margin-bottom: 0;width: 62px}
+#content .perfil.B .semaforo .sem-overlay .icon.icon4{background-position:2px 0px;height: 53px;margin-bottom: 0;width: 62px}
 #content .perfil.B .semaforo .sem-overlay .icon.icon7{background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_azul.png);}
+#content .perfil.B .semaforo .sem-overlay .popup-faq{display: none;background: #424242;bottom: 0;border-left: 3px solid #0BA04D;color: #0BA04D;line-height: 15px;font-size: 13px;padding: 6px;position: absolute;text-align: center;right: -145px;width: 140px}
+#content .perfil.B .semaforo .sem-overlay .popup-faq a{color: #0BA04D;text-decoration: underline;}
+#content .perfil.B .semaforo .sem-overlay .popup-faq p{position: relative;float: none;font-size: 13px;padding: 0}
+#content .perfil.B .semaforo .sem-overlay .popup-faq p:before{content: '';display: block;border-color: transparent #0BA04D transparent transparent;border-width: 4px 8px 4px 0;border-style: solid;height: 0px;position: absolute;left: -16px;top: 26px;width: 0px;}
+#content .perfil.B .semaforo .sem-overlay:hover .popup-faq.opc5{display: block;}
 
 #content .perfil.B .lista-programas h2{cursor: pointer;margin-top: 10px;}
 
