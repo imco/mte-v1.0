@@ -440,6 +440,11 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .resultados table tr.on .checkbox a{border:2px solid #00AFF0;position:relative;}
 #content .resultados table tr.on .checkbox a:before{content:'';background: url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/select_palomita.png) no-repeat center center;position:absolute;display:block;width:10px;height:10px;margin:4px;border-radius:50%;}
 #content .resultados table tr.on td.checkbox a:before{width:100%!important;height:100%!important;}
+#content .message-del{display: none;}
+#content .resultados table tr .message-del{display: none;background: #424242;border-right: 2px solid #00AFEE;color: #909090;font-size: 12px;text-align: center;padding: 15px 10px;position: absolute;left: -150px;top: 20px;width: 120px;}
+#content .resultados table tr .message-del p{position: relative;}
+#content .resultados table tr .message-del p .triangle{border-color: transparent transparent transparent #00AFEE;position:absolute;right: -20px;top: 13px;width: 0px;height: 0px;border-style: solid;border-width: 5px 0 5px 10px;}
+#content .resultados table tr.on:hover .message-del{display: block;}
 #content .resultados .pagination{text-align:center;margin:16px auto 19px;}
 #content .resultados .pagination a{color:black;text-shadow:1px 1px white;background-color:#DFDFDF;padding:6px 9px;font-size:12px;border-radius:3px;margin:0 1px;}
 #content .resultados .pagination a:hover{padding:5px 8px;border:1px solid #A8A9AB;cursor:default;}
@@ -1009,7 +1014,7 @@ line-height: 45px;}
 #content .perfil.B .califica input[type="submit"]{width:170px;height:25px;font-size:16px;}
 #content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;color:#888;}
 #content .perfil.B .califica textarea{height:68px;}
-#content .perfil.B .tabs.no-infra li{width:339px;}
+/*#content .perfil.B .tabs.no-infra li{width:339px;}*/
 #content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 0;height:55px;border:1px solid #c3c9c9;width:225px;border-top:none;}
 
 #content .perfil.B .tabs:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:1px;}
@@ -1515,6 +1520,12 @@ margin-top: -12px;}
 /*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}
 #content .container .column.right h1{background-color: #339DD1;color: #fff;padding: 8px 0;text-align: center;}
+#content .container .column.right .box-yesno{background-color: #E9068B;color: #fff;font-size: 15px;margin-top: 10px;padding: 5%;text-align: center;width: 90%}
+#content .container .column.right .box-yesno.orange{background-color: #F6911B}
+#content .container .column.right .box-yesno.green{background-color: #16A452}
+#content .container .column.right .box-yesno .yes,#content .container .column.right .box-yesno .no{display: inline-block;margin-top: 8px}
+#content .container .column.right .box-yesno .circle{border: 2px solid #fff;border-radius: 50%;display: block;height: 14px;width: 14px}
+#content .container .column.right .box-yesno .on .circle{background: #fff}
 #content .container .column.right .lista-programas + .lista-programas{margin-top: 10px}
 #content .container .column.right .lista-programas h2{font-size:18px;line-height:35px;background-color:#888;color:white;height:32px;text-align: center;}
 #content .container .column.right .lista-programas h2 + h2{margin-top: 10px}
@@ -1756,14 +1767,14 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .charts .wrap_chart .legend_chart .circle.blue{background-color:#3366CC;}
 
 #content .perfil.B .tab-container .infraestructura-tab{margin-bottom:7px;width:646px;width: 100%;}
-#content .perfil.B .tab-container .infraestructura-tab h2{background-color:#339DD1;background-color:#339DD1;height:42px;font-size:17px;text-align:center;color:white;padding-top:14px;margin-bottom:7px;}
+#content .perfil.B .tab-container .infraestructura-tab h2{background-color:#ECECEC;color: #22B4F0;height:42px;font-size:17px;text-align:center;padding-top:14px;margin-bottom:7px;}
 #content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
-#content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;}
+#content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;text-align: center;}
 #content .perfil.B .tab-container .infraestructura-tab .cel.no{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_cruz.png) center no-repeat;color:white;}
 #content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_palomita.png) center no-repeat;color:white;}
 #content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
-#content .perfil.B .tab-container .info_table th:first-child{font-size:16px;padding-left:8px;width:513px;display:block;margin-right:8px;}
+#content .perfil.B .tab-container .info_table th:first-child{background: #16A452;color: #fff;font-size:16px;padding:8px 0px 8px 44px;width:476px;display:block;margin-right:8px;}
 #content .perfil.B .tab-container .info_table th + th{text-indent:18px;font-size:13px;}
 #content .perfil.B .tab-container .info_table td:first-child{display:block;width:518px;}
 #content .perfil.B .tab-container .info_table td + td{border:none;position:relative;}

@@ -27,6 +27,7 @@
 			echo "
 			<tr $on>
 				<td class='school'>
+				<div class='message-del'><p><span class='triangle'></span>Eliminar escuela del comparador</p></div>
 				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
 				<a href='/escuelas/index/{$escuela->cct}'>".
 					$this->capitalize($escuela->nombre)." | ".

@@ -147,12 +147,12 @@
 					Comentarios 
 					y reportes
 				</a></li>
-				<?php if($this->escuela->infraestructura){ ?>
+				<?php //if($this->escuela->infraestructura){ ?>
 					<li><a href='#tab-infraescructura' class='result'>
 						<span class='triangle'></span>
 						Infraestructura escolar
 					</a></li>
-				<? } ?>
+				<? //} ?>
 				<li class='on'><a href='#tab-charts' class='long comentarios'>
 					<span class='triangle'></span>
 					Desempeño académico
@@ -221,7 +221,7 @@
 				</div>
 
 			</div></div>
-			<?php 
+			<!--<?php 
 			if($this->escuela->infraestructura){
 					$aulas = $fields = '';
 					foreach($this->escuela->infraestructura as $key => $item){
@@ -249,7 +249,55 @@
 						</tbody>
 					</table>
 				</div>
-			<?php } ?>
+			<?php } ?>-->
+			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
+			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
+				<h2>Información disponible corresponde al ciclo 2007</h2>
+				<p class="border_b">Total de aulas en uso <?=$aulas?></p>			
+				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
+				<table class='info_table'>
+					<tbody>
+						<tr>
+							<th>Instalaciones</th>
+							<th>esta escuela</th>
+						</tr>
+						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+					</tbody>
+				</table>
+				<table class='info_table'>
+					<tbody>
+						<tr>
+							<th>Servicios</th>
+							<th>esta escuela</th>
+						</tr>
+						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+					</tbody>
+				</table>
+				<table class='info_table'>
+					<tbody>
+						<tr>
+							<th>Seguridad</th>
+							<th>esta escuela</th>
+						</tr>
+						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+					</tbody>
+				</table>
+			</div>
 			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
@@ -312,7 +360,6 @@ EOD;
 						}
 					} ?>
 				</div>
-
 				<!--
 
 				<?php if(isset($this->escuela->calificaciones)) {?>
@@ -357,6 +404,36 @@ EOD;
 				-->
 			</div>
 		</div>	
+		<form method='post' action='' accept-charstet='utf-8' class='calificacion-form B'>
+			<fieldset>
+				<!--<p>Deja aquÃ­ un comentario sobre esta escuela</p>-->
+				<div class="comment-cloud"></div>
+				<textarea placeholder='Deja aquí un comentario sobre esta escuela' name='comentario' class='required'></textarea>
+				
+				<div class="box-hidden">
+					<input type='text' placeholder='Nombre' name='nombre' />
+					<input type='text' class='required email' placeholder='Email (obligatorio)' name='email' />
+					<select class='custom-select required' name='ocupacion' >
+						<option value=''>¿Quién eres?</option>
+						<option value='alumno'>Alumno</option>
+						<option value='exalumno'>Exalumno</option>
+						<option value='padredefamilia'>Padre de familia</option>
+						<option value='maestro'>Maestro</option>
+						<option value='director'>Director</option>
+						<option value='ciudadano'>Ciudadano</option>
+					</select>
+					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
+<!--					--><?//=$this->get_captcha();?>
+					<p><input type='submit' value='Enviar' /></p>
+					<p>Aviso de privacidad.
+						<span>
+						En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
+						</span>
+					</p>
+				</div>
+
+			</fieldset>		
+		</form>
 	</div>
 	<div class='column right'>
 		<div class="box">
@@ -412,6 +489,21 @@ EOD;
 						$this->include_template('share_buttons_simple','global');
 					?>
 					<div class="clear"></div>
+				</div>
+				<div class="box-yesno ">
+					<p>¿Cuenta con Asociación de padres de familia?</p>
+					<div class="yes on"><span class="circle"></span>Si</div>
+					<div class="no"><span class="circle"></span>No</div>
+				</div>
+				<div class="box-yesno orange">
+					<p>¿Cuenta con Consejo de participacion social?</p>
+					<div class="yes on"><span class="circle"></span>Si</div>
+					<div class="no"><span class="circle"></span>No</div>
+				</div>
+				<div class="box-yesno green">
+					<p>¿Esta escuela fue censada?</p>
+					<div class="yes on"><span class="circle"></span>Si</div>
+					<div class="no"><span class="circle"></span>No</div>
 				</div>
 				<!--
 				<div class="influencia">
