@@ -1886,3 +1886,22 @@ height: auto;}
 #content .mejora.programs .subject.list ul li{min-height:20px;height:auto;line-height:normal;padding:12px;}
 #content .mejora.programs .subject .on{background-color:rgba(0,0,0,.5);}
 #content .mejora.programs .subject .on a{color:white;}
+
+/*Descarga*/
+#content .bases h1{background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/home_texture_blue.png);color:white;font-size: 22px;padding: 6px 18px}
+#content .bases ul li{background: #fff url(../img/bases/doc.png) no-repeat 14px;height: 32px;margin-top: 6px;padding: 15px 55px;position: relative;}
+#content .bases ul li p{color: #767676;font-size: 17px}
+#content .bases ul li p + p{color: #A6A6A6;font-size: 16px}
+#content .bases ul li p + p a{color: #A6A6A6}
+.blue-effect{border-radius: 4px;color: #fff;text-align: center;
+	-webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -o-transition: all .6s;
+    -ms-transition: all .6s;
+    transition: all .6s;
+}
+.blue-effect:hover{background-color: #009cd7!important;box-shadow:none!important;}
+.button-download{background: #00AFF0 url(../img/bases/descarga.png) 11px center no-repeat;border-bottom: 2px solid #0077a4;color: #fff!important;font-size: 16px;padding: 2px 8px 2px 25px;position: absolute;right: 15px;top: 16px;width: 100px;}
+#content .bases .from{background: rgba(255,255,255,0.4);color: #767676;margin-top: 10px;font-size: 15px;padding: 15px 0 12px;text-align: center;}
+#content .bases .from p{margin-bottom: 4px}
+#content .bases .from img + img{margin-left: 8px;margin-top: 4px;vertical-align: top;}
