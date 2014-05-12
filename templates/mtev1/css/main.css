@@ -1520,9 +1520,9 @@ margin-top: -12px;}
 /*Perfil programas y perfil escuela sidebar*/
 #content .container.programas .column.right {width:204px;margin-left:12px;}
 #content .container .column.right h1{background-color: #339DD1;color: #fff;padding: 8px 0;text-align: center;}
-#content .container .column.right .box-yesno{background-color: #E9068B;color: #fff;font-size: 15px;margin-top: 10px;padding: 5%;text-align: center;width: 90%}
+#content .container .column.right .box-yesno{background-color: #E9068B;color: #fff;font-size: 15px;margin-top: 10px;padding: 8% 5%;text-align: center;width: 90%}
 #content .container .column.right .box-yesno.orange{background-color: #F6911B}
-#content .container .column.right .box-yesno.green{background-color: #16A452}
+#content .container .column.right .box-yesno.green{background-color: #16A452;}
 #content .container .column.right .box-yesno .yes,#content .container .column.right .box-yesno .no{display: inline-block;margin-top: 8px}
 #content .container .column.right .box-yesno .circle{border: 2px solid #fff;border-radius: 50%;display: block;height: 14px;width: 14px}
 #content .container .column.right .box-yesno .on .circle{background: #fff}
@@ -1774,7 +1774,9 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_palomita.png) center no-repeat;color:white;}
 #content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
-#content .perfil.B .tab-container .info_table th:first-child{background: #16A452;color: #fff;font-size:16px;padding:8px 0px 8px 44px;width:476px;display:block;margin-right:8px;}
+#content .perfil.B .tab-container .info_table th:first-child{background:#16A452 url(../img/perfil/instalaciones.png) no-repeat 14px center;;color: #fff;font-size:16px;padding:12px 0px 12px 65px;width:455px;display:block;margin-right:8px;}
+#content .perfil.B .tab-container .info_table + .info_table th:first-child{background:#16A452 url(../img/perfil/servicios.png) no-repeat 14px center;}
+#content .perfil.B .tab-container .info_table + .info_table + .info_table th:first-child{background:#16A452 url(../img/perfil/seguridad.png) no-repeat 14px center;}
 #content .perfil.B .tab-container .info_table th + th{text-indent:18px;font-size:13px;}
 #content .perfil.B .tab-container .info_table td:first-child{display:block;width:518px;}
 #content .perfil.B .tab-container .info_table td + td{border:none;position:relative;}

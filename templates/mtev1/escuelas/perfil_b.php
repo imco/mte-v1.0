@@ -491,11 +491,15 @@ EOD;
 					<div class="clear"></div>
 				</div>
 				<div class="box-yesno ">
+					<?php //$this->print_img_tag('padres-de-familia.png'); ?>
+					<img src="/templates/mtev1/img/padres-de-familia.png" alt="Asociacion de padres de familia">
 					<p>¿Cuenta con Asociación de padres de familia?</p>
 					<div class="yes on"><span class="circle"></span>Si</div>
 					<div class="no"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno orange">
+					<?php //$this->print_img_tag('consejo.png'); ?>
+					<img src="/templates/mtev1/img/consejo.png" alt="Consejo">
 					<p>¿Cuenta con Consejo de participacion social?</p>
 					<div class="yes on"><span class="circle"></span>Si</div>
 					<div class="no"><span class="circle"></span>No</div>
