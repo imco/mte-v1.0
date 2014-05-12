@@ -1904,4 +1904,4 @@ height: auto;}
 .button-download{background: #00AFF0 url(../img/bases/descarga.png) 11px center no-repeat;border-bottom: 2px solid #0077a4;color: #fff!important;font-size: 16px;padding: 2px 8px 2px 25px;position: absolute;right: 15px;top: 16px;width: 100px;}
 #content .bases .from{background: rgba(255,255,255,0.4);color: #767676;margin-top: 10px;font-size: 15px;padding: 15px 0 12px;text-align: center;}
 #content .bases .from p{margin-bottom: 4px}
-#content .bases .from img + img{margin-left: 8px;margin-top: 4px;vertical-align: top;}
+#content .bases .from a + a img{margin-left: 8px;margin-top: 4px;vertical-align: top;}
