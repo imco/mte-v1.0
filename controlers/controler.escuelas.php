@@ -52,6 +52,7 @@ class escuelas extends main{
 			$this->title_header = 'Conoce tu escuela';
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
+			$this->censo = $this->get_censo();
 			$this->include_theme('index','perfil_b');
 		}else{
 			header('HTTP/1.0 404 Not Found');
@@ -242,6 +243,23 @@ class escuelas extends main{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
+	}
+
+	private function get_censo(){
+		$mongo = $this->mongo_connect();
+                $db = $mongo->selectDB("mte_censo");
+		$collection = $db->selectCollection('censo');
+		/*$censo = $collection->findOne(
+					array( 'cct' => array(
+							'$regex'=>$id
+						))
+					);
+		*/
+		$censo = $collection->findOne(
+			array('nombre' => $this->escuela->nombre)
+		);
+		return $censo;
+			
 	}
 }
 ?>

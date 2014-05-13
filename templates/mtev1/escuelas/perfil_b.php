@@ -250,10 +250,11 @@
 					</table>
 				</div>
 			<?php } ?>-->
+		<?php if($this->censo && ($infra = $this->censo['infraestructura'])){  ?>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 				<h2>Información disponible corresponde al ciclo 2007</h2>
-				<p class="border_b">Total de aulas en uso <?=$aulas?></p>			
+				<!--<p class="border_b">Total de aulas en uso</p>-->
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
 				<table class='info_table'>
 					<tbody>
@@ -261,12 +262,14 @@
 							<th>Instalaciones</th>
 							<th>esta escuela</th>
 						</tr>
-						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+						<tr><td>Aulas para clase</td><td><span class=" cel"> <?=$infra['Aulas para impartir clase']?></span></td></tr>
+						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
+						<tr><td>Areas deportivas o recreativas</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
+						<tr><td>Patio o plaza civica</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<tr><td>Sala de computo</td><td><span class=" cel"><?=$infra['Aulas de cómputo']?></span></td></tr>
+						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"><?=$infra['Cuartos para baños o sanitarios']?></span></td></tr>
+						<tr><td>Tazas sanitarias</td><td><span class=" cel"><?=$infra['Tazas sanitarias']?></span></td></tr>
 					</tbody>
 				</table>
 				<table class='info_table'>
@@ -275,12 +278,18 @@
 							<th>Servicios</th>
 							<th>esta escuela</th>
 						</tr>
-						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+						<?php $on = $infra['Energía eléctrica'] ?>
+						<tr><td>Energia eléctrica</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Servicio de agua de la red pública'] ?>
+						<tr><td>Servicio de agua de la red pública</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Drenaje'] ?>
+						<tr><td>Drenaje</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Cisterna o aljibe'] ?>
+						<tr><td>Cisterna o aljibe</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Servicio de internet'] ?>
+						<tr><td>Servicio de internet</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Teléfono'] ?>
+						<tr><td>Teléfono</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 					</tbody>
 				</table>
 				<table class='info_table'>
@@ -289,15 +298,18 @@
 							<th>Seguridad</th>
 							<th>esta escuela</th>
 						</tr>
-						<tr><td>Aulas para clase</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Areas deportivas o recreativas</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Patio o plaza civica</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Sala de computo</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"></span></td></tr>
-						<tr><td>Tazas sanitarias</td><td><span class=" cel"></span></td></tr>
+						<?php $on = $infra['Señales de protección civil'] ?>
+						<tr><td>Señales de protección civil</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Rutas de evacuación'] ?>
+						<tr><td>Rutas de evacuación</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Salidas de emergencia'] ?>
+						<tr><td>Salidas de emergencia</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Zonas de seguridad'] ?>
+						<tr><td>Zonas de seguridad</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 					</tbody>
 				</table>
 			</div>
+		<?php } ?>
 			<div class='head t-tabs'><p class='title-tabs'>Comentarios</p></div>
 			<div class='tab on calificacion-tab' id='tab-calificacion'>
 				<a name='calificaciones'></a>
@@ -490,25 +502,30 @@ EOD;
 					?>
 					<div class="clear"></div>
 				</div>
+			<?php if($this->censo){ ?>
 				<div class="box-yesno ">
 					<?php //$this->print_img_tag('padres-de-familia.png'); ?>
 					<img src="/templates/mtev1/img/padres-de-familia.png" alt="Asociacion de padres de familia">
 					<p>¿Cuenta con Asociación de padres de familia?</p>
-					<div class="yes on"><span class="circle"></span>Si</div>
-					<div class="no"><span class="circle"></span>No</div>
+					<?php $on = $this->censo['infraestructura']['Asociación de padres de familia']; ?>
+					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="no <?=$on=='NA'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno orange">
 					<?php //$this->print_img_tag('consejo.png'); ?>
 					<img src="/templates/mtev1/img/consejo.png" alt="Consejo">
 					<p>¿Cuenta con Consejo de participacion social?</p>
-					<div class="yes on"><span class="circle"></span>Si</div>
-					<div class="no"><span class="circle"></span>No</div>
+					<?php $on = $this->censo['infraestructura']['Consejo de participación social']; ?>
+					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="no <?=$on=='NA'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno green">
 					<p>¿Esta escuela fue censada?</p>
-					<div class="yes on"><span class="circle"></span>Si</div>
-					<div class="no"><span class="circle"></span>No</div>
+					<?php $on = $this->censo['status']; ?>
+					<div class="yes <?=$on=='Censado'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="no <?=$on!='Censado'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
+			<?php } ?>
 				<!--
 				<div class="influencia">
 					<a class="button" href="#">
