@@ -509,7 +509,7 @@ EOD;
 					<p>¿Cuenta con Asociación de padres de familia?</p>
 					<?php $on = $this->censo['infraestructura']['Asociación de padres de familia']; ?>
 					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Si</div>
-					<div class="no <?=$on!='NA'?'on':'';?>"><span class="circle"></span>No</div>
+					<div class="no <?=$on!='S'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno orange">
 					<?php //$this->print_img_tag('consejo.png'); ?>
