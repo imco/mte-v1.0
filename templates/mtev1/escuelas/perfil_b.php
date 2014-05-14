@@ -94,19 +94,22 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<?php if(isset($this->escuela->censo_2013) && $this->escuela->censo_2013 || $this->censo){ ?>
+			<?php if(isset($this->escuela->censo_2013) && $this->escuela->censo_2013 || $this->censo){ 
+				$tmpPersons = $this->censo?$this->censo:$this->escuela->censo_2013;
+			?>
+				
 				<div class="clear"></div>
 				<div class='censo-box'>
 					<span class='text'>Número de Alumnos:</span>
-					<span class='num'><?= $this->censo['num_alumnos'] ?></span>
+					<span class='num'><?= $tmpPersons['num_alumnos'] ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Total de personal:</span>
-					<span class='num'><?= $this->censo['num_personal'] ?></span>
+					<span class='num'><?= $tmpPersons['num_personal'] ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Grupos:</span>
-					<span class='num'><?= $this->censo['num_grupos'] ?></span>
+					<span class='num'><?= $tmpPersons['num_grupos'] ?></span>
 				</div>
 			<?php } ?>
 			<div class='clear'></div>

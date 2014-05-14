@@ -253,6 +253,13 @@ class escuelas extends main{
 		$censo = $collection->findOne(
 			array('nombre' => $this->escuela->nombre)
 		);
+		if(!$censo){
+			$censo = $collection->findOne(
+                        	array( 'cct' => array(
+                                        '$regex'=>$this->escuela->cct
+                                ))
+                        );
+		}
 		return $censo;
 			
 	}
