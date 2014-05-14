@@ -29,6 +29,13 @@ class escuelas extends main{
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
+			
+			$tmp = $this->escuelas;
+			$params = new stdClass();
+			$params->ccts = array($this->escuela->cct);
+			$this->get_escuelas($params);
+			$this->escuelas = array_merge($tmp,$this->escuelas);
+
 			$this->escuelas = array_unique($this->escuelas);
 
 			$this->process_escuelas();
