@@ -1770,8 +1770,8 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .infraestructura-tab h2{background-color:#ECECEC;color: #22B4F0;height:42px;font-size:17px;text-align:center;padding-top:14px;margin-bottom:7px;}
 #content .perfil.B .tab-container .infraestructura-tab h2 + p{font-size:17px;height:25px;padding-top:11px;text-indent:10px;}
 #content .perfil.B .tab-container .infraestructura-tab .question{margin-top:8px;background-color:#6E6E6E;height:29px;font-size:18px;text-indent:11px;padding-top:9px;color:white;margin-bottom:5px;text-align: center;}
-#content .perfil.B .tab-container .infraestructura-tab .cel.no{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_cruz.png) center no-repeat;color:white;}
-#content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_palomita.png) center no-repeat;color:white;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.no{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_cruz.png) center no-repeat;color:transparent;}
+#content .perfil.B .tab-container .infraestructura-tab .cel.si{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_palomita.png) center no-repeat;color:transparent;}
 #content .perfil.B .tab-container .info_table td{border:1px solid #C9C9C9;margin-top:3px;font-size:13px;text-indent:8px;}
 #content .perfil.B .tab-container .info_table th{width:119px;background-color:#ECECEC;padding-top:1px;}
 #content .perfil.B .tab-container .info_table th:first-child{background:#16A452 url(../img/perfil/instalaciones.png) no-repeat 14px center;;color: #fff;font-size:16px;padding:12px 0px 12px 65px;width:455px;display:block;margin-right:8px;}
@@ -1780,7 +1780,7 @@ padding: 7px 19px 0 17px;}
 #content .perfil.B .tab-container .info_table th + th{text-indent:18px;font-size:13px;}
 #content .perfil.B .tab-container .info_table td:first-child{display:block;width:518px;}
 #content .perfil.B .tab-container .info_table td + td{border:none;position:relative;}
-#content .perfil.B .tab-container .info_table td + td .cel{width:115px;height:23px;position:relative;border:1px solid #C9C9C9;display:block;}
+#content .perfil.B .tab-container .info_table td + td .cel{width:115px;height:23px;position:relative;border:1px solid #C9C9C9;display:block;text-align:center;}
 
 #content .perfil.B .tab-container .calificacion-tab{padding-top:8px;width:648px;width: 100%;}
 #content .perfil.B .tab-container .calificacion-tab .gray_text{background:#ECECEC;font-size:14px;line-height:53px;color:#4CA3D4;}

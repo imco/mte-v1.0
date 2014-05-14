@@ -253,7 +253,7 @@
 		<?php if($this->censo && ($infra = $this->censo['infraestructura'])){  ?>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
-				<h2>Información disponible corresponde al ciclo 2007</h2>
+				<h2>Información disponible corresponde al ciclo 2013/2014</h2>
 				<!--<p class="border_b">Total de aulas en uso</p>-->
 				<p class="question">¿Con qué instalaciones cuenta esta escuela?</p>
 				<table class='info_table'>
@@ -266,8 +266,8 @@
 						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
 						<tr><td>Areas deportivas o recreativas</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
-						<tr><td>Patio o plaza civica</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
-						<tr><td>Sala de computo</td><td><span class=" cel"><?=$infra['Aulas de cómputo']?></span></td></tr>
+						<tr><td>Patio o plaza cívica</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<tr><td>Sala de cómputo</td><td><span class=" cel"><?=$infra['Aulas de cómputo']?></span></td></tr>
 						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"><?=$infra['Cuartos para baños o sanitarios']?></span></td></tr>
 						<tr><td>Tazas sanitarias</td><td><span class=" cel"><?=$infra['Tazas sanitarias']?></span></td></tr>
 					</tbody>
@@ -508,7 +508,7 @@ EOD;
 					<img src="/templates/mtev1/img/padres-de-familia.png" alt="Asociacion de padres de familia">
 					<p>¿Cuenta con Asociación de padres de familia?</p>
 					<?php $on = $this->censo['infraestructura']['Asociación de padres de familia']; ?>
-					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='S'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno orange">
@@ -516,13 +516,13 @@ EOD;
 					<img src="/templates/mtev1/img/consejo.png" alt="Consejo">
 					<p>¿Cuenta con Consejo de participacion social?</p>
 					<?php $on = $this->censo['infraestructura']['Consejo de participación social']; ?>
-					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='S'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno green">
 					<p>¿Esta escuela fue censada?</p>
 					<?php $on = $this->censo['status']; ?>
-					<div class="yes <?=$on=='Censado'?'on':'';?>"><span class="circle"></span>Si</div>
+					<div class="yes <?=$on=='Censado'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='Censado'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 			<?php } ?>
