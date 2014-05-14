@@ -665,8 +665,6 @@ class main extends controler{
 
 	public function get_banners(){
 		$page = $this->location;
-
-		var_dump($page);
 		$b = new page_banner();
 		$b->search_clause = "pagina = '$page' "; 
 		$bs = $b->read('pagina,banner=>imagen,banner=>url');
