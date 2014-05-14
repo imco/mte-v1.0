@@ -1,10 +1,9 @@
 <div class="container bases">
 	<img src="/templates/mtev1/img/bases/BANNER_IMCO_datos.jpg" alt="Bases de datos">
 	<ul>
-		<li><p>Base con datos del Censo de Escuelas, Maestros y Alumnos, SEP,INEGI</p><p>disponible en <a href="http://cemabe.inegi.org.mx/">cemabe.inegi.org.mx</a></p><a href="" class="button-download blue-effect">Descargar</a></li>
-		<li><p>Base con datos del Censo de Escuelas, Maestros y Alumnos, SEP,INEGI</p><p>disponible en <a href="http://cemabe.inegi.org.mx/">cemabe.inegi.org.mx</a></p><a href="" class="button-download blue-effect">Descargar</a></li>
-		<li><p>Base con datos del Censo de Escuelas, Maestros y Alumnos, SEP,INEGI</p><p>disponible en <a href="http://cemabe.inegi.org.mx/">cemabe.inegi.org.mx</a></p><a href="" class="button-download blue-effect">Descargar</a></li>
-		<li><p>Base con datos del Censo de Escuelas, Maestros y Alumnos, SEP,INEGI</p><p>disponible en <a href="http://cemabe.inegi.org.mx/">cemabe.inegi.org.mx</a></p><a href="" class="button-download blue-effect">Descargar</a></li>
+		<li><p>Base con datos del Censo Educativo SEP</p><p>disponible en <a href="http://datamx.io/dataset/censo-educativo-sep">datamx.io/dataset/censo-educativo-sep</a></p><a href="http://datamx.io/dataset/censo-educativo-sep" class="button-download blue-effect">Descargar</a></li>
+		<li><p>Base con datos de SEP Categorias unificadas</p><p>disponible en <a href="http://datamx.io/dataset/sep-categorias-unificadas">datamx.io/dataset/sep-categorias-unificadas</a></p><a href="http://datamx.io/dataset/sep-categorias-unificadas" class="button-download blue-effect">Descargar</a></li>
+		<li><p>Base con datos de nómina del FAEB</p><p>disponible en <a href="http://datamx.io/dataset/nomina-del-faeb">datamx.io/dataset/nomina-del-faeb</a></p><a href="http://datamx.io/dataset/nomina-del-faeb" class="button-download blue-effect">Descargar</a></li>
 
 	</ul>
 	<div class="from">
