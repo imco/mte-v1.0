@@ -6,6 +6,7 @@
 				<input name='nombre' type='text' placeholder='Nombre' class='required' />
 				<input name='email' type='text' placeholder='Correo Electrónico' class='required email'/>
 				<textarea name='mensaje' rows='7' cols='68'  placeholder='Mensaje' class='required' ></textarea>
+				<?=$this->get_captcha();?>
 				<input type="submit" value="Enviar" />
 			</form>
 		</div>	

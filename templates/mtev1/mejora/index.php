@@ -90,8 +90,12 @@ $infografias = array('entorno'=>'Entorno',
 
 		<div class="gray-box">
 			<?php 
-			if(isset($this->contact_status) && $this->contact_status){
-				echo "<p>Gracias por tu mensaje.</p>";
+			if(isset($this->contact_status)){
+				if($this->contact_status)
+					echo "<p>Gracias por tu mensaje.</p>";
+				else
+					echo "<p>Error caracteres no coinciden.</p>";
+
 			}else{
 			?>
 				<p>Si te interesa algún otro <br />
@@ -102,6 +106,7 @@ $infografias = array('entorno'=>'Entorno',
 				<form action="/mejora/enviar" method='post' accept-charset='utf-8' >
 					<textarea name="mensaje" cols="30" rows="10" placeholder='Mensaje'></textarea>
 					<input type="text" placeholder='Tu correo' name='email'/>
+					<?=$this->get_captcha();?>
 					<input type="submit" value='Envía al equipo de MTE'/>
 				</form>
 			<?php } ?>

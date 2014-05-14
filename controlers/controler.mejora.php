@@ -25,13 +25,19 @@ class mejora extends main{
 	}
 
 	public function enviar(){
-		$this->contact_status = $this->send_email(
-			$this->config->contact_email,
-			'Correo electronico desde Mejora tu escuela desde sección "mejora": '.$this->post('email'),
-			$this->post('mensaje'),
-			'system@mejoratuescuela.org',
-			'sección mejora' 
-		);
+		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
+		$this->contact_status = false;
+		if($captcha->check_answer($this->config->http_address,
+			$this->post('recaptcha_challenge_field'),
+			$this->post('recaptcha_response_field'))){
+				$this->contact_status = $this->send_email(
+					$this->config->contact_email,
+					'Correo electronico desde Mejora tu escuela desde sección "mejora": '.$this->post('email'),
+					$this->post('mensaje'),
+					'system@mejoratuescuela.org',
+					'sección mejora' 
+				);
+			}
 		$this->index();
 	}
 

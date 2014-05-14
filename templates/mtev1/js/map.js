@@ -44,8 +44,24 @@ $().ready(function(){
 
 function initialize_map(){
 
-	var data = $.parseJSON($("#map-data").html());
-	//console.log(data);
+	var data = $.parseJSON($("#map-data").html())
+	, uniqueEscuela;
+	if(data && data.escuelas){
+		var c=0
+		, uniqueEscuela = true;
+		for(var l in data.escuelas){
+			c++;
+			if(c==2){
+				uniqueEscuela = false;
+				break;
+			}
+		}
+	}
+	if(uniqueEscuela){
+		data.centerlat = data.escuelas[l].latitud;
+		data.centerlong = data.escuelas[l].longitud;	
+	}
+
 	var center = new google.maps.LatLng(data.centerlat,data.centerlong);
 	var mapOptions = {zoom: data.zoom,center: center,mapTypeId: google.maps.MapTypeId.ROADMAP};
 	map = new google.maps.Map(document.getElementById("mapa"), mapOptions);

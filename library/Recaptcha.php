@@ -68,6 +68,7 @@ class Recaptcha {
 		if($error) $errorpart = '&amp;error='.$error;
 		
 		echo '
+		 <script type="text/javascript">var RecaptchaOptions = {theme : "blackglass"};</script>
 		<script type="text/javascript" src="'.$server.'/challenge?k='.$this->public_key.$errorpart.'"></script>
 		<noscript>
 			<iframe src="'.$server. '/noscript?k='.$this->public_key.$errorpart.'" height="300" width="500" frameborder="0"></iframe><br/>
