@@ -2,6 +2,7 @@
 	<a href='/metodologia'>Metodología</a> |
 	<a href='/aviso-de-privacidad'>Aviso legal y de privacidad</a> |
 	<a href='/contacto'>Contáctanos</a>
+  <a href='/bases'>Datos abiertos</a>
 	<!--
 	  <a href='https://github.com/mekler/cte-v2.0/wiki/API'>API</a>
 	  -->
