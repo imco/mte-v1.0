@@ -264,7 +264,7 @@
 						</tr>
 						<tr><td>Aulas para clase</td><td><span class=" cel"> <?=$infra['Aulas para impartir clase']?></span></td></tr>
 						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
-						<tr><td>Areas deportivas o recreativas</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<tr><td>Áreas deportivas o recreativas</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 						<?php $on = $infra['Áreas deportivas y recreativas'] ?>
 						<tr><td>Patio o plaza cívica</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 						<tr><td>Sala de cómputo</td><td><span class=" cel"><?=$infra['Aulas de cómputo']?></span></td></tr>
