@@ -10,8 +10,8 @@
 	<div class="from">
 		<p>Plataforma para compartir bases de datos de:</p>
 
-		<a href="http://datamx.io/"><img src="/templates/mtev1/img/bases/datamx.png" alt="datamx"></a>
-		<a href="http://codeandomexico.org/"><img src="/templates/mtev1/img/bases/codeando.png" alt="codeandomexico"></a>
+		<a target='_blank' href="http://datamx.io/"><img src="/templates/mtev1/img/bases/datamx.png" alt="datamx"></a>
+		<a target='_blank' href="http://codeandomexico.org/"><img src="/templates/mtev1/img/bases/codeando.png" alt="codeandomexico"></a>
 
 	</div>
 </div>
