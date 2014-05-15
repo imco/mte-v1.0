@@ -835,7 +835,7 @@ line-height: 45px;}
 #header .breadcrumb.contacto_breadcrumb{}
 #header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
 #header .breadcrumb.contacto_breadcrumb{top:130px;}
-#header .menu.compara + .breadcrumb.compara_breadcrumb{top:491px;}
+#header .menu.compara + .breadcrumb.compara_breadcrumb{top:607px;}
 
 /*Popup perfil Comparar*/
 #content .resultados table th.checkbox.compara_table{width:25px}
