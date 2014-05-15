@@ -812,7 +812,7 @@ line-height: 45px;}
 /*Breadcrumb*/
 #header .breadcrumb{position:absolute;top:297px;left:50%;width:900px;z-index:10;margin:0 0 0 -450px;}
 #header .breadcrumb.blog_breadcrumb{top:275px;}
-#header .breadcrumb.califica_tu_escuela_breadcrumb{top:289px;}
+#header .breadcrumb.califica_tu_escuela_breadcrumb{top:283px;}
 #header .breadcrumb.peticiones_breadcrumb{top:315px;}
 #header .breadcrumb.mejora_breadcrumb{top:282px;}
 #header .breadcrumb.compara_breadcrumb{top:283px;}
