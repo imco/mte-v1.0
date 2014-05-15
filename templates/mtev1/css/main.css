@@ -829,12 +829,13 @@ line-height: 45px;}
 #header .breadcrumb ul li:nth-child(2) a{margin:0 0 0 2px;}
 
 #header .breadcrumb.escuelas_breadcrumb{}
-#header .breadcrumb.preguntas_frecuentes_breadcrumb,
 #header .breadcrumb.metodologia_breadcrumb,
 #header .breadcrumb.aviso_de_privacidad_breadcrumb,
 #header .breadcrumb.contacto_breadcrumb{}
 #header .breadcrumb.aviso_de_privacidad_breadcrumb{top:305px}
 #header .breadcrumb.contacto_breadcrumb{top:130px;}
+#header .breadcrumb.quienes_somos_breadcrumb{top:283px;}
+#header .breadcrumb.preguntas_frecuentes_breadcrumb{top:295px;}
 #header .menu.compara + .breadcrumb.compara_breadcrumb{top:451px;}
 
 /*Popup perfil Comparar*/
