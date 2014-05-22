@@ -251,17 +251,11 @@ class escuelas extends main{
                 $db = $mongo->selectDB("censo_completo_2013");
 		$collection = $db->selectCollection('datos_escuelas');
 		$censo = $collection->findOne(
-			array('nombre' => $this->escuela->nombre)
-		);
-		if(!$censo){
-			$censo = $collection->findOne(
-                        	array( 'cct' => array(
-                                        '$regex'=>$this->escuela->cct
-                                ))
-                        );
-		}
-		return $censo;
-			
+                	array( 'cct' => array(
+                                '$regex'=>$this->escuela->cct
+                        ))
+                );
+		return $censo;			
 	}
 }
 ?>
