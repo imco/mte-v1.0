@@ -357,21 +357,23 @@
 					<?php if($this->escuela->calificaciones){ 
 					echo '<p class="gray_text comm"><span class="icon"></span>Comentarios</p>';
 					foreach($this->escuela->calificaciones as $calificacion){
-						$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
-                        $coment = stripslashes($coment);
-						$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
-						$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
-						$cali = $calificacion->calificacion;
-						$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
-						date_default_timezone_set('America/Mexico_City');
-						$time = date("d M Y",strtotime($calificacion->timestamp));
-						echo <<<EOD
-					<div class="comment">
-						<p><span class="icon"></span>Calificacion: {$cali} <span>| {$time}</span></p>
-						<p>{$calificacion->nombre} ({$ocupacion}).- {$calificacion->comentario}
-						</p>
-					</div>
+						if(isset($calificacion->activo) && $calificacion->activo){
+							$coment = preg_replace('/\v+|\\\[rn]/','<br/>',$calificacion->comentario);
+	                			        $coment = stripslashes($coment);
+							$text_calificacion = isset($calificacion->calificacion)?'<span>Calificación <br /> otorgada</span>':'';
+							$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
+							$cali = $calificacion->calificacion;
+							$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
+							date_default_timezone_set('America/Mexico_City');
+							$time = date("d M Y",strtotime($calificacion->timestamp));
+							echo <<<EOD
+						<div class="comment">
+							<p><span class="icon"></span>Calificacion: {$cali} <span>| {$time}</span></p>
+							<p>{$calificacion->nombre} ({$ocupacion}).- {$calificacion->comentario}
+							</p>
+						</div>
 EOD;
+							}
 						}
 					} ?>
 				</div>
