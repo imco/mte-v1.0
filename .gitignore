@@ -1,8 +1,9 @@
 *~
 controlers/*~
 ftpinfo.info
-config/config.production.php
-config/config.git_config.php
+config/*
+!config/config.default_config.php
+!config/config.sample_config.php
 robots.txt
 htaccess
 .htaccess
