@@ -368,7 +368,7 @@
 							$time = date("d M Y",strtotime($calificacion->timestamp));
 							echo <<<EOD
 						<div class="comment">
-							<p><span class="icon"></span>Calificacion: {$cali} <span>| {$time}</span></p>
+							<p><span class="icon"></span>Calificación: {$cali} <span>| {$time}</span></p>
 							<p>{$calificacion->nombre} ({$ocupacion}).- {$calificacion->comentario}
 							</p>
 						</div>
