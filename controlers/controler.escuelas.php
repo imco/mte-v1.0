@@ -140,8 +140,8 @@ class escuelas extends main{
 		}
 		
 
-			$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
-        header("location: $location");
+		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
+       		header("location: $location");
 	}
 
 	/**

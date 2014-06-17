@@ -134,10 +134,12 @@
 					</select>
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 					<?=$this->get_captcha();?>
+					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi comentario se publique en el perfil de esta escuela.</span></p>
 					<p><input type='submit' value='Enviar' /></p>
 					<p>Aviso de privacidad.
 						<span>
-						En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
+						En ningún momento haremos público tu correo electrónico con tu reporte o comentario. <br />
+(Tu nombre y correo electronico no aparecerán cuando se publique este comentario)
 						</span>
 					</p>
 				</div>

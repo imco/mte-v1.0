@@ -1219,6 +1219,11 @@ line-height: 45px;}
 #content .califica .calificacion-form.B {margin:18px auto;}
 #content .calificacion-form.B p{color:#858786;}
 #content .calificacion-form.B p span{color:#8D908F;}
+#content .calificacion-form.B .accept .valid + label + span,
+#content .calificacion-form.B .accept span{color:white;font-size:15px;}
+#content .calificacion-form.B .accept input{float:left;margin:1px 3px;color:white;}
+
+#content .calificacion-form.B .accept .error + span{color:red;}
 
 
 #content .perfil.B .tabs{margin-top:4px;position:relative;margin-bottom: 11px;}
