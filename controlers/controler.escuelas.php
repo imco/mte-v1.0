@@ -71,12 +71,15 @@ class escuelas extends main{
 	* Lee la información de la escuela con CCT en la url: host/escuelas/index/CCT, sí la información de esta escuela esta 
 	* en la base de datos el atributo 'escuela' contendrá los datos de esta y un booleano verdadero es devuelto en caso contrario se devuelve un falso.
 	*/
-	public function escuela_info(){
-		$this->escuela = new escuela($this->get('id'));
+	public function escuela_info($id=false){
+		if(!$id)
+			$id = $this->get('id');
+		$this->data_censo($id);
+		$this->escuela = new escuela($id);
 		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
 		$this->escuela->key = 'cct';
-		$this->escuela->fields['cct'] = $this->get('id');
+		$this->escuela->fields['cct'] = $id;
 		$this->escuela->read("cct");
 		if(isset($this->escuela->cct)){
 			$this->escuela->debug;
@@ -256,6 +259,37 @@ class escuelas extends main{
                         ))
                 );
 		return $censo;			
+	}
+
+	private function data_censo($id){
+		if($id){
+			$escuela = new escuela($id);
+			$escuela->key = 'cct';
+			$escuela->fields['cct'] = $this->get('id');
+			$escuela->read('cct,grados');
+			if(isset($escuela->grados) &&  $escuela->grados == 0){
+				$enlace =  new enlace();	
+				$enlace->search_clause = 'cct="'.$escuela->cct.'" AND anio = "2013"';
+				$enlaces = $enlace->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia,alumnos_que_contestaron_total');
+				if(count($enlaces)){
+					$grados = $sum_spa = $sum_mat = $sum_geo = 0;
+					$alumnos_total = 0;
+					foreach($enlaces as $enlace){
+						if($enlace->alumnos_que_contestaron_total != 0 && ($enlace->puntaje_espaniol != 0 && $enlace->puntaje_matematicas != 0)){
+							$grados++;
+							$sum_spa += $enlace->puntaje_espaniol;
+							$sum_mat += $enlace->puntaje_matematicas;
+							$alumnos_total += $enlace->alumnos_que_contestaron_total;
+						}
+					}
+					$prom_mat = $sum_mat / $grados;
+					$prom_spa = $sum_spa / $grados;
+					$gen = ($prom_spa * .2) + ($prom_mat *.8);
+					$escuela->update('grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados',array($grados,$prom_mat,$prom_spa,$gen,$alumnos_total));
+				}
+			}
+
+		}
 	}
 }
 ?>
