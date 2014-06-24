@@ -74,7 +74,7 @@ class escuelas extends main{
 	public function escuela_info($id=false){
 		if(!$id)
 			$id = $this->get('id');
-		$this->data_censo($id);
+		//$this->data_censo($id);
 		$this->escuela = new escuela($id);
 		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
