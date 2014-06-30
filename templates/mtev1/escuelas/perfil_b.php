@@ -135,9 +135,11 @@
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 					<?=$this->get_captcha();?>
 					<p><input type='submit' value='Enviar' /></p>
-					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi comentario se publique en el perfil de esta escuela.</span></p>
+					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
 					<p class='advice'>
-						Tu nombre y correo electrónico NO aparecerán cuando se publique este comentario.
+						Tu correo electrónico NO aparecerá con tu comentario. <br>
+						Si no quieres que tu comentario se publique en el perfil de la escuela, escirbenos  <br>
+						a: contacto@mejoratuescuela.org
 					</p>
 				</div>
 
@@ -441,10 +443,11 @@ EOD;
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 <!--					--><?//=$this->get_captcha();?>
 					<p><input type='submit' value='Enviar' /></p>
-					<p>Aviso de privacidad.
-						<span>
-						En ningún momento haremos público tu correo electrónico con tu reporte o comentario.
-						</span>
+					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
+					<p class='advice'>
+						Tu correo electrónico NO aparecerá con tu comentario. <br>
+						Si no quieres que tu comentario se publique en el perfil de la escuela, escirbenos  <br>
+						a: contacto@mejoratuescuela.org
 					</p>
 				</div>
 
