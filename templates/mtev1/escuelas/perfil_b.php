@@ -138,7 +138,7 @@
 					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
 					<p class='advice'>
 						Tu correo electrónico NO aparecerá con tu comentario. <br>
-						Si no quieres que tu comentario se publique en el perfil de la escuela, escirbenos  <br>
+						Si no quieres que tu comentario se publique en el perfil de la escuela, escríbenos  <br>
 						a: contacto@mejoratuescuela.org
 					</p>
 				</div>
@@ -445,8 +445,8 @@ EOD;
 					<p><input type='submit' value='Enviar' /></p>
 					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
 					<p class='advice'>
-						Tu correo electrónico NO aparecerá con tu comentario. <br>
-						Si no quieres que tu comentario se publique en el perfil de la escuela, escirbenos  <br>
+						Tu correo electrónico NUNCA aparecerá con tu comentario. <br>
+						Si no quieres que tu comentario se publique en el perfil de la escuela, escríbenos  <br>
 						a: contacto@mejoratuescuela.org
 					</p>
 				</div>

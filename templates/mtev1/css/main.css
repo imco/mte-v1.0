@@ -1318,6 +1318,8 @@ line-height: 45px;}
 #content .califica .promedio span{font-size:39px;display:block;margin-top:30px;text-indent:-5px;}
 #content .califica form{margin-top:22px;}
 #content .califica .calificacion-form.B fieldset p:first-child{margin-top:18px;margin-bottom:20px;color:#353737;}
+#content .califica .calificacion-form.B .advice{display: none;margin-top: 5px!important;position: absolute;webkit-transition: all .6s;-moz-transition: all .6s;-o-transition: all .6s;-ms-transition: all .6s;transition: all .6s;}
+#content .califica .calificacion-form.B .advice.on{display: block;}
 #content .califica .calificacion-form.B .customSelect:before{top:68px;}
 #content .califica .button-frame .button{width:212px;font-size:21px;line-height:57px;height:54px;background:#2DB4E4;}
 #content .califica .button-frame{margin-top:16px;height:68px;width:295px;}

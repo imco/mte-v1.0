@@ -552,7 +552,9 @@ $(document).ready(function(){
 	});
 
 	$('.califica form').click(function(){
-		$(this).find('.other_info').animate({height:400}, 1000);;
+		$(this).find('.other_info').animate({height:400}, 1000,'swing',function(){
+			$(this).find('.advice').addClass('on');			
+		});
 		
 	});
 
