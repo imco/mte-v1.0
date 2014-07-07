@@ -123,7 +123,7 @@
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 					<?=$this->get_captcha();?>
 					<p><input type='submit' value='Enviar' /></p>
-					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
+					<p class='accept'><input type="checkbox" name="accept" value="1" checked/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
 					<p class='advice'>
 						Tu correo electrónico NO aparecerá con tu comentario. <br>
 						Si no quieres que tu comentario se publique en el perfil de la escuela, escríbenos  <br>
@@ -344,6 +344,7 @@
 				</table>
 				<div class="wrap_comments">
 					<?php if($this->escuela->calificaciones){ 
+						//var_dump($this->escuela->calificaciones);
 					echo '<p class="gray_text comm"><span class="icon"></span>Comentarios</p>';
 					foreach($this->escuela->calificaciones as $calificacion){
 						if(isset($calificacion->activo) && $calificacion->activo){
@@ -353,12 +354,13 @@
 							$ocupacion = $calificacion->ocupacion =='padredefamilia' || $calificacion->ocupacion == 'Padre de familia' ? 'Padre de familia':($this->capitalize($calificacion->ocupacion));
 							$cali = $calificacion->calificacion;
 							$cali = $cali > 10?$cali/10:$cali;//error cuendo en la db se calificaba de a 100
+							$nombreCalificacion  = ($calificacion->acepta_nombre == 1) ? $calificacion->nombre : ''; 
 							date_default_timezone_set('America/Mexico_City');
 							$time = date("d M Y",strtotime($calificacion->timestamp));
 							echo <<<EOD
 						<div class="comment">
 							<p><span class="icon"></span>Calificación: {$cali} <span>| {$time}</span></p>
-							<p>{$calificacion->nombre} ({$ocupacion}).- {$calificacion->comentario}
+							<p>{$nombreCalificacion} ({$ocupacion}).- {$calificacion->comentario}
 							</p>
 						</div>
 EOD;
@@ -410,7 +412,7 @@ EOD;
 				-->
 			</div>
 		</div>	
-		<form method='post' action='' accept-charstet='utf-8' class='calificacion-form B'>
+		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
 				<!--<p>Deja aquÃ­ un comentario sobre esta escuela</p>-->
 				<div class="comment-cloud"></div>
@@ -431,7 +433,7 @@ EOD;
 					<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
 <!--					--><?//=$this->get_captcha();?>
 					<p><input type='submit' value='Enviar' /></p>
-					<p class='accept'><input type="checkbox" name="accept" value="1" class='required'/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
+					<p class='accept'><input type="checkbox" name="accept" value="1" checked/><span>Quiero que mi nombre se publique junto con mi comentario.</span></p>
 					<p class='advice'>
 						Tu correo electrónico NUNCA aparecerá con tu comentario. <br>
 						Si no quieres que tu comentario se publique en el perfil de la escuela, escríbenos  <br>
