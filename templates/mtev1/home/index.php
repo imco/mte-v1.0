@@ -1,7 +1,3 @@
-<?php
-$niveles = array(12 => 'primarias',13 => 'secundarias',22 => 'bachilleratos')
-?>
-
 <div class='container home'>
 	<div class='column'>
 		<div class='video'>

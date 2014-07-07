@@ -329,11 +329,11 @@
 						}
 					}
 					$pro = $pt/$cp;
+					$pro = number_format($pro,2);
 					$cali = "Calificación global {$pro}";
 				}else{
 					$cali = "Calificación global n/a";
 				}
-
 				?>
 				<p class="border_b"><?=$cali?></p>
 
