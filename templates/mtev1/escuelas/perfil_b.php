@@ -36,9 +36,14 @@
 						<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
 						<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
 						<li><?=$controles[$this->escuela->control->id]?></li>
-						<li>Entidad: <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
-						<li>Municipio: <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
-						<li>Localidad: <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
+						<?php if( isset($this->escuela->censo_2013['persona_responsable']) && strlen(trim($this->escuela->censo_2013['persona_responsable']))>0 ){ ?>
+							<!--<li>Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?></li>-->
+						<?php } ?>							
+						<li>Télefonos: <?=$this->escuela->telefono?></li>
+						<li>Mail: <?=$this->str_limit($this->escuela->correoelectronico,20);?></li>
+						<?php if($this->escuela->paginaweb){ ?>
+							<li><a href="<?=$this->escuela->paginaweb?>"><?=$this->str_limit($this->escuela->paginaweb,21) ?></a></li>
+						<?php } ?>
 						<div class="clear"></div>
 					</ul>				
 				</div>
@@ -52,43 +57,26 @@
 		</div>
 		<div class="info_B bottom">
 			<div class="box_info">
-				<p class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span class='icon sprit2'></span>
-					Dirección:
-					<span class='title'>
-						<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
-						<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
-						<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
-						<span itemprop="addressCountry" content="MX"></span>
-					</span>
-				</p>
-				
-				<p class='director'>
-				<?php if( isset($this->escuela->censo_2013['persona_responsable']) && strlen(trim($this->escuela->censo_2013['persona_responsable']))>0 ){ ?>
-					<span class='icon sprit2'></span>
-					Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?>
-					<span class='title'></span>
-				<?php } ?>
-				</p>
+				<ul>
+					<!--<li class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						Dirección:
+						<span class='title'>
+							<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
+							<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
+							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
+							<span itemprop="addressCountry" content="MX"></span>
+						</span>
+					</li>-->
+					<li>Calle: <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
+					<li>Municipio: <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
+				</ul>
 
 			</div>
 			<div class="box_info">
-				<p class='tel'>
-					Teléfonos:
-					<span class='icon sprit2'></span>
-					<span itemprop="telephone" class='title'>
-						<?=$this->escuela->telefono?>
-					</span>
-					<span class='clear'></span>
-				</p>
-				<p class='email'>
-					<span class='icon sprit2'></span>
-					Correo electrónico:<!--Correo electrónico:-->
-					<span itemprop="email" class='title'>
-						<?=$this->str_limit($this->escuela->correoelectronico,20);?>
-					</span>
-					<span class='clear'></span>
-				</p>
+				<ul>
+					<li>Localidad: <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
+					<li>Entidad: <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
+				</ul>
 
 				<!--<p class='web'>
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
