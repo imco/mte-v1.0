@@ -10,13 +10,14 @@ function drawCharts() {
 function drawChart(materia){
 	var raw_data = $.parseJSON($('#line-chart-data-'+materia).html()),
 	data = google.visualization.arrayToDataTable(raw_data),
+	colors = ["#0C9E4B","#02ABEF","#EB6DB6","#F7921B","#990099","#0099c6"],	
 	options = {
-	   chartArea : {width:295,height:94,left:40,top:35},
-	   legend: {position:'none'}
+	   chartArea : {width:295,height:94,left:40,top:35}
+	   ,legend: {position:'none'}
+	   ,colors:colors
 	},
 	nLine = raw_data[0].length-1,
 	template = "<p><span class='circle' style='background:C'></span>N</p>",
-	colors = ["#3366cc","#dc3912","#ff9900","#109618","#990099","#0099c6"],	
 	content =$('.legend_chart .wrap_lc').html(""),
 	temp;
 	for(var i=1;i<=nLine;i++){
