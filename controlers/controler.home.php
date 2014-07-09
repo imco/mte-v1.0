@@ -142,18 +142,26 @@ class home extends main{
 	}
 
 	public function get_top5(){
-		$name_entidad = $this->request('name_entidad');
+		$niveles = array(12,13,22);
 		$params = new stdClass();
+		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];
+		$name_entidad = $this->request('name_entidad');
 		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 		$entidad = new entidad();
 		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
 		$en = $entidad->read('id,nombre');
 		$params->entidad = $en[0]->id;
+		$name_entidad = $en[0]->nombre;
+		if(!$params->entidad){
+			$this->get_location();
+			$params->entidad = $this->user_location->id;
+			$name_entidad = $this->user_location->nombre;
+		}
 		$params->limit = '0,5';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
-		$this->set_cookie('user_location',$en[0]->nombre."-".$en[0]->id);
-		$this->user_location->nombre = $this->capitalize($en[0]->nombre);
+		$this->set_cookie('user_location',$name_entidad."-".$params->entidad);
+		$this->user_location->nombre = $this->capitalize($name_entidad);
 		$this->include_template("top5","home/single"); 
 	}
 }
