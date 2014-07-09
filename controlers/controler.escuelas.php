@@ -77,7 +77,7 @@ class escuelas extends main{
 		//$this->data_censo($id);
 		$this->escuela = new escuela($id);
 		//$this->escuela->debug = true;
-		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes DESC';
+		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
 		$this->escuela->read("cct");
