@@ -45,16 +45,21 @@ $().ready(function(){
 function initialize_map(){
 
 	var data = $.parseJSON($("#map-data").html())
-	, uniqueEscuela;
+	, uniqueEscuela
+	, cctNow = $('.hidden.CCT').text();
 	if(data && data.escuelas){
 		var c=0
-		, uniqueEscuela = true;
+		, uniqueEscuela = true
+		, cct = data.escuelas[cctNow];
 		for(var l in data.escuelas){
 			c++;
 			if(c==2){
 				uniqueEscuela = false;
-				break;
 			}
+			if(cct.longitud === data.escuelas[l].longitud && cct.latitud === data.escuelas[l].latitud && l!=cct.cct)
+				delete data.escuelas[l];
+			
+			
 		}
 	}
 	if(uniqueEscuela){
