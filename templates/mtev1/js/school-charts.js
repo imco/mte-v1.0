@@ -10,7 +10,7 @@ function drawCharts() {
 function drawChart(materia){
 	var raw_data = $.parseJSON($('#line-chart-data-'+materia).html()),
 	data = google.visualization.arrayToDataTable(raw_data),
-	colors = ["#0C9E4B","#02ABEF","#EB6DB6","#F7921B","#990099","#0099c6"],	
+	colors = ["#16A452","#339DD1","#E9068B","#F6911B","#990099","#888888"],	
 	options = {
 	   chartArea : {width:295,height:94,left:40,top:35}
 	   ,legend: {position:'none'}
