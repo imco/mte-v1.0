@@ -141,18 +141,23 @@ class compara extends main{
 
 	public function get_data_table(){
 		$name_entidad = $this->request('name_entidad');
-		$name_entidad = 'quintana roo';
 		$entidad = new entidad();
 		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
 		$en = $entidad->read('id,nombre');
 		$params = new stdClass();
 		$params->entidad = $en[0]->id;
+		if(!$params->entidad){
+			$this->get_location();
+			$params->entidad = $this->user_location->id;
+			$name_entidad = $this->user_location->nombre;
+		}
 		$params->pagination = 6;
 		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
-		$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($en[0]->nombre);
-		$this->set_cookie('user_location',$en[0]->nombre."-".$en[0]->id);
+		$this->cct_count_entidad();
+		$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($name_entidad);
+		$this->set_cookie('user_location',$name_entidad."-".$params->entidad);
 		$this->include_template("resultados-escuela","compara"); 
 	}
 
