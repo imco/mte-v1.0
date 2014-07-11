@@ -145,7 +145,8 @@ class escuelas extends main{
 						$_SERVER['HTTP_USER_AGENT'],
 						$accept_name
 					));
-					$calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
+					if($this->post("calificaciones"))
+						$calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
 				
 				
 				}else{					
