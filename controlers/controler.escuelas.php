@@ -122,26 +122,36 @@ class escuelas extends main{
 	*/
 	public function calificar(){
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
-		$this->contact_status = false;
+		$calificacion = new stdClass();
 		if($captcha->check_answer($this->config->http_address,
 			$this->post('recaptcha_challenge_field'),
 			$this->post('recaptcha_response_field'))){
 				$comment = strip_tags($this->post('comentario'));
 				$accept_name = ($this->post('accept')!=null) ? 1 : 0;
 				$calificacion = new calificacion();
-				//$calificacion->debug = true;
-				$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent,acepta_nombre',array(
-					$this->post('nombre'),
-					$this->post('email'),
-					$this->post('cct'),
-					$comment,
-					$this->post('ocupacion'),
-					stripslashes($this->post('calificacion')),
-					$_SERVER['HTTP_USER_AGENT'],
-					$accept_name
-				));
+				if(!$this->isSpam(array(
+			                'author' => $this->post('nombre'),
+	        		        'email' => $this->post('email'),
+			                'body' => $comment
+				))){
+					//$calificacion->debug = true;
+					$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent,acepta_nombre',array(
+						$this->post('nombre'),
+						$this->post('email'),
+						$this->post('cct'),
+						$comment,
+						$this->post('ocupacion'),
+						stripslashes($this->post('calificacion')),
+						$_SERVER['HTTP_USER_AGENT'],
+						$accept_name
+					));
+					$calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
+				
+				
+				}else{					
+					//spam
+				}
 
-        		    $calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
 		}
 
 		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
@@ -290,6 +300,24 @@ class escuelas extends main{
 				}
 			}
 
+		}
+	}
+
+	private function isSpam($params=array()){
+		//SPAM test.
+		/*$params = array(
+	                'author' => 'viagra-test-123',
+	                'email' => 'test@example.com',
+	                'body' => 'This is a test comment'
+        	);*/
+		$params["permalink"] = 'http://www.mejoratuela.org'.$_SERVER['REQUEST_URI'];
+		$params["website"] = 'http://www.mejoratuescuela.org/';
+		$akismet = new Akismet('http://www.mejoratuescuela.org/',$this->config->wordpress_key, $params);
+		if($akismet->errorsExist()){
+			//keys error
+			return false;
+		}else{
+			return $akismet->isSpam();
 		}
 	}
 }
