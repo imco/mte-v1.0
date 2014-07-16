@@ -23,7 +23,6 @@ class escuelasTest extends defaultTest{
 	private function escuela_grados($nivel,$fields){
 		$escuela = new escuela();
 		$escuela->search_clause = "nivel = $nivel";
-		$escuela->limit = 5;
 		$escuela = $escuela->read('cct,grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados');
 		foreach($escuela as $e){
 			if($e->cct != "NA"){
