@@ -7,10 +7,10 @@ class escuelasTest extends defaultTest{
 		$this->controler = new escuelas($this->config);
 	}
 	
-	public function all_grados(){
+	public function testAll_grados(){
 		$fields = array('grados','promedio_matematicas','promedio_espaniol','promedio_general','total_evaluados');
 		$fieldsTxt = "tipo,cct,".implode(",",$fields)."\n";
-		echo $fieldsTxt;
+		//echo $fieldsTxt;
 		$nivel = new nivel();
 		$nivel->search_clause = 1;
 		$niveles = $nivel->read('id');
@@ -23,8 +23,8 @@ class escuelasTest extends defaultTest{
 	private function escuela_grados($nivel,$fields){
 		$escuela = new escuela();
 		$escuela->search_clause = "nivel = $nivel";
+		$escuela->limit = 5;
 		$escuela = $escuela->read('cct,grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados');
-		//var_dump(count($escuela));
 		foreach($escuela as $e){
 			if($e->cct != "NA"){
 				$enlace =  new enlace();	
@@ -53,44 +53,31 @@ class escuelasTest extends defaultTest{
 					$expected = array(0,0,0,0,0);
 					continue;
 				}
-				//$valid = true;
-				$dataNow = "actual,".$e->cct;
-				$dataNew = "nuevo,".$e->cct;
+				//$dataNow = "actual,".$e->cct;
+				//$dataNew = "nuevo,".$e->cct;
 				if($e->grados != $expected[0]){
+					/*
 					foreach($values as $i=>$value){
-						/*if((string)$value != (string)$expected[$i]){
-							$valid = false;
-						}
-						*/
 						$dataNow.=",".$value;
 						$dataNew.=",".$expected[$i];
+
 					}
-					//var_dump($valid,$e->cct);
 					echo $dataNow."\n";
 					echo $dataNew."\n";
+					*/
+					$this->AssertEquals($values,$expected);
 				}
 
-				//$this->AssertEquals($values,$expected,"no coinciden cct : {$e->cct}"); //rompe
 			
 			}
 		}
-		/*
-		$cct = "07DPT0001D";
-		$this->controler->escuela_info($cct);
-		$enlace =  new enlace();
-		$enlace->search_clause = 'cct="'.$cct.'" AND anio = "2013"';
-		$enlaces = $enlace->read('id');
-		if(count($enlaces))
-			$this->AssertNotContains($this->controler->escuela->grados,array(null,0));
-		else
-			$this->AssertEquals($this->controler->escuelas->grados,0);
-		*/
+
 	}
 
 }
 
-$tmp = new escuelasTest();
-$tmp->setUp();
-$tmp->all_grados();
+//$tmp = new escuelasTest();
+//$tmp->setUp();
+//$tmp->all_grados();
 
 ?>
