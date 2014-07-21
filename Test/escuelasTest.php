@@ -11,21 +11,21 @@ class escuelasTest extends defaultTest{
 		$fields = array('grados','promedio_matematicas','promedio_espaniol','promedio_general','total_evaluados');
 		$fieldsTxt = "tipo,cct,".implode(",",$fields)."\n";
 		//echo $fieldsTxt;
-		echo "cct,estatus,alumnos db,alumnos recalculo\n";
 		$nivel = new nivel();
 		$nivel->search_clause = 1;
 		$niveles = $nivel->read('id');
-		foreach($niveles as $n){
-			$this->escuela_grados($n->id,$fields);
-		
+		$niveles = array(12,13,22);
+		foreach($niveles as $n){		
+			$this->escuela_grados($n,$fields);	
 		}
 	}
 	
 	private function escuela_grados($nivel,$fields){
 		$escuela = new escuela();
 		$escuela->search_clause = "nivel = $nivel";
-		$escuela->limit = 15;
-		$escuela = $escuela->read('cct,grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados');
+		$escuela = $escuela->read('cct,grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados,nivel=>nombre');
+		$countTotal = count($escuela);
+		$countError = 0;
 		foreach($escuela as $e){
 			if($e->cct != "NA"){
 				$values = array();
@@ -44,15 +44,17 @@ class escuelasTest extends defaultTest{
 					    	$valid = $this->is_equals($values,$expected2);
 					    	//$this->AssertEquals($values,$expected2);
 					    	if($valid){
-					    		echo $e->cct.",coincide con el año 2012";
+					    		//echo $e->cct.",coincide con el año 2012";
 					    	}else{
-					    		echo $e->cct.",no coincide recalculo 2013 ni 2012";
+					    		//echo $e->cct.",no coincide recalculo 2013 ni 2012";
+							$countError++;
 					    	}
-					    	echo ",".$e->total_evaluados.",$expected[4]\n";
+					    	//echo ",".$e->total_evaluados.",$expected[4]\n";
 					}
 				}
 			}
 		}
+		echo "nivel ".strtolower($e->nivel->nombre)." total ".$countTotal." con errores ".$countError."\n";
 
 	}
 
