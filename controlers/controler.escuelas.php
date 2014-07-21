@@ -60,12 +60,15 @@ class escuelas extends main{
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
 			$this->censo = $this->get_censo();
-			$this->include_theme('index','perfil_b');
+			if($this->escuela->nivel->nombre != 'PREESCOLAR')
+				$this->include_theme('index','perfil_b');
+			else{
+				$this->include_theme('index','preescolar');
+			}
 		}else{
 			header('HTTP/1.0 404 Not Found');
 		}
 	}
-
 	/**
 	* Funcion Publica escuela_info.
 	* Lee la información de la escuela con CCT en la url: host/escuelas/index/CCT, sí la información de esta escuela esta 

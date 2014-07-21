@@ -1056,6 +1056,13 @@ line-height: 45px;}
 #content .perfil.B .buble-sin-comentario{height:209px;background-size:190px;width:185px;}
 #content .perfil.B .charts{height:260px;}
 
+/*Perfil preescolar*/
+#content .perfil.B.preescolar .top-info .cal-escuela .button-frame{width: 278px;}
+#content .perfil.B.preescolar .top-info .cal-escuela .button-frame span.button-califica{padding: 9px 48px;width:205px;}
+#content .perfil.B.preescolar .top-info .cal-escuela .button-frame span.icon-cal{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_iconos-mejora-perfil.png) 26px -90px;background-size: 64px 509px;height: 25px;margin-top: -2px}
+#content .perfil.B.preescolar .info_B ul li + li{margin-top: 8px}
+#content .perfil.B.preescolar .right .preescolar-image{background: #fff;padding: 24px 0;text-align: center;}
+#content .perfil.B.preescolar .right .preescolar-image h3{color: #339DD1;font-size: 24px}
 
 /*Blog*/
 #content .blog{margin-top:33px;width:940px;}
