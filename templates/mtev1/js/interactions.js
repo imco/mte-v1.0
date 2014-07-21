@@ -149,6 +149,8 @@ $(document).ready(function(){
 
 	$('.wrap_cal span').click(function(){
 		var span =  $(this).parent().find('span');
+		span.removeClass('active');
+		$(this).addClass('active');
 		if($(this).hasClass('on') && $(this).index()==0){
 			span.removeClass('on');
 		}else{
