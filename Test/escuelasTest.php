@@ -8,7 +8,9 @@ class escuelasTest extends defaultTest{
 	}
 
 	public function testDB(){
-		$this->AssertEquals(false,true);	
+		//all_grados
+		$info =  "nivel primaria total 101747 con errores 0\nnivel secundaria total 35267 con errores 0\nnivel bachillerato total 13934 con errores 11504";
+		$this->AssertEquals(false,true,$info);
 	}
 
 	public function all_grados(){
@@ -98,8 +100,8 @@ class escuelasTest extends defaultTest{
 
 }
 
-$tmp = new escuelasTest();
+/*$tmp = new escuelasTest();
 $tmp->setUp();
 $tmp->all_grados();
-
+*/
 ?>

@@ -7,9 +7,11 @@ class defaultTest extends PHPUnit_Framework_TestCase{
 	public function setUp(){
 		$path = __DIR__."/../"; 
 		//export APPLICATION_ENV="name_config"
-		//$config_name = getenv('APPLICATION_ENV');
-		$config_name = "travis_config";
-		//require_once $path."config/config.default_config.php";
+		$config_name = getenv('APPLICATION_ENV');
+		if(!$config_name)
+			$config_name = "travis_config";
+		else
+			require_once $path."config/config.default_config.php";
 		require_once $path."config/config.$config_name.php";
 		$this->config = new $config_name();
 		$this->pathProject = $path;
