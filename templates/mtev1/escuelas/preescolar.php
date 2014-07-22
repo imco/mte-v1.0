@@ -454,6 +454,7 @@ EOD;
 				</div>
 				<div class="preescolar-image">
 					<h3>Preescolar</h3>
+					<img src="/templates/mtev1/img/cubitos.png" alt="Preescolar">
 				</div>	
 				<div class="share-blue">
 					<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>

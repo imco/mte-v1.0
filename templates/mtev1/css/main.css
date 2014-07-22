@@ -1063,6 +1063,7 @@ line-height: 45px;}
 #content .perfil.B.preescolar .info_B ul li + li{margin-top: 8px}
 #content .perfil.B.preescolar .right .preescolar-image{background: #fff;padding: 24px 0;text-align: center;}
 #content .perfil.B.preescolar .right .preescolar-image h3{color: #339DD1;font-size: 24px}
+#content .perfil.B.preescolar .right .preescolar-image img{margin-top: 10px;width: 85%}
 
 /*Blog*/
 #content .blog{margin-top:33px;width:940px;}
