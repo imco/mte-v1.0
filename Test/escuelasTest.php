@@ -6,8 +6,12 @@ class escuelasTest extends defaultTest{
 		parent::setUp();
 		$this->controler = new escuelas($this->config);
 	}
-	
-	public function testAll_grados(){
+
+	public function testDB(){
+		$this->AssertEquals(false,true);	
+	}
+
+	public function all_grados(){
 		$fields = array('grados','promedio_matematicas','promedio_espaniol','promedio_general','total_evaluados');
 		$fieldsTxt = "tipo,cct,".implode(",",$fields)."\n";
 		//echo $fieldsTxt;
@@ -94,8 +98,8 @@ class escuelasTest extends defaultTest{
 
 }
 
-//$tmp = new escuelasTest();
-//$tmp->setUp();
-//$tmp->all_grados();
+$tmp = new escuelasTest();
+$tmp->setUp();
+$tmp->all_grados();
 
 ?>
