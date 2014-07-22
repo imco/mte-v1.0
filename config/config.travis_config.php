@@ -7,6 +7,7 @@ class travis_config{
 		$this->db_name = getenv('DBNAME');
 		$this->db_user = getenv('DBUSER');
 		$this->db_pass = getenv('DBPASS');
+		ini_set('memory_limit', '-1');
 	}
 }
 ?>
