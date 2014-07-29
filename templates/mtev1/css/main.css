@@ -911,7 +911,7 @@ line-height: 45px;}
 #content .perfil.B .info_B .column.left{width:57%;padding-left:23px;padding-top:2px;}
 #content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
 #content .perfil.B .info_B ul{line-height: 1.3;margin-top: 8px}
-#content .perfil.B .info_B ul li{color: #B4B4B4;font-size:13px}
+#content .perfil.B .info_B ul li{color: #797979;font-size:13px}
 #content .perfil.B .info_B ul li a{color: #00AFF0}
 #content .perfil.B .info_B ul li:before{content: "";display: inline-block;width: 6px;height: 6px;margin-right: 4px;background: #00AFF0;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 #content .perfil.B .info_B.bottom{border-top:2px solid #DADADA;padding: 5px 17px}
