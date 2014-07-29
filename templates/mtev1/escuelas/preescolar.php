@@ -124,85 +124,23 @@
 			</fieldset>		
 		</form>
 			<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>
-				<li><a href='#tab-calificacion' class='reportes'>
+				<li class=""><a href='#tab-calificacion' class='reportes'>
 					<span class='triangle'></span>
 					Comentarios 
 					y reportes
 				</a></li>
 				<?php //if($this->escuela->infraestructura){ ?>
-					<li><a href='#tab-infraescructura' class='result'>
+					<li class="on"><a href='#tab-infraescructura' class='result'>
 						<span class='triangle'></span>
 						Infraestructura escolar
 					</a></li>
 				<? //} ?>
-				<li class='on'><a href='#tab-charts' class='long comentarios'>
-					<span class='triangle'></span>
-					Desempeño académico
-				</a></li>
 				<div class='clear'></div>
 			</ul>
 
 		<div class='tab-container'>
 			<!--  jscrollpane-->
-			<div class='head t-tabs'><p class='title-tabs'>Desempeño académico</p></div>
-			<div class='tab charts on' id='tab-charts'><div class='chart-box'>
-				<div class="n_alumnos border_b">
-					<p>Número de alumnos evaluados</p>
-					<span class="number"><?=$this->escuela->total_evaluados?></span>
-				</div>
-				<div class="n_alumnos border_b">
-					<p>Porcentaje de alumnos en nivel reprobado</p>
-					<span class="number"><?=$this->escuela->pct_reprobados."%"?></span>
-				</div>
-				<div class="wrap_chart border_b">
-					<div class="info_chart">
-						<span class="icon "></span>
-						<p>Resultados ENLACE <span>matemáticas</span></p>
-					
-					</div>
-					<div class="chart_content">
-					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
-					} ?>				
-					</div>
-					<div class="legend_chart">
-						<div class="wrap_lc">
-							<p><span class="circle"></span>3</p>
-							<p><span class="circle"></span>4</p>
-							<p><span class="circle"></span>5</p>
-							<p><span class="circle"></span>6</p>					
-						</div>
 
-						<p class="under">_ _ _ _</p>
-						<p>Promedio nacional</p>
-					</div>
-				</div>
-				<div class="wrap_chart border_b">
-					<div class="info_chart">
-						<span class="icon"></span>
-						<p>Resultados ENLACE <span>español</span></p>
-					
-					</div>
-					<div class="chart_content">
-					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
-				}
-				?>
-					</div>
-
-					<div class="legend_chart">
-						<div class="wrap_lc">
-							<p><span class="circle"></span>3</p>
-							<p><span class="circle"></span>4</p>
-							<p><span class="circle"></span>5</p>
-							<p><span class="circle"></span>6</p>
-						</div>
-						<p class="under">_ _ _ _</p>
-						<p>Promedio nacional</p>
-					</div>
-				</div>
-
-			</div></div>
 			<!--<?php 
 			if($this->escuela->infraestructura){
 					$aulas = $fields = '';
