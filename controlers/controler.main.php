@@ -284,7 +284,7 @@ class main extends controler{
 	public function load_niveles(){
 		
 		$q = new nivel();
-		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22" || niveles.id = "11"';
+		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';// || niveles.id = "11"';
 		$this->niveles = $q->read('id,nombre');
 	}
 
