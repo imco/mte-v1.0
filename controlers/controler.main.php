@@ -200,7 +200,7 @@ class main extends controler{
 		if(isset($params->nivel) && $params->nivel){
 			$q->search_clause .= " AND escuelas.nivel = '{$params->nivel}' ";
 		}else{
-			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "22" || escuelas.nivel = "11") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
+			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
 		}
 
 		if(isset($params->control) && $params->control){
