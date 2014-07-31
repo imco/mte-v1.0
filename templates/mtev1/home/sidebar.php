@@ -20,16 +20,20 @@
 			</form>
 			<?php } ?>
 		</div>
-		<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>
+		<?php
+		/*<a href='/resultados-nacionales/' class='banner green resultados'><?php $this->print_img_tag('home/resultados.png');?>Resultados por estado</a>*/
+		?>
 
 		<a href='http://blog.mejoratuescuela.org/' class='banner blue'>
 			<?php $this->print_img_tag('home/blog2.png');?>
 			Blog
 		</a>
-		<a href='peticiones/sienlace' class='banner orange peticiones'>
+		<?php
+		/*<a href='peticiones/sienlace' class='banner orange peticiones'>
 			<?php $this->print_img_tag('home/peticiones.png');?>
 			Peticiones
-		</a>
+		</a>*/
+		?>
 
 
 		<a href="https://www.facebook.com/MejoraTuEscuela" class='gray-box' target='_blank' >
