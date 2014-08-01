@@ -60,6 +60,9 @@ class escuelas extends main{
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
 			$this->censo = $this->get_censo();
+			if($this->escuela->paginaweb && substr($this->escuela->paginaweb,0,7)!='http://'){
+				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
+			}
 			if($this->escuela->nivel->nombre != 'PREESCOLAR')
 				$this->include_theme('index','perfil_b');
 			else{
