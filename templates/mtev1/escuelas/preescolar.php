@@ -30,7 +30,7 @@
 							<!--<li>Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?></li>-->
 						<?php } ?>							
 						<li>Télefonos: <?=$this->escuela->telefono?></li>
-						<li>Mail: <?=$this->str_limit($this->escuela->correoelectronico,20);?></li>
+						<li>Correo electrónico: <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
 						<?php if($this->escuela->paginaweb){ ?>
 							<li><a href="<?=$this->escuela->paginaweb?>"><?=$this->str_limit($this->escuela->paginaweb,21) ?></a></li>
 						<?php } ?>
