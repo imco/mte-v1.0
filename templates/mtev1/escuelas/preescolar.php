@@ -190,8 +190,9 @@
 						<tr><td>Sala de cómputo</td><td><span class=" cel"><?=$infra['Aulas de cómputo']?></span></td></tr>
 						<tr><td>Cuartos para baño o sanitarios</td><td><span class=" cel"><?=$infra['Cuartos para baños o sanitarios']?></span></td></tr>
 						<tr><td>Tazas sanitarias</td><td><span class=" cel"><?=$infra['Tazas sanitarias']?></span></td></tr>
-						<tr><td>Letrinas y hoyo negro</td><td><span class=" cel">#</span></td></tr>
-						<tr><td>Lavamanos</td><td><span class=" cel">#</span></td></tr>
+						<?php $on = $infra['Letrina u hoyo negro'] ?>
+						<tr><td>Letrinas y hoyo negro</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<tr><td>Lavamanos</td><td><span class=" cel"><?=$infra['Lavamanos']?></span></td></tr>
 					</tbody>
 				</table>
 				<table class='info_table'>
@@ -212,8 +213,10 @@
 						<tr><td>Servicio de internet</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 						<?php $on = $infra['Teléfono'] ?>
 						<tr><td>Teléfono</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
-						<tr><td>Cafetería</td><td><span class=" cel">#</span></td></tr>
-						<tr><td>Servicio médico</td><td><span class=" cel">#</span></td></tr>
+						<?php $on = $infra['Cooperativa, cafetería o tienda escolar'] ?>
+						<tr><td>Cafetería</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
+						<?php $on = $infra['Enfermería o servicio médico'] ?>
+						<tr><td>Servicio médico</td><td><span class="<?=$on=='S'?'si':'no'?> cel"><?=$on?></span></td></tr>
 
 					</tbody>
 				</table>
