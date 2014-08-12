@@ -139,17 +139,15 @@ class escuela extends memcached_table{
 			//Produccion
 			$db = $client->selectDB("censo_completo_2013");
 			$c = $db->selectCollection('datos_escuelas_v2');
-			$aux = $c->find(array('cct_escuelas'=>$this->cct));
-			if(count($aux)>0){
-				foreach($aux as $e) {
-                    $this->censo_2013 = $e;
-                    break;
-                }
+            $this->censo_2013 = $c->findOne(array('cct_escuelas'=>$this->cct));
+			if(isset($this->censo_2013)){
 				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
 				if(isset($this->censo_2013) && count($this->censo_2013)>0 ){
 					foreach( $variables as $key=>$val)
 						if(isset($this->censo_2013[$key]) && strlen(trim($this->censo_2013[$key]))>0)
 							$this->$val = $this->censo_2013[$key];
+                    //if (isset($this->censo_2013['infraestructura']))
+                    //    $this->infraestructura = $this->censo_2013['infraestructura'];
 
 					if(isset($this->censo_2013['calle'],$this->censo_2013['cp'],$this->censo_2013['numero_dir']) && strlen(trim($this->censo_2013['calle']))>0){
 						$cp = ctype_digit((string)$this->censo_2013['cp'])? ', CP '.$this->censo_2013['cp'].',':',';
@@ -160,6 +158,8 @@ class escuela extends memcached_table{
 			}
 			else
 				$this->censo_2013 == false;
+
+            //var_dump($this->infraestructura);
 
             $db = $client->selectDB("mte_produccion");
             $c = $db->selectCollection('snie');
@@ -175,6 +175,8 @@ class escuela extends memcached_table{
                 }
                 $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
             }
+
+            //var_dump($this->infraestructura);
 			//Programas Federales
 			$db = $client->selectDB("mte_programas");
 			$programas = array('pec','pes','petc','siat');
@@ -185,7 +187,8 @@ class escuela extends memcached_table{
 
 			$client->close();
 		}else{
-			$programas = array('censo_2013','snie','infraestructura', 'pec','pes','petc','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
+            //no se para que es esto.
+			$programas = array('censo_2013','snie','infraestructura', 'pec','pes','petc','siat','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
 			foreach($programas as $programa){
 				$this->$programa = false;
 			}
