@@ -137,12 +137,13 @@ class escuela extends memcached_table{
 	public function get_mongo_info($client){
 		if($client){			
 			//Produccion
-			$db = $client->selectDB("mte_produccion");
-			$c = $db->selectCollection('censo_2013');
-			$aux = $c->find(array('cct'=>$this->cct));
+			$db = $client->selectDB("censo_completo_2013");
+			$c = $db->selectCollection('datos_escuelas_v2');
+			$aux = $c->find(array('cct_escuelas'=>$this->cct));
 			if(count($aux)>0){
-				foreach($aux as $e)
-					$this->censo_2013 = $e;
+				foreach($aux as $e=>$index) {
+                    $this->censo_2013 = $e;
+                }
 				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
 				if(isset($this->censo_2013) && count($this->censo_2013)>0 ){
 					foreach( $variables as $key=>$val)
@@ -158,21 +159,21 @@ class escuela extends memcached_table{
 			}
 			else
 				$this->censo_2013 == false;
-			
-			
-			$c = $db->selectCollection('snie');
-			$this->snie = $c->find(array('cct'=>$this->cct));
-			$this->infraestructura = false;
 
-			if($this->snie){
-				$keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
+            $db = $client->selectDB("mte_produccion");
+            $c = $db->selectCollection('snie');
+            $this->snie = $c->find(array('cct'=>$this->cct));
+            $this->infraestructura = false;
 
-				foreach($this->snie as $e){
-					$this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
-					break;
-				}
-				$this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
-			}
+            if($this->snie){
+                $keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
+
+                foreach($this->snie as $e){
+                    $this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
+                    break;
+                }
+                $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
+            }
 			//Programas Federales
 			$db = $client->selectDB("mte_programas");
 			$programas = array('pec','pes','petc','siat');

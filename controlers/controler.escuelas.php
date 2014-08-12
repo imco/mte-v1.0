@@ -89,11 +89,12 @@ class escuelas extends main{
 		$this->escuela->read("cct");
 		if(isset($this->escuela->cct)){
 			$this->escuela->debug;
+
 			$this->escuela->read("
 				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,grados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
-				turno=>nombre,latitud,longitud,
+				turno=>id,turno=>nombre,latitud,longitud,
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
@@ -270,11 +271,9 @@ class escuelas extends main{
 	private function get_censo(){
 		$mongo = $this->mongo_connect();
                 $db = $mongo->selectDB("censo_completo_2013");
-		$collection = $db->selectCollection('datos_escuelas');
+		$collection = $db->selectCollection('datos_escuelas_v2');
 		$censo = $collection->findOne(
-                	array( 'cct' => array(
-                                '$regex'=>$this->escuela->cct
-                        ))
+                	array( 'cct_escuelas' => $this->escuela->cct)
                 );
 		return $censo;			
 	}
