@@ -271,9 +271,11 @@ class escuelas extends main{
 	private function get_censo(){
 		$mongo = $this->mongo_connect();
                 $db = $mongo->selectDB("censo_completo_2013");
-		$collection = $db->selectCollection('datos_escuelas_v2');
+		$collection = $db->selectCollection('datos_escuelas');
 		$censo = $collection->findOne(
-                	array( 'cct_escuelas' => $this->escuela->cct)
+                    array( 'cct' => array(
+                        '$regex'=>$this->escuela->cct
+                    ))
                 );
 		return $censo;			
 	}
