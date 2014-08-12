@@ -912,12 +912,14 @@ line-height: 45px;}
 #content .perfil.B .info_B .icon{width:25px;height:25px;display:block;float:left;background-repeat:no-repeat;}
 #content .perfil.B .info_B ul{line-height: 1.3;margin-top: 8px}
 #content .perfil.B .info_B ul li{color: #797979;font-size:13px}
+#content .perfil.B .info_B ul li span {font-weight: bolder;}
 #content .perfil.B .info_B ul li a{color: #00AFF0}
 #content .perfil.B .info_B ul li:before{content: "";display: inline-block;width: 6px;height: 6px;margin-right: 4px;background: #00AFF0;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 #content .perfil.B .info_B.bottom{border-top:2px solid #DADADA;padding: 5px 17px}
 #content .perfil.B .info_B.bottom .box_info{float: left;padding:7px 7px 12px;width:305px;}
 #content .perfil.B .info_B.bottom .box_info + .box_info{float: right;width:306px;margin-right:1px;}
 #content .perfil.B .info_B.bottom .box_info ul li:before{background: #DADADA}
+#content .perfil.B .info_B.bottom .box_info ul li span{font-weight: bolder;}
 #content .perfil.B .info_B.bottom .box_info p{color: #B4B4B4;font-size: 16px;padding:6px 0 5px;line-height:21px;}
 #content .perfil.B .info_B .tel{padding:0 0 10px!important;}
 #content .perfil.B .info_B .tel .icon{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_blue_tel.png) center no-repeat;margin:-2px 4px;}
@@ -1825,7 +1827,7 @@ height: auto;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p span:last-child{margin-left:3px;font-size:18px;color:#A1A1A1;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p + p{margin:3px 0;font-size:14px;line-height:normal}
 
-#content .perfil.B .censo-box{border:1px solid #b4b4b4;color:#b4b4b4;font-size:14px;float:left;width:191px;height:35px;margin:3px 4px 7px 0;padding:5px 8px 0px 12px;}
+#content .perfil.B .censo-box{border:1px solid #646464;color:#646464;font-size:14px;float:left;width:191px;height:35px;margin:3px 4px 7px 0;padding:5px 8px 0px 12px;}
 #content .perfil.B .censo-box:nth-child(6){margin:3px 0 5px 0;}
 #content .perfil.B .censo-box .text{width:110px;float:left;line-height:14px;}
 #content .perfil.B .censo-box .num{color:white;background-color:#339DD1;text-align:center;width:77px;line-height:30px;display:block;float:right;border-radius:5px;}
