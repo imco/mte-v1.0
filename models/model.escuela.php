@@ -141,8 +141,9 @@ class escuela extends memcached_table{
 			$c = $db->selectCollection('datos_escuelas_v2');
 			$aux = $c->find(array('cct_escuelas'=>$this->cct));
 			if(count($aux)>0){
-				foreach($aux as $e=>$index) {
+				foreach($aux as $e) {
                     $this->censo_2013 = $e;
+                    break;
                 }
 				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
 				if(isset($this->censo_2013) && count($this->censo_2013)>0 ){
