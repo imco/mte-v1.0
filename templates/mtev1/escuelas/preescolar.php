@@ -57,7 +57,7 @@
 							<span itemprop="addressCountry" content="MX"></span>
 						</span>
 					</li>-->
-					<li><span>Calle:</span> <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
+					<li><span>Calle:</span> <?=$this->capitalize($this->escuela->domicilio)?></li>
 					<li><span>Municipio:</span> <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
 				</ul>
 

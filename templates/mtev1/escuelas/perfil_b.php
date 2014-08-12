@@ -66,8 +66,10 @@
 							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
 							<span itemprop="addressCountry" content="MX"></span>
 						</span>
-					</li>-->
+					</li>
 					<li><span>Calle:</span> <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
+					-->
+					<li><span>Calle:</span> <?=$this->capitalize($this->escuela->domicilio)?></li>
 					<li><span>Municipio:</span> <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
 				</ul>
 
