@@ -32,15 +32,15 @@
 					<p class='hidden' itemprop="name"><?=$this->capitalize($this->escuela->nombre)?></p>
 					<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>
 					<ul class="data">
-						<li>Clave <?=$this->escuela->cct?></li>
-						<li><?=$this->capitalize($this->escuela->nivel->nombre)?></li>
-						<li>Turno <?=$this->capitalize($this->escuela->turno->nombre)?></li>
-						<li><?=$controles[$this->escuela->control->id]?></li>
+						<li><span>Clave:</span> <?=$this->escuela->cct?></li>
+						<li><span><?=$this->capitalize($this->escuela->nivel->nombre)?></span></li>
+						<li><span>Turno:</span> <?=$this->capitalize($this->escuela->turno->nombre)?></li>
+						<li><span><?=$controles[$this->escuela->control->id]?></span></li>
 						<?php if( isset($this->escuela->censo_2013['persona_responsable']) && strlen(trim($this->escuela->censo_2013['persona_responsable']))>0 ){ ?>
 							<!--<li>Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?></li>-->
 						<?php } ?>							
-						<li>Télefonos: <?=$this->escuela->telefono?></li>
-						<li>Correo electrónico: <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
+						<li><span>Teléfonos:</span> <?=$this->escuela->telefono?></li>
+						<li><span>Correo electrónico:</span> <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
 						<?php if($this->escuela->paginaweb){ ?>
 							<li><a href="<?=$this->escuela->paginaweb?>"><?=$this->str_limit($this->escuela->paginaweb,21) ?></a></li>
 						<?php } ?>
@@ -66,16 +66,18 @@
 							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
 							<span itemprop="addressCountry" content="MX"></span>
 						</span>
-					</li>-->
-					<li>Calle: <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
-					<li>Municipio: <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
+					</li>
+					<li><span>Calle:</span> <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
+					-->
+					<li><span>Calle:</span> <?=$this->capitalize($this->escuela->domicilio)?></li>
+					<li><span>Municipio:</span> <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
 				</ul>
 
 			</div>
 			<div class="box_info">
 				<ul>
-					<li>Localidad: <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
-					<li>Entidad: <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
+					<li><span>Localidad:</span> <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
+					<li><span>Entidad:</span> <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
 				</ul>
 
 				<!--<p class='web'>
@@ -88,7 +90,7 @@
 				
 				<div class="clear"></div>
 				<div class='censo-box'>
-					<span class='text'>Número de Alumnos:</span>
+					<span class='text'>Número de alumnos:</span>
 					<span class='num'><?= $tmpPersons['num_alumnos'] ?></span>
 				</div>
 				<div class='censo-box'>
@@ -110,7 +112,7 @@
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
-					<input type='text' class='required email' placeholder='Email (obligatorio)' name='email' />
+					<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
 					<select class='custom-select required' name='ocupacion' >
 						<option value=''>¿Quién eres?</option>
 						<option value='alumno'>Alumno</option>
