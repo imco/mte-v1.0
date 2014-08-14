@@ -59,7 +59,7 @@ class escuelas extends main{
 			$this->title_header = 'Conoce tu escuela';
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
-			$this->censo = $this->get_censo();
+            $this->censo = $this->get_censo();
 			if($this->escuela->paginaweb && substr($this->escuela->paginaweb,0,7)!='http://'){
 				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
 			}
@@ -271,13 +271,11 @@ class escuelas extends main{
 	private function get_censo(){
 		$mongo = $this->mongo_connect();
                 $db = $mongo->selectDB("censo_completo_2013");
-		$collection = $db->selectCollection('datos_escuelas');
+		$collection = $db->selectCollection('datos_escuelas_v2');
 		$censo = $collection->findOne(
-                    array( 'cct' => array(
-                        '$regex'=>$this->escuela->cct
-                    ))
+                    array( 'cct_escuelas' => $this->escuela->cct)
                 );
-		return $censo;			
+		return $censo;
 	}
 
 	private function data_censo($id){
