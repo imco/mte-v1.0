@@ -2,7 +2,7 @@
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
+            <a class="button-frame" href="/compara/escuelas"><span class="compara-button orange-effect">Comparar</span></a>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
@@ -84,25 +84,25 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<?php if(isset($this->escuela->censo_2013) && $this->escuela->censo_2013 || $this->censo){ 
-				$tmpPersons = $this->censo?$this->censo:$this->escuela->censo_2013;
-			?>
-				
-				<div class="clear"></div>
+            <div class="clear"></div>
+			<?php if($this->censo){ ?>
+            <?php foreach ($this->censo['turnos'] as $turno) {   ?>
+                <h4 style="color:#646464;"><?= $turno->nombre ?></h4>
 				<div class='censo-box'>
 					<span class='text'>Número de alumnos:</span>
-					<span class='num'><?= $tmpPersons['num_alumnos'] ?></span>
+					<span class='num'><?= $turno->alumnos ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Total de personal:</span>
-					<span class='num'><?= $tmpPersons['num_personal'] ?></span>
+					<span class='num'><?= $turno->personal ?></span>
 				</div>
 				<div class='censo-box'>
 					<span class='text'>Grupos:</span>
-					<span class='num'><?= $tmpPersons['num_grupos'] ?></span>
+					<span class='num'><?= $turno->grupos ?></span>
 				</div>
-			<?php } ?>
-			<div class='clear'></div>
+                <div class='clear'></div>
+			<?php }
+            } ?>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
@@ -215,7 +215,7 @@
 				</div>
 
 			</div></div>
-			<!--<?php 
+			<!--<?php
 			if($this->escuela->infraestructura){
 					$aulas = $fields = '';
 					foreach($this->escuela->infraestructura as $key => $item){
@@ -472,12 +472,15 @@ EOD;
 					<div class='clear'></div>
 				</div>
 				<?php
-					if($this->escuela->semaforo >= 4){
+					if($this->escuela->semaforo >= 4 && $this->escuela->semaforo < 8){
 						$semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
 						echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
 						<p>".
 						$semaforos[$this->escuela->semaforo-4]."</p><div class='popup-faq opc".($this->escuela->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
-					}
+					} else if ($this->escuela->semaforo == 8){ //
+                        echo "<div class='sem-overlay-brighter'><div class='sprit-grey'></div><div class='clear'></div>
+						<p>NO HAY DATOS DE DESEMPEÑO DISPONIBLES PARA ESTA ESCUELA</p></div>";
+                    }
 				?>
 			</div>
 			<div class='clear'></div>

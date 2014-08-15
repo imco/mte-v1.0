@@ -155,7 +155,7 @@ class escuela extends memcached_table{
 				}
 			}
 			else
-				$this->censo_2013 == false;
+				$this->censo_2013 = false;
 
 
             $db = $client->selectDB("mte_produccion");

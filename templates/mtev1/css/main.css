@@ -420,6 +420,7 @@ body .ui-autocomplete{border-radius:0;background:none;border:none;padding:0;}
 #content .comparar .general td{font-size:15px;}
 #content .perfil + form + a + .resultados table .turno{display:none;}
 #content .sprit2{background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_pngs.png);}
+#content .sprit-grey{background-image:url(../img/perfil/sindatos.png);float:none;height: 60px;margin-bottom: 0;background-repeat: no-repeat;background-position: center;}
 #content .resultados table td.semaforo span{display:block;width:34px;height:34px;margin:0 auto;}
 #content .resultados table td.semaforo.sem0 span.sprit2{background-position:-4px 93px;}
 #content .resultados table td.semaforo.sem1 span.sprit2{background-position:-3px 880px;}
@@ -987,6 +988,7 @@ line-height: 45px;}
 #content .perfil.B .semaforo .excelente .icon{background-position:-1px -162px;}
 
 #content .perfil.B .semaforo .sem-overlay{position:absolute;top:38px;width:202px;height:136px;background-color:rgba(112,112,112,.87);color:white;padding-top:70px;font-weight:bold;font-size:13px;}
+#content .perfil.B .semaforo .sem-overlay-brighter{position:absolute;top:38px;width:202px;height:170px;background-color:rgba(234,234,234,1);color:#808080;padding-top:30px;font-size:13px;}
 #content .perfil.B .semaforo .sem-overlay .icon{width:23px;height:20px;background-position:-38px -304px;margin:0 auto;float:none;margin-bottom:5px;}
 #content .perfil.B .semaforo .sem-overlay .icon.icon5{background-position:1px -336px;height: 53px;margin-bottom: 0;width: 60px}
 #content .perfil.B .semaforo .sem-overlay .icon.icon6{background-position:4px -103px;height: 53px;margin-bottom: 0;width: 62px}
@@ -1827,7 +1829,7 @@ height: auto;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p span:last-child{margin-left:3px;font-size:18px;color:#A1A1A1;}
 #content .perfil.B .calificacion-tab .wrap_comments .comment p + p{margin:3px 0;font-size:14px;line-height:normal}
 
-#content .perfil.B .censo-box{border:1px solid #646464;color:#646464;font-size:14px;float:left;width:191px;height:35px;margin:3px 4px 7px 0;padding:5px 8px 0px 12px;}
+#content .perfil.B .censo-box{border:1px solid #646464;color:#646464;font-size:14px;float:left;width:191px;height:35px;margin:1px 4px 7px 0;padding:5px 7px 0px 12px;}
 #content .perfil.B .censo-box:nth-child(6){margin:3px 0 5px 0;}
 #content .perfil.B .censo-box .text{width:110px;float:left;line-height:14px;}
 #content .perfil.B .censo-box .num{color:white;background-color:#339DD1;text-align:center;width:77px;line-height:30px;display:block;float:right;border-radius:5px;}
