@@ -92,8 +92,10 @@
 			</div>
             <div class="clear"></div>
 			<?php if($this->censo){ ?>
-            <?php foreach ($this->censo['turnos'] as $turno) {   ?>
-                <h4 style="color:#646464;"><?= $turno->nombre ?></h4>
+            <?php foreach ($this->censo['turnos'] as $turno) {
+                    if (count($this->censo['turnos']) > 1) {?>
+                        <h4 style="color:#646464;"><?= $turno->nombre ?></h4>
+                    <?php } ?>
 				<div class='censo-box'>
 					<span class='text'>Número de alumnos:</span>
 					<span class='num'><?= $turno->alumnos ?></span>
