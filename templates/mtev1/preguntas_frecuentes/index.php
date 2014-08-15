@@ -45,7 +45,7 @@
 				</p>
 				<a name="pregunta4"></a>
 				<h3>4. ¿Cómo se calcula la posición estatal de mi escuela?</h3>
-				<p>Para generar las posiciones hacemos una lista de todas las escuelas del estado, de cada nivel educativo, por sus calificaciones globales. La calificación global de una escuela está basada en un promedio ponderado de sus resultados de matemáticas y español en la prueba ENLACE del último año. Si quieres conocer a detalle la metodología detrás de nuestro sitio te invitamos a leer nuestra ficha metodológica aquí.
+				<p>Para generar las posiciones hacemos una lista de todas las escuelas del estado, de cada nivel educativo, por sus calificaciones globales. La calificación global de una escuela está basada en un promedio ponderado de sus resultados de matemáticas y español en la prueba ENLACE del último año. Si quieres conocer a detalle la metodología detrás de nuestro sitio te invitamos a leer nuestra ficha metodológica <a href="/metodologia">aquí</a>.
 				</p>
 				<a name="pregunta5"></a>
 				<h3>5. ¿Cómo se calcula la ubicación de una escuela en el semáforo educativo?</h3>
