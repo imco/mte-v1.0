@@ -3,6 +3,12 @@
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
+			<span class="select-turno">
+				<select class="compara-button blue">
+					<option>Matutino</option><option>Vespertino</option>
+				</select>
+			</span>
+			<h2 class="second-name">Turno:</h2>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>

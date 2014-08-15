@@ -894,11 +894,23 @@ line-height: 45px;}
 /*Perfil B*/
 #content .perfil.B{margin:23px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .box-head.fixed{position: fixed;top: 0;width: 900px;z-index: 99;}
-#content .perfil.B .head h1.main-name{float:left;padding-left:6px;width:680px;line-height:30px;padding:16px 6px;}
-
+#content .perfil.B .head h1.main-name{float:left;padding-left:6px;width:460px;line-height:30px;padding:16px 6px;}
+#content .perfil.B .head h2.second-name{padding:16px 0px;}
 
 #content .perfil.B .head .button-frame{float: right;margin:9px 18px 5px;width: 156px;}
 #content .perfil.B .head .compara-button{font-size:19px;width:145px;height:31px;line-height:1.7;margin-top: 5px;display: block;margin: 6px;}
+#content .perfil.B .head .compara-button.blue{color: #4a9abb;}
+
+#content .perfil.B .head .select-turno {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    border-radius: 7px;
+    display: block;
+    position: relative;
+    float: right;
+    margin: 9px 0px 5px;
+    width: 156px;
+}
 
 #content .perfil.B .info_B.top{height: auto!important;padding: 0!important}
 #content .perfil.B .info_B.top .data{height: 100%;}
