@@ -4,7 +4,7 @@
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
 			<span class="select-turno">
-				<select class="compara-button blue">
+				<select class="compara-button blue custom-select">
 					<option>Matutino</option><option>Vespertino</option>
 				</select>
 			</span>
