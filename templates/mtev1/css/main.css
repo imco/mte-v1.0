@@ -903,7 +903,7 @@ line-height: 45px;}
 #content .perfil.B .head .compara-button.blue{color: #4a9abb;}
 
 #content .perfil.B .head .select-turno {background-color: rgba(255, 255, 255, 0.3);border: 1px solid white;border-radius: 7px;display: block;position: relative;float: right;margin: 9px 0px 5px;width: 156px;}
-#content .perfil.B .head .select-turno .custom-select{border-radius: 6px;display: inline-block;padding-left: 20px;height: 20px;line-height: 20px;width: 115px;}
+#content .perfil.B .head .select-turno .custom-select{background:white url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/quienes_somos_flecha_estados.png) no-repeat 100px;border-radius: 4px;display: inline-block;padding-left: 10px;height: 20px;line-height: 20px;width: 127px;}
 
 #content .perfil.B .info_B.top{height: auto!important;padding: 0!important}
 #content .perfil.B .info_B.top .data{height: 100%;}
