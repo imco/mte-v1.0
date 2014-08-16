@@ -80,7 +80,6 @@ class escuelas extends main{
 	public function escuela_info($id=false){
 		if(!$id)
 			$id = $this->get('id');
-		//$this->data_censo($id);
 		$this->escuela = new escuela($id);
 		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
@@ -272,41 +271,24 @@ class escuelas extends main{
 		$mongo = $this->mongo_connect();
                 $db = $mongo->selectDB("censo_completo_2013");
 		$collection = $db->selectCollection('datos_escuelas_v2');
-		$censo = $collection->findOne(
-                    array( 'cct_escuelas' => $this->escuela->cct)
-                );
+        $escuelas = $collection->find(array( 'cct_escuelas' => $this->escuela->cct))->sort(array('id_turno'=>1));
+
+        $first = false;
+        foreach($escuelas as $escuela) {
+            if (!$first) {
+                $first = true;
+                $censo = $escuela;
+                $censo['turnos'] = array();
+            }
+            $turno = new stdClass();
+            $variables = array('turno'=>'nombre','num_alumnos'=>'alumnos','num_personal'=>'personal','num_grupos'=>'grupos','id_turno'=>'id');
+            foreach( $variables as $key=>$val) {
+                if(isset($escuela[$key]) && strlen(trim($escuela[$key]))>0)
+                    $turno->$val = $escuela[$key];
+            }
+            $censo['turnos'][] = $turno;
+        }
 		return $censo;
-	}
-
-	private function data_censo($id){
-		if($id){
-			$escuela = new escuela($id);
-			$escuela->key = 'cct';
-			$escuela->fields['cct'] = $this->get('id');
-			$escuela->read('cct,grados');
-			if(isset($escuela->grados) &&  $escuela->grados == 0){
-				$enlace =  new enlace();	
-				$enlace->search_clause = 'cct="'.$escuela->cct.'" AND anio = "2013"';
-				$enlaces = $enlace->read('id,anio,nivel,grado,turnos,puntaje_espaniol,puntaje_matematicas,puntaje_geografia,alumnos_que_contestaron_total');
-				if(count($enlaces)){
-					$grados = $sum_spa = $sum_mat = $sum_geo = 0;
-					$alumnos_total = 0;
-					foreach($enlaces as $enlace){
-						if($enlace->alumnos_que_contestaron_total != 0 && ($enlace->puntaje_espaniol != 0 && $enlace->puntaje_matematicas != 0)){
-							$grados++;
-							$sum_spa += $enlace->puntaje_espaniol;
-							$sum_mat += $enlace->puntaje_matematicas;
-							$alumnos_total += $enlace->alumnos_que_contestaron_total;
-						}
-					}
-					$prom_mat = $sum_mat / $grados;
-					$prom_spa = $sum_spa / $grados;
-					$gen = ($prom_spa * .2) + ($prom_mat *.8);
-					$escuela->update('grados,promedio_matematicas,promedio_espaniol,promedio_general,total_evaluados',array($grados,$prom_mat,$prom_spa,$gen,$alumnos_total));
-				}
-			}
-
-		}
 	}
 
 	private function isSpam($params=array()){

@@ -84,7 +84,7 @@ function add_marker(escuela,map){
 		position: position,
 		map: map,
 		title: escuela.nombre,
-		icon : urlCdn+icon+'.png',
+		icon : urlCdn+icon+'.png'
   	});
   	var infobox = make_infobox(escuela,marker,map);
 
