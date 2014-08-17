@@ -495,17 +495,21 @@ EOD;
 					<span class='icon sprit2'></span>
 					<div class='clear'></div>
 				</div>
-            </div>
-				<?php
-                        if($semaforo->semaforo >= 4 && $semaforo->semaforo < 8){
-                            $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
-                            echo "<div class='sem-overlay turnos_switch turnos_switch_{$semaforo->turno}' ><div class='icon sprit2 icon{$semaforo->semaforo}'></div><div class='clear'></div>
+                <?php
+
+                if($semaforo->semaforo >= 4 && $semaforo->semaforo < 8){
+                    $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
+                    echo "<div class='sem-overlay turnos_switch turnos_switch_{$semaforo->turno}' ><div class='icon sprit2 icon{$semaforo->semaforo}'></div><div class='clear'></div>
                             <p>".
-                                $semaforos[$semaforo->semaforo-4]."</p><div class='popup-faq opc".($semaforo->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
-                        } else if ($semaforo->semaforo == 8){ //
-                            echo "<div class='sem-overlay-brighter turnos_switch turnos_switch_{$semaforo->turno}'><div class='sprit-grey'></div><div class='clear'></div>
+                        $semaforos[$semaforo->semaforo-4]."</p><div class='popup-faq opc".($semaforo->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
+                } else if ($semaforo->semaforo == 8){ //
+                    echo "<div class='sem-overlay-brighter turnos_switch turnos_switch_{$semaforo->turno}'><div class='sprit-grey'></div><div class='clear'></div>
                             <p>NO HAY DATOS DE DESEMPEÑO DISPONIBLES PARA ESTA ESCUELA</p></div>";
-                        }
+                }
+                ?>
+            </div>
+
+                        <?php
                     }
                 }
 				?>
