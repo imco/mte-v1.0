@@ -19,7 +19,7 @@ class escuelas extends main{
             $params->get_rank = true;
 
 			$this->load_compara_cookie();
-			$this->debug = true;
+			$this->debug = false;
 			$this->get_escuelas($params);
 			//$this->escuelas[] = $this->escuela;
 		
