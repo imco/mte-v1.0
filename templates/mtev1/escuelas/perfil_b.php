@@ -11,7 +11,8 @@
                             if ($turno->id == $this->escuela->selected_rank->turnos_eval) {
                                 $selected = "selected='selected'";
                             }
-                            echo "<option value='{$turno->id}' {$selected}>{$turno->nombre}</option>";
+                            $nombre = $this->capitalize($turno->nombre);
+                            echo "<option value='{$turno->id}' {$selected}>{$nombre}</option>";
                         } ?>
                     </select>
                 </span>
