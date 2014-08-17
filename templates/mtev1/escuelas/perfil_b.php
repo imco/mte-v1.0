@@ -3,12 +3,19 @@
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
-			<span class="select-turno">
-				<select class="compara-button blue">
-					<option>Matutino</option><option>Vespertino</option>
-				</select>
-			</span>
-			<h2 class="second-name">Turno:</h2>
+			<?php if (isset($this->escuela->turnos) && count($this->escuela->turnos) > 1) {?>
+                <span class="select-turno">
+                    <select class="compara-button blue" id="turno_selector">
+                        <?php foreach($this->escuela->turnos as $turno) {
+                            $selected = "";
+                            if ($turno->id == $this->escuela->selected_rank->turnos_eval) {
+                                $selected = "selected='selected'";
+                            }
+                            echo "<option value='{$turno->id}' {$selected}>{$turno->nombre}</option>";
+                        } ?>
+                    </select>
+                </span>
+			<?php } ?>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
@@ -24,7 +31,7 @@
 							<?php $this->print_img_tag('perfil/blue/posicion.png');?>
 							<p>Posición estatal</p>
 							<h2>
-								<?=isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--' ?> <span>de</span> <?=number_format($this->entidad_cct_count,0)?>
+								<?=isset($this->escuela->selected_rank->rank_entidad) ? number_format($this->escuela->selected_rank->rank_entidad ,0): '--' ?> <span>de</span> <?=number_format($this->entidad_cct_count,0)?>
 							</h2>
 						</div>
 					</div>
@@ -64,17 +71,6 @@
 		<div class="info_B bottom">
 			<div class="box_info">
 				<ul>
-					<!--<li class='address' itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						Dirección:
-						<span class='title'>
-							<span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span>
-							<span itemprop="addressLocality"><?=$this->capitalize($this->escuela->localidad->nombre)?></span>, 
-							<span itemprop="addressRegion"><?=$this->capitalize($this->escuela->entidad->nombre)?></span>
-							<span itemprop="addressCountry" content="MX"></span>
-						</span>
-					</li>
-					<li><span>Calle:</span> <span itemprop="streetAddress"><?=$this->capitalize($this->escuela->domicilio)?></span></li>
-					-->
 					<li><span>Calle:</span> <?=$this->capitalize($this->escuela->domicilio)?></li>
 					<li><span>Municipio:</span> <?=$this->capitalize($this->escuela->municipio->nombre)?></li>
 				</ul>
@@ -85,16 +81,11 @@
 					<li><span>Localidad:</span> <?=$this->capitalize($this->escuela->localidad->nombre)?></li>
 					<li><span>Entidad:</span> <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
 				</ul>
-
-				<!--<p class='web'>
-					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
-				</p>-->				
 			</div>
-            <div class="clear"></div>
 			<?php if($this->censo){ ?>
             <?php foreach ($this->censo['turnos'] as $turno) {
                     if (count($this->censo['turnos']) > 1) {?>
-                        <h4 style="color:#646464;"><?= $turno->nombre ?></h4>
+                        <h4 style="color:#339dd1;font-weight: bold;"><?= $turno->nombre ?></h4>
                     <?php } ?>
 				<div class='censo-box'>
 					<span class='text'>Número de alumnos:</span>
@@ -108,9 +99,9 @@
 					<span class='text'>Grupos:</span>
 					<span class='num'><?= $turno->grupos ?></span>
 				</div>
-                <div class='clear'></div>
 			<?php }
             } ?>
+            <div class='clear'></div>
 		</div>
 		<form method='post' action='/escuelas/calificar/' accept-charstet='utf-8' class='calificacion-form B'>
 			<fieldset>
@@ -155,74 +146,90 @@
 						Infraestructura escolar
 					</a></li>
 				<? //} ?>
-				<li class='on'><a href='#tab-charts' class='long comentarios'>
-					<span class='triangle'></span>
-					Desempeño académico
-				</a></li>
+                <?php
+                foreach(array_reverse($this->escuela->rank) as $rank) {
+                    $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval;
+                    $style = $selected ? "" : "style='display:none;'";
+                    ?>
+                    <li <?= $style ?> class='on turnos_switch turnos_switch_<?=$rank->turnos_eval?>'>
+                        <a href='#tab-charts-<?=$rank->turnos_eval?>' class='long comentarios'>
+                        <span class='triangle'></span>
+                        Desempeño académico  <?= $this->capitalize($rank->turno_nombre) ?>
+                        </a>
+                    </li>
+                <?php } ?>
 				<div class='clear'></div>
 			</ul>
 
 		<div class='tab-container'>
-			<!--  jscrollpane-->
-			<div class='head t-tabs'><p class='title-tabs'>Desempeño académico</p></div>
-			<div class='tab charts on' id='tab-charts'><div class='chart-box'>
-				<div class="n_alumnos border_b">
-					<p>Número de alumnos evaluados</p>
-					<span class="number"><?=$this->escuela->total_evaluados?></span>
-				</div>
-				<div class="n_alumnos border_b">
-					<p>Porcentaje de alumnos en nivel reprobado</p>
-					<span class="number"><?=$this->escuela->pct_reprobados."%"?></span>
-				</div>
-				<div class="wrap_chart border_b">
-					<div class="info_chart">
-						<span class="icon "></span>
-						<p>Resultados ENLACE <span>matemáticas</span></p>
-					
-					</div>
-					<div class="chart_content">
-					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<div id='line-chart-data-matematicas' class='hidden'>".json_encode($this->escuela->line_chart_matematicas)."</div><div id='profile-line-chart-matematicas' class='chart'></div>";
-					} ?>				
-					</div>
-					<div class="legend_chart">
-						<div class="wrap_lc">
-							<p><span class="circle"></span>3</p>
-							<p><span class="circle"></span>4</p>
-							<p><span class="circle"></span>5</p>
-							<p><span class="circle"></span>6</p>					
-						</div>
+        <?php
+        foreach($this->escuela->rank as $rank) {
+            $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval;
+            $style = $selected ? "" : "style='display:none;'";
+            ?>
+            <div <?= $style ?> class='head t-tabs turnos_switch turnos_switch_<?=$rank->turnos_eval?>'><p class='title-tabs'>Desempeño académico <?= $this->capitalize($rank->turno_nombre) ?></p></div>
 
-						<p class="under">_ _ _ _</p>
-						<p>Promedio nacional</p>
-					</div>
-				</div>
-				<div class="wrap_chart border_b">
-					<div class="info_chart">
-						<span class="icon"></span>
-						<p>Resultados ENLACE <span>español</span></p>
-					
-					</div>
-					<div class="chart_content">
-					<?php if($this->escuela->line_chart_espaniol ){
-						echo "<div id='line-chart-data-espaniol' class='hidden'>".json_encode($this->escuela->line_chart_espaniol)."</div><div id='profile-line-chart-espaniol' class='chart'></div>";
-				}
-				?>
-					</div>
+            <div <?= $style ?> class='tab charts on turnos_switch turnos_switch_<?=$rank->turnos_eval?>' id='tab-charts-<?= $rank->turnos_eval ?>'>
+                <div class='chart-box'>
+                    <div class="n_alumnos border_b">
+                        <p>Número de alumnos evaluados</p>
+                        <span class="number"><?=$rank->total_evaluados?></span>
+                    </div>
+                    <div class="n_alumnos border_b">
+                        <p>Porcentaje de alumnos en nivel reprobado</p>
+                        <span class="number"><?=$rank->pct_reprobados."%"?></span>
+                    </div>
+                    <div class="wrap_chart border_b">
+                        <div class="info_chart">
+                            <span class="icon "></span>
+                            <p>Resultados ENLACE <span>matemáticas</span></p>
 
-					<div class="legend_chart">
-						<div class="wrap_lc">
-							<p><span class="circle"></span>3</p>
-							<p><span class="circle"></span>4</p>
-							<p><span class="circle"></span>5</p>
-							<p><span class="circle"></span>6</p>
-						</div>
-						<p class="under">_ _ _ _</p>
-						<p>Promedio nacional</p>
-					</div>
-				</div>
+                        </div>
+                        <div class="chart_content">
+                            <?php if($this->escuela->matematicas_charts && isset($this->escuela->matematicas_charts[$rank->turnos_eval])){
+                                echo "<div id='line-chart-data-matematicas-{$rank->turnos_eval}' class='hidden'>".json_encode($this->escuela->matematicas_charts[$rank->turnos_eval])."</div><div id='profile-line-chart-matematicas-{$rank->turnos_eval}' name='matematicas-{$rank->turnos_eval}' class='chart'></div>";
+                            } ?>
+                        </div>
+                        <div class="legend_chart">
+                            <div class="wrap_lc">
+                                <p><span class="circle"></span>3</p>
+                                <p><span class="circle"></span>4</p>
+                                <p><span class="circle"></span>5</p>
+                                <p><span class="circle"></span>6</p>
+                            </div>
 
-			</div></div>
+                            <p class="under">_ _ _ _</p>
+                            <p>Promedio nacional</p>
+                        </div>
+                    </div>
+                    <div class="wrap_chart border_b">
+                        <div class="info_chart">
+                            <span class="icon"></span>
+                            <p>Resultados ENLACE <span>español</span></p>
+
+                        </div>
+                        <div class="chart_content">
+                            <?php if($this->escuela->espaniol_charts && isset($this->escuela->espaniol_charts[$rank->turnos_eval])){
+                                echo "<div id='line-chart-data-espaniol-{$rank->turnos_eval}' class='hidden'>".json_encode($this->escuela->espaniol_charts[$rank->turnos_eval])."</div><div id='profile-line-chart-espaniol-{$rank->turnos_eval}' name='espaniol-{$rank->turnos_eval}' class='chart'></div>";
+                            }
+                            ?>
+                        </div>
+
+                        <div class="legend_chart">
+                            <div class="wrap_lc">
+                                <p><span class="circle"></span>3</p>
+                                <p><span class="circle"></span>4</p>
+                                <p><span class="circle"></span>5</p>
+                                <p><span class="circle"></span>6</p>
+                            </div>
+                            <p class="under">_ _ _ _</p>
+                            <p>Promedio nacional</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <?php } ?>
 			<!--<?php
 			if($this->escuela->infraestructura){
 					$aulas = $fields = '';
@@ -456,8 +463,16 @@ EOD;
 	</div>
 	<div class='column right'>
 		<div class="box">
-			<div class='semaforo'>
-				<?php $on = $this->config->semaforos[$this->escuela->semaforo]?>
+            <?php
+            if ($this->escuela->semaforos) {
+                foreach ($this->escuela->semaforos as $semaforo) {
+                    $style = "style='display:none;'";
+                    if ($semaforo->turno == $this->escuela->selected_rank->turnos_eval) {
+                        $style = "";
+                    }
+            ?>
+			<div class='semaforo turnos_switch turnos_switch_<?=$semaforo->turno?>' <?= $style ?>>
+				<?php $on = $this->config->semaforos[$semaforo->semaforo];?>
 				<h2>Semáforo educativo</h2>
 				<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 					<p>Excelente</p>
@@ -479,30 +494,22 @@ EOD;
 					<span class='icon sprit2'></span>
 					<div class='clear'></div>
 				</div>
+            </div>
 				<?php
-					if($this->escuela->semaforo >= 4 && $this->escuela->semaforo < 8){
-						$semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
-						echo "<div class='sem-overlay'><div class='icon sprit2 icon{$this->escuela->semaforo}'></div><div class='clear'></div>
-						<p>".
-						$semaforos[$this->escuela->semaforo-4]."</p><div class='popup-faq opc".($this->escuela->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
-					} else if ($this->escuela->semaforo == 8){ //
-                        echo "<div class='sem-overlay-brighter'><div class='sprit-grey'></div><div class='clear'></div>
-						<p>NO HAY DATOS DE DESEMPEÑO DISPONIBLES PARA ESTA ESCUELA</p></div>";
+                        if($semaforo->semaforo >= 4 && $semaforo->semaforo < 8){
+                            $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
+                            echo "<div class='sem-overlay turnos_switch turnos_switch_{$semaforo->turno}' ><div class='icon sprit2 icon{$semaforo->semaforo}'></div><div class='clear'></div>
+                            <p>".
+                                $semaforos[$semaforo->semaforo-4]."</p><div class='popup-faq opc".($semaforo->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
+                        } else if ($semaforo->semaforo == 8){ //
+                            echo "<div class='sem-overlay-brighter turnos_switch turnos_switch_{$semaforo->turno}'><div class='sprit-grey'></div><div class='clear'></div>
+                            <p>NO HAY DATOS DE DESEMPEÑO DISPONIBLES PARA ESTA ESCUELA</p></div>";
+                        }
                     }
+                }
 				?>
-			</div>
 			<div class='clear'></div>
-			<div class='califica'>	
-				<div class='title'>
-					<p>Porcentaje de 
-					<br />
-					alumnos en 
-					<br />
-					nivel "Reprobado"
-					<br />
-					<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
-					</p>
-				</div>	
+			<div class='califica'>
 				<div class="share-blue">
 					<a href="javascript:window.print()" class="option print"><span class="icon"></span>Imprimir</a>
 					<a href="#" class="option share"><span class="icon"></span></span>Compartir</a>	
@@ -536,32 +543,6 @@ EOD;
 					<div class="no <?=$on!='Censado'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 			<?php } ?>
-				<!--
-				<div class="influencia">
-					<a class="button" href="#">
-						<span class="icon">!</span>
-						<span class="txt">¿En mi escuela 
-						<br />
-						hay INFLUENCIA?</span>
-					</a>
-					<form class="influencia pop" action="">
-						<textarea id="" name="" placeholder="Comentario:"></textarea>
-						<select class='custom-select required' name='ocupacion' >
-							<option value=''>¿Quién eres?</option>
-							<option value='alumno'>Alumno</option>
-							<option value='exalumno'>Exalumno</option>
-							<option value='padredefamilia'>Padre de familia</option>
-							<option value='maestro'>Maestro</option>
-							<option value='director'>Director</option>
-							<option value='ciudadano'>Ciudadano</option>
-						</select>
-						<input type='hidden' id='cct' name='cct' value='<?=$this->escuela->cct?>' class='required' />
-						<input type="submit" value="ENVIAR" />
-	
-					</form>
-				</div>-->
-
-
 				<div class="lista-programas federales">
 					<h2>Programas federales</h2>
 					<ul>

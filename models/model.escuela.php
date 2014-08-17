@@ -25,6 +25,9 @@ class escuela extends memcached_table{
 		$this->has_many['reportes_ciudadanos'] = 'reporte_ciudadano';
 		$this->has_many_keys['reportes_ciudadanos'] = 'id_cct';
 
+        $this->has_many['rank'] = 'rank';
+        $this->has_many_keys['rank'] = 'id';
+
 		$this->semaforos = array('Reprobado','De Panzazo','Bien','Excelente','Sin Enlace','Poco confiable');
 		#$this->semaforo_rangos[12] = array(433,524,615,900);
 		$this->semaforo_rangos[12] = array(559,601,662,900);
@@ -80,6 +83,63 @@ class escuela extends memcached_table{
 		}*/
 		}
 	}
+
+    public function get_semaforos(){
+        $this->semaforos = array();
+        $semaforo = new stdClass();
+        $semaforo->semaforo = 7;
+        $semaforo->turno = 0;
+        $this->semaforo = $semaforo->semaforo;
+
+        if($this->nivel->nombre=="PREESCOLAR"){
+            $this->semaforos[] = $semaforo;
+            return;
+        }
+
+        if (isset($this->rank) && count($this->rank) > 0) {
+            foreach ($this->rank as $rank) {
+                $semaforo = new stdClass();
+                $semaforo->semaforo = 7;
+                $semaforo->turno = $rank->turnos_eval;
+                if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
+                    if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
+                        $semaforo->semaforo = 5;//poco confiable
+                    }
+                    else if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
+                        $semaforo->semaforo = 0;
+                    else
+                        if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )
+                            $semaforo->semaforo = 1;
+                        else
+                            if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] )
+                                $semaforo->semaforo = 2;
+                            else
+                                $semaforo->semaforo = 3;
+                } else {
+                    $rank->semaforos[] = 6;//no se cuentan
+                }
+                if ($this->semaforo >  $semaforo->semaforo) {
+                    $this->semaforo = $semaforo->semaforo;
+                }
+                foreach($this->turnos as $turno) {
+                    if ($turno->id == $rank->turnos_eval) {
+                        $rank->turno_nombre = $turno->nombre;
+                    }
+                }
+                $this->semaforos[] = $semaforo;
+            }
+            foreach($this->rank as $rank) {
+                if ($this->rank->turnos_eval == $this->semaforo->turno) {
+                    $this->selected_rank = $rank;
+                }
+            }
+
+        } else {
+
+            $this->semaforos[] = $semaforo;
+        }
+    }
+
 	public function rank($nivel,$entidad = false,$municipio = false){
 		$entidad_clause = $entidad ? " AND entidad LIKE '$entidad'" : '';
 		$sql = "SET @rownum = 0, @rank = 0, @prev_val = NULL; ";
@@ -96,43 +156,6 @@ class escuela extends memcached_table{
 				ON t1.cct=t2.cct
 				SET t1.rank_entidad=t2.rank;";
 		return mysql_query($sql);		
-	}
-	public function get_chart($materia){
-		$grados = array();
-		$enlaces = array();
-		$puntaje_name = 'puntaje_'.$materia;
-		if(isset($this->enlaces) && $this->enlaces){
-			$variable = array();
-			foreach($this->enlaces as $enlace){
-				#if(isset($enlaces[$enlace->anio][$enlace->grado])){
-				#	echo 'mult';
-				#	$enlaces[$enlace->anio][$enlace->grado] = round(
-				#		( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
-				#	/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1));
-				#}else{
-					$enlaces[$enlace->anio][$enlace->grado] = round($enlace->$puntaje_name);	
-				#}				
-				$grados[$enlace->grado] = $enlace->grado;
-			}
-			ksort($enlaces);
-			//var_dump($enlaces);
-			$grados = array_values($grados);
-			sort($grados);
-			$keys = array_flip($grados);
-			array_unshift($grados,'Año');
-			$variable[] = $grados;
-			foreach($enlaces as $anio => $grados){				
-				$row = array_fill(0,count($keys),0);
-				foreach($grados as $key => $puntaje){
-					$row[$keys[$key]] = intval($puntaje);
-				}
-				array_unshift($row,strval($anio));
-				$variable[] = $row;
-			}
-		}else{
-			$variable = false;
-		}
-		return $variable;
 	}
 	public function get_mongo_info($client){
 		if($client){			
@@ -190,7 +213,88 @@ class escuela extends memcached_table{
 			}
 		}
 	}
-	private function load_programas($programas,$db){
+	public function get_turnos(){
+        $sql = "select distinct e.turnos_eval,t.nombre from escuelas_para_rankeo e inner join turnos t on t.id = e.turnos_eval where e.id = {$this->id}";
+        $result = mysql_query($sql);
+        $this->turnos = array();
+        while ($row = mysql_fetch_assoc($result)){
+            $turno = new stdClass();
+            $turno->id = $row['turnos_eval'];
+            $turno->nombre = $row['nombre'];
+            $this->turnos[] = $turno;
+        };
+    }
+    public function get_charts(){
+        $this->line_chart_espaniol = $this->get_chart('espaniol');
+        $this->line_chart_matematicas = $this->get_chart('matematicas');
+
+        $this->espaniol_charts = array();
+        $this->matematicas_charts = array();
+
+        foreach($this->rank as $rank){
+            $this->espaniol_charts[$rank->turnos_eval] = $this->get_chart('espaniol',$rank->turnos_eval);
+            $this->matematicas_charts[$rank->turnos_eval] = $this->get_chart('matematicas',$rank->turnos_eval);
+        }
+    }
+    public function get_chart($materia,$turno = false){
+        $grados = array();
+        $enlaces = array();
+        $puntaje_name = 'puntaje_'.$materia;
+        if(isset($this->enlaces) && $this->enlaces){
+            $variable = array();
+            foreach($this->enlaces as $enlace){
+                if ($turno && $enlace->turnos != $turno) {
+                    continue;
+                }
+                #if(isset($enlaces[$enlace->anio][$enlace->grado])){
+                #	echo 'mult';
+                #	$enlaces[$enlace->anio][$enlace->grado] = round(
+                #		( $enlaces[$enlace->anio][$enlace->grado] + $enlace->$puntaje_name )
+                #	/ (count($enlaces[$enlace->anio][$enlace->grado]) + 1));
+                #}else{
+                $enlaces[$enlace->anio][$enlace->grado] = round($enlace->$puntaje_name);
+                #}
+                $grados[$enlace->grado] = $enlace->grado;
+            }
+            ksort($enlaces);
+            //var_dump($enlaces);
+            $grados = array_values($grados);
+            sort($grados);
+            $keys = array_flip($grados);
+            array_unshift($grados,'Año');
+            $variable[] = $grados;
+            foreach($enlaces as $anio => $grados){
+                $row = array_fill(0,count($keys),0);
+                foreach($grados as $key => $puntaje){
+                    $row[$keys[$key]] = intval($puntaje);
+                }
+                array_unshift($row,strval($anio));
+                $variable[] = $row;
+            }
+        }else{
+            $variable = false;
+        }
+        return $variable;
+    }
+    public function get_turnos_rank(){
+        $sql = "select e.turnos_eval,e.promedio_general,e.promedio_matematicas,e.promedio_espaniol,e.total_evaluados,e.pct_reprobados,e.poco_confiables,e.turnos_eval as id,e.rank_entidad,e.rank_nacional,t.nombre from escuelas_para_rankeo e inner join turnos t on t.id = e.turnos_eval where e.id = {$this->id}";
+        $result = mysql_query($sql);
+        $this->rank = array();
+        while ($row = mysql_fetch_assoc($result)){
+            $turno = new stdClass();
+            $turno->id = $row['id'];
+            $turno->nombre = $row['nombre'];
+            $turno->promedio_general = $row['promedio_general'];
+            $turno->promedio_matematicas = $row['promedio_matematicas'];
+            $turno->total_evaluados = $row['total_evaluados'];
+            $turno->pct_reprobados = $row['pct_reprobados'];
+            $turno->poco_confiables = $row['poco_confiables'];
+            $turno->rank_entidad = $row['rank_entidad'];
+            $turno->rank_nacional = $row['rank_nacional'];
+            $this->rank[] = $turno;
+        };
+    }
+    private function load_programas($programas,$db){
 		foreach($programas as $programa){
 			$c = $db->selectCollection($programa);
 			$this->$programa = $c->find(array('cct'=>$this->cct));

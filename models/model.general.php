@@ -25,7 +25,7 @@ class localidad extends table{
 }
 class enlace extends table{
 	function info(){
-		$this->table_name = 'enlaces';
+		$this->table_name = 'enlaces_v2';
 		$this->objects['escuelas'] = 'id_cct';
 	}
 
@@ -85,6 +85,11 @@ class colonia extends table{
 	function info(){
 		$this->table_name = "colonias";
 	}
+}
+class rank extends table{
+    function info(){
+        $this->table_name = "escuelas_para_rankeo";
+    }
 }
 class calificacion extends table{
 	function info(){

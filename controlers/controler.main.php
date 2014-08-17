@@ -232,7 +232,18 @@ class main extends controler{
 		}
 
 		$q->debug = isset($this->debug) ? $this->debug : false;
-		$this->escuelas = $q->read('id,cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,turno=>nombre,domicilio,total_evaluados,grados,localidad=>nombre,localidad=>id,entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,municipio=>nombre,municipio=>id,control=>nombre');
+		$this->escuelas = $q->read('id,cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,
+		                            turno=>nombre,turno=>id,domicilio,total_evaluados,localidad=>nombre,localidad=>id,
+		                            entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,
+		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
+		                            municipio=>nombre,municipio=>id,control=>nombre');
+
+
+        if (isset($params->get_rank) && $params->get_rank) {
+            foreach($this->escuelas as $escuela){
+                $escuela->get_turnos_rank();
+            }
+        }
 		
 		if($this->request('json')){
 			$response = array();

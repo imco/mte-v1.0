@@ -2,8 +2,6 @@
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
-			<!--<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>-->
-			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
 			<?php $controles = array(1=>'Pública', 2=>'Privada'); ?>

@@ -16,9 +16,10 @@ class escuelas extends main{
 			$params->nivel = $this->escuela->nivel->id;		
 			#$params->ccts = array($this->escuela->cct);
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+            $params->get_rank = true;
 
 			$this->load_compara_cookie();
-			//$this->debug = true;
+			$this->debug = true;
 			$this->get_escuelas($params);
 			//$this->escuelas[] = $this->escuela;
 		
@@ -26,6 +27,7 @@ class escuelas extends main{
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
+                $params2->get_rank = false;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
@@ -85,12 +87,16 @@ class escuelas extends main{
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
-		$this->escuela->read("cct");
-		if(isset($this->escuela->cct)){
-			$this->escuela->debug;
+		$this->escuela->read("id,cct");
 
+        //damn nigga.
+        $this->escuela->key = 'id';
+        $this->escuela->has_many_keys["enlaces"] = "id_cct";
+        $this->escuela->has_many_keys["calificaciones"] = "id_cct";
+
+        if(isset($this->escuela->cct)){
 			$this->escuela->read("
-				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,grados,
+				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
 				turno=>id,turno=>nombre,latitud,longitud,
@@ -98,12 +104,13 @@ class escuelas extends main{
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
 				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre,
-				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar
+				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
+				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");
-			$this->escuela->get_semaforo();
+            $this->escuela->get_turnos();
+			$this->escuela->get_semaforos();
 			$this->escuela->get_mongo_info($this->mongo_connect());
-			$this->escuela->line_chart_espaniol = $this->escuela->get_chart('espaniol');
-			$this->escuela->line_chart_matematicas = $this->escuela->get_chart('matematicas');
+            $this->escuela->get_charts();
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
 			$entidad_info->debug = false;

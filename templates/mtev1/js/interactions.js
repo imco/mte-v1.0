@@ -606,6 +606,13 @@ $(document).ready(function(){
 		window.location.href = '/mejora/programas/?nivel='+url+'&estado='+$(this).val();
 	});
 
+    if ($('#turno_selector').length > 0) {
+        $('#turno_selector').change(function(){
+           var selected = $(this).val();
+           $('.turnos_switch').hide();
+           $('.turnos_switch_' + selected).show();
+        });
+    }
 });
 
 

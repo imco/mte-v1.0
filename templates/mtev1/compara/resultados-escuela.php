@@ -17,12 +17,14 @@
 	<?php
 	if(isset($this->escuelas)){
 		foreach($this->escuelas as $escuela){
-			$escuela->get_semaforo();			
+			$escuela->get_semaforos();
+            //var_dump($escuela);
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
+            $count_semaforos = count($this->semaforos);
 			//<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
 			echo "
 			<tr $on>
@@ -33,9 +35,10 @@
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)." | ".$this->capitalize($escuela->turno->nombre)."</span>".
 				"</a></td>
-				<td class='rank matematicas'><span>".$matematicas."</span></td> 
-     				<td class='rank espanol'><span>".$espaniol."</span></td>
+				<td class='rank matematicas'><span>".$matematicas."</span></td>
+     			<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
+
 				<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>
 				<td class='control'>".$controles[$escuela->control->id]."</td>
 				<td class='rank'><span>".$rank_entidad."</span>

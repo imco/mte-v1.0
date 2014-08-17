@@ -4,8 +4,9 @@ if(typeof google != 'undefined' && google['load'] ){
 }
 
 function drawCharts() {
-	drawChart('matematicas');
-	drawChart('espaniol');
+    jQuery('.chart').each(function(index,item){
+        drawChart(jQuery(item).attr('name'));
+    });
 }
 function drawChart(materia){
 	var raw_data = $.parseJSON($('#line-chart-data-'+materia).html()),
