@@ -93,6 +93,7 @@ class escuela extends memcached_table{
         $this->porcentaje_poco_confiable = 0;
 
         if($this->nivel->nombre=="PREESCOLAR"){
+            $semaforo->semaforo = 7;
             $this->semaforos[] = $semaforo;
             return;
         }
@@ -100,7 +101,7 @@ class escuela extends memcached_table{
         if (isset($this->rank) && count($this->rank) > 0) {
             foreach ($this->rank as $rank) {
                 $semaforo = new stdClass();
-                $semaforo->semaforo = 7;
+                $semaforo->semaforo = 4;
                 $semaforo->turno = $rank->turnos_eval;
                 if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
                     if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
@@ -117,7 +118,7 @@ class escuela extends memcached_table{
                             else
                                 $semaforo->semaforo = 3;
                 } else {
-                    $rank->semaforos[] = 6;//no se cuentan
+                    $semaforo->semaforo = 6;//no se cuentan
                 }
                 if ($this->semaforo >  $semaforo->semaforo) {
                     $this->semaforo = $semaforo->semaforo;
