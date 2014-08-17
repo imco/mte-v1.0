@@ -5,7 +5,7 @@
 			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
 			<?php if (isset($this->escuela->turnos) && count($this->escuela->turnos) > 1) {?>
                 <span class="select-turno">
-                    <select class="compara-button blue" id="turno_selector">
+                    <select class="compara-button blue custom-select" id="turno_selector">
                         <?php foreach($this->escuela->turnos as $turno) {
                             $selected = "";
                             if ($turno->id == $this->escuela->selected_rank->turnos_eval) {

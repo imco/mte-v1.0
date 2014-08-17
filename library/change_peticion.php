@@ -25,15 +25,10 @@ var_dump($x->regresa_razones_peticion($petition_url));
 //var_dump( $x->suma_firma_peticion($petition_url, $petition_auth_key, $parameters));
 */
 
-<<<<<<< HEAD
+
 $api_key = '***REMOVED***';
 $petition_url = 'http://www.change.org/peticiones/autoridades-educativas-del-gobierno-del-estado-de-m%C3%A9xico-exigimos-saber-como-se-gastan-nuestras-cuotas-en-la-escuela-%C3%A1ngel-maria-garibay-kintana';
 $secret_token = '***REMOVED***';
-=======
-$api_key = '***REMOVED***';
-$petition_url = 'http://www.change.org/peticiones/autoridades-educativas-del-gobierno-del-estado-de-m%C3%A9xico-exigimos-saber-como-se-gastan-nuestras-cuotas-en-la-escuela-%C3%A1ngel-maria-garibay-kintana';
-$secret_token = '***REMOVED***';
->>>>>>> 4208c916b52d561948a280f5d49bb1b8df954beb
 $x = new ApiChange( $api_key, $secret_token );
 
 $parameters['source'] = 'www.mejoratuescuela.org/peticiones';

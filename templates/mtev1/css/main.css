@@ -902,16 +902,8 @@ line-height: 45px;}
 #content .perfil.B .head .compara-button{font-size:19px;width:145px;height:31px;line-height:1.7;margin-top: 5px;display: block;margin: 6px;}
 #content .perfil.B .head .compara-button.blue{color: #4a9abb;}
 
-#content .perfil.B .head .select-turno {
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid white;
-    border-radius: 7px;
-    display: block;
-    position: relative;
-    float: right;
-    margin: 9px 0px 5px;
-    width: 156px;
-}
+#content .perfil.B .head .select-turno {background-color: rgba(255, 255, 255, 0.3);border: 1px solid white;border-radius: 7px;display: block;position: relative;float: right;margin: 9px 0px 5px;width: 156px;}
+#content .perfil.B .head .select-turno .custom-select{background:white url(/design/perfil_flechita_azul.png) no-repeat 112px;border-radius: 4px;display: inline-block;padding-left: 12px;height: 20px;line-height: 20px;width: 125px;}
 
 #content .perfil.B .info_B.top{height: auto!important;padding: 0!important}
 #content .perfil.B .info_B.top .data{height: 100%;}
@@ -1081,6 +1073,9 @@ line-height: 45px;}
 #content .perfil.B.preescolar .right .preescolar-image{background: #fff;padding: 24px 0;text-align: center;}
 #content .perfil.B.preescolar .right .preescolar-image h3{color: #339DD1;font-size: 24px}
 #content .perfil.B.preescolar .right .preescolar-image img{margin-top: 10px;width: 85%}
+
+#content .perfil.B.preescolar .head h2.second-name{padding:16px 0px;position: relative;left: 180px;}
+#content .perfil.B.preescolar .head .select-turno {margin-right: 18px;z-index: 1;}
 
 /*Blog*/
 #content .blog{margin-top:33px;width:940px;}
