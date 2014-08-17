@@ -87,9 +87,10 @@ class escuela extends memcached_table{
     public function get_semaforos(){
         $this->semaforos = array();
         $semaforo = new stdClass();
-        $semaforo->semaforo = 7;
+        $semaforo->semaforo = 4;
         $semaforo->turno = 0;
         $this->semaforo = $semaforo->semaforo;
+        $this->porcentaje_poco_confiable = 0;
 
         if($this->nivel->nombre=="PREESCOLAR"){
             $this->semaforos[] = $semaforo;
