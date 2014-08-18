@@ -235,7 +235,7 @@ class main extends controler{
 		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
 		                            municipio=>nombre,municipio=>id,control=>nombre');
 
-        if ($this->escuelas && empty($params->avoid_ranking)) {
+        if ($this->escuelas && (!isset($params->avoid_ranking) || !$params->avoid_ranking)) {
             $escuelasList = array();
             foreach($this->escuelas as $escuela){
                 $escuelasList[] = $escuela->id;

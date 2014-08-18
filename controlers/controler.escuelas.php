@@ -13,8 +13,7 @@ class escuelas extends main{
 			$params = new stdClass();
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
-			$params->nivel = $this->escuela->nivel->id;		
-			#$params->ccts = array($this->escuela->cct);
+			$params->nivel = $this->escuela->nivel->id;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 
 			$this->load_compara_cookie();
@@ -82,7 +81,7 @@ class escuelas extends main{
 		if(!$id)
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
-		$this->escuela->debug = false;
+		//$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;

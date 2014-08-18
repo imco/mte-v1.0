@@ -6,7 +6,8 @@
 			<?php if (isset($this->escuela->turnos) && count($this->escuela->turnos) > 1) {?>
                 <span class="select-turno">
                     <select class="compara-button blue custom-select" id="turno_selector">
-                        <?php foreach($this->escuela->turnos as $turno) {
+                        <?php
+                        foreach($this->escuela->turnos as $turno) {
                             $selected = "";
                             if ($turno->id == $this->escuela->selected_rank->turnos_eval) {
                                 $selected = "selected='selected'";
@@ -83,8 +84,11 @@
 					<li><span>Entidad:</span> <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
 				</ul>
 			</div>
-			<?php if($this->censo){ ?>
-            <?php foreach ($this->censo['turnos'] as $turno) {
+			<?php if($this->censo){
+                if (count($this->censo['turnos']) == 1) {
+                        echo "<div class='clear'></div>";
+                    }
+                foreach ($this->censo['turnos'] as $turno) {
                     if (count($this->censo['turnos']) > 1) {?>
                         <h4 style="color:#339dd1;font-weight: bold;"><?= $turno->nombre ?></h4>
                     <?php } ?>
@@ -150,7 +154,7 @@
                 <?php
                 if (isset($this->escuela->rank) && count($this->escuela->rank)) {
                 foreach(array_reverse($this->escuela->rank) as $rank) {
-                    $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval;
+                    $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval || count($this->escuela->rank)==1;
                     $style = $selected ? "" : "style='display:none;'";
                     ?>
                     <li <?= $style ?> class='on turnos_switch turnos_switch_<?=$rank->turnos_eval?>'>
@@ -175,7 +179,7 @@
         <?php
         if (isset($this->escuela->rank) && count($this->escuela->rank)) {
         foreach($this->escuela->rank as $rank) {
-            $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval;
+            $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval || count($this->escuela->rank)==1;
             $style = $selected ? "" : "style='display:none;'";
             ?>
             <div <?= $style ?> class='head t-tabs turnos_switch turnos_switch_<?=$rank->turnos_eval?>'><p class='title-tabs'>Desempeño académico <?= $this->capitalize($rank->turno_nombre) ?></p></div>
@@ -546,7 +550,7 @@ EOD;
             if ($this->escuela->semaforos) {
                 foreach ($this->escuela->semaforos as $semaforo) {
                     $style = "style='display:none;'";
-                    if ($semaforo->turno == $this->escuela->selected_rank->turnos_eval) {
+                    if ($semaforo->turno == $this->escuela->selected_rank->turnos_eval  || count($this->escuela->rank)==1) {
                         $style = "";
                     }
             ?>
