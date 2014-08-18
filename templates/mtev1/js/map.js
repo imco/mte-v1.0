@@ -47,7 +47,7 @@ function initialize_map(){
 	var data = $.parseJSON($("#map-data").html())
 	, uniqueEscuela
 	, cctNow = $('.hidden.CCT').text();
-	if(data && data.escuelas){
+	if(data && data.escuelas && cctNow){
 		var c=0
 		, uniqueEscuela = true
 		, cct = data.escuelas[cctNow];

@@ -90,7 +90,6 @@ class escuela extends memcached_table{
         $semaforo->semaforo = 4;
         $semaforo->turno = 0;
         $this->semaforo = $semaforo->semaforo;
-        $this->porcentaje_poco_confiable = 0;
 
         if($this->nivel->nombre=="PREESCOLAR"){
             $semaforo->semaforo = 7;
@@ -120,22 +119,17 @@ class escuela extends memcached_table{
                 } else {
                     $semaforo->semaforo = 6;//no se cuentan
                 }
-                if ($this->semaforo >  $semaforo->semaforo) {
-                    $this->semaforo = $semaforo->semaforo;
-                }
                 foreach($this->turnos as $turno) {
                     if ($turno->id == $rank->turnos_eval) {
                         $rank->turno_nombre = $turno->nombre;
                     }
                 }
-                $this->semaforos[] = $semaforo;
-            }
-            foreach($this->rank as $rank) {
-                if ($this->rank->turnos_eval == $this->semaforo->turno) {
+                if ($this->semaforo >  $semaforo->semaforo) {
+                    $this->semaforo = $semaforo->semaforo;
                     $this->selected_rank = $rank;
                 }
+                $this->semaforos[] = $semaforo;
             }
-
         } else {
 
             $this->semaforos[] = $semaforo;

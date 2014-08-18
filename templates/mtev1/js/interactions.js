@@ -612,6 +612,10 @@ $(document).ready(function(){
            $('.turnos_switch').hide();
            $('.turnos_switch_' + selected).show();
         });
+
+        var selected = $('#turno_selector').val();
+        $('.turnos_switch').hide();
+        $('.turnos_switch_' + selected).show();
     }
 });
 

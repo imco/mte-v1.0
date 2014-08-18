@@ -16,7 +16,7 @@ class escuelas extends main{
 			$params->nivel = $this->escuela->nivel->id;		
 			#$params->ccts = array($this->escuela->cct);
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
-            $params->get_rank = true;
+            //$params->get_rank = true;
 
 			$this->load_compara_cookie();
 			$this->debug = false;
@@ -27,7 +27,6 @@ class escuelas extends main{
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
-                $params2->get_rank = false;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}

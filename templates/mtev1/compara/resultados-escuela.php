@@ -17,18 +17,18 @@
 	<?php
 	if(isset($this->escuelas)){
 		foreach($this->escuelas as $escuela){
-			$escuela->get_semaforos();
-            //var_dump($escuela);
+			$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
 			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
 			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
-            $count_semaforos = count($this->semaforos);
+            //$count_semaforos = count($escuela->semaforos);
 			//<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
+            //rowspan='{$count_semaforos}'
 			echo "
 			<tr $on>
-				<td class='school'>
+				<td class='school' >
 				<div class='message-del'><p><span class='triangle'></span>Eliminar escuela del comparador</p></div>
 				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
 				<a href='/escuelas/index/{$escuela->cct}'>".
@@ -38,7 +38,6 @@
 				<td class='rank matematicas'><span>".$matematicas."</span></td>
      			<td class='rank espanol'><span>".$espaniol."</span></td>
 				<td class='nivel'>".$this->capitalize($escuela->nivel->nombre)."</td>
-
 				<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>
 				<td class='control'>".$controles[$escuela->control->id]."</td>
 				<td class='rank'><span>".$rank_entidad."</span>
