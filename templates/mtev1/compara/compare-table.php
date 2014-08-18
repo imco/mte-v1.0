@@ -22,9 +22,9 @@
 		$espaniol = $escuela->promedio_espaniol >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_espaniol) : '';
 		$r_entidad_text = $escuela->rank_entidad != '' ? "de {$escuela->entidad_cct_count}" : '';
 		$r_nacional_text = $escuela->rank_nacional != '' ? "de {$escuela->nacional_cct_count}" : '';
-        $count_semaforos = count($escuela->semaforos);
+        //$count_semaforos = count($escuela->semaforos);
 		echo "<tr class='on'>";
-		echo "<td class='checkbox compara_table' rowspan='{$count_semaforos}'><a class='compara-escuela' href='{$escuela->cct}'></a>
+		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
                 <div class='icon'>
                 <span class='icon-popup'>
                     <span class='triangle remove'></span>
@@ -36,9 +36,9 @@
 			<span class='icon-popup'>Dejar de comparar</span>
 			</div>
 		</div>";
-		echo "<td class='school' rowspan='{$count_semaforos}'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
-		echo "<td rowspan='{$count_semaforos}'>".$this->capitalize($escuela->nivel->nombre)."</td>";
-        echo "<td rowspan='{$count_semaforos}'>".$controles[$escuela->control->id]."</td>";
+		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
+		echo "<td >".$this->capitalize($escuela->nivel->nombre)."</td>";
+        echo "<td >".$controles[$escuela->control->id]."</td>";
 
         echo "<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>";//cambiar
 		echo "<td class='rank'>".$escuela->rank_entidad."<br />	
