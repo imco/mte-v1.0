@@ -37,7 +37,7 @@ class home extends main{
 		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];
 		$params->entidad = $this->user_location->id;
 		$params->limit = '0,5';
-		$this->debug = false;
+		//$this->debug = true;
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 	}
@@ -142,6 +142,7 @@ class home extends main{
 	}
 
 	public function get_top5(){
+        //$this->debug = true;
 		$niveles = array(12,13,22);
 		$params = new stdClass();
 		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];

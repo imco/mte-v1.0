@@ -22,7 +22,8 @@
 		echo "<tr>";
 		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
 		//$escuela->debug = true;
-		$escuela->key = 'cct';
+		$escuela->key = 'id';
+        $escuela->has_many_keys['enlaces'] = 'id_cct';
 		$escuela->read('
 			enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>anio,enlaces=>id,
 			enlaces=>alumnos_en_nivel0_matematicas,enlaces=>alumnos_en_nivel1_matematicas,enlaces=>alumnos_en_nivel2_matematicas,enlaces=>alumnos_en_nivel3_matematicas,

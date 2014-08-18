@@ -13,11 +13,8 @@ class main extends controler{
 	*/
 
 	public function main($config){
-
-	
 		//error_reporting(1);
 		//ini_set('display_errors', '1');
-
 		$this->config = $config; 
 		$this->dbConnect(); 
 		$this->location = get_class($this); 
@@ -238,7 +235,7 @@ class main extends controler{
 		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
 		                            municipio=>nombre,municipio=>id,control=>nombre');
 
-        if ($this->escuelas) {
+        if ($this->escuelas && empty($params->avoid_ranking)) {
             $escuelasList = array();
             foreach($this->escuelas as $escuela){
                 $escuelasList[] = $escuela->id;
@@ -589,6 +586,7 @@ class main extends controler{
 		$params = new stdClass();
 		if($this->compara_cookie){
 			$params->ccts = $this->compara_cookie;
+            $params->avoid_ranking = true;
 			$this->get_escuelas($params);
 			//$this->escuelas
 
@@ -606,6 +604,7 @@ class main extends controler{
 			$cookie = array_values($cookie);
 			if(count($cookie)){
 				$params->ccts = $cookie;
+                $params->avoid_ranking = true;
 				$this->get_escuelas($params);
 				$this->school_view = $this->escuelas?$this->escuelas:array();	
 			}

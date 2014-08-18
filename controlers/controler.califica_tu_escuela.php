@@ -77,6 +77,7 @@ class califica_tu_escuela extends main{
 				//$temp = isset($this->escuelas)?$this->escuelas:array();
 				$params2 = new stdClass();
 				$params2->ccts = $cookie;
+                $params2->avoid_rank = true;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_unique($this->escuelas);
 				$this->cookie_vistas = $cookie;

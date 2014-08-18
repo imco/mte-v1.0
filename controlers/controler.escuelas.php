@@ -26,6 +26,7 @@ class escuelas extends main{
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
+                $params2->avoid_ranking = true;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
@@ -81,7 +82,7 @@ class escuelas extends main{
 		if(!$id)
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
-		//$this->escuela->debug = true;
+		$this->escuela->debug = false;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
@@ -117,7 +118,7 @@ class escuelas extends main{
 			$this->entidad_cct_count = $entidad_info->$nivel;
             $aux = new pregunta();
             if (isset($this->escuela->calificaciones) && $this->escuela->calificaciones) {
-                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->cct);
+                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->id);
             } else {
                 $aux->search_clause = " 1 = 1 ";
                 $this->preguntas = $aux->read('id,titulo');
