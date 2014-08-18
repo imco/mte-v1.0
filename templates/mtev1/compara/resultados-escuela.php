@@ -17,7 +17,7 @@
 	<?php
 	if(isset($this->escuelas)){
 		foreach($this->escuelas as $escuela){
-			$escuela->get_semaforo();
+			$escuela->get_semaforos();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
 			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
