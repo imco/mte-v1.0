@@ -16,7 +16,7 @@ class escuelas extends main{
 			$params->nivel = $this->escuela->nivel->id;		
 			#$params->ccts = array($this->escuela->cct);
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
-            //$params->get_rank = true;
+            $params->get_rank = true;
 
 			$this->load_compara_cookie();
 			$this->debug = false;
@@ -95,7 +95,8 @@ class escuelas extends main{
 
         if(isset($this->escuela->cct)){
 			$this->escuela->read("
-				id,nombre,domicilio,paginaweb,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
+				id,nombre,domicilio,paginaweb,
+				promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
 				turno=>id,turno=>nombre,latitud,longitud,
