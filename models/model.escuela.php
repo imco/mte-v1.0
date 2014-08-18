@@ -273,22 +273,10 @@ class escuela extends memcached_table{
         return $variable;
     }
     public function get_turnos_rank(){
-        $sql = "select e.turnos_eval,e.promedio_general,e.promedio_matematicas,e.promedio_espaniol,e.total_evaluados,e.pct_reprobados,e.poco_confiables,e.turnos_eval as id,e.rank_entidad,e.rank_nacional,t.nombre from escuelas_para_rankeo e inner join turnos t on t.id = e.turnos_eval where e.id = {$this->id}";
-        $result = mysql_query($sql);
-        $this->rank = array();
-        while ($row = mysql_fetch_assoc($result)){
-            $turno = new stdClass();
-            $turno->id = $row['id'];
-            $turno->nombre = $row['nombre'];
-            $turno->promedio_general = $row['promedio_general'];
-            $turno->promedio_matematicas = $row['promedio_matematicas'];
-            $turno->total_evaluados = $row['total_evaluados'];
-            $turno->pct_reprobados = $row['pct_reprobados'];
-            $turno->poco_confiables = $row['poco_confiables'];
-            $turno->rank_entidad = $row['rank_entidad'];
-            $turno->rank_nacional = $row['rank_nacional'];
-            $this->rank[] = $turno;
-        };
+        $rank = new rank();
+        $rank->search_clause = "escuelas_para_rankeo.id = {$this->id}";
+        $ranks = $rank->read('id,turnos_eval,promedio_general,promedio_matematicas,promedio_espaniol,total_evaluados,pct_reprobados,poco_confiables,rank_entidad,rank_nacional');
+        $this->rank = $ranks;
     }
     private function load_programas($programas,$db){
 		foreach($programas as $programa){

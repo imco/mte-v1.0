@@ -146,7 +146,6 @@ class compara extends main{
 		$en = $entidad->read('id,nombre');
 		$params = new stdClass();
 		$params->entidad = $en[0]->id;
-        $params->get_rank = true;
 		if(!$params->entidad){
 			$this->get_location();
 			$params->entidad = $this->user_location->id;

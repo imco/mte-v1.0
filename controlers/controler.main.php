@@ -52,7 +52,7 @@ class main extends controler{
 					if($escuela->longitud < $minlong) $minlong = $escuela->longitud;
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
-				$escuela->get_semaforo();
+				$escuela->get_semaforos();
 				$escuelas[$escuela->cct] = new stdClass();
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
 				$escuelas[$escuela->cct]->latitud = $escuela->latitud;
@@ -238,11 +238,13 @@ class main extends controler{
 		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
 		                            municipio=>nombre,municipio=>id,control=>nombre');
 
-
-        if (isset($params->get_rank) && $params->get_rank) {
+        if ($this->escuelas) {
+            $escuelasList = array();
             foreach($this->escuelas as $escuela){
-                $escuela->get_turnos_rank();
+                $escuelasList[] = $escuela->id;
+                ///$escuela->get_turnos_rank();
             }
+            $this->set_turnos_ranked($escuelasList,$this->escuelas);
         }
 		
 		if($this->request('json')){
@@ -288,6 +290,23 @@ class main extends controler{
 		$this->num_results = $response->response->numFound;
 	}
 
+    public function set_turnos_ranked($escuelasList,$escuelas){
+        if (count($escuelasList) > 0 && $escuelas) {
+            $escuelasQuery = implode(",",$escuelas);
+            $ranks = new rank();
+            //$ranks->debug = true;
+            $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
+            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval');
+            foreach($escuelas as $escuela) {
+                $escuela->rank = array();
+                foreach($total_ranks as $rank) {
+                    if ($rank->id == $escuela->id) {
+                        $escuela->rank[] = $rank;
+                    }
+                }
+            }
+        }
+    }
 	/**
 	* Funcion Publica load_niveles. 
 	*Lee la información de la tabla niveles solo para primaria, secundaria y bachillerato guarda los datos en el atributo 'niveles'.

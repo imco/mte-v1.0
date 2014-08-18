@@ -26,7 +26,7 @@
 			$esc->nivel->nombre = $escuela->nom_nivel;
 
 			$esc->grados = $escuela->grados;
-			$esc->get_semaforo();
+			$esc->get_semaforos();
 			//$escuela->get_semaforo();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');

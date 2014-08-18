@@ -16,7 +16,6 @@ class escuelas extends main{
 			$params->nivel = $this->escuela->nivel->id;		
 			#$params->ccts = array($this->escuela->cct);
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
-            $params->get_rank = true;
 
 			$this->load_compara_cookie();
 			$this->debug = false;

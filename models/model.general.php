@@ -86,7 +86,7 @@ class colonia extends table{
 		$this->table_name = "colonias";
 	}
 }
-class rank extends table{
+class rank extends memcached_table{
     function info(){
         $this->table_name = "escuelas_para_rankeo";
     }
