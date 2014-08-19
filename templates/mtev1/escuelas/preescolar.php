@@ -25,9 +25,6 @@
 						<li><span>Clave:</span> <?=$this->escuela->cct?></li>
 						<li><span>Turno:</span> <?=$this->capitalize($this->escuela->turno->nombre)?></li>
 						<li><span><?=$controles[$this->escuela->control->id]?></span></li>
-						<?php if( isset($this->escuela->censo_2013['persona_responsable']) && strlen(trim($this->escuela->censo_2013['persona_responsable']))>0 ){ ?>
-							<!--<li>Persona responsable: <?=$this->capitalize($this->escuela->censo_2013['persona_responsable'])?></li>-->
-						<?php } ?>							
 						<li><span>Teléfonos:</span> <?=$this->escuela->telefono?></li>
 						<li><span>Correo electrónico:</span> <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
 						<?php if($this->escuela->paginaweb){ ?>
@@ -71,8 +68,8 @@
 					<?=$this->str_limit($this->escuela->paginaweb,21) ?>
 				</p>-->				
 			</div>
-			<?php if(isset($this->escuela->censo_2013) && $this->escuela->censo_2013 || $this->censo){ 
-				$tmpPersons = $this->censo?$this->censo:$this->escuela->censo_2013;
+			<?php if($this->escuela->censo){
+				$tmpPersons = $this->escuela->censo;
 			?>
 				
 				<div class="clear"></div>
@@ -169,7 +166,7 @@
 					</table>
 				</div>
 			<?php } ?>-->
-		<?php if($this->censo && ($infra = $this->censo['infraestructura'])){  ?>
+		<?php if($this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 				<h2>Información disponible corresponde al ciclo 2013/2014</h2>
@@ -405,12 +402,12 @@ EOD;
 					?>
 					<div class="clear"></div>
 				</div>
-			<?php if($this->censo){ ?>
+			<?php if($this->escuela->censo){ ?>
 				<div class="box-yesno ">
 					<?php //$this->print_img_tag('padres-de-familia.png'); ?>
 					<img src="/templates/mtev1/img/padres-de-familia.png" alt="Asociacion de padres de familia">
 					<p>¿Cuenta con Asociación de padres de familia?</p>
-					<?php $on = $this->censo['infraestructura']['Asociación de padres de familia']; ?>
+					<?php $on = $this->escuela->censo['infraestructura']['Asociación de padres de familia']; ?>
 					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='S'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
@@ -418,13 +415,13 @@ EOD;
 					<?php //$this->print_img_tag('consejo.png'); ?>
 					<img src="/templates/mtev1/img/consejo.png" alt="Consejo">
 					<p>¿Cuenta con Consejo de participacion social?</p>
-					<?php $on = $this->censo['infraestructura']['Consejo de participación social']; ?>
+					<?php $on = $this->escuela->censo['infraestructura']['Consejo de participación social']; ?>
 					<div class="yes <?=$on=='S'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='S'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>
 				<div class="box-yesno green">
 					<p>¿Esta escuela fue censada?</p>
-					<?php $on = $this->censo['status']; ?>
+					<?php $on = $this->escuela->censo['status']; ?>
 					<div class="yes <?=$on=='Censado'?'on':'';?>"><span class="circle"></span>Sí</div>
 					<div class="no <?=$on!='Censado'?'on':'';?>"><span class="circle"></span>No</div>
 				</div>

@@ -557,7 +557,7 @@ class main extends controler{
     		$m = new MongoClient("mongodb://{$this->config->mongo_server}:27017/mte_produccion");
     		return $m;
     	}catch(Exception $e){
-    		//$e->getMessage();
+            if ($this->debug) var_dump($e->getMessage());
     		return false;
     	}
     }

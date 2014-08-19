@@ -59,7 +59,6 @@ class escuelas extends main{
 			$this->title_header = 'Conoce tu escuela';
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
-            $this->censo = $this->get_censo();
 			if($this->escuela->paginaweb && substr($this->escuela->paginaweb,0,7)!='http://'){
 				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
 			}
@@ -106,9 +105,9 @@ class escuelas extends main{
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
 				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");
+            $this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_turnos();
 			$this->escuela->get_semaforos();
-			$this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_charts();
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
@@ -271,30 +270,6 @@ class escuelas extends main{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-	}
-
-	private function get_censo(){
-		$mongo = $this->mongo_connect();
-                $db = $mongo->selectDB("censo_completo_2013");
-		$collection = $db->selectCollection('datos_escuelas_v2');
-        $escuelas = $collection->find(array( 'cct_escuelas' => $this->escuela->cct))->sort(array('id_turno'=>1));
-
-        $first = false;
-        foreach($escuelas as $escuela) {
-            if (!$first) {
-                $first = true;
-                $censo = $escuela;
-                $censo['turnos'] = array();
-            }
-            $turno = new stdClass();
-            $variables = array('turno'=>'nombre','num_alumnos'=>'alumnos','num_personal'=>'personal','num_grupos'=>'grupos','id_turno'=>'id');
-            foreach( $variables as $key=>$val) {
-                if(isset($escuela[$key]) && strlen(trim($escuela[$key]))>0)
-                    $turno->$val = $escuela[$key];
-            }
-            $censo['turnos'][] = $turno;
-        }
-		return $censo;
 	}
 
 	private function isSpam($params=array()){

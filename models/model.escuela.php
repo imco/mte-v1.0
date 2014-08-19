@@ -154,28 +154,27 @@ class escuela extends memcached_table{
 		return mysql_query($sql);		
 	}
 	public function get_mongo_info($client){
-		if($client){			
-			//Produccion
-			$db = $client->selectDB("censo_completo_2013");
-			$c = $db->selectCollection('datos_escuelas_v2');
-            $this->censo_2013 = $c->findOne(array('cct_escuelas'=>$this->cct));
-			if(isset($this->censo_2013)){
-				$variables = array('nombre'=>'nombre','coord1'=>'latitud','coord2'=>'longitud','persona_responsable'=>'director','telefono'=>'telefono');
-				if(isset($this->censo_2013) && count($this->censo_2013)>0 ){
-					foreach( $variables as $key=>$val)
-						if(isset($this->censo_2013[$key]) && strlen(trim($this->censo_2013[$key]))>0)
-							$this->$val = $this->censo_2013[$key];
-
-					if(isset($this->censo_2013['calle'],$this->censo_2013['cp'],$this->censo_2013['numero_dir']) && strlen(trim($this->censo_2013['calle']))>0){
-						$cp = ctype_digit((string)$this->censo_2013['cp'])? ', CP '.$this->censo_2013['cp'].',':',';
-						$this->domicilio = $this->censo_2013['calle'].' '.$this->censo_2013['numero_dir'].$cp;
-					}
-
-				}
-			}
-			else
-				$this->censo_2013 = false;
-
+		if($client){
+            $db = $client->selectDB("censo_completo_2013");
+            $collection = $db->selectCollection('datos_escuelas_v2');
+            $escuelas = $collection->find(array( 'cct_escuelas' => $this->cct))->sort(array('id_turno'=>1));
+            $first = false;
+            $censo = false;
+            foreach($escuelas as $escuela) {
+                if (!$first) {
+                    $first = true;
+                    $censo = $escuela;
+                    $censo['turnos'] = array();
+                }
+                $turno = new stdClass();
+                $variables = array('turno'=>'nombre','num_alumnos'=>'alumnos','num_personal'=>'personal','num_grupos'=>'grupos','id_turno'=>'id');
+                foreach( $variables as $key=>$val) {
+                    if(isset($escuela[$key]) && strlen(trim($escuela[$key]))>0)
+                        $turno->$val = $escuela[$key];
+                }
+                $censo['turnos'][] = $turno;
+            }
+            $this->censo = $censo;
 
             $db = $client->selectDB("mte_produccion");
             $c = $db->selectCollection('snie');
@@ -274,6 +273,7 @@ class escuela extends memcached_table{
     }
     public function get_turnos_rank(){
         $rank = new rank();
+        //$rank->debug = true;
         $rank->search_clause = "escuelas_para_rankeo.id = {$this->id}";
         $ranks = $rank->read('id,turnos_eval,promedio_general,promedio_matematicas,promedio_espaniol,total_evaluados,pct_reprobados,poco_confiables,rank_entidad,rank_nacional');
         $this->rank = $ranks;
