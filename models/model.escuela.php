@@ -86,7 +86,7 @@ class escuela extends memcached_table{
 
     public function get_semaforos(){
         $semaforo = 4;
-        $this->semaforo = $semaforo;
+        $this->semaforo = 4;
 
         if($this->nivel->nombre=="PREESCOLAR"){
             $semaforo->semaforo = 7;
@@ -297,12 +297,13 @@ class escuela extends memcached_table{
         $this->programas = array();
         foreach($results as $res){
             //var_dump($res);
-            if (!isset($this->programas[$res['programa']])) {
+            $programaName = $res['programa'];
+            if (!isset($this->programas[$programaName])) {
                 $programa = new stdClass();
                 $programa->anios = array();
-                $this->programas[$res['programa']] = $programa;
+                $this->programas[$programaName] = $programa;
             }
-            $this->programas[$res['programa']]->anios[] = $res['anio'];
+            $this->programas[$programaName]->anios[] = $res['anio'];
         }
     }
 }

@@ -18,7 +18,7 @@
 		$controles = array(1=>'Pública', 2=>'Privada');
 		//$slug = $this->current_rank->slug;
 		//$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
-        $count_semaforos = count($escuela->rank);
+        $count_semaforos = count($escuela->rank) ? count($escuela->rank) : 1;
 		echo "<tr class='on'>";
 		echo "<td class='checkbox compara_table' rowspan='{$count_semaforos}'><a class='compara-escuela' href='{$escuela->cct}'></a>
                 <div class='icon'>
@@ -42,7 +42,7 @@
                     echo "<tr class='on'>";
                 }
 
-                echo "<td class='turno'>".$this->capitalize("ASD")."</td>";//cambiar
+                echo "<td class='turno'>".$this->capitalize($rank->turno[0]->nombre)."</td>";//cambiar
                 echo "<td class='rank'>".$rank->rank_entidad."<br />
                             $r_entidad_text
                 </td>";
@@ -64,7 +64,22 @@
                 </td>";
                 echo "</tr>";
             }
-	    }
+	    } else {
+            echo "<td class='turno'>Matutino</td>";//cambiar
+            echo "<td class='rank'>0<br /></td>";
+            echo "<td class='rank'><br /></td>";
+            echo "<td class='rank'><span>0</span></td>";
+            echo "<td class='rank'><span>0</span></td>";
+            echo "<td class='semaforo sem4'><span class='sprit2'></span>
+                        <div class='icon'><span class='triangle'></span><span class='icon-popup'>
+                                <p class='infor I'>i</p>
+                                <p class='title_semaforo'>
+                                   Esta escuela no tomó la prueba ENLACE
+                                </p>
+                        </span></div>
+                </td>";
+            echo "</tr>";
+        }
     }
 	?>
 </table>
