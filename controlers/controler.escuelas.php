@@ -107,7 +107,7 @@ class escuelas extends main{
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
 				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");
-            //$this->escuela->get_mongo_info($this->mongo_connect());
+            $this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_turnos();
 			$this->escuela->get_semaforos();
             $this->escuela->get_charts();
