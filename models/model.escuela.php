@@ -85,55 +85,59 @@ class escuela extends memcached_table{
 	}
 
     public function get_semaforos(){
-        $this->semaforos = array();
-        $semaforo = new stdClass();
-        $semaforo->semaforo = 4;
-        $semaforo->turno = 0;
-        $this->semaforo = $semaforo->semaforo;
+        $semaforo = 4;
+        $this->semaforo = $semaforo;
 
         if($this->nivel->nombre=="PREESCOLAR"){
             $semaforo->semaforo = 7;
-            $this->semaforos[] = $semaforo;
+            $this->semaforo = $semaforo;
             return;
         }
 
         if (isset($this->rank) && count($this->rank) > 0) {
             foreach ($this->rank as $rank) {
-                $semaforo = new stdClass();
-                $semaforo->semaforo = 4;
-                $semaforo->turno = $rank->turnos_eval;
-                if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
-                    if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
-                        $semaforo->semaforo = 5;//poco confiable
-                    }
-                    else if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
-                        $semaforo->semaforo = 0;
-                    else
-                        if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )
-                            $semaforo->semaforo = 1;
-                        else
-                            if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] )
-                                $semaforo->semaforo = 2;
-                            else
-                                $semaforo->semaforo = 3;
-                } else {
-                    $semaforo->semaforo = 6;//no se cuentan
-                }
-                foreach($this->turnos as $turno) {
-                    if ($turno->id == $rank->turnos_eval) {
-                        $rank->turno_nombre = $turno->nombre;
-                    }
-                }
-                if ($this->semaforo >  $semaforo->semaforo) {
-                    $this->semaforo = $semaforo->semaforo;
-                    $this->selected_rank = $rank;
-                }
-                $this->semaforos[] = $semaforo;
-            }
-        } else {
+                $this->get_semaforo_new($rank);
 
-            $this->semaforos[] = $semaforo;
+                foreach($this->turnos as $turno){
+                    if ($rank->turnos_eval == $turno->id) {
+                        $rank->turno = array();
+                        $rank->turno[0]->nombre = $turno->nombre;
+                    }
+                }
+            }
+
         }
+    }
+
+    private function get_semaforo_new($rank){
+        if (!$rank) return false;
+
+        $semaforo = 4;
+
+        if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
+            if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
+                $semaforo = 5;//poco confiable
+            }
+            else if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
+                $semaforo = 0;//amarillo
+            else
+                if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )
+                    $semaforo = 1;//verde
+                else
+                    if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] )
+                        $semaforo = 2;//naranja
+                    else
+                        $semaforo = 3;//reprobado
+        } else {
+            $semaforo = 6;//no se cuentan
+        }
+
+        if ($this->semaforo >  $semaforo) {
+            $this->semaforo = $semaforo;
+            $this->selected_rank = $rank;
+        }
+        $rank->semaforo = $semaforo;
+        return $semaforo;
     }
 
 	public function rank($nivel,$entidad = false,$municipio = false){
@@ -191,17 +195,19 @@ class escuela extends memcached_table{
                 $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
             }
 
-			//Programas Federales
-			$db = $client->selectDB("mte_programas");
-			$programas = array('pec','pes','petc','siat');
-			$this->load_programas($programas,$db);
-			//OSCs
-			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
-			$this->load_programas($programas,$db);
+//			//Programas Federales
+//			$db = $client->selectDB("mte_programas");
+//			$programas = array('pec','pes','petc','siat');
+//			$this->load_programas($programas,$db);
+//			//OSCs
+//			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
+//			$this->load_programas($programas,$db);
+
+            $db = $client->selectDB("mte_programas");
+            $this->load_programas2($db);
 
 			$client->close();
 		}else{
-            //no se para que es esto.
 			$programas = array('censo_2013','snie','infraestructura', 'pec','pes','petc','siat','proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
 			foreach($programas as $programa){
 				$this->$programa = false;
@@ -285,5 +291,20 @@ class escuela extends memcached_table{
 			$this->$programa = iterator_to_array($this->$programa);
 		}
 	}
+    private function load_programas2($db){
+        $c = $db->selectCollection("normalizados");
+        $results = $c->find(array('cct'=>$this->cct));
+        $this->escuela->programas2 = array();
+        foreach($results as $res){
+            //var_dump($res);
+            if (!isset($this->escuela->programas2[$res['programa']])) {
+                $programa = new stdClass();
+                $programa->anios = array();
+                $this->escuela->programas2[$res['programa']] = $programa;
+            }
+            $this->escuela->programas2[$res['programa']]->anios[] = $res['anio'];
+        }
+        var_dump($this->escuela->programas2);
+    }
 }
 ?>

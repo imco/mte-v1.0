@@ -3,17 +3,18 @@
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 			<a href="/compara/escuelas" class="button-frame"><span class="compara-button orange-effect">Comparar</span></a>
-			<?php if (isset($this->escuela->turnos) && count($this->escuela->turnos) > 1) {?>
+			<?php if (isset($this->escuela->rank) && count($this->escuela->rank) > 1) {
+                ?>
                 <span class="select-turno">
                     <select class="compara-button blue custom-select" id="turno_selector">
                         <?php
-                        foreach($this->escuela->turnos as $turno) {
+                        foreach($this->escuela->rank as $rank) {
                             $selected = "";
-                            if ($turno->id == $this->escuela->selected_rank->turnos_eval) {
+                            if ($rank->turnos_eval == $this->escuela->selected_rank->turnos_eval) {
                                 $selected = "selected='selected'";
                             }
-                            $nombre = $this->capitalize($turno->nombre);
-                            echo "<option value='{$turno->id}' {$selected}>{$nombre}</option>";
+                            $nombre = $this->capitalize($rank->turno[0]->nombre);
+                            echo "<option value='{$rank->turnos_eval}' {$selected}>{$nombre}</option>";
                         } ?>
                     </select>
                 </span>
@@ -81,10 +82,8 @@
 					<li><span>Entidad:</span> <?=$this->capitalize($this->escuela->entidad->nombre)?></li>
 				</ul>
 			</div>
+            <div class="clear"></div>
 			<?php if($this->escuela->censo){
-                if (count($this->escuela->censo['turnos']) == 1) {
-                        echo "<div class='clear'></div>";
-                    }
                 foreach ($this->escuela->censo['turnos'] as $turno) {
                     if (count($this->escuela->censo['turnos']) > 1) {?>
                         <h4 style="color:#339dd1;font-weight: bold;"><?= $turno->nombre ?></h4>
@@ -157,7 +156,7 @@
                     <li <?= $style ?> class='on turnos_switch turnos_switch_<?=$rank->turnos_eval?>'>
                         <a href='#tab-charts-<?=$rank->turnos_eval?>' class='long comentarios'>
                         <span class='triangle'></span>
-                        Desempeño académico  <?= $this->capitalize($rank->turno_nombre) ?>
+                        Desempeño académico  <?= $this->capitalize($rank->turno[0]->nombre) ?>
                         </a>
                     </li>
                 <?php }
@@ -179,7 +178,7 @@
             $selected = $rank->turnos_eval == $this->escuela->selected_rank->turnos_eval || count($this->escuela->rank)==1;
             $style = $selected ? "" : "style='display:none;'";
             ?>
-            <div <?= $style ?> class='head t-tabs turnos_switch turnos_switch_<?=$rank->turnos_eval?>'><p class='title-tabs'>Desempeño académico <?= $this->capitalize($rank->turno_nombre) ?></p></div>
+            <div <?= $style ?> class='head t-tabs turnos_switch turnos_switch_<?=$rank->turnos_eval?>'><p class='title-tabs'>Desempeño académico <?= $this->capitalize($rank->turno[0]->nombre) ?></p></div>
 
             <div <?= $style ?> class='tab charts on turnos_switch turnos_switch_<?=$rank->turnos_eval?>' id='tab-charts-<?= $rank->turnos_eval ?>'>
                 <div class='chart-box'>
@@ -544,15 +543,15 @@ EOD;
 	<div class='column right'>
 		<div class="box">
             <?php
-            if ($this->escuela->semaforos) {
-                foreach ($this->escuela->semaforos as $semaforo) {
+            if ($this->escuela->rank) {
+                foreach ($this->escuela->rank as $rank) {
                     $style = "style='display:none;'";
-                    if ($semaforo->turno == $this->escuela->selected_rank->turnos_eval  || count($this->escuela->rank)==1) {
+                    if ($rank->turnos_eval == $this->escuela->selected_rank->turnos_eval  || count($this->escuela->rank)==1) {
                         $style = "";
                     }
             ?>
-			<div class='semaforo turnos_switch turnos_switch_<?=$semaforo->turno?>' <?= $style ?>>
-				<?php $on = $this->config->semaforos[$semaforo->semaforo];?>
+			<div class='semaforo turnos_switch turnos_switch_<?=$rank->turnos_eval?>' <?= $style ?>>
+				<?php $on = $this->config->semaforos[$rank->semaforo];?>
 				<h2>Semáforo educativo</h2>
 				<div class='level excelente<?= $on=='Excelente'?' on':''?>'>
 					<p>Excelente</p>
@@ -575,13 +574,12 @@ EOD;
 					<div class='clear'></div>
 				</div>
                 <?php
-
-                if($semaforo->semaforo >= 4 && $semaforo->semaforo < 8){
+                if($rank->semaforo >= 4 && $rank->semaforo < 8){
                     $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
-                    echo "<div class='sem-overlay turnos_switch turnos_switch_{$semaforo->turno}' ><div class='icon sprit2 icon{$semaforo->semaforo}'></div><div class='clear'></div>
+                    echo "<div class='sem-overlay turnos_switch turnos_switch_{$rank->turnos_eval}' ><div class='icon sprit2 icon{$rank->semaforo}'></div><div class='clear'></div>
                             <p>".
-                        $semaforos[$semaforo->semaforo-4]."</p><div class='popup-faq opc".($semaforo->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
-                } else if ($semaforo->semaforo == 8){ //
+                        $semaforos[$rank->semaforo-4]."</p><div class='popup-faq opc".($rank->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
+                } else if ($rank->semaforo == 8){ //
                     echo "<div class='sem-overlay-brighter turnos_switch turnos_switch_{$semaforo->turno}'><div class='sprit-grey'></div><div class='clear'></div>
                             <p>NO HAY DATOS DE DESEMPEÑO DISPONIBLES PARA ESTA ESCUELA</p></div>";
                 }
@@ -633,14 +631,12 @@ EOD;
 						<?php
 						foreach($this->programas_federales as $programa){
 						?>
-						<li class='<?=$this->escuela->{$programa->m_collection} && count($this->escuela->{$programa->m_collection})?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
+						<li class='<?= isset($this->escuela->programas[$programa->m_collection]) ?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
 							<?=$programa->nombre?>
 							<?php
 							//var_dump($this->escuela->{$programa->m_collection});
-							if($this->escuela->{$programa->m_collection} && isset($this->escuela->{$programa->m_collection}[0]['anio'])){
-								$anios = array();
-								foreach($this->escuela->{$programa->m_collection} as $p) $anios[] = $p['anio'];
-								echo implode(",",$anios);
+							if(isset($this->escuela->programas[$programa->m_collection]->anios)){
+								echo implode(",",$this->escuela->programas[$programa->m_collection]->anios);
 							}
 							?>
 						</a></li>
@@ -658,7 +654,7 @@ EOD;
 						    	$datoExtra = " (datos del 2012)";
 						?>
 
-						<li class='<?=$this->escuela->{$programa->m_collection} && count($this->escuela->{$programa->m_collection})?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
+						<li class='<?= isset($this->escuela->programas[$programa->m_collection]) ?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
 							<?=$programa->nombre.$datoExtra?>
 						</a></li>
 						<? } ?>

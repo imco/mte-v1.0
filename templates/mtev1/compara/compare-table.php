@@ -18,50 +18,53 @@
 		$controles = array(1=>'Pública', 2=>'Privada');
 		//$slug = $this->current_rank->slug;
 		//$slugTotal = $this->current_rank->name=="Nacional"?"nacional_cct_count":"entidad_cct_count";
-		$matematicas = $escuela->promedio_matematicas >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_matematicas) : '';
-		$espaniol = $escuela->promedio_espaniol >= 0 && $escuela->semaforo <= 3 ? round($escuela->promedio_espaniol) : '';
-		$r_entidad_text = $escuela->rank_entidad != '' ? "de {$escuela->entidad_cct_count}" : '';
-		$r_nacional_text = $escuela->rank_nacional != '' ? "de {$escuela->nacional_cct_count}" : '';
-        //$count_semaforos = count($escuela->semaforos);
+        $count_semaforos = count($escuela->rank);
 		echo "<tr class='on'>";
-		echo "<td class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
+		echo "<td class='checkbox compara_table' rowspan='{$count_semaforos}'><a class='compara-escuela' href='{$escuela->cct}'></a>
                 <div class='icon'>
                 <span class='icon-popup'>
                     <span class='triangle remove'></span>
                 Dejar de comparar</span>
                 </div>
             </td>";
-		$c = "<div class='checkbox compara_table'><a class='compara-escuela' href='{$escuela->cct}'></a>
-			<div class='icon'>
-			<span class='icon-popup'>Dejar de comparar</span>
-			</div>
-		</div>";
-		echo "<td class='school'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
-		echo "<td >".$this->capitalize($escuela->nivel->nombre)."</td>";
-        echo "<td >".$controles[$escuela->control->id]."</td>";
+		echo "<td class='school' rowspan='{$count_semaforos}' style='display:table-cell;'><a href='/escuelas/index/$escuela->cct'>".$this->capitalize($escuela->nombre)."</td>";
+		echo "<td rowspan='{$count_semaforos}'>".$this->capitalize($escuela->nivel->nombre)."</td>";
+        echo "<td rowspan='{$count_semaforos}'>".$controles[$escuela->control->id]."</td>";
 
-        echo "<td class='turno'>".$this->capitalize($escuela->turno->nombre)."</td>";//cambiar
-		echo "<td class='rank'>".$escuela->rank_entidad."<br />	
-					$r_entidad_text
-		</td>";
-		echo "<td class='rank'>".$escuela->rank_nacional."<br />	
-					$r_nacional_text
-		</td>";
+        if (isset($escuela->rank) && count($escuela->rank)) {
+            foreach($escuela->rank as $key=>$rank) {
+                $matematicas = $rank->promedio_matematicas >= 0 && $rank->semaforo <= 3 ? round($rank->promedio_matematicas) : '';
+                $espaniol = $rank->promedio_espaniol >= 0 && $rank->semaforo <= 3 ? round($rank->promedio_espaniol) : '';
+                $r_entidad_text = $rank->rank_entidad != '' ? "de {$escuela->entidad_cct_count}" : '';
+                $r_nacional_text = $rank->rank_nacional != '' ? "de {$escuela->nacional_cct_count}" : '';
 
-		echo "<td class='rank'><span>".$espaniol."</span></td>";
-		echo "<td class='rank'><span>".$matematicas."</span></td>";
-		echo "<td class='semaforo sem{$escuela->semaforo}'><span class='sprit2'></span>
-				<div class='icon'><span class='triangle'></span><span class='icon-popup'>
-						<p class='infor I'>i</p>
-						<p class='title_semaforo'>
-							".$this->config->semaforos[$escuela->semaforo]."
-						</p>
-						"/*
-						descripcion del semáforo
-						*/."
-				</span></div>
-		</td>";
-		echo "</tr>";
-	}
+                if ($key > 0) {
+                    echo "<tr class='on'>";
+                }
+
+                echo "<td class='turno'>".$this->capitalize("ASD")."</td>";//cambiar
+                echo "<td class='rank'>".$rank->rank_entidad."<br />
+                            $r_entidad_text
+                </td>";
+                echo "<td class='rank'>".$rank->rank_nacional."<br />
+                            $r_nacional_text
+                </td>";
+                echo "<td class='rank'><span>".$espaniol."</span></td>";
+                echo "<td class='rank'><span>".$matematicas."</span></td>";
+                echo "<td class='semaforo sem{$rank->semaforo}'><span class='sprit2'></span>
+                        <div class='icon'><span class='triangle'></span><span class='icon-popup'>
+                                <p class='infor I'>i</p>
+                                <p class='title_semaforo'>
+                                    ".$this->config->semaforos[$rank->semaforo]."
+                                </p>
+                                "/*
+                                descripcion del semáforo
+                                */."
+                        </span></div>
+                </td>";
+                echo "</tr>";
+            }
+	    }
+    }
 	?>
 </table>

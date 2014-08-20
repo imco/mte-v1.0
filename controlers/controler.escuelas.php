@@ -38,6 +38,7 @@ class escuelas extends main{
 
 			$this->escuelas = array_unique($this->escuelas);
 
+
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 			$this->get_metadata();
@@ -97,7 +98,8 @@ class escuelas extends main{
 				promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
-				turno=>id,turno=>nombre,latitud,longitud,
+				turno=>id,turno=>nombre,
+				latitud,longitud,
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
