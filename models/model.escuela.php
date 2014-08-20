@@ -294,17 +294,16 @@ class escuela extends memcached_table{
     private function load_programas2($db){
         $c = $db->selectCollection("normalizados");
         $results = $c->find(array('cct'=>$this->cct));
-        $this->escuela->programas2 = array();
+        $this->programas = array();
         foreach($results as $res){
             //var_dump($res);
-            if (!isset($this->escuela->programas2[$res['programa']])) {
+            if (!isset($this->programas[$res['programa']])) {
                 $programa = new stdClass();
                 $programa->anios = array();
-                $this->escuela->programas2[$res['programa']] = $programa;
+                $this->programas[$res['programa']] = $programa;
             }
-            $this->escuela->programas2[$res['programa']]->anios[] = $res['anio'];
+            $this->programas[$res['programa']]->anios[] = $res['anio'];
         }
-        var_dump($this->escuela->programas2);
     }
 }
 ?>
