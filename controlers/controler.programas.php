@@ -51,7 +51,7 @@ class programas extends main{
 
     /**
      * requiere m_collection seteado
-     * setead escuelas y estado_escuelas
+     * setea escuelas y estado_escuelas
      * */
     protected function get_estado_escuelas_count($m_collection = false){
         $estado_escuelas = array();
@@ -61,6 +61,7 @@ class programas extends main{
             $m = $this->mongo_connect();
             if($m){ 
                 $db = $m->selectDB("mte_programas");
+
                 $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
 
                 $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
@@ -78,7 +79,7 @@ class programas extends main{
                         $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
                     }
                 }
-
+                var_dump($estado_escuelas);
                 $m->close();
             }
         } catch(Exception $ex) {

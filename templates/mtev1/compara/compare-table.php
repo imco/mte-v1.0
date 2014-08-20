@@ -14,6 +14,7 @@
 	<?php 
 	if($this->escuelas!=null)
 	foreach($this->escuelas as $escuela){
+        $escuela->get_turnos();
 		$escuela->get_semaforos();
 		$controles = array(1=>'Pública', 2=>'Privada');
 		//$slug = $this->current_rank->slug;
