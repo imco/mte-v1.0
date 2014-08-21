@@ -62,9 +62,9 @@ class programas extends main{
             if($m){ 
                 $db = $m->selectDB("mte_programas");
 
-                $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
+                $c = $db->selectCollection("normalizados");//pec,jornada_amplia,siat,censo_2013
 
-                $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
+                $max_aux = $c->find(array("programa" => $m_collection))->sort(array ("anio" => -1))->limit(1);
                 $aux = $max_aux->getNext();
                 $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
 
@@ -74,9 +74,9 @@ class programas extends main{
                         $aux = '0'.$i;
                     }
                     if ($max_anio) {
-                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$aux.'.*') ));
+                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
                     } else {
-                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '^'.$aux.'.*') ));
+                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
                     }
                 }
                 $m->close();
