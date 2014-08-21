@@ -59,13 +59,10 @@ class programas extends main{
         if (!$m_collection) return $estado_escuelas;
         try {
             $m = $this->mongo_connect();
-            var_dump($m);
             if($m){ 
                 $db = $m->selectDB("mte_programas");
-                var_dump($db);
 
                 $c = $db->selectCollection($m_collection);//pec,jornada_amplia,siat,censo_2013
-                var_dump($c);
 
                 $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
                 $aux = $max_aux->getNext();
