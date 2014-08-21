@@ -74,9 +74,9 @@ class programas extends main{
                         $aux = '0'.$i;
                     }
                     if ($max_anio) {
-                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$aux.'.*') ));
                     } else {
-                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '\A'.$aux.'.*') ));
+                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '^'.$aux.'.*') ));
                     }
                 }
                 var_dump($estado_escuelas);
