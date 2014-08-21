@@ -55,7 +55,6 @@ class programas extends main{
      * */
     protected function get_estado_escuelas_count($m_collection = false){
         $estado_escuelas = array();
-
         if (!$m_collection) return $estado_escuelas;
         try {
             $m = $this->mongo_connect();
