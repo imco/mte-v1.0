@@ -311,7 +311,7 @@ class main extends controler{
 	public function load_niveles(){
 		
 		$q = new nivel();
-		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';// || niveles.id = "11"';
+		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22" || niveles.id = "11"';
 		$this->niveles = $q->read('id,nombre');
 	}
 
@@ -320,7 +320,6 @@ class main extends controler{
 	* Lee la información de la tabla entidades aplicando opcionalmente el orden con el que se guardaran los datos en el atributo 'entidades'.
 	*/
 	public function load_entidades($order_by = false){
-		
 		$q = new entidad();
 		$q->search_clause = 'rank > 0';
 		if($order_by) $q->order_by = $order_by;
