@@ -1,4 +1,5 @@
 <div class='perfil container B'>
+    <?php //$this->include_template('escuelas_excelencia','global');?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
@@ -666,5 +667,4 @@ EOD;
 	</div>
 	<div class='clear'></div>
 </div>
-
 <?php $this->include_template('resultados-escuela','compara')?>
