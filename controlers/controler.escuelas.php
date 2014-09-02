@@ -81,7 +81,7 @@ class escuelas extends main{
 		if(!$id)
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
-		$this->escuela->debug = true;
+		$this->escuela->debug = false;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
