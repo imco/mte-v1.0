@@ -1,6 +1,6 @@
 <div class='perfil container B'>
     <?php 
-    var_dump($this->escuela->programas);
+    //var_dump($this->escuela->programas);
     if(isset($this->escuela->programas['escuelas_de_excelencia']))
         $this->include_template('escuelas_excelencia','global');
     ?>
