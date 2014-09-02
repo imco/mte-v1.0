@@ -81,16 +81,13 @@ class escuelas extends main{
 		if(!$id)
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
-		//$this->escuela->debug = true;
+		$this->escuela->debug = true;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
-		$this->escuela->read("id,cct");
-
-        //damn nigga.
-        $this->escuela->key = 'id';
+		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");        $this->escuela->key = 'id';
         $this->escuela->has_many_keys["enlaces"] = "id_cct";
-        $this->escuela->has_many_keys["calificaciones"] = "id_cct";
+        //$this->escuela->has_many_keys["calificaciones"] = "id_cct";
 
         if(isset($this->escuela->cct)){
 			$this->escuela->read("
@@ -103,7 +100,7 @@ class escuelas extends main{
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre,
+				
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
 				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");

@@ -101,6 +101,7 @@ class escuela extends memcached_table{
                 foreach($this->turnos as $turno){
                     if ($rank->turnos_eval == $turno->id) {
                         $rank->turno = array();
+                        $rank->turno[0] = new stdClass();
                         $rank->turno[0]->nombre = $turno->nombre;
                     }
                 }
@@ -216,6 +217,7 @@ class escuela extends memcached_table{
 	}
 	public function get_turnos(){
         $sql = "select distinct e.turnos_eval,t.nombre from escuelas_para_rankeo e inner join turnos t on t.id = e.turnos_eval where e.id = {$this->id}";
+        //echo $sql;
         $result = mysql_query($sql);
         $this->turnos = array();
         while ($row = mysql_fetch_assoc($result)){

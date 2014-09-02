@@ -49,6 +49,7 @@ class main extends controler{
 					if($escuela->longitud < $minlong) $minlong = $escuela->longitud;
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
+				$escuela->get_turnos();
 				$escuela->get_semaforos();
 				$escuelas[$escuela->cct] = new stdClass();
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
