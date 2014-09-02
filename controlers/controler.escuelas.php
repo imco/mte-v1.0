@@ -115,7 +115,7 @@ class escuelas extends main{
 			$this->entidad_cct_count = $entidad_info->$nivel;
             $aux = new pregunta();
             if (isset($this->escuela->calificaciones) && $this->escuela->calificaciones) {
-                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->id);
+                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->cct);
             } else {
                 $aux->search_clause = " 1 = 1 ";
                 $this->preguntas = $aux->read('id,titulo');
