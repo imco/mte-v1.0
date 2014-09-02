@@ -63,7 +63,7 @@ $canonical = $this->config->http_address.(isset($_GET['controler'])?$_GET['contr
  </head>
  <body>
  	<div id="wrap"><div id="main" class="clearfix"><div id="topBackRepeat">
-
+ 		
 		<?php $this->include_template('comparador_select','global'); ?>
 		<div id='header'>
 			<?php 

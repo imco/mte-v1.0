@@ -31,7 +31,10 @@ $(document).ready(function(){
 	  gutter: 16
 	});
 
-
+	$(".escuelas_excelencia").fadeIn();
+	$(".escuelas_excelencia .close").click(function(){
+		$(".escuelas_excelencia").fadeOut();
+	});
 
 	$('#ver-en-mapa').click(function(e){
 		e.preventDefault();
