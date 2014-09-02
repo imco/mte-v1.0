@@ -1,5 +1,9 @@
 <div class='perfil container B'>
-    <?php //$this->include_template('escuelas_excelencia','global');?>
+    <?php 
+    //var_dump($this->escuela->programas);
+    if(isset($this->escuela->programas['escuelas_de_excelencia']))
+        $this->include_template('escuelas_excelencia','global');
+    ?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
