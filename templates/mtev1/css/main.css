@@ -893,6 +893,10 @@ line-height: 45px;}
 #content .share-bt.escuelas_index{margin:-16px 0;}
 
 /*Perfil B*/
+
+#content .perfil.B .escuelas_excelencia{position: fixed;right: -25px;top: 20%;z-index: 1000;display: none;}
+#content .perfil.B .escuelas_excelencia .close{background-image: url(/design/mte3.png);display: block;height: 50px;left: 210px;position: relative;top: 55px;width: 50px;}
+
 #content .perfil.B{margin:23px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .box-head.fixed{position: fixed;top: 0;width: 900px;z-index: 99;}
 #content .perfil.B .head h1.main-name{float:left;padding-left:6px;width:460px;line-height:30px;padding:16px 6px;}

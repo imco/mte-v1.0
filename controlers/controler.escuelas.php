@@ -13,8 +13,7 @@ class escuelas extends main{
 			$params = new stdClass();
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
-			$params->nivel = $this->escuela->nivel->id;		
-			#$params->ccts = array($this->escuela->cct);
+			$params->nivel = $this->escuela->nivel->id;
 			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
 
 			$this->load_compara_cookie();
@@ -39,6 +38,7 @@ class escuelas extends main{
 
 			$this->escuelas = array_unique($this->escuelas);
 
+
 			$this->process_escuelas();
 			$this->cct_count_entidad();
 			$this->get_metadata();
@@ -60,7 +60,6 @@ class escuelas extends main{
 			$this->title_header = 'Conoce tu escuela';
 			$this->subtitle_header = 'El primer paso para poder mejorar tu centro escolar es saber cómo está. Te invitamos a que conozcas y compartas esta información.';
 			$this->header_folder = 'compara';
-            $this->censo = $this->get_censo();
 			if($this->escuela->paginaweb && substr($this->escuela->paginaweb,0,7)!='http://'){
 				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
 			}
@@ -86,12 +85,9 @@ class escuelas extends main{
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
-		$this->escuela->read("id,cct");
-
-        //damn nigga.
-        $this->escuela->key = 'id';
+		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");        $this->escuela->key = 'id';
         $this->escuela->has_many_keys["enlaces"] = "id_cct";
-        $this->escuela->has_many_keys["calificaciones"] = "id_cct";
+        //$this->escuela->has_many_keys["calificaciones"] = "id_cct";
 
         if(isset($this->escuela->cct)){
 			$this->escuela->read("
@@ -99,17 +95,18 @@ class escuelas extends main{
 				promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
-				turno=>id,turno=>nombre,latitud,longitud,
+				turno=>id,turno=>nombre,
+				latitud,longitud,
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-				calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre,
+				
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
 				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");
+            $this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_turnos();
 			$this->escuela->get_semaforos();
-			$this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_charts();
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
@@ -118,7 +115,7 @@ class escuelas extends main{
 			$this->entidad_cct_count = $entidad_info->$nivel;
             $aux = new pregunta();
             if (isset($this->escuela->calificaciones) && $this->escuela->calificaciones) {
-                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->id);
+                $this->preguntas = $aux->getPreguntasConPromedio($this->escuela->cct);
             } else {
                 $aux->search_clause = " 1 = 1 ";
                 $this->preguntas = $aux->read('id,titulo');
@@ -272,30 +269,6 @@ class escuelas extends main{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}
 		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-	}
-
-	private function get_censo(){
-		$mongo = $this->mongo_connect();
-                $db = $mongo->selectDB("censo_completo_2013");
-		$collection = $db->selectCollection('datos_escuelas_v2');
-        $escuelas = $collection->find(array( 'cct_escuelas' => $this->escuela->cct))->sort(array('id_turno'=>1));
-
-        $first = false;
-        foreach($escuelas as $escuela) {
-            if (!$first) {
-                $first = true;
-                $censo = $escuela;
-                $censo['turnos'] = array();
-            }
-            $turno = new stdClass();
-            $variables = array('turno'=>'nombre','num_alumnos'=>'alumnos','num_personal'=>'personal','num_grupos'=>'grupos','id_turno'=>'id');
-            foreach( $variables as $key=>$val) {
-                if(isset($escuela[$key]) && strlen(trim($escuela[$key]))>0)
-                    $turno->$val = $escuela[$key];
-            }
-            $censo['turnos'][] = $turno;
-        }
-		return $censo;
 	}
 
 	private function isSpam($params=array()){

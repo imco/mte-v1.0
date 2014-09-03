@@ -49,6 +49,7 @@ class main extends controler{
 					if($escuela->longitud < $minlong) $minlong = $escuela->longitud;
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
+				$escuela->get_turnos();
 				$escuela->get_semaforos();
 				$escuelas[$escuela->cct] = new stdClass();
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
@@ -235,13 +236,14 @@ class main extends controler{
 		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
 		                            municipio=>nombre,municipio=>id,control=>nombre');
 
-        if ($this->escuelas && empty($params->avoid_ranking)) {
+        if ($this->escuelas && (!isset($params->avoid_ranking) || !$params->avoid_ranking)) {
             $escuelasList = array();
             foreach($this->escuelas as $escuela){
                 $escuelasList[] = $escuela->id;
                 ///$escuela->get_turnos_rank();
             }
             $this->set_turnos_ranked($escuelasList,$this->escuelas);
+            //var_dump($this->escuelas);
         }
 		
 		if($this->request('json')){
@@ -293,12 +295,16 @@ class main extends controler{
             $ranks = new rank();
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
+            $ranks->order_by = "rank_entidad asc";
             $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
-                foreach($total_ranks as $rank) {
+                foreach($total_ranks as $key=>$rank) {
                     if ($rank->id == $escuela->id) {
                         $escuela->rank[] = $rank;
+                    }
+                    if ($key == 0) {
+                        $escuela->selected_rank = $rank;
                     }
                 }
             }
@@ -311,7 +317,7 @@ class main extends controler{
 	public function load_niveles(){
 		
 		$q = new nivel();
-		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22"';// || niveles.id = "11"';
+		$q->search_clause = 'niveles.id = "12" || niveles.id = "13" || niveles.id = "22" || niveles.id = "11"';
 		$this->niveles = $q->read('id,nombre');
 	}
 
@@ -320,7 +326,6 @@ class main extends controler{
 	* Lee la información de la tabla entidades aplicando opcionalmente el orden con el que se guardaran los datos en el atributo 'entidades'.
 	*/
 	public function load_entidades($order_by = false){
-		
 		$q = new entidad();
 		$q->search_clause = 'rank > 0';
 		if($order_by) $q->order_by = $order_by;
@@ -557,7 +562,7 @@ class main extends controler{
     		$m = new MongoClient("mongodb://{$this->config->mongo_server}:27017/mte_produccion");
     		return $m;
     	}catch(Exception $e){
-    		//$e->getMessage();
+            if ($this->debug) var_dump($e->getMessage());
     		return false;
     	}
     }
