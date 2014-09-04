@@ -59,6 +59,9 @@
 						<li><span><?=$controles[$this->escuela->control->id]?></span></li>
 						<li><span>Teléfonos:</span> <?=$this->escuela->telefono?></li>
 						<li><span>Correo electrónico:</span> <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
+                        <?php if($this->escuela->director){ ?>
+                            <li><span>Director: </span><?=$this->str_limit($this->capitalize($this->escuela->director),21) ?></a></li>
+                        <?php } ?>
 						<?php if($this->escuela->paginaweb){ ?>
 							<li><a href="<?=$this->escuela->paginaweb?>"><?=$this->str_limit($this->escuela->paginaweb,21) ?></a></li>
 						<?php } ?>

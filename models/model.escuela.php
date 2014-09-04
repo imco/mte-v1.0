@@ -160,9 +160,14 @@ class escuela extends memcached_table{
 	}
 	public function get_mongo_info($client){
 		if($client){
-            $db = $client->selectDB("censo_completo_2013");
-            $collection = $db->selectCollection('datos_escuelas_v2');
-            $escuelas = $collection->find(array( 'cct_escuelas' => $this->cct))->sort(array('id_turno'=>1));
+            $db = $client->selectDB("mte_censo");
+            $collection = $db->selectCollection('censo');
+            $escuelas = $collection->find(array( 'cct' => new MongoRegex("/{$this->cct}\d/")));
+            if(!count($escuelas)){
+                $db = $client->selectDB("censo_completo_2013");
+                $collection = $db->selectCollection('datos_escuelas_v2');
+                $escuelas = $collection->find(array( 'cct_escuelas' => $this->cct))->sort(array('id_turno'=>1));
+            }
             $first = false;
             $censo = false;
             foreach($escuelas as $escuela) {
@@ -180,21 +185,25 @@ class escuela extends memcached_table{
                 $censo['turnos'][] = $turno;
             }
             $this->censo = $censo;
+            if($this->censo && isset($this->censo['telefono'])) $this->telefono = $this->censo['telefono'];
+            if($this->censo && isset($this->censo['persona_responsable'])) $this->director = $this->censo['persona_responsable'];
+            if($this->censo && isset($this->censo['calle'])) $this->domicilio = $this->censo['calle'].' no.'.$this->censo['numero_dir'];
 
+           /*             
             $db = $client->selectDB("mte_produccion");
             $c = $db->selectCollection('snie');
             $this->snie = $c->find(array('cct'=>$this->cct));
             $this->infraestructura = false;
-
             if($this->snie){
                 $keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
-
                 foreach($this->snie as $e){
+                    var_dump(json_encode($e));
                     $this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
-                    break;
+                    //break;
                 }
+                //var_dump(json_encode($this->infraestructura));
                 $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
-            }
+            }*/
 
 //			//Programas Federales
 //			$db = $client->selectDB("mte_programas");
