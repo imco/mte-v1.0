@@ -160,14 +160,9 @@ class escuela extends memcached_table{
 	}
 	public function get_mongo_info($client){
 		if($client){
-            $db = $client->selectDB("mte_censo");
-            $collection = $db->selectCollection('censo');
-            $escuelas = $collection->find(array( 'cct' => new MongoRegex("/{$this->cct}\d/")));
-            if(!count($escuelas)){
-                $db = $client->selectDB("censo_completo_2013");
-                $collection = $db->selectCollection('datos_escuelas_v2');
-                $escuelas = $collection->find(array( 'cct_escuelas' => $this->cct))->sort(array('id_turno'=>1));
-            }
+            $db = $client->selectDB("censo_completo_2013");
+            $collection = $db->selectCollection('datos_escuelas_v2');
+            $escuelas = $collection->find(array( 'cct_escuelas' => $this->cct))->sort(array('id_turno'=>1));
             $first = false;
             $censo = false;
             foreach($escuelas as $escuela) {
