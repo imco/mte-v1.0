@@ -895,7 +895,7 @@ line-height: 45px;}
 /*Perfil B*/
 
 #content .perfil.B .escuelas_excelencia{position: fixed;right: -25px;top: 20%;z-index: 1000;display: none;}
-#content .perfil.B .escuelas_excelencia .close{background-image: url(/design/mte3.png);display: block;height: 50px;left: 210px;position: relative;top: 55px;width: 50px;}
+#content .perfil.B .escuelas_excelencia .close{background-image: url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/mte3.png);display: block;height: 50px;left: 210px;position: relative;top: 55px;width: 50px;}
 
 #content .perfil.B{margin:23px auto 20px;padding:0;background-color:transparent;}
 #content .perfil.B .box-head.fixed{position: fixed;top: 0;width: 900px;z-index: 99;}

@@ -101,6 +101,7 @@ class escuela extends memcached_table{
                 foreach($this->turnos as $turno){
                     if ($rank->turnos_eval == $turno->id) {
                         $rank->turno = array();
+                        $rank->turno[0] = new stdClass();
                         $rank->turno[0]->nombre = $turno->nombre;
                     }
                 }
@@ -179,21 +180,25 @@ class escuela extends memcached_table{
                 $censo['turnos'][] = $turno;
             }
             $this->censo = $censo;
+            if($this->censo && isset($this->censo['telefono'])) $this->telefono = $this->censo['telefono'];
+            if($this->censo && isset($this->censo['persona_responsable'])) $this->director = $this->censo['persona_responsable'];
+            if($this->censo && isset($this->censo['calle'])) $this->domicilio = $this->censo['calle'].' no.'.$this->censo['numero_dir'];
 
+           /*             
             $db = $client->selectDB("mte_produccion");
             $c = $db->selectCollection('snie');
             $this->snie = $c->find(array('cct'=>$this->cct));
             $this->infraestructura = false;
-
             if($this->snie){
                 $keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
-
                 foreach($this->snie as $e){
+                    var_dump(json_encode($e));
                     $this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
-                    break;
+                    //break;
                 }
+                //var_dump(json_encode($this->infraestructura));
                 $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
-            }
+            }*/
 
 //			//Programas Federales
 //			$db = $client->selectDB("mte_programas");
@@ -216,6 +221,7 @@ class escuela extends memcached_table{
 	}
 	public function get_turnos(){
         $sql = "select distinct e.turnos_eval,t.nombre from escuelas_para_rankeo e inner join turnos t on t.id = e.turnos_eval where e.id = {$this->id}";
+        //echo $sql;
         $result = mysql_query($sql);
         $this->turnos = array();
         while ($row = mysql_fetch_assoc($result)){

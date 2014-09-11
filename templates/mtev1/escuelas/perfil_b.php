@@ -1,5 +1,9 @@
 <div class='perfil container B'>
-    <?php //$this->include_template('escuelas_excelencia','global');?>
+    <?php 
+    //var_dump($this->escuela->programas);
+    if(isset($this->escuela->programas['escuelas_de_excelencia']))
+        $this->include_template('escuelas_excelencia','global');
+    ?>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
@@ -55,6 +59,9 @@
 						<li><span><?=$controles[$this->escuela->control->id]?></span></li>
 						<li><span>Teléfonos:</span> <?=$this->escuela->telefono?></li>
 						<li><span>Correo electrónico:</span> <?=$this->str_limit($this->escuela->correoelectronico,24);?></li>
+                        <?php if($this->escuela->director){ ?>
+                            <li><span>Director: </span><?=$this->str_limit($this->capitalize($this->escuela->director),21) ?></a></li>
+                        <?php } ?>
 						<?php if($this->escuela->paginaweb){ ?>
 							<li><a href="<?=$this->escuela->paginaweb?>"><?=$this->str_limit($this->escuela->paginaweb,21) ?></a></li>
 						<?php } ?>

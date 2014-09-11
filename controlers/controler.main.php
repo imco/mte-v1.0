@@ -49,6 +49,7 @@ class main extends controler{
 					if($escuela->longitud < $minlong) $minlong = $escuela->longitud;
 					else if($escuela->longitud > $maxlong) $maxlong = $escuela->longitud;
 				}
+				$escuela->get_turnos();
 				$escuela->get_semaforos();
 				$escuelas[$escuela->cct] = new stdClass();
 				$escuelas[$escuela->cct]->cct = $escuela->cct;
@@ -242,6 +243,7 @@ class main extends controler{
                 ///$escuela->get_turnos_rank();
             }
             $this->set_turnos_ranked($escuelasList,$this->escuelas);
+            //var_dump($this->escuelas);
         }
 		
 		if($this->request('json')){
@@ -293,12 +295,16 @@ class main extends controler{
             $ranks = new rank();
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
+            $ranks->order_by = "rank_entidad asc";
             $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
-                foreach($total_ranks as $rank) {
+                foreach($total_ranks as $key=>$rank) {
                     if ($rank->id == $escuela->id) {
                         $escuela->rank[] = $rank;
+                    }
+                    if ($key == 0) {
+                        $escuela->selected_rank = $rank;
                     }
                 }
             }
