@@ -122,7 +122,7 @@ class califica_tu_escuela extends main{
 	* Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador 
 	*/
 	public function get_metadata(){
-		$this->meta_description = "¿Qué puede mejorar en la escuela de tus hijos? Califica las instalaciones, trabajo de los maestros y relación con los padres de familia aquí. Deja un comentario sobre tu escuela.";
+		$this->meta_description = "¿Qué puede mejorar en la escuela de tus hijos? Califica aquí las instalaciones, trabajo de los maestros y relación con los padres de familia. Deja un comentario sobre tu escuela y conoce las opiniones de padres, alumnos y exalumnos que forman parte de la comunidad escolar.";
 	}
 }
 ?>

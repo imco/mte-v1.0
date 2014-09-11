@@ -126,7 +126,7 @@ class compara extends main{
 				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($municipio->nombre);
 			}
 		}
-		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Conoce el semáforo educativo de preescolar, primarias, secundarias y bachilleratos de otras escuelas.";
+		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Compara el semáforo educativo y consulta información sobre infraestructura y programas de apoyo de preescolares, primarias, secundarias y bachilleratos de todo el país.";
 
 		$this->include_theme('index','index');
 	}
@@ -136,7 +136,7 @@ class compara extends main{
 	* Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador
 	*/
 	public function get_metadata(){
-		$this->meta_description = "¿Sabes qué lugar ocupa tu estado en educación a nivel nacional? En Mejora tu escuela puedes buscar las mejores primarias, secundarias y prepas de tu estado y comparar sus resultados en la prueba ENLACE con las otras escuelas de México.";
+		$this->meta_description = "Consulta información sobre las características de las escuelas de México. Datos de contacto, información sobre desempeño, infraestructura, programas de apoyo y conoce las opiniones de otros padres de familia.";
 	}
 
 	public function get_data_table(){
