@@ -33,7 +33,7 @@ class programas extends main{
         $programa = $this->request('id');
         $estado = $this->request('es');
         var_dump($programa,$estado);
-       /* $skip = $this->request('skip')?$this->request('skip'):0;
+        $skip = $this->request('skip')?$this->request('skip'):0;
         $estado = str_pad($estado,2,'0',STR_PAD_LEFT);
         $ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
         
@@ -48,7 +48,8 @@ class programas extends main{
         $this->get_escuelas($params);
     	$skip +=20;
     	$this->url_more_cct = "id={$programa}&es={$estado}&skip={$skip}";
-        $this->include_template("estado_escuelas","programas/partial");*/
+        var_dump($this);
+        //$this->include_template("estado_escuelas","programas/partial");
     }
 
     /**
