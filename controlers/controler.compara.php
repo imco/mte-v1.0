@@ -22,6 +22,7 @@ class compara extends main{
 		$this->header_folder = 'compara';				
 		$this->principal = true;
 		$this->title_header = 'Conoce tu escuela';
+		$this->meta_description = "Consulta información sobre las características de las escuelas de México. Datos de contacto, información sobre desempeño, infraestructura, programas de apoyo y conoce las opiniones de otros padres de familia.";
 		if(!$this->get('search')){ 
 			$this->get_location();
 			$params = new stdClass();
@@ -126,7 +127,7 @@ class compara extends main{
 				$this->resultados_title = 'Mejores escuelas en '.$this->capitalize($municipio->nombre);
 			}
 		}
-		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Conoce el semáforo educativo de preescolar, primarias, secundarias y bachilleratos de otras escuelas.";
+		$this->meta_description = "¿Buscas la mejor escuela cerca de tu casa o trabajo? En Mejora tu escuela puedes comparar las escuelas públicas y privadas de tu estado, delegación, municipio y colonia. Compara el semáforo educativo y consulta información sobre infraestructura y programas de apoyo de preescolares, primarias, secundarias y bachilleratos de todo el país.";
 
 		$this->include_theme('index','index');
 	}
