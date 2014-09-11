@@ -249,26 +249,38 @@ class escuelas extends main{
 	*/
 	public function get_metadata(){
 		if(isset($this->escuela->rank_nacional)){
-			if($this->escuela->rank_entidad<=5){
-				$plurales = array(12 => 'primarias',13=>'secundarias',22=>'bachilleratos');
-				$description ='La escuela '.$this->capitalize($this->escuela->nombre).' es una de las cinco mejores '.$plurales[$this->escuela->nivel->id].' en el';
+			if(isset($this->escuela->selected_rank->rank_entidad)){
+				if($this->escuela->selected_rank->rank_entidad<=5){
+					$description="La escuela ".$this->capitalize($this->escuela->nombre)." es una de las cinco mejores ".strtolower($this->escuela->nivel->nombre)."s en el estado de ".$this->capitalize($this->escuela->entidad->nombre);
+					$description=$description.". Consulta las calificaciones de ENLACE en español y matemáticas, desempeño por alumno, datos de infraestructura y opiniones de otros padres de familia.";
+				}
+				else{
+				$description = "La escuela ".strtolower($this->escuela->nivel->nombre)." ".strtolower($this->escuela->control->nombre)." ".$this->capitalize($this->escuela->nombre)." ocupa el lugar ";
+				$description = $description.(isset($this->escuela->selected_rank->rank_entidad) ? number_format($this->escuela->selected_rank->rank_entidad ,0): '--')." de ".number_format($this->entidad_cct_count,0);
 				if($this->escuela->entidad->id!=9){
-					$description=$description." Estado de ";
+					$description=$description." en el estado de ";
 				}
-				$description = $description.$this->capitalize($this->escuela->entidad->nombre);
-				if($this->escuela->rank_nacional<=5){
-					$description = $description." y a nivel nacional.";
+				$description = $description.$this->capitalize($this->escuela->entidad->nombre).".";
 				}
-				$description .= '. Consulta las calificaciones de ENLACE en español y matemáticas, desempeño por alumno, datos de infraestructura y opiniones de otros padres de familia.';
-			}else{
-				$rank_aux = isset($this->escuela->selected_rank->rank_entidad) ? number_format($this->escuela->selected_rank->rank_entidad ,0): '--';
-				$rank_aux .= ' de '.number_format($this->entidad_cct_count,0);
-				$description = "La escuela ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->control->nombre)."".$this->capitalize($this->escuela->nombre)." ocupa el lugar ".$rank_aux.' en el';
-				if($this->escuela->entidad->id!=9){
-					$description=$description." Estado de ";
-				}
-				$description = $description.$this->capitalize($this->escuela->entidad->nombre).'.';
-				$description .= " Conoce datos y características de la escuela su infraestructura y las opiniones de otros padres.";
+			}
+		}else{
+			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
+		}
+		$this->meta_description = $description." Conoce datos y características de la escuela su infraestructura y las opiniones de otros padres.";
+		if($this->escuela->nivel->nombre=="PREESCOLAR")
+			$this->meta_description = "Conoce la información sobre el preescolar, datos sobre la ubicación, infraestructura, personal, servicios con los que cuenta y opiniones de otros padres de familia.";
+	}
+	public function get_metadata2(){
+		if(isset($this->escuela->rank_nacional)){
+			$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
+			if($this->escuela->rank_entidad<=10){
+				$description =$description."obtuvo una de las mejores calificaciones en la prueba ENLACE 2013 en el ";
+			if($this->escuela->entidad->id!=9){
+				$description=$description." Estado de ";
+			}
+			$description = $description.$this->capitalize($this->escuela->entidad->nombre);
+			if($this->escuela->rank_nacional<=10){
+				$description = $description." y a nivel nacional";
 			}
 		}else{
 			if(stripos($this->escuela->nombre,'biblioteca') !== False){

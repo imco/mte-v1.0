@@ -20,8 +20,7 @@ class mejora extends main{
 		$this->subtitle_header = 'Aquí encontrarás herramientas para que actúes como agente <br />de cambio positivo en tu comunidad educativa. <br />¡Participa e involúcrate!';
 		$this->header_folder = 'compara';
 		$this->breadcrumb = array('#'=>'Mejora');
-		$this->meta_description = "Tú puedes ayudar a tus hijos y su escuela tomando un rol más activo en su educación.  En Mejora tu escuela tenemos tips y herramientas para papás y niños que les ayudarán a mejorar su aprendizaje y las condiciones de su escuela.  Encontrarás temas como: lectura, bullying y programas de apoyo para las escuelas.";
-	
+		$this->meta_description = "Tú puedes ayudar a tus hijos y su escuela tomando un rol más activo en su educación. En Mejora tu escuela tenemos tips y herramientas para papás y niños que les ayudarán a mejorar su aprendizaje y las condiciones de su escuela. Encontrarás temas como: lectura, bullying y programas de apoyo para las escuelas.";
 	}
 
 	public function enviar(){

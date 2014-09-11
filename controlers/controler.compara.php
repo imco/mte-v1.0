@@ -22,6 +22,7 @@ class compara extends main{
 		$this->header_folder = 'compara';				
 		$this->principal = true;
 		$this->title_header = 'Conoce tu escuela';
+		$this->meta_description = "Consulta información sobre las características de las escuelas de México. Datos de contacto, información sobre desempeño, infraestructura, programas de apoyo y conoce las opiniones de otros padres de familia.";
 		if(!$this->get('search')){ 
 			$this->get_location();
 			$params = new stdClass();
