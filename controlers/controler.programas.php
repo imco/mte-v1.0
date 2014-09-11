@@ -32,12 +32,12 @@ class programas extends main{
     public function estado_escuelas(){
         $programa = $this->request('id');
         $estado = $this->request('es');
-        var_dump($programa,$estado);
         $skip = $this->request('skip')?$this->request('skip'):0;
         $estado = str_pad($estado,2,'0',STR_PAD_LEFT);
+        $ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
         echo 'ff';
-        /*$ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
         
+        /*
         $params = new stdClass();
     	if($skip!=0 && !$ccts){
     		exit;
