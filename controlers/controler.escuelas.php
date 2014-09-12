@@ -14,7 +14,7 @@ class escuelas extends main{
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;
-			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 
 			$this->load_compara_cookie();
 			$this->debug = false;
@@ -25,7 +25,7 @@ class escuelas extends main{
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
-                $params2->avoid_ranking = true;
+                $params2->one_turn = true;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
@@ -82,10 +82,12 @@ class escuelas extends main{
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
 		$this->escuela->debug = false;
-		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
+		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.timestamp DESC';
 		$this->escuela->key = 'cct';
+        $this->escuela->cct = $id;
 		$this->escuela->fields['cct'] = $id;
-		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");        $this->escuela->key = 'id';
+		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");
+        $this->escuela->key = 'id';
         $this->escuela->has_many_keys["enlaces"] = "id_cct";
         //$this->escuela->has_many_keys["calificaciones"] = "id_cct";
 
@@ -249,20 +251,18 @@ class escuelas extends main{
 	*/
 	public function get_metadata(){
 		if(isset($this->escuela->rank_nacional)){
-			if(isset($this->escuela->selected_rank->rank_entidad)){
-				if($this->escuela->selected_rank->rank_entidad<=5){
+				if($this->escuela->rank_entidad<=5){
 					$description="La escuela ".$this->capitalize($this->escuela->nombre)." es una de las cinco mejores ".strtolower($this->escuela->nivel->nombre)."s en el estado de ".$this->capitalize($this->escuela->entidad->nombre);
 					$description=$description.". Consulta las calificaciones de ENLACE en español y matemáticas, desempeño por alumno, datos de infraestructura y opiniones de otros padres de familia.";
 				}
 				else{
 				$description = "La escuela ".strtolower($this->escuela->nivel->nombre)." ".strtolower($this->escuela->control->nombre)." ".$this->capitalize($this->escuela->nombre)." ocupa el lugar ";
-				$description = $description.(isset($this->escuela->selected_rank->rank_entidad) ? number_format($this->escuela->selected_rank->rank_entidad ,0): '--')." de ".number_format($this->entidad_cct_count,0);
+				$description = $description.(isset($this->escuela->rank_entidad) ? number_format($this->escuela->rank_entidad ,0): '--')." de ".number_format($this->entidad_cct_count,0);
 				if($this->escuela->entidad->id!=9){
 					$description=$description." en el estado de ";
 				}
 				$description = $description.$this->capitalize($this->escuela->entidad->nombre).".";
 				}
-			}
 		}else{
 			$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
 		}

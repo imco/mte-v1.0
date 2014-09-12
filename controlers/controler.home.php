@@ -33,7 +33,7 @@ class home extends main{
 		//$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
 		$params = new stdClass();
 		
-		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+		$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];
 		$params->entidad = $this->user_location->id;
 		$params->limit = '0,5';
@@ -147,7 +147,7 @@ class home extends main{
 		$params = new stdClass();
 		$this->nivel_5 = $params->nivel = $niveles[rand(0,2)];
 		$name_entidad = $this->request('name_entidad');
-		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+		$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 		$entidad = new entidad();
 		$entidad->search_clause = " entidades.nombre = \"$name_entidad\"";
 		$en = $entidad->read('id,nombre');

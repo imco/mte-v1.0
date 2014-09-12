@@ -67,8 +67,6 @@ class main extends controler{
 				$escuelas[$escuela->cct]->rank = $escuela->rank_entidad;
 				$escuelas[$escuela->cct]->rank_nacional = $escuela->rank_nacional;
 				$escuelas[$escuela->cct]->direccion = $this->capitalize($escuela->localidad->nombre).', '.$this->capitalize($escuela->entidad->nombre);
-				$escuelas[$escuela->cct]->promedio_matematicas = $escuela->promedio_matematicas;
-				$escuelas[$escuela->cct]->promedio_espaniol = $escuela->promedio_espaniol;
 			}
 			$width = $this->distance($maxlat,$minlong,$maxlat,$maxlong);
 			$height = $this->distance($maxlat,$minlong,$minlat,$minlong);
@@ -208,8 +206,12 @@ class main extends controler{
 		}
 		
 		if(isset($params->rank_nacional)){
-			$q->search_clause .= ' AND rank_nacional >= '.$params->rank_nacional;
+            $q->search_clause .= ' AND escuelas_para_rankeo.rank_nacional >= '.$params->rank_nacional;
 		}
+
+        if(isset($params->turno)) {
+            $q->search_clause .= " AND escuelas_para_rankeo.turnos_eval = {$params->turno}";
+        }
 
 		if(isset($params->ccts) && $params->ccts){
 			if(count($params->ccts)){
@@ -230,20 +232,21 @@ class main extends controler{
 		}
 
 		$q->debug = isset($this->debug) ? $this->debug : false;
-		$this->escuelas = $q->read('id,cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,
-		                            turno=>nombre,turno=>id,domicilio,total_evaluados,localidad=>nombre,localidad=>id,
-		                            entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,
-		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
-		                            municipio=>nombre,municipio=>id,control=>nombre');
 
-        if ($this->escuelas && (!isset($params->avoid_ranking) || !$params->avoid_ranking)) {
+        $this->process_custom_get_escuelas($q,$params);
+
+//		$this->escuelas = $q->read('id,cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,
+//		                            turno=>nombre,turno=>id,domicilio,total_evaluados,localidad=>nombre,localidad=>id,
+//		                            entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,
+//		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
+//		                            municipio=>nombre,municipio=>id');
+
+        if ($this->escuelas && (isset($params->one_turn) && $params->one_turn)) {
             $escuelasList = array();
             foreach($this->escuelas as $escuela){
                 $escuelasList[] = $escuela->id;
-                ///$escuela->get_turnos_rank();
             }
             $this->set_turnos_ranked($escuelasList,$this->escuelas);
-            //var_dump($this->escuelas);
         }
 		
 		if($this->request('json')){
@@ -556,6 +559,7 @@ class main extends controler{
 		*/
 		
     }
+
     public function mongo_connect(){
     	try{
     		//{$this->config->mongo_user}@
@@ -566,6 +570,7 @@ class main extends controler{
     		return false;
     	}
     }
+
     protected function load_programas(){
     	$q = new programa();
     	$q->search_clause =  'federal = "1"';
@@ -591,7 +596,7 @@ class main extends controler{
 		$params = new stdClass();
 		if($this->compara_cookie){
 			$params->ccts = $this->compara_cookie;
-            $params->avoid_ranking = true;
+            $params->one_turn = true;
 			$this->get_escuelas($params);
 			//$this->escuelas
 
@@ -609,7 +614,7 @@ class main extends controler{
 			$cookie = array_values($cookie);
 			if(count($cookie)){
 				$params->ccts = $cookie;
-                $params->avoid_ranking = true;
+                $params->one_turn = true;
 				$this->get_escuelas($params);
 				$this->school_view = $this->escuelas?$this->escuelas:array();	
 			}
@@ -721,7 +726,98 @@ class main extends controler{
 		echo "<img src='$img' alt='$alt' $class />";
 	}
 
+    private function process_custom_get_escuelas($escuelas,$params) {
+        $sql = "select
+                        escuelas.id,escuelas.cct,escuelas.nombre,escuelas.codigopostal,escuelas.telefono,escuelas.correoelectronico,escuelas.paginaweb,escuelas.domicilio,escuelas.latitud,escuelas.longitud,
+                        turnos.nombre turnos_nombre,turnos.id turnos_id,
+                        localidades.nombre localidades_nombre,localidades.id localidades_id,
+                        entidades.nombre entidades_nombre,entidades.id entidades_id,
+                        niveles.nombre niveles_nombre,niveles.id niveles_id,
+                        escuelas_para_rankeo.promedio_matematicas rank_promedio_matematicas,escuelas_para_rankeo.promedio_espaniol rank_promedio_espaniol,escuelas_para_rankeo.promedio_general rank_promedio_general,escuelas_para_rankeo.rank_entidad rank_rank_entidad,escuelas_para_rankeo.rank_nacional rank_rank_nacional,escuelas_para_rankeo.total_evaluados rank_total_evaluados,escuelas_para_rankeo.poco_confiables rank_poco_confiables,escuelas_para_rankeo.turnos_eval rank_turnos_eval,
+                        controles.id controles_id,controles.nombre controles_nombre,
+                        municipios.nombre municipios_nombre,municipios.id municipios_id
+                        from escuelas
+                        inner join localidades on localidades.id = escuelas.localidad
+                        inner join entidades on entidades.id = escuelas.entidad
+                        inner join municipios on municipios.id = escuelas.municipio
+                        inner join niveles on niveles.id = escuelas.nivel
+                        inner join controles on controles.id = escuelas.control
+                        inner join escuelas_para_rankeo on escuelas_para_rankeo.id = escuelas.id
+                        inner join turnos on turnos.id = escuelas_para_rankeo.turnos_eval
+                        where
+                ";
 
+        if ($escuelas->search_clause) {
+            $sql .= $escuelas->search_clause;
+        }
+
+
+        if ($escuelas->order_by) {
+            $sql .= ' order by '.$escuelas->order_by;
+        }
+
+        if ($escuelas->limit) {
+            $sql .= ' Limit '.$escuelas->limit;
+        }
+
+        if ($this->debug) {
+            echo $sql;
+        }
+
+
+        $result = mysql_query($sql);
+
+        $this->escuelas = array();
+        $i = 0;
+        if ($result) {
+            while ($row = mysql_fetch_assoc($result)){
+                $escuela = new escuela($row['id']);
+                $escuela->cct = $row['cct'];
+                $escuela->nombre = $row['nombre'];
+                $escuela->codigopostal = $row['codigopostal'];
+                $escuela->telefono = $row['telefono'];
+                $escuela->correoelectronico = $row['correoelectronico'];
+                $escuela->paginaweb = $row['paginaweb'];
+                $escuela->domicilio = $row['domicilio'];
+                $escuela->latitud = $row['latitud'];
+                $escuela->longitud = $row['longitud'];
+                $escuela->turno = new turno($row['turnos_id']);
+                $escuela->turno->nombre = $row['turnos_nombre'];
+                $escuela->localidad = new localidad($row['localidades_id']);
+                $escuela->localidad->nombre = $row['localidades_nombre'];
+                $escuela->entidad = new entidad($row['entidades_id']);
+                $escuela->entidad->nombre = $row['entidades_nombre'];
+                $escuela->nivel = new nivel($row['niveles_id']);
+                $escuela->nivel->nombre = $row['niveles_nombre'];
+                $escuela->promedio_matematicas = $row['rank_promedio_matematicas'];
+                $escuela->promedio_espaniol = $row['rank_promedio_espaniol'];
+                $escuela->promedio_general = $row['rank_promedio_general'];
+                $escuela->rank_nacional = $row['rank_rank_nacional'];
+                $escuela->rank_entidad = $row['rank_rank_entidad'];
+                $escuela->total_evaluados = $row['rank_total_evaluados'];
+                $escuela->poco_confiables = $row['rank_poco_confiables'];
+                $escuela->turnos_eval = $row['rank_turnos_eval'];
+                $escuela->control = new control($row['controles_id']);
+                $escuela->control->nombre = $row['controles_nombre'];
+                $escuela->municipio = new municipio($row['municipios_id']);
+                $escuela->municipio->nombre = $row['municipios_nombre'];
+
+                if (isset($params->one_turn) && $params->one_turn) {
+                    $already_on_list = false;
+                    foreach($this->escuelas as $escuela_temp) {
+                        if ($escuela_temp->cct == $escuela->cct) {
+                            $already_on_list = true;
+                        }
+                    }
+                    if (!$already_on_list) {
+                        $this->escuelas[$i++] = $escuela;
+                    }
+                } else {
+                    $this->escuelas[$i++] = $escuela;
+                }
+            }
+        }
+    }
 
 }
 ?>
