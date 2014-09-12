@@ -30,15 +30,17 @@ class programas extends main{
 	}
 
     public function estado_escuelas(){
+        $this->debug = true;
         $programa = $this->request('id');
         $estado = $this->request('es');
-	   $skip = $this->request('skip')?$this->request('skip'):0;
-        if ($estado < 10) $estado = '0'.$estado;
+        $skip = $this->request('skip')?$this->request('skip'):0;
+        $estado = str_pad($estado,2,'0',STR_PAD_LEFT);
         $ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
+        
         $params = new stdClass();
-	if($skip!=0 && !$ccts){
-		exit;
-	}
+    	if($skip!=0 && !$ccts){
+    		exit;
+        }
         $params->ccts = $ccts;
         $params->limit = "0,20";
         #$params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC";
@@ -96,31 +98,50 @@ class programas extends main{
         $this->programa = new programa($programa);
         $this->programa->read("id,m_collection");
 
-        if (!$this->programa->m_collection) return $estado_escuelas;
+        if (!$this->programa->m_collection) return false;
         try {
             $m = $this->mongo_connect();
             $db = $m->selectDB("mte_programas");
-            $c = $db->selectCollection($this->programa->m_collection);//pec,jornada_amplia,siat,censo_2013
+            if($this->programa->m_collection == 'siat'){
+                $c = $db->selectCollection('siat');//pec,jornada_amplia,siat,censo_2013
 
-            $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
-            $aux = $max_aux->getNext();
-            $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
-            if ($max_anio) {
-                $escuelasaux = $c->find(array( "anio" => $max_anio , "cct" => array('$regex' => '\A'.$estado_id.'.*') ))->limit($limit)->skip($skip);
-            } else {
-                $escuelasaux = $c->find(array( "cct" => array('$regex' => '\A'.$estado_id.'.*') ))->limit($limit)->skip($skip);
-            }
+                $max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
 
-            $i = 0;
-            while($escuelasaux->hasNext()) {
-                $aux = $escuelasaux->getNext();
-                $escuelas[$i++] = $aux['cct'];
+                $aux = $max_aux->getNext();
+                $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+                if ($max_anio) {
+                    $escuelasaux = $c->find(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$estado_id.'.*') ))->limit($limit)->skip($skip);
+                } else {
+                    $escuelasaux = $c->find(array( "cct" => array('$regex' => '^'.$estado_id.'.*') ))->limit($limit)->skip($skip);
+                }
+                $i = 0;
+                while($escuelasaux->hasNext()) {
+                    $aux = $escuelasaux->getNext();
+                    $escuelas[$i++] = $aux['cct'];
+                }
+            }else{
+                $c = $db->selectCollection('normalizados');
+                $max_aux = $c->find(array('programa'=>$this->programa->m_collection))->sort(array ("anio" => -1))->limit(1);
+
+                $aux = $max_aux->getNext();
+                $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+
+                if ($max_anio!==false) {
+                    $escuelasaux = $c->find(array( 'programa'=>$this->programa->m_collection, "anio" => $max_anio , "cct" => array('$regex' => '^'.$estado_id.'.*') ))->limit($limit)->skip($skip);
+                } else {
+                    $escuelasaux = $c->find(array( 'programa'=>$this->programa->m_collection, "cct" => array('$regex' => '^'.$estado_id.'.*') ))->limit($limit)->skip($skip);
+                }
+                $i = 0;
+                while($escuelasaux->hasNext()) {
+                    $aux = $escuelasaux->getNext();
+                    $escuelas[$i++] = $aux['cct'];
+                }
             }
 
             $m->close();
         } catch(Exception $ex) {
-            if ($this->debug) {
                 var_dump($ex);
+            if ($this->debug) {
                 throw $ex;
             }
             return $escuelas;

@@ -138,7 +138,7 @@ class home extends main{
 	*Contiene los datos a mostrar en el meta tag description a las vistas que pertenezcan a este controlador
 	*/
 	public function get_metadata(){
-		$this->meta_description = "Encuentra las mejores primarias, secundarias y bachilleratos públicos y privados en tu zona, según la prueba ENLACE 2013. Consulta la calificación de tu escuela en la prueba ENLACE de español y matemáticas.";
+		$this->meta_description = "Encuentra los mejores preescolares, primarias, secundarias y bachilleratos públicos y privados en tu zona. Consulta información de la infraestructura disponible en el plantel y revisa qué dicen otros padres sobre los maestros, el nivel y las instalaciones de cada escuela. Encuentra bibliotecas cercanas a tu escuela o tu casa.";
 	}
 
 	public function get_top5(){
