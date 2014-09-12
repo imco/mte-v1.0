@@ -15,12 +15,12 @@ class escuelas extends main{
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;
 			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
-
 			$this->load_compara_cookie();
-			$this->debug = false;
+			$this->debug = true;
 			$this->get_escuelas($params);
+			$this->debug = false;
 			//$this->escuelas[] = $this->escuela;
-		
+//			var_dump($this->escuelas);
 			if($this->compara_cookie){
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
@@ -43,6 +43,7 @@ class escuelas extends main{
 			$this->cct_count_entidad();
 			$this->get_metadata();
 			$this->load_programas();
+			$this->escuelas_digest = new stdClass();
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
@@ -266,7 +267,7 @@ class escuelas extends main{
 				$description = $description.$this->capitalize($this->escuela->entidad->nombre).".";
 			}
 		}else{
-			echo $this->escuela->cct.' '.$this->escuela->cct[2];
+			//echo $this->escuela->cct.' '.$this->escuela->cct[2];
 			if( $this->escuela->cct[2] === 'B' && $this->escuela->nivel!=12 && $this->escuela->nivel!=13 && $this->escuela->nivel!=22){
 				$description = 'Conoce la información sobre las bibliotecas más cercanas a tu casa o escuela , datos sobre la ubicación, infraestructura, servicios con los que cuenta y opiniones de miembros de la comunidad educativa.';
 			}else{

@@ -193,7 +193,7 @@ class main extends controler{
 			$q->search_clause .= $this->request('localidad') ? ' AND escuelas.localidad = "'.$this->request('localidad').'" ' : '';
 		}
 
-		if(isset($params->nivel) && $params->nivel){
+		if(isset($params->nivel) && $params->nivel !== false){
 			$q->search_clause .= " AND escuelas.nivel = '{$params->nivel}' ";
 		}else{
 			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
@@ -230,7 +230,6 @@ class main extends controler{
 			$this->pagination = new pagination('escuela',$params->pagination,$q->search_clause);
 			$q->limit = $this->pagination->limit;
 		}
-
 		$q->debug = isset($this->debug) ? $this->debug : false;
 
         $this->process_custom_get_escuelas($q,$params);
@@ -746,7 +745,6 @@ class main extends controler{
                         inner join turnos on turnos.id = escuelas_para_rankeo.turnos_eval
                         where
                 ";
-
         if ($escuelas->search_clause) {
             $sql .= $escuelas->search_clause;
         }

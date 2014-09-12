@@ -81,7 +81,7 @@ $canonical = $this->config->http_address.(isset($_GET['controler'])?$_GET['contr
 
 	<?php 
 	$jsmin->tag('js'); 
-	if(isset($this->config->tynt) && $this->config->tynt) $this->include_template('tynt','global');
+	//if(isset($this->config->tynt) && $this->config->tynt) $this->include_template('tynt','global');
 	?>
  </body>
  </html>

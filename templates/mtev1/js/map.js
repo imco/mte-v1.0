@@ -1,4 +1,3 @@
-;
 var markers = [];
 var infoboxes = [];
 $().ready(function(){
@@ -51,6 +50,7 @@ function initialize_map(){
 		var c=0
 		, uniqueEscuela = true
 		, cct = data.escuelas[cctNow];
+		console.log(data.escuelas);
 		for(var l in data.escuelas){
 			c++;
 			if(c==2){
