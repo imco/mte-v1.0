@@ -16,9 +16,7 @@ class escuelas extends main{
 			$params->nivel = $this->escuela->nivel->id;
 			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 			$this->load_compara_cookie();
-			$this->debug = true;
 			$this->get_escuelas($params);
-			$this->debug = false;
 			//$this->escuelas[] = $this->escuela;
 //			var_dump($this->escuelas);
 			if($this->compara_cookie){
@@ -29,7 +27,6 @@ class escuelas extends main{
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
-			
 			$tmp = $this->escuelas;
 			$params = new stdClass();
 			$params->ccts = array($this->escuela->cct);
@@ -43,7 +40,7 @@ class escuelas extends main{
 			$this->cct_count_entidad();
 			$this->get_metadata();
 			$this->load_programas();
-			$this->escuelas_digest = new stdClass();
+			//$this->escuelas_digest = new stdClass();
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;

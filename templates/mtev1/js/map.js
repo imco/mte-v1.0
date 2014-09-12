@@ -46,11 +46,12 @@ function initialize_map(){
 	var data = $.parseJSON($("#map-data").html())
 	, uniqueEscuela
 	, cctNow = $('.hidden.CCT').text();
+	
+		console.log(data.escuelas);
 	if(data && data.escuelas && cctNow){
 		var c=0
 		, uniqueEscuela = true
 		, cct = data.escuelas[cctNow];
-		console.log(data.escuelas);
 		for(var l in data.escuelas){
 			c++;
 			if(c==2){
