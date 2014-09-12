@@ -15,7 +15,7 @@ class programas extends main{
         $this->load_programas();
 		$this->title_header = 'Programas';
 		$this->header_folder = 'compara';
-		$this->breadcrumb = array('#'=>'Programas');
+		$this->breadcrumb = array('/mejora/programas/'=>'Programas');
 		$this->subtitle_header = '
 			MejoraTuEscuela.org es una plataforma que busca <br />
 			promover la participación ciudadana para transformar <br />
