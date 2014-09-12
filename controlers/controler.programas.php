@@ -35,9 +35,7 @@ class programas extends main{
         $skip = $this->request('skip')?$this->request('skip'):0;
         $estado = str_pad($estado,2,'0',STR_PAD_LEFT);
         $ccts = $this->get_estado_escuelascct($programa,$estado,$skip);
-        echo 'ff';
         
-        /*
         $params = new stdClass();
     	if($skip!=0 && !$ccts){
     		exit;
@@ -141,8 +139,8 @@ class programas extends main{
 
             $m->close();
         } catch(Exception $ex) {
+                var_dump($ex);
             if ($this->debug) {
-                #var_dump($ex);
                 throw $ex;
             }
             return $escuelas;
