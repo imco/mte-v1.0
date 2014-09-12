@@ -47,7 +47,7 @@ class programas extends main{
         $this->get_escuelas($params);
     	$skip +=20;
     	$this->url_more_cct = "id={$programa}&es={$estado}&skip={$skip}";
-        $this->include_template("estado_escuelas","programas/partial");*/
+        $this->include_template("estado_escuelas","programas/partial");
     }
 
     /**
