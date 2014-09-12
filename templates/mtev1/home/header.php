@@ -4,7 +4,7 @@
 		$child = $this->cookie("child");
 		$child = $child===false?rand(0,1):($child==0?1:0);
 		$this->print_img_tag($logo[$child],false,'img','ninio');
-		$this->set_cookie("child",$child);
+		//$this->set_cookie("child",$child);
 	?>
 	<div class='titles'>
 		<h1>
