@@ -30,6 +30,7 @@ class programas extends main{
 	}
 
     public function estado_escuelas(){
+        $this->debug = true;
         $programa = $this->request('id');
         $estado = $this->request('es');
         $skip = $this->request('skip')?$this->request('skip'):0;
