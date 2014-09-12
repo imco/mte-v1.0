@@ -74,12 +74,10 @@ class escuela extends memcached_table{
 	}
 
     public function get_semaforos(){
-        $semaforo = 4;
         $this->semaforo = 4;
 
         if($this->nivel->nombre=="PREESCOLAR"){
-            $semaforo->semaforo = 7;
-            $this->semaforo = $semaforo;
+            $this->semaforo = 7;
             return;
         }
 

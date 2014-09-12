@@ -451,8 +451,8 @@ class main extends controler{
 			$nivel = "numero_escuelas_".strtolower($nivelNombre);
 			$nivelNacional = "numero_nacional_escuelas_".strtolower($nivelNombre);
 			$entidad->read($nivel.",".$nivelNacional);
-			$escuela->entidad_cct_count = $entidad->$nivel;
-			$escuela->nacional_cct_count = $entidad->$nivelNacional;
+			$escuela->entidad_cct_count = isset($entidad->$nivel) ? $entidad->$nivel : 0;
+			$escuela->nacional_cct_count = isset($entidad->$nivelNacional) ? $entidad->$nivelNacional : 0;
 		}
 	}
     }
@@ -737,13 +737,13 @@ class main extends controler{
                         controles.id controles_id,controles.nombre controles_nombre,
                         municipios.nombre municipios_nombre,municipios.id municipios_id
                         from escuelas
-                        inner join localidades on localidades.id = escuelas.localidad
-                        inner join entidades on entidades.id = escuelas.entidad
-                        inner join municipios on municipios.id = escuelas.municipio
-                        inner join niveles on niveles.id = escuelas.nivel
-                        inner join controles on controles.id = escuelas.control
-                        inner join escuelas_para_rankeo on escuelas_para_rankeo.id = escuelas.id
-                        inner join turnos on turnos.id = escuelas_para_rankeo.turnos_eval
+                        left join localidades on localidades.id = escuelas.localidad
+                        left join entidades on entidades.id = escuelas.entidad
+                        left join municipios on municipios.id = escuelas.municipio
+                        left join niveles on niveles.id = escuelas.nivel
+                        left join controles on controles.id = escuelas.control
+                        left join escuelas_para_rankeo on escuelas_para_rankeo.id = escuelas.id
+                        left join turnos on turnos.id = escuelas_para_rankeo.turnos_eval
                         where
                 ";
 
@@ -781,26 +781,26 @@ class main extends controler{
                 $escuela->domicilio = $row['domicilio'];
                 $escuela->latitud = $row['latitud'];
                 $escuela->longitud = $row['longitud'];
-                $escuela->turno = new turno($row['turnos_id']);
-                $escuela->turno->nombre = $row['turnos_nombre'];
-                $escuela->localidad = new localidad($row['localidades_id']);
-                $escuela->localidad->nombre = $row['localidades_nombre'];
-                $escuela->entidad = new entidad($row['entidades_id']);
-                $escuela->entidad->nombre = $row['entidades_nombre'];
-                $escuela->nivel = new nivel($row['niveles_id']);
-                $escuela->nivel->nombre = $row['niveles_nombre'];
-                $escuela->promedio_matematicas = $row['rank_promedio_matematicas'];
-                $escuela->promedio_espaniol = $row['rank_promedio_espaniol'];
-                $escuela->promedio_general = $row['rank_promedio_general'];
-                $escuela->rank_nacional = $row['rank_rank_nacional'];
-                $escuela->rank_entidad = $row['rank_rank_entidad'];
-                $escuela->total_evaluados = $row['rank_total_evaluados'];
-                $escuela->poco_confiables = $row['rank_poco_confiables'];
-                $escuela->turnos_eval = $row['rank_turnos_eval'];
-                $escuela->control = new control($row['controles_id']);
-                $escuela->control->nombre = $row['controles_nombre'];
-                $escuela->municipio = new municipio($row['municipios_id']);
-                $escuela->municipio->nombre = $row['municipios_nombre'];
+                $escuela->turno = new turno(isset($row['turnos_id']) ? $row['turnos_id'] : "");
+                $escuela->turno->nombre = isset($row['turnos_nombre']) ? $row['turnos_nombre'] : "";
+                $escuela->localidad = new localidad(isset($row['localidades_id']) ? $row['localidades_id'] : "");
+                $escuela->localidad->nombre = isset($row['localidades_nombre']) ? $row['localidades_nombre'] : "";
+                $escuela->entidad = new entidad(isset($row['entidades_id']) ? $row['entidades_id'] : "");
+                $escuela->entidad->nombre = isset($row['entidades_nombre']) ? $row['entidades_nombre'] : "";
+                $escuela->nivel = new nivel(isset($row['niveles_id']) ? $row['niveles_id'] : "");
+                $escuela->nivel->nombre = isset($row['niveles_nombre']) ? $row['niveles_nombre'] : "";
+                $escuela->promedio_matematicas = isset($row['rank_promedio_matematicas']) ? $row['rank_promedio_matematicas'] : "";
+                $escuela->promedio_espaniol = isset($row['rank_promedio_espaniol']) ? $row['rank_promedio_espaniol'] : "";
+                $escuela->promedio_general = isset($row['rank_promedio_general']) ? $row['rank_promedio_general'] : "";
+                $escuela->rank_nacional = isset($row['rank_rank_nacional']) ? $row['rank_rank_nacional'] : "";
+                $escuela->rank_entidad = isset($row['rank_rank_entidad']) ? $row['rank_rank_entidad'] : "";
+                $escuela->total_evaluados = isset($row['rank_total_evaluados']) ? $row['rank_total_evaluados'] : "";
+                $escuela->poco_confiables = isset($row['rank_poco_confiables']) ? $row['rank_poco_confiables'] : "";
+                $escuela->turnos_eval = isset($row['rank_turnos_eval']) ? $row['rank_turnos_eval'] : "";
+                $escuela->control = new control(isset($row['controles_id']) ? $row['controles_id'] : "");
+                $escuela->control->nombre = isset($row['controles_nombre']) ? $row['controles_nombre'] : "";
+                $escuela->municipio = new municipio(isset($row['municipios_id']) ? $row['municipios_id'] : "");
+                $escuela->municipio->nombre = isset($row['municipios_nombre']) ? $row['municipios_nombre'] : "";
 
                 if (isset($params->one_turn) && $params->one_turn) {
                     $already_on_list = false;
