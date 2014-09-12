@@ -84,6 +84,7 @@ class escuelas extends main{
 		$this->escuela->debug = false;
 		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.timestamp DESC';
 		$this->escuela->key = 'cct';
+        $this->escuela->cct = $id;
 		$this->escuela->fields['cct'] = $id;
 		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");
         $this->escuela->key = 'id';

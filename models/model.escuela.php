@@ -175,29 +175,7 @@ class escuela extends memcached_table{
             if($this->censo && isset($this->censo['persona_responsable'])) $this->director = $this->censo['persona_responsable'];
             if($this->censo && isset($this->censo['calle'])) $this->domicilio = $this->censo['calle'].' no.'.$this->censo['numero_dir'];
 
-           /*             
-            $db = $client->selectDB("mte_produccion");
-            $c = $db->selectCollection('snie');
-            $this->snie = $c->find(array('cct'=>$this->cct));
             $this->infraestructura = false;
-            if($this->snie){
-                $keys = array(12=>'primaria_pub_infraestructura',13=>'primaria_pub_infraestructura',22=>'primaria_pub_infraestructura');
-                foreach($this->snie as $e){
-                    var_dump(json_encode($e));
-                    $this->infraestructura = json_decode($e[$keys[$this->nivel->id]]);
-                    //break;
-                }
-                //var_dump(json_encode($this->infraestructura));
-                $this->infraestructura = is_array($this->infraestructura) ? $this->infraestructura : false;
-            }*/
-
-//			//Programas Federales
-//			$db = $client->selectDB("mte_programas");
-//			$programas = array('pec','pes','petc','siat');
-//			$this->load_programas($programas,$db);
-//			//OSCs
-//			$programas = array('proeducacion','tarahumara','teach_mexico','mexprim','empresa_impulsa','emprender_impulsa','emprendedores_impulsa','dinero_impulsa','fundacion_televisa','naciones_unidas');
-//			$this->load_programas($programas,$db);
 
             $db = $client->selectDB("mte_programas");
             $this->load_programas2($db);
