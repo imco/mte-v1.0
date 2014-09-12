@@ -61,24 +61,31 @@ class programas extends main{
             $m = $this->mongo_connect();
             if($m){ 
                 $db = $m->selectDB("mte_programas");
-
-                $c = $db->selectCollection("normalizados");//pec,jornada_amplia,siat,censo_2013
-
-                $max_aux = $c->find(array("programa" => $m_collection))->sort(array ("anio" => -1))->limit(1);
-                $aux = $max_aux->getNext();
-                $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
-
-                for($i=1;$i<=32;$i++) {
-                    $aux = $i;
-                    if ($i < 10) {
-                        $aux = '0'.$i;
+                if($m_collection == 'siat'){
+                    $c = $db->selectCollection("siat");//pec,jornada_amplia,siat,censo_2013    
+                    for($i=1;$i<=32;$i++){
+                        $estado_escuelas[$i] = $c->count(array("edo" => $i));
                     }
-                    if ($max_anio) {
-                        $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
-                    } else {
-                        $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
+                }else{
+                    $c = $db->selectCollection("normalizados");//pec,jornada_amplia,siat,censo_2013    
+                    $max_aux = $c->find(array("programa" => $m_collection))->sort(array ("anio" => -1))->limit(1);
+                    $aux = $max_aux->getNext();
+                    $max_anio = isset($aux['anio']) ? $aux['anio'] : false ;
+
+                    for($i=1;$i<=32;$i++) {
+                        $aux = $i;
+                        if ($i < 10) {
+                            $aux = '0'.$i;
+                        }
+                        if ($max_anio) {
+                            $estado_escuelas[$i] = $c->count(array( "anio" => $max_anio , "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
+                        } else {
+                            $estado_escuelas[$i] = $c->count(array( "cct" => array('$regex' => '^'.$aux.'.*'),"programa" => $m_collection ));
+                        }
                     }
-                }
+                }              
+
+                
                 $m->close();
             }
         } catch(Exception $ex) {
