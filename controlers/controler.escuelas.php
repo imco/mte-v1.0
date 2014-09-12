@@ -264,7 +264,6 @@ class escuelas extends main{
 				$description = $description.$this->capitalize($this->escuela->entidad->nombre).".";
 			}
 		}else{
-			//echo $this->escuela->cct.' '.$this->escuela->cct[2];
 			if( $this->escuela->cct[2] === 'B' && $this->escuela->nivel!=12 && $this->escuela->nivel!=13 && $this->escuela->nivel!=22){
 				$description = 'Conoce la información sobre las bibliotecas más cercanas a tu casa o escuela , datos sobre la ubicación, infraestructura, servicios con los que cuenta y opiniones de miembros de la comunidad educativa.';
 			}else{
@@ -274,28 +273,6 @@ class escuelas extends main{
 		$this->meta_description = $description." Conoce datos y características de la escuela su infraestructura y las opiniones de otros padres.";
 		if($this->escuela->nivel->nombre=="PREESCOLAR")
 			$this->meta_description = "Conoce la información sobre el preescolar, datos sobre la ubicación, infraestructura, personal, servicios con los que cuenta y opiniones de otros padres de familia.";
-	}
-	public function get_metadata2(){
-		if(isset($this->escuela->rank_nacional)){
-			$description = "La escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre)." ";
-			if($this->escuela->rank_entidad<=10){
-				$description =$description."obtuvo una de las mejores calificaciones en la prueba ENLACE 2013 en el ";
-			if($this->escuela->entidad->id!=9){
-				$description=$description." Estado de ";
-			}
-			$description = $description.$this->capitalize($this->escuela->entidad->nombre);
-			if($this->escuela->rank_nacional<=10){
-				$description = $description." y a nivel nacional";
-			}
-		}else{
-			if( $this->escuela->nombre[2] === 'B' && $this->escuela->nivel!=12 && $this->escuela->nivel!=13 && $this->escuela->nivel!=22){
-				$description = 'Conoce la información sobre las bibliotecas más cercanas a tu casa o escuela , datos sobre la ubicación, infraestructura, servicios con los que cuenta y opiniones de miembros de la comunidad educativa.';
-			}else{
-				$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";
-			}
-		}
-		$this->meta_description = $description." El primer paso para mejorar tu centro escolar es saber como está. Te invitamos a que conozcas y compartas esta información.";
-		}
 	}
 
 	private function isSpam($params=array()){
