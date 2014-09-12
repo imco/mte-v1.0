@@ -26,7 +26,7 @@ class programas extends main{
 	private function programa_info(){
 		$this->programa = new programa($this->get('id'));
 		$this->programa->read("id,nombre,tema,descripcion,zonas,requisitos,direccion,telefono,mail,telefono_contacto,sitio_web,m_collection,tema_especifico");
-	        $this->programa->entidad_escuelas_count = $this->get_estado_escuelas_count($this->programa->m_collection);
+	    $this->programa->entidad_escuelas_count = $this->get_estado_escuelas_count($this->programa->m_collection);
 	}
 
     public function estado_escuelas(){
@@ -40,9 +40,9 @@ class programas extends main{
 		exit;
 	}
         $params->ccts = $ccts;
-        $params->limit = 20;
+        $params->limit = "0,20";
         #$params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC";
-        $params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.nombre ASC";
+        $params->order_by = "escuelas.nombre ASC";
         $this->get_escuelas($params);
     	$skip +=20;
     	$this->url_more_cct = "id={$programa}&es={$estado}&skip={$skip}";

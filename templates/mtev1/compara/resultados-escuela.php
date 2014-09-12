@@ -20,18 +20,16 @@
 			$escuela->get_semaforos();
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
-			$matematicas = $escuela->selected_rank->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->selected_rank->promedio_matematicas) : '';
-			$espaniol = $escuela->selected_rank->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->selected_rank->promedio_espaniol) : '';
-			$rank_entidad = $escuela->selected_rank->rank_entidad > 0 ? number_format($escuela->selected_rank->rank_entidad,0) : '';
-            //$count_semaforos = count($escuela->semaforos);
-			//<td class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></td>
-            //rowspan='{$count_semaforos}'
+			$matematicas = $escuela->promedio_matematicas >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_matematicas) : '';
+			$espaniol = $escuela->promedio_espaniol >= 0 && ($escuela->semaforo <= 3 || $escuela->semaforo ==6) ? round($escuela->promedio_espaniol) : '';
+			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
+            $escuelas_url = !empty($escuela->turnos_eval) ? "/escuelas/index/{$escuela->cct}#{$escuela->turnos_eval}" : "/escuelas/index/{$escuela->cct}";
 			echo "
 			<tr $on>
 				<td class='school' >
 				<div class='message-del'><p><span class='triangle'></span>Eliminar escuela del comparador</p></div>
 				<div class='checkbox'><a class='compara-escuela' href='{$escuela->cct}'></a></div>
-				<a href='/escuelas/index/{$escuela->cct}'>".
+				<a href='$escuelas_url'>".
 					$this->capitalize($escuela->nombre)." | ".
 					"<span>".$this->capitalize($escuela->localidad->nombre).", ".$this->capitalize($escuela->entidad->nombre)." | ".$this->capitalize($escuela->turno->nombre)."</span>".
 				"</a></td>

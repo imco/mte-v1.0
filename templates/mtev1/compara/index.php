@@ -95,7 +95,7 @@
 		}else if($this->get('search')){
 			$params = new stdClass();
 			$params->pagination = 6;
-			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC, escuelas_para_rankeo.promedio_general DESC';
 			$this->get_escuelas($params);
 			$this->process_escuelas();
 			$this->cct_count_entidad();

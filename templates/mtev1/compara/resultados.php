@@ -31,9 +31,9 @@
 			$on = $this->compara_cookie && in_array($escuela->cct,$this->compara_cookie) ? "class='on'" : '';
 			$controles = array(1=>'Pública', 2=>'Privada');
 			
-			$matematicas = $escuela->selected_rank->promedio_matematicas >= 0 && ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->selected_rank->promedio_matematicas) : '';
-			$espaniol = $escuela->selected_rank->promedio_espaniol >= 0 &&  ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->selected_rank->promedio_espaniol) : '';
-			$rank_entidad = $escuela->selected_rank->rank_entidad > 0 ? number_format($escuela->selected_rank->rank_entidad,0) : '';
+			$matematicas = $escuela->promedio_matematicas >= 0 && ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->promedio_matematicas) : '';
+			$espaniol = $escuela->promedio_espaniol >= 0 &&  ($esc->semaforo <= 3 || $esc->semaforo==6) ? round($escuela->promedio_espaniol) : '';
+			$rank_entidad = $escuela->rank_entidad > 0 ? number_format($escuela->rank_entidad,0) : '';
 
 			echo "
 			<tr $on>

@@ -14,7 +14,7 @@ class escuelas extends main{
 			$params->limit = '0,8';
 			$params->localidad = $this->escuela->localidad->id;
 			$params->nivel = $this->escuela->nivel->id;
-			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC';
+			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 
 			$this->load_compara_cookie();
 			$this->debug = false;
@@ -25,7 +25,7 @@ class escuelas extends main{
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
 				$params2->ccts = $this->compara_cookie;
-                $params2->avoid_ranking = true;
+                $params2->one_turn = true;
 				$this->get_escuelas($params2);
 				$this->escuelas = array_merge($temp,$this->escuelas);
 			}
@@ -82,10 +82,11 @@ class escuelas extends main{
 			$id = $this->get('id');
 		$this->escuela = new escuela($id);
 		$this->escuela->debug = false;
-		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.likes ASC';
+		$this->escuela->has_many_order_by['calificaciones'] = 'calificaciones.timestamp DESC';
 		$this->escuela->key = 'cct';
 		$this->escuela->fields['cct'] = $id;
-		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");        $this->escuela->key = 'id';
+		$this->escuela->read("id,cct,calificaciones=>calificacion,calificaciones=>id,calificaciones=>likes,calificaciones=>comentario,calificaciones=>nombre,calificaciones=>ocupacion,calificaciones=>timestamp,calificaciones=>activo,calificaciones=>acepta_nombre");
+        $this->escuela->key = 'id';
         $this->escuela->has_many_keys["enlaces"] = "id_cct";
         //$this->escuela->has_many_keys["calificaciones"] = "id_cct";
 

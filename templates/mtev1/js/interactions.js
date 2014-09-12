@@ -616,9 +616,16 @@ $(document).ready(function(){
            $('.turnos_switch_' + selected).show();
         });
 
+        var turno = window.location.hash.substr(1);
+        if (turno) {
+            $('#turno_selector').val(turno);
+        }
+
         var selected = $('#turno_selector').val();
         $('.turnos_switch').hide();
         $('.turnos_switch_' + selected).show();
+
+        $('.custom-select-turno').customSelect();
     }
 });
 

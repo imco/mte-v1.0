@@ -49,7 +49,7 @@ class compara extends main{
 		}else{
 			$params = isset($params)?$params:new stdClass();
 			$params->pagination = 6;
-			$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC, escuelas_para_rankeo.promedio_general DESC';
 
 			$this->get_escuelas($params);
 			$this->set_info_user_search(isset($this->pagination->total_results) ? $this->pagination->total_results : 0);
@@ -104,9 +104,10 @@ class compara extends main{
 		$this->load_compara_cookie();
 		$params = new stdClass();
 		$params->ccts = explode('-',$this->get('id'));
-		$params->order_by = 'escuelas.promedio_general DESC';
+		$params->order_by = 'escuelas_para_rankeo.promedio_general DESC';
 		$params->limit =  '0,100';
 		if(count($params->ccts)){
+            $params->one_turn = true;
 			$this->get_escuelas($params);		
 			$this->process_escuelas();
 			$this->cct_count_entidad();
@@ -152,7 +153,7 @@ class compara extends main{
 			$name_entidad = $this->user_location->nombre;
 		}
 		$params->pagination = 6;
-		$params->order_by = ' ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC';
+		$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC, escuelas_para_rankeo.promedio_general DESC';
 		$this->get_escuelas($params);
 		$this->process_escuelas();
 		$this->cct_count_entidad();
