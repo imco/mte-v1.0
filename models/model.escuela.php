@@ -206,10 +206,11 @@ class escuela extends memcached_table{
 
         $this->espaniol_charts = array();
         $this->matematicas_charts = array();
-
-        foreach($this->rank as $rank){
-            $this->espaniol_charts[$rank->turnos_eval] = $this->get_chart('espaniol',$rank->turnos_eval);
-            $this->matematicas_charts[$rank->turnos_eval] = $this->get_chart('matematicas',$rank->turnos_eval);
+        if($this->rank){
+            foreach($this->rank as $rank){
+                $this->espaniol_charts[$rank->turnos_eval] = $this->get_chart('espaniol',$rank->turnos_eval);
+                $this->matematicas_charts[$rank->turnos_eval] = $this->get_chart('matematicas',$rank->turnos_eval);
+            }
         }
     }
     public function get_chart($materia,$turno = false){
