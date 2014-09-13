@@ -584,7 +584,7 @@ EOD;
 				</div>
                 <?php
                 if($rank->semaforo >= 4 && $rank->semaforo < 8){
-                    $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
+                    $semaforos = array('Esta escuela no tomó la prueba ENLACE','Los resultados de esta escuela no son confiables<br>(i)','Esta escuela no tomó la prueba ENLACE para todos los años','La prueba ENLACE no está disponible para este nivel escolar');
                     echo "<div class='sem-overlay turnos_switch turnos_switch_{$rank->turnos_eval}' ><div class='icon sprit2 icon{$rank->semaforo}'></div><div class='clear'></div>
                             <p>".
                         $semaforos[$rank->semaforo-4]."</p><div class='popup-faq opc".($rank->semaforo)."'><p>Para más información consulta nuestra sección de <a href='/preguntas-frecuentes'>preguntas frecuentes</a></p></div></div>";
