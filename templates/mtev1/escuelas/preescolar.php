@@ -458,14 +458,12 @@ EOD;
 						<?php
 						foreach($this->programas_federales as $programa){
 						?>
-						<li class='<?=$this->escuela->{$programa->m_collection} && count($this->escuela->{$programa->m_collection})?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
+						<li class='<?= isset($this->escuela->programas[$programa->m_collection]) ?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
 							<?=$programa->nombre?>
 							<?php
 							//var_dump($this->escuela->{$programa->m_collection});
-							if($this->escuela->{$programa->m_collection} && isset($this->escuela->{$programa->m_collection}[0]['anio'])){
-								$anios = array();
-								foreach($this->escuela->{$programa->m_collection} as $p) $anios[] = $p['anio'];
-								echo implode(",",$anios);
+							if(isset($this->escuela->programas[$programa->m_collection]->anios)){
+								echo implode(",",$this->escuela->programas[$programa->m_collection]->anios);
 							}
 							?>
 						</a></li>
@@ -483,7 +481,7 @@ EOD;
 						    	$datoExtra = " (datos del 2012)";
 						?>
 
-						<li class='<?=$this->escuela->{$programa->m_collection} && count($this->escuela->{$programa->m_collection})?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
+						<li class='<?= isset($this->escuela->programas[$programa->m_collection]) ?"on":""?>'><a href="/programas/index/<?=$programa->id?>">
 							<?=$programa->nombre.$datoExtra?>
 						</a></li>
 						<? } ?>
