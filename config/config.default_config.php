@@ -27,7 +27,7 @@ class default_config{
                         {"width":"156","height":"112","slug":"signs" ,"resize_type":"best fit"}
                 ]');
                //MTE
-                $this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No tomá la <br /> prueba <br />ENLACE','Poco confiable','Esta escuela no tomá la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
+                $this->semaforos = array('Reprobado','De panzazo','Bien','Excelente','No toma la <br /> prueba <br />ENLACE','Poco confiable','Esta escuela no tomá la prueba ENLACE para todos los años','La prueba ENLACE no esta disponible para este nivel escolar');
 
                 
         }
