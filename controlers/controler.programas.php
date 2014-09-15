@@ -40,8 +40,6 @@ class programas extends main{
     	if($skip!=0 && !$ccts){
     		exit;
         }
-        var_dump($ccts);
-        $this->debug = true;
         $params->ccts = $ccts;
         $params->limit = "0,20";
         #$params->order_by = "ISNULL(escuelas.rank_entidad), escuelas.rank_entidad ASC, escuelas.promedio_general DESC";
