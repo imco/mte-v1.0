@@ -105,6 +105,8 @@ class programas extends main{
         $this->programa = new programa($programa);
         $this->programa->read("id,m_collection");
 
+        var_dump($this->programa->m_collection);
+
         if (!$this->programa->m_collection) return false;
         try {
             $m = $this->mongo_connect();
