@@ -172,6 +172,11 @@ class escuela extends memcached_table{
             if($this->censo && isset($this->censo['telefono'])) $this->telefono = $this->censo['telefono'];
             if($this->censo && isset($this->censo['persona_responsable'])) $this->director = $this->censo['persona_responsable'];
             if($this->censo && isset($this->censo['calle'])) $this->domicilio = $this->censo['calle'].' no.'.$this->censo['numero_dir'];
+            
+            //longitud
+            if($this->censo && isset($this->censo['coord2'])) $this->longitud = $this->censo['coord2'];
+            //latitud
+            if($this->censo && isset($this->censo['coord1'])) $$this->latitud = $this->censo['coord1'];
 
             $this->infraestructura = false;
 
