@@ -17,8 +17,6 @@ class escuelas extends main{
 			$params->order_by = ' ISNULL(escuelas_para_rankeo.rank_entidad), escuelas_para_rankeo.rank_entidad ASC';
 			$this->load_compara_cookie();
 			$this->get_escuelas($params);
-			//$this->escuelas[] = $this->escuela;
-//			var_dump($this->escuelas);
 			if($this->compara_cookie){
 				$temp = $this->escuelas;
 				$params2 = new stdClass();
@@ -44,6 +42,7 @@ class escuelas extends main{
 			$this->escuelas_digest->zoom = 16;
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
+
 			$this->header_folder = 'escuelas';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
@@ -92,7 +91,6 @@ class escuelas extends main{
         if(isset($this->escuela->cct)){
 			$this->escuela->read("
 				id,nombre,domicilio,paginaweb,
-				promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,poco_confiables,total_evaluados,pct_reprobados,
 				entidad=>nombre,entidad=>id,municipio=>id,municipio=>nombre,localidad=>nombre,localidad=>id,
 				telefono,correoelectronico,
 				turno=>id,turno=>nombre,
@@ -104,7 +102,7 @@ class escuelas extends main{
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
 				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
 			");
-			//$this->debug = true;
+			#$this->debug = true;
             $this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_turnos();
 			$this->escuela->get_semaforos();
