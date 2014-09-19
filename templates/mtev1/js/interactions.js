@@ -367,7 +367,7 @@ $(document).ready(function(){
 	})
 
 	//mejora view
-	$('.mejorar').click(function(){
+	$('.wrap').on('click','.mejorar',function(){
 		input_data_view_mejora(this);
 		$('.display').css('top',($(window).scrollTop()-325)+'px');	
 		$('.display').show('slow');
@@ -399,11 +399,11 @@ $(document).ready(function(){
 
 	});
 
-	$('.mejorar h1 a').click(function(e){
+	$('.wrap').on('click','.mejorar h1 a',function(e){
 		e.preventDefault();
 	});
 
-	$('.mejorar a.more, .mejorar a.download').click(function(e){
+	$('.wrap').on('click','.mejorar a.more, .mejorar a.download',function(e){
 		e.stopPropagation();
 	});
 
@@ -627,9 +627,45 @@ $(document).ready(function(){
 
         $('.custom-select-turno').customSelect();
     }
+	
+    if($('.container').hasClass('mejora')){
+        $(window).on('scroll',ajax_blog);
+    }
 });
 
+var page_of_blog = 1;
+function ajax_blog(e){
+        var contentSize = $('.mejorar').last().offset().top-750;
+        if($(this).scrollTop() > contentSize){
+		$(window).off('scroll')
+		var url = $('.hidden.blog_address').html()+'/mejora/';
+		$.ajax({
+	    		url: url,
+            		crossDomain : true,
+	    		type:'get',
+	    		dataType : 'jsonp',
+	    		data : {
+	    		mejora: $('.hidden.mejora_selected').html(),
+	    		offset:page_of_blog++
+	    	}, success:function(d){
+			if(d && d.indexOf('mejorar')!=-1){
+				d = $(d);
+				var wrap = $('.wrap').append(d);
+				$('.mejora.container').imagesLoaded( function(){
+					wrap.masonry('appended',d);
+					$(window).on('scroll',ajax_blog)
+				})
+			}
 
+
+	    		//TODO reiniciar el plugin que lo acomoda
+	    		//TODO on/off evento
+	    	},error:function(){
+	    		alert('Error al exportar.');
+	    	}});
+        }
+
+}
 
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);

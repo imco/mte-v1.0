@@ -74,6 +74,8 @@ $infografias = array('entorno'=>'Entorno',
 	</div>
 	<div class="column">
 		<h2 class='banner green'>Mejora tu...</h2>
+		<span class="hidden mejora_selected"><?=$this->get('id')?$this->get('id'):''?></span>
+		<span class="hidden blog_address"><?=$this->config->blog_address; ?></span>
 		<ul>
 			<li><a href="/mejora/index/entorno"><span class="icon"></span>Entorno</a></li>
 			<li><a href="/mejora/index/participacion-mejora"><span class="icon"></span>Participación</a></li>
