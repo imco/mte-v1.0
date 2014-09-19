@@ -268,6 +268,17 @@ class escuela extends memcached_table{
         $ranks = $rank->read('id,turnos_eval,promedio_general,promedio_matematicas,promedio_espaniol,total_evaluados,pct_reprobados,poco_confiables,rank_entidad,rank_nacional');
         $this->rank = $ranks;
     }
+    public function clean_ranks(){
+        $max = 0;
+        if(isset($this->rank)){
+            foreach($this->rank as $key => $rank){
+                if($rank->anio > $max) $max = $rank->anio;
+            }
+            foreach($this->rank as $key => $rank){
+                if($rank->anio < $max) unset($this->rank[$key]);
+            }
+        }
+    }
     private function load_programas($programas,$db){
 		foreach($programas as $programa){
 			$c = $db->selectCollection($programa);
