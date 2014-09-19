@@ -97,16 +97,16 @@ class escuelas extends main{
 				latitud,longitud,
 				nivel=>nombre,nivel=>id,
 				control=>id,control=>nombre,
-				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,
-				
+				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,				
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
-				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional
+				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional,rank=>anio
 			");
 			#$this->debug = true;
             $this->escuela->get_mongo_info($this->mongo_connect());
             $this->escuela->get_turnos();
 			$this->escuela->get_semaforos();
             $this->escuela->get_charts();
+            $this->escuela->clean_ranks();
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
 			$entidad_info->debug = false;
@@ -157,10 +157,7 @@ class escuelas extends main{
 						$_SERVER['HTTP_USER_AGENT'],
 						$accept_name
 					));
-					if($this->post("calificaciones"))
-						$calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));
-				
-				
+					if($this->post("calificaciones")) $calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));				
 				}else{					
 					//spam
 				}
