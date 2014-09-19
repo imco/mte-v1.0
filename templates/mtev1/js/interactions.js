@@ -484,14 +484,17 @@ $(document).ready(function(){
 	}
 
 	var myarr,eClass;
-
 	//Automatic state fill
 	$('.container.programas .overlay-map .statemarker').each(function(e){
 		myarr = $(this).attr("class").split(" ");
 		eClass = myarr[1];
+		console.log($(this));
 		$('.container.programas svg path').each(function(){
-			if ($(this).text() == eClass)
+			if ($(this).text() == eClass){
 				$(this).css("fill","#359044");
+				$(this).addClass('active');
+				console.log('found')
+			}
 		});
 	});
 
