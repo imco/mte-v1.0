@@ -484,17 +484,32 @@ $(document).ready(function(){
 	}
 
 	var myarr,eClass;
+	$('.container.programas .overlay-map .statemarker').hover(
+		function(){
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				if($(this).text()==eClass)
+					$(this).css("fill","#359044");
+			});
+		},
+		function(){
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				if($(this).text()==eClass)
+					$(this).css("fill","#C4EAD1");
+			});
+		}
+	);
+
 	//Automatic state fill
 	$('.container.programas .overlay-map .statemarker').each(function(e){
 		myarr = $(this).attr("class").split(" ");
 		eClass = myarr[1];
-		console.log($(this));
 		$('.container.programas svg path').each(function(){
-			if ($(this).text() == eClass){
+			if ($(this).text() == eClass)
 				$(this).css("fill","#359044");
-				$(this).addClass('active');
-				console.log('found')
-			}
 		});
 	});
 
