@@ -292,7 +292,7 @@ class main extends controler{
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
             $ranks->order_by = "rank_entidad asc";
-            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval');
+            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
                 foreach($total_ranks as $key=>$rank) {
@@ -303,6 +303,7 @@ class main extends controler{
                         $escuela->selected_rank = $rank;
                     }
                 }
+                $escuela->clean_ranks();
             }
         }
     }
