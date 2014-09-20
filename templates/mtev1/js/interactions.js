@@ -432,10 +432,6 @@ $(document).ready(function(){
 	});
 	
 
-	$('.container.programas svg path').hover(function(){
-		console.log($(this).text());
-	});
-
 	$(document).keyup(function(e){
 		if(e.keyCode == $.ui.keyCode.ESCAPE){
 			$('.overlay-transparent').trigger('click');
@@ -483,35 +479,9 @@ $(document).ready(function(){
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
 	}
 
-	var myarr,eClass;
-	$('.container.programas .overlay-map .statemarker').hover(
-		function(){
-			myarr = $(this).attr("class").split(" ");
-			eClass = myarr[1];
-			$('.container.programas svg path').each(function(){
-				if($(this).text()==eClass)
-					$(this).css("fill","#359044");
-			});
-		},
-		function(){
-			myarr = $(this).attr("class").split(" ");
-			eClass = myarr[1];
-			$('.container.programas svg path').each(function(){
-				if($(this).text()==eClass)
-					$(this).css("fill","#C4EAD1");
-			});
-		}
-	);
 
-	//Automatic state fill
-	$('.container.programas .overlay-map .statemarker').each(function(e){
-		myarr = $(this).attr("class").split(" ");
-		eClass = myarr[1];
-		$('.container.programas svg path').each(function(){
-			if ($(this).text() == eClass)
-				$(this).css("fill","#359044");
-		});
-	});
+	var myarr,eClass;
+	load_map_mexico();
 
 
 	$(window).scroll(function(){
@@ -804,5 +774,66 @@ function toggle_select_float(){
 			contentCountActual.html(+(contentCountActual.html())-1);
 			contentCount.html(+(contentCount.html())+1);
 		});
+
+}
+
+function load_map_mexico(){
+	/* Mapa de la republica en  programas */
+    var x = d3.scale.linear()
+        .domain([0, width])
+        .range([0, width]);
+
+    var y = d3.scale.linear()
+        .domain([0, height])
+        .range([height, 0]);
+
+    var width = 680,
+        height = 500;
+
+    var projection = d3.geo.mercator()
+        .scale(1200)
+        .center([-94.34034978813841, 24.012062015793]);
+
+    var svg = d3.select(".container.programas .column.left #map-programas").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var g = svg.append("g");
+
+    var path = d3.geo.path()
+        .projection(projection);
+
+    d3.json("/mx_tj.json", function(error, mx) {
+      g.selectAll("path")
+        .data(topojson.object(mx, mx.objects.estados2).geometries)
+        .enter().append("path")
+        .attr("d", d3.geo.path().projection(projection))
+        .attr("fill", "#C4EAD1")
+        .style("stroke", "#40AA6C");
+
+       g.selectAll("path")
+        .data(topojson.object(mx, mx.objects.estados2).properties)
+        //.enter().append("path")
+        .attr("class",function(d) { return "e"+d.id; })
+        .text(function(d) { return "e"+d.id; });
+
+    });	
+
+    $('.container.programas svg').load(function(){
+		//Automatic state fill
+		$('.container.programas .overlay-map .statemarker').each(function(){
+			console.log('statemarker');
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				console.log('path');
+				if ($(this).text() == eClass)
+					$(this).css("fill","#359044");
+			});
+		});
+    });
+
+
+
 
 }
