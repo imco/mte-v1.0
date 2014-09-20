@@ -1505,7 +1505,8 @@ margin-top: -12px;}
 #content .container.programas .column.left table tr td .button-frame{display: inline-block;width: 160px}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left #map-programas{position: relative;}
-#content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
+#content .container.programas .column.left svg{background-color: #C6DEFA;/*border-top: 35px solid #fff*/;border-radius: 2px 2px 0px 0px}
+#content .container.programas .column.left svg path.active,
 #content .container.programas .column.left svg path:hover{fill:#359044;}
 #content .container.programas .column.left .overlay-map{position: absolute;top: 35px}
 .overlay-map .statemarker.e1{left: 292px;top:190px;}
