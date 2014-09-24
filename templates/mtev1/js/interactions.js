@@ -608,6 +608,7 @@ $(document).ready(function(){
     }
 	
     if($('.container').hasClass('mejora')){
+
         $(window).on('scroll',ajax_blog);
     }
 });
@@ -815,6 +816,7 @@ function toggle_select_float(){
 
 function load_map_mexico(){
 	/* Mapa de la republica en  programas */
+    if(!window.d3) return ;
     var x = d3.scale.linear()
         .domain([0, width])
         .range([0, width]);
