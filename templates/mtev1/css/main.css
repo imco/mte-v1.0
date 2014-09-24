@@ -1987,3 +1987,6 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #content  .container form .recaptcha_input_area input[placeholder]{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
 #header   form .recaptcha_input_area :-moz-placeholder,
 #content  .container form .recaptcha_input_area :-moz-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
+
+/*iframe perdido en mejora*/
+iframe[src="about:blank"]{display:none;}
