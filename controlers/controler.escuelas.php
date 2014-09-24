@@ -60,6 +60,7 @@ class escuelas extends main{
 			if($this->escuela->paginaweb && substr($this->escuela->paginaweb,0,7)!='http://'){
 				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
 			}
+			$this->simulateP = rand()%15;
 			if($this->escuela->nivel->nombre != 'PREESCOLAR')
 				$this->include_theme('index','perfil_b');
 			else{
@@ -135,7 +136,7 @@ class escuelas extends main{
 	public function calificar(){
 		$captcha = new Recaptcha($this->config->recaptcha_public_key,$this->config->recaptcha_private_key);
 		$calificacion = new stdClass();
-		if($captcha->check_answer($this->config->http_address,
+		if($this->isValidCalificaForm() && $captcha->check_answer($this->config->http_address,
 			$this->post('recaptcha_challenge_field'),
 			$this->post('recaptcha_response_field'))){
 				$comment = strip_tags($this->post('comentario'));
@@ -145,7 +146,7 @@ class escuelas extends main{
 			                'author' => $this->post('nombre'),
 	        		        'email' => $this->post('email'),
 			                'body' => $comment
-				))){
+				)) && $this->isTokenSimulatesValid()){
 					//$calificacion->debug = true;
 					$calificacion->create('nombre,email,cct,comentario,ocupacion,calificacion,user_agent,acepta_nombre',array(
 						$this->post('nombre'),
@@ -160,11 +161,14 @@ class escuelas extends main{
 					if($this->post("calificaciones")) $calificacion->setCalificaciones($this->post('preguntas'),$this->post('calificaciones'));				
 				}else{					
 					//spam
+					$typeE = "sp";//spam
 				}
 
+		}else{
+			$typeE = "invalid";
 		}
 
-		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones";
+		$location = $calificacion->id ? "/escuelas/index/".$this->post('cct')."#calificaciones" : "/escuelas/index/".$this->post('cct')."/e=ce#calificaciones#".(isset($typeE)?$typeE:'');
        		header("location: $location");
 	}
 
@@ -286,6 +290,33 @@ class escuelas extends main{
 		}else{
 			return $akismet->isSpam();
 		}
+	}
+
+	public function getSimulatedToken($p,$pk = 0.345){
+		$t = sha1($p*$pk+$pk);
+		return $t;
+	}
+
+	private function isTokenSimulatesValid($pk = 0.345){
+		$p = $this->post('last_name');
+		$tk = $this->post('tk');
+		if(isset($p)){
+			$t = sha1($p*$pk+$pk);
+			if($tk == $t){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private function isValidCalificaForm(){
+		$check = array('e_mail'=>0,'mail'=>0,'correo'=>0,'email'=>1,'ocupacion'=>1,'cct'=>1,'last_name'=>1,'comentario'=>1,'recaptcha_challenge_field'=>1);
+		foreach($check as $field => $f){
+			if(($f && $this->post($field)=='') || !$f && $this->post($field) != ''){
+				return false;
+			}
+		}
+		return true;
 	}
 }
 ?>

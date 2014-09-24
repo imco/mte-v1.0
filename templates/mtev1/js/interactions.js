@@ -611,6 +611,8 @@ $(document).ready(function(){
 
         $(window).on('scroll',ajax_blog);
     }
+
+    $('.spk').val($('.hidden.pk').html());
 });
 
 var page_of_blog = 1;
