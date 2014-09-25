@@ -1989,6 +1989,7 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #content  .container form .recaptcha_input_area :-moz-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
 
 /*Bases de datos del censo*/
+#content .bases .quienes_somos{margin:0 auto 25px;}
 #content .bases .file-search-form label{background-color:#2DA4F4;display:block;float:left;color:white;font-size:22px;padding:0 37px 0 41px;line-height:43px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/bases.png);background-repeat:no-repeat;background-position:15px 12px;}
 #content .bases .file-search-form input{display:block;float:left;margin:0;font-size:16px;width:320px;line-height:31px;padding:6px 16px;height:31px;}
 #content .bases .file-search-form .submit{background:#F68C3E url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/lupita.png) no-repeat center center;width:85px;height:42px;}
