@@ -6,9 +6,9 @@
 
 	<p>Aquí puedes descargar:</p>
 	<ol>
-	<li>Archivo Inmueble: Datos sobre características del inmueble de todas las escuelas excepto CONAFE.</li>
-	<li>Archivo Centros de Trabajo: Datos sobre características de los centros de trabajo (escuelas) excepto CONAFE. </li>
-	<li>Archivo CONAFE: Datos sobre características del inmueble y centros de trabajo de esta modalidad.</li>
+	<li><a href="http://storage.googleapis.com/cemabe/TR_INMUEBLES.DBF.zip">Archivo Inmueble</a>: Datos sobre características del inmueble de todas las escuelas excepto CONAFE.</li>
+	<li><a href="http://storage.googleapis.com/cemabe/TR_CENTROS.DBF.zip">Archivo Centros de Trabajo</a>: Datos sobre características de los centros de trabajo (escuelas) excepto CONAFE. </li>
+	<li><a href="http://storage.googleapis.com/cemabe/TR_CONAFE.DBF.zip">Archivo CONAFE</a>: Datos sobre características del inmueble y centros de trabajo de esta modalidad.</li>
 	</ol>
 	</div></div>
 
