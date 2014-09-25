@@ -13,5 +13,11 @@ class bases extends main{
 		$this->breadcrumb = array('#'=>'Descargas');
 		$this->include_theme('index','index');
 	}
+	public function censo(){
+		//$this->header_folder ='escuelas';
+		$this->breadcrumb = array('#'=>'Descargas');
+		$this->include_theme('index','censo');
+	}
+
 }
 ?>

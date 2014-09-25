@@ -41,6 +41,11 @@
 			//$js_scripts[] = 'infobox_packed.js';
 			//$js_scripts[] = 'map.js';
 		}
+		if($this->angular){
+			echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>';
+			$js_scripts[] = 'infobox_packed.js';
+			//$js_scripts[] = 'map.js';
+		}
 		//var_dump($js_scripts);
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");
 		$jsmin = new mxnphp_min($this->config,$js_scripts,"js","js-min-mte");
