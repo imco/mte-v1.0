@@ -42,6 +42,11 @@
 				</td>
 				<td class='services'>
 						<div class='service'>
+							<div class='checkbox' ng-click='entidad.service = "g"' ng-class='entidad.service == "g" ? "selected":""'></div>
+							<div class='icon google'></div>
+							<p>Google</p>
+						</div>
+						<div class='service'>
 							<div class='checkbox' ng-click='entidad.service = "r"' ng-class='entidad.service == "r" ? "selected":""'></div>
 							<div class='icon rackspace'></div>
 							<p>Rackspace</p>
@@ -50,11 +55,6 @@
 							<div class='checkbox' ng-click='entidad.service = "a"' ng-class='entidad.service == "a" ? "selected":""'></div>
 							<div class='icon amazon'></div>
 							<p>Amazon</p>
-						</div>
-						<div class='service'>
-							<div class='checkbox' ng-click='entidad.service = "g"' ng-class='entidad.service == "g" ? "selected":""'></div>
-							<div class='icon google'></div>
-							<p>Google</p>
 						</div>
 				</td>
 				<td class='download'>
