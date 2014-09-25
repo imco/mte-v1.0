@@ -23,6 +23,7 @@ class main extends controler{
 		$this->breadcrumb = false; 
 		$this->draw_map = false; 
 		$this->draw_charts = false; 
+		$this->angular = false;
 		$this->get_data_compara_float();
 		$this->load_entidades();
 		#$this->testMail();

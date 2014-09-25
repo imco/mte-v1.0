@@ -1982,3 +1982,46 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #content  .container form .recaptcha_input_area input[placeholder]{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
 #header   form .recaptcha_input_area :-moz-placeholder,
 #content  .container form .recaptcha_input_area :-moz-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
+
+/*Bases de datos del censo*/
+#content .bases .quienes_somos{margin:0 auto 25px;}
+#content .bases .file-search-form label{background-color:#2DA4F4;display:block;float:left;color:white;font-size:22px;padding:0 37px 0 41px;line-height:43px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/bases.png);background-repeat:no-repeat;background-position:15px 12px;}
+#content .bases .file-search-form input{display:block;float:left;margin:0;font-size:16px;width:320px;line-height:31px;padding:6px 16px;height:31px;}
+#content .bases .file-search-form .submit{background:#F68C3E url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/lupita.png) no-repeat center center;width:85px;height:42px;}
+#content .bases .file-search-form{margin-top:4px;}
+
+#content .bases .file-table{width:100%;margin:11px 0;border-spacing:1px;width:902px;margin-left:-1px;}
+#content .bases .file-table thead{margin-bottom:5px;}
+#content .bases .file-table .space td{background-color:transparent;height:6px;padding:0;}
+#content .bases .file-table th{background-color:#444;opacity:.4;color:white;font-size:14px;padding:2px 0 3px 15px;}
+#content .bases .file-table th.download{padding:2px 0 3px 7px;}
+#content .bases .file-table td{background-color:white;color:#A3A3A3;font-size:16px;padding:10px 8px;vertical-align: top;}
+#content .bases .file-table td img{float:left;margin:25px 4px 0 5px;}
+#content .bases .file-table td .title1{margin-top:43px;}
+#content .bases .file-table td select{color:#A3A3A3;border:1px solid #A3A3A3;border-radius:3px;font-size:12px;font-family:'Varela Round';background-color:transparent;padding:2px 0 2px 10px;width:145px;margin:34px 6px 0;height:37px;}
+#content .bases .file-table .checkbox{display:block;border:1px solid #A3A3A3;width:18px;height:18px;border-radius:50%;position:relative;cursor: pointer;}
+#content .bases .file-table .checkbox.pull-left{float:left;margin:4px 6px 0 8px;}
+#content .bases .file-table .checkbox.selected:before{content:'';display:block;position:absolute;background-color:#2FA3F6;width:10px;height:10px;top:4px;right:4px;border-radius:50%;}
+#content .bases .file-table .download{padding:0;overflow: hidden;}
+#content .bases .file-table .download p{position:relative;}
+#content .bases .file-table .download a{position:absolute;display:block;background:#00A64D url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/descargar.png) no-repeat center center;width:86px;height:124px;}
+#content .bases .file-table .download a:hover{background-color:#008947;}
+#content .bases .file-table .options{line-height:31px;position: relative;top: -12px;}
+#content .bases .file-table .options:first-child{margin-top:36px;}
+#content .bases .file-table .services{padding:0;}
+#content .bases .file-table .service{float:left;text-align:center;margin:11px 2px;width:75px;}
+#content .bases .file-table .service:first-child{margin-left:20px;}
+#content .bases .file-table .service .checkbox{margin:5px auto 9px;}
+#content .bases .file-table .service .icon{display:block;margin:0 auto 6px;width:31px;height:42px;}
+#content .bases .file-table .service .icon.google{background-image: url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/docgoogle.png)}
+#content .bases .file-table .service .icon.rackspace{background-image: url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/rax.png)}
+#content .bases .file-table .service .icon.amazon{background-image: url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/amazon.png)}
+#content .bases .file-table .service p{font-size:14px;}
+
+#content .bases .file-table .state{height:124px;}
+#content .bases .file-table .state td:nth-child(1){width:218px;}
+#content .bases .file-table .state td:nth-child(2){width:160px;}
+#content .bases .file-table .state td:nth-child(3){width:112px;}
+#content .bases .file-table .state td:nth-child(4){width:269px;}
+#content .bases .file-table .state td:nth-child(5){width:85px;}
+

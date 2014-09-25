@@ -10,8 +10,9 @@ class bases extends main{
 	*/
 	public function index(){
 		//$this->header_folder ='escuelas';
+		$this->angular = true;
 		$this->breadcrumb = array('#'=>'Descargas');
-		$this->include_theme('index','index');
+		$this->include_theme('index','censo');
 	}
 }
 ?>

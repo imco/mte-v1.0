@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app='mte'>
  <head>
 	<meta charset="utf-8"/>
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -40,6 +40,11 @@
 			echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlzbyX3J7GwOXdoRwMDfYVbqxNG1D9Jy0&sensor=true"></script>';
 			//$js_scripts[] = 'infobox_packed.js';
 			//$js_scripts[] = 'map.js';
+		}
+		if($this->angular){
+			echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>';
+			$js_scripts[] = 'censo2014Archivos.js';
+			$js_scripts[] = 'angularApp.js';
 		}
 		//var_dump($js_scripts);
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");
