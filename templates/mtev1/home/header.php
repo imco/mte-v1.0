@@ -1,8 +1,8 @@
 <div class=' home  container'>	
 	<?php 
-		$logo = array('header/ninio.jpg','header/ninia.png');
+		$logo = array('header/ninio.jpg','header/ninia.png' ,'header/ninio-preescolar.png');
 		$child = $this->cookie("child");
-		$child = $child===false?rand(0,1):($child==0?1:0);
+		$child = $child===false?rand(0,2):($child==0?1:0);
 		$this->print_img_tag($logo[$child],false,'img','ninio');
 		//$this->set_cookie("child",$child);
 	?>

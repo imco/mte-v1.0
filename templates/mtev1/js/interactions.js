@@ -367,7 +367,7 @@ $(document).ready(function(){
 	})
 
 	//mejora view
-	$('.mejorar').click(function(){
+	$('.wrap').on('click','.mejorar',function(){
 		input_data_view_mejora(this);
 		$('.display').css('top',($(window).scrollTop()-325)+'px');	
 		$('.display').show('slow');
@@ -399,11 +399,11 @@ $(document).ready(function(){
 
 	});
 
-	$('.mejorar h1 a').click(function(e){
+	$('.wrap').on('click','.mejorar h1 a',function(e){
 		e.preventDefault();
 	});
 
-	$('.mejorar a.more, .mejorar a.download').click(function(e){
+	$('.wrap').on('click','.mejorar a.more, .mejorar a.download',function(e){
 		e.stopPropagation();
 	});
 
@@ -431,10 +431,6 @@ $(document).ready(function(){
 
 	});
 	
-
-	$('.container.programas svg path').hover(function(){
-		console.log($(this).text());
-	});
 
 	$(document).keyup(function(e){
 		if(e.keyCode == $.ui.keyCode.ESCAPE){
@@ -483,26 +479,9 @@ $(document).ready(function(){
 	$('.overlay-map').outerWidth($('.container.programas svg').width());
 	}
 
-	var myarr,eClass;
-	$('.container.programas .overlay-map .statemarker').hover(
-		function(){
-			myarr = $(this).attr("class").split(" ");
-			eClass = myarr[1];
-			$('.container.programas svg path').each(function(){
-				if($(this).text()==eClass)
-					$(this).css("fill","#359044");
-			});
-		},
-		function(){
-			myarr = $(this).attr("class").split(" ");
-			eClass = myarr[1];
-			$('.container.programas svg path').each(function(){
-				if($(this).text()==eClass)
-					$(this).css("fill","#C4EAD1");
-			});
-		}
-	);
 
+	var myarr,eClass;
+	load_map_mexico();
 
 
 	$(window).scroll(function(){
@@ -627,9 +606,48 @@ $(document).ready(function(){
 
         $('.custom-select-turno').customSelect();
     }
+	
+    if($('.container').hasClass('mejora')){
+
+        $(window).on('scroll',ajax_blog);
+    }
+
+    $('.spk').val($('.hidden.pk').html());
 });
 
+var page_of_blog = 1;
+function ajax_blog(e){
+        var contentSize = $('.mejorar').last().offset().top-750;
+        if($(this).scrollTop() > contentSize){
+		$(window).off('scroll')
+		var url = $('.hidden.blog_address').html()+'/mejora/';
+		$.ajax({
+	    		url: url,
+            		crossDomain : true,
+	    		type:'get',
+	    		dataType : 'jsonp',
+	    		data : {
+	    		mejora: $('.hidden.mejora_selected').html(),
+	    		offset:page_of_blog++
+	    	}, success:function(d){
+			if(d && d.indexOf('mejorar')!=-1){
+				d = $(d);
+				var wrap = $('.wrap').append(d);
+				$('.mejora.container').imagesLoaded( function(){
+					wrap.masonry('appended',d);
+					$(window).on('scroll',ajax_blog)
+				})
+			}
 
+
+	    		//TODO reiniciar el plugin que lo acomoda
+	    		//TODO on/off evento
+	    	},error:function(){
+	    		alert('Error al exportar.');
+	    	}});
+        }
+
+}
 
 function load_location_options(input,directive,options,name){
 	input.prop('disabled', true);
@@ -795,5 +813,67 @@ function toggle_select_float(){
 			contentCountActual.html(+(contentCountActual.html())-1);
 			contentCount.html(+(contentCount.html())+1);
 		});
+
+}
+
+function load_map_mexico(){
+	/* Mapa de la republica en  programas */
+    if(!window.d3) return ;
+    var x = d3.scale.linear()
+        .domain([0, width])
+        .range([0, width]);
+
+    var y = d3.scale.linear()
+        .domain([0, height])
+        .range([height, 0]);
+
+    var width = 680,
+        height = 500;
+
+    var projection = d3.geo.mercator()
+        .scale(1200)
+        .center([-94.34034978813841, 24.012062015793]);
+
+    var svg = d3.select(".container.programas .column.left #map-programas").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var g = svg.append("g");
+
+    var path = d3.geo.path()
+        .projection(projection);
+
+    d3.json("/mx_tj.json", function(error, mx) {
+      g.selectAll("path")
+        .data(topojson.object(mx, mx.objects.estados2).geometries)
+        .enter().append("path")
+        .attr("d", d3.geo.path().projection(projection))
+        .attr("fill", "#C4EAD1")
+        .style("stroke", "#40AA6C");
+
+       g.selectAll("path")
+        .data(topojson.object(mx, mx.objects.estados2).properties)
+        //.enter().append("path")
+        .attr("class",function(d) { return "e"+d.id; })
+        .text(function(d) { return "e"+d.id; });
+
+    });	
+
+    $('.container.programas svg').load(function(){
+		//Automatic state fill
+		$('.container.programas .overlay-map .statemarker').each(function(){
+			console.log('statemarker');
+			myarr = $(this).attr("class").split(" ");
+			eClass = myarr[1];
+			$('.container.programas svg path').each(function(){
+				console.log('path');
+				if ($(this).text() == eClass)
+					$(this).css("fill","#359044");
+			});
+		});
+    });
+
+
+
 
 }

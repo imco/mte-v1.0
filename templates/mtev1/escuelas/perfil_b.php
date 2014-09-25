@@ -52,6 +52,7 @@
                             </div>
                         <?php } ?>
 					</div>
+					<span class="hidden pk"><?=$this->simulateP?></span>
 					<div class="cal-escuela">
 						<span class="hidden CCT"><?=$this->escuela->cct?></span>
 						<a href="/califica_tu_escuela/califica/<?=$this->escuela->cct?>" class="button-frame"><span class="button-califica"><span class="icon-cal"></span>Califica tu escuela</span></a>
@@ -129,6 +130,10 @@
 				
 				<div class="box-hidden">
 					<input type='text' placeholder='Nombre' name='nombre' />
+					<input type="text" name="last_name" class='required hidden spk'/>
+					<input type="text" name="e_mail" class='hidden'/>
+					<input type="text" name="mail" class='hidden'/>
+					<input type="text" name="correo" class='hidden'/>
 					<input type='text' class='required email' placeholder='Correo electrónico (obligatorio)' name='email' />
 					<select class='custom-select required' name='ocupacion' >
 						<option value=''>¿Quién eres?</option>
@@ -149,7 +154,7 @@
 						a: contacto@mejoratuescuela.org
 					</p>
 				</div>
-
+				<input name="tk" type="hidden" value="<?=$this->getSimulatedToken($this->simulateP)?>"/>
 			</fieldset>		
 		</form>
 			<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>

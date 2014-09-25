@@ -1,4 +1,4 @@
-<div class='perfil container B preescolar'>
+<div class='perfil container B perfil-custom'>
 	<div class="box-head">
 		<div class='head'>
 			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
@@ -389,7 +389,7 @@ EOD;
 					<span><?=number_format($this->escuela->pct_reprobados*100,1)?> %</span>
 					</p>
 				</div>
-				<div class="preescolar-image">
+				<div class="section-image">
 					<h3>Preescolar</h3>
 					<img src="/templates/mtev1/img/cubitos.png" alt="Preescolar">
 				</div>	

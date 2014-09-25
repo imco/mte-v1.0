@@ -1068,18 +1068,22 @@ line-height: 45px;}
 #content .perfil.B .buble-sin-comentario{height:209px;background-size:190px;width:185px;}
 #content .perfil.B .charts{height:260px;}
 
-/*Perfil preescolar*/
-#content .perfil.B.preescolar .top-info .cal-escuela .button-frame{width: 278px;}
-#content .perfil.B.preescolar .top-info .cal-escuela .button-frame span.button-califica{padding: 9px 48px;width:205px;}
-#content .perfil.B.preescolar .top-info .cal-escuela .button-frame span.icon-cal{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_iconos-mejora-perfil.png) 26px -90px;background-size: 64px 509px;height: 25px;margin-top: -2px}
-#content .perfil.B.preescolar .tabs li{width: 339px}
-#content .perfil.B.preescolar .info_B ul li + li{margin-top: 8px}
-#content .perfil.B.preescolar .right .preescolar-image{background: #fff;padding: 24px 0;text-align: center;}
-#content .perfil.B.preescolar .right .preescolar-image h3{color: #339DD1;font-size: 24px}
-#content .perfil.B.preescolar .right .preescolar-image img{margin-top: 10px;width: 85%}
+/*Perfil preescolar y biblioteca*/
+#content .perfil.B.perfil-custom .top-info .cal-escuela .button-frame{width: 278px;}
+#content .perfil.B.perfil-custom .top-info .cal-escuela .button-frame span.button-califica{padding: 9px 48px;width:205px;}
+#content .perfil.B.perfil-custom .top-info .cal-escuela .button-frame span.icon-cal{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_iconos-mejora-perfil.png) 26px -90px;background-size: 64px 509px;height: 25px;margin-top: -2px}
+#content .perfil.B.perfil-custom .tabs li{width: 339px}
+#content .perfil.B.perfil-custom .info_B ul li + li{margin-top: 8px}
+#content .perfil.B.perfil-custom .right .section-image{background: #fff;padding: 24px 0;text-align: center;}
+#content .perfil.B.perfil-custom .right .section-image h3{color: #339DD1;font-size: 24px}
+#content .perfil.B.perfil-custom .right .section-image img{margin:30px 0;width: 85%}
 
-#content .perfil.B.preescolar .head h2.second-name{padding:16px 0px;position: relative;left: 180px;}
-#content .perfil.B.preescolar .head .select-turno {margin-right: 18px;z-index: 1;}
+/*Perfil biblioteca*/
+#content .perfil.B.perfil-custom.perfil-biblioteca .top-info .cal-escuela .button-frame span.button-califica{font-size: 16px}
+#content .perfil.B.perfil-custom.perfil-biblioteca .section-image img{margin-top: 25px}
+
+#content .perfil.B.perfil-custom .head h2.second-name{padding:16px 0px;position: relative;left: 180px;}
+#content .perfil.B.perfil-custom .head .select-turno {margin-right: 18px;z-index: 1;}
 
 /*Blog*/
 #content .blog{margin-top:33px;width:940px;}
@@ -1505,7 +1509,8 @@ margin-top: -12px;}
 #content .container.programas .column.left table tr td .button-frame{display: inline-block;width: 160px}
 #content .container.programas .column.left table tr td .button-frame .button{color: #fff;line-height: 30px;margin: 3px 8px}
 #content .container.programas .column.left #map-programas{position: relative;}
-#content .container.programas .column.left svg{background-color: #C6DEFA;border-top: 35px solid #fff;border-radius: 2px 2px 0px 0px}
+#content .container.programas .column.left svg{background-color: #C6DEFA;/*border-top: 35px solid #fff*/;border-radius: 2px 2px 0px 0px}
+#content .container.programas .column.left svg path.active,
 #content .container.programas .column.left svg path:hover{fill:#359044;}
 #content .container.programas .column.left .overlay-map{position: absolute;top: 35px}
 .overlay-map .statemarker.e1{left: 292px;top:190px;}
@@ -1983,7 +1988,6 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #header   form .recaptcha_input_area :-moz-placeholder,
 #content  .container form .recaptcha_input_area :-moz-placeholder{color:#787878;background-color:#D1D1D1;font-size:12px;text-align:center;}
 
-
 /*Bases de datos del censo*/
 #content .bases .file-search-form label{background-color:#2DA4F4;display:block;float:left;color:white;font-size:22px;padding:0 37px 0 41px;line-height:43px;background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/bases.png);background-repeat:no-repeat;background-position:15px 12px;}
 #content .bases .file-search-form input{display:block;float:left;margin:0;font-size:16px;width:320px;line-height:31px;padding:6px 16px;height:31px;}
@@ -2024,3 +2028,7 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 #content .bases .file-table .state td:nth-child(3){width:112px;}
 #content .bases .file-table .state td:nth-child(4){width:269px;}
 #content .bases .file-table .state td:nth-child(5){width:85px;}
+
+
+/*iframe perdido en mejora*/
+iframe[src="about:blank"]{display:none;}

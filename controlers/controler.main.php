@@ -235,12 +235,6 @@ class main extends controler{
 
         $this->process_custom_get_escuelas($q,$params);
 
-//		$this->escuelas = $q->read('id,cct,nombre,poco_confiables,codigopostal,telefono,correoelectronico,paginaweb,
-//		                            turno=>nombre,turno=>id,domicilio,total_evaluados,localidad=>nombre,localidad=>id,
-//		                            entidad=>nombre,entidad=>id,nivel=>nombre,nivel=>id,latitud,longitud,promedio_general,
-//		                            promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,control=>id,control=>nombre,
-//		                            municipio=>nombre,municipio=>id');
-
         if ($this->escuelas && (isset($params->one_turn) && $params->one_turn)) {
             $escuelasList = array();
             foreach($this->escuelas as $escuela){
@@ -299,7 +293,7 @@ class main extends controler{
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
             $ranks->order_by = "rank_entidad asc";
-            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval');
+            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
                 foreach($total_ranks as $key=>$rank) {
@@ -310,6 +304,7 @@ class main extends controler{
                         $escuela->selected_rank = $rank;
                     }
                 }
+                $escuela->clean_ranks();
             }
         }
     }
@@ -733,7 +728,7 @@ class main extends controler{
                         localidades.nombre localidades_nombre,localidades.id localidades_id,
                         entidades.nombre entidades_nombre,entidades.id entidades_id,
                         niveles.nombre niveles_nombre,niveles.id niveles_id,
-                        escuelas_para_rankeo.promedio_matematicas rank_promedio_matematicas,escuelas_para_rankeo.promedio_espaniol rank_promedio_espaniol,escuelas_para_rankeo.promedio_general rank_promedio_general,escuelas_para_rankeo.rank_entidad rank_rank_entidad,escuelas_para_rankeo.rank_nacional rank_rank_nacional,escuelas_para_rankeo.total_evaluados rank_total_evaluados,escuelas_para_rankeo.poco_confiables rank_poco_confiables,escuelas_para_rankeo.turnos_eval rank_turnos_eval,
+                        escuelas_para_rankeo.promedio_matematicas rank_promedio_matematicas,escuelas_para_rankeo.promedio_espaniol rank_promedio_espaniol,escuelas_para_rankeo.promedio_general rank_promedio_general,escuelas_para_rankeo.rank_entidad rank_rank_entidad,escuelas_para_rankeo.rank_nacional rank_rank_nacional,escuelas_para_rankeo.total_evaluados rank_total_evaluados,escuelas_para_rankeo.poco_confiables rank_poco_confiables,escuelas_para_rankeo.turnos_eval rank_turnos_eval,escuelas_para_rankeo.anio,
                         controles.id controles_id,controles.nombre controles_nombre,
                         municipios.nombre municipios_nombre,municipios.id municipios_id
                         from escuelas
@@ -744,10 +739,10 @@ class main extends controler{
                         left join controles on controles.id = escuelas.control
                         left join escuelas_para_rankeo on escuelas_para_rankeo.id = escuelas.id
                         left join turnos on turnos.id = escuelas_para_rankeo.turnos_eval
-                        where
+                        where ((escuelas_para_rankeo.id is not null and ((niveles.id = 22 and escuelas_para_rankeo.anio = 2014) or niveles.id != 22 )) or escuelas_para_rankeo.id is null)
                 ";
         if ($escuelas->search_clause) {
-            $sql .= $escuelas->search_clause;
+            $sql .= " AND ".$escuelas->search_clause;
         }
 
 
