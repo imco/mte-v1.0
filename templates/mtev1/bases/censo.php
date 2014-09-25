@@ -18,9 +18,9 @@
 				<th class='download'>Descargar</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody ng-cloak ng-repeat='entidad in entidades | filter:searchText' >
 			<tr class='space'><td></td><td></td><td></td><td></td><td></td></tr>
-			<tr ng-cloak ng-repeat='entidad in entidades | filter:searchText' class='state' >
+			<tr  class='state'>
 				<td>
 					<img ng-src='/templates/mtev1/img/bases/estados/{{entidad.entidad}}.png' alt='{{entidad.nombre}}' />
 					<p class='title1' ng-bind='entidad.nombre'></p>
