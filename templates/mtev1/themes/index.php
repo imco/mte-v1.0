@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app='mte'>
  <head>
 	<meta charset="utf-8"/>
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -43,8 +43,8 @@
 		}
 		if($this->angular){
 			echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>';
-			$js_scripts[] = 'infobox_packed.js';
-			//$js_scripts[] = 'map.js';
+			$js_scripts[] = 'censo2014Archivos.js';
+			$js_scripts[] = 'angularApp.js';
 		}
 		//var_dump($js_scripts);
 		$cssmin = new mxnphp_min($this->config,$css_scripts,"css","css-min-mte");

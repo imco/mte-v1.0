@@ -15,6 +15,7 @@ class bases extends main{
 	}
 	public function censo(){
 		//$this->header_folder ='escuelas';
+		$this->angular = true;
 		$this->breadcrumb = array('#'=>'Descargas');
 		$this->include_theme('index','censo');
 	}
