@@ -1,5 +1,5 @@
 <div class="container bases" ng-controller='fileController'>
-	<!-- <img src="http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/banner.jpg" alt="Bases de datos censo" style='margin-bottom:-2px' /> -->
+	<img src="http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/banner.jpg" alt="Bases de datos censo" style='margin-bottom:-2px' />
 	<div class='container quienes_somos'><div class='wrap_text'>
 	<p>El 31 de marzo la SEP anunció los resultados definitivos del Censo Educativo y el portal en el que la ciudadanía podría consultar estos resultados. Sin embargo el IMCO ha precisado que sólo podía conocerse el 16% de los datos que se recabaron a nivel escuela. Con el objetivo de obtener la totalidad de los datos, realizamos una solicitud de información a la SEP y al INEGI, a través del IFAI, para que los pusieran a disposición de la ciudadanía.  </p>
 	<p>A diferencia de la SEP, el INEGI respondió a nuestra solicitud de manera favorable mediante el oficio 201/30/2014. Hoy el IMCO, con la información proporcionada por el INEGI, da a conocer el 77% de los datos del Censo. </p>
