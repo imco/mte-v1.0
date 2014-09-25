@@ -10,11 +10,6 @@ class bases extends main{
 	*/
 	public function index(){
 		//$this->header_folder ='escuelas';
-		$this->breadcrumb = array('#'=>'Descargas');
-		$this->include_theme('index','index');
-	}
-	public function censo(){
-		//$this->header_folder ='escuelas';
 		$this->angular = true;
 		$this->breadcrumb = array('#'=>'Descargas');
 		$this->include_theme('index','censo');
