@@ -111,8 +111,10 @@ class escuelas extends main{
 			$nivel = "numero_escuelas_".strtolower($this->escuela->nivel->nombre);
 			$entidad_info = new entidad($this->escuela->entidad->id);
 			$entidad_info->debug = false;
+			if($this->escuela->nivel->id == 21)
+				$nivel='numero_escuelas_bachillerato';
 			$entidad_info->read($nivel);
-			if($this->escuela->nivel->id == 11  || $this->escuela->nivel->id ==  12 || $this->escuela->nivel->id == 22)
+			if($this->escuela->nivel->id == 12  || $this->escuela->nivel->id ==  13 || $this->escuela->nivel->id == 22 || $this->escuela->nivel->id == 21)
 				$this->entidad_cct_count = $entidad_info->$nivel;
 			else
 				$this->entidad_cct_count = 0;
