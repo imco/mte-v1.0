@@ -113,6 +113,7 @@ class escuelas extends main{
 			$entidad_info = new entidad($this->escuela->entidad->id);
 			$entidad_info->debug = false;
 			$entidad_info->read($nivel);
+			var_dump($nivel);
 			if($this->escuela->nivel->id == 11  || $this->escuela->nivel->id ==  12 || $this->escuela->nivel->id == 22)
 				$this->entidad_cct_count = $entidad_info->$nivel;
 			else
