@@ -137,7 +137,7 @@ class escuela extends memcached_table{
     private function get_semaforo_new_bachillerato($rank){
         if (!$rank) return false;
         $semaforo = 4;
-        echo 'ens';
+        
         if($rank->promedio_general>0 && $rank->total_evaluados>5 && $rank->eval_entre_programados>=.8){
             if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
                 $semaforo = 0;//amarillo
