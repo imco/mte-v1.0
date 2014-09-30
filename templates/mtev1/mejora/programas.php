@@ -57,7 +57,7 @@
 			?>
 		</div>	
 
-		<div class="subject">
+		<!--<div class="subject">
 			<p>Nivel escolar</p>
 			<ul>
 			<?php
@@ -90,7 +90,7 @@
 				?>
 			</select>
 
-		</div>
+		</div>-->
 	</div>
 	<div class="clear"></div>
 </div>

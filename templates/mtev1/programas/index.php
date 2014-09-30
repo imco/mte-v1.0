@@ -35,7 +35,7 @@
 			</div>
 			<h2 class="title">Página web del programa</h2>
 			<div class="white-box">
-				<a href="http://<?=$this->programa->sitio_web;?>" ><?php echo $this->programa->sitio_web; ?></a>
+				<a target="_blank" href="http://<?=$this->programa->sitio_web;?>" ><?php echo $this->programa->sitio_web; ?></a>
 			</div>
 			<h2 class="title">Contacto</h2>
 			<div class="white-box">
