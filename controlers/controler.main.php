@@ -193,11 +193,16 @@ class main extends controler{
 		}else{
 			$q->search_clause .= $this->request('localidad') ? ' AND escuelas.localidad = "'.$this->request('localidad').'" ' : '';
 		}
-
 		if(isset($params->nivel) && $params->nivel !== false){
 			$q->search_clause .= " AND escuelas.nivel = '{$params->nivel}' ";
 		}else{
-			$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
+			#$q->search_clause .= $this->request('nivel') === false || $this->request('nivel') === '' ? 'AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel="21" || escuelas.nivel = "22") ' : ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
+			if( $this->request('nivel') === false || $this->request('nivel') === '')
+				$q->search_clause .='AND (escuelas.nivel = "12" || escuelas.nivel = "13" || escuelas.nivel="21" || escuelas.nivel = "22") ';
+			elseif($this->request('nivel')!='22')
+				$q->search_clause .= ' AND escuelas.nivel = "'.$this->request('nivel').'" ';
+			elseif($this->request('nivel')=='22')
+				$q->search_clause .= ' AND (escuelas.nivel = "'.$this->request('nivel').'" || escuelas.nivel="21") ';
 		}
 
 		if(isset($params->control) && $params->control){
@@ -268,7 +273,7 @@ class main extends controler{
 	*/
 	public function get_escuelas_new($params = false,$page = false,$sort = false){
 		
-		$fq = '(nivel:12 OR nivel:13 OR nivel:22)';
+		$fq = '(nivel:12 OR nivel:13 OR nivel:22 OR nivel:21)';
 		$q = isset($params->term) && $params->term ? "nombre:".str_replace(' ','~ ',$params->term).'~' : '*:*';
 		if($params){
 			foreach($params as $key => $param){
