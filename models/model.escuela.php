@@ -108,7 +108,7 @@ class escuela extends memcached_table{
             $semaforo = $this->get_semaforo_new_bachillerato($rank);
         }
         else{
-            if(ctype_digit($rank->promedio_general)){
+            if($rank->promedio_general != ''){
                 if($rank->promedio_general > 0) {//si todos los anios fueron evaluados
                     if ((!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) || (!ctype_digit($rank->rank_entidad) && !ctype_digit($rank->rank_nacional))){
                         $semaforo = 5;//poco confiable
