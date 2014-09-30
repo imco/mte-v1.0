@@ -298,7 +298,7 @@ class main extends controler{
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
             $ranks->order_by = "rank_entidad asc";
-            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio');
+            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio,eval_entre_programados');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
                 foreach($total_ranks as $key=>$rank) {
@@ -733,7 +733,7 @@ class main extends controler{
                         localidades.nombre localidades_nombre,localidades.id localidades_id,
                         entidades.nombre entidades_nombre,entidades.id entidades_id,
                         niveles.nombre niveles_nombre,niveles.id niveles_id,
-                        escuelas_para_rankeo.promedio_matematicas rank_promedio_matematicas,escuelas_para_rankeo.promedio_espaniol rank_promedio_espaniol,escuelas_para_rankeo.promedio_general rank_promedio_general,escuelas_para_rankeo.rank_entidad rank_rank_entidad,escuelas_para_rankeo.rank_nacional rank_rank_nacional,escuelas_para_rankeo.total_evaluados rank_total_evaluados,escuelas_para_rankeo.poco_confiables rank_poco_confiables,escuelas_para_rankeo.turnos_eval rank_turnos_eval,escuelas_para_rankeo.anio,
+                        escuelas_para_rankeo.promedio_matematicas rank_promedio_matematicas,escuelas_para_rankeo.promedio_espaniol rank_promedio_espaniol,escuelas_para_rankeo.promedio_general rank_promedio_general,escuelas_para_rankeo.rank_entidad rank_rank_entidad,escuelas_para_rankeo.rank_nacional rank_rank_nacional,escuelas_para_rankeo.total_evaluados rank_total_evaluados,escuelas_para_rankeo.poco_confiables rank_poco_confiables,escuelas_para_rankeo.turnos_eval rank_turnos_eval,escuelas_para_rankeo.anio,escuelas_para_rankeo.eval_entre_programados rank_eval_entre_programados,
                         controles.id controles_id,controles.nombre controles_nombre,
                         municipios.nombre municipios_nombre,municipios.id municipios_id
                         from escuelas
@@ -796,6 +796,7 @@ class main extends controler{
                 $escuela->total_evaluados = isset($row['rank_total_evaluados']) ? $row['rank_total_evaluados'] : "";
                 $escuela->poco_confiables = isset($row['rank_poco_confiables']) ? $row['rank_poco_confiables'] : "";
                 $escuela->turnos_eval = isset($row['rank_turnos_eval']) ? $row['rank_turnos_eval'] : "";
+                $escuela->eval_entre_programados = isset($row['rank_eval_entre_programados']) ? $row['rank_eval_entre_programados'] : "";
                 $escuela->control = new control(isset($row['controles_id']) ? $row['controles_id'] : "");
                 $escuela->control->nombre = isset($row['controles_nombre']) ? $row['controles_nombre'] : "";
                 $escuela->municipio = new municipio(isset($row['municipios_id']) ? $row['municipios_id'] : "");
