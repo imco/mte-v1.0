@@ -32,7 +32,8 @@ class escuela extends memcached_table{
 		#$this->semaforo_rangos[12] = array(433,524,615,900);
 		$this->semaforo_rangos[12] = array(559,601,662,900);
 		$this->semaforo_rangos[13] = array(511,544,591,900);
-		$this->semaforo_rangos[22] = array(551,580,632,900);
+        $this->semaforo_rangos[21] = array(562.47,593.39,646.05,900);;
+		$this->semaforo_rangos[22] = array(562.47,593.39,646.05,900);
 		$this->semaforo_poco_confiable = 10;
 
 	}
