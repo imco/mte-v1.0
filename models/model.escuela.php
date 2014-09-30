@@ -138,7 +138,7 @@ class escuela extends memcached_table{
         if (!$rank) return false;
         $semaforo = 4;
         
-        if($rank->promedio_general>0 && $rank->total_evaluados>5 && $rank->eval_entre_programados>=.8){
+        if($rank->promedio_general>0 && $rank->total_evaluados>5 && $rank->eval_entre_programados>.8){
             if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
                 $semaforo = 0;//amarillo
             else
