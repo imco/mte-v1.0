@@ -43,6 +43,8 @@ class escuelas extends main{
 			$this->escuelas_digest->centerlat = $this->escuela->latitud;
 			$this->escuelas_digest->centerlong = $this->escuela->longitud;
 
+
+			$this->set_turno_map();
 			$this->header_folder = 'escuelas';
 			$this->draw_map = true;
 			$this->page_title = $this->capitalize($this->escuela->nombre).' - '.$this->escuela->cct.' - Mejora tu Escuela';
@@ -319,6 +321,19 @@ class escuelas extends main{
 			}
 		}
 		return true;
+	}
+
+	private function set_turno_map(){
+		if(isset($this->escuela->rank)){
+			foreach($this->escuela->rank as $rank){
+				$tmp = clone $this->escuelas_digest->escuelas[$this->escuela->cct];
+				$tmp->semaforo = $rank->semaforo;
+				$tmp->rank = $rank->rank_entidad;
+				$tmp->rank_nacional = $rank->rank_nacional;
+				$this->escuelas_digest->escuelas["#".$rank->turnos_eval] = $tmp;
+			}
+		
+		}	
 	}
 }
 ?>

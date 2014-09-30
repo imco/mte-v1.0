@@ -41,25 +41,29 @@ $().ready(function(){
 
 });
 
-function initialize_map(){
-
+function initialize_map(turno){
+	turno = turno || false
 	var data = $.parseJSON($("#map-data").html())
 	, uniqueEscuela
 	, cctNow = $('.hidden.CCT').text();
 	
-		console.log(data.escuelas);
 	if(data && data.escuelas && cctNow){
 		var c=0
 		, uniqueEscuela = true
-		, cct = data.escuelas[cctNow];
+		, cct = data.escuelas[cctNow]
+		, pref = turno || window.location.hash || cctNow;
 		for(var l in data.escuelas){
 			c++;
 			if(c==2){
 				uniqueEscuela = false;
 			}
-			if(cct.longitud === data.escuelas[l].longitud && cct.latitud === data.escuelas[l].latitud && l!=cct.cct)
-				delete data.escuelas[l];
-			
+			if(cct.longitud === data.escuelas[l].longitud && cct.latitud === data.escuelas[l].latitud && l!=cct.cct){
+				if(pref!=l){
+					delete data.escuelas[l];
+					if(pref.indexOf("#")==0)
+						delete data.escuelas[cctNow];
+				}
+			}
 			
 		}
 	}

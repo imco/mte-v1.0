@@ -593,6 +593,8 @@ $(document).ready(function(){
            var selected = $(this).val();
            $('.turnos_switch').hide();
            $('.turnos_switch_' + selected).show();
+	   clear_map();
+	   initialize_map("#"+selected);
         });
 
         var turno = window.location.hash.substr(1);
@@ -638,10 +640,6 @@ function ajax_blog(e){
 					$(window).on('scroll',ajax_blog)
 				})
 			}
-
-
-	    		//TODO reiniciar el plugin que lo acomoda
-	    		//TODO on/off evento
 	    	},error:function(){
 	    		alert('Error al exportar.');
 	    	}});
