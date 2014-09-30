@@ -100,7 +100,7 @@ class escuelas extends main{
 				control=>id,control=>nombre,
 				enlaces=>id,enlaces=>anio,enlaces=>grado,enlaces=>turnos,enlaces=>puntaje_espaniol,enlaces=>puntaje_matematicas,enlaces=>nivel,				
 				reportes_ciudadanos=>id,reportes_ciudadanos=>likes,reportes_ciudadanos=>denuncia,reportes_ciudadanos=>nombre_input,reportes_ciudadanos=>publicar,
-				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional,rank=>anio
+				rank=>promedio_general,rank=>promedio_matematicas,rank=>promedio_espaniol,rank=>total_evaluados,rank=>pct_reprobados,rank=>poco_confiables,rank=>turnos_eval,rank=>rank_entidad,rank=>rank_nacional,rank=>anio, rank=>eval_entre_programados
 			");
 			#$this->debug = true;
             $this->escuela->get_mongo_info($this->mongo_connect());

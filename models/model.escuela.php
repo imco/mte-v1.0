@@ -32,7 +32,7 @@ class escuela extends memcached_table{
 		#$this->semaforo_rangos[12] = array(433,524,615,900);
 		$this->semaforo_rangos[12] = array(559,601,662,900);
 		$this->semaforo_rangos[13] = array(511,544,591,900);
-        $this->semaforo_rangos[21] = array(562.47,593.39,646.05,900);;
+        $this->semaforo_rangos[21] = array(562.47,593.39,646.05,900);
 		$this->semaforo_rangos[22] = array(562.47,593.39,646.05,900);
 		$this->semaforo_poco_confiable = 10;
 
@@ -102,14 +102,44 @@ class escuela extends memcached_table{
 
     private function get_semaforo_new($rank){
         if (!$rank) return false;
-
         $semaforo = 4;
-
-        if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
-            if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
-                $semaforo = 5;//poco confiable
+        if($this->nivel->id==21 || $this->nivel->id==22){
+            $semaforo = $this->get_semaforo_new_bachillerato($rank);
+        }
+        else{
+            if ($rank->promedio_general > 0) {//si todos los anios fueron evaluados
+                if (!isset($rank->rank_entidad) && !isset($rank->rank_nacional)) {
+                    $semaforo = 5;//poco confiable
+                }
+                else if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
+                    $semaforo = 0;//amarillo
+                else
+                    if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )
+                        $semaforo = 1;//verde
+                    else
+                        if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][2] )
+                            $semaforo = 2;//naranja
+                        else
+                            $semaforo = 3;//reprobado
+            } else {
+                $semaforo = 6;//no se cuentan
             }
-            else if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
+        }
+
+        if ($this->semaforo >  $semaforo) {
+            $this->semaforo = $semaforo;
+        }
+
+        $rank->semaforo = $semaforo;
+        return $semaforo;
+    }
+
+    private function get_semaforo_new_bachillerato($rank){
+        if (!$rank) return false;
+        $semaforo = 4;
+        echo 'ens';
+        if($rank->promedio_general>0 && $rank->total_evaluados>5 && $rank->eval_entre_programados>=.8){
+            if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][0])
                 $semaforo = 0;//amarillo
             else
                 if( $rank->promedio_general < $this->semaforo_rangos[$this->nivel->id][1] )
@@ -266,7 +296,7 @@ class escuela extends memcached_table{
         $rank = new rank();
         //$rank->debug = true;
         $rank->search_clause = "escuelas_para_rankeo.id = {$this->id}";
-        $ranks = $rank->read('id,turnos_eval,promedio_general,promedio_matematicas,promedio_espaniol,total_evaluados,pct_reprobados,poco_confiables,rank_entidad,rank_nacional');
+        $ranks = $rank->read('id,turnos_eval,promedio_general,promedio_matematicas,promedio_espaniol,total_evaluados,pct_reprobados,poco_confiables,rank_entidad,rank_nacional,eval_entre_programados');
         $this->rank = $ranks;
     }
     public function clean_ranks(){
