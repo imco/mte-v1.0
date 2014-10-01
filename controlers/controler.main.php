@@ -298,7 +298,7 @@ class main extends controler{
             //$ranks->debug = true;
             $ranks->search_clause = "escuelas_para_rankeo.id in ({$escuelasQuery})";
             $ranks->order_by = "rank_entidad asc";
-            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio,eval_entre_programados');
+            $total_ranks = $ranks->read('id,promedio_general,promedio_matematicas,promedio_espaniol,rank_entidad,rank_nacional,turnos_eval,anio,total_evaluados,eval_entre_programados');
             foreach($escuelas as $escuela) {
                 $escuela->rank = array();
                 foreach($total_ranks as $key=>$rank) {
@@ -448,11 +448,14 @@ class main extends controler{
 			$id_entidad = isset($escuela->entidad->id)?$escuela->entidad->id:$escuela->entidad;
 			$entidad = new entidad($id_entidad);
 			$nivelNombre = isset($escuela->nivel->nombre)?$escuela->nivel->nombre:$escuela->nom_nivel;
+			if($nivelNombre == "TECNICO PROFESIONAL")
+				$nivelNombre = "BACHILLERATO";
 			$nivel = "numero_escuelas_".strtolower($nivelNombre);
 			$nivelNacional = "numero_nacional_escuelas_".strtolower($nivelNombre);
 			$entidad->read($nivel.",".$nivelNacional);
 			$escuela->entidad_cct_count = isset($entidad->$nivel) ? $entidad->$nivel : 0;
 			$escuela->nacional_cct_count = isset($entidad->$nivelNacional) ? $entidad->$nivelNacional : 0;
+			//var_dump($entidad);
 		}
 	}
     }

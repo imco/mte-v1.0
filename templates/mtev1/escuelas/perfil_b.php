@@ -650,7 +650,7 @@ EOD;
 							<?php
 							//var_dump($this->escuela->{$programa->m_collection});
 							if(isset($this->escuela->programas[$programa->m_collection]->anios)){
-								echo implode(",",$this->escuela->programas[$programa->m_collection]->anios);
+								//echo implode(",",$this->escuela->programas[$programa->m_collection]->anios);
 							}
 							?>
 						</a></li>
