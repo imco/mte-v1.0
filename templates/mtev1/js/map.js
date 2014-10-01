@@ -32,9 +32,9 @@ $().ready(function(){
 						url = '/compara/get_data_table/';
 					}
 
-//					$.post(url,{name_entidad:state_name},function(data){
-//						$('.changeAjax').html(data);
-//					});
+					$.post(url,{name_entidad:state_name},function(data){
+						$('.changeAjax').html(data);
+					});
 				}
 			});
 		})
