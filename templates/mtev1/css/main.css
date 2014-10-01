@@ -2033,3 +2033,5 @@ body #content .container #recaptcha_reload_btn{margin-top:-18px!important;}
 
 /*iframe perdido en mejora*/
 iframe[src="about:blank"]{display:none;}
+
+#main-banner.banners_escuelas{margin-top:29px;}
