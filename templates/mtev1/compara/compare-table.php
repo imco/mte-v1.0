@@ -33,7 +33,8 @@
         echo "<td rowspan='{$count_semaforos}'>".$controles[$escuela->control->id]."</td>";
 
         if (isset($escuela->rank) && count($escuela->rank)) {
-            foreach($escuela->rank as $key=>$rank) {
+            $key = 0;
+            foreach($escuela->rank as $rank) {
                 $matematicas = $rank->promedio_matematicas >= 0 && $rank->semaforo <= 3 ? round($rank->promedio_matematicas) : '';
                 $espaniol = $rank->promedio_espaniol >= 0 && $rank->semaforo <= 3 ? round($rank->promedio_espaniol) : '';
                 $r_entidad_text = $rank->rank_entidad != '' ? "de {$escuela->entidad_cct_count}" : '';
@@ -64,6 +65,7 @@
                         </span></div>
                 </td>";
                 echo "</tr>";
+                $key++;
             }
 	    } else {
             echo "<td class='turno'>Matutino</td>";//cambiar
