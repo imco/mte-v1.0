@@ -69,8 +69,8 @@
             }
             ?>
             </div>
-            <div id='escuelas_estado_list'></div>
         </div>
+        <div id='escuelas_estado_list'></div>
     </div>
 	<div class="column right">
 		<h1>Otros programas</h1>
