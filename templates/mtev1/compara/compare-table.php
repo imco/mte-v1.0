@@ -63,10 +63,7 @@
                                 */."
                         </span></div>
                 </td>";
-                if ($key > 0) {
-                    echo "</tr>";
-                }
-
+                echo "</tr>";
             }
 	    } else {
             echo "<td class='turno'>Matutino</td>";//cambiar
