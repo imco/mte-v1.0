@@ -10,7 +10,7 @@
 	<li><a href="http://storage.googleapis.com/cemabe/TR_CENTROS.DBF.zip">Archivo Centros de Trabajo</a>: Datos sobre características de los centros de trabajo (escuelas) excepto CONAFE. </li>
 	<li><a href="http://storage.googleapis.com/cemabe/TR_CONAFE.DBF.zip">Archivo CONAFE</a>: Datos sobre características del inmueble y centros de trabajo de esta modalidad.</li>
 	<li><a href="http://9f0fda65d2ce0b27aaf2-105ac619070a816e0b7aa45dafa2da41.r45.cf1.rackcdn.com/cemabe/Diccionario_CEMABE.xlsx">Descripción de variables de cuestionarios</a></li>
-	<li>¿No puedes abrir los archivos? Visita nuestra sección de <a href="http://www.mejoratuescuela/preguntas-frecuentes#pregunta14" target="_blank">preguntas frecuentes</a>.</li>
+	<li>¿No puedes abrir los archivos? Visita nuestra sección de <a href="http://www.mejoratuescuela.org/preguntas-frecuentes#pregunta14" target="_blank">preguntas frecuentes</a>.</li>
 	</ol>
 	</div></div>
 
