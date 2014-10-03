@@ -1,7 +1,7 @@
 <div class='perfil container B perfil-custom perfil-biblioteca'>
 	<div class="box-head">
 		<div class='head'>
-			<h1 class='main-name'>Nombre de la Biblioteca</h1>
+			<h1 class='main-name'><?=$this->capitalize($this->escuela->nombre)?></h1>
 			<div class="clear"></div>
 		</div>
 		<div class='info_B top'>
