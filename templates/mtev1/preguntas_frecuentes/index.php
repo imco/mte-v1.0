@@ -16,6 +16,7 @@
 			<li><a href="#pregunta11" >Mi escuela cuenta con página de internet ¿se puede incluir en el perfil de MejoraTuEscuela.org?</a></li>
 			<li><a href="#pregunta12" >¿Las bases de datos están disponibles y son abiertas para uso de terceros?</a></li>
 			<li><a href="#pregunta13" >¿Cómo puedo crear mi propia petición?</a></li>
+			<li><a href="#pregunta14" >14. Cuando abro el archivo en Excel de la descarga de las bases de datos del Censo Educativo, la información me aparece en una sola celda, ¿cómo puedo abrirlo?</a></li>
 			<span>**Si tu duda no se resuelve con estas preguntas por favor contáctanos vía correo a: contacto@mejoratuescuela.org</span>
 		</ol>
 		<div class="text-ayuda">
@@ -113,6 +114,9 @@
 				<p>Si quieres crear tu propia petición te invitamos a visitar el sitio de nuestros aliados: www.Change.org Change.org® es un sitio independiente y apartidista que permite que cualquier persona, desde cualquier lugar del mundo, pueda iniciar una campaña para generar cambios sociales en su comunidad.
 <br />
 				Para iniciar una petición deberás registrarte en el sitio de Change.org, describir la problemática que deseas compartir, escoger a qué autoridades quieres que se le envíe tu petición, y finalmente compartirla con tus amigos y conocidos por medio de correos electrónicos o redes sociales. Si quieres que tu petición se muestre en MejoraTuEscuela.org, mándanos la liga a tu petición a: contacto@mejoratuescuela.org y con mucho gusto la revisaremos. Mejora tu escuela busca promover iniciativas y peticiones ciudadanas para mejorar la calidad de la educación en México.</p>
+				<a name="pregunta14"></a>
+				<h3>14. Cuando abro el archivo en Excel de la descarga de las bases de datos del Censo Educativo, la información me aparece en una sola celda, ¿cómo puedo abrirlo?</h3>
+				<p>El archivo que se descarga desde Mejora tu escuela tiene formato <a href="http://es.wikipedia.org/wiki/CSV" target="_blank">CSV</a> separado por punto y coma (";"). Para poder abrirlo, tienen que importarlo a Excel. En el siguiente link <a href="https://www.youtube.com/watch?v=-VS-RVwGHZA" target="_blank">https://www.youtube.com/watch?v=-VS-RVwGHZA</a> pueden ver un tutorial que les ayudará a manejar este archivo o leer las instrucciones oficiales en <a href="http://office.microsoft.com/es-mx/excel-help/import-or-export-text-txt-or-csv-files-HP010342598.aspx" target="_blank">http://office.microsoft.com/es-mx/excel-help/import-or-export-text-txt-or-csv-files-HP010342598.aspx</a>.</p>
 			</div>	
 		</div>
 	</div>
