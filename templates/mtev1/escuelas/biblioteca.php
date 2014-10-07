@@ -90,7 +90,10 @@
 			</ul>
 
 		<div class='tab-container'>
-		<?php if($this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
+		<?php 
+		if($this->escuela->censo){echo "tiene censo";}
+		if($this->escuela->censo['infraestructura']){echo "tiene infraestructura";}
+		if($this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 				<h2>Información disponible corresponde al ciclo 2013/2014</h2>
