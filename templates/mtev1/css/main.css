@@ -939,7 +939,7 @@ line-height: 45px;}
 #content .perfil.B .info_B .email .icon{background:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_blue_mail.png) center 0 no-repeat;margin:1px 4px;}
 #content .perfil.B .info_B .director .icon{background-image:url(http://3903b795d5baf43f41af-5a4e2dc33f4d93e681c3d4c060607d64.r40.cf1.rackcdn.com/perfil_blue_director.png);height:14px;width:16px;margin:0 6px;}
 #content .perfil.B .info_B .column.right{width:35%;}
-#content .perfil.B #mapa{margin:7px 0 0;width:340px;height:242px;}
+#content .perfil.B #mapa{margin:7px 0 0;width:340px;height:270px;/*height:242px;*/}
 #content .perfil.B .tabs{margin:0;}
 #content .perfil.B .tab-container{margin:0;width:645px;}
 #content .perfil.B .tab{width:645px;}
@@ -1204,7 +1204,7 @@ line-height: 45px;}
 /*Perfil*/
 
 #content .perfil.B .map-wrap{position:relative;}
-#content .perfil.B .map-wrap .lateral{position:absolute;z-index:10;top:6px;right:0;height:243px;width:342px;/*155pxpadding:11px 17px 0;*/;padding: 0;overflow:hidden;}
+#content .perfil.B .map-wrap .lateral{position:absolute;z-index:10;top:6px;right:0;height:271px;/*height:243px;*/width:342px;/*155pxpadding:11px 17px 0;*/;padding: 0;overflow:hidden;}
 #content .perfil.B .map-wrap .lateral .box{padding:0 14px}
 #content .perfil.B .map-wrap .lateral .box p{margin-top: 8px}
 #content .perfil.B .map-wrap .lateral p{font-size:16px;text-indent:2px;}
