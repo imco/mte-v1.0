@@ -47,17 +47,17 @@
 		<div class="subject list">
 			<p>Tema de enfoque</p>
 			<ul>
-				<?php foreach($temas as $id => $name) 
-					echo "<li><a href='/programas/index/{$id}'>{$name}</a></li>";
-				
-				?>
+				<?php foreach($temas as $id => $name){
+					if($name!="")
+						echo "<li><a href='/programas/index/{$id}'>{$name}</a></li>";
+				}?>
 
 			</ul>
 			<?php 
 			?>
 		</div>	
 
-		<div class="subject">
+		<!--<div class="subject">
 			<p>Nivel escolar</p>
 			<ul>
 			<?php
@@ -90,7 +90,7 @@
 				?>
 			</select>
 
-		</div>
+		</div>-->
 	</div>
 	<div class="clear"></div>
 </div>

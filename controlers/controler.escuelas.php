@@ -63,8 +63,12 @@ class escuelas extends main{
 				$this->escuela->paginaweb = "http://".$this->escuela->paginaweb;
 			}
 			$this->simulateP = rand()%15;
-			if($this->escuela->nivel->nombre != 'PREESCOLAR')
+			if($this->escuela->nivel->nombre != 'PREESCOLAR' && !preg_match('/^..BB/', $this->escuela->cct ) ){
 				$this->include_theme('index','perfil_b');
+			}
+			else if( preg_match('/^..BB/', $this->escuela->cct ) ){
+				$this->include_theme('index','biblioteca');
+			}
 			else{
 				$this->include_theme('index','preescolar');
 			}

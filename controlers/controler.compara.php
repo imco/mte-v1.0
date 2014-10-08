@@ -40,6 +40,8 @@ class compara extends main{
 			$params->entidad = $this->get('entidad');
 			$params->municipio = $this->get('municipio');
 			$params->localidad = $this->get('localidad');
+			$params->poco_confiables = $this->get('poco_confiables');
+			$params->eval_entre_programados = $this->get('eval_entre_programados');
 			$p = $this->get('p') ? $this->get('p') : 1;
 			$this->get_escuelas_new($params,$p);
 			
@@ -94,6 +96,7 @@ class compara extends main{
 	* Lee la información de las escuelas para mostrar la tabla de comparación
 	*/
 	public function escuelas(){
+		#$this->debug=true;
 		$this->load_niveles();
 		$this->load_entidades();
 		$this->load_municipios();
