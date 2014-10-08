@@ -26,9 +26,11 @@
 				<?php 
 				foreach($this->niveles as $nivel){
 					$selected = $this->request('nivel') == $nivel->id && $this->request('nivel') != '' ? "selected='selected'" : '';
-					echo "<option $selected value='{$nivel->id}'>".$this->capitalize($nivel->nombre)."</option>"; 
+					echo "<option $selected value='{$nivel->id}'>".$this->capitalize($nivel->nombre)."</option>";
 				}
-				?>
+                $selected = $this->request('nivel') == 1 && $this->request('nivel') != '' ? "selected='selected'" : '';
+                echo "<option $selected value='1'>Bibliotecas</option>";
+                ?>
 			</select>
 		</p>
 		<p class='button-frame'>

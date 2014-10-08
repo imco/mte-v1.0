@@ -271,7 +271,7 @@ class escuelas extends main{
 				$description = $description.$this->capitalize($this->escuela->entidad->nombre).".";
 			}
 		}else{
-			if( $this->escuela->cct[2] === 'B' && $this->escuela->nivel!=12 && $this->escuela->nivel!=13 && $this->escuela->nivel!=22){
+			if( $this->escuela->cct[2] === 'B' && $this->escuela->nivel->id!=12 && $this->escuela->nivel->id!=13 && $this->escuela->nivel->id!=22){
 				$description = 'Conoce la información sobre las bibliotecas más cercanas a tu casa o escuela , datos sobre la ubicación, infraestructura, servicios con los que cuenta y opiniones de miembros de la comunidad educativa.';
 			}else{
 				$description = "No contamos con información suficiente para calificar el aprovechamiento académico en la escuela de nivel ".strtolower($this->escuela->nivel->nombre)." ".$this->capitalize($this->escuela->nombre).", es posible que esta institución no haya tomado la prueba ENLACE 2013 o no se haya tomado en todos sus grupos.";

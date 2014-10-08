@@ -1031,8 +1031,8 @@ line-height: 45px;}
 #content .perfil.B .califica input[type="submit"]{width:170px;height:25px;font-size:16px;}
 #content .perfil.B .califica .custom-select{width:157px!important;margin-top:-2px;color:#888;}
 #content .perfil.B .califica textarea{height:68px;}
-/*#content .perfil.B .tabs.no-infra li{width:339px;}*/
 #content .perfil.B .tabs li{background-image:none;height:80px;background-color:white;margin:7px 0 0 0;height:62px;border:1px solid #c3c9c9;width:225px;border-top:none;}
+#content .perfil-biblioteca .tabs.no-infra li{width:100% !important;}
 
 #content .perfil.B .tabs:before{content:"";width:100%;background-color:#329dd1;position:absolute;height:7px;top:1px;}
 #content .perfil.B .tabs li a{color:#797979;width:118px;height:87px;padding:0;margin:13px auto;text-align:center;line-height:16px;font-size:17px;}

@@ -73,24 +73,23 @@
 
 			</fieldset>		
 		</form>
-			<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>
-			<!---<ul class='tabs <?=$this->escuela->infraestructura?"":"no-infra"?>'>-->
+			<ul class='tabs <?= isset($this->escuela->censo) && $this->escuela->censo && ($infra = $this->escuela->censo['infraestructura']) ?"":"no-infra"?>'>
 				<li class=""><a href='#tab-calificacion' class='reportes'>
 					<span class='triangle'></span>
 					Comentarios 
 					y reportes
 				</a></li>
-				<?php //if($this->escuela->infraestructura){ ?>
+                <?php if(isset($this->escuela->censo) && $this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
 					<li class="on"><a href='#tab-infraescructura' class='result'>
 						<span class='triangle'></span>
 						Infraestructura escolar
 					</a></li>
-				<? //} ?>
+				<? } ?>
 				<div class='clear'></div>
 			</ul>
 
 		<div class='tab-container'>
-		<?php if($this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
+		<?php if(isset($this->escuela->censo) && $this->escuela->censo && ($infra = $this->escuela->censo['infraestructura'])){  ?>
 			<div class='head t-tabs'><p class='title-tabs'>Infraestructura escolar</p></div>
 			<div class='tab on infraestructura-tab' id='tab-infraescructura'>
 				<h2>Información disponible corresponde al ciclo 2013/2014</h2>
