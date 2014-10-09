@@ -83,7 +83,6 @@ class mejora extends main{
 	}
 
 	private function exist_cct_in($m_collection,$regex){
-        var_dump($m_collection);
 		try {
 			$m = $this->mongo_connect();
 			$db = $m->selectDB("mte_programas");
