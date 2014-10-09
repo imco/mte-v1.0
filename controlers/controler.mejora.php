@@ -42,7 +42,7 @@ class mejora extends main{
 
 	public function programas(){
 		$this->common_mejora();
-		$nivel = array('primaria'=>'PR','secundaria'=> 'ES','bachillerato'=> 'BH','Preescolar'=>'JN');
+		$nivel = array('primaria'=>'PR','secundaria'=> 'ES','bachillerato'=> 'BH','preescolar'=>'JN');
 		$filtroF = array();
 		$filtro = array();
 		$estado = $this->get('estado');
@@ -60,8 +60,8 @@ class mejora extends main{
 						$add = false;
 					}
 
-				    	if($add && $estado && !$this->exist_cct_in($p->m_collection,$regex1)){
-						$add = false;
+                    if($add && $estado && !$this->exist_cct_in($p->m_collection,$regex1)){
+                        $add = false;
 					}
 					if($add){
 						if($p->federal){
@@ -83,6 +83,7 @@ class mejora extends main{
 	}
 
 	private function exist_cct_in($m_collection,$regex){
+        var_dump($m_collection);
 		try {
 			$m = $this->mongo_connect();
 			$db = $m->selectDB("mte_programas");

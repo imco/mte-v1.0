@@ -57,17 +57,16 @@
 			?>
 		</div>	
 
-		<!--<div class="subject">
+		<div class="subject">
 			<p>Nivel escolar</p>
 			<ul>
 			<?php
-				$estado = $this->get('estado')? $this->get('estado'):false;
 				$n = $this->get('nivel')?$this->get('nivel'):false;
-				$nivel = array('primaria','secundaria','bachillerato');
+				$nivel = array('primaria','secundaria','bachillerato','preescolar');
 				foreach($nivel as $name){
 					$on = $n == $name?'on':'';
-					echo "<li class='$on'>
-						<a href='/mejora/programas/?estado=$estado&nivel=$name'>{$this->capitalize($name)}</a>
+                    echo "<li class='$on'>
+						<a class='nivel_link' name='{$name}' style='cursor:pointer;'>{$this->capitalize($name)}</a>
 					</li>";
 				}
 				echo "<span class='hidden nivelE'>$n</span>"
@@ -78,19 +77,18 @@
 
 		<div class="subject">
 			<p>Zonas de impacto</p>
-			<select id="" name="" class='custom-select'>
+			<select id="estado_select" name="estado_select" class='custom-select'>
 
 				<option value='0'> Estado</option>
-				<?php 
+				<?php
+                $estado = $this->get('estado')? $this->get('estado'):false;
 				foreach($this->entidades as $entidad){
-					
 					$selected = $estado == $entidad->id ? "selected='selected'" : '';
 					echo "<option $selected value='{$entidad->id}'>".$this->capitalize($entidad->nombre)."</option>";
-				} 
+				}
 				?>
 			</select>
-
-		</div>-->
+		</div>
 	</div>
 	<div class="clear"></div>
 </div>

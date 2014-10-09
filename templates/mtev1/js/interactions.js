@@ -615,11 +615,23 @@ $(document).ready(function(){
     }
 
     $('.spk').val($('.hidden.pk').html());
+
+    if ($('.nivel_link').length > 0) {
+        $('.nivel_link').click(function(){
+            var estado = $('#estado_select').val();
+            var nivel = $(this).attr('name');
+            var url = "/mejora/programas/?nivel=" + nivel;
+            if (estado != 0) {
+                url += "&estado=" + estado;
+            }
+            window.location = url;
+        });
+    }
 });
 
 var page_of_blog = 1;
 function ajax_blog(e){
-        var contentSize = $('.mejorar').last().offset().top-750;
+        var contentSize = $('.mejorar').last().offset.top-750;//causaba error con offset()
         if($(this).scrollTop() > contentSize){
 		$(window).off('scroll')
 		var url = $('.hidden.blog_address').html()+'/mejora/';
