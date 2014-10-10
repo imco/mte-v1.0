@@ -294,7 +294,6 @@ class main extends controler{
 		$response = file_get_contents($url);
 		$response = json_decode($response);
 		$this->escuelas = $response->response->docs;
-        var_dump($this->escuelas);
 		$this->num_results = $response->response->numFound;
 	}
 

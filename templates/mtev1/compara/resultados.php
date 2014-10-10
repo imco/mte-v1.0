@@ -22,6 +22,7 @@
 			$esc->poco_confiables = $escuela->poco_confiables;
 			$esc->total_evaluados = $escuela->total_evaluados;
 			$esc->promedio_general = $escuela->promedio_general;
+            $esc->eval_entre_programados = $escuela->eval_entre_programados;
 			$esc->nivel->id = $escuela->nivel;
 			$esc->nivel->nombre = $escuela->nom_nivel;
 
