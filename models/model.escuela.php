@@ -104,8 +104,6 @@ class escuela extends memcached_table{
         if (!$rank) return false;
         $semaforo = 4;
         $nivel = isset($this->nivel->id) ? $this->nivel->id : $this->nivel;
-        var_dump($nivel);
-        var_dump($rank);
 
         if($nivel==21 || $nivel==22){
             $semaforo = $this->get_semaforo_new_bachillerato($rank);
