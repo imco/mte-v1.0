@@ -100,7 +100,7 @@ class escuela extends memcached_table{
         }
     }
 
-    private function get_semaforo_new($rank){
+    public function get_semaforo_new($rank){
         if (!$rank) return false;
         $semaforo = 4;
 

@@ -49,30 +49,37 @@ class mejora extends main{
 		$niv = $this->get('nivel');
 		if($estado || $niv){
 			if(is_numeric($estado) || array_key_exists($niv,$nivel)){
-			        if ($estado < 10) $estado = '0'.$estado;
-			    	for($i=2;$i<16;$i++){
-					$p = new programa($i);
-					$p->read('id,nombre,m_collection,tema_especifico,federal');
-					$regex1 = array('$regex'=> "^$estado");
-					$regex2 = array('$regex'=> "^[a-zA-Z0-9]{3}{$nivel[$niv]}");
-					$add = true;
-					if($niv && !$this->exist_cct_in($p->m_collection,$regex2)){
-						$add = false;
-					}
+                if ($estado < 10) $estado = '0'.$estado;
+                for($i=2;$i<16;$i++){
+                    $add = true;
+                    $p = new programa($i);
+                    $p->read('id,nombre,m_collection,tema_especifico,federal');
 
-                    if($add && $estado && !$this->exist_cct_in($p->m_collection,$regex1)){
+                    if ($niv) {
+                        if ($estado) {
+                            $regexAux = "^{$estado}[a-zA-Z0-9]{$nivel[$niv]}";
+                        } else {
+                            $regexAux = "^[a-zA-Z0-9]{3}{$nivel[$niv]}";
+                        }
+                    } else {
+                        $regexAux = "^{$estado}";
+                    }
+
+                    $regex = array('$regex'=> $regexAux);
+
+                    if(!$this->exist_cct_in($p->m_collection,$regex)){
                         $add = false;
-					}
-					if($add){
-						if($p->federal){
-							$filtroF[] = $p;
-						}else{
-							$filtro[] = $p;
-						}					
-					}
-				}
-			}
+                    }
 
+                    if($add){
+                        if($p->federal){
+                            $filtroF[] = $p;
+                        }else{
+                            $filtro[] = $p;
+                        }
+                    }
+                }
+			}
 		}
 		$this->programas_federales = $filtroF;
 		$this->programas_osc = $filtro;
