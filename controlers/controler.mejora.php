@@ -89,7 +89,7 @@ class mejora extends main{
 			$c = $db->selectCollection($m_collection);
 			$max_aux = $c->find()->sort(array ("anio" => -1))->limit(1);
 			$aux = $max_aux->getNext();
-			$max_anio = isset($aux['anio']) && $aux['anio'] != 'anio' ? $aux['anio'] : false;
+			$max_anio = isset($aux['anio']) && $aux['anio'] != 'anio' && $aux['anio'] > 0 ? $aux['anio'] : false;
             //var_dump($m_collection);
             //$max_anio = false;
 			//$regex = array('$regex'=> "^[a-zA-Z0-9]{3}{$code}");
