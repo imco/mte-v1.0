@@ -13,7 +13,7 @@ $().ready(function(){
 	});
 
 	//geolocation
-	if(navigator && navigator.geolocation && window['google'])
+	if(navigator && navigator.geolocation && window['google'] && !$('.container').hasClass('perfil'))
 		navigator.geolocation.getCurrentPosition(function(geo){
 			var latitude = geo.coords.latitude
 			, longitude = geo.coords.longitude
