@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+   DocumentRoot "/var/www/mte"
+   ServerName  mysite.com
+   ServerAlias www.mysite.com
+   ServerAdmin admin@localhost
+   SetEnv APPLICATION_ENV "sample_config"
+      <Directory "/var/www/mte-v1.0">
+              Allow from all
+              AllowOverride All
+              #Order allow,deny
+              Require all granted
+      </Directory>
+   DirectoryIndex index.html index.php
+</VirtualHost>
