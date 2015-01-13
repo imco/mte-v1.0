@@ -30,7 +30,6 @@
   -->
   <cores adminPath="/admin/cores" host="${host:}" hostPort="${jetty.port:8983}" hostContext="${hostContext:solr}">
     <core name="mte" instanceDir="mejoratuescuela" />
-    <core name="comparacarreras" instanceDir="comparacarreras" />
 
     <shardHandlerFactory name="shardHandlerFactory" class="HttpShardHandlerFactory">
       <str name="urlScheme">${urlScheme:}</str>
