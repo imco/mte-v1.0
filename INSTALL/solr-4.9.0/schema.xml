@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="mte" version="1.5">
+  <fields>
+    <field name="cct" type="string" indexed="true" stored="true" required="true"/>
+    <field name="nombre" type="text_es" indexed="true" stored="true" required="true"/>
+    <field name="direccion" type="text_es" indexed="true" stored="true" required="true"/>
+    <field name="codigo_postal" type="string" indexed="true" stored="true" required="true"/>
+    <dynamicField name="*_coordinate"  type="double" indexed="true"  stored="true"/>
+    <field name="nivel" type="int" indexed="true" stored="true" />
+    <field name="nom_nivel" type="string" indexed="false" stored="true"/>
+
+    <field name="promedio_general" type="float" indexed="false" stored="true" />
+    <field name="promedio_matematicas" type="float" indexed="false" stored="true" />
+    <field name="promedio_espaniol" type="float" indexed="false" stored="true" />
+
+    <field name="control" type="int" indexed="true" stored="true" />
+
+    <field name="rank_entidad" type="int" indexed="true" stored="true" />
+    <field name="rank_nacional" type="int" indexed="true" stored="true" />
+
+    <field name="entidad" type="int" indexed="true" stored="true" />
+    <field name="nom_entidad" type="string" indexed="false" stored="true" required="true"/>
+
+
+    <field name="municipio" type="int" indexed="true" stored="true" />
+    <field name="nom_municipio" type="string" indexed="false" stored="true" required="true"/>
+
+
+    <field name="localidad" type="int" indexed="true" stored="true" />
+    <field name="nom_localidad" type="string" indexed="false" stored="true" required="true"/>
+
+    <field name="poco_confiables" type="int" indexed="true" stored="true" />
+    <field name="total_evaluados" type="int" indexed="true" stored="true" />
+    <field name="grados" type="int" indexed="true" stored="true" />
+    <field name="turno" type="int" indexed="true" stored="true" />
+    <field name="calificado" type="boolean" indexed="true" stored="true" />
+    <field name="eval_entre_programados" type="float" indexed="true" stored="true" />
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+    <field name="text" type="text_general" multiValued="true" indexed="true" stored="false" />
+    <copyField source="nombre" dest="text" />
+    <copyField source="direccion" dest="text" />
+  </fields>
+  <uniqueKey>cct</uniqueKey>
+  <types>
+    <fieldType name="string" class="solr.StrField" />
+    <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
+
+    <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="text_es" class="solr.TextField">
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+  </types>
+</schema>
